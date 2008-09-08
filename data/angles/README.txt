@@ -11,9 +11,10 @@ produces the same results as the old code.
 The files in this directory were created using Regina 4.5.
 
 The regina-python script that produces the angle structures is stored
-alongside the gzipped output file in this directory.  This script requires
-a census file as an argument, which should be the copy of snappea-census.rga
-that is shipped with regina.
+as runangles.py in this directory.  This script requires a census file as
+an argument (typically the copy of snappea-census.rga that is shipped with
+regina).  The corresponding output (gzipped to conserve space) is stored
+in this directory as the file snappea-all.gz.
 
 WARNING: This script does not delete angle structure lists, which means
 it can consume a *very* large amount of memory when run over a large
