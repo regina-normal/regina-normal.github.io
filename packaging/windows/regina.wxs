@@ -44,61 +44,184 @@
                 </File>
                 <File Id='libregina_engine.dll'
                  Name='libregina-engine.dll'/>
-                <!-- TODO ProgId Id='Regina.regfile'
+                <ProgId Id='Regina.rgafile'
                  Description='Regina data file'
-                 Icon='regina.ico'/-->
+                 Icon='regina.ico'> <!-- TODO: x-regina icon -->
+                  <Extension Id='rga' ContentType='application/x-regina'>
+                    <Verb Id='open'
+                     Command='Open'
+                     TargetFile='regina_gui.exe'
+                     Argument='"%1"'/>
+                  </Extension>
+                </ProgId>
+              </Component>
+              <Component Id='Utils'
+               Guid='0079C4E6-03BE-43F3-9A4B-1954EFF3F551'>
+                <File Id='regconcat.exe'
+                 Name='regconcat.exe'
+                 KeyPath='yes'/>
+                <File Id='regconvert.exe'
+                 Name='regconvert.exe'/>
+                <File Id='regfiledump.exe'
+                 Name='regfiledump.exe'/>
+                <File Id='regfiletype.exe'
+                 Name='regfiletype.exe'/>
+                <File Id='regina_python'
+                 Name='regina-python'/>
+                <File Id='sigcensus.exe'
+                 Name='sigcensus.exe'/>
+                <File Id='tricensus.exe'
+                 Name='tricensus.exe'/>
+                <File Id='trisetcmp.exe'
+                 Name='trisetcmp.exe'/>
               </Component>
               <Component Id='CoreDLLs'
                Guid='7D74E2A7-1970-4751-94E2-DB9674CA2C64'>
                 <File Id='QtCore4.dll'
-                 Name='QtCore4.dll'
                  Source='c:\QtSDK\Desktop\Qt\4.8.0\mingw\bin\QtCore4.dll'
                  KeyPath='yes'/>
                 <File Id='QtGui4.dll'
-                 Name='QtGui4.dll'
                  Source='c:\QtSDK\Desktop\Qt\4.8.0\mingw\bin\QtGui4.dll'/>
                 <File Id='libboost_python.dll'
-                 Name='libboost_python-mgw46-mt-1_49.dll'
                  Source='c:\Boost\lib\libboost_python-mgw46-mt-1_49.dll'/>
                 <File Id='libboost_regex.dll'
-                 Name='libboost_regex-mgw46-mt-1_49.dll'
                  Source='c:\Boost\lib\libboost_regex-mgw46-mt-1_49.dll'/>
                 <File Id='libgcc.dll'
-                 Name='libgcc_s_dw2-1.dll'
                  Source='c:\MinGW\bin\libgcc_s_dw2-1.dll'/>
                 <File Id='libgmp.dll'
-                 Name='libgmp-10.dll'
                  Source='c:\MinGW\bin\libgmp-10.dll'/>
                 <File Id='libgmpxx.dll'
-                 Name='libgmpxx-4.dll'
                  Source='c:\MinGW\bin\libgmpxx-4.dll'/>
                 <File Id='libiconv.dll'
-                 Name='libiconv-2.dll'
                  Source='c:\MinGW\bin\libiconv-2.dll'/>
                 <File Id='libpopt.dll'
-                 Name='libpopt-0.dll'
                  Source='c:\MinGW\bin\libpopt-0.dll'/>
                 <File Id='libstdcxx.dll'
-                 Name='libstdc++-6.dll'
                  Source='c:\MinGW\bin\libstdc++-6.dll'/>
                 <File Id='libz.dll'
-                 Name='libz-1.dll'
                  Source='c:\MinGW\bin\libz-1.dll'/>
                 <File Id='mingwm10.dll'
-                 Name='mingwm10.dll'
                  Source='c:\MinGW\bin\mingwm10.dll'/>
                 <File Id='pthread.dll'
-                 Name='pthreadGC2.dll'
                  Source='c:\MinGW\bin\pthreadGC2.dll'/>
                 <File Id='libxml2.dll'
-                 Name='libxml2-2.dll'
                  Source='c:\MinGW\msys\1.0\home\bab\software\bin\libxml2-2.dll'/>
+              </Component>
+              <Component Id='PythonCore'
+               Guid='487000C7-4872-4E6D-A110-4492A9A30F3C'>
+                <File Id='python.dll'
+                 Source='c:\MinGW\msys\1.0\home\bab\python\python27.dll'
+                 KeyPath='yes'/>
+                <File Id='python.zip'
+                 Source='c:\MinGW\msys\1.0\home\bab\python\python27.zip'/>
               </Component>
             </Directory>
 
             <!-- TODO: Shortcuts to documentation -->
 
+            <Directory Id='LIBDIR' Name='lib'>
+              <Directory Id='PKGLIBDIR' Name='regina'>
+                <Directory Id='PYLIBDIR' Name='python'>
+                  <Component Id='PythonModule'
+                   Guid='08F2657D-7CD7-4343-87A3-935CDA64C286'>
+                    <File Id='regina.pyd'
+                     Name='regina.pyd'
+                     KeyPath='yes'/>
+                  </Component>
+                </Directory>
+              </Directory>
+            </Directory>
+
             <Directory Id='DATADIR' Name='share'>
+              <Directory Id='PKGDATADIR' Name='regina'>
+                <Directory Id='PKGDATADIR_docs' Name='docs'>
+                  <Directory Id='PKGDATADIR_docs_en' Name='en'>
+                    <Directory Id='PKGDATADIR_docs_en_regina' Name='regina'>
+                      <Component Id='HandbookRegina_EN'
+                       Guid='7CB45E64-59E6-4AD0-A3FE-1359AD242D4E'>
+                      </Component>
+                    </Directory>
+
+                    <Directory Id='PKGDATADIR_docs_en_regina_xml' Name='regina-xml'>
+                      <Component Id='HandbookReginaXML_EN'
+                       Guid='A36E5E58-37AB-4CE0-96D8-8563D42E1182'>
+                      </Component>
+                    </Directory>
+                  </Directory>
+                </Directory>
+
+                <Directory Id='PKGDATADIR_engine_docs' Name='engine-docs'>
+                  <Component Id='APIDocs'
+                   Guid='8627189D-1555-46C7-BD6A-8719B08AC9EA'>
+                  </Component>
+                </Directory>
+
+                <Directory Id='PKGDATADIR_examples' Name='examples'>
+                  <Component Id='Examples'
+                   Guid='55C80D32-D843-4C37-B6E7-B19028139CA1'>
+                  </Component>
+                </Directory>
+
+                <Directory Id='PKGDATADIR_gui_resources' Name='gui-resources'>
+                  <Component Id='GUIResources'
+                   Guid='C8681025-2207-4D2B-84DA-E3186DE066F2'>
+                  </Component>
+                </Directory>
+
+                <Directory Id='PKGDATADIR_icons' Name='icons'>
+                  <Directory Id='PKGDATADIR_icons_oxygen' Name='oxygen'>
+                    <Component Id='IconsOxygen'
+                     Guid='03A55226-8477-4348-93D0-EB8AC080595A'>
+                    </Component>
+                  </Directory>
+
+                  <Directory Id='PKGDATADIR_icons_regina' Name='regina'>
+                    <Component Id='IconsRegina'
+                     Guid='555B7874-574B-4323-9D12-9DF00DF9024B'>
+                    </Component>
+                  </Directory>
+                </Directory>
+
+                <Directory Id='PKGDATADIR_internal' Name='internal'>
+                  <Directory Id='PKGDATADIR_internal_data' Name='data'>
+                    <Component Id='InternalData'
+                     Guid='6B589D6A-9A36-4132-9CCA-52B5ACDBB39C'>
+                      <File Id='snappea_census_sec5.dat'
+                       Name='snappea-census-sec5.dat'
+                       KeyPath='yes'/>
+                      <File Id='snappea_census_sec6n.dat'
+                       Name='snappea-census-sec6n.dat'/>
+                      <File Id='snappea_census_sec6o.dat'
+                       Name='snappea-census-sec6o.dat'/>
+                      <File Id='snappea_census_sec7n.dat'
+                       Name='snappea-census-sec7n.dat'/>
+                      <File Id='snappea_census_sec7o.dat'
+                       Name='snappea-census-sec7o.dat'/>
+                    </Component>
+                  </Directory>
+                  <Directory Id='PKGDATADIR_internal_scripts' Name='scripts'>
+                    <Component Id='InternalScripts'
+                     Guid='1FD1DA29-5AB5-4BE2-B27A-6133D389FE22'>
+                      <File Id='runscript.py'
+                       Name='runscript.py'
+                       KeyPath='yes'/>
+                    </Component>
+                  </Directory>
+                </Directory>
+
+                <Directory Id='PKGDATADIR_pylib' Name='pylib'>
+                  <Component Id='PythonLibs'
+                   Guid='D15EEF3C-ED2A-4F24-A30F-87F942BB7589'>
+                    <File Id='loadCensus.py'
+                     Name='loadCensus.py'
+                     KeyPath='yes'/>
+                    <File Id='packetType.py'
+                     Name='packetType.py'/>
+                    <File Id='PyLib_README'
+                     Name='README.txt'/>
+                  </Component>
+                </Directory>
+              </Directory>
             </Directory>
           </Directory>
         </Directory>
@@ -109,7 +232,7 @@
            Guid='2EF46552-9E7B-4822-A773-621B48A205B4'>
             <RemoveFolder Id='ProgramMenuDir' On='uninstall'/>
             <RegistryValue Root='HKCU'
-             Key='Software\Regina development team\Regina'
+             Key='Software\[Manufacturer]\[ProductName]'
              Type='string' Value='' KeyPath='yes'/>
           </Component>
         </Directory>
@@ -120,7 +243,20 @@
 
     <Feature Id='Complete' Level='1'>
       <ComponentRef Id='MainExecutable'/>
+      <ComponentRef Id='Utils'/>
       <ComponentRef Id='CoreDLLs'/>
+      <ComponentRef Id='PythonCore'/>
+      <ComponentRef Id='PythonModule'/>
+      <ComponentRef Id='Examples'/>
+      <ComponentRef Id='GUIResources'/>
+      <ComponentRef Id='IconsOxygen'/>
+      <ComponentRef Id='IconsRegina'/>
+      <ComponentRef Id='PythonLibs'/>
+      <ComponentRef Id='InternalData'/>
+      <ComponentRef Id='InternalScripts'/>
+      <ComponentRef Id='HandbookRegina_EN'/>
+      <ComponentRef Id='HandbookReginaXML_EN'/>
+      <ComponentRef Id='APIDocs'/>
       <ComponentRef Id='ProgramMenuDir'/>
     </Feature>
 
