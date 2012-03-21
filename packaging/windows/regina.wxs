@@ -90,8 +90,6 @@
               </Component>
             </Directory>
 
-            <!-- TODO: Shortcuts to documentation, with icons -->
-
             <Directory Id='LIBDIR' Name='lib'>
               <Directory Id='PKGLIBDIR' Name='regina'>
                 <Directory Id='PYLIBDIR' Name='python'>
@@ -115,7 +113,8 @@
                          KeyPath='yes'>
                           <Shortcut Id='startmenuHandbook'
                            Directory='ProgramMenuDir'
-                           Name='Regina Handbook'
+                           Name="Users' Handbook"
+                           Icon='help_contents.ico'
                            Advertise='yes'/>
                         </File>
                         <File Name='kde-default.css'
@@ -348,7 +347,13 @@
                        Guid='A36E5E58-37AB-4CE0-96D8-8563D42E1182'>
                         <File Name='index.html'
                          Id='regina_xml_en_index.html'
-                         KeyPath='yes'/>
+                         KeyPath='yes'>
+                          <Shortcut Id='startmenuXMLHandbook'
+                           Directory='ProgramMenuDir'
+                           Name='File Format Reference'
+                           Icon='help_contents.ico'
+                           Advertise='yes'/>
+						</File>
                         <File Name='kde-default.css'
                          Id='regina_xml_kde_default.css'/>
                         <File Name='regina_logo.png'
@@ -417,7 +422,13 @@
                    Guid='8627189D-1555-46C7-BD6A-8719B08AC9EA'>
                         <File Name='index.html'
                          Id='engine_docs_index.html'
-                         KeyPath='yes'/>
+                         KeyPath='yes'>
+                          <Shortcut Id='startmenuEngineDocs'
+                           Directory='ProgramMenuDir'
+                           Name='Python API Reference'
+                           Icon='help_contents.ico'
+                           Advertise='yes'/>
+						</File>
                         <File Name='annotated.html'/>
                         <File Name='approx_8h.html'/>
                         <File Name='base64_8h.html'/>
@@ -1354,6 +1365,7 @@
                 <Directory Id='PKGDATADIR_icons' Name='icons'>
                   <Component Id='IconsMain'
                    Guid='TODO'>
+                    <File Name='help-contents.ico' Id='help_contents.ico'/>
                     <File Name='regina.ico' Id='regina.ico' KeyPath='yes'/>
                     <File Name='x-regina.ico' Id='x_regina.ico'/>
                   </Component>
