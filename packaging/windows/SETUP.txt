@@ -52,6 +52,11 @@ To build regina:
     -DREGINA_DOCS=/home/bab/docs.zip
     ..
 
+To prepare WiX for use:
+  If WiX is not on the path, add aliases to ~/.bashrc:
+    alias candle='"/c/Program Files/Windows Installer XML v3.6/bin/candle"'
+    alias light='"/c/Program Files/Windows Installer XML v3.6/bin/light"'
+
 To generate unique IDs for the windows installer:
   Build UUIDgen (gcc UUIDgen.c -lole32 -o UUIDgen)
 
