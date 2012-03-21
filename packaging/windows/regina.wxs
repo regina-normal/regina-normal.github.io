@@ -43,16 +43,15 @@
                    Advertise='yes'/>
                 </File>
                 <File Name='libregina-engine.dll'/>
-                <!-- ProgId Id='Regina.rgafile' TODO: x-regina icon
-                 Description='Regina data file'
-                 Icon='regina.ico'>
+                <ProgId Id='Regina.rgafile'
+                 Description='Regina data file'> <!-- TODO: x-regina icon -->
                   <Extension Id='rga' ContentType='application/x-regina'>
                     <Verb Id='open'
                      Command='Open'
                      TargetFile='regina_gui.exe'
                      Argument='"%1"'/>
                   </Extension>
-                </ProgId-->
+                </ProgId>
               </Component>
               <Component Id='Utils'
                Guid='0079C4E6-03BE-43F3-9A4B-1954EFF3F551'>
@@ -90,7 +89,7 @@
               </Component>
             </Directory>
 
-            <!-- TODO: Shortcuts to documentation -->
+            <!-- TODO: Shortcuts to documentation, with icons -->
 
             <Directory Id='LIBDIR' Name='lib'>
               <Directory Id='PKGLIBDIR' Name='regina'>
