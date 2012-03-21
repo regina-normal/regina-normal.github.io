@@ -44,7 +44,8 @@
                 </File>
                 <File Name='libregina-engine.dll'/>
                 <ProgId Id='Regina.rgafile'
-                 Description='Regina data file'> <!-- TODO: x-regina icon -->
+                 Description='Regina data file'
+                 Icon='x_regina.ico'>
                   <Extension Id='rga' ContentType='application/x-regina'>
                     <Verb Id='open'
                      Command='Open'
@@ -1351,6 +1352,12 @@
                 </Directory>
 
                 <Directory Id='PKGDATADIR_icons' Name='icons'>
+                  <Component Id='IconsMain'
+                   Guid='TODO'>
+                    <File Name='regina.ico' Id='regina.ico' KeyPath='yes'/>
+                    <File Name='x-regina.ico' Id='x_regina.ico'/>
+                  </Component>
+
                   <Directory Id='PKGDATADIR_icons_oxygen' Name='oxygen'>
                     <Component Id='IconsOxygen'
                      Guid='03A55226-8477-4348-93D0-EB8AC080595A'>
