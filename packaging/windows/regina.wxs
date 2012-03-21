@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<Wix xmlns='http://schemas.microsoft.com/wix/2006/wi'>
+  <Product Id='9A4D16A6-A856-49BB-9A04-545531198CAC'
+   Name='Regina 4.91'
+   UpgradeCode='C3D9D7D7-6614-4F3F-9D8E-EEA184C24A99'
+   Language='1033'
+   Codepage='1252'
+   Version='4.91.0'
+   Manufacturer='Regina development team'>
+    <Package Id='*'
+     Keywords='Installer'
+     Description='Regina 4.91 Installer'
+     Manufacturer='Regina development team'
+     Languages='1033'
+     Compressed='yes'
+     SummaryCodepage='1252'/>
+    <Media Id='1' Cabinet='Regina.cab' EmbedCab='yes' DiskPrompt='Disk #1'/>
+    <Property Id='DiskPrompt' Value='Regina 4.91 Installation [1]'/>
+
+    <Directory Id='TARGETDIR' Name='SourceDir'>
+      <Directory Id='ProgramFilesFolder' Name='PFiles'>
+        <Directory Id='Regina' Name='Regina'>
+          <Directory Id='INSTALLDIR' Name='Regina 4.91'
+           FileSource='c:\MinGW\msys\1.0\home\bab\software'>
+
+            <Directory Id='BINDIR' Name='bin'>
+              <Component Id='MainExecutable'
+               Guid='73EDE905-640E-49AA-97FD-F690BAE5BD4C'>
+                <File Id='regina_gui.exe'
+                 Name='regina-gui.exe'
+                 KeyPath='yes'>
+                  <Shortcut Id='startmenuRegina'
+                   Directory='ProgramMenuDir'
+                   Name='Regina'
+                   WorkingDirectory='PersonalFolder'
+                   Icon='regina.ico'
+                   Advertise='yes'/>
+                  <Shortcut Id='desktopRegina'
+                   Directory='DesktopFolder'
+                   Name='Regina 4.91'
+                   WorkingDirectory='PersonalFolder'
+                   Icon='regina.ico'
+                   Advertise='yes'/>
+                </File>
+                <File Id='libregina_engine.dll'
+                 Name='libregina-engine.dll'/>
+                <!-- TODO ProgId Id='Regina.regfile'
+                 Description='Regina data file'
+                 Icon='regina.ico'/-->
+              </Component>
+              <Component Id='CoreDLLs'
+               Guid='7D74E2A7-1970-4751-94E2-DB9674CA2C64'>
+                <File Id='QtCore4.dll'
+                 Name='QtCore4.dll'
+                 Source='c:\QtSDK\Desktop\Qt\4.8.0\mingw\bin\QtCore4.dll'
+                 KeyPath='yes'/>
+                <File Id='QtGui4.dll'
+                 Name='QtGui4.dll'
+                 Source='c:\QtSDK\Desktop\Qt\4.8.0\mingw\bin\QtGui4.dll'/>
+                <File Id='libboost_python.dll'
+                 Name='libboost_python-mgw46-mt-1_49.dll'
+                 Source='c:\Boost\lib\libboost_python-mgw46-mt-1_49.dll'/>
+                <File Id='libboost_regex.dll'
+                 Name='libboost_regex-mgw46-mt-1_49.dll'
+                 Source='c:\Boost\lib\libboost_regex-mgw46-mt-1_49.dll'/>
+                <File Id='libgcc.dll'
+                 Name='libgcc_s_dw2-1.dll'
+                 Source='c:\MinGW\bin\libgcc_s_dw2-1.dll'/>
+                <File Id='libgmp.dll'
+                 Name='libgmp-10.dll'
+                 Source='c:\MinGW\bin\libgmp-10.dll'/>
+                <File Id='libgmpxx.dll'
+                 Name='libgmpxx-4.dll'
+                 Source='c:\MinGW\bin\libgmpxx-4.dll'/>
+                <File Id='libiconv.dll'
+                 Name='libiconv-2.dll'
+                 Source='c:\MinGW\bin\libiconv-2.dll'/>
+                <File Id='libpopt.dll'
+                 Name='libpopt-0.dll'
+                 Source='c:\MinGW\bin\libpopt-0.dll'/>
+                <File Id='libstdcxx.dll'
+                 Name='libstdc++-6.dll'
+                 Source='c:\MinGW\bin\libstdc++-6.dll'/>
+                <File Id='libz.dll'
+                 Name='libz-1.dll'
+                 Source='c:\MinGW\bin\libz-1.dll'/>
+                <File Id='mingwm10.dll'
+                 Name='mingwm10.dll'
+                 Source='c:\MinGW\bin\mingwm10.dll'/>
+                <File Id='pthread.dll'
+                 Name='pthreadGC2.dll'
+                 Source='c:\MinGW\bin\pthreadGC2.dll'/>
+                <File Id='libxml2.dll'
+                 Name='libxml2-2.dll'
+                 Source='c:\MinGW\msys\1.0\home\bab\software\bin\libxml2-2.dll'/>
+              </Component>
+            </Directory>
+
+            <!-- TODO: Shortcuts to documentation -->
+
+            <Directory Id='DATADIR' Name='share'>
+            </Directory>
+          </Directory>
+        </Directory>
+      </Directory>
+      <Directory Id='ProgramMenuFolder' Name='Programs'>
+        <Directory Id='ProgramMenuDir' Name='Regina 4.91'>
+          <Component Id='ProgramMenuDir'
+           Guid='2EF46552-9E7B-4822-A773-621B48A205B4'>
+            <RemoveFolder Id='ProgramMenuDir' On='uninstall'/>
+            <RegistryValue Root='HKCU'
+             Key='Software\Regina development team\Regina'
+             Type='string' Value='' KeyPath='yes'/>
+          </Component>
+        </Directory>
+      </Directory>
+
+      <Directory Id='DesktopFolder' Name='Desktop'/>
+    </Directory>
+
+    <Feature Id='Complete' Level='1'>
+      <ComponentRef Id='MainExecutable'/>
+      <ComponentRef Id='CoreDLLs'/>
+      <ComponentRef Id='ProgramMenuDir'/>
+    </Feature>
+
+    <Icon Id='regina.ico'
+     SourceFile='c:\MinGW\msys\1.0\home\bab\regina-qt\qtui\src\regina.ico'/>
+  </Product>
+</Wix>
+
