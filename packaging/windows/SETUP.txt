@@ -60,3 +60,9 @@ To prepare WiX for use:
 To generate unique IDs for the windows installer:
   Build UUIDgen (gcc UUIDgen.c -lole32 -o UUIDgen)
 
+To help fill documentation entries in regina.wsx:
+  ls -1 ~/foo/MinGW/msys/1.0/home/bab/software/share/regina/docs/en/regina |
+    sed -e "s#^#                        <File Name='#"
+        -e "s#\$#'/>#" 
+    > /tmp/foo
+
