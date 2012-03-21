@@ -33,7 +33,7 @@ To build libxslt:
   Build docs.zip so that handbooks are stored as docs/en/regina{,-xml}.
 
 To build source-highlight:
-  Patch to change NO_ERROR to NO_RANGE_ERROR
+  Patch to change NO_ERROR to NO_RANGE_ERROR (see source-highlight.patch).
   ./configure --prefix=/home/bab/software --with-boost=/c/Boost
 
 To build cppunit:
@@ -51,4 +51,7 @@ To build regina:
     -DQT_QMAKE_EXECUTABLE=/c/QtSDK/Desktop/Qt/4.8.0/mingw/bin/qmake
     -DREGINA_DOCS=/home/bab/docs.zip
     ..
+
+To generate unique IDs for the windows installer:
+  Build UUIDgen (gcc UUIDgen.c -lole32 -o UUIDgen)
 
