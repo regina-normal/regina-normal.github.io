@@ -1,0 +1,39 @@
+Building the MacOS bundle:
+
+The runtime bundle stands alone, but to build you still need fink installed.
+Build-dependencies include:
+
+  boost1.46.1.cmake
+  cmake
+  cppunit1.12.1 (or cppunit1.10.2 until 1.12.1 is pushed into fink stable)
+  doxygen
+  gmp5
+  libiconv-dev
+  libxml2
+  popt
+
+Standalone build-dependencies (from outside fink) include:
+
+  Qt for MacOS
+
+To configure:
+
+  cmake -DCMAKE_INSTALL_PREFIX=path/to/install/location
+    -DPYTHON_EXECUTABLE=/usr/bin/python
+    -DREGINA_INSTALL_TYPE=Bundle
+	-DQT_QMAKE_EXECUTABLE=path/to/QtSDK/Desktop/Qt/4.8.0/gcc/bin/qmake
+	..
+
+Then:
+
+  make
+  make install
+
+At this point the bundle Regina.app should be ready in the install location.
+
+To create a very basic DMG for shipping:
+
+  hdiutil create -srcfolder Regina.app Regina.dmg
+
+TODO: Nathan knows how to customise the DMG; put the details in this
+packaging directory.
