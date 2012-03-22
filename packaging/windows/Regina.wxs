@@ -19,6 +19,9 @@
     <UIRef Id='WixUI_InstallDir'/>
     <UIRef Id='WixUI_ErrorProgressText'/>
     <Property Id='WIXUI_INSTALLDIR' Value='INSTALLDIR'/>
+    <WixVariable Id="WixUILicenseRtf" Value="LICENSE.rtf"/>
+    <WixVariable Id="WixUIBannerBmp" Value="banner.bmp"/>
+    <WixVariable Id="WixUIDialogBmp" Value="dialog.bmp"/>
 
     <Directory Id='TARGETDIR' Name='SourceDir'>
       <Directory Id='ProgramFilesFolder' Name='PFiles'>
