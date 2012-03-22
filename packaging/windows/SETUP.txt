@@ -4,10 +4,21 @@ Build dependencies from mingw:
   mingw-get install mingw32-libpopt
   mingw-get install msys-libxml2
 
-Other helpful stuff:
+Build dependencies with standalone installers:
+  CMake
+  Doxygen
+  Python
+  Qt SDK
+  Wix
+
+Other helpful stuff from mingw:
   mingw-get install msys-wget
   mingw-get install msys-unzip
   mingw-get install msys-zip
+
+Other helpful stuff with standalone installers:
+  Graphviz
+  TortoiseSVN
 
 To build boost:
   Download .zip (not .tar.gz)
