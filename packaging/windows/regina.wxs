@@ -43,6 +43,7 @@
                    Advertise='yes'/>
                 </File>
                 <File Name='libregina-engine.dll'/>
+                <File Name='x-regina.ico' Id='x_regina.ico'/>
                 <ProgId Id='Regina.rgafile'
                  Description='Regina data file'
                  Icon='x_regina.ico'>
@@ -1363,13 +1364,6 @@
                 </Directory>
 
                 <Directory Id='PKGDATADIR_icons' Name='icons'>
-                  <Component Id='IconsMain'
-                   Guid='TODO'>
-                    <File Name='help-contents.ico' Id='help_contents.ico'/>
-                    <File Name='regina.ico' Id='regina.ico' KeyPath='yes'/>
-                    <File Name='x-regina.ico' Id='x_regina.ico'/>
-                  </Component>
-
                   <Directory Id='PKGDATADIR_icons_oxygen' Name='oxygen'>
                     <Component Id='IconsOxygen'
                      Guid='03A55226-8477-4348-93D0-EB8AC080595A'>
@@ -1725,6 +1719,8 @@
 
     <Icon Id='regina.ico'
      SourceFile='c:\MinGW\msys\1.0\home\bab\regina-qt\qtui\src\regina.ico'/>
+    <Icon Id='help_contents.ico'
+     SourceFile='c:\MinGW\msys\1.0\home\bab\regina-qt\qtui\src\help-contents.ico'/>
   </Product>
 </Wix>
 
