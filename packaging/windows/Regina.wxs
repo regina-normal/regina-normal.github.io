@@ -120,7 +120,7 @@
                           <Shortcut Id='startmenuHandbook'
                            Directory='ProgramMenuDir'
                            Name="Users' Handbook"
-                           Icon='help_contents.ico'
+                           Icon='manual.ico'
                            Advertise='yes'/>
                         </File>
                         <File Name='kde-default.css'
@@ -357,7 +357,7 @@
                           <Shortcut Id='startmenuXMLHandbook'
                            Directory='ProgramMenuDir'
                            Name='File Format Reference'
-                           Icon='help_contents.ico'
+                           Icon='manual.ico'
                            Advertise='yes'/>
 						</File>
                         <File Name='kde-default.css'
@@ -432,7 +432,7 @@
                           <Shortcut Id='startmenuEngineDocs'
                            Directory='ProgramMenuDir'
                            Name='Python API Reference'
-                           Icon='help_contents.ico'
+                           Icon='manual.ico'
                            Advertise='yes'/>
 						</File>
                         <File Name='annotated.html'/>
@@ -1747,8 +1747,8 @@
 
     <Icon Id='regina.ico'
      SourceFile='c:\MinGW\msys\1.0\home\bab\regina-qt\qtui\src\regina.ico'/>
-    <Icon Id='help_contents.ico'
-     SourceFile='c:\MinGW\msys\1.0\home\bab\regina-qt\qtui\src\help-contents.ico'/>
+    <Icon Id='manual.ico'
+     SourceFile='c:\MinGW\msys\1.0\home\bab\regina-qt\qtui\src\manual.ico'/>
   </Product>
 </Wix>
 
