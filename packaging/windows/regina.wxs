@@ -16,6 +16,9 @@
      SummaryCodepage='1252'/>
     <Media Id='1' Cabinet='Regina.cab' EmbedCab='yes' DiskPrompt='Disk #1'/>
     <Property Id='DiskPrompt' Value='Regina 4.91 Installation [1]'/>
+    <UIRef Id='WixUI_InstallDir'/>
+    <UIRef Id='WixUI_ErrorProgressText'/>
+    <Property Id='WIXUI_INSTALLDIR' Value='INSTALLDIR'/>
 
     <Directory Id='TARGETDIR' Name='SourceDir'>
       <Directory Id='ProgramFilesFolder' Name='PFiles'>
@@ -1698,23 +1701,46 @@
       <Directory Id='DesktopFolder' Name='Desktop'/>
     </Directory>
 
-    <Feature Id='Complete' Level='1'>
-      <ComponentRef Id='MainExecutable'/>
-      <ComponentRef Id='Utils'/>
-      <ComponentRef Id='CoreDLLs'/>
-      <ComponentRef Id='PythonCore'/>
-      <ComponentRef Id='PythonModule'/>
-      <ComponentRef Id='Examples'/>
-      <ComponentRef Id='GUIResources'/>
-      <ComponentRef Id='IconsOxygen'/>
-      <ComponentRef Id='IconsRegina'/>
-      <ComponentRef Id='PythonLibs'/>
-      <ComponentRef Id='InternalData'/>
-      <ComponentRef Id='InternalScripts'/>
-      <ComponentRef Id='HandbookRegina_EN'/>
-      <ComponentRef Id='HandbookReginaXML_EN'/>
-      <ComponentRef Id='APIDocs'/>
-      <ComponentRef Id='ProgramMenuDir'/>
+    <Feature Id='Complete'
+     Title='Regina 4.91'
+     Description='The complete package.'
+     AllowAdvertise='no'
+     InstallDefault='local'
+     Display='expand'
+     Level='1'
+     ConfigurableDirectory='INSTALLDIR'>
+      <Feature Id='MainProgram'
+       Title='Program and data'
+       Description='The main executable and all supporting data.'
+       AllowAdvertise='no'
+       InstallDefault='local'
+       Absent='disallow'
+       Level='1'>
+        <ComponentRef Id='MainExecutable'/>
+        <ComponentRef Id='Utils'/>
+        <ComponentRef Id='CoreDLLs'/>
+        <ComponentRef Id='PythonCore'/>
+        <ComponentRef Id='PythonModule'/>
+        <ComponentRef Id='Examples'/>
+        <ComponentRef Id='GUIResources'/>
+        <ComponentRef Id='IconsOxygen'/>
+        <ComponentRef Id='IconsRegina'/>
+        <ComponentRef Id='PythonLibs'/>
+        <ComponentRef Id='InternalData'/>
+        <ComponentRef Id='InternalScripts'/>
+        <ComponentRef Id='ProgramMenuDir'/>
+      </Feature>
+      <Feature Id='Documentation'
+       Title='Documentation'
+       Description="The users' handbooks and Python API reference."
+       AllowAdvertise='no'
+       InstallDefault='local'
+       Absent='disallow'
+       Level='2'>
+        <ComponentRef Id='HandbookRegina_EN'/>
+        <ComponentRef Id='HandbookReginaXML_EN'/>
+        <ComponentRef Id='APIDocs'/>
+      </Feature>
     </Feature>
 
     <Icon Id='regina.ico'
