@@ -66,3 +66,7 @@ To help fill documentation entries in regina.wsx:
         -e "s#\$#'/>#" 
     > /tmp/foo
 
+To build the installer:
+  candle Regina.wxs
+  light -ext WixUIExtension -o 'Regina 4.91.msi' Regina.wixobj
+
