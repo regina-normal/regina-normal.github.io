@@ -1,10 +1,11 @@
 # Known to work for:
 # - Mandriva 2011 (i586, x86_64)
 # - Mandriva 2010.2 (i586, x86_64)
+# - Mandriva 2010.1 (i586, x86_64)
 
 Name: regina-normal
 Summary: Software for 3-manifold topology and normal surfaces
-Version: 4.90
+Version: 4.91
 Release: 1.%{_vendor}
 License: GPL
 # I wish there were a more sane group (like Applications/Mathematics).
@@ -15,9 +16,7 @@ Packager: Ben Burton <bab@debian.org>
 BuildRoot: %{_tmppath}/%{name}-buildroot
 
 Requires: graphviz
-Requires: kdebase4-runtime
-Requires: kdelibs4-core
-Requires: okular
+Requires: mimehandler(application/pdf)
 Requires: python
 Conflicts: regina
 
@@ -29,7 +28,8 @@ BuildRequires: gcc
 BuildRequires: gcc-c++
 BuildRequires: glibc-devel
 BuildRequires: gmp-devel
-BuildRequires: kdelibs4-devel
+BuildRequires: gmpxx-devel
+BuildRequires: libsource-highlight-devel
 BuildRequires: libstdc++-devel
 BuildRequires: libxml2-devel
 BuildRequires: qt4-devel
@@ -54,7 +54,14 @@ and a low-level C++ programming interface.
 %setup -n regina-%{version}
 
 %build
-%cmake_kde4 -DPACKAGING_MODE=1 -DPACKAGING_NO_MPI=1
+export CFLAGS="${CFLAGS:-%optflags}"
+export CPPFLAGS="${CPPFLAGS:-%optflags}"
+export QTDIR="%qt4dir"
+export PATH="%qt4dir/bin:$PATH"
+export LIB_SUFFIX=$(echo %_lib | cut -b4-)
+
+%cmake -DDISABLE_RPATH=1 -DCMAKE_INSTALL_PREFIX=/usr -DLIB_SUFFIX=$LIB_SUFFIX \
+  -DDISABLE_MPI=1 -DPACKAGING_MODE=1
 %make
 LD_LIBRARY_PATH=`pwd`/engine:"$LD_LIBRARY_PATH" %make test ARGS=-V
 
@@ -84,24 +91,25 @@ rm -rf %{buildroot}
 %doc CHANGES.txt
 %doc HIGHLIGHTS.txt
 %doc LICENSE.txt
+%docdir %{_datadir}/regina/docs/en/regina
+%docdir %{_datadir}/regina/docs/en/regina-xml
 %docdir %{_datadir}/regina/engine-docs
-%docdir %{_kde4_docdir}/HTML/en/regina
-%docdir %{_kde4_docdir}/HTML/en/regina-xml
 %{_bindir}/*
+%{_datadir}/applications/regina.desktop
+%{_datadir}/icons/hicolor/*/*/*
+%{_datadir}/mime/packages/regina.xml
 %{_datadir}/regina/
 %{_includedir}/regina/
 %{_libdir}/libregina-engine.so
 %{_libdir}/libregina-engine.so.%{version}
 %{_libdir}/regina/python/regina.so
 %{_mandir}/*/*
-%{_kde_appsdir}/regina/
-%{_kde_datadir}/applications/kde4/regina.desktop
-%{_kde_datadir}/mime/packages/regina.xml
-%{_kde_docdir}/HTML/en/regina/
-%{_kde_docdir}/HTML/en/regina-xml/
-%{_kde_iconsdir}/*/*/*
 
 %changelog
+* Wed Mar 28 2012 Ben Burton <bab@debian.org> 4.92
+- New upstream release.
+- Ported from KDE4 to Qt4-only.
+
 * Mon Sep 12 2011 Ben Burton <bab@debian.org> 4.90
 - New upstream release.
 - Ported from KDE3 to KDE4, and from autotools to cmake.

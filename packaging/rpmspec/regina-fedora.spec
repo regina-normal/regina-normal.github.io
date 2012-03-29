@@ -1,10 +1,11 @@
 # Known to work for:
+# - Fedora 16 (i386, x86_64)
 # - Fedora 15 (i386, x86_64)
 # - Fedora 14 (i386, x86_64)
 
 Name: regina-normal
 Summary: Software for 3-manifold topology and normal surfaces
-Version: 4.90
+Version: 4.91
 Release: 1.%{_vendor}
 License: GPL
 # I wish there were a more sane group (like Applications/Mathematics).
@@ -15,8 +16,7 @@ Packager: Ben Burton <bab@debian.org>
 BuildRoot: %{_tmppath}/%{name}-buildroot
 
 Requires: graphviz
-Requires: kdelibs
-Requires: kdebase-runtime
+Requires: mimehandler(application/pdf)
 Requires: python
 Conflicts: regina
 
@@ -29,12 +29,13 @@ BuildRequires: gcc
 BuildRequires: gcc-c++
 BuildRequires: glibc-devel
 BuildRequires: gmp-devel
-BuildRequires: kdelibs-devel
 BuildRequires: libstdc++-devel
 BuildRequires: libxml2-devel
 BuildRequires: popt-devel
 BuildRequires: python-devel
+BuildRequires: qt-devel
 BuildRequires: shared-mime-info
+BuildRequires: source-highlight-devel
 BuildRequires: zlib-devel
 
 %description
@@ -53,7 +54,16 @@ and a low-level C++ programming interface.
 %build
 mkdir -p %{_target_platform}
 pushd %{_target_platform}
-%{cmake_kde4} .. -DPACKAGING_MODE=1 -DPACKAGING_NO_MPI=1
+
+export QTDIR="%{_qt4_prefix}"
+export PATH="%{_qt4_bindir}:$PATH"
+export CFLAGS="${CFLAGS:-%optflags}"
+export CXXFLAGS="${CXXFLAGS:-%optflags}"
+export FFLAGS="${FFLAGS:-%optflags}"
+export LIB_SUFFIX=$(echo %_lib | cut -b4-)
+cmake -DDISABLE_RPATH=1 -DCMAKE_INSTALL_PREFIX=/usr -DLIB_SUFFIX=$LIB_SUFFIX \
+  -DCMAKE_VERBOSE_MAKEFILE=ON -DDISABLE_MPI=1 -DPACKAGING_MODE=1 \
+  ..
 popd
 
 make %{?_smp_mflags} -C %{_target_platform}
@@ -64,24 +74,24 @@ rm -rf $RPM_BUILD_ROOT
 make install/fast DESTDIR=$RPM_BUILD_ROOT -C %{_target_platform}
 
 desktop-file-validate \
-  $RPM_BUILD_ROOT%{_kde4_datadir}/applications/kde4/regina.desktop ||:
+  $RPM_BUILD_ROOT%{_datadir}/applications/regina.desktop ||:
 
 %post
 /sbin/ldconfig
 /usr/bin/update-desktop-database &> /dev/null ||:
 /usr/bin/update-mime-database %{_datadir}/mime &> /dev/null ||:
-/bin/touch --no-create %{_kde4_iconsdir}/hicolor &> /dev/null ||:
+/bin/touch --no-create %{_datadir}/icons/hicolor &> /dev/null ||:
 
 %posttrans
-/usr/bin/gtk-update-icon-cache %{_kde4_iconsdir}/hicolor &> /dev/null ||:
+/usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &> /dev/null ||:
 
 %postun
 /sbin/ldconfig
 /usr/bin/update-desktop-database &> /dev/null ||:
 /usr/bin/update-mime-database %{_datadir}/mime &> /dev/null ||:
 if [ $1 -eq 0 ]; then
-  /bin/touch --no-create %{_kde4_iconsdir}/hicolor &> /dev/null ||:
-  /usr/bin/gtk-update-icon-cache %{_kde4_iconsdir}/hicolor &> /dev/null ||:
+  /bin/touch --no-create %{_datadir}/icons/hicolor &> /dev/null ||:
+  /usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &> /dev/null ||:
 fi
 
 %clean
@@ -92,24 +102,25 @@ rm -rf $RPM_BUILD_ROOT
 %doc CHANGES.txt
 %doc HIGHLIGHTS.txt
 %doc LICENSE.txt
+%docdir %{_datadir}/regina/docs/en/regina
+%docdir %{_datadir}/regina/docs/en/regina-xml
 %docdir %{_datadir}/regina/engine-docs
-%docdir %{_kde4_docdir}/HTML/en/regina
-%docdir %{_kde4_docdir}/HTML/en/regina-xml
 %{_bindir}/*
+%{_datadir}/applications/regina.desktop
+%{_datadir}/icons/hicolor/*/*/*
+%{_datadir}/mime/packages/regina.xml
 %{_datadir}/regina/
 %{_includedir}/regina/
 %{_libdir}/libregina-engine.so
 %{_libdir}/libregina-engine.so.%{version}
 %{_libdir}/regina/python/regina.so
 %{_mandir}/*/*
-%{_kde4_appsdir}/regina/
-%{_kde4_datadir}/applications/kde4/regina.desktop
-%{_kde4_datadir}/mime/packages/regina.xml
-%{_kde4_docdir}/HTML/en/regina/
-%{_kde4_docdir}/HTML/en/regina-xml/
-%{_kde4_iconsdir}/*/*/*
 
 %changelog
+* Wed Mar 28 2012 Ben Burton <bab@debian.org> 4.92
+- New upstream release.
+- Ported from KDE4 to Qt4-only.
+
 * Mon Sep 12 2011 Ben Burton <bab@debian.org> 4.90
 - New upstream release.
 - Ported from KDE3 to KDE4, and from autotools to cmake.

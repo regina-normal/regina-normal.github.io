@@ -1,10 +1,11 @@
 # Known to work for:
+# - SuSE 12.1 (i586, x86_64)
 # - SuSE 11.4 (i586, x86_64)
 # - SuSE 11.3 (i586, x86_64)
 
 Name: regina-normal
 Summary: Software for 3-manifold topology and normal surfaces
-Version: 4.90
+Version: 4.91
 Release: 1.%{_vendor}
 License: GPL
 # I wish there were a more sane group (like Applications/Mathematics).
@@ -14,9 +15,8 @@ URL: http://regina.sourceforge.net/
 Packager: Ben Burton <bab@debian.org>
 BuildRoot: %{_tmppath}/%{name}-buildroot
 
-%kde4_runtime_requires
 Requires: graphviz
-Requires: okular
+Requires: mimehandler(application/pdf)
 Requires: python
 Conflicts: regina
 
@@ -28,8 +28,10 @@ BuildRequires: gcc-c++
 BuildRequires: glibc-devel
 BuildRequires: gmp-devel
 BuildRequires: libcppunit-devel
-BuildRequires: libkde4-devel
 BuildRequires: libqt4-devel
+%if 0%{?suse_version} >= 1200
+BuildRequires: libsource-highlight-devel
+%endif
 BuildRequires: libstdc++-devel
 BuildRequires: libxml2-devel
 BuildRequires: popt-devel
@@ -53,7 +55,20 @@ and a low-level C++ programming interface.
 %setup -n regina-%{version}
 
 %build
-%cmake_kde4 -d build -- -DPACKAGING_MODE=1 -DPACKAGING_NO_MPI=1
+export CFLAGS=$RPM_OPT_FLAGS
+export CXXFLAGS=$RPM_OPT_FLAGS
+export LDFLAGS="-Wl,-Bsymbolic-functions $LDFLAGS"
+mkdir build
+cd build
+export LIB_SUFFIX=$(echo %_lib | cut -b4-)
+
+# We can't use packaging mode for SuSE 11.x, since libsource-highlight is missing.
+cmake -DDISABLE_RPATH=1 -DCMAKE_INSTALL_PREFIX=/usr -DLIB_SUFFIX=$LIB_SUFFIX -DDISABLE_MPI=1 \
+%if 0%{?suse_version} >= 1200
+  -DPACKAGING_MODE=1 \
+%endif
+  ..
+
 %make_jobs
 LD_LIBRARY_PATH=`pwd`/engine:"$LD_LIBRARY_PATH" make %{?_smp_mflags} VERBOSE=1 test ARGS=-V
 
@@ -61,8 +76,6 @@ LD_LIBRARY_PATH=`pwd`/engine:"$LD_LIBRARY_PATH" make %{?_smp_mflags} VERBOSE=1 t
 pushd build
 %makeinstall
 popd
-
-%kde_post_install
 
 %post
 /sbin/ldconfig
@@ -112,11 +125,12 @@ rm -rf $RPM_BUILD_ROOT
 %doc CHANGES.txt
 %doc HIGHLIGHTS.txt
 %doc LICENSE.txt
+%docdir %{_datadir}/regina/docs/en/regina
+%docdir %{_datadir}/regina/docs/en/regina-xml
 %docdir %{_datadir}/regina/engine-docs
-%docdir %{_kde4_docdir}/HTML/en/regina
-%docdir %{_kde4_docdir}/HTML/en/regina-xml
 %{_bindir}/*
-%{_datadir}/applications/kde4/regina.desktop
+%{_datadir}/applications/regina.desktop
+%{_datadir}/icons/hicolor/*/*/*
 %{_datadir}/mime/packages/regina.xml
 %{_datadir}/regina/
 %{_includedir}/regina/
@@ -124,12 +138,12 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libregina-engine.so.%{version}
 %{_libdir}/regina/python/regina.so
 %{_mandir}/*/*
-%{_kde4_appsdir}/regina/
-%{_kde4_docdir}/HTML/en/regina/
-%{_kde4_docdir}/HTML/en/regina-xml/
-%{_kde4_iconsdir}/*/*/*
 
 %changelog
+* Wed Mar 28 2012 Ben Burton <bab@debian.org> 4.92
+- New upstream release.
+- Ported from KDE4 to Qt4-only.
+
 * Mon Sep 12 2011 Ben Burton <bab@debian.org> 4.90
 - New upstream release.
 - Ported from KDE3 to KDE4, and from autotools to cmake.
