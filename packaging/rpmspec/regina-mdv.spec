@@ -16,7 +16,11 @@ Packager: Ben Burton <bab@debian.org>
 BuildRoot: %{_tmppath}/%{name}-buildroot
 
 Requires: graphviz
+%if 0%{?mdvver} <= 201020
+Requires: okular
+%else
 Requires: mimehandler(application/pdf)
+%endif
 Requires: python
 Conflicts: regina
 
