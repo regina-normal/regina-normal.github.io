@@ -7,5 +7,5 @@ Abstract: Regina is a suite of mathematical software for 3-manifold
 Section: Science/Mathematics
 
 Format: HTML
-Index: /usr/share/doc/regina-normal-doc/handbook/index.html
-Files: /usr/share/doc/regina-normal-doc/handbook/*.html
+Index: /usr/share/doc/regina-normal-doc/docs/en/regina/index.html
+Files: /usr/share/doc/regina-normal-doc/docs/en/regina/*.html

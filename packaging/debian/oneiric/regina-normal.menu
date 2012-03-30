@@ -1,7 +1,7 @@
 ?package(regina-normal):needs="X11"\
   section="Applications/Science/Mathematics"\
   title="Regina"\
-  command="/usr/bin/regina-kde"\
+  command="/usr/bin/regina-gui"\
   icon="/usr/share/pixmaps/regina-normal.xpm"
 ?package(regina-normal):needs="text"\
   section="Applications/Science/Mathematics"\

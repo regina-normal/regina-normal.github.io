@@ -3,7 +3,7 @@ Regina for Ubuntu
 
 Regina comes with two main binaries:
 
-- /usr/bin/regina-kde, which starts the graphical user interface;
+- /usr/bin/regina-gui, which starts the graphical user interface;
 - /usr/bin/regina-python, which starts a command-line Python session.
 
 Regina also provides several other specialised command-line tools; see the
@@ -26,4 +26,4 @@ regina-normal-dev.
 For MPI-enable components that can run on high-performance clusters,
 see the package regina-normal-mpi.
 
- -- Ben Burton <bab@debian.org>, Fri,  9 Sep 2011 06:33:29 +1000
+ -- Ben Burton <bab@debian.org>, Fri, 30 Mar 2012 14:10:01 +1000

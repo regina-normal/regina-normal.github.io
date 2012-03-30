@@ -5,10 +5,6 @@
 
 tmp = debian/tmp
 
-DEB_KDE_LINK_WITH_AS_NEEDED = yes
-
-include /usr/share/pkg-kde-tools/makefiles/1/variables.mk
-
 INSTALL_DIR = install -p -d -o root -g root -m 755
 INSTALL_FILE = install -p -o root -g root -m 644
 
@@ -29,10 +25,10 @@ ${build_dir}:
 	cd ${build_dir} && \
 		cmake $(CURDIR) \
 		-DPACKAGE_NAME=regina-normal -DPACKAGING_MODE=1 \
-		$(DEB_CMAKE_KDE4_FLAGS) \
 		$(DEB_CMAKE_CUSTOM_FLAGS) \
 		-DPYTHON_EXECUTABLE=/usr/bin/python${pyver} \
 		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DDISABLE_RPATH=1 \
 		-DCMAKE_MODULE_PATH="/usr/share/apps/cmake/modules"
 
 configure: ${build_dir}
@@ -71,6 +67,10 @@ install: build
 
 	# Split into separate binary packages.
 	dh_install --sourcedir=$(tmp) --list-missing
+
+	# Install a pixmap for the menu system.
+	$(INSTALL_DIR) debian/regina-normal/usr/share/pixmaps
+	$(INSTALL_FILE) icons/regina.xpm debian/regina-normal/usr/share/pixmaps/regina-normal.xpm
 
 	# Install lintian overrides.
 	for pkg in `dh_listpackages`; do \

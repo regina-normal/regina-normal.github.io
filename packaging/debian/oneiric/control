@@ -3,13 +3,13 @@ Section: math
 Priority: extra
 Maintainer: Ben Burton <bab@debian.org>
 Homepage: http://regina.sourceforge.net/
-Build-Depends: debhelper (>= 7), cmake, doxygen, kdelibs5-dev, libboost-python-dev (>= 1.39.0), libcppunit-dev (>= 1.10.2-4), libgmp3-dev (>= 4.1.4-10), mpi-default-dev, libpopt-dev, libxml2-dev, pkg-kde-tools, python-dev (>= 2.5.2-1~), python-support (>= 0.6), shared-mime-info, zlib1g-dev
+Build-Depends: debhelper (>= 7), cmake, doxygen, libboost-python-dev (>= 1.39.0), libboost-regex-dev, libcppunit-dev (>= 1.10.2-4), libgmp-dev (>= 4.1.4-10), libqt4-dev, libpopt-dev, libsource-highlight-dev, libxml2-dev, mpi-default-dev, python-dev (>= 2.5.2-1~), python-support (>= 0.6), shared-mime-info, xsltproc, zlib1g-dev
 Standards-Version: 3.9.2.0
 
 Package: regina-normal
 Architecture: any
 Section: math
-Depends: ${shlibs:Depends}, ${perl:Depends}, ${python:Depends}, ${misc:Depends}, graphviz, regina-normal-doc (>= 4.90-0)
+Depends: ${shlibs:Depends}, ${perl:Depends}, ${python:Depends}, ${misc:Depends}, graphviz, regina-normal-doc (>= 4.91-0)
 Recommends: gap, okular | pdf-viewer
 Suggests: regina-normal-dev, regina-normal-mpi
 Description: software for 3-manifold topology and normal surfaces
@@ -30,7 +30,7 @@ Description: software for 3-manifold topology and normal surfaces
 Package: regina-normal-dev
 Architecture: any
 Section: libdevel
-Depends: regina-normal (= ${binary:Version}), libgmp3-dev, libxml2-dev, zlib1g-dev, ${misc:Depends}
+Depends: regina-normal (= ${binary:Version}), libgmp-dev, libxml2-dev, zlib1g-dev, ${misc:Depends}
 Suggests: regina-normal-doc
 Description: development files for Regina, the 3-manifold topology software
  Regina is a suite of mathematical software for 3-manifold topologists.
@@ -73,7 +73,7 @@ Description: MPI utilities for Regina, the 3-manifold topology software
 Package: regina-normal-doc
 Architecture: all
 Section: doc
-Depends: ${misc:Depends}, kdelibs5-data
+Depends: ${misc:Depends}
 Recommends: iceweasel | www-browser
 Suggests: regina-normal, regina-normal-dev
 Breaks: regina-normal (<< 4.6-2)
