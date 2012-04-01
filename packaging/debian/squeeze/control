@@ -10,7 +10,7 @@ Package: regina-normal
 Architecture: any
 Section: math
 Depends: ${shlibs:Depends}, ${perl:Depends}, ${python:Depends}, ${misc:Depends}, graphviz, regina-normal-doc (>= 4.91-0)
-Recommends: gap, okular | pdf-viewer
+Recommends: gap, evince | pdf-viewer
 Suggests: regina-normal-dev, regina-normal-mpi
 Description: software for 3-manifold topology and normal surfaces
  Regina is a suite of mathematical software for 3-manifold topologists.
@@ -30,7 +30,7 @@ Description: software for 3-manifold topology and normal surfaces
 Package: regina-normal-dev
 Architecture: any
 Section: libdevel
-Depends: regina-normal (= ${binary:Version}), libgmp3-dev, libxml2-dev, zlib1g-dev, ${misc:Depends}
+Depends: regina-normal (= ${binary:Version}), libboost-dev, libgmp3-dev, libxml2-dev, zlib1g-dev, ${misc:Depends}
 Suggests: regina-normal-doc
 Description: development files for Regina, the 3-manifold topology software
  Regina is a suite of mathematical software for 3-manifold topologists.
