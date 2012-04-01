@@ -5,16 +5,15 @@ Build-dependencies include:
 
   boost1.46.1.cmake
   cmake
-  cppunit1.12.1 (or cppunit1.10.2 until 1.12.1 is pushed into fink stable)
+  cppunit1.12.1
   doxygen
   gmp5
-  libiconv-dev
+  libsource-highlight4
   libxml2
+  libxslt-bin
   popt
 
-Standalone build-dependencies (from outside fink) include:
-
-  Qt for MacOS
+  qt4-base-mac (for i386), or Nokia's standalone Qt install (for x86_64)
 
 To configure:
 
@@ -27,13 +26,8 @@ To configure:
 Then:
 
   make
+  make test ARGS=-V
   make install
 
 At this point the bundle Regina.app should be ready in the install location.
 
-To create a very basic DMG for shipping:
-
-  hdiutil create -srcfolder Regina.app Regina.dmg
-
-TODO: Nathan knows how to customise the DMG; put the details in this
-packaging directory.
