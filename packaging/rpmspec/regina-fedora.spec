@@ -31,6 +31,7 @@ BuildRequires: glibc-devel
 BuildRequires: gmp-devel
 BuildRequires: libstdc++-devel
 BuildRequires: libxml2-devel
+BuildRequires: libxslt
 BuildRequires: popt-devel
 BuildRequires: python-devel
 BuildRequires: qt-devel

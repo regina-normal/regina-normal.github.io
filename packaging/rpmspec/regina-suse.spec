@@ -34,6 +34,11 @@ BuildRequires: libsource-highlight-devel
 %endif
 BuildRequires: libstdc++-devel
 BuildRequires: libxml2-devel
+%if 0%{?suse_version} >= 1200
+BuildRequires: libxslt1
+%else
+BuildRequires: libxslt
+%endif
 BuildRequires: popt-devel
 BuildRequires: python-devel
 BuildRequires: shared-mime-info
