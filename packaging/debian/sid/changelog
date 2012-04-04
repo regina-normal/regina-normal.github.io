@@ -1,8 +1,9 @@
-regina-normal (4.91-2) unstable; urgency=low
+regina-normal (4.91-1) unstable; urgency=low
 
   * New upstream release.
   * The user interface is now Qt-only, and no longer depends on KDE.
   * The GUI is now /usr/bin/regina-gui, not /usr/bin/regina-kde.
+  * Builds under gcc 4.7 (closes: #667354).
   * Bumped standards-version to 3.9.3 (no changes required).
 
  -- Ben Burton <bab@debian.org>  Fri, 30 Mar 2012 14:10:01 +1000
