@@ -3,6 +3,8 @@ regina-normal (4.91-1ubuntu1~maverick1) maverick; urgency=low
   * New upstream release, backported to ubuntu maverick.
   * The user interface is now Qt-only, and no longer depends on KDE.
   * The GUI is now /usr/bin/regina-gui, not /usr/bin/regina-kde.
+  * Builds under gcc 4.7 (closes: #667354).
+  * Bumped standards-version to 3.9.3 (no changes required).
 
  -- Ben Burton <bab@debian.org>  Fri, 30 Mar 2012 14:10:01 +1000
 
