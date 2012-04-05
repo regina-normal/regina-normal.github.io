@@ -86,7 +86,8 @@ def main():
     print "Building an initial DMG..."
     os.system('hdiutil makehybrid -hfs -hfs-volume-name "%s" -hfs-openfolder "%s" "%s" -o "%s"' % (name, dist_dir, dist_dir, dmg_tmp))
     print "Converting the DMG format..."
-    os.system('hdiutil convert -format UDZO "%s" -o "%s"' % (dmg_tmp, dmg_real))
+    dmg_format = 'UDZO' # 'UDRW' if you want to edit the .DS_Store
+    os.system('hdiutil convert -format %s "%s" -o "%s"' % (dmg_format, dmg_tmp, dmg_real))
     print "Cleaning up..."
     os.remove(dmg_tmp)
     print "Done."
