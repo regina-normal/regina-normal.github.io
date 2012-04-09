@@ -160,6 +160,7 @@
                         <File Name='foreign.html'/>
                         <File Name='genealogy.html'/>
                         <File Name='gpl-license.html'/>
+                        <File Name='helplink.png'/>
                         <File Name='history.html'/>
                         <File Name='i18n-export.png'/>
                         <File Name='i18n-import.png'/>
@@ -235,14 +236,14 @@
                         <File Name='options-census.html'/>
                         <File Name='options-census.png'/>
                         <File Name='options-general.png'/>
-                        <File Name='options-pdf.html'/>
-                        <File Name='options-pdf.png'/>
                         <File Name='options-python.html'/>
                         <File Name='options-python.png'/>
                         <File Name='options-snappea.html'/>
                         <File Name='options-snappea.png'/>
                         <File Name='options-surfaces.html'/>
                         <File Name='options-surfaces.png'/>
+                        <File Name='options-tools.html'/>
+                        <File Name='options-tools.png'/>
                         <File Name='options-tri.png'/>
                         <File Name='options-triangulation.html'/>
                         <File Name='options.html'/>
@@ -260,6 +261,10 @@
                         <File Name='python.html'/>
                         <File Name='regina-python.png'/>
                         <File Name='reginawhite.png'/>
+                        <File Name='run-fedora-menu.png'/>
+                        <File Name='run-mac-white.png'/>
+                        <File Name='run-ubuntu-menu.png'/>
+                        <File Name='run-windows.png'/>
                         <File Name='script-edit.png'/>
                         <File Name='script-run.png'/>
                         <File Name='script-var.png'/>
