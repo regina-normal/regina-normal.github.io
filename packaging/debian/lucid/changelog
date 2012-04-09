@@ -1,4 +1,4 @@
-regina-normal (4.91-1ubuntu1~lucid1) lucid; urgency=low
+regina-normal (4.92-1ubuntu1~lucid1) lucid; urgency=low
 
   * New upstream release, backported to ubuntu lucid.
   * The user interface is now Qt-only, and no longer depends on KDE.

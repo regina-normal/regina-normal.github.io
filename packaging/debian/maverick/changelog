@@ -1,4 +1,4 @@
-regina-normal (4.91-1ubuntu1~maverick1) maverick; urgency=low
+regina-normal (4.92-1ubuntu1~maverick1) maverick; urgency=low
 
   * New upstream release, backported to ubuntu maverick.
   * The user interface is now Qt-only, and no longer depends on KDE.
