@@ -9,7 +9,7 @@ Standards-Version: 3.9.3
 Package: regina-normal
 Architecture: any
 Section: math
-Depends: ${shlibs:Depends}, ${perl:Depends}, ${python:Depends}, ${misc:Depends}, graphviz, regina-normal-doc (>= 4.91-0)
+Depends: ${shlibs:Depends}, ${perl:Depends}, ${python:Depends}, ${misc:Depends}, graphviz, regina-normal-doc (>= 4.92-0)
 Recommends: gap, evince | pdf-viewer
 Suggests: regina-normal-dev, regina-normal-mpi
 Description: software for 3-manifold topology and normal surfaces
