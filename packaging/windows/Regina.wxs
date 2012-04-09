@@ -1751,9 +1751,9 @@
     </Feature>
 
     <Icon Id='regina.ico'
-     SourceFile='c:\MinGW\msys\1.0\home\bab\regina-qt\qtui\src\regina.ico'/>
+     SourceFile='c:\MinGW\msys\1.0\home\bab\regina-4.92\qtui\src\regina.ico'/>
     <Icon Id='manual.ico'
-     SourceFile='c:\MinGW\msys\1.0\home\bab\regina-qt\qtui\src\manual.ico'/>
+     SourceFile='c:\MinGW\msys\1.0\home\bab\regina-4.92\qtui\src\manual.ico'/>
   </Product>
 </Wix>
 
