@@ -1,21 +1,21 @@
 <?xml version='1.0' encoding='windows-1252'?>
 <Wix xmlns='http://schemas.microsoft.com/wix/2006/wi'>
   <Product Id='9A4D16A6-A856-49BB-9A04-545531198CAC'
-   Name='Regina 4.91'
+   Name='Regina 4.92'
    UpgradeCode='C3D9D7D7-6614-4F3F-9D8E-EEA184C24A99'
    Language='1033'
    Codepage='1252'
-   Version='4.91.0'
+   Version='4.92.0'
    Manufacturer='Regina development team'>
     <Package Id='*'
      Keywords='Installer'
-     Description='Regina 4.91 Installer'
+     Description='Regina 4.92 Installer'
      Manufacturer='Regina development team'
      Languages='1033'
      Compressed='yes'
      SummaryCodepage='1252'/>
     <Media Id='1' Cabinet='Regina.cab' EmbedCab='yes' DiskPrompt='Disk #1'/>
-    <Property Id='DiskPrompt' Value='Regina 4.91 Installation [1]'/>
+    <Property Id='DiskPrompt' Value='Regina 4.92 Installation [1]'/>
     <UIRef Id='WixUI_Regina'/>
     <UIRef Id='WixUI_ErrorProgressText'/>
     <Property Id='WIXUI_INSTALLDIR' Value='INSTALLDIR'/>
@@ -25,7 +25,7 @@
     <Directory Id='TARGETDIR' Name='SourceDir'>
       <Directory Id='ProgramFilesFolder' Name='PFiles'>
         <Directory Id='Regina' Name='Regina'>
-          <Directory Id='INSTALLDIR' Name='Regina 4.91'
+          <Directory Id='INSTALLDIR' Name='Regina 4.92'
            FileSource='c:\MinGW\msys\1.0\home\bab\software'>
 
             <Directory Id='BINDIR' Name='bin'>
@@ -42,7 +42,7 @@
                    Advertise='yes'/>
                   <Shortcut Id='desktopRegina'
                    Directory='DesktopFolder'
-                   Name='Regina 4.91'
+                   Name='Regina 4.92'
                    WorkingDirectory='PersonalFolder'
                    Icon='regina.ico'
                    Advertise='yes'/>
@@ -1689,7 +1689,7 @@
         </Directory>
       </Directory>
       <Directory Id='ProgramMenuFolder' Name='Programs'>
-        <Directory Id='ProgramMenuDir' Name='Regina 4.91'>
+        <Directory Id='ProgramMenuDir' Name='Regina 4.92'>
           <Component Id='ProgramMenuDir'
            Guid='2EF46552-9E7B-4822-A773-621B48A205B4'>
             <RemoveFolder Id='ProgramMenuDir' On='uninstall'/>
@@ -1704,7 +1704,7 @@
     </Directory>
 
     <Feature Id='Complete'
-     Title='Regina 4.91'
+     Title='Regina 4.92'
      Description='The complete package.'
      AllowAdvertise='no'
      InstallDefault='local'

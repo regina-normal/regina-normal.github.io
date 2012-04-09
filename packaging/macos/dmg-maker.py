@@ -25,7 +25,7 @@ import os, sys, re
 from math import ceil
 
 name = "Regina"
-version = "4.91"
+version = "4.92"
 dmg_real = name + " " + version + ".dmg";
 dmg_tmp = name + " " + version + "-tmp.dmg";
 dist_dir = "dist"
