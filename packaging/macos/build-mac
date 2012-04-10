@@ -1,13 +1,13 @@
 #!/bin/bash
 set -e
 
-arch=`uname -m`
-if [ "x$arch" = "xi386" ]; then
-  # 32-bit fink build of Qt
-  qmake=/sw/lib/qt4-mac/bin/qmake
-else
+allow64=`sysctl -n hw.optional.x86_64`
+if [ "x$allow64" = "x1" ]; then
   # 64-bit Nokia build of Qt
   qmake=/Users/bab/QtSDK/Desktop/Qt/4.8.0/gcc/bin/qmake
+else
+  # 32-bit fink build of Qt
+  qmake=/sw/lib/qt4-mac/bin/qmake
 fi
 
 # Extract the default python version on MacOS and rewrite it as a
@@ -28,6 +28,8 @@ fi
 
 mkdir build
 cd build
+
+rm -rf /Users/bab/Regina.app
 
 cmake \
   -DCMAKE_INSTALL_PREFIX=/Users/bab \

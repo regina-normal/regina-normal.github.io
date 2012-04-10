@@ -27,7 +27,12 @@ from math import ceil
 name = "Regina"
 version = "4.92"
 
-arch = commands.getstatusoutput('uname -m')[1]
+allow64 = commands.getstatusoutput('sysctl -n hw.optional.x86_64')[1]
+if allow64 == '1':
+    arch = 'x86_64'
+else:
+    arch = 'i386'
+
 kernel = commands.getstatusoutput('uname -r | cut -d. -f1')[1]
 if kernel == '9':
     osver = 'Leopard'
