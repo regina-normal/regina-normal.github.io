@@ -27,19 +27,20 @@ from math import ceil
 name = "Regina"
 version = "4.92"
 
+arch = commands.getstatusoutput('uname -m')[1]
 kernel = commands.getstatusoutput('uname -r | cut -d. -f1')[1]
 if kernel == '9':
-    flavour = 'Leopard'
+    osver = 'Leopard'
 elif kernel == '10':
-    flavour = 'Snow Leopard'
+    osver = 'SnowLeopard'
 elif kernel == '11':
-    flavour = 'Lion'
+    osver = 'Lion'
 else:
-    print 'Unknown flavour of MacOS X:', kernel
+    print 'Unknown MacOS kernel version:', kernel
     sys.exit(1)
 
-dmg_real = name + " " + version + " (" + flavour + ").dmg";
-dmg_tmp = name + " " + version + "-tmp.dmg";
+dmg_real = name + "-" + version + "_" + osver + "-" + arch + ".dmg";
+dmg_tmp = name + "-" + version + "-tmp.dmg";
 dist_dir = "dist"
 
 def main():
