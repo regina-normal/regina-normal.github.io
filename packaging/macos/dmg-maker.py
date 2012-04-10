@@ -21,12 +21,24 @@ disk images created on it not work correctly on those systems.   Thus this "solu
 (4) Open the disk image in the Finder and do View->Hide Tool Bar and then View->Show View Options.  To add the background picture inside the hidden directory, use cmd-shift-g in the file dialog.  Adjust everything to suit, close window and open it.   Then copy the .DS_Store file to dotDS_store.  
 
 """
-import os, sys, re
+import os, sys, re, commands
 from math import ceil
 
 name = "Regina"
 version = "4.92"
-dmg_real = name + " " + version + ".dmg";
+
+kernel = commands.getstatusoutput('uname -r | cut -d. -f1')[1]
+if kernel == '9':
+    flavour = 'Leopard'
+elif kernel == '10':
+    flavour = 'Snow Leopard'
+elif kernel == '11':
+    flavour = 'Lion'
+else:
+    print 'Unknown flavour of MacOS X:', kernel
+    sys.exit(1)
+
+dmg_real = name + " " + version + " (" + flavour + ").dmg";
 dmg_tmp = name + " " + version + "-tmp.dmg";
 dist_dir = "dist"
 
