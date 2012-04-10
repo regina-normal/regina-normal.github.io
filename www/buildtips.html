@@ -14,7 +14,8 @@
 <tr><td valign="top">
     <table class="contents" cellspacing=0><tbody>
     <tr><td><a href="#linux">GNU/Linux</a></td></tr>
-    <tr><td><a href="#fink">Fink on MacOS X</a></td></tr>
+    <tr><td><a href="#macosx">MacOS X</a></td></tr>
+    <tr><td><a href="#windows">Windows</a></td></tr>
     <tr><td><a href="#cluster">Cluster environments</a></td></tr>
     <tr><td><a href="index.html">Back to main page ...</a></td></tr>
     </tbody></table>
@@ -48,65 +49,77 @@ update the build scripts (and this page) to reflect systems like yours.
 <h2><a name="linux">GNU/Linux</a></h2>
 
 <p>
-To work properly, Regina needs to be installed in the same location as
-KDE.  For most GNU/Linux distributions these days, this means installing
-directly beneath <tt>/usr</tt>, not the default path <tt>/usr/local</tt>.
-To fix this, you must pass the argument <tt>CMAKE_INSTALL_PREFIX</tt> to cmake:
+Since version&nbsp;4.92, Regina can be installed anywhere (it does not
+need to live directly beneath <tt>/usr</tt> as in the past).
+The default is to install in <tt>/usr/local</tt>, though you can change this
+if you like by passing the argument <tt>CMAKE_INSTALL_PREFIX</tt> to cmake:
 </p>
 <div class="example"><p>
-<tt>example$ cmake -DCMAKE_INSTALL_PREFIX=/usr ..</tt>
+<tt>example$ cmake -DCMAKE_INSTALL_PREFIX=/home/bab/software ..</tt>
 </p></div>
 <p>
 If you run a 64-bit version of linux (the <tt>x86_64</tt> or
 <tt>amd64</tt> architectures) and you use an RPM-based distribution
 (such as Fedora, Mandriva or SuSE),
-you will also need to set <tt>LIB_SUFFIX</tt>:
+you may wish to set <tt>LIB_SUFFIX</tt>:
 </p>
 <div class="example"><p>
-<tt>example$ cmake -DCMAKE_INSTALL_PREFIX=/usr -DLIB_SUFFIX=64 ..</tt>
+<tt>example$ cmake -DLIB_SUFFIX=64 ..</tt>
 </p></div>
 <p>
-This enables cmake to find the correct 64-bit development
-libraries in <tt>/usr/lib64/</tt>, and ensures that Regina's libraries
-are installed in the correct location.
+This ensures that Regina's libraries are installed in a 64-bit directory
+such as <tt>/usr/local/lib64/</tt>.
 </p>
 <p>
-If you are using a Debian-based distribution such as Debian or Ubuntu then
-<b>you should not set <tt>LIB_SUFFIX</tt></b>, since 64-bit Debian places
-libraries directly in <tt>/usr/lib/</tt>.
+Debian-based distributions (such as Debian or Ubuntu) do not use special
+directory names for 64-bit systems, and you should
+<b>not set <tt>LIB_SUFFIX</tt></b> on such machines.
 </p>
 
-<h2><a name="fink">Fink on MacOS X</a></h2>
+<h2><a name="macosx">MacOS X</a></h2>
 
 <p>
-Fink installs KDE in the non-standard location
-<tt>/sw/opt/kde4/mac/</tt>, and you need to jump through several hoops
-to help cmake find it.
+Although you do not need Fink to <i>run</i> Regina on MacOS&nbsp;X,
+you will still need Fink to <i>build</i> Regina in order to satisfy
+the <a href="source.html#sysreq">many build dependencies</a>.
+You can install Fink from
+<a href="http://finkproject.org/">finkproject.org</a>.
 </p>
 <p>
-First, you need to set some environment variables:
+You will need to pass several arguments to cmake:
+<ul>
+<li>To help Fink find your Qt installation, set
+<tt>QT_QMAKE_EXECUTABLE</tt> to the location of the <tt>qmake</tt>
+executable.</li>
+<li>To ensure that cmake picks up the system python installation instead
+of Fink's, set <tt>PYTHON_EXECUTABLE</tt> to <tt>/usr/bin/python</tt>.</li>
+<li>You will probably want to change the installation prefix from the
+default <tt>/usr/local</tt> by setting <tt>CMAKE_INSTALL_PREFIX</tt>.
+This controls where the application bundle will appear when you run
+<tt>make&nbsp;install</tt>.</li>
+</ul>
+</p>
+<p>
+A complete example of a cmake line that installs the application bundle
+on the user's desktop:
 </p>
 <div class="example">
 <p>
-<tt>example$ export KDE4_TYPE=mac</tt><br>
-<tt>example$ source /sw/sbin/kde4-buildenv.sh</tt>
+<tt>example$ cmake -DQT_QMAKE_EXECUTABLE=/sw/lib/qt4-mac/bin/qmake -DPYTHON_EXECUTABLE=/usr/bin/python -DCMAKE_INSTALL_PREFIX=/Users/bab/Desktop ..</tt>
 </p>
 </div>
+
+<h2><a name="windows">Windows</a></h2>
+
 <p>
-The second command sets the environment variable
-<tt>$KDE4_CMAKE_ARGS</tt>, which contains a long list of arguments for cmake.
+Building Regina under Windows is possible but extremely messy.
+If you are working with Regina's sources, we highly recommend that
+you do this under GNU/Linux or MacOS&nbsp;X.
 </p>
 <p>
-In addition, you must ensure that cmake picks up the system python
-installation, and not one of the fink installations.  You can do this
-by passing an appropriate <tt>PYTHON_EXECUTABLE</tt> argument.  In full,
-the cmake line is:
+If you really need to get a Windows build running, please mail the
+authors for assistance.
 </p>
-<div class="example">
-<p>
-<tt>example$ cmake $KDE4_CMAKE_ARGS -DPYTHON_EXECUTABLE=/usr/bin/python ..</tt>
-</p>
-</div>
 
 <h2><a name="cluster">Cluster environments</a></h2>
 
@@ -117,13 +130,13 @@ such as a university cluster, there are several complications.
 <h4>Disabling the graphical user interface</h4>
 <p>
 You will probably <i>not</i> want to
-build the graphical user interface (in fact the cluster will probably
-not have the KDE development libraries installed, which would cause
+build the graphical user interface (in fact the cluster may well
+not have the Qt development libraries installed, which would cause
 cmake to fail).
-To fix this, set the argument <tt>DISABLE_KDEUI</tt>:
+To fix this, set the argument <tt>DISABLE_GUI</tt>:
 </p>
 <div class="example"><p>
-<tt>example$ cmake -DDISABLE_KDEUI=1 ..</tt>
+<tt>example$ cmake -DDISABLE_GUI=1 ..</tt>
 </p></div>
 <h4>Installing beneath your home directory</h4>
 <p>
@@ -134,7 +147,7 @@ home directory.  You do this by creating a top-level install directory
 to cmake:
 </p>
 <div class="example"><p>
-<tt>example$ cmake -DDISABLE_KDEUI=1
+<tt>example$ cmake -DDISABLE_GUI=1
 -DCMAKE_INSTALL_PREFIX=/home/bab/software ..</tt>
 </p></div>
 <p>
