@@ -249,51 +249,39 @@ Some of the main highlights:
 
 <h4>Installation</h4>
 <ul>
-<li>Regina has been ported to KDE4, which means you can finally
-    install it on a modern GNU/Linux distribution.
-<li>The experience on MacOSX is much cleaner and more natural
-    than it ever was before.  You no longer need X11; instead
-    Regina acts almost like a native Mac app (though you still
-    need Fink; we're a long way yet from a drag-and-drop install).
+<li>MacOS users now have a simple drag-and-drop install.
+    If you want, you can now get rid of fink.
+<li>Windows users can install Regina!  This is also a simple
+    point-and-click install.
+<li>Linux users have far fewer dependencies than before: Regina is
+    now based on Qt only, and does not use anything from KDE.
 </ul>
 <h4>User Interface</h4>
 <ul>
-<li>The user interface has had a complete overhaul, and there have
-    been many small-but-important improvements to usability.
-<li>The <a href="docs/">Regina Handbook</a> has also had a complete overhaul.
-    It is more readable and streamlined, and full of screenshots to walk
-    you through what Regina can do.
+<li>The user interface has continued its overhaul, with many more
+    usability improvements.
+<li>Regina now uses many small windows instead of one monolithic window.
+    You can return to the &ldquo;old way&rdquo;
+	via Regina's settings if you prefer.
 </ul>
 <h4>Features</h4>
 <ul>
-<li>Regina now supports isomorphism signatures, which are short
-    sequences of letters, digits and punctuation that identify a
-    triangulation uniquely up to combinatorial isomorphism.
-<li>You can enumerate all taut angle structures, which is much
-    faster than enumerating all vertex angle structures.
-<li>You can test normal surfaces for incompressibility (through
-    C++/Python only).  See
-	<a href="http://arxiv.org/abs/0909.4625">arXiv:0909.4625</a>
+<li>You can now enumerate all fundamental normal surfaces, as well as
+    all vertex normal surfaces.
+    See <a href="http://arxiv.org/abs/1111.7055">arXiv:1111.7055</a>
 	for the algorithms.
-<li>In an orientable triangulation, you can now relabel vertices to make
-    all gluing maps orientation-reversing.  Just press the big Orient
-    button in the triangulation viewer.  Thanks to Matthias Goerner.
+<li>Face pairing graphs now have labels for tetrahedron numbers.
+<li>You can now see boundary slopes for spun normal surfaces;
+    thanks to William Pettersson and Stephan Tillmann.
+<li>There is now experimental support for transversely oriented
+    normal surfaces.  Again, thanks to Will and Stephan.
 </ul>
-<h4>Optimisations</h4>
+<h4>Python</h4>
 <ul>
-<li>A lot has changed under the hood for this release: the code is
-    generally cleaner and more streamlined throughout.
-<li>Normal surface enumeration is significantly faster again,
-    due to the use of a new trie-like data structure.
-</ul>
-<h4>C++ / Python Changes</h4>
-<ul>
-<li>Yet more code is deprecated in preparation for Regina 5.0.
-    See the <a href="deprecation.html">deprecation guide</a>
-    for updating your scripts and programs.
-<li>You no longer need to call <tt>NTriangulation::gluingsHaveChanged()</tt>.
-<li>When building triangulations, you should now add tetrahedra using
-    <tt>NTriangulation::newTetrahedron()</tt>, not create tetrahedra yourself.
+<li>All python sessions now execute
+    &ldquo;<tt>from regina import&nbsp;*</tt>&rdquo;
+    by default.  For regina-python, you can disable this by passing
+    <tt>--noautoimport</tt>.
 </ul>
 <p>
 <i><a href="#contents">(Back to contents...)</a></i>
@@ -317,7 +305,7 @@ There are other mailing lists for user support and development;
 The primary developers of Regina are
 <a href="http://www.maths.uq.edu.au/~bab/">Benjamin Burton</a>,
 <a href="http://rybu.org/">Ryan Budney</a>, and
-William Pettersson.
+<a href="http://ewpettersson.se/">William Pettersson</a>.
 <p>
 Many others have been of assistance with this project, be it through
 time, knowledge, testing or code.  Please see the
