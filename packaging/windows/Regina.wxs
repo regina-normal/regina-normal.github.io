@@ -152,6 +152,7 @@
                         <File Name='composition.png'/>
                         <File Name='container.png'/>
                         <File Name='credits.html'/>
+                        <File Name='dock.png'/>
                         <File Name='errmime1.png'/>
                         <File Name='errmime2.png'/>
                         <File Name='export-snappea.png'/>
@@ -688,6 +689,12 @@
                         <File Name='classregina_1_1NNormalSurfaceVectorMirrored-members.html'/>
                         <File Name='classregina_1_1NNormalSurfaceVectorMirrored.html'/>
                         <File Name='classregina_1_1NNormalSurfaceVectorMirrored.png'/>
+                        <File Name='classregina_1_1NNormalSurfaceVectorOriented-members.html'/>
+                        <File Name='classregina_1_1NNormalSurfaceVectorOriented.html'/>
+                        <File Name='classregina_1_1NNormalSurfaceVectorOriented.png'/>
+                        <File Name='classregina_1_1NNormalSurfaceVectorOrientedQuad-members.html'/>
+                        <File Name='classregina_1_1NNormalSurfaceVectorOrientedQuad.html'/>
+                        <File Name='classregina_1_1NNormalSurfaceVectorOrientedQuad.png'/>
                         <File Name='classregina_1_1NNormalSurfaceVectorQuad-members.html'/>
                         <File Name='classregina_1_1NNormalSurfaceVectorQuad.html'/>
                         <File Name='classregina_1_1NNormalSurfaceVectorQuad.png'/>
@@ -1222,6 +1229,8 @@
                         <File Name='nsignature_8h.html'/>
                         <File Name='nsimplesurfacebundle_8h.html'/>
                         <File Name='nsmirrored_8h.html'/>
+                        <File Name='nsoriented_8h.html'/>
+                        <File Name='nsorientedquad_8h.html'/>
                         <File Name='nsnappeacensusmfd_8h.html'/>
                         <File Name='nsnappeacensustri_8h.html'/>
                         <File Name='nsnappeatriangulation_8h.html'/>
