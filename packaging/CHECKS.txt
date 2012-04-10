@@ -10,7 +10,7 @@ Manual checks:
       - open sample file
       - snappea calculations
       - face pairing graphs
-      - GUI scripting
+      - GUI scripting and syntax highlighting
       - handbook and engine docs (including graphs)
 	  - open data file from desktop / file manager
   - regina-python
