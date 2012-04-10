@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='windows-1252'?>
 <Wix xmlns='http://schemas.microsoft.com/wix/2006/wi'>
-  <Product Id='9A4D16A6-A856-49BB-9A04-545531198CAC'
+  <Product Id='*'
    Name='Regina 4.92'
    UpgradeCode='C3D9D7D7-6614-4F3F-9D8E-EEA184C24A99'
    Language='1033'
@@ -14,6 +14,13 @@
      Languages='1033'
      Compressed='yes'
      SummaryCodepage='1252'/>
+    <Upgrade Id='C3D9D7D7-6614-4F3F-9D8E-EEA184C24A99'>
+      <UpgradeVersion OnlyDetect='no'/>
+    </Upgrade>
+    <InstallExecuteSequence>
+      <RemoveExistingProducts After="InstallInitialize"/>
+    </InstallExecuteSequence>
+
     <Media Id='1' Cabinet='Regina.cab' EmbedCab='yes' DiskPrompt='Disk #1'/>
     <Property Id='DiskPrompt' Value='Regina 4.92 Installation [1]'/>
     <UIRef Id='WixUI_Regina'/>
@@ -364,7 +371,7 @@
                            Name='File Format Reference'
                            Icon='manual.ico'
                            Advertise='yes'/>
-						</File>
+                        </File>
                         <File Name='kde-default.css'
                          Id='regina_xml_kde_default.css'/>
                         <File Name='regina_logo.png'
@@ -439,7 +446,7 @@
                            Name='Python API Reference'
                            Icon='manual.ico'
                            Advertise='yes'/>
-						</File>
+                        </File>
                         <File Name='annotated.html'/>
                         <File Name='approx_8h.html'/>
                         <File Name='base64_8h.html'/>
