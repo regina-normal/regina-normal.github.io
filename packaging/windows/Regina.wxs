@@ -15,7 +15,7 @@
      Compressed='yes'
      SummaryCodepage='1252'/>
     <Upgrade Id='C3D9D7D7-6614-4F3F-9D8E-EEA184C24A99'>
-      <UpgradeVersion OnlyDetect='no'/>
+      <UpgradeVersion OnlyDetect='no' Property="PREVIOUSFOUND" Minimum="0.0.0"/>
     </Upgrade>
     <InstallExecuteSequence>
       <RemoveExistingProducts After="InstallInitialize"/>
@@ -152,8 +152,6 @@
                         <File Name='composition.png'/>
                         <File Name='container.png'/>
                         <File Name='credits.html'/>
-                        <File Name='dockbutton.png'/>
-                        <File Name='embedpdf.png'/>
                         <File Name='errmime1.png'/>
                         <File Name='errmime2.png'/>
                         <File Name='export-snappea.png'/>
@@ -183,17 +181,12 @@
                         <File Name='icon-triangulation.png'/>
                         <File Name='import-isosig.png'/>
                         <File Name='import-snappea.png'/>
-                        <File Name='kfiledlg-bad.png'/>
-                        <File Name='kfiledlg-fix.png'/>
-                        <File Name='kfiledlg-good.png'/>
                         <File Name='license.html'/>
-                        <File Name='mac-pdf.png'/>
-                        <File Name='macdock.png'/>
                         <File Name='man-regconcat.html'/>
                         <File Name='man-regconvert.html'/>
                         <File Name='man-regfiledump.html'/>
                         <File Name='man-regfiletype.html'/>
-                        <File Name='man-regina-kde.html'/>
+                        <File Name='man-regina-gui.html'/>
                         <File Name='man-regina-python.html'/>
                         <File Name='man-sigcensus.html'/>
                         <File Name='man-tricensus-mpi-status.html'/>
@@ -351,10 +344,7 @@
                         <File Name='triangulations.html'/>
                         <File Name='triheader.png'/>
                         <File Name='triview.png'/>
-                        <File Name='trouble-help.png'/>
-                        <File Name='trouble-pdf.png'/>
                         <File Name='troubleshooting.html'/>
-                        <File Name='undocked.png'/>
                         <File Name='utils.html'/>
                         <File Name='who.html'/>
                       </Component>
