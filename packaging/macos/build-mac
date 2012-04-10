@@ -1,0 +1,27 @@
+#!/bin/bash
+set -e
+
+arch=`uname -m`
+if [ "x$arch" = "xi386" ]; then
+  # 32-bit fink build of Qt
+  qmake=/sw/lib/qt4-mac/bin/qmake
+else
+  # 64-bit Nokia build of Qt
+  qmake=/Users/bab/QtSDK/Desktop/Qt/4.8.0/gcc/bin/qmake
+fi
+
+mkdir build
+cd build
+
+cmake \
+  -DCMAKE_INSTALL_PREFIX=/Users/bab \
+  -DPYTHON_EXECUTABLE=/usr/bin/python \
+  -DQT_QMAKE_EXECUTABLE="$qmake" \
+  -DPACKAGING_MODE=1 \
+  -DDISABLE_MPI=1 \
+  ..
+
+make
+make test ARGS=-V
+make install
+
