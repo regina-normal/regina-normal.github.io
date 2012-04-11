@@ -2,7 +2,6 @@ Build dependencies from mingw:
   mingw-get install mingw32-libz
   mingw-get install mingw32-gmp
   mingw-get install mingw32-libpopt
-  mingw-get install msys-libxml2
 
 Build dependencies with standalone installers:
   CMake
