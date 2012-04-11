@@ -112,7 +112,48 @@ MacOS&nbsp;X.  Click on each thumbnail for a full-sized version.
 
 <h2><a name="download">Download</a></h2>
 
-You can install ready-made packages for many GNU/Linux distributions.
+<h4>MacOS X</h4>
+
+Regina on MacOS&nbsp;X uses a typical drag-and-drop installer:
+download and open the installer from the table below, and then
+drag Regina into your Applications folder (or wherever else you like).
+<p>
+<blockquote><table cellspacing=0 border=0 align=center class="data"><tbody>
+<tr><th class="first">MacOS Version</th><th>Installer</th></tr>
+<tr><td class="first">Lion (10.7)<br>
+    Snow Leopard (10.6) on modern 64-bit machines
+    </td>
+    <td align="center"><a href="http://prdownloads.sourceforge.net/regina/Regina-4.92_SnowLeopard-x86_64.dmg">Download</a></td>
+    </tr>
+<tr><td class="altfirst">Snow Leopard (10.6) on older 32-bit machines<br>
+    Leopard (10.5)
+    </td>
+    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/Regina-4.92_Leopard-i386.dmg">Download</a></td>
+    </tr>
+</tbody></table>
+</blockquote>
+<p>
+Most Snow Leopard users should be able to run the 64-bit Lion package.
+If your machine is very old, you might get an error message
+<i>&lsquo;You can't open the application "Regina" because it is not
+supported on this architecture&rsquo;</i>.  In this case, you can run
+the 32-bit Leopard package instead.
+<p>
+<h4>Windows</h4>
+
+Regina on Windows uses a standard point-and-click installer.
+<p>
+<blockquote><table cellspacing=0 border=0 align=center class="data"><tbody>
+<tr><th class="first">Windows Version</th><th>Installer</th></tr>
+<tr><td class="first">Windows 7<br>Windows Vista</td>
+    <td align="center"><a href="http://prdownloads.sourceforge.net/regina/Regina-4.92_Windows7.msi">Download</a></td>
+    </tr>
+</tbody></table>
+</blockquote>
+<p>
+<h4>GNU/Linux</h4>
+
+You can download ready-made packages for several GNU/Linux distributions.
 All of these packages are named <b>regina-normal</b> (to avoid conflicting
 with the <a href="http://regina-rexx.sourceforge.net/">other Regina</a>).
 Please click on the <i>Download</i> link for your system in the table below.
@@ -122,7 +163,7 @@ To keep the installation simple, most packages do not include the MPI
 <a href="mailto:bab@debian.org">let Ben know</a>
 and he can build you an MPI-enabled package.
 <p>
-<blockquote><table cellspacing=0 border=0 align=center class="data">
+<blockquote><table cellspacing=0 border=0 align=center class="data"><tbody>
 <tr><th class="first">Distribution</th>
     <th>Version</th>
     <th>32-bit package (i386 or i586)</th>
@@ -147,11 +188,6 @@ and he can build you an MPI-enabled package.
     <td class="alt">14</td>
     <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.92-1.fedora14.i386.rpm">Download</a></td>
     <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.92-1.fedora14.x86_64.rpm">Download</a></td>
-    </tr>
-<tr><td rowspan=1 class="first">Fink / MacOS&nbsp;X</td>
-    <td>10.5 / 10.6</td>
-    <td align="center" colspan=2><a href="install/fink.html">Instructions</a>,
-    <a href="install/fink/regina-normal.info">Info File</a></td>
     </tr>
 <tr><td rowspan=2 class="altfirst">Mandriva</td>
     <td class="alt">2011.0</td>
@@ -188,7 +224,7 @@ and he can build you an MPI-enabled package.
     <td class="alt" align="center"><a href="install/ubuntu-lucid.html">Download</a></td>
     <td class="alt" align="center"><a href="install/ubuntu-lucid.html">Download</a></td>
     </tr>
-</table></blockquote>
+</tbody></table></blockquote>
 <p>
 If your system is not in this table, you will need to build Regina from
 source.
@@ -255,14 +291,14 @@ Some of the main highlights:
     usability improvements.
 <li>Regina now uses many small windows instead of one monolithic window.
     You can return to the &ldquo;old way&rdquo;
-	via Regina's settings if you prefer.
+    via Regina's settings if you prefer.
 </ul>
 <h4>Features</h4>
 <ul>
 <li>You can now enumerate all fundamental normal surfaces, as well as
     all vertex normal surfaces.
     See <a href="http://arxiv.org/abs/1111.7055">arXiv:1111.7055</a>
-	for the algorithms.
+    for the algorithms.
 <li>Face pairing graphs now have labels for tetrahedron numbers.
 <li>You can now see boundary slopes for spun normal surfaces;
     thanks to William Pettersson and Stephan Tillmann.
