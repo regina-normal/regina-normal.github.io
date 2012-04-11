@@ -50,8 +50,9 @@ To build cppunit:
   ./configure --prefix=/home/bab/software
 
 To build the python system library for shipping:
-  cd /c/Python27
+  cd /c/Python27/Lib
   zip -r path/to/python27.zip . -x distutils/\* -x \*.pyc
+  Also copy python27.dll from /c/Windows/System32
 
 To build regina:
   cmake -G 'MSYS Makefiles'
