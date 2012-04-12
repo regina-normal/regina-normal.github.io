@@ -1,6 +1,10 @@
 Notes for building Debian-based packages
 ----------------------------------------
 
+To build only architecture-dependent binary packages;
+
+    debuild -B
+
 To build in a clean chroot:
 
 - Install schroot
