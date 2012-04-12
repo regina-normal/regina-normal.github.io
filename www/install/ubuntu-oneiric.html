@@ -57,12 +57,30 @@ Software (universe) if this has not been done before.
 </ul>
 </li>
 <li><p>
-Install Regina like you would any other package.  Just search for the
-package <tt>regina-normal</tt> in the Ubuntu Software Centre, and press
-<i>Install</i>.
+Unfortunately, <b>the 11.10 Ubuntu Software Centre
+<a href="https://bugs.launchpad.net/ubuntu/+source/software-center/+bug/782953">has a bug</a></b>
+which means you will need to finish the installation by typing
+commands into a terminal window.
+</p>
+<ul>
+<li><p>
+Update the list of available packages.  In a terminal window, type:
+</p>
+<div class="example"><p>
+<tt>sudo apt-get update</tt>
+</p></div>
+</p>
+<p align="center"><img src="oneiric/ubuntu-update.png"></p>
+<p>
+Now you can install Regina.  In the same terminal window, type:
+</p>
+<div class="example"><p>
+<tt>sudo apt-get install regina-normal</tt>
+</p></div>
 </p>
 <p align="center"><img src="oneiric/ubuntu-install.png"></p>
 </li>
+</ul>
 </ol>
 <p>
 If you are a C++ programmer and you wish to build Regina into your own
