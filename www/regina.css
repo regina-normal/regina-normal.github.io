@@ -116,7 +116,11 @@ table.data td.first, table.data td.altfirst, table.data td.reqfirst, table.data 
   border-width: 0px 2px 2px 2px;
 }
 
-table.data td.alt, table.data td.altfirst {
+table.data td.firstjoin, table.data td.altfirstjoin {
+  border-width: 0px 0px 2px 2px;
+}
+
+table.data td.alt, table.data td.altfirst, table.data td.altfirstjoin {
   background-color: #E9EAF8;
 }
 
