@@ -5,7 +5,7 @@
 
 Name: regina-normal
 Summary: Software for 3-manifold topology and normal surfaces
-Version: 4.92
+Version: 4.93
 Release: 1.%{_vendor}
 License: GPL
 # I wish there were a more sane group (like Applications/Mathematics).
@@ -111,6 +111,9 @@ rm -rf %{buildroot}
 %{_mandir}/*/*
 
 %changelog
+* Tue May 29 2012 Ben Burton <bab@debian.org> 4.93
+- New upstream release.
+
 * Wed Mar 28 2012 Ben Burton <bab@debian.org> 4.92
 - New upstream release.
 - Ported from KDE4 to Qt4-only.
