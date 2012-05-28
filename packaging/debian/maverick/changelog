@@ -1,6 +1,12 @@
-regina-normal (4.92-1ubuntu1~maverick1) maverick; urgency=low
+regina-normal (4.93-1ubuntu1~maverick1) maverick; urgency=low
 
   * New upstream release, backported to ubuntu maverick.
+
+ -- Ben Burton <bab@debian.org>  Tue, 29 May 2012 08:46:45 +1000
+
+regina-normal (4.92-1) unstable; urgency=low
+
+  * New upstream release.
   * The user interface is now Qt-only, and no longer depends on KDE.
   * The GUI is now /usr/bin/regina-gui, not /usr/bin/regina-kde.
   * Builds under gcc 4.7 (closes: #667354).
