@@ -25,7 +25,7 @@ import os, sys, re, commands
 from math import ceil
 
 name = "Regina"
-version = "4.92"
+version = "4.93"
 
 allow64 = commands.getstatusoutput('sysctl -n hw.optional.x86_64')[1]
 if allow64 == '1':
