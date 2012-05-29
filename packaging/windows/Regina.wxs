@@ -1277,6 +1277,7 @@
                         <File Name='pdf_8h.html'/>
                         <File Name='permconv_8h.html'/>
                         <File Name='ptrutils_8h.html'/>
+                        <File Name='recogniser_8h.html'/>
                         <File Name='reflector.png'/>
                         <File Name='regina-core_8h.html'/>
                         <File Name='sfcombination_8h.html'/>
@@ -1569,6 +1570,10 @@
                       <File Name='tools-wizard-22.png'/>
                       <File Name='tools-wizard-32.png'/>
                       <File Name='tools-wizard-48.png'/>
+                      <File Name='utilities-terminal-16.png'/>
+                      <File Name='utilities-terminal-22.png'/>
+                      <File Name='utilities-terminal-32.png'/>
+                      <File Name='utilities-terminal-48.png'/>
                       <File Name='view-list-text-16.png'/>
                       <File Name='view-list-text-22.png'/>
                       <File Name='view-list-text-32.png'/>
