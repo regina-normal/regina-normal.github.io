@@ -5,6 +5,14 @@ To build only architecture-dependent binary packages;
 
     debuild -B
 
+To build only a source package:
+
+    debuild -S
+
+To build binary packages only on debian sid from a .dsc:
+
+    sbuild -d sid *.dsc
+
 To build in a clean chroot:
 
 - Install schroot
