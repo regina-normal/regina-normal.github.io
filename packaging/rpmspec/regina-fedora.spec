@@ -59,9 +59,9 @@ pushd %{_target_platform}
 
 export QTDIR="%{_qt4_prefix}"
 export PATH="%{_qt4_bindir}:$PATH"
-export CFLAGS="${CFLAGS:-%optflags}"
-export CXXFLAGS="${CXXFLAGS:-%optflags}"
-export FFLAGS="${FFLAGS:-%optflags}"
+export CFLAGS="${CFLAGS:--O2}"
+export CXXFLAGS="${CXXFLAGS:--O2}"
+export FFLAGS="${FFLAGS:--O2}"
 export LIB_SUFFIX=$(echo %_lib | cut -b4-)
 cmake -DDISABLE_RPATH=1 -DCMAKE_INSTALL_PREFIX=/usr -DLIB_SUFFIX=$LIB_SUFFIX \
   -DCMAKE_VERBOSE_MAKEFILE=ON -DDISABLE_MPI=1 -DPACKAGING_MODE=1 \
