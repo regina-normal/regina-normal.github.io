@@ -1,7 +1,7 @@
-Regina for Ubuntu:  Precise (Ubuntu 12.04)
-------------------------------------------
+Regina for Ubuntu:  Precise (Ubuntu 12.04 LTS)
+----------------------------------------------
 
-If you use Precise Pangolin (the Ubuntu 12.04 release), you can obtain
+If you use Precise Pangolin (the Ubuntu 12.04 LTS release), you can obtain
 packages from the official Regina repository on people.debian.org.
 
 This means that Ubuntu will automatically fetch dependencies for you, and

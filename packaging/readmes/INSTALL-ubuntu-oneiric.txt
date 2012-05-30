@@ -58,4 +58,4 @@ version of Regina, you should follow the steps outlined above.
 
 ------------------------------------
 
-Ben Burton <bab@debian.org>, Thu, 12 Apr 2012 15:32:50 +1000
+Ben Burton <bab@debian.org>, Wed, 30 May 2012 11:26:17 +1000
