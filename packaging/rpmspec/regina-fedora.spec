@@ -1,4 +1,5 @@
 # Known to work for:
+# - Fedora 17 (i386, x86_64)
 # - Fedora 16 (i386, x86_64)
 # - Fedora 15 (i386, x86_64)
 # - Fedora 14 (i386, x86_64)
