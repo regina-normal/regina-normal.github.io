@@ -28,38 +28,38 @@ In summary, to build Regina:
     libraries as listed in the <a href="#sysreq">system
     requirements</a> table below.</li>
     <li>Download the source archive
-    <tt><b>regina-4.93.tar.gz</b></tt> from the
-    <a href="http://prdownloads.sourceforge.net/regina/regina-4.93.tar.gz">Regina
+    <tt><b>regina-4.94.tar.gz</b></tt> from the
+    <a href="http://prdownloads.sourceforge.net/regina/regina-4.94.tar.gz">Regina
     download site</a>.</li>
     <li>Unpack this source archive, which will expand into a directory
-    <tt><b>regina-4.93/</b></tt> on your machine.
+    <tt><b>regina-4.94/</b></tt> on your machine.
     <div class="example"><p>
-    <tt>example:~$ <b>tar -zxf regina-4.93.tar.gz</b></tt>
+    <tt>example:~$ <b>tar -zxf regina-4.94.tar.gz</b></tt>
     </p></div></li>
-	<li>Create a build subdirectory, such as
-    <tt><b>regina-4.93/build/</b></tt>.
+    <li>Create a build subdirectory, such as
+    <tt><b>regina-4.94/build/</b></tt>.
     <div class="example"><p>
-    <tt>example:~$ <b>cd regina-4.93</b></tt><br>
-    <tt>example:~/regina-4.93$ <b>mkdir build</b></tt>
+    <tt>example:~$ <b>cd regina-4.94</b></tt><br>
+    <tt>example:~/regina-4.94$ <b>mkdir build</b></tt>
     </p></div></li>
     <li>Move into the build directory, and then run
-	&ldquo;<tt><b>cmake ..</b></tt>&rdquo;.  This will
+    &ldquo;<tt><b>cmake ..</b></tt>&rdquo;.  This will
     search for the necessary tools and libraries on your system,
-	and configure your build accordingly.
+    and configure your build accordingly.
     <div class="example"><p>
-    <tt>example:~/regina-4.93$ <b>cd build</b></tt><br>
-    <tt>example:~/regina-4.93/build$ <b>cmake ..</b></tt>
+    <tt>example:~/regina-4.94$ <b>cd build</b></tt><br>
+    <tt>example:~/regina-4.94/build$ <b>cmake ..</b></tt>
     </p></div>
-	You will <b>almost certainly need to pass additional arguments to
-	cmake</b>.
+    You will <b>almost certainly need to pass additional arguments to
+    cmake</b>.
     Please visit <a href="buildtips.html">this page</a> for details.
     </li>
     <li>If cmake succeeds, run <tt><b>make</b></tt> to build Regina.
     Then, as root, run <tt><b>make install</b></tt> to install Regina on your
     system.
     <div class="example"><p>
-    <tt>example:~/regina-4.93/build$ <b>make</b></tt><br>
-    <tt>example:~/regina-4.93/build$ <b>sudo make install</b></tt>
+    <tt>example:~/regina-4.94/build$ <b>make</b></tt><br>
+    <tt>example:~/regina-4.94/build$ <b>sudo make install</b></tt>
     </p></div>
 </ul>
 That's all there is to it.
@@ -104,7 +104,7 @@ between different RPM-based distributions).
     <td class="req">Calculation engine</td>
     <td>&nbsp;</td>
     <td>libgmp-dev / libgmp3-dev (DEB)<br>
-	gmp-devel (plus gmpxx-devel on some systems) (RPM)
+    gmp-devel (plus gmpxx-devel on some systems) (RPM)
     </td></tr>
 <tr><td class="reqfirst">GNOME XML library <em>(libxml2)</em></td>
     <td class="req">Calculation engine</td>
@@ -142,7 +142,7 @@ between different RPM-based distributions).
     <td class="opt">Syntax highlighting</td>
     <td>&ge; 3.1.1</td>
     <td>libsource-highlight-dev (DEB)<br>
-	source-highlight-devel / libsource-highlight-devel (RPM)
+    source-highlight-devel / libsource-highlight-devel (RPM)
     </td></tr>
 <tr><td class="optfirst">xsltproc</td>
     <td class="opt">User handbook</td>
