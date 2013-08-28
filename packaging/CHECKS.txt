@@ -13,8 +13,10 @@ Manual checks:
       - GUI scripting and syntax highlighting
       - handbook and engine docs (including graphs)
 	  - open data file from desktop / file manager
+	  - tab completion
   - regina-python
       - print NExampleTriangulation.lens8_3().getHomologyH1()
+	  - tab completion
   - tools
       - regfiledump data file from desktop
   - dependencies (apt-cache show regina-normal ; rpm -qR regina-normal)
@@ -22,4 +24,4 @@ Manual checks:
 If you are interested in helping package Regina for one or more
 distributions, please contact the author at the address below.
 
- -- Ben Burton <bab@debian.org>, Tue, 10 Apr 2012 11:04:08 +1000
+ -- Ben Burton <bab@debian.org>, Wed, 28 Aug 2013 14:05:35 +1000
