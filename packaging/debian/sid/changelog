@@ -1,3 +1,17 @@
+regina-normal (4.93-1.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+
+  [ Peter Michael Green ]
+  * Force python library location to new multiarch path.
+    Closes: #713360
+  * Bump python-dev build-depends for multiarch.
+
+  [ gregor herrmann ]
+  * Build-depend on dpkg-dev >= 1.16.0 for multiarch support.
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 13 Jul 2013 17:07:24 +0200
+
 regina-normal (4.93-1) unstable; urgency=low
 
   * New upstream release.
