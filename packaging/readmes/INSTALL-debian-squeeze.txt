@@ -10,7 +10,7 @@ your package manager will know when new versions of Regina are released.
 1. Make Regina's repository a trusted source.  This helps keep your machine
    secure, and avoids messages like "these packages cannot be authenticated".
    To do this, download Regina's cryptographic signing key:
-      
+
         http://people.debian.org/~bab/regina-key.txt
 
    Then, at a command prompt type:
