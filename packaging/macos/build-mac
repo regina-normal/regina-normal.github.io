@@ -2,12 +2,9 @@
 set -e
 
 allow64=`sysctl -n hw.optional.x86_64`
-if [ "x$allow64" = "x1" ]; then
-  # 64-bit Nokia build of Qt
-  qmake=/Users/bab/QtSDK/Desktop/Qt/4.8.0/gcc/bin/qmake
-else
-  # 32-bit fink build of Qt
-  qmake=/sw/lib/qt4-mac/bin/qmake
+if [ "x$allow64" != "x1" ]; then
+  echo '32-bit builds are no longer supported.'
+  exit 1
 fi
 
 # Extract the default python version on MacOS and rewrite it as a
@@ -34,7 +31,7 @@ rm -rf /Users/bab/Regina.app
 cmake \
   -DCMAKE_INSTALL_PREFIX=/Users/bab \
   -DPYTHON_EXECUTABLE="$pybin" \
-  -DQT_QMAKE_EXECUTABLE="$qmake" \
+  -DQT_QMAKE_EXECUTABLE=/usr/bin/qmake \
   -DPACKAGING_MODE=1 \
   -DDISABLE_MPI=1 \
   ..

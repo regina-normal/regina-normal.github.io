@@ -1,27 +1,27 @@
-Building the MacOS bundle:
+Building the MacOS bundle for x86_64 (we no longer support 32-bit machines):
 
 The runtime bundle stands alone, but to build you still need fink installed.
 Build-dependencies include:
 
-  boost1.46.1.cmake
-  cmake
-  cppunit1.12.1
-  doxygen
-  gmp5
-  libsource-highlight4
-  libxml2
-  libxslt-bin
-  popt
+  Nokia's standalone Qt install
 
-  qt4-base-mac (for i386), or Nokia's standalone Qt install (for x86_64)
+  Fink packages:
+    boost1.46.1.cmake
+    cmake
+    cppunit1.12.1
+    doxygen
+    gmp5
+    libsource-highlight4
+    libxml2
+    libxslt-bin
+    popt
 
 To configure:
 
   cmake -DCMAKE_INSTALL_PREFIX=path/to/install/location
     -DPYTHON_EXECUTABLE=/usr/bin/python
     -DREGINA_INSTALL_TYPE=Bundle
-	-DQT_QMAKE_EXECUTABLE=path/to/QtSDK/Desktop/Qt/4.8.0/gcc/bin/qmake
-	..
+    ..
 
 Then:
 
