@@ -1,3 +1,9 @@
+regina-normal (4.94-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Ben Burton <bab@debian.org>  Tue, 17 Sep 2013 06:58:42 +1000
+
 regina-normal (4.93-1.1) unstable; urgency=low
 
   * Non-maintainer upload.
