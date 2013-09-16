@@ -18,7 +18,7 @@ Upstream Authors:
 Copyright:
 
   Regina - Software for 3-manifold topology and normal surface theory
-  Copyright (c) 1999-2012, The Regina development team
+  Copyright (c) 1999-2013, The Regina development team
 
 
   CITATION:
@@ -28,7 +28,7 @@ Copyright:
 
     Benjamin A. Burton, Ryan Budney, William Pettersson, et al.,
     "Regina: Software for 3-manifold topology and normal surface theory",
-    http://regina.sourceforge.net/, 1999-2012.
+    http://regina.sourceforge.net/, 1999-2013.
 
 
   COPYING AND MODIFICATION:
@@ -37,6 +37,9 @@ Copyright:
   under the terms of the GNU General Public License as published by the
   Free Software Foundation; either version 2 of the License, or (at your
   option) any later version.
+
+  Some of this code comes with additional permissions; see the section
+  below regarding online distribution.
 
   This program is distributed in the hope that it will be useful, but
   WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -48,17 +51,31 @@ Copyright:
   Fifth Floor, Boston, MA 02110-1301, USA.
 
 
+  ONLINE DISTRIBUTION:
+
+  Regina's own source code comes with the following permissions in
+  addition to the GNU General Public License:
+
+  As an exception, when this program is distributed through (i) the
+  App Store by Apple Inc.; (ii) the Mac App Store by Apple Inc.; or
+  (iii) Google Play by Google Inc., then that store may impose any
+  digital rights management, device limits and/or redistribution
+  restrictions that are required by its terms of service.
+
+  Some third-party libraries included in Regina are not granted this
+  exception, and must be removed from any build that is distributed on
+  stores that cannot comply with the GNU General Public License (such as
+  Apple's App Store).  See the third-party licenses below for details.
+
+
   SNAPPEA AND SNAPPY:
 
-  Regina includes portions of the SnapPea kernel, which it uses for some
-  geometric calculations.  SnapPea was written by Jeff Weeks, and is now
-  maintained by both Jeff Weeks and Nathan Dunfield.  The SnapPeaKernel is
+  Regina includes portions of the SnapPea kernel and its successor SnapPy,
+  which it uses for some geometric calculations.  The SnapPea kernel was
+  written by Jeff Weeks, and SnapPy was written by Marc Culler, Nathan
+  Dunfield, and others.  SnapPy and the corresponding SnapPea kernel are
   distributed under the terms of the GNU General Public License, version 2
   or any later version, as published by the Free Software Foundation.
-
-  Regina also includes code from SnapPy, the successor to SnapPea.
-  SnapPy was written by M. Culler, N. M. Dunfield and J. R. Weeks, and is
-  also released under the terms of the GNU General Public License.
 
 
   NORMALIZ LIBRARY:
