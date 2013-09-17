@@ -1,0 +1,13 @@
+To build the source tarball via cmake:
+
+  make package_source
+
+To build debian/ubuntu packages:
+
+  debuild     (on amd64)
+  debuild -B  (on i386)
+
+To sign debian/ubuntu packages on the master build machine:
+
+  ~/svn/regina/packaging/debian/debsign *.changes
+
