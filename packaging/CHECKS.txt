@@ -12,11 +12,11 @@ Manual checks:
       - face pairing graphs
       - GUI scripting and syntax highlighting
       - handbook and engine docs (including graphs)
-	  - open data file from desktop / file manager
-	  - tab completion
+      - open data file from desktop / file manager
+      - tab completion (both script and standalone)
   - regina-python
       - print NExampleTriangulation.lens8_3().getHomologyH1()
-	  - tab completion
+      - tab completion
   - tools
       - regfiledump data file from desktop
   - dependencies (apt-cache show regina-normal ; rpm -qR regina-normal)
