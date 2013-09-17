@@ -19,9 +19,25 @@ To build debian/ubuntu packages:
     debian/sign-remote.sh <suite>
 
     Every time a new dput run is made, sign-remote must be run.
-	Every time a new suite is added, sign-remote must be edited to include it.
+    Every time a new suite is added, sign-remote must be edited to include it.
 
   - More information:
 
     See debian/NOTES.txt.
     
+To make a MacOS bundle:
+
+  - On the build machine:
+
+    Change into regina-X.Y/ and run path/to/macos/build-mac.
+
+    Check the cmake output to see what is coming from /sw.
+    In particular, libpython and libxml2 should come from /usr.
+    This may require uninstalling some fink development packages.
+
+  - On the signing machine:
+
+    codesign -s 'Developer ID' -v Regina.app
+
+    Change into macos/ and run ./dmg-maker.py path/to/Regina.app.
+
