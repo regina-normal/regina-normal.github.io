@@ -1,7 +1,7 @@
-Regina for Debian:  Squeeze (Debian 6.0)
-----------------------------------------
+Regina for Debian:  Wheezy (Debian 7.x)
+---------------------------------------
 
-If you use Squeeze (the Debian 6.0 release), you can obtain packages
+If you use Wheezy (the Debian 7.x release), you can obtain packages
 from the official Regina repository on people.debian.org.
 
 This means that Debian will automatically fetch dependencies for you, and
@@ -23,7 +23,7 @@ your package manager will know when new versions of Regina are released.
 2. Add Regina's location to your list of repositories.  To do this, open
    /etc/apt/sources.list and add the following line:
 
-     deb http://people.debian.org/~bab/regina squeeze/
+     deb http://people.debian.org/~bab/regina wheezy/
 
 3. Update the list of available packages.  At a command prompt, type:
 
@@ -39,8 +39,8 @@ projects, you should also install the package "regina-normal-dev".
 If you want the MPI-enabled utilities for use on high-performance clusters,
 you should install the package "regina-normal-mpi".
 
-You might notice that Squeeze already ships with Regina as part of its
-CD/DVD set.  However, this is the older version 4.6.  For the latest
+You might notice that Wheezy already ships with Regina as part of its
+CD/DVD set.  However, this is the older version 4.93.  For the latest
 version of Regina, you should follow the steps outlined above.
 
 ------------------------------------

@@ -4,7 +4,7 @@ Regina for Debian:  Sid (Unstable)
 If you run Sid (the Debian unstable release), you can install Regina from
 the usual Debian servers like any other package:
 
-  example$ aptitude install regina-normal
+  example$ apt-get install regina-normal
 
 Sid always ships with the latest version of Regina (though it may take a
 day or two for new versions to appear on your Debian mirror).
