@@ -25,7 +25,7 @@ import os, sys, re, commands
 from math import ceil
 
 name = "Regina"
-version = "4.93"
+version = "4.94"
 
 allow64 = commands.getstatusoutput('sysctl -n hw.optional.x86_64')[1]
 if allow64 == '1':
@@ -40,11 +40,14 @@ elif kernel == '10':
     osver = 'SnowLeopard'
 elif kernel == '11':
     osver = 'Lion'
+elif kernel == '12':
+    osver = 'MountainLion'
 else:
     print 'Unknown MacOS kernel version:', kernel
     sys.exit(1)
 
-dmg_real = name + "-" + version + "_" + osver + "-" + arch + ".dmg";
+# dmg_real = name + "-" + version + "_" + osver + "-" + arch + ".dmg";
+dmg_real = name + "-" + version + ".dmg";
 dmg_tmp = name + "-" + version + "-tmp.dmg";
 dist_dir = "dist"
 
