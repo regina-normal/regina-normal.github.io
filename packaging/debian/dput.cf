@@ -1,0 +1,6 @@
+[regina]
+fqdn = people.debian.org
+method = scp
+login = *
+incoming = /home/bab/public_html/regina/mini-dinstall/incoming
+post_upload_command = ssh people.debian.org /usr/bin/mini-dinstall -b

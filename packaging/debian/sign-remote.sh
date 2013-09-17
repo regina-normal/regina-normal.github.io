@@ -10,23 +10,26 @@ set -e
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
 
-if [ -z "$1" ] ; then
-    echo "Usage: sign-remote <release-suite>"
-    exit 2
-fi
-suite="$1"
 host=people.debian.org
-path="/home/bab/public_html/regina/$suite/Release"
-base=$(dirname "$path")
+suites="squeeze wheezy precise quantal raring"
 
-tmp=`mktemp`
-sig="$tmp.gpg"
-trap "rm -f $tmp $sig" EXIT
+for suite in $suites; do
+  echo "--------------------"
+  echo "$suite "
+  echo "--------------------"
+  echo "I: preparing to sign for $suite ..."
+  path="/home/bab/public_html/regina/$suite/Release"
+  base=$(dirname "$path")
 
-echo "I: retrieving file to sign from remote host ..."
-scp "$host:$path" $tmp
-echo "I: signing ..."
-gpg --detach-sign -o $sig $tmp
-echo "I: sending back signature ..."
-scp $sig "$host":"$path.gpg"
-echo "I: remote signing done."
+  tmp=`mktemp -t sign`
+  sig="$tmp.gpg"
+  trap "rm -f $tmp $sig" EXIT
+
+  echo "I: retrieving file to sign from remote host ..."
+  scp "$host:$path" $tmp
+  echo "I: signing ..."
+  gpg --detach-sign -o $sig $tmp
+  echo "I: sending back signature ..."
+  scp $sig "$host":"$path.gpg"
+  echo "I: remote signing done."
+done

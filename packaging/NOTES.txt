@@ -4,10 +4,24 @@ To build the source tarball via cmake:
 
 To build debian/ubuntu packages:
 
-  debuild     (on amd64)
-  debuild -B  (on i386)
+  - Building:
 
-To sign debian/ubuntu packages on the master build machine:
+    debuild     (on amd64)
+    debuild -B  (on i386)
 
-  ~/svn/regina/packaging/debian/debsign *.changes
+  - Signing on the master build machine:
 
+    ~/svn/regina/packaging/debian/debsign *.changes
+
+  - Uploading from the master machine (assumes debian/dput.cf -> ~/.dpub.cf):
+  
+    /opt/dput/dput regina *.changes  (do this for each debian/ubuntu suite)
+    debian/sign-remote.sh <suite>
+
+    Every time a new dput run is made, sign-remote must be run.
+	Every time a new suite is added, sign-remote must be edited to include it.
+
+  - More information:
+
+    See debian/NOTES.txt.
+    
