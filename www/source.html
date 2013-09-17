@@ -73,6 +73,9 @@ and/or mail us at
 The following table lists the tools and
 libraries that you will need to build Regina.
 <p>
+Note that very old versions of GCC may crash when building Regina;
+see the <a href="#gcc">compiler note below</a>.
+<p>
 <b>It is highly recommended that you download ready-made packages of these
 tools and libraries</b>.  This is the best way to provide standard
 installations in standard locations that
@@ -161,6 +164,15 @@ between different RPM-based distributions).
     <td>libcppunit-dev (DEB)<br>cppunit-devel / libcppunit-devel (RPM)
     </td></tr>
 </table>
+
+<h3><a name="gcc">Old GCC Versions</a></h3>
+<p>
+We have encountered an issue in which very old versions of the GNU Compiler
+Collection (such as gcc&nbsp;4.1.2)
+crash on 64-bit systems with an internal compiler error.  It appears to be
+<a href="http://gcc.gnu.org/bugzilla/show_bug.cgi?id=31167">this problem</a>,
+which was fixed in GCC 4.3.0 (March 2008).  The best suggestion we have
+to avoid this problem is to use a modern C++ compiler.
 
 <p class="return">
 <a href="index.html"><img src="return.jpg" alt="Back to main page ..."

@@ -88,24 +88,42 @@ You can install Fink from
 <p>
 You will need to pass several arguments to cmake:
 <ul>
-<li>To help Fink find your Qt installation, set
-<tt>QT_QMAKE_EXECUTABLE</tt> to the location of the <tt>qmake</tt>
-executable.</li>
 <li>To ensure that cmake picks up the system python installation instead
 of Fink's, set <tt>PYTHON_EXECUTABLE</tt> to <tt>/usr/bin/python</tt>.</li>
 <li>You will probably want to change the installation prefix from the
 default <tt>/usr/local</tt> by setting <tt>CMAKE_INSTALL_PREFIX</tt>.
 This controls where the application bundle will appear when you run
 <tt>make&nbsp;install</tt>.</li>
+<li>Modern Qt installations install themselves in a standard location
+(<tt>/Library/Frameworks/</tt>), which Regina can find automatically.
+However, if your Qt is installed somewhere else (e.g., beneath your home
+directory, or provided by Fink) then you will need to set
+<tt>QT_QMAKE_EXECUTABLE</tt>
+to the location of the <tt>qmake</tt> executable.</li>
+<li>If you want a full, unix-like installation instead of just an
+application bundle
+(with programs in <tt>prefix/bin/</tt>,
+libraries in <tt>prefix/lib/</tt>
+data in <tt>prefix/share/regina/</tt> and so on),
+set <tt>REGINA_INSTALL_TYPE</tt> to <tt>XDG</tt>.</li>
 </ul>
 </p>
 <p>
-A complete example of a cmake line that installs the application bundle
+A complete example of a cmake line that builds an application bundle
 on the user's desktop:
 </p>
 <div class="example">
 <p>
-<tt>example$ cmake -DQT_QMAKE_EXECUTABLE=/sw/lib/qt4-mac/bin/qmake -DPYTHON_EXECUTABLE=/usr/bin/python -DCMAKE_INSTALL_PREFIX=/Users/bab/Desktop ..</tt>
+<tt>example$ cmake -DPYTHON_EXECUTABLE=/usr/bin/python -DCMAKE_INSTALL_PREFIX=/Users/bab/Desktop ..</tt>
+</p>
+</div>
+<p>
+Another example that makes a full unix-like installation beneath the default
+<tt>/usr/local/</tt> prefix, and that uses the version of Qt provided by Fink:
+</p>
+<div class="example">
+<p>
+<tt>example$ cmake -DREGINA_INSTALL_TYPE=XDG -DQT_QMAKE_EXECUTABLE=/sw/lib/qt4-mac/bin/qmake -DPYTHON_EXECUTABLE=/usr/bin/python ..</tt>
 </p>
 </div>
 
