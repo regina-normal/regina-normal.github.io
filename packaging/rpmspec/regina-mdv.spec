@@ -1,4 +1,5 @@
 # Known to work for:
+# - Mageia 3 (i586, x86_64)
 # - Mandriva 2011 (i586, x86_64)
 # - Mandriva 2010.2 (i586, x86_64)
 # - Mandriva 2010.1 (i586, x86_64)
