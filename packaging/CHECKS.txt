@@ -8,6 +8,7 @@ Manual checks:
   - graphical user interface:
       - menu entry
       - open sample file
+      - PDF viewing
       - snappea calculations
       - face pairing graphs
       - GUI scripting and syntax highlighting
