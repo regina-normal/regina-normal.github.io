@@ -64,6 +64,10 @@ To build regina:
     -DREGINA_DOCS=path/to/docs.zip
     ..
 
+To run the test suite:
+  export PATH="$PATH":/home/bab/software/bin
+  make test ARGS=-V
+
 To prepare WiX for use:
   If WiX is not on the path, add aliases to ~/.bashrc:
     alias candle='"/c/Program Files/Windows Installer XML v3.6/bin/candle"'
