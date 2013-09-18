@@ -1,8 +1,7 @@
 # Known to work for:
+# - Fedora 19 (i386, x86_64)
+# - Fedora 18 (i386, x86_64)
 # - Fedora 17 (i386, x86_64)
-# - Fedora 16 (i386, x86_64)
-# - Fedora 15 (i386, x86_64)
-# - Fedora 14 (i386, x86_64)
 
 Name: regina-normal
 Summary: Software for 3-manifold topology and normal surfaces

@@ -1,7 +1,7 @@
 # Known to work for:
+# - SuSE 12.3 (i586, x86_64)
+# - SuSE 12.2 (i586, x86_64)
 # - SuSE 12.1 (i586, x86_64)
-# - SuSE 11.4 (i586, x86_64)
-# - SuSE 11.3 (i586, x86_64)
 
 Name: regina-normal
 Summary: Software for 3-manifold topology and normal surfaces
@@ -29,15 +29,13 @@ BuildRequires: glibc-devel
 BuildRequires: gmp-devel
 BuildRequires: libcppunit-devel
 BuildRequires: libqt4-devel
-%if 0%{?suse_version} >= 1200
 BuildRequires: libsource-highlight-devel
-%endif
 BuildRequires: libstdc++-devel
 BuildRequires: libxml2-devel
-%if 0%{?suse_version} >= 1200
-BuildRequires: libxslt1
+%if 0%{?suse_version} >= 1220
+BuildRequires: libxslt-tools
 %else
-BuildRequires: libxslt
+BuildRequires: libxslt1
 %endif
 BuildRequires: popt-devel
 BuildRequires: python-devel
