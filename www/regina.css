@@ -112,7 +112,7 @@ table.data td.na {
   background-color: #B5BCF8;
 }
 
-table.data td.first, table.data td.altfirst, table.data td.reqfirst, table.data td.recfirst, table.data td.optfirst {
+table.data td.first, table.data td.altfirst, table.data td.reqfirst, table.data td.recfirst, table.data td.optfirst, table.data td.removed {
   border-width: 0px 2px 2px 2px;
 }
 
@@ -133,6 +133,10 @@ table.data td.rec, table.data td.recfirst {
 }
 
 table.data td.opt, table.data td.optfirst {
+  background-color: #F0D7FF;
+}
+
+table.data td.removed, table.data td.reqfirst {
   background-color: #F0D7FF;
 }
 

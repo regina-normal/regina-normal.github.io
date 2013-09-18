@@ -25,17 +25,20 @@ scripts or C++ programs will no longer work.
 </p>
 <p><h4><span class="question">When will this change happen?</span></h4></p>
 <p>
-There is still a lot to do before Regina&nbsp;5.0 &mdash; realistically,
-this release <b>will not happen until late 2012</b> at the earliest.
-There may be releases before then (4.93, 4.94 and so on),
-but no code will be removed until Regina&nbsp;5.0.
+As of Regina&nbsp;4.94, <b>this process has now begun</b>.
+Only a small amount of code has been removed so far, but more will be
+removed over time.
 </p>
 <p><h4><span class="question">How do I fix my code?</span></h4></p>
 <p>
 The following table lists the routines and classes that will be
-removed, as well as the replacements that you can use instead.
+(or have been) removed, as well as the replacements that you can use instead.
 Any changes in the <i>behaviour</i> of these routines or classes
 are noted in the comments column.
+</p>
+<p>
+The blue cells indicate code that is still present (but deprecated).
+The red cells indicate code that has now been removed.
 </p>
 <p>
 <table cellspacing=0 border=0 class="data"><tbody>
@@ -46,7 +49,8 @@ are noted in the comments column.
 </tr>
 <tr><td class="altfirst" colspan=4><i>Namespaces</i></td></tr>
 <tr>
-    <td class="first"><tt>stdhash</tt></td>
+    <td class="removed"><tt>stdhash</tt><br>
+    Removed in Regina&nbsp;4.94</td>
     <td>&mdash;</td>
     <td>To improve portability, all references to the non-standard
         STL classes <tt>hash_set</tt> and <tt>hash_map</tt> will be
@@ -54,10 +58,23 @@ are noted in the comments column.
 </tr>
 <tr><td class="altfirst" colspan=4><i>Headers</i></td></tr>
 <tr>
+    <td class="first"><tt>maths/nlargeinteger.h</tt></td>
+    <td><tt>maths/ninteger.h</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
     <td class="first"><tt>triangulation/nperm.h</tt></td>
     <td><tt>maths/nperm4.h</tt></td>
     <td>This header provided the class <tt>NPerm</tt>, which has likewise been
         renamed to <tt>NPerm4</tt>.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>utilities/hashmap.h</tt>,
+    <tt>utilities/hashset.h</tt>,
+    <tt>utilities/hashutils.h</tt><br>
+    Removed in Regina&nbsp;4.94</td>
+    <td>&mdash;</td>
+    <td>See the comments above for the <tt>stdhash</tt> namespace.</td>
 </tr>
 <tr>
     <td class="first"><tt>utilities/nmatrix2.h</tt></td>
@@ -67,9 +84,8 @@ are noted in the comments column.
 </tr>
 <tr>
     <td class="first"><tt>utilities/nmpi.h</tt></td>
-    <td><tt>maths/nlargeinteger.h</tt></td>
-    <td>The header has simply been renamed.  The classes that it provides
-        remain the same.</td>
+    <td><tt>maths/ninteger.h</tt></td>
+    <td>&nbsp;</td>
 </tr>
 <tr>
     <td class="first"><tt>utilities/nrational.h</tt></td>
@@ -83,10 +99,21 @@ are noted in the comments column.
     <td><tt>NCensus::AcceptTriangulation</tt></td>
     <td>&nbsp;</td>
 </tr>
+<tr>
+    <td class="first"><tt>NFacePairingIsoList</tt></td>
+    <td><tt>NFacePairing::IsoList</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>UseFacePairing</tt></td>
+    <td><tt>NFacePairing::Use</tt></td>
+    <td>&nbsp;</td>
+</tr>
 <tr><td class="altfirst" colspan=4><i>Classes</i></td></tr>
 <tr>
-    <td class="first"><tt>HashPointer</tt>,
-        <tt>HashString</tt></td>
+    <td class="removed"><tt>HashPointer</tt>,
+        <tt>HashString</tt><br>
+    Removed in Regina&nbsp;4.94</td>
     <td>&mdash;</td>
     <td>See the comments above for the <tt>stdhash</tt> namespace.</td>
 </tr>
@@ -113,19 +140,22 @@ are noted in the comments column.
     see the API docs for details.</td>
 </tr>
 <tr>
-    <td class="first"><tt>NFile</tt></td>
+    <td class="removed"><tt>NFile</tt><br>
+    Removed in Regina&nbsp;4.94</td>
     <td>&mdash;</td>
     <td>The <tt>NFile</tt> class exists purely to support the old binary file
     format that was phased out back in 2002.  Regina&nbsp;5.0 will drop
     support for this old binary file format entirely.</td>
 </tr>
 <tr>
-    <td class="first"><tt>NFilePropertyReader</tt></td>
+    <td class="removed"><tt>NFilePropertyReader</tt><br>
+    Removed in Regina&nbsp;4.94</td>
     <td>&mdash;</td>
     <td>See the comments above for the <tt>NFile</tt> class.</td>
 </tr>
 <tr>
-    <td class="first"><tt>NIndexedArray</tt></td>
+    <td class="removed"><tt>NIndexedArray</tt><br>
+    Removed in Regina&nbsp;4.94</td>
     <td>&mdash;</td>
     <td><tt>NMarkedVector</tt> does a similar job (and is smaller and faster),
         though it requires changes to the data types in your array.</td>
@@ -159,10 +189,26 @@ are noted in the comments column.
         of <tt>NPerm4::S4</tt> directly.</td>
 </tr>
 <tr>
-    <td class="first"><tt>NRandomAccessResource</tt>,
-        <tt>NLocalFileResource</tt></td>
+    <td class="first"><tt>NProgress, NProgressFinished,
+    NProgressManager, NProgressMessage, NProgressNumber,
+    NProgressStateNumeric</tt></td>
+    <td><tt>NProgressTracker</tt></td>
+    <td><tt>NProgressTracker</tt> offers a unified and more streamlined
+    interface for progress tracking.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>NRandomAccessResource</tt>,
+        <tt>NLocalFileResource</tt><br>
+    Removed in Regina&nbsp;4.94</td>
     <td>&mdash;</td>
     <td>See the comments above for the <tt>NFile</tt> class.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>NSurfaceSet</tt><br>
+    Removed in Regina&nbsp;4.94</td>
+    <td>&mdash;</td>
+    <td>Just use <tt>NNormalSurfaceList</tt> and/or
+        <tt>NSurfaceSubset</tt> directly.</td>
 </tr>
 <tr>
     <td class="first"><tt>NTriBool</tt></td>
@@ -189,12 +235,14 @@ are noted in the comments column.
 </tr>
 <tr><td class="altfirst" colspan=4><i>Member Routines</i></td></tr>
 <tr>
-    <td class="first"><tt>...::readFromFile(NFile&amp;, ...)</tt></td>
+    <td class="removed"><tt>...::readFromFile(NFile&amp;, ...)</tt><br>
+    Removed in Regina&nbsp;4.94</td>
     <td>&mdash;</td>
     <td>See the comments above for the <tt>NFile</tt> class.</td>
 </tr>
 <tr>
-    <td class="first"><tt>...::writeToFile(NFile&amp;)</tt></td>
+    <td class="removed"><tt>...::writeToFile(NFile&amp;)</tt><br>
+    Removed in Regina&nbsp;4.94</td>
     <td>&mdash;</td>
     <td>See the comments above for the <tt>NFile</tt> class.</td>
 </tr>
@@ -225,6 +273,11 @@ are noted in the comments column.
     <td>&nbsp;</td>
 </tr>
 <tr>
+    <td class="first"><tt>NFacePairing::getNumberOfTetrahedra()</tt></td>
+    <td><tt>NFacePairing::size()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
     <td class="first"><tt>NHomMarkedAbelianGroup::...</tt></td>
     <td>&nbsp;</td>
     <td>Several routines have been deprecated, and several others added
@@ -242,12 +295,31 @@ are noted in the comments column.
     in their place.  See the API docs for details.</td>
 </tr>
 <tr>
-    <td class="first"><tt>NPacket::readPacket()</tt></td>
+    <td class="first"><tt>NNormalSurface::findNonTrivialSphere()</tt></td>
+    <td><tt>NTriangulation::hasNonTrivialSphereOrDisc()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NNormalSurface::findVtxOctAlmostNormalSphere()</tt></td>
+    <td><tt>NTriangulation::hasOctagonalAlmostNormalSphere()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>NNormalSurfaceList::getShareableObject()</tt><br>
+    Removed in Regina&nbsp;4.94</td>
+    <td>&mdash;</td>
+    <td>Since this class no longer inherits from <tt>NSurfaceSet</tt>,
+    this function is no longer necessary.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>NPacket::readPacket()</tt><br>
+    Removed in Regina&nbsp;4.94</td>
     <td>&mdash;</td>
     <td>See the comments above for the <tt>NFile</tt> class.</td>
 </tr>
 <tr>
-    <td class="first"><tt>NPacket::writePacket()</tt></td>
+    <td class="removed"><tt>NPacket::writePacket()</tt><br>
+    Removed in Regina&nbsp;4.94</td>
     <td>&mdash;</td>
     <td>See the comments above for the <tt>NFile</tt> class.</td>
 </tr>
@@ -258,19 +330,35 @@ are noted in the comments column.
         <tt>p = NPerm4(1,2)</tt>.</td>
 </tr>
 <tr>
-    <td class="first"><tt>NSurfaceFilter::readFilter()</tt></td>
+    <td class="first"><tt>NSatRegion::createSFS(long, bool)</tt></td>
+    <td><tt>NSatRegion::createSFS(bool)</tt></td>
+    <td>The first argument (the number of boundary components)
+    is now automatically deduced.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>NSurfaceFilter::readFilter()</tt><br>
+    Removed in Regina&nbsp;4.94</td>
     <td>&mdash;</td>
     <td>See the comments above for the <tt>NFile</tt> class.</td>
 </tr>
 <tr>
-    <td class="first"><tt>NSurfaceFilter::writeFilter()</tt></td>
+    <td class="removed"><tt>NSurfaceFilter::writeFilter()</tt><br>
+    Removed in Regina&nbsp;4.94</td>
     <td>&mdash;</td>
     <td>See the comments above for the <tt>NFile</tt> class.</td>
 </tr>
 <tr>
-    <td class="first"><tt>NSurfaceFilter::writeProperties()</tt></td>
+    <td class="removed"><tt>NSurfaceFilter::writeProperties()</tt><br>
+    Removed in Regina&nbsp;4.94</td>
     <td>&mdash;</td>
     <td>See the comments above for the <tt>NFile</tt> class.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>NSurfaceSet::getShareableObject()</tt><br>
+    Removed in Regina&nbsp;4.94</td>
+    <td>&mdash;</td>
+    <td>Since this class no longer inherits from <tt>NSurfaceSet</tt>,
+    this function is no longer necessary.</td>
 </tr>
 <tr>
     <td class="first"><tt>NTetrahedron constructors</tt></td>
@@ -300,19 +388,22 @@ are noted in the comments column.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="first"><tt>NTriangulation::getBoundaryComponentIndex()</tt></td>
+    <td class="removed"><tt>NTriangulation::getBoundaryComponentIndex()</tt><br>
+    Removed in Regina&nbsp;4.94</td>
     <td><tt>NTriangulation::boundaryComponentIndex()</tt></td>
     <td>The new routine is faster, but has an extra precondition that
         the given boundary component must belong to the triangulation.</td>
 </tr>
 <tr>
-    <td class="first"><tt>NTriangulation::getComponentIndex()</tt></td>
+    <td class="removed"><tt>NTriangulation::getComponentIndex()</tt><br>
+    Removed in Regina&nbsp;4.94</td>
     <td><tt>NTriangulation::componentIndex()</tt></td>
     <td>The new routine is faster, but has an extra precondition that
         the given component must belong to the triangulation.</td>
 </tr>
 <tr>
-    <td class="first"><tt>NTriangulation::getEdgeIndex()</tt></td>
+    <td class="removed"><tt>NTriangulation::getEdgeIndex()</tt><br>
+    Removed in Regina&nbsp;4.94</td>
     <td><tt>NTriangulation::edgeIndex()</tt></td>
     <td>The new routine is faster, but has an extra precondition that
         the given edge must belong to the triangulation.</td>
@@ -326,19 +417,22 @@ are noted in the comments column.
         was equivalent to the new <tt>getEulerCharTri()</tt>.</td>
 </tr>
 <tr>
-    <td class="first"><tt>NTriangulation::getFaceIndex()</tt></td>
+    <td class="removed"><tt>NTriangulation::getFaceIndex()</tt><br>
+    Removed in Regina&nbsp;4.94</td>
     <td><tt>NTriangulation::faceIndex()</tt></td>
     <td>The new routine is faster, but has an extra precondition that
         the given face must belong to the triangulation.</td>
 </tr>
 <tr>
-    <td class="first"><tt>NTriangulation::getTetrahedronIndex()</tt></td>
+    <td class="removed"><tt>NTriangulation::getTetrahedronIndex()</tt><br>
+    Removed in Regina&nbsp;4.94</td>
     <td><tt>NTriangulation::tetrahedronIndex()</tt></td>
     <td>The new routine is faster, but has an extra precondition that
         the given tetrahedron must belong to the triangulation.</td>
 </tr>
 <tr>
-    <td class="first"><tt>NTriangulation::getVertexIndex()</tt></td>
+    <td class="removed"><tt>NTriangulation::getVertexIndex()</tt><br>
+    Removed in Regina&nbsp;4.94</td>
     <td><tt>NTriangulation::vertexIndex()</tt></td>
     <td>The new routine is faster, but has an extra precondition that
         the given vertex must belong to the triangulation.</td>
@@ -381,12 +475,14 @@ are noted in the comments column.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="first"><tt>readFromFile()</tt></td>
+    <td class="removed"><tt>readFromFile()</tt><br>
+    Removed in Regina&nbsp;4.94</td>
     <td>&mdash;</td>
     <td>See the comments above for the <tt>NFile</tt> class.</td>
 </tr>
 <tr>
-    <td class="first"><tt>writeToFile()</tt></td>
+    <td class="removed"><tt>writeToFile()</tt><br>
+    Removed in Regina&nbsp;4.94</td>
     <td>&mdash;</td>
     <td>See the comments above for the <tt>NFile</tt> class.</td>
 </tr>
@@ -398,24 +494,40 @@ are noted in the comments column.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="first"><tt>allPermsS2[]</tt>,
-        <tt>allPermsS2Inv[]</tt></td>
-    <td><tt>NPerm4::S2[]</tt>, <tt>NPerm4::invS2[]</tt></td>
+    <td class="first"><tt>allPermsS2[]</tt></td>
+    <td><tt>NPerm4::S2[]</tt></td>
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="first"><tt>allPermsS3[]</tt>,
-        <tt>allPermsS3Inv[]</tt>, <tt>orderedPermsS3[]</tt></td>
-    <td><tt>NPerm4::S3[]</tt>, <tt>NPerm4::invS3[]</tt>,
-        <tt>NPerm4::orderedS3</tt></td>
+    <td class="first"><tt>allPermsS3[]</tt>, <tt>orderedPermsS3[]</tt></td>
+    <td><tt>NPerm4::S3[]</tt>, <tt>NPerm4::orderedS3[]</tt></td>
     <td>&nbsp;</td>
 </tr>
 <tr>
     <td class="first"><tt>allPermsS4[]</tt>,
         <tt>allPermsS4Inv[]</tt>, <tt>orderedPermsS4[]</tt></td>
     <td><tt>NPerm4::S4[]</tt>, <tt>NPerm4::invS4[]</tt>,
-        <tt>NPerm4::orderedS4</tt></td>
+        <tt>NPerm4::orderedS4[]</tt></td>
     <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NPerm4::invS3[]</tt>,
+        <tt>allPermsS3Inv[]</tt></td>
+    <td><tt>NPerm3::invS3[]</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NPerm4::invS2[]</tt>,
+        <tt>allPermsS2Inv[]</tt></td>
+    <td>&mdash;</td>
+    <td>This class is unnecessary, since inverses in S2 are trivial.</td>
+</tr>
+<tr><td class="altfirst" colspan=4><i>Macros</i></td></tr>
+<tr>
+    <td class="first"><tt>REGISTER_FLAVOUR</tt></td>
+    <td><tt>forFlavour()</tt></td>
+    <td>The messy <tt>REGISTER_FLAVOUR</tt> macros have been replaced
+    with a more robust template-based mechanism.</td>
 </tr>
 </tbody></table>
 
