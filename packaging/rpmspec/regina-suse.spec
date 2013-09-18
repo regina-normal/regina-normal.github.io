@@ -54,6 +54,7 @@ as 3-sphere recognition and connected sum decomposition.  Regina comes
 with a full graphical user interface, and also offers Python bindings
 and a low-level C++ programming interface.
 
+%debug_package
 %prep
 %setup -n regina-%{version}
 
