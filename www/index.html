@@ -54,7 +54,8 @@
 <p class="header">
 <b>24 September 2013:</b>
 Version 4.94 is out!
-It add TODO, and more.
+It adds triangulated vertex links, edge drilling,
+and a <i>lot</i> more speed and grunt.
 You can <a href="#new">read more about what's new</a>,
 or go ahead and <a href="#download">download the new version</a>.
 <p>
@@ -79,7 +80,7 @@ of features</a>.
 
 <h2><a name="screenshots">Screenshots</a></h2>
 
-All of the screenshots below were taken with Regina&nbsp;4.92 running on
+All of the screenshots below were taken with Regina&nbsp;4.94 running on
 MacOS&nbsp;X.  Click on each thumbnail for a full-sized version.
 <p>
 <table border=0>
@@ -175,8 +176,13 @@ and he can build you an MPI-enabled package.
     <th>32-bit package (i386 or i586)</th>
     <th>64-bit package (amd64 or x86_64)</th>
     </tr>
-<tr><td rowspan=2 class="firstjoin">Debian</td>
-    <td rowspan=2><img src="osicons/os_debian.png" border=0 hspace=5></td>
+<tr><td rowspan=3 class="firstjoin">Debian</td>
+    <td rowspan=3><img src="osicons/os_debian.png" border=0 hspace=5></td>
+    <td>7.x (wheezy)</td>
+    <td align="center"><a href="install/debian-wheezy.html">Install</a></td>
+    <td align="center"><a href="install/debian-wheezy.html">Install</a></td>
+    </tr>
+<tr>
     <td>6.0 (squeeze)</td>
     <td align="center"><a href="install/debian-squeeze.html">Install</a></td>
     <td align="center"><a href="install/debian-squeeze.html">Install</a></td>
@@ -186,84 +192,59 @@ and he can build you an MPI-enabled package.
     <td align="center"><a href="install/debian-sid.html">Install</a></td>
     <td align="center"><a href="install/debian-sid.html">Install</a></td>
     </tr>
-<tr><td rowspan=4 class="altfirstjoin">Fedora</td>
-    <td rowspan=4 class="alt"><img src="osicons/os_fedora.png" border=0 hspace=5></td>
+<tr><td rowspan=3 class="altfirstjoin">Fedora</td>
+    <td rowspan=3 class="alt"><img src="osicons/os_fedora.png" border=0 hspace=5></td>
+    <td class="alt">19</td>
+    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.94-1.fedora19.i386.rpm">Download</a></td>
+    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.94-1.fedora19.x86_64.rpm">Download</a></td>
+    </tr>
+<tr>
+    <td class="alt">18</td>
+    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.94-1.fedora18.i386.rpm">Download</a></td>
+    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.94-1.fedora18.x86_64.rpm">Download</a></td>
+    </tr>
+<tr>
     <td class="alt">17</td>
     <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.94-1.fedora17.i386.rpm">Download</a></td>
     <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.94-1.fedora17.x86_64.rpm">Download</a></td>
     </tr>
-<tr>
-    <td class="alt">16</td>
-    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.94-1.fedora16.i386.rpm">Download</a></td>
-    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.94-1.fedora16.x86_64.rpm">Download</a></td>
-    </tr>
-<tr>
-    <td class="alt">15</td>
-    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.94-1.fedora15.i386.rpm">Download</a></td>
-    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.94-1.fedora15.x86_64.rpm">Download</a></td>
-    </tr>
-<tr>
-    <td class="alt">14</td>
-    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.94-1.fedora14.i386.rpm">Download</a></td>
-    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.94-1.fedora14.x86_64.rpm">Download</a></td>
-    </tr>
-<tr><td rowspan=3 class="firstjoin">Mandriva</td>
-    <td rowspan=3><img src="osicons/os_mandriva.png" border=0 hspace=5></td>
-    <td>2011.0</td>
+<tr><td rowspan=1 class="firstjoin">Mageia</td>
+    <td rowspan=1><img src="osicons/os_mandriva.png" border=0 hspace=5></td>
+    <td>3</td>
     <td align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.94-1.mdv2011-mdv2011.0.i586.rpm">Download</a></td>
     <td align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.94-1.mdv2011-mdv2011.0.x86_64.rpm">Download</a></td>
     </tr>
-<tr>
-    <td>2010.2</td>
-    <td align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.94-1.mdv2010.2.i586.rpm">Download</a></td>
-    <td align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.94-1.mdv2010.2.x86_64.rpm">Download</a></td>
-    </tr>
-<tr>
-    <td>2010.1</td>
-    <td align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.94-1.mdv2010.1.i586.rpm">Download</a></td>
-    <td align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.94-1.mdv2010.1.x86_64.rpm">Download</a></td>
-    </tr>
 <tr><td rowspan=3 class="altfirstjoin">openSUSE</td>
     <td rowspan=3 class="alt"><img src="osicons/os_opensuse.png" border=0 hspace=5></td>
+    <td class="alt">12.3</td>
+    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.94-1.suse12.3.i586.rpm">Download</a></td>
+    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.94-1.suse12.3.x86_64.rpm">Download</a></td>
+    </tr>
+<tr>
+    <td class="alt">12.2</td>
+    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.94-1.suse12.2.i586.rpm">Download</a></td>
+    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.94-1.suse12.2.x86_64.rpm">Download</a></td>
+    </tr>
+<tr>
     <td class="alt">12.1</td>
     <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.94-1.suse12.1.i586.rpm">Download</a></td>
     <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.94-1.suse12.1.x86_64.rpm">Download</a></td>
     </tr>
-<tr>
-    <td class="alt">11.4</td>
-    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.94-1.suse11.4.i586.rpm">Download</a></td>
-    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.94-1.suse11.4.x86_64.rpm">Download</a></td>
+<tr><td rowspan=3 class="firstjoin">Ubuntu</td>
+    <td rowspan=3><img src="osicons/os_ubuntu.png" border=0 hspace=5></td>
+    <td>13.04 (raring)</td>
+    <td align="center"><a href="install/ubuntu-raring.html">Install</a></td>
+    <td align="center"><a href="install/ubuntu-raring.html">Install</a></td>
     </tr>
 <tr>
-    <td class="alt">11.3</td>
-    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.94-1.suse11.3.i586.rpm">Download</a></td>
-    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.94-1.suse11.3.x86_64.rpm">Download</a></td>
+    <td>12.10 (quantal)</td>
+    <td align="center"><a href="install/ubuntu-quantal.html">Install</a></td>
+    <td align="center"><a href="install/ubuntu-quantal.html">Install</a></td>
     </tr>
-<tr><td rowspan=5 class="firstjoin">Ubuntu</td>
-    <td rowspan=5><img src="osicons/os_ubuntu.png" border=0 hspace=5></td>
+<tr>
     <td>12.04 LTS (precise)</td>
     <td align="center"><a href="install/ubuntu-precise.html">Install</a></td>
     <td align="center"><a href="install/ubuntu-precise.html">Install</a></td>
-    </tr>
-<tr>
-    <td>11.10 (oneiric)</td>
-    <td align="center"><a href="install/ubuntu-oneiric.html">Install</a></td>
-    <td align="center"><a href="install/ubuntu-oneiric.html">Install</a></td>
-    </tr>
-<tr>
-    <td>11.04 (natty)</td>
-    <td align="center"><a href="install/ubuntu-natty.html">Install</a></td>
-    <td align="center"><a href="install/ubuntu-natty.html">Install</a></td>
-    </tr>
-<tr>
-    <td>10.10 (maverick)</td>
-    <td align="center"><a href="install/ubuntu-maverick.html">Install</a></td>
-    <td align="center"><a href="install/ubuntu-maverick.html">Install</a></td>
-    </tr>
-<tr>
-    <td>10.04 LTS (lucid)</td>
-    <td align="center"><a href="install/ubuntu-lucid.html">Install</a></td>
-    <td align="center"><a href="install/ubuntu-lucid.html">Install</a></td>
     </tr>
 </tbody></table></blockquote>
 <p>
@@ -317,37 +298,41 @@ Some of the main highlights in version&nbsp;4.94:
 
 <h4>Features</h4>
 <ul>
-<li>Implements solid torus recognition, and by corollary unknot
-    recognition.  The necessary tools were already there, but this
-    rolls them into a single "one-click" procedure.</li>
-<li>Identifies which taut angles structures are veering structures.</li>
-<li>Adds the Weeks manifold to the list of example triangulations
-    that you can construct.</li>
-<li>Exports triangulations in a text format that can be passed to Matveev's
-    <a href="http://www.matlas.math.csu.ru/?page=recognizer">3-manifold
-    recogniser</a> software.</li>
+<li>Regina now works with 2-manifold triangulations as well.
+    You can (for example) use these to study vertex links.</li>
+<li>You can now drill out the neighbourhood of an edge.</li>
 </ul>
-<h4>User Interface</h4>
+<h4>Optimisations</h4>
 <ul>
-<li>Restored <i>File</i>&nbsp;&rarr;&nbsp;<i>Save</i> and <i>Save&nbsp;As</i>
-    to the menu.  These were missing in version&nbsp;4.92.</li>
-<li>The old <i>Surfaces</i> tab in the triangulation viewer is now the
-    <i>Recognition</i> tab, and combines exact high-level algorithms
-    with "opportunistic" combinatorial recognition.</li>
+<li>Normal surface enumeration is now completely different under the
+    hood, and uses new linear programming techniques
+    (<a href="http://arxiv.org/abs/1010.6200">arXiv:1010.6200</a>,
+    <a href="http://arxiv.org/abs/1211.1079">arXiv:1211.1079</a>).
+    This may be slower for small problems, but is
+    significantly faster for larger problems.</li>
+<li>In particular, 0-efficiency testing, solid torus recognition,
+    connected sum decomposition and 3-sphere recognition are now
+    <i>much</i> faster.  Try it: Regina can prove the Weber-Seifert
+    dodecahedral space to be 0-efficient in around 10 seconds.</li>
+<li>Simplification of fundamental groups is much more powerful,
+    thanks to small cancellation theory.</li>
+<li>Census enumeration is faster again, with new pruning
+    techniques.</li>
 </ul>
-<h4>Python</h4>
+<h4>Bug Fixes</h4>
 <ul>
-<li>Python consoles now set the variable "<tt>item</tt>" to the currently
-    selected packet in the tree, not "<tt>selected</tt>".
-    This is easier to type, and
-    avoids the misconception that changing the selection afterwards will
-    change the variable (it doesn't).  If nothing is selected, Regina
-    will now explicitly set <tt>item=None</tt>.</li>
-<li>All use of <tt>NTriBool</tt> is gone from the classes
-    <tt>NTriangulation</tt> and <tt>NNormalSurface</tt>.
-    Tests such as <tt>NNormalSurface::isOrientable()</tt>
-    and <tt>NTriangulation::hasCompressingDisc()</tt> now return an ordinary
-    boolean that you can test in the natural way in Python.</li>
+<li>Fixed 0-efficiency testing, which was reporting incorrect
+    results for ideal triangulations.  The automated test suite is
+    now greatly enhanced to avoid a similar problem appearing again.</li>
+</ul>
+<h4>Backward Compatibility</h4>
+<ul>
+<li>Old-style binary files are no longer supported.  These have
+    not been in use for over a decade now.</li>
+<li>For programmers: some old deprecated routines have now been removed.
+    If there is something you are missing, check the
+    <a href="deprecation.html">deprecation page</a>
+    to see what replaces it.</li>
 </ul>
 <p>
 <i><a href="#contents">(Back to contents...)</a></i>
