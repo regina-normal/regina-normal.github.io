@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='windows-1252'?>
 <Wix xmlns='http://schemas.microsoft.com/wix/2006/wi'>
   <Product Id='*'
-   Name='Regina 4.93'
+   Name='Regina 4.94'
    UpgradeCode='C3D9D7D7-6614-4F3F-9D8E-EEA184C24A99'
    Language='1033'
    Codepage='1252'
-   Version='4.93.0'
+   Version='4.94.0'
    Manufacturer='Regina development team'>
     <Package Id='*'
      Keywords='Installer'
-     Description='Regina 4.93 Installer'
+     Description='Regina 4.94 Installer'
      Manufacturer='Regina development team'
      Languages='1033'
      Compressed='yes'
@@ -22,7 +22,7 @@
     </InstallExecuteSequence>
 
     <Media Id='1' Cabinet='Regina.cab' EmbedCab='yes' DiskPrompt='Disk #1'/>
-    <Property Id='DiskPrompt' Value='Regina 4.93 Installation [1]'/>
+    <Property Id='DiskPrompt' Value='Regina 4.94 Installation [1]'/>
     <UIRef Id='WixUI_Regina'/>
     <UIRef Id='WixUI_ErrorProgressText'/>
     <Property Id='WIXUI_INSTALLDIR' Value='INSTALLDIR'/>
@@ -32,7 +32,7 @@
     <Directory Id='TARGETDIR' Name='SourceDir'>
       <Directory Id='ProgramFilesFolder' Name='PFiles'>
         <Directory Id='Regina' Name='Regina'>
-          <Directory Id='INSTALLDIR' Name='Regina 4.93'
+          <Directory Id='INSTALLDIR' Name='Regina 4.94'
            FileSource='c:\MinGW\msys\1.0\home\bab\software'>
 
             <Directory Id='BINDIR' Name='bin'>
@@ -49,7 +49,7 @@
                    Advertise='yes'/>
                   <Shortcut Id='desktopRegina'
                    Directory='DesktopFolder'
-                   Name='Regina 4.93'
+                   Name='Regina 4.94'
                    WorkingDirectory='PersonalFolder'
                    Icon='regina.ico'
                    Advertise='yes'/>
@@ -152,6 +152,10 @@
                         <File Name='composition.png'/>
                         <File Name='container.png'/>
                         <File Name='credits.html'/>
+                        <File Name='dim2-euler.png'/>
+                        <File Name='dim2-id.png'/>
+                        <File Name='dim2triangulation.png'/>
+                        <File Name='dim2triangulations.html'/>
                         <File Name='dock.png'/>
                         <File Name='errmime1.png'/>
                         <File Name='errmime2.png'/>
@@ -172,6 +176,7 @@
                         <File Name='i18n-import.png'/>
                         <File Name='icon-angles.png'/>
                         <File Name='icon-container.png'/>
+                        <File Name='icon-dim2triangulation.png'/>
                         <File Name='icon-filter.png'/>
                         <File Name='icon-filtercomb.png'/>
                         <File Name='icon-filterprop.png'/>
@@ -198,6 +203,7 @@
                         <File Name='menu-export.png'/>
                         <File Name='menu-import.png'/>
                         <File Name='menu-newangles.png'/>
+                        <File Name='menu-newdim2tri.png'/>
                         <File Name='menu-newfilter.png'/>
                         <File Name='menu-newscript.png'/>
                         <File Name='menu-newsurfaces.png'/>
@@ -219,7 +225,6 @@
                         <File Name='newfilter-prop.png'/>
                         <File Name='newfilter.png'/>
                         <File Name='newsurfaces.png'/>
-                        <File Name='newtext.png'/>
                         <File Name='newtri-ast.png'/>
                         <File Name='newtri-dehydration.png'/>
                         <File Name='newtri-empty.png'/>
@@ -241,12 +246,8 @@
                         <File Name='options-python.png'/>
                         <File Name='options-snappea.html'/>
                         <File Name='options-snappea.png'/>
-                        <File Name='options-surfaces.html'/>
-                        <File Name='options-surfaces.png'/>
                         <File Name='options-tools.html'/>
                         <File Name='options-tools.png'/>
-                        <File Name='options-tri.png'/>
-                        <File Name='options-triangulation.html'/>
                         <File Name='options.html'/>
                         <File Name='packet-operations.html'/>
                         <File Name='packet-types.html'/>
@@ -311,6 +312,8 @@
                         <File Name='tri-cutcrush-results.png'/>
                         <File Name='tri-cutcrush.png'/>
                         <File Name='tri-doublecover.png'/>
+                        <File Name='tri-drilledge.png'/>
+                        <File Name='tri-drilledgebox.png'/>
                         <File Name='tri-edges.png'/>
                         <File Name='tri-editgluings.png'/>
                         <File Name='tri-editnames.png'/>
@@ -339,13 +342,16 @@
                         <File Name='tri-tv-entry.png'/>
                         <File Name='tri-tv-results.png'/>
                         <File Name='tri-tv.png'/>
+                        <File Name='tri-vertexlinks.png'/>
+                        <File Name='tri-vertexlinksbox.png'/>
+                        <File Name='tri-vertexlinksresult.png'/>
                         <File Name='tri-vertices.png'/>
                         <File Name='tri-viewgluings.png'/>
                         <File Name='triangulation.png'/>
                         <File Name='triangulations.html'/>
                         <File Name='triheader.png'/>
-                        <File Name='triview.png'/>
                         <File Name='troubleshooting.html'/>
+                        <File Name='ubuntu-whatsthis.png'/>
                         <File Name='utils.html'/>
                         <File Name='who.html'/>
                       </Component>
@@ -446,6 +452,18 @@
                         <File Name='bitmanip_8h.html'/>
                         <File Name='boostutils_8h.html'/>
                         <File Name='classes.html'/>
+                        <File Name='classregina_1_1BanBoundary-members.html'/>
+                        <File Name='classregina_1_1BanBoundary.html'/>
+                        <File Name='classregina_1_1BanBoundary.png'/>
+                        <File Name='classregina_1_1BanConstraintBase-members.html'/>
+                        <File Name='classregina_1_1BanConstraintBase.html'/>
+                        <File Name='classregina_1_1BanConstraintBase.png'/>
+                        <File Name='classregina_1_1BanNone-members.html'/>
+                        <File Name='classregina_1_1BanNone.html'/>
+                        <File Name='classregina_1_1BanNone.png'/>
+                        <File Name='classregina_1_1BanTorusBoundary-members.html'/>
+                        <File Name='classregina_1_1BanTorusBoundary.html'/>
+                        <File Name='classregina_1_1BanTorusBoundary.png'/>
                         <File Name='classregina_1_1BitManipulator-members.html'/>
                         <File Name='classregina_1_1BitManipulator.html'/>
                         <File Name='classregina_1_1BitManipulator.png'/>
@@ -454,16 +472,81 @@
                         <File Name='classregina_1_1CompressionBuffer.png'/>
                         <File Name='classregina_1_1CompressionStream-members.html'/>
                         <File Name='classregina_1_1CompressionStream.html'/>
+                        <File Name='classregina_1_1CompressionStream.png'/>
                         <File Name='classregina_1_1DecompressionBuffer-members.html'/>
                         <File Name='classregina_1_1DecompressionBuffer.html'/>
                         <File Name='classregina_1_1DecompressionBuffer.png'/>
                         <File Name='classregina_1_1DecompressionStream-members.html'/>
                         <File Name='classregina_1_1DecompressionStream.html'/>
+                        <File Name='classregina_1_1DecompressionStream.png'/>
+                        <File Name='classregina_1_1Dim2BoundaryComponent-members.html'/>
+                        <File Name='classregina_1_1Dim2BoundaryComponent.html'/>
+                        <File Name='classregina_1_1Dim2BoundaryComponent.png'/>
+                        <File Name='classregina_1_1Dim2Census-members.html'/>
+                        <File Name='classregina_1_1Dim2Census.html'/>
+                        <File Name='classregina_1_1Dim2Component-members.html'/>
+                        <File Name='classregina_1_1Dim2Component.html'/>
+                        <File Name='classregina_1_1Dim2Component.png'/>
+                        <File Name='classregina_1_1Dim2Edge-members.html'/>
+                        <File Name='classregina_1_1Dim2Edge.html'/>
+                        <File Name='classregina_1_1Dim2Edge.png'/>
+                        <File Name='classregina_1_1Dim2EdgeEmbedding-members.html'/>
+                        <File Name='classregina_1_1Dim2EdgeEmbedding.html'/>
+                        <File Name='classregina_1_1Dim2EdgePairing-members.html'/>
+                        <File Name='classregina_1_1Dim2EdgePairing.html'/>
+                        <File Name='classregina_1_1Dim2EdgePairing.png'/>
+                        <File Name='classregina_1_1Dim2ExampleTriangulation-members.html'/>
+                        <File Name='classregina_1_1Dim2ExampleTriangulation.html'/>
+                        <File Name='classregina_1_1Dim2GluingPerms-members.html'/>
+                        <File Name='classregina_1_1Dim2GluingPerms.html'/>
+                        <File Name='classregina_1_1Dim2GluingPerms.png'/>
+                        <File Name='classregina_1_1Dim2GluingPermSearcher-members.html'/>
+                        <File Name='classregina_1_1Dim2GluingPermSearcher.html'/>
+                        <File Name='classregina_1_1Dim2GluingPermSearcher.png'/>
+                        <File Name='classregina_1_1Dim2Isomorphism-members.html'/>
+                        <File Name='classregina_1_1Dim2Isomorphism.html'/>
+                        <File Name='classregina_1_1Dim2Isomorphism.png'/>
+                        <File Name='classregina_1_1Dim2Triangle-members.html'/>
+                        <File Name='classregina_1_1Dim2Triangle.html'/>
+                        <File Name='classregina_1_1Dim2Triangle.png'/>
+                        <File Name='classregina_1_1Dim2Triangulation-members.html'/>
+                        <File Name='classregina_1_1Dim2Triangulation.html'/>
+                        <File Name='classregina_1_1Dim2Triangulation.png'/>
+                        <File Name='classregina_1_1Dim2Vertex-members.html'/>
+                        <File Name='classregina_1_1Dim2Vertex.html'/>
+                        <File Name='classregina_1_1Dim2Vertex.png'/>
+                        <File Name='classregina_1_1Dim2VertexEmbedding-members.html'/>
+                        <File Name='classregina_1_1Dim2VertexEmbedding.html'/>
+                        <File Name='classregina_1_1Flags-members.html'/>
+                        <File Name='classregina_1_1Flags.html'/>
                         <File Name='classregina_1_1GenericBitManipulator-members.html'/>
                         <File Name='classregina_1_1GenericBitManipulator.html'/>
                         <File Name='classregina_1_1GenericBitManipulator.png'/>
+                        <File Name='classregina_1_1i18n_1_1IConvStream.png'/>
+                        <File Name='classregina_1_1i18n_1_1IConvStreamBuffer.png'/>
                         <File Name='classregina_1_1LessDeref-members.html'/>
                         <File Name='classregina_1_1LessDeref.html'/>
+                        <File Name='classregina_1_1LPConstraintBase-members.html'/>
+                        <File Name='classregina_1_1LPConstraintBase.html'/>
+                        <File Name='classregina_1_1LPConstraintBase.png'/>
+                        <File Name='classregina_1_1LPConstraintEuler-members.html'/>
+                        <File Name='classregina_1_1LPConstraintEuler.html'/>
+                        <File Name='classregina_1_1LPConstraintEuler.png'/>
+                        <File Name='classregina_1_1LPConstraintNone-members.html'/>
+                        <File Name='classregina_1_1LPConstraintNone.html'/>
+                        <File Name='classregina_1_1LPConstraintNone.png'/>
+                        <File Name='classregina_1_1LPConstraintNonSpun-members.html'/>
+                        <File Name='classregina_1_1LPConstraintNonSpun.html'/>
+                        <File Name='classregina_1_1LPConstraintNonSpun.png'/>
+                        <File Name='classregina_1_1LPConstraintSubspace-members.html'/>
+                        <File Name='classregina_1_1LPConstraintSubspace.html'/>
+                        <File Name='classregina_1_1LPConstraintSubspace.png'/>
+                        <File Name='classregina_1_1LPData-members.html'/>
+                        <File Name='classregina_1_1LPData.html'/>
+                        <File Name='classregina_1_1LPInitialTableaux-members.html'/>
+                        <File Name='classregina_1_1LPInitialTableaux.html'/>
+                        <File Name='classregina_1_1LPMatrix-members.html'/>
+                        <File Name='classregina_1_1LPMatrix.html'/>
                         <File Name='classregina_1_1NAbelianGroup-members.html'/>
                         <File Name='classregina_1_1NAbelianGroup.html'/>
                         <File Name='classregina_1_1NAbelianGroup.png'/>
@@ -552,15 +635,17 @@
                         <File Name='classregina_1_1NFacePairing-members.html'/>
                         <File Name='classregina_1_1NFacePairing.html'/>
                         <File Name='classregina_1_1NFacePairing.png'/>
-                        <File Name='classregina_1_1NFile-members.html'/>
-                        <File Name='classregina_1_1NFile.html'/>
-                        <File Name='classregina_1_1NFile.png'/>
                         <File Name='classregina_1_1NFileInfo-members.html'/>
                         <File Name='classregina_1_1NFileInfo.html'/>
                         <File Name='classregina_1_1NFileInfo.png'/>
-                        <File Name='classregina_1_1NFilePropertyReader-members.html'/>
-                        <File Name='classregina_1_1NFilePropertyReader.html'/>
-                        <File Name='classregina_1_1NFilePropertyReader.png'/>
+                        <File Name='classregina_1_1NGenericFacetPairing-members.html'/>
+                        <File Name='classregina_1_1NGenericFacetPairing.html'/>
+                        <File Name='classregina_1_1NGenericFacetPairing.png'/>
+                        <File Name='classregina_1_1NGenericGluingPerms-members.html'/>
+                        <File Name='classregina_1_1NGenericGluingPerms.html'/>
+                        <File Name='classregina_1_1NGenericIsomorphism-members.html'/>
+                        <File Name='classregina_1_1NGenericIsomorphism.html'/>
+                        <File Name='classregina_1_1NGenericIsomorphism.png'/>
                         <File Name='classregina_1_1NGlobalDirs-members.html'/>
                         <File Name='classregina_1_1NGlobalDirs.html'/>
                         <File Name='classregina_1_1NGluingPermSearcher-members.html'/>
@@ -593,14 +678,18 @@
                         <File Name='classregina_1_1NHilbertDual.html'/>
                         <File Name='classregina_1_1NHilbertPrimal-members.html'/>
                         <File Name='classregina_1_1NHilbertPrimal.html'/>
+                        <File Name='classregina_1_1NHomGroupPresentation-members.html'/>
+                        <File Name='classregina_1_1NHomGroupPresentation.html'/>
+                        <File Name='classregina_1_1NHomGroupPresentation.png'/>
                         <File Name='classregina_1_1NHomMarkedAbelianGroup-members.html'/>
                         <File Name='classregina_1_1NHomMarkedAbelianGroup.html'/>
                         <File Name='classregina_1_1NHomMarkedAbelianGroup.png'/>
                         <File Name='classregina_1_1NHomologicalData-members.html'/>
                         <File Name='classregina_1_1NHomologicalData.html'/>
                         <File Name='classregina_1_1NHomologicalData.png'/>
-                        <File Name='classregina_1_1NIndexedArray-members.html'/>
-                        <File Name='classregina_1_1NIndexedArray.html'/>
+                        <File Name='classregina_1_1NIntegerBase-members.html'/>
+                        <File Name='classregina_1_1NIntegerBase.html'/>
+                        <File Name='classregina_1_1NIntegerBase.png'/>
                         <File Name='classregina_1_1NIsomorphism-members.html'/>
                         <File Name='classregina_1_1NIsomorphism.html'/>
                         <File Name='classregina_1_1NIsomorphism.png'/>
@@ -610,8 +699,6 @@
                         <File Name='classregina_1_1NL31Pillow-members.html'/>
                         <File Name='classregina_1_1NL31Pillow.html'/>
                         <File Name='classregina_1_1NL31Pillow.png'/>
-                        <File Name='classregina_1_1NLargeInteger-members.html'/>
-                        <File Name='classregina_1_1NLargeInteger.html'/>
                         <File Name='classregina_1_1NLayeredChain-members.html'/>
                         <File Name='classregina_1_1NLayeredChain.html'/>
                         <File Name='classregina_1_1NLayeredChain.png'/>
@@ -639,9 +726,6 @@
                         <File Name='classregina_1_1NListOnCall-members.html'/>
                         <File Name='classregina_1_1NListOnCall.html'/>
                         <File Name='classregina_1_1NListOnCall.png'/>
-                        <File Name='classregina_1_1NLocalFileResource-members.html'/>
-                        <File Name='classregina_1_1NLocalFileResource.html'/>
-                        <File Name='classregina_1_1NLocalFileResource.png'/>
                         <File Name='classregina_1_1NManifold-members.html'/>
                         <File Name='classregina_1_1NManifold.html'/>
                         <File Name='classregina_1_1NManifold.png'/>
@@ -672,6 +756,8 @@
                         <File Name='classregina_1_1NMutex.png'/>
                         <File Name='classregina_1_1NMutex_1_1MutexLock-members.html'/>
                         <File Name='classregina_1_1NMutex_1_1MutexLock.html'/>
+                        <File Name='classregina_1_1NNativeInteger-members.html'/>
+                        <File Name='classregina_1_1NNativeInteger.html'/>
                         <File Name='classregina_1_1NNormalSurface-members.html'/>
                         <File Name='classregina_1_1NNormalSurface.html'/>
                         <File Name='classregina_1_1NNormalSurface.png'/>
@@ -680,6 +766,7 @@
                         <File Name='classregina_1_1NNormalSurfaceList.png'/>
                         <File Name='classregina_1_1NNormalSurfaceList_1_1VectorIterator-members.html'/>
                         <File Name='classregina_1_1NNormalSurfaceList_1_1VectorIterator.html'/>
+                        <File Name='classregina_1_1NNormalSurfaceList_1_1VectorIterator.png'/>
                         <File Name='classregina_1_1NNormalSurfaceVector-members.html'/>
                         <File Name='classregina_1_1NNormalSurfaceVector.html'/>
                         <File Name='classregina_1_1NNormalSurfaceVector.png'/>
@@ -753,15 +840,18 @@
                         <File Name='classregina_1_1NProgressNumber-members.html'/>
                         <File Name='classregina_1_1NProgressNumber.html'/>
                         <File Name='classregina_1_1NProgressNumber.png'/>
+                        <File Name='classregina_1_1NProgressTracker-members.html'/>
+                        <File Name='classregina_1_1NProgressTracker.html'/>
                         <File Name='classregina_1_1NProperty-members.html'/>
                         <File Name='classregina_1_1NProperty.html'/>
                         <File Name='classregina_1_1NProperty.png'/>
                         <File Name='classregina_1_1NPropertyBase-members.html'/>
                         <File Name='classregina_1_1NPropertyBase.html'/>
                         <File Name='classregina_1_1NPropertyBase.png'/>
-                        <File Name='classregina_1_1NRandomAccessResource-members.html'/>
-                        <File Name='classregina_1_1NRandomAccessResource.html'/>
-                        <File Name='classregina_1_1NRandomAccessResource.png'/>
+                        <File Name='classregina_1_1NQitmask1-members.html'/>
+                        <File Name='classregina_1_1NQitmask1.html'/>
+                        <File Name='classregina_1_1NQitmask2-members.html'/>
+                        <File Name='classregina_1_1NQitmask2.html'/>
                         <File Name='classregina_1_1NRational-members.html'/>
                         <File Name='classregina_1_1NRational.html'/>
                         <File Name='classregina_1_1NRay-members.html'/>
@@ -847,9 +937,6 @@
                         <File Name='classregina_1_1NSurfaceFilterProperties-members.html'/>
                         <File Name='classregina_1_1NSurfaceFilterProperties.html'/>
                         <File Name='classregina_1_1NSurfaceFilterProperties.png'/>
-                        <File Name='classregina_1_1NSurfaceSet-members.html'/>
-                        <File Name='classregina_1_1NSurfaceSet.html'/>
-                        <File Name='classregina_1_1NSurfaceSet.png'/>
                         <File Name='classregina_1_1NSurfaceSubset-members.html'/>
                         <File Name='classregina_1_1NSurfaceSubset.html'/>
                         <File Name='classregina_1_1NSurfaceSubset.png'/>
@@ -865,6 +952,15 @@
                         <File Name='classregina_1_1NTorusBundle-members.html'/>
                         <File Name='classregina_1_1NTorusBundle.html'/>
                         <File Name='classregina_1_1NTorusBundle.png'/>
+                        <File Name='classregina_1_1NTreeEnumeration-members.html'/>
+                        <File Name='classregina_1_1NTreeEnumeration.html'/>
+                        <File Name='classregina_1_1NTreeEnumeration.png'/>
+                        <File Name='classregina_1_1NTreeSingleSoln-members.html'/>
+                        <File Name='classregina_1_1NTreeSingleSoln.html'/>
+                        <File Name='classregina_1_1NTreeSingleSoln.png'/>
+                        <File Name='classregina_1_1NTreeTraversal-members.html'/>
+                        <File Name='classregina_1_1NTreeTraversal.html'/>
+                        <File Name='classregina_1_1NTreeTraversal.png'/>
                         <File Name='classregina_1_1NTriBool-members.html'/>
                         <File Name='classregina_1_1NTriBool.html'/>
                         <File Name='classregina_1_1NTriBool__Illegal__Integer__Conversion.html'/>
@@ -876,6 +972,10 @@
                         <File Name='classregina_1_1NTriangulation.png'/>
                         <File Name='classregina_1_1NTrieSet-members.html'/>
                         <File Name='classregina_1_1NTrieSet.html'/>
+                        <File Name='classregina_1_1NTritmask1-members.html'/>
+                        <File Name='classregina_1_1NTritmask1.html'/>
+                        <File Name='classregina_1_1NTritmask2-members.html'/>
+                        <File Name='classregina_1_1NTritmask2.html'/>
                         <File Name='classregina_1_1NTrivialTri-members.html'/>
                         <File Name='classregina_1_1NTrivialTri.html'/>
                         <File Name='classregina_1_1NTrivialTri.png'/>
@@ -888,6 +988,8 @@
                         <File Name='classregina_1_1NTxIParallelCore-members.html'/>
                         <File Name='classregina_1_1NTxIParallelCore.html'/>
                         <File Name='classregina_1_1NTxIParallelCore.png'/>
+                        <File Name='classregina_1_1NTypeTrie-members.html'/>
+                        <File Name='classregina_1_1NTypeTrie.html'/>
                         <File Name='classregina_1_1NVector-members.html'/>
                         <File Name='classregina_1_1NVector.html'/>
                         <File Name='classregina_1_1NVertex-members.html'/>
@@ -913,6 +1015,9 @@
                         <File Name='classregina_1_1NXMLContainerReader-members.html'/>
                         <File Name='classregina_1_1NXMLContainerReader.html'/>
                         <File Name='classregina_1_1NXMLContainerReader.png'/>
+                        <File Name='classregina_1_1NXMLDim2TriangulationReader-members.html'/>
+                        <File Name='classregina_1_1NXMLDim2TriangulationReader.html'/>
+                        <File Name='classregina_1_1NXMLDim2TriangulationReader.png'/>
                         <File Name='classregina_1_1NXMLElementReader-members.html'/>
                         <File Name='classregina_1_1NXMLElementReader.html'/>
                         <File Name='classregina_1_1NXMLElementReader.png'/>
@@ -977,6 +1082,7 @@
                         <File Name='classregina_1_1python_1_1GlobalArray3D.html'/>
                         <File Name='classregina_1_1stl_1_1unary__compose-members.html'/>
                         <File Name='classregina_1_1stl_1_1unary__compose.html'/>
+                        <File Name='classregina_1_1stl_1_1unary__compose.png'/>
                         <File Name='classregina_1_1xml_1_1XMLParser-members.html'/>
                         <File Name='classregina_1_1xml_1_1XMLParser.html'/>
                         <File Name='classregina_1_1xml_1_1XMLParserCallback-members.html'/>
@@ -984,8 +1090,7 @@
                         <File Name='classregina_1_1xml_1_1XMLParserCallback.png'/>
                         <File Name='classregina_1_1xml_1_1XMLPropertyDict-members.html'/>
                         <File Name='classregina_1_1xml_1_1XMLPropertyDict.html'/>
-                        <File Name='classstd_1_1vector.html'/>
-                        <File Name='classstd_1_1vector.png'/>
+                        <File Name='classregina_1_1xml_1_1XMLPropertyDict.png'/>
                         <File Name='closed.png'/>
                         <File Name='csvsurfacelist_8h.html'/>
                         <File Name='cube.png'/>
@@ -995,13 +1100,43 @@
                         <File Name='diagbdry.png'/>
                         <File Name='diagdistort.png'/>
                         <File Name='diaginit.png'/>
+                        <File Name='dim2boundarycomponent_8h.html'/>
+                        <File Name='dim2census_8h.html'/>
+                        <File Name='dim2component_8h.html'/>
+                        <File Name='dim2edge_8h.html'/>
+                        <File Name='dim2edgepairing_8h.html'/>
+                        <File Name='dim2exampletriangulation_8h.html'/>
+                        <File Name='dim2gluingperms_8h.html'/>
+                        <File Name='dim2gluingpermsearcher_8h.html'/>
+                        <File Name='dim2isomorphism_8h.html'/>
+                        <File Name='dim2triangle_8h.html'/>
+                        <File Name='dim2triangulation_8h.html'/>
+                        <File Name='dim2vertex_8h.html'/>
+                        <File Name='dimtraits_8h.html'/>
                         <File Name='docs_8h.html'/>
                         <File Name='doxygen.css'/>
                         <File Name='doxygen.png'/>
                         <File Name='engine_8h.html'/>
                         <File Name='files.html'/>
                         <File Name='filterregistry_8h.html'/>
+                        <File Name='flags_8h.html'/>
                         <File Name='flavourregistry_8h.html'/>
+                        <File Name='ftv2blank.png'/>
+                        <File Name='ftv2cl.png'/>
+                        <File Name='ftv2doc.png'/>
+                        <File Name='ftv2folderclosed.png'/>
+                        <File Name='ftv2folderopen.png'/>
+                        <File Name='ftv2lastnode.png'/>
+                        <File Name='ftv2link.png'/>
+                        <File Name='ftv2mlastnode.png'/>
+                        <File Name='ftv2mnode.png'/>
+                        <File Name='ftv2mo.png'/>
+                        <File Name='ftv2node.png'/>
+                        <File Name='ftv2ns.png'/>
+                        <File Name='ftv2plastnode.png'/>
+                        <File Name='ftv2pnode.png'/>
+                        <File Name='ftv2splitbar.png'/>
+                        <File Name='ftv2vertline.png'/>
                         <File Name='functions.html'/>
                         <File Name='functions_0x33.html'/>
                         <File Name='functions_0x61.html'/>
@@ -1093,6 +1228,7 @@
                         <File Name='group__algebra.html'/>
                         <File Name='group__angle.html'/>
                         <File Name='group__census.html'/>
+                        <File Name='group__dim2.html'/>
                         <File Name='group__engine.html'/>
                         <File Name='group__enumerate.html'/>
                         <File Name='group__file.html'/>
@@ -1106,12 +1242,10 @@
                         <File Name='group__surfaces.html'/>
                         <File Name='group__triangulation.html'/>
                         <File Name='group__utilities.html'/>
-                        <File Name='hashmap_8h.html'/>
-                        <File Name='hashset_8h.html'/>
-                        <File Name='hashutils_8h.html'/>
                         <File Name='hierarchy.html'/>
                         <File Name='i18n.html'/>
                         <File Name='i18nutils_8h.html'/>
+                        <File Name='intutils_8h.html'/>
                         <File Name='isosig_8h.html'/>
                         <File Name='matrixops_8h.html'/>
                         <File Name='memutils_8h.html'/>
@@ -1130,11 +1264,11 @@
                         <File Name='namespaceregina_1_1stl.html'/>
                         <File Name='namespaceregina_1_1xml.html'/>
                         <File Name='namespaces.html'/>
-                        <File Name='namespacestdhash.html'/>
                         <File Name='nanglestructure_8h.html'/>
                         <File Name='nanglestructurelist_8h.html'/>
                         <File Name='naugtrisolidtorus_8h.html'/>
                         <File Name='nav_f.png'/>
+                        <File Name='nav_g.png'/>
                         <File Name='nav_h.png'/>
                         <File Name='nbitmask_8h.html'/>
                         <File Name='nblockedsfs_8h.html'/>
@@ -1157,9 +1291,10 @@
                         <File Name='nfacepair_8h.html'/>
                         <File Name='nfacepairing_8h.html'/>
                         <File Name='nfacetspec_8h.html'/>
-                        <File Name='nfile_8h.html'/>
                         <File Name='nfileinfo_8h.html'/>
-                        <File Name='nfilepropertyreader_8h.html'/>
+                        <File Name='ngenericfacetpairing_8h.html'/>
+                        <File Name='ngenericgluingperms_8h.html'/>
+                        <File Name='ngenericisomorphism_8h.html'/>
                         <File Name='nglobaldirs_8h.html'/>
                         <File Name='ngluingperms_8h.html'/>
                         <File Name='ngluingpermsearcher_8h.html'/>
@@ -1171,8 +1306,9 @@
                         <File Name='nhilbertcd_8h.html'/>
                         <File Name='nhilbertdual_8h.html'/>
                         <File Name='nhilbertprimal_8h.html'/>
+                        <File Name='nhomgrouppresentation_8h.html'/>
                         <File Name='nhomologicaldata_8h.html'/>
-                        <File Name='nindexedarray_8h.html'/>
+                        <File Name='ninteger_8h.html'/>
                         <File Name='nisomorphism_8h.html'/>
                         <File Name='nl31pillow_8h.html'/>
                         <File Name='nlargeinteger_8h.html'/>
@@ -1194,6 +1330,8 @@
                         <File Name='nmaxadmissible_8h.html'/>
                         <File Name='nnormalsurface_8h.html'/>
                         <File Name='nnormalsurfacelist_8h.html'/>
+                        <File Name='normalcoords_8h.html'/>
+                        <File Name='normalflags_8h.html'/>
                         <File Name='notation_8h.html'/>
                         <File Name='npacket_8h.html'/>
                         <File Name='npacketlistener_8h.html'/>
@@ -1210,11 +1348,12 @@
                         <File Name='nprism_8h.html'/>
                         <File Name='nprogress_8h.html'/>
                         <File Name='nprogressmanager_8h.html'/>
+                        <File Name='nprogresstracker_8h.html'/>
                         <File Name='nprogresstypes_8h.html'/>
                         <File Name='nproperty_8h.html'/>
+                        <File Name='nqitmask_8h.html'/>
                         <File Name='nrational_8h.html'/>
                         <File Name='nray_8h.html'/>
-                        <File Name='nresources_8h.html'/>
                         <File Name='nsanstandard_8h.html'/>
                         <File Name='nsatannulus_8h.html'/>
                         <File Name='nsatblock_8h.html'/>
@@ -1242,24 +1381,29 @@
                         <File Name='nsstandard_8h.html'/>
                         <File Name='nstandardtri_8h.html'/>
                         <File Name='nsurfacefilter_8h.html'/>
-                        <File Name='nsurfaceset_8h.html'/>
                         <File Name='nsurfacesubset_8h.html'/>
                         <File Name='ntetface_8h.html'/>
                         <File Name='ntetrahedron_8h.html'/>
                         <File Name='ntext_8h.html'/>
                         <File Name='nthread_8h.html'/>
                         <File Name='ntorusbundle_8h.html'/>
+                        <File Name='ntreeconstraint_8h.html'/>
+                        <File Name='ntreelp_8h.html'/>
+                        <File Name='ntreetraversal_8h.html'/>
                         <File Name='ntriangulation_8h.html'/>
                         <File Name='ntrieset_8h.html'/>
                         <File Name='ntrisolidtorus_8h.html'/>
+                        <File Name='ntritmask_8h.html'/>
                         <File Name='ntrivialtri_8h.html'/>
                         <File Name='ntxicore_8h.html'/>
+                        <File Name='ntypetrie_8h.html'/>
                         <File Name='numbertheory_8h.html'/>
                         <File Name='nvector_8h.html'/>
                         <File Name='nvertex_8h.html'/>
                         <File Name='nxmlalgebrareader_8h.html'/>
                         <File Name='nxmlanglestructreader_8h.html'/>
                         <File Name='nxmlcallback_8h.html'/>
+                        <File Name='nxmldim2trireader_8h.html'/>
                         <File Name='nxmlelementreader_8h.html'/>
                         <File Name='nxmlfile_8h.html'/>
                         <File Name='nxmlfilterreader_8h.html'/>
@@ -1288,6 +1432,8 @@
                         <File Name='snappea_8h.html'/>
                         <File Name='stlutils_8h.html'/>
                         <File Name='stringutils_8h.html'/>
+                        <File Name='structregina_1_1DimTraits-members.html'/>
+                        <File Name='structregina_1_1DimTraits.html'/>
                         <File Name='structregina_1_1FuncDelete-members.html'/>
                         <File Name='structregina_1_1FuncDelete.html'/>
                         <File Name='structregina_1_1FuncNew-members.html'/>
@@ -1298,12 +1444,24 @@
                         <File Name='structregina_1_1FuncNewCopyPtr.html'/>
                         <File Name='structregina_1_1FuncNewCopyRef-members.html'/>
                         <File Name='structregina_1_1FuncNewCopyRef.html'/>
-                        <File Name='structregina_1_1HashPointer-members.html'/>
-                        <File Name='structregina_1_1HashPointer.html'/>
-                        <File Name='structregina_1_1HashString-members.html'/>
-                        <File Name='structregina_1_1HashString.html'/>
+                        <File Name='structregina_1_1InfinityBase.html'/>
+                        <File Name='structregina_1_1InfinityBase.png'/>
+                        <File Name='structregina_1_1IntOfSize-members.html'/>
+                        <File Name='structregina_1_1IntOfSize.html'/>
+                        <File Name='structregina_1_1LPConstraintBase_1_1Coefficients-members.html'/>
+                        <File Name='structregina_1_1LPConstraintBase_1_1Coefficients.html'/>
+                        <File Name='structregina_1_1LPConstraintEuler_1_1Coefficients-members.html'/>
+                        <File Name='structregina_1_1LPConstraintEuler_1_1Coefficients.html'/>
+                        <File Name='structregina_1_1LPConstraintNone_1_1Coefficients-members.html'/>
+                        <File Name='structregina_1_1LPConstraintNone_1_1Coefficients.html'/>
+                        <File Name='structregina_1_1LPConstraintNonSpun_1_1Coefficients-members.html'/>
+                        <File Name='structregina_1_1LPConstraintNonSpun_1_1Coefficients.html'/>
+                        <File Name='structregina_1_1LPInitialTableaux_1_1Col-members.html'/>
+                        <File Name='structregina_1_1LPInitialTableaux_1_1Col.html'/>
+                        <File Name='structregina_1_1LPInitialTableaux_1_1Col.png'/>
                         <File Name='structregina_1_1NAngleStructureList_1_1StructureInserter-members.html'/>
                         <File Name='structregina_1_1NAngleStructureList_1_1StructureInserter.html'/>
+                        <File Name='structregina_1_1NAngleStructureList_1_1StructureInserter.png'/>
                         <File Name='structregina_1_1NCompactSearcher_1_1TetEdgeState-members.html'/>
                         <File Name='structregina_1_1NCompactSearcher_1_1TetEdgeState.html'/>
                         <File Name='structregina_1_1NCompactSearcher_1_1TetVertexState-members.html'/>
@@ -1318,6 +1476,7 @@
                         <File Name='structregina_1_1NGroupExpressionTerm.html'/>
                         <File Name='structregina_1_1NNormalSurfaceList_1_1SurfaceInserter-members.html'/>
                         <File Name='structregina_1_1NNormalSurfaceList_1_1SurfaceInserter.html'/>
+                        <File Name='structregina_1_1NNormalSurfaceList_1_1SurfaceInserter.png'/>
                         <File Name='structregina_1_1NPrismSpec-members.html'/>
                         <File Name='structregina_1_1NPrismSpec.html'/>
                         <File Name='structregina_1_1NProgressStateNumeric-members.html'/>
@@ -1328,12 +1487,34 @@
                         <File Name='structregina_1_1NSatAnnulus.html'/>
                         <File Name='structregina_1_1NSatBlockSpec-members.html'/>
                         <File Name='structregina_1_1NSatBlockSpec.html'/>
+                        <File Name='structregina_1_1NewNormalSurfaceVector-members.html'/>
+                        <File Name='structregina_1_1NewNormalSurfaceVector.html'/>
+                        <File Name='structregina_1_1NewNormalSurfaceVector.png'/>
+                        <File Name='structregina_1_1NormalFlavour.html'/>
+                        <File Name='structregina_1_1NormalFlavour_3_01NS__AN__QUAD__OCT_01_4-members.html'/>
+                        <File Name='structregina_1_1NormalFlavour_3_01NS__AN__QUAD__OCT_01_4.html'/>
+                        <File Name='structregina_1_1NormalFlavour_3_01NS__AN__STANDARD_01_4-members.html'/>
+                        <File Name='structregina_1_1NormalFlavour_3_01NS__AN__STANDARD_01_4.html'/>
+                        <File Name='structregina_1_1NormalFlavour_3_01NS__ORIENTED_01_4-members.html'/>
+                        <File Name='structregina_1_1NormalFlavour_3_01NS__ORIENTED_01_4.html'/>
+                        <File Name='structregina_1_1NormalFlavour_3_01NS__ORIENTED__QUAD_01_4-members.html'/>
+                        <File Name='structregina_1_1NormalFlavour_3_01NS__ORIENTED__QUAD_01_4.html'/>
+                        <File Name='structregina_1_1NormalFlavour_3_01NS__QUAD_01_4-members.html'/>
+                        <File Name='structregina_1_1NormalFlavour_3_01NS__QUAD_01_4.html'/>
+                        <File Name='structregina_1_1NormalFlavour_3_01NS__STANDARD_01_4-members.html'/>
+                        <File Name='structregina_1_1NormalFlavour_3_01NS__STANDARD_01_4.html'/>
+                        <File Name='structregina_1_1Returns-members.html'/>
+                        <File Name='structregina_1_1Returns.html'/>
                         <File Name='structregina_1_1boost_1_1remove__pointer-members.html'/>
                         <File Name='structregina_1_1boost_1_1remove__pointer.html'/>
                         <File Name='structregina_1_1stl_1_1select1st-members.html'/>
                         <File Name='structregina_1_1stl_1_1select1st.html'/>
+                        <File Name='structregina_1_1stl_1_1select1st.png'/>
                         <File Name='structregina_1_1stl_1_1select2nd-members.html'/>
                         <File Name='structregina_1_1stl_1_1select2nd.html'/>
+                        <File Name='structregina_1_1stl_1_1select2nd.png'/>
+                        <File Name='sync_off.png'/>
+                        <File Name='sync_on.png'/>
                         <File Name='tab_a.png'/>
                         <File Name='tab_b.png'/>
                         <File Name='tab_h.png'/>
@@ -1596,6 +1777,9 @@
                       <File Name='barycentric-16.png'/>
                       <File Name='barycentric-22.png'/>
                       <File Name='barycentric-32.png'/>
+                      <File Name='components-16.png'/>
+                      <File Name='components-22.png'/>
+                      <File Name='components-32.png'/>
                       <File Name='cone-16.png'/>
                       <File Name='cone-22.png'/>
                       <File Name='cone-32.png'/>
@@ -1611,6 +1795,9 @@
                       <File Name='doublecover-16.png'/>
                       <File Name='doublecover-22.png'/>
                       <File Name='doublecover-32.png'/>
+                      <File Name='drilledge-16.png'/>
+                      <File Name='drilledge-22.png'/>
+                      <File Name='drilledge-32.png'/>
                       <File Name='filter_comb-16.png'/>
                       <File Name='filter_comb-22.png'/>
                       <File Name='filter_comb-32.png'/>
@@ -1632,6 +1819,9 @@
                       <File Name='packet_container-16.png'/>
                       <File Name='packet_container-22.png'/>
                       <File Name='packet_container-32.png'/>
+                      <File Name='packet_dim2triangulation-16.png'/>
+                      <File Name='packet_dim2triangulation-22.png'/>
+                      <File Name='packet_dim2triangulation-32.png'/>
                       <File Name='packet_filter-16.png'/>
                       <File Name='packet_filter-22.png'/>
                       <File Name='packet_filter-32.png'/>
@@ -1668,6 +1858,9 @@
                       <File Name='snappea-22.png'/>
                       <File Name='snappea-32.png'/>
                       <File Name='snappea-64.png'/>
+                      <File Name='vtxlinks-16.png'/>
+                      <File Name='vtxlinks-22.png'/>
+                      <File Name='vtxlinks-32.png'/>
                     </Component>
                   </Directory>
                 </Directory>
@@ -1705,7 +1898,7 @@
         </Directory>
       </Directory>
       <Directory Id='ProgramMenuFolder' Name='Programs'>
-        <Directory Id='ProgramMenuDir' Name='Regina 4.93'>
+        <Directory Id='ProgramMenuDir' Name='Regina 4.94'>
           <Component Id='ProgramMenuDir'
            Guid='2EF46552-9E7B-4822-A773-621B48A205B4'>
             <RemoveFolder Id='ProgramMenuDir' On='uninstall'/>
@@ -1720,7 +1913,7 @@
     </Directory>
 
     <Feature Id='Complete'
-     Title='Regina 4.93'
+     Title='Regina 4.94'
      Description='The complete package.'
      AllowAdvertise='no'
      InstallDefault='local'
@@ -1762,9 +1955,9 @@
     </Feature>
 
     <Icon Id='regina.ico'
-     SourceFile='c:\MinGW\msys\1.0\home\bab\regina-4.93\qtui\src\regina.ico'/>
+     SourceFile='c:\MinGW\msys\1.0\home\bab\regina-4.94\qtui\src\regina.ico'/>
     <Icon Id='manual.ico'
-     SourceFile='c:\MinGW\msys\1.0\home\bab\regina-4.93\qtui\src\manual.ico'/>
+     SourceFile='c:\MinGW\msys\1.0\home\bab\regina-4.94\qtui\src\manual.ico'/>
   </Product>
 </Wix>
 
