@@ -2,6 +2,7 @@ Build dependencies from mingw:
   mingw-get install mingw32-libz
   mingw-get install mingw32-gmp
   mingw-get install mingw32-libpopt
+  mingw-get install mingw32-pthreads-w32
 
 Build dependencies with standalone installers:
   CMake
@@ -19,48 +20,48 @@ Other helpful stuff with standalone installers:
   Graphviz
   TortoiseSVN
 
-To build boost:
+To build boost (verified for v1.54.0):
   Download .zip (not .tar.gz)
-  ./bootstrap.sh --with-toolset=mingw
-    --with-python=c:\\Python27\\python
-    --with-libraries=python,regex
-    --prefix=c:\\Boost
-  Edit project-config.jam:
-    Replace all instances of mingw with gcc
-    Replace c:\Python27 with c:\\Python27
-    Replace c:\Boost with c:\\Boost
-  Edit tools/build/v2/tools/python.jam:
-    Comment out the version.check-jam-version block
-  ./b2 variant=release link=shared
-  ./b2 install variant=release link=shared
+  Open cmd.exe (not mingw)
 
-To build libxml2:
-  MinGW's libxml2 (2.7.6) is broken, and libxml2 must be hand-rolled.
-  ./configure --prefix=/home/bab/software --with-threads=win32
+  set PATH=C:\MinGW\bin;%PATH%
+  cd path\to\boost
+  bootstrap.bat mingw
+  b2 toolset=gcc --with-python --with-regex variant=release link=shared
 
-To build libxslt:
-  Don't.  Just use -DREGINA_DOCS=path/to/docs.zip instead.
-  Build docs.zip so that handbooks are stored as docs/en/regina{,-xml}.
+  Open mingw
 
-To build source-highlight:
+  cd path/to/boost
+  mv boost /c/Boost/include/boost-1_54 (or whatever version)
+  mv stage/lib/* /c/Boost/lib
+
+To build cppunit (verified for v1.12.1):
+  ./configure --prefix=/home/bab/software
+
+To build source-highlight (verified for v3.1.7):
   Patch to change NO_ERROR to NO_RANGE_ERROR (see source-highlight.patch).
   ./configure --prefix=/home/bab/software --with-boost=/c/Boost
 
-To build cppunit:
-  ./configure --prefix=/home/bab/software
+To build libxml2:
+  MinGW's msys-libxml2 (2.7.6) is broken, and libxml2 must be hand-rolled.
+  ./configure --prefix=/home/bab/software --with-threads=win32
 
 To build the python system library for shipping:
   cd /c/Python27/Lib
   zip -r path/to/python27.zip . -x distutils/\* -x \*.pyc
   Also copy python27.dll from /c/Windows/System32
 
+To prepare the handbook:
+  Build docs.zip from some other package (e.g., the Mac bundle),
+  so that handbooks are stored as docs/en/regina{,-xml}.
+
 To build regina:
   cmake -G 'MSYS Makefiles'
-    -DCMAKE_INCLUDE_PATH=/mingw/include:/include:/home/bab/software/include:/c/Boost/include/boost-1_49
-    -DCMAKE_LIBRARY_PATH=/mingw/lib:/lib:/home/bab/software/lib:/c/Boost/lib
+    -DCMAKE_INCLUDE_PATH=/mingw/include:/include:/c/Boost/include/boost-1_54
+    -DCMAKE_LIBRARY_PATH=/mingw/lib:/lib:/c/Boost/lib
     -DCMAKE_INSTALL_PREFIX=/home/bab/software
-    -DQT_QMAKE_EXECUTABLE=/c/QtSDK/Desktop/Qt/4.8.0/mingw/bin/qmake
-    -DREGINA_DOCS=/home/bab/docs.zip
+    -DQT_QMAKE_EXECUTABLE=/c/Qt/4.8.5/bin/qmake
+    -DREGINA_DOCS=path/to/docs.zip
     ..
 
 To prepare WiX for use:

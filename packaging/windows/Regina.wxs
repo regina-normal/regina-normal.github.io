@@ -80,17 +80,17 @@
               </Component>
               <Component Id='CoreDLLs'
                Guid='7D74E2A7-1970-4751-94E2-DB9674CA2C64'>
-                <File Source='c:\QtSDK\Desktop\Qt\4.8.0\mingw\bin\QtCore4.dll'/>
-                <File Source='c:\QtSDK\Desktop\Qt\4.8.0\mingw\bin\QtGui4.dll'/>
-                <File Source='c:\Boost\lib\libboost_python-mgw46-mt-1_49.dll'/>
-                <File Source='c:\Boost\lib\libboost_regex-mgw46-mt-1_49.dll'/>
+                <File Source='c:\Qt\4.8.5\bin\QtCore4.dll'/>
+                <File Source='c:\Qt\4.8.5\bin\QtGui4.dll'/>
+                <File Source='c:\Boost\lib\libboost_python-mgw48-mt-1_54.dll'/>
+                <File Source='c:\Boost\lib\libboost_regex-mgw48-mt-1_54.dll'/>
                 <File Source='c:\MinGW\bin\libgcc_s_dw2-1.dll'/>
                 <File Source='c:\MinGW\bin\libgmp-10.dll'/>
                 <File Source='c:\MinGW\bin\libgmpxx-4.dll'/>
                 <File Source='c:\MinGW\bin\libiconv-2.dll'/>
                 <File Source='c:\MinGW\bin\libpopt-0.dll'/>
                 <File Source='c:\MinGW\bin\libstdc++-6.dll'/>
-                <File Source='c:\MinGW\bin\libz-1.dll'/>
+                <File Source='c:\MinGW\bin\zlib1.dll'/>
                 <File Source='c:\MinGW\bin\mingwm10.dll' KeyPath='yes'/>
                 <File Source='c:\MinGW\bin\pthreadGC2.dll'/>
                 <File Source='c:\MinGW\msys\1.0\home\bab\software\bin\libxml2-2.dll'/>
