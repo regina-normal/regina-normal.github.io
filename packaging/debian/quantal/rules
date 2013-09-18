@@ -27,6 +27,7 @@ ${build_dir}:
 		-DPACKAGE_NAME=regina-normal -DPACKAGING_MODE=1 \
 		$(DEB_CMAKE_CUSTOM_FLAGS) \
 		-DPYTHON_EXECUTABLE=/usr/bin/python${pyver} \
+		-DPythonLibs_FIND_VERSION=${pyver} \
 		-DCMAKE_INSTALL_PREFIX=/usr \
 		-DDISABLE_RPATH=1 \
 		-DCMAKE_MODULE_PATH="/usr/share/apps/cmake/modules"
