@@ -14,11 +14,7 @@ Packager: Ben Burton <bab@debian.org>
 BuildRoot: %{_tmppath}/%{name}-buildroot
 
 Requires: graphviz
-%if 0%{?mdvver} <= 201020
-Requires: okular
-%else
 Requires: mimehandler(application/pdf)
-%endif
 Requires: python
 Conflicts: regina
 
@@ -31,15 +27,15 @@ BuildRequires: gcc-c++
 BuildRequires: glibc-devel
 BuildRequires: gmp-devel
 BuildRequires: gmpxx-devel
-BuildRequires: libsource-highlight-devel
 BuildRequires: libstdc++-devel
 BuildRequires: libxml2-devel
 BuildRequires: qt4-devel
 BuildRequires: popt-devel
 BuildRequires: python-devel
 BuildRequires: shared-mime-info
+BuildRequires: source-highlight-devel
 BuildRequires: xsltproc
-BuildRequires: zlib1-devel
+BuildRequires: zlib-devel
 
 Prereq: /sbin/ldconfig
 
@@ -111,6 +107,7 @@ rm -rf %{buildroot}
 %changelog
 * Tue Sep 17 2013 Ben Burton <bab@debian.org> 4.94
 - New upstream release.
+- Transitioned from Mandriva to Mageia.
 
 * Tue May 29 2012 Ben Burton <bab@debian.org> 4.93
 - New upstream release.
