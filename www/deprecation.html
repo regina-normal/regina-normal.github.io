@@ -109,6 +109,20 @@ The red cells indicate code that has now been removed.
     <td><tt>NFacePairing::Use</tt></td>
     <td>&nbsp;</td>
 </tr>
+<tr><td class="deptype" colspan=4>Constants</td></tr>
+<tr>
+    <td class="removed"><tt>NFileInfo::TYPE_BINARY</tt><br>
+    Removed in Regina&nbsp;4.94</td>
+    <td>&mdash;</td>
+    <td>See the comments below for the <tt>NFile</tt> class.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NNormalSurfaceList::STANDARD</tt>,
+    <tt>NNormalSurfaceList::QUAD</tt>, etc.</td>
+    <td><tt>NS_STANDARD</tt>, <tt>NS_QUAD</tt>, etc.</td>
+    <td>These are now members of a global enum type, defined in
+    <tt>surfaces/normalcoords.h</tt>.</td>
+</tr>
 <tr><td class="deptype" colspan=4>Classes</td></tr>
 <tr>
     <td class="removed"><tt>HashPointer</tt>,
@@ -262,6 +276,12 @@ The red cells indicate code that has now been removed.
     <td>&nbsp;</td>
 </tr>
 <tr>
+    <td class="removed"><tt>NCensus::formCensus(..., NProgressManager*)</tt><br>
+    Removed in Regina&nbsp;4.94</td>
+    <td><tt>NCensus::formCensus(...)</tt></td>
+    <td>The final NProgressManager argument has been removed.</td>
+</tr>
+<tr>
     <td class="first"><tt>NDoubleDescription::enumerateExtremalRays()</tt></td>
     <td>Same function but different arguments</td>
     <td>The <tt>base</tt> argument is gone, and a new template argument
@@ -276,6 +296,12 @@ The red cells indicate code that has now been removed.
     <td class="first"><tt>NFacePairing::getNumberOfTetrahedra()</tt></td>
     <td><tt>NFacePairing::size()</tt></td>
     <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>NHilbertCD::enumerateHilbertBasis(..., NProgressMessage*)</tt><br>
+    Removed in Regina&nbsp;4.94</td>
+    <td><tt>NHilbertCD::enumerateHilbertBasis(...)</tt></td>
+    <td>The final progress tracking argument has been removed.</td>
 </tr>
 <tr>
     <td class="first"><tt>NHomMarkedAbelianGroup::...</tt></td>
@@ -302,6 +328,26 @@ The red cells indicate code that has now been removed.
 <tr>
     <td class="first"><tt>NNormalSurface::findVtxOctAlmostNormalSphere()</tt></td>
     <td><tt>NTriangulation::hasOctagonalAlmostNormalSphere()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NNormalSurfaceList::enumerate()</tt>,
+    <tt>NNormalSurfaceList::enumerateStandardDirect()</tt>,
+    <tt>NNormalSurfaceList::enumerateStandardANDirect()</tt>,
+    <tt>NNormalSurfaceList::enumerateFundPrimal()</tt>,
+    <tt>NNormalSurfaceList::enumerateFundDual()</tt>,
+    <tt>NNormalSurfaceList::enumerateFundCD()</tt>,
+    <tt>NNormalSurfaceList::enumerateFundFullCone()</tt></td>
+    <td><tt>NNormalSurfaceList::enumerate(NTriangulation*, NormalCoords,
+    NormalList, NormalAlg, NProgressTracker*)</td>
+    <td>All of the old enumeration routines have been amalgamated into a
+    single &ldquo;universal&rdquo; enumeration routine.  The arguments
+    let you specify which surfaces you wish to enumerate and/or which
+    algorithm you wish to use.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NNormalSurfaceList::getFlavour()</tt></td>
+    <td><tt>NNormalSurfaceList::flavour()</td>
     <td>&nbsp;</td>
 </tr>
 <tr>
