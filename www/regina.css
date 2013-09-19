@@ -140,6 +140,14 @@ table.data td.removed, table.data td.reqfirst {
   background-color: #F0D7FF;
 }
 
+table.data td.deptype {
+  background-color: #FFFFFF;
+  border-width: 0px 0px 2px 0px;
+  padding: 2ex 2px 2px 2px;
+  color: #3D3F53;
+  font-weight: bold;
+}
+
 div.example p, div.announce p, div.warning p {
   padding: 1ex 1ex 1ex 1ex;
 }
