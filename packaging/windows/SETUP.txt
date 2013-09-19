@@ -4,12 +4,15 @@ Build dependencies from mingw:
   mingw-get install mingw32-libpopt
   mingw-get install mingw32-pthreads-w32
 
+  Do not install the msys-libxml2 package (this is broken).
+
 Build dependencies with standalone installers:
   CMake
   Doxygen
   Python
-  Qt SDK
   Wix
+
+  Do not install standalone Qt (this is incompatible with newer MinGW).
 
 Other helpful stuff from mingw:
   mingw-get install msys-wget
@@ -34,6 +37,21 @@ To build boost (verified for v1.54.0):
   cd path/to/boost
   mv boost /c/Boost/include/boost-1_54 (or whatever version)
   mv stage/lib/* /c/Boost/lib
+
+To build Qt (verified for 4.8.5):
+  Unpack in /c/Qt/4.8.5
+  Open cmd.exe (not mingw)
+
+  Edit /c/Qt/4.8.5/projects.pro and comment out:
+    SUBDIRS += examples
+    SUBDIRS += demos
+
+  set PATH=C:\MinGW\bin;%PATH%
+  cd \Qt\4.8.5
+  configure -platform win32-g++
+  mingw32-make
+
+  There is no need to install (the files are already in place).
 
 To build cppunit (verified for v1.12.1):
   ./configure --prefix=/home/bab/software
