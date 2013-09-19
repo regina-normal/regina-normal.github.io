@@ -43,15 +43,17 @@ To build Qt (verified for 4.8.5):
   Open cmd.exe (not mingw)
 
   Edit /c/Qt/4.8.5/projects.pro and comment out:
+    SUBDIRS += tools
     SUBDIRS += examples
     SUBDIRS += demos
 
   set PATH=C:\MinGW\bin;%PATH%
   cd \Qt\4.8.5
-  configure -platform win32-g++
+  configure -platform win32-g++ -release
   mingw32-make
 
   There is no need to install (the files are already in place).
+  My 4.8.5 build died somewhere beneath src/plugins, but the libraries were ok.
 
 To build cppunit (verified for v1.12.1):
   ./configure --prefix=/home/bab/software
