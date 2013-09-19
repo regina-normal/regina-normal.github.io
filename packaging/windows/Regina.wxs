@@ -1113,6 +1113,25 @@
                         <File Name='dim2triangulation_8h.html'/>
                         <File Name='dim2vertex_8h.html'/>
                         <File Name='dimtraits_8h.html'/>
+                        <File Name='dir_0042759d74fd9eed55f9da20deb614c1.html'/>
+                        <File Name='dir_032de391549cd853e5463bd476b3bf64.html'/>
+                        <File Name='dir_03ac465ee08ebdf80f0588025a52c6e1.html'/>
+                        <File Name='dir_194fcfcaf2876f7488416ec87c168e1c.html'/>
+                        <File Name='dir_240635a003419605911e20f6349d1bfa.html'/>
+                        <File Name='dir_25c550b5cdbb429de029a6cfdacb403a.html'/>
+                        <File Name='dir_34d7b4dcdf2c415bc2c50cf5fdd475b8.html'/>
+                        <File Name='dir_41b60c9daad625364428e574bd56e8f0.html'/>
+                        <File Name='dir_6a78480b53f9be386e42a469a8563f3b.html'/>
+                        <File Name='dir_76884311262c9b1fb5b33a085cef5d5a.html'/>
+                        <File Name='dir_7837fde3ab9c1fb2fc5be7b717af8d79.html'/>
+                        <File Name='dir_7f68e4cb5bad73f2f09643adefff0e08.html'/>
+                        <File Name='dir_94b2faf112e0ed7ef0be14fa48b61f1d.html'/>
+                        <File Name='dir_a164a63a3ccec6b9cedddcce73588a12.html'/>
+                        <File Name='dir_a2918c052193ecd23596d4b31fc412e9.html'/>
+                        <File Name='dir_a4d27b35aee2ed2e5e811b417d04057a.html'/>
+                        <File Name='dir_b77a72c0b8bb8a1ab760de9e852f1440.html'/>
+                        <File Name='dir_bac580a8932a001611dac0beaaa52262.html'/>
+                        <File Name='dir_fd351413749bf07ef385fba4161b803a.html'/>
                         <File Name='docs_8h.html'/>
                         <File Name='doxygen.css'/>
                         <File Name='doxygen.png'/>
@@ -1252,6 +1271,26 @@
                         <File Name='modules.html'/>
                         <File Name='nabeliangroup_8h.html'/>
                         <File Name='namespacemembers.html'/>
+                        <File Name='namespacemembers_0x62.html'/>
+                        <File Name='namespacemembers_0x63.html'/>
+                        <File Name='namespacemembers_0x64.html'/>
+                        <File Name='namespacemembers_0x65.html'/>
+                        <File Name='namespacemembers_0x66.html'/>
+                        <File Name='namespacemembers_0x67.html'/>
+                        <File Name='namespacemembers_0x69.html'/>
+                        <File Name='namespacemembers_0x6c.html'/>
+                        <File Name='namespacemembers_0x6d.html'/>
+                        <File Name='namespacemembers_0x6e.html'/>
+                        <File Name='namespacemembers_0x6f.html'/>
+                        <File Name='namespacemembers_0x70.html'/>
+                        <File Name='namespacemembers_0x71.html'/>
+                        <File Name='namespacemembers_0x72.html'/>
+                        <File Name='namespacemembers_0x73.html'/>
+                        <File Name='namespacemembers_0x74.html'/>
+                        <File Name='namespacemembers_0x75.html'/>
+                        <File Name='namespacemembers_0x76.html'/>
+                        <File Name='namespacemembers_0x77.html'/>
+                        <File Name='namespacemembers_0x78.html'/>
                         <File Name='namespacemembers_enum.html'/>
                         <File Name='namespacemembers_eval.html'/>
                         <File Name='namespacemembers_func.html'/>
@@ -1955,9 +1994,9 @@
     </Feature>
 
     <Icon Id='regina.ico'
-     SourceFile='c:\MinGW\msys\1.0\home\bab\regina-4.94\qtui\src\regina.ico'/>
+     SourceFile='c:\MinGW\msys\1.0\home\bab\src\regina-4.94\qtui\src\regina.ico'/>
     <Icon Id='manual.ico'
-     SourceFile='c:\MinGW\msys\1.0\home\bab\regina-4.94\qtui\src\manual.ico'/>
+     SourceFile='c:\MinGW\msys\1.0\home\bab\src\regina-4.94\qtui\src\manual.ico'/>
   </Product>
 </Wix>
 
