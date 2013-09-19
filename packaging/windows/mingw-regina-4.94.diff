@@ -1,8 +1,3 @@
-Only in src/: boost_1_54_0
-Only in src/: cppunit-1.12.1
-Only in src/: docs.zip
-Only in src/: libxml2-2.9.1
-Only in src//regina-4.94: build
 diff -r reference//regina-4.94/engine/census/ngenericfacetpairing.h src//regina-4.94/engine/census/ngenericfacetpairing.h
 89c89
 < class NGenericFacetPairing : public NThread {
@@ -168,7 +163,3 @@ diff -r reference//regina-4.94/testsuite/exhaustive.h src//regina-4.94/testsuite
 > void runCensusAllClosed(NTriangulationTestFunction f, bool small_ = false);
 > void runCensusAllBounded(NTriangulationTestFunction f, bool small_ = false);
 > void runCensusAllIdeal(NTriangulationTestFunction f, bool small_ = false);
-Only in src/: regina-4.94.tar.gz
-Only in src/: source-highlight-3.1.7
-Only in src/: test.cc
-Only in src/: test.exe
