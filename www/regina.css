@@ -57,6 +57,11 @@ h4 {
   border-style: solid;
 }
 
+h4.divide {
+  border-width: 4px 0px 4px 0px;
+  padding: 5px 0px 5px 0px;
+}
+
 table.contentswrapper {
   border: 0;
   background-color: #FFFFFF;

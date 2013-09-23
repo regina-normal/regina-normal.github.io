@@ -108,10 +108,21 @@ MacOS&nbsp;X.  Click on each thumbnail for a full-sized version.
 
 <h2><a name="download">Download</a></h2>
 
-<h4>MacOS X</h4>
+<p>
+Regina is available for
+<a href="#macos">MacOS</a>,
+<a href="#windows">Windows</a>,
+and <a href="#linux">GNU/Linux</a>.
+<p>
+If you encounter any problems when you run Regina, you can check the
+<a href="docs/troubleshooting.html">troubleshooting page</a> to
+see if your problem is discussed there.  You also most welcome
+to <a href="#contact">contact us</a> for help.
 
-Regina on MacOS&nbsp;X uses a typical drag-and-drop installer:
-just drag Regina into your Applications folder.
+<a name="macos"><h4 class="divide">MacOS</h4></a>
+
+Regina on MacOS uses a typical drag-and-drop installer.
+Just drag Regina into your Applications folder.
 <p>
 <blockquote><table cellspacing=0 border=0 align=center class="data"><tbody>
 <tr><th class="first" colspan=2>MacOS Version</th><th>Installer</th></tr>
@@ -126,39 +137,56 @@ just drag Regina into your Applications folder.
 </tbody></table>
 </blockquote>
 <p>
-Snow Leopard users may see an error when trying to view face pairing graphs.
+Notes for MacOS:
+<ul>
+<li><i>Snow Leopard</i> users
+may see an error when trying to view face pairing graphs.
 This is because some newer Graphviz versions are broken on Snow Leopard.
 To fix this, install the
 <a href="http://www.graphviz.org/pub/graphviz/stable/macos/snowleopard/">older
-Graphviz&nbsp;2.28.0</a>.
-<p>
-Leopard is no longer supported, and nor are (very old) 32-bit machines.
+Graphviz&nbsp;2.28.0</a>.</li>
+<li><i>Leopard</i> is no longer supported, and nor are (very old) 32-bit machines.
 If you have such an environment, you will need to stick with the
 <a href="http://prdownloads.sourceforge.net/regina/Regina-4.93_Leopard-i386.dmg">older
-Regina&nbsp;4.93</a>.
-<p>
-<h4>Windows</h4>
+Regina&nbsp;4.93</a>.</li>
+</ul>
+
+<a name="windows"><h4 class="divide">Windows</h4></a>
 
 Regina on Windows uses a standard point-and-click installer.
 <p>
 <blockquote><table cellspacing=0 border=0 align=center class="data"><tbody>
 <tr><th class="first" colspan=2>Windows Version</th><th>Installer</th></tr>
-<tr><td class="firstjoin">Windows&nbsp;7<br>Windows&nbsp;Vista<br>
-    Windows&nbsp;XP (see below)</td>
+<tr><td class="firstjoin">Windows&nbsp;8<br>Windows&nbsp;7<br>
+    Windows&nbsp;Vista<br>Windows&nbsp;XP (see below)</td>
     <td><img src="osicons/os_win_other.png" border=0 hspace=5></td>
-    <td align="center"><a href="http://prdownloads.sourceforge.net/regina/Regina-4.94_Windows7.msi">Download</a></td>
+    <td align="center"><a href="http://prdownloads.sourceforge.net/regina/Regina 4.94.msi">Download</a></td>
     </tr>
 </tbody></table>
 </blockquote>
 <p>
-On some Windows XP machines, Regina will not start
+Notes for Windows:
+<ul>
+<li><i>Windows&nbsp;8</i> users might not be able to run
+the installer (<i>&ldquo;Windows SmartScreen prevented an unrecognized
+app from starting ...&rdquo;</i>).
+This is because Microsoft has not yet added Regina to its database of
+known applications.
+Click <i>More info</i> and you will be able to run the installer anyway.</li>
+<li><i>Windows&nbsp;7</i> users might encounter a similar warning,
+for a similar reason
+(<i>&ldquo;Regina ... is not commonly downloaded and could harm your
+computer.&rdquo;</i>).
+Click <i>Actions</i> and you will be able to run the installer.</li>
+<li><i>Windows XP</i> users might find that Regina will not start
 (<i>&ldquo;The application failed to initialize properly ...&rdquo;</i>).
 The problem seems to be an obscure missing DLL,
 and the error message is spectacularly unhelpful;
 one known solution is to install Python&nbsp;2.x from
-<a href="http://python.org/download/">python.org</a>.
-<p>
-<h4>GNU/Linux</h4>
+<a href="http://python.org/download/">python.org</a>.</li>
+</ul>
+
+<a name="linux"><h4 class="divide">GNU/Linux</h4></a>
 
 You can download ready-made packages for several GNU/Linux distributions.
 All of these packages are named <b>regina-normal</b> (to avoid conflicting
@@ -254,11 +282,6 @@ You can <a href="http://prdownloads.sourceforge.net/regina/regina-4.94.tar.gz">d
 Please see the <a href="source.html">separate page on building Regina</a>
 for instructions on how to build Regina and
 what libraries and tools you will need to have installed.
-<p>
-If you run into any problems when you run Regina, you can check the
-<a href="docs/troubleshooting.html">troubleshooting page</a> to
-see if your problem is discussed there.  You also most welcome
-to <a href="#contact">contact us</a> for help.
 <p>
 <i><a href="#contents">(Back to contents...)</a></i>
 
