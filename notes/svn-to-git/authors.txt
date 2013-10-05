@@ -1,0 +1,7 @@
+bab = Benjamin Burton <bab@debian.org>
+rybu = Ryan Budney <rybu@uvic.ca>
+enigma83 = William Pettersson <william.pettersson@gmail.com>
+matthiasgoerner = Matthias Goerner <none@example.com>
+letscher = David Letscher <none@example.com>
+precision = Benjamin Burton <bab@debian.org>
+(no author) = Benjamin Burton <bab@debian.org>
