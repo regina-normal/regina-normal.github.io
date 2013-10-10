@@ -48,6 +48,13 @@ camera {
 	look_at <0, 0, 0.2>
 }
 
+/*
+plane {
+	-loc, 4.1
+	pigment { White }
+}
+*/
+
 light_source {
 	<4, 1, 0.4>
 	color White
