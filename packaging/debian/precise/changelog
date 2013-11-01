@@ -1,4 +1,4 @@
-regina-normal (4.94-1ubuntu1~precise1) precise; urgency=low
+regina-normal (4.95-1ubuntu1~precise1) precise; urgency=low
 
   * New upstream release, backported to ubuntu precise.
 
