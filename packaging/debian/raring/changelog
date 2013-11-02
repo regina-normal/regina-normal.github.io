@@ -1,6 +1,15 @@
-regina-normal (4.94-1ubuntu1~raring1) raring; urgency=low
+regina-normal (4.95-1ubuntu1~raring1) raring; urgency=low
 
   * New upstream release, backported to ubuntu raring.
+  * The python module is now installed in a standard location beneath
+    /usr/lib/python2.7/dist-packages.
+  * Switched python packaging from python-support to dh_python2.
+
+ -- Ben Burton <bab@debian.org>  Sat,  2 Nov 2013 11:44:32 -0400
+
+regina-normal (4.94-1) unstable; urgency=low
+
+  * New upstream release.
 
  -- Ben Burton <bab@debian.org>  Tue, 17 Sep 2013 06:58:42 +1000
 

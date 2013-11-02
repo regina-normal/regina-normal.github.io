@@ -3,13 +3,13 @@ Section: math
 Priority: extra
 Maintainer: Ben Burton <bab@debian.org>
 Homepage: http://regina.sourceforge.net/
-Build-Depends: debhelper (>= 7), cmake, doxygen, libboost-python-dev (>= 1.39.0), libboost-regex-dev, libcppunit-dev (>= 1.10.2-4), libgmp-dev (>= 4.1.4-10), libqt4-dev, libpopt-dev, libsource-highlight-dev, libxml2-dev, mpi-default-dev, python-dev (>= 2.5.2-1~), python-support (>= 0.6), shared-mime-info, xsltproc, zlib1g-dev
+Build-Depends: debhelper (>= 7), cmake, doxygen, libboost-python-dev (>= 1.39.0), libboost-regex-dev, libcppunit-dev (>= 1.10.2-4), libgmp-dev (>= 4.1.4-10), libqt4-dev, libpopt-dev, libsource-highlight-dev, libxml2-dev, mpi-default-dev, python-dev (>= 2.6.6-3~), shared-mime-info, xsltproc, zlib1g-dev
 Standards-Version: 3.9.3
 
 Package: regina-normal
 Architecture: any
 Section: math
-Depends: ${shlibs:Depends}, ${perl:Depends}, ${python:Depends}, ${misc:Depends}, graphviz, regina-normal-doc (>= 4.94-0)
+Depends: ${shlibs:Depends}, ${perl:Depends}, ${python:Depends}, ${misc:Depends}, graphviz, regina-normal-doc (>= 4.95-0)
 Recommends: gap, evince | pdf-viewer
 Suggests: regina-normal-dev, regina-normal-mpi
 Description: software for 3-manifold topology and normal surfaces

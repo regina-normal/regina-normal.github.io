@@ -119,10 +119,9 @@ binary-arch: build install
 	dh_compress -a -X.bz2 -X.css -X.docbook -X.rga
 	dh_fixperms -a
 	dh_makeshlibs -a
-	# Only run the python scripts on regina-normal.
-	dh_pysupport -pregina-normal /usr/lib/regina-normal/python
 	dh_installdeb -a
 	dh_perl -a
+	dh_python2 -pregina-normal
 	dh_shlibdeps -a -ldebian/regina-normal/usr/lib
 	dh_gencontrol -a
 	dh_md5sums -a
