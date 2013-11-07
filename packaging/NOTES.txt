@@ -37,7 +37,8 @@ To make a MacOS bundle:
 
   - On the signing machine:
 
-    codesign -s 'Developer ID' -v Regina.app
+    Change into the macos packaging directory.
 
-    Change into macos/ and run ./dmg-maker.py path/to/Regina.app.
+    To sign:       ./sign-all path/to/Regina.app
+    To make a DMG: ./dmg-maker.py path/to/Regina.app
 

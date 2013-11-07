@@ -26,10 +26,11 @@ fi
 mkdir build
 cd build
 
-rm -rf /Users/bab/Regina.app
+DEST=/Users/bab
+rm -rf "$DEST/Regina.app"
 
 cmake \
-  -DCMAKE_INSTALL_PREFIX=/Users/bab \
+  -DCMAKE_INSTALL_PREFIX="$DEST" \
   -DPYTHON_EXECUTABLE="$pybin" \
   -DQT_QMAKE_EXECUTABLE=/usr/bin/qmake \
   -DPACKAGING_MODE=1 \
@@ -39,4 +40,10 @@ cmake \
 make
 make test ARGS=-V
 make install
+
+echo 'Adding missing Info.plist files to Qt for code signing...'
+for i in QtCore QtGui; do
+  cp -v /Library/Frameworks/$i.framework/Contents/Info.plist \
+    "$DEST/Regina.app/Contents/Frameworks/$i.framework/Resources/"
+done
 
