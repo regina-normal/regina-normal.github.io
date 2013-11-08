@@ -43,7 +43,10 @@ make install
 
 echo 'Adding missing Info.plist files to Qt for code signing...'
 for i in QtCore QtGui; do
-  cp -v /Library/Frameworks/$i.framework/Contents/Info.plist \
-    "$DEST/Regina.app/Contents/Frameworks/$i.framework/Resources/"
+  infodir="$DEST/Regina.app/Contents/Frameworks/$i.framework/Resources/"
+  if [ ! -e "$infodir" ]; then
+    mkdir "$infodir"
+  fi
+  cp -v /Library/Frameworks/$i.framework/Contents/Info.plist "$infodir"
 done
 

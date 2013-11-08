@@ -10,7 +10,9 @@ codesign -s 'Developer ID' -v "$app"/Contents/Frameworks/*.framework
 echo
 
 echo 'Signing dylibs...'
-codesign -s 'Developer ID' -v "$app"/Contents/MacOS/*.dylib
+# Don't try to sign libregina-engine.dylib (the symlink), since this
+# will break with an already-signed error.
+codesign -s 'Developer ID' -v "$app"/Contents/MacOS/lib{boost*,*.*}.dylib
 echo
 
 echo 'Signing python module...'
