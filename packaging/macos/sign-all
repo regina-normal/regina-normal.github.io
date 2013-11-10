@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 app="$1"
 if ! [ -e "$1/Contents/MacOS/Regina" ]; then
