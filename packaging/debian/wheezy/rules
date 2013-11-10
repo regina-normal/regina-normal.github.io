@@ -120,7 +120,7 @@ binary-arch: build install
 	dh_makeshlibs -a
 	dh_installdeb -a
 	dh_perl -a
-	dh_python2 -pregina-normal
+	dh_python2 -V ${pyver} -pregina-normal
 	dh_shlibdeps -a -ldebian/regina-normal/usr/lib
 	dh_gencontrol -a
 	dh_md5sums -a
