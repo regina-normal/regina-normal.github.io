@@ -18,6 +18,7 @@ Manual checks:
   - regina-python
       - print NExampleTriangulation.lens8_3().getHomologyH1()
       - tab completion
+      - import snappy
   - tools
       - regfiledump data file from desktop
   - dependencies (apt-cache show regina-normal ; rpm -qR regina-normal)
