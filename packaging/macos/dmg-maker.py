@@ -98,7 +98,7 @@ def main():
     os.symlink("/Applications", dist_dir + "/Applications")
     os.system('cp background.png "%s/.background"' % dist_dir)
     os.system('cp dotDS_Store "%s/.DS_Store"' % dist_dir)
-    os.system('cp -pr "%s" "%s"' % (app, dist_dir))
+    os.system('cp -a "%s" "%s"' % (app, dist_dir))
     
     # figure out the needed size:
     raw_size = os.popen("du -sh " + dist_dir).read()
@@ -106,13 +106,9 @@ def main():
     new_size = "%d" % ceil(1.2 * float(size)) + units
 
     # Run the main script:
-    print "Building an initial DMG..."
-    os.system('hdiutil makehybrid -hfs -hfs-volume-name "%s" -hfs-openfolder "%s" "%s" -o "%s"' % (name, dist_dir, dist_dir, dmg_tmp))
-    print "Converting the DMG format..."
+    print "Building the DMG..."
     dmg_format = 'UDZO' # 'UDRW' if you want to edit the .DS_Store
-    os.system('hdiutil convert -format %s "%s" -o "%s"' % (dmg_format, dmg_tmp, dmg_real))
-    print "Cleaning up..."
-    os.remove(dmg_tmp)
+    os.system('hdiutil create -srcfolder "%s" -volname "%s" -format "%s" "%s"' % (dist_dir, name, dmg_format, dmg_real))
     print "Done."
               
     
