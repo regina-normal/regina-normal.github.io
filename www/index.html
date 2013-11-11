@@ -53,14 +53,17 @@
 
 <p class="header">
 <b>12 November 2013:</b>
-TODO.
-<p>
-<b>24 September 2013:</b>
-Version 4.94 is out!
-It adds triangulated vertex links, edge drilling,
-and a <i>lot</i> more speed and grunt.
+Version 4.95 is out!
+This adds Hakenness and irreducibility tests (as demonstrated at
+ICERM last month), plus widespread API cleanups, more optimisations,
+better communication with SnapPy, and an important bug fix.
 You can <a href="#new">read more about what's new</a>,
 or go ahead and <a href="#download">download the new version</a>.
+<p>
+<b>24 September 2013:</b>
+Version 4.94 is out.
+It adds triangulated vertex links, edge drilling,
+and a <i>lot</i> more speed and grunt.
 <p>
 <i><a href="#contents">(Back to contents...)</a></i>
 
@@ -131,25 +134,33 @@ Just drag Regina into your Applications folder.
 <tr><th class="first" colspan=2>MacOS Version</th><th>Installer</th></tr>
 <tr><td class="firstjoin">Mavericks (10.9)<br>
     Mountain Lion (10.8)<br>
-    Lion (10.7)<br>
-    Snow Leopard (10.6)
+    Lion (10.7)
     </td>
     <td><img src="osicons/os_macosx.png" border=0 hspace=5></td>
     <td align="center"><a href="http://prdownloads.sourceforge.net/regina/Regina-4.95.dmg">Download</a></td>
     </tr>
+<tr><td class="altfirstjoin">Snow Leopard (10.6)<br>
+    <i>(see the notes below)</i></td>
+    <td class="alt">&nbsp;</td>
+    <td  class="alt"align="center"><a href="http://prdownloads.sourceforge.net/regina/Regina-4.95_SnowLeopard.dmg">Download</a></td>
+    </tr>
 </tbody></table>
 </blockquote>
 <p>
-Notes for MacOS:
+For <b>Snow Leopard</b> (MacOS 10.6):
 <ul>
-<li><i>Snow Leopard</i> users
-may see an error when trying to view face pairing graphs.
+<li>You cannot combine SnapPy with Regina's python bindings.
+This is because Regina uses the standard Python&nbsp;2.6
+provided with Snow Leopard, whereas SnapPy ships its own copy of
+Python&nbsp;2.7.</li>
+<li>You may see an error when trying to view face pairing graphs.
 This is because some newer Graphviz versions are broken on Snow Leopard.
 To fix this, install the
 <a href="http://www.graphviz.org/pub/graphviz/stable/macos/snowleopard/">older
 Graphviz&nbsp;2.28.0</a>.</li>
-<li><i>Leopard</i> is no longer supported, and nor are (very old) 32-bit machines.
-If you have such an environment, you will need to stick with the
+<li>32-bit machines are no longer supported.
+If you have a (very old) 32-bit Snow Leopard machine, you will need to
+stick with the
 <a href="http://prdownloads.sourceforge.net/regina/Regina-4.93_Leopard-i386.dmg">older
 Regina&nbsp;4.93</a>.</li>
 </ul>
@@ -261,8 +272,13 @@ and he can build you an MPI-enabled package.
     <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.95-1.suse12.1.i586.rpm">Download</a></td>
     <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.95-1.suse12.1.x86_64.rpm">Download</a></td>
     </tr>
-<tr><td rowspan=3 class="firstjoin">Ubuntu</td>
-    <td rowspan=3><img src="osicons/os_ubuntu.png" border=0 hspace=5></td>
+<tr><td rowspan=4 class="firstjoin">Ubuntu</td>
+    <td rowspan=4><img src="osicons/os_ubuntu.png" border=0 hspace=5></td>
+    <td>13.10 (saucy)</td>
+    <td align="center"><a href="install/ubuntu-saucy.html">Install</a></td>
+    <td align="center"><a href="install/ubuntu-saucy.html">Install</a></td>
+    </tr>
+<tr>
     <td>13.04 (raring)</td>
     <td align="center"><a href="install/ubuntu-raring.html">Install</a></td>
     <td align="center"><a href="install/ubuntu-raring.html">Install</a></td>
@@ -321,6 +337,36 @@ You can also <a href="engine-docs/index.html">read it here online</a>.
 <h2><a name="new">What's new in version 4.95 (November&nbsp;2013)?</a></h2>
 
 Some of the main highlights in version&nbsp;4.95:
+
+<h4>Features</h4>
+<ul>
+<li>Hakenness and irreducibility tests for triangulations.</li>
+<li>On many GNU/Linux and MacOS systems, Regina and SnapPy can now talk
+directly via python.  Try running &ldquo;<tt><b>import snappy</b></tt>&rdquo;
+from one of Regina's python environments, or see the python chapter in the
+user handbook for examples.</li>
+<li>Many example triangulations are now oriented by default.</li>
+<li>You are no longer required to give each packet a unique label.</li>
+</ul>
+<h4>Optimisations</h4>
+<ul>
+<li>More widespread use of the new and faster branch-and-bound machinery.</li>
+<li>Large-scale cleanups and improvements to the API for both C++
+and python, plus additional niceities for the python bindings.</li>
+</ul>
+<h4>Bug Fixes</h4>
+<ul>
+<li>Fixed two numerical bugs in the arbitrary precision arithmetic code
+that were (i) only present in the last release (4.94, September 2013);
+(ii) quite difficult to trigger; and (iii) had relatively benign
+impacts, unless you were working with experimental code direct from
+the repository.  We have audited the entire codebase to analyse what
+could have been affected, so please contact the authors if you need
+more information.</li>
+</ul>
+<p>
+Version&nbsp;4.95 follows closely on the heels of version&nbsp;4.94, which
+also brought:
 
 <h4>Features</h4>
 <ul>
