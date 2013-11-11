@@ -1,3 +1,6 @@
+For a first-time mingw install:
+  Don't forget /etc/fstab, which is necessary to have gcc on the path.
+
 Build dependencies from mingw:
   mingw-get install mingw32-libz
   mingw-get install mingw32-gmp
@@ -21,7 +24,6 @@ Other helpful stuff from mingw:
 
 Other helpful stuff with standalone installers:
   Graphviz
-  TortoiseSVN
 
 To build boost (verified for v1.54.0):
   Download .zip (not .tar.gz)
