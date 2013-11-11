@@ -5,7 +5,7 @@
 
 Name: regina-normal
 Summary: Software for 3-manifold topology and normal surfaces
-Version: 4.94
+Version: 4.95
 Release: 1.%{_vendor}
 License: GPL
 # I wish there were a more sane group (like Applications/Mathematics).
@@ -114,10 +114,13 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/regina/
 %{_libdir}/libregina-engine.so
 %{_libdir}/libregina-engine.so.%{version}
-%{_libdir}/regina/python/regina.so
+%{_libdir}/python2.7/site-packages/regina/
 %{_mandir}/*/*
 
 %changelog
+* Sun Nov 10 2013 Ben Burton <bab@debian.org> 4.95
+- New upstream release.
+
 * Tue Sep 17 2013 Ben Burton <bab@debian.org> 4.94
 - New upstream release.
 
