@@ -120,7 +120,13 @@ binary-arch: build install
 	dh_makeshlibs -a
 	dh_installdeb -a
 	dh_perl -a
+
+	# The version of dh_python2 in squeeze has a bug (#644573),
+	# which produces incorrect (and uninstallable) substvars.
 	dh_python2 -V ${pyver} -pregina-normal
+	sed -i 's/python (<< 2\.6)/python (<< 2.7)/' \
+		debian/regina-normal.substvars
+
 	dh_shlibdeps -a -ldebian/regina-normal/usr/lib
 	dh_gencontrol -a
 	dh_md5sums -a
