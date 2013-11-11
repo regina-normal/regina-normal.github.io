@@ -58,8 +58,27 @@ The red cells indicate code that has now been removed.
 </tr>
 <tr><td class="deptype" colspan=4>Headers</td></tr>
 <tr>
+    <td class="first"><tt>*.tcc</tt></td>
+    <td><tt>*-impl.h</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
     <td class="first"><tt>maths/nlargeinteger.h</tt></td>
     <td><tt>maths/ninteger.h</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>surfaces/flavourregistry.h</tt></td>
+    <td><tt>surfaces/coordregistry.h</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>triangulation/dimtraits.h</tt>,
+    <tt>triangulation/nfacetspec.h</tt>,
+    <tt>triangulation/ngenericisomorphism.h</tt></td>
+    <td><tt>generic/dimtraits.h</tt>,
+    <tt>generic/nfacetspec.h</tt>,
+    <tt>generic/ngenericisomorphism.h</tt></td>
     <td>&nbsp;</td>
 </tr>
 <tr>
@@ -105,6 +124,11 @@ The red cells indicate code that has now been removed.
     <td>&nbsp;</td>
 </tr>
 <tr>
+    <td class="first"><tt>NTriangulation::FaceIterator</tt></td>
+    <td><tt>NTriangulation::TriangleIterator</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
     <td class="first"><tt>UseFacePairing</tt></td>
     <td><tt>NFacePairing::Use</tt></td>
     <td>&nbsp;</td>
@@ -123,6 +147,17 @@ The red cells indicate code that has now been removed.
     <td>These are now members of a global enum type, defined in
     <tt>surfaces/normalcoords.h</tt>.</td>
 </tr>
+<tr>
+    <td class="first"><tt>NS_FACE_ARCS</tt></td>
+    <td><tt>NS_TRIANGLE_ARCS</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NSurfaceFilter::filterID</tt></td>
+    <td><tt>NSurfaceFilter::filterType</tt></td>
+    <td>This change also applies to every subclass of
+    <tt>NSurfaceFilter</tt>.</td>
+</tr>
 <tr><td class="deptype" colspan=4>Classes</td></tr>
 <tr>
     <td class="removed"><tt>HashPointer</tt>,
@@ -139,6 +174,21 @@ The red cells indicate code that has now been removed.
 <tr>
     <td class="first"><tt>NDoubleDescriptor</tt></td>
     <td><tt>NDoubleDescription</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NewNormalSurfaceVector</tt></td>
+    <td><tt>NewFunction1&lt;NNormalSurfaceVector, size_t&gt;</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NFace</tt></td>
+    <td><tt>NTriangle</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NFaceEmbedding</tt></td>
+    <td><tt>NTriangleEmbedding</tt></td>
     <td>&nbsp;</td>
 </tr>
 <tr>
@@ -255,6 +305,16 @@ The red cells indicate code that has now been removed.
     <td>See the comments above for the <tt>NFile</tt> class.</td>
 </tr>
 <tr>
+    <td class="first"><tt>...::toString()</tt></td>
+    <td><tt>...::str()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>...::toStringLong()</tt></td>
+    <td><tt>...::detail()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
     <td class="removed"><tt>...::writeToFile(NFile&amp;)</tt><br>
     Removed in Regina&nbsp;4.94</td>
     <td>&mdash;</td>
@@ -276,10 +336,24 @@ The red cells indicate code that has now been removed.
     <td>&nbsp;</td>
 </tr>
 <tr>
+    <td class="first"><tt>NBoundaryComponent::getFace()</tt>,
+    <tt>NBoundaryComponent::getNumberOfFaces()</tt></td>
+    <td><tt>NBoundaryComponent::getTriangle()</tt>,
+    <tt>NBoundaryComponent::getNumberOfTriangles()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
     <td class="removed"><tt>NCensus::formCensus(..., NProgressManager*)</tt><br>
     Removed in Regina&nbsp;4.94</td>
     <td><tt>NCensus::formCensus(...)</tt></td>
     <td>The final NProgressManager argument has been removed.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NComponent::getFace()</tt>,
+    <tt>NComponent::getNumberOfFaces()</tt></td>
+    <td><tt>NComponent::getTriangle()</tt>,
+    <tt>NComponent::getNumberOfTriangles()</tt></td>
+    <td>&nbsp;</td>
 </tr>
 <tr>
     <td class="first"><tt>NDoubleDescription::enumerateExtremalRays()</tt></td>
@@ -293,8 +367,18 @@ The red cells indicate code that has now been removed.
     <td>&nbsp;</td>
 </tr>
 <tr>
+    <td class="first"><tt>NFaceEmbedding::getFace()</tt></td>
+    <td><tt>NTriangleEmbedding::getTriangle()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
     <td class="first"><tt>NFacePairing::getNumberOfTetrahedra()</tt></td>
     <td><tt>NFacePairing::size()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NGroupPresentation::toStringCompact()</tt></td>
+    <td><tt>NGroupPresentation::compact()</tt></td>
     <td>&nbsp;</td>
 </tr>
 <tr>
@@ -331,6 +415,11 @@ The red cells indicate code that has now been removed.
     <td>&nbsp;</td>
 </tr>
 <tr>
+    <td class="first"><tt>NNormalSurface::getFaceArcs()</tt></td>
+    <td><tt>NNormalSurface::getTriangleArcs()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
     <td class="first"><tt>NNormalSurfaceList::enumerate()</tt>,
     <tt>NNormalSurfaceList::enumerateStandardDirect()</tt>,
     <tt>NNormalSurfaceList::enumerateStandardANDirect()</tt>,
@@ -346,8 +435,9 @@ The red cells indicate code that has now been removed.
     algorithm you wish to use.</td>
 </tr>
 <tr>
-    <td class="first"><tt>NNormalSurfaceList::getFlavour()</tt></td>
-    <td><tt>NNormalSurfaceList::flavour()</td>
+    <td class="first"><tt>NNormalSurfaceList::flavour()</tt>,
+    <tt>NNormalSurfaceList::getFlavour()</tt></td>
+    <td><tt>NNormalSurfaceList::coords()</td>
     <td>&nbsp;</td>
 </tr>
 <tr>
@@ -356,6 +446,16 @@ The red cells indicate code that has now been removed.
     <td>&mdash;</td>
     <td>Since this class no longer inherits from <tt>NSurfaceSet</tt>,
     this function is no longer necessary.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NNormalSurfaceSubset::getFlavour()</tt></td>
+    <td><tt>NNormalSurfaceSubset::coords()</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NNormalSurfaceVector::getFaceArcs()</tt></td>
+    <td><tt>NNormalSurfaceVector::getTriangleArcs()</tt></td>
+    <td>&nbsp;</td>
 </tr>
 <tr>
     <td class="removed"><tt>NPacket::readPacket()</tt><br>
@@ -376,10 +476,24 @@ The red cells indicate code that has now been removed.
         <tt>p = NPerm4(1,2)</tt>.</td>
 </tr>
 <tr>
+    <td class="first"><tt>NPillowTwoSphere::getFace()</tt>,
+    <tt>NPillowTwoSphere::getFaceMapping()</tt></td>
+    <td><tt>NPillowTwoSphere::getTriangle()</tt>,
+    <tt>NPillowTwoSphere::getTriangleMapping()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
     <td class="first"><tt>NSatRegion::createSFS(long, bool)</tt></td>
     <td><tt>NSatRegion::createSFS(bool)</tt></td>
     <td>The first argument (the number of boundary components)
     is now automatically deduced.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NSurfaceFilter::getFilterID()</tt>,
+    <tt>NSurfaceFilter::getFilterName()</tt></td>
+    <td><tt>NSurfaceFilter::getFilterType()</tt>,
+    <tt>NSurfaceFilter::getFilterTypeName()</tt></td>
+    <td>&nbsp;</td>
 </tr>
 <tr>
     <td class="removed"><tt>NSurfaceFilter::readFilter()</tt><br>
@@ -413,10 +527,30 @@ The red cells indicate code that has now been removed.
     longer create tetrahedra independently.</td>
 </tr>
 <tr>
+    <td class="first"><tt>NTetrahedron::getFace()</tt>,
+    <tt>NTetrahedron::getFaceMapping()</tt></td>
+    <td><tt>NTetrahedron::getTriangle()</tt>,
+    <tt>NTetrahedron::getTriangleMapping()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
     <td class="first"><tt>NTriangulation::addTetrahedron()</tt></td>
     <td><tt>NTriangulation::newTetrahedron()</tt></td>
     <td>Tetrahedra must always belong to a triangulation.  You should no
     longer create tetrahedra independently.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NTriangulation::faceIndex()</tt>,
+    <tt>NTriangulation::getFace()</tt>,
+    <tt>NTriangulation::getFaces()</tt>,
+    <tt>NTriangulation::getNumberOfFaces()</tt>,
+    <tt>NTriangulation::hasBoundaryFaces()</tt></td>
+    <td><tt>NTriangulation::triangleIndex()</tt>,
+    <tt>NTriangulation::getTriangle()</tt>,
+    <tt>NTriangulation::getTriangles()</tt>,
+    <tt>NTriangulation::getNumberOfTriangles()</tt>,
+    <tt>NTriangulation::hasBoundaryTriangles()</tt></td>
+    <td>&nbsp;</td>
 </tr>
 <tr>
     <td class="first"><tt>NTriangulation::getAdjacentFace()</tt></td>
@@ -465,7 +599,7 @@ The red cells indicate code that has now been removed.
 <tr>
     <td class="removed"><tt>NTriangulation::getFaceIndex()</tt><br>
     Removed in Regina&nbsp;4.94</td>
-    <td><tt>NTriangulation::faceIndex()</tt></td>
+    <td><tt>NTriangulation::triangleIndex()</tt></td>
     <td>The new routine is faster, but has an extra precondition that
         the given face must belong to the triangulation.</td>
 </tr>
@@ -513,6 +647,11 @@ The red cells indicate code that has now been removed.
     <td class="first"><tt>factorise()</tt></td>
     <td><tt>NPrimes::primeDecomp()</tt>,
         <tt>NPrimes::primePowerDecomp()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>forFlavour()</tt></td>
+    <td><tt>forCoords()</tt></td>
     <td>&nbsp;</td>
 </tr>
 <tr>
@@ -570,9 +709,11 @@ The red cells indicate code that has now been removed.
 </tr>
 <tr><td class="deptype" colspan=4>Macros</td></tr>
 <tr>
-    <td class="first"><tt>REGISTER_FLAVOUR</tt></td>
-    <td><tt>forFlavour()</tt></td>
-    <td>The messy <tt>REGISTER_FLAVOUR</tt> macros have been replaced
+    <td class="removed"><tt>REGISTER_FILTER</tt>,
+    <tt>REGISTER_FLAVOUR</tt>, <tt>REGISTER_PACKET</tt><br>
+    Removed in Regina&nbsp;4.95</td>
+    <td><tt>forFilter()</tt>, <tt>forCoords()</tt>, <tt>forPacket()</tt></td>
+    <td>The messy <tt>REGISTER_...</tt> macros have been replaced
     with a more robust template-based mechanism.</td>
 </tr>
 </tbody></table>
