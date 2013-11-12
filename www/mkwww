@@ -1,0 +1,29 @@
+#!/bin/bash
+set -e
+
+resources=/Volumes/Regina/Regina.app/Contents/Resources
+
+if [ ! -f buildtips.html ]; then
+  echo "ERROR: This script must be run from within the www/ directory."
+  exit 1
+fi
+
+if [ ! -d "$resources/examples" ]; then
+  echo "ERROR: The MacOS app bundle must be mounted as /Volumes/Regina/."
+  exit 2
+fi
+
+cd ..
+rm -rf staging
+
+cp -pr www staging
+cp -pr "$resources/examples" staging/census
+cp -pr "$resources/docs/en/regina" staging/docs
+cp -pr "$resources/engine-docs" staging
+
+chmod -R a+r staging
+
+tar -zcf staging.tgz staging
+rm -rf staging
+
+echo "The tarball is waiting for you in ../staging.tgz."
