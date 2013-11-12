@@ -280,8 +280,10 @@ against Regina:
 <p>
 Nathan Dunfield has reported a successful installation of Regina's
 Python bindings under <a href="http://www.sagemath.org/">Sage</a>.
-The following steps have been verified for MacOS&nbsp;X, though other
-operating systems should be similar.
+<p>
+The following steps have been verified for MacOS&nbsp;X and GNU/Linux.
+They assume that you already have <i>cmake</i>, <i>popt</i> and
+<i>libxml2</i> installed on your system.
 <p>
 <ul>
 <li><b>Step 0:</b>
@@ -296,7 +298,7 @@ This includes a version of Boost.Python that is built against Sage's own Python.
 <div class="example"><p>
 <tt>example$ cd boost_1_54_0</tt><br>
 <tt>example$ ./bootstrap.sh --prefix=$SAGE_ROOT/local --with-libraries=python,regex</tt><br>
-<tt>example$ ./b2 --layout=tagged install threading=multi,single</tt>
+<tt>example$ ./b2 --layout=tagged install threading=multi</tt>
 </p></div></li>
 <li><b>Step 2:</b> Install Regina's Python module into Sage.
 Note that the <tt><b>cmake</b></tt> command below should be
