@@ -11,7 +11,7 @@ set -e
 # (at your option) any later version.
 
 host=people.debian.org
-suites="squeeze wheezy precise saucy trusty"
+suites="wheezy precise saucy trusty"
 
 for suite in $suites; do
   echo "--------------------"
