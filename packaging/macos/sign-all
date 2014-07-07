@@ -4,6 +4,7 @@ set -e
 app="$1"
 if ! [ -e "$1/Contents/MacOS/Regina" ]; then
   echo "Usage: sign-all path/to/Regina.app"
+  exit 1
 fi
 
 echo 'Signing frameworks...'
