@@ -14,8 +14,10 @@ Build-Depends:
     libqt4-dev
     libpopt-dev
     libsource-highlight-dev
+    libtokyocabinet-dev
     libxml2-dev
     mpi-default-dev
+    pkg-config
     python-dev (>= 2.7.3-10~)
     shared-mime-info
     xsltproc

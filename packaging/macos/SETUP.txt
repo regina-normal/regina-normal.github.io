@@ -49,7 +49,9 @@ Build-dependencies include:
     libsource-highlight4
     libxml2
     libxslt-bin
+    pkgconfig
     popt
+    tokyocabinet9
 
 To configure:
 
