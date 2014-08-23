@@ -141,7 +141,7 @@ table.data td.opt, table.data td.optfirst {
   background-color: #F0D7FF;
 }
 
-table.data td.removed, table.data td.reqfirst {
+table.data td.removed {
   background-color: #F0D7FF;
 }
 
