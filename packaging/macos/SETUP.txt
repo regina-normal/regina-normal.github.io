@@ -53,6 +53,8 @@ Build-dependencies include:
     popt
     tokyocabinet9
 
+    REMOVE libxml2, libiconv-dev
+
 To configure:
 
   cmake -DCMAKE_INSTALL_PREFIX=path/to/install/location
