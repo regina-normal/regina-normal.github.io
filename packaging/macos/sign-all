@@ -22,7 +22,7 @@ codesign -s 'Developer ID' -v "$app"/Contents/MacOS/python/regina/*
 echo
 
 echo 'Signing standalone executables...'
-codesign -s 'Developer ID' -v "$app"/Contents/MacOS/{reg*,sig*,tri*}
+codesign -s 'Developer ID' -v "$app"/Contents/MacOS/{census*,reg*,sig*,tri*}
 echo
 
 echo 'Signing app bundle...'
