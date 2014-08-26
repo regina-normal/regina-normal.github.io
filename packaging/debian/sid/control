@@ -3,13 +3,38 @@ Section: math
 Priority: extra
 Maintainer: Ben Burton <bab@debian.org>
 Homepage: http://regina.sourceforge.net/
-Build-Depends: debhelper (>= 7), cmake, doxygen, libboost-python-dev (>= 1.39.0), libboost-regex-dev, libcppunit-dev (>= 1.10.2-4), libgmp-dev (>= 4.1.4-10), libqt4-dev, libpopt-dev, libsource-highlight-dev, libxml2-dev, mpi-default-dev, python-dev (>= 2.7.3-10~), shared-mime-info, xsltproc, zlib1g-dev, dpkg-dev (>= 1.16.0)
+Build-Depends:
+    debhelper (>= 7)
+    cmake
+    doxygen
+    libboost-python-dev (>= 1.39.0)
+    libboost-regex-dev
+    libcppunit-dev (>= 1.10.2-4)
+    libgmp-dev (>= 4.1.4-10)
+    libqt4-dev
+    libpopt-dev
+    libsource-highlight-dev
+    libtokyocabinet-dev
+    libxml2-dev
+    mpi-default-dev
+    pkg-config
+    python-dev (>= 2.7.3-10~)
+    shared-mime-info
+    xsltproc
+    zlib1g-dev
+    dpkg-dev (>= 1.16.0)
 Standards-Version: 3.9.4.0
 
 Package: regina-normal
 Architecture: any
 Section: math
-Depends: ${shlibs:Depends}, ${perl:Depends}, ${python:Depends}, ${misc:Depends}, graphviz, regina-normal-doc (>= 4.95-0)
+Depends:
+    ${shlibs:Depends}
+    ${perl:Depends}
+    ${python:Depends}
+    ${misc:Depends}
+    graphviz
+    regina-normal-doc (>= 4.95-0)
 Recommends: gap, evince | pdf-viewer
 Suggests: regina-normal-dev, regina-normal-mpi
 Description: software for 3-manifold topology and normal surfaces
@@ -30,7 +55,13 @@ Description: software for 3-manifold topology and normal surfaces
 Package: regina-normal-dev
 Architecture: any
 Section: libdevel
-Depends: regina-normal (= ${binary:Version}), libboost-dev, libgmp-dev, libxml2-dev, zlib1g-dev, ${misc:Depends}
+Depends:
+    regina-normal (= ${binary:Version})
+    libboost-dev
+    libgmp-dev
+    libxml2-dev
+    zlib1g-dev
+    ${misc:Depends}
 Suggests: regina-normal-doc
 Description: development files for Regina, the 3-manifold topology software
  Regina is a suite of mathematical software for 3-manifold topologists.
@@ -51,7 +82,11 @@ Description: development files for Regina, the 3-manifold topology software
 Package: regina-normal-mpi
 Architecture: any
 Section: math
-Depends: mpi-default-bin, ${shlibs:Depends}, ${perl:Depends}, ${misc:Depends}
+Depends:
+    mpi-default-bin
+    ${shlibs:Depends}
+    ${perl:Depends}
+    ${misc:Depends}
 Replaces: regina-normal (<= 4.3.1-6)
 Description: MPI utilities for Regina, the 3-manifold topology software
  Regina is a suite of mathematical software for 3-manifold topologists.

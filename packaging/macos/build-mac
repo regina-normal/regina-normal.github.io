@@ -7,6 +7,15 @@ if [ "x$allow64" != "x1" ]; then
   exit 1
 fi
 
+# Make sure we have uninstalled libxml2 and libiconv-dev, so that we
+# pick up Apple's versions of these.
+for pkg in libxml2 libiconv-dev; do
+  if ! (apt-cache policy "$pkg" | grep Installed:..none > /dev/null); then
+    echo "Please uninstall the fink package $pkg."
+    exit 1
+  fi
+done
+
 # Extract the default python version on MacOS and rewrite it as a
 # version-specific pythonX.Y, so newer platforms will use the same
 # (older) version against which it was built.
@@ -23,6 +32,10 @@ if [ ! -e "$pybin" ]; then
   exit 1
 fi
 
+if [ -d build ]; then
+  echo "Please remove the build/ subdirectory and try again."
+  exit 1
+fi
 mkdir build
 cd build
 

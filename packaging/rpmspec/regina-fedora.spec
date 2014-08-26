@@ -1,4 +1,5 @@
 # Known to work for:
+# - Fedora 20 (i386, x86_64)
 # - Fedora 19 (i386, x86_64)
 # - Fedora 18 (i386, x86_64)
 # - Fedora 17 (i386, x86_64)
@@ -32,11 +33,13 @@ BuildRequires: gmp-devel
 BuildRequires: libstdc++-devel
 BuildRequires: libxml2-devel
 BuildRequires: libxslt
+BuildRequires: pkgconfig
 BuildRequires: popt-devel
 BuildRequires: python-devel
 BuildRequires: qt-devel
 BuildRequires: shared-mime-info
 BuildRequires: source-highlight-devel
+BuildRequires: tokyocabinet-devel
 BuildRequires: zlib-devel
 
 %description

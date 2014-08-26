@@ -1,4 +1,5 @@
 # Known to work for:
+# - Mageia 4 (i586, x86_64)
 # - Mageia 3 (i586, x86_64)
 
 Name: regina-normal
@@ -30,10 +31,12 @@ BuildRequires: gmpxx-devel
 BuildRequires: libstdc++-devel
 BuildRequires: libxml2-devel
 BuildRequires: qt4-devel
+BuildRequires: pkgconfig
 BuildRequires: popt-devel
 BuildRequires: python-devel
 BuildRequires: shared-mime-info
 BuildRequires: source-highlight-devel
+BuildRequires: tokyocabinet-devel
 BuildRequires: xsltproc
 BuildRequires: zlib-devel
 

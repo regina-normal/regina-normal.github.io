@@ -1,3 +1,38 @@
+PACKAGING SUMMARY
+-----------------
+
+To build MacOS binaries for release:
+
+- Copy regina-X.Y.tar.gz and this macos/ directory to the build machine.
+
+- On the build machine:
+
+    tar -zxf regina-X.Y.tar.gz
+
+    cd regina-X.Y
+    change PACKAGE_VERSION in CMakeLists.txt (if we are between releases)
+    path/to/macos/build-mac
+
+    cd
+    tar -zcf regina.tgz Regina.app
+    copy regina.tgz to the signing machine
+
+- On the signing machine:
+
+    cd temporary_path
+    tar -zxf path/to/regina.tgz
+
+    cd path/to/macos
+    change version in dmg-maker.py (if we are between releases)
+    ./sign-all temporary_path/Regina.app
+    ./dmg_maker.py temporary_path/Regina.app
+
+    collect Regina-X.Y.dmg for distribution
+
+
+FURTHER DETAILS
+---------------
+
 Building the MacOS bundle for x86_64 (we no longer support 32-bit machines):
 
 The runtime bundle stands alone, but to build you still need fink installed.
@@ -6,7 +41,8 @@ Build-dependencies include:
   Nokia's standalone Qt install
 
   Fink packages:
-    boost1.46.1.cmake
+    boost1.53.nopython
+    boost1.53.systempython
     cmake
     cppunit1.12.1
     doxygen
@@ -14,7 +50,11 @@ Build-dependencies include:
     libsource-highlight4
     libxml2
     libxslt-bin
+    pkgconfig
     popt
+    tokyocabinet9
+
+    REMOVE libxml2, libiconv-dev
 
 To configure:
 

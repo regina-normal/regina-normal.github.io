@@ -4,6 +4,7 @@ set -e
 app="$1"
 if ! [ -e "$1/Contents/MacOS/Regina" ]; then
   echo "Usage: sign-all path/to/Regina.app"
+  exit 1
 fi
 
 echo 'Signing frameworks...'
@@ -21,7 +22,7 @@ codesign -s 'Developer ID' -v "$app"/Contents/MacOS/python/regina/*
 echo
 
 echo 'Signing standalone executables...'
-codesign -s 'Developer ID' -v "$app"/Contents/MacOS/{reg*,sig*,tri*}
+codesign -s 'Developer ID' -v "$app"/Contents/MacOS/{census*,reg*,sig*,tri*}
 echo
 
 echo 'Signing app bundle...'

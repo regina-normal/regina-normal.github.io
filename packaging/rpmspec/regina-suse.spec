@@ -1,4 +1,5 @@
 # Known to work for:
+# - SuSE 13.1 (i586, x86_64)
 # - SuSE 12.3 (i586, x86_64)
 # - SuSE 12.2 (i586, x86_64)
 # - SuSE 12.1 (i586, x86_64)
@@ -31,12 +32,14 @@ BuildRequires: libcppunit-devel
 BuildRequires: libqt4-devel
 BuildRequires: libsource-highlight-devel
 BuildRequires: libstdc++-devel
+BuildRequires: libtokyocabinet-devel
 BuildRequires: libxml2-devel
 %if 0%{?suse_version} >= 1220
 BuildRequires: libxslt-tools
 %else
 BuildRequires: libxslt1
 %endif
+BuildRequires: pkg-config
 BuildRequires: popt-devel
 BuildRequires: python-devel
 BuildRequires: shared-mime-info
