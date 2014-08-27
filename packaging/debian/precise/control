@@ -5,7 +5,7 @@ Maintainer: Ben Burton <bab@debian.org>
 Homepage: http://regina.sourceforge.net/
 Build-Depends:
     debhelper (>= 7)
-    cmake
+    cmake (>= 2.8.7)
     doxygen
     libboost-python-dev (>= 1.39.0)
     libboost-regex-dev
