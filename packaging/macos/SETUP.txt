@@ -7,6 +7,8 @@ To build MacOS binaries for release:
 
 - On the build machine:
 
+    cd
+    rm -rf Regina.app
     tar -zxf regina-X.Y.tar.gz
 
     cd regina-X.Y
