@@ -10,6 +10,7 @@ Manual checks:
       - open sample file
       - PDF viewing
       - snappea calculations
+      - census lookup
       - face pairing graphs
       - GUI scripting and syntax highlighting
       - handbook and engine docs (including graphs)
