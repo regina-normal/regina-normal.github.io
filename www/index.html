@@ -54,9 +54,11 @@
 <p class="header">
 <b>29 August 2014:</b>
 Version 4.96 is out!
-This adds certification of hyperbolicity (using strict angle structures
+This is a big release&mdash;it adds
+certification of hyperbolicity (using strict angle structures
 and linear programming), richer SnapPea/SnapPy support, faster and richer
-census lookup, non-orientable prime decomposition, several new constructions
+census lookup, stronger group simplification and recognition,
+non-orientable prime decomposition, several new constructions
 and operations on triangulations, plus more simplifications and cleanups
 of the GUI and the API.
 You can <a href="#new">read more about what's new</a>,
@@ -67,10 +69,10 @@ or go ahead and <a href="#download">download the new version</a>.
 <h2><a name="whatis">What is Regina?</a></h2>
 
 Regina is a suite of mathematical software for 3-manifold topologists.
-It focuses on the study of 3-manifold triangulations and normal
-surfaces.
+It focuses on the study of 3-manifold triangulations, normal surfaces,
+and angle structures.
 <p>
-Other highlights of Regina include angle structures, census enumeration,
+Other highlights of Regina include census enumeration,
 combinatorial recognition of triangulations, and high-level tasks such
 as 3-sphere recognition and connected sum decomposition.  Regina comes
 with a full graphical user interface, and also offers Python bindings
@@ -83,7 +85,7 @@ of features</a>.
 
 <h2><a name="screenshots">Screenshots</a></h2>
 
-All of the screenshots below were taken with Regina&nbsp;4.94 running on
+All of the screenshots below were taken with Regina&nbsp;4.96 running on
 MacOS&nbsp;X.  Click on each thumbnail for a full-sized version.
 <p>
 <table border=0>
@@ -129,38 +131,16 @@ Just drag Regina into your Applications folder.
 <p>
 <blockquote><table cellspacing=0 border=0 align=center class="data"><tbody>
 <tr><th class="first" colspan=2>MacOS Version</th><th>Installer</th></tr>
-<tr><td class="firstjoin">Mavericks (10.9)<br>
+<tr><td class="firstjoin">Yosemite (10.10)<br>
+    Mavericks (10.9)<br>
     Mountain Lion (10.8)<br>
     Lion (10.7)
     </td>
     <td><img src="osicons/os_macosx.png" border=0 hspace=5></td>
     <td align="center"><a href="http://prdownloads.sourceforge.net/regina/Regina-4.96.dmg">Download</a></td>
     </tr>
-<tr><td class="altfirstjoin">Snow Leopard (10.6)<br>
-    <i>(see the notes below)</i></td>
-    <td class="alt">&nbsp;</td>
-    <td  class="alt"align="center"><a href="http://prdownloads.sourceforge.net/regina/Regina-4.96_SnowLeopard.dmg">Download</a></td>
-    </tr>
 </tbody></table>
 </blockquote>
-<p>
-For <b>Snow Leopard</b> (MacOS 10.6):
-<ul>
-<li>You cannot combine SnapPy with Regina's python bindings.
-This is because Regina uses the standard Python&nbsp;2.6
-provided with Snow Leopard, whereas SnapPy ships its own copy of
-Python&nbsp;2.7.</li>
-<li>You may see an error when trying to view face pairing graphs.
-This is because some newer Graphviz versions are broken on Snow Leopard.
-To fix this, install the
-<a href="http://www.graphviz.org/pub/graphviz/stable/macos/snowleopard/">older
-Graphviz&nbsp;2.28.0</a>.</li>
-<li>32-bit machines are no longer supported.
-If you have a (very old) 32-bit Snow Leopard machine, you will need to
-stick with the
-<a href="http://prdownloads.sourceforge.net/regina/Regina-4.93_Leopard-i386.dmg">older
-Regina&nbsp;4.93</a>.</li>
-</ul>
 
 <a name="windows"><h4 class="divide">Windows</h4></a>
 
@@ -259,16 +239,11 @@ and he can build you an MPI-enabled package.
     <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.96-1.suse12.3.i586.rpm">Download</a></td>
     <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.96-1.suse12.3.x86_64.rpm">Download</a></td>
     </tr>
-<tr><td rowspan=3 class="firstjoin">Ubuntu</td>
-    <td rowspan=3><img src="osicons/os_ubuntu.png" border=0 hspace=5></td>
+<tr><td rowspan=2 class="firstjoin">Ubuntu</td>
+    <td rowspan=2><img src="osicons/os_ubuntu.png" border=0 hspace=5></td>
     <td>14.04 LTS (trusty)</td>
     <td align="center"><a href="install/ubuntu-trusty.html">Install</a></td>
     <td align="center"><a href="install/ubuntu-trusty.html">Install</a></td>
-    </tr>
-<tr>
-    <td>13.10 (saucy)</td>
-    <td align="center"><a href="install/ubuntu-saucy.html">Install</a></td>
-    <td align="center"><a href="install/ubuntu-saucy.html">Install</a></td>
     </tr>
 <tr>
     <td>12.04 LTS (precise)</td>
