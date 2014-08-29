@@ -63,6 +63,11 @@ The red cells indicate code that has now been removed.
     <td>&nbsp;</td>
 </tr>
 <tr>
+    <td class="first"><tt>foreign/csvsurfacelist.h</tt></td>
+    <td><tt>surfaces/nnormalsurfacelist.h</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
     <td class="first"><tt>maths/nlargeinteger.h</tt></td>
     <td><tt>maths/ninteger.h</tt></td>
     <td>&nbsp;</td>
@@ -114,9 +119,13 @@ The red cells indicate code that has now been removed.
 </tr>
 <tr><td class="deptype" colspan=4>Typedefs</td></tr>
 <tr>
-    <td class="first"><tt>AcceptTriangulation</tt></td>
-    <td><tt>NCensus::AcceptTriangulation</tt></td>
-    <td>&nbsp;</td>
+    <td class="first"><tt>AcceptTriangulation</tt>,
+    <tt>Dim2Census::AcceptTriangulation</tt>,
+    <tt>NCensus::AcceptTriangulation</tt></td>
+    <td>&mdash;</td>
+    <td>See the comments below for
+    <tt>Dim2Census::formCensus()</tt> and
+    <tt>NCensus::formCensus()</tt>.</td>
 </tr>
 <tr>
     <td class="first"><tt>NFacePairingIsoList</tt></td>
@@ -134,6 +143,11 @@ The red cells indicate code that has now been removed.
     <td>&nbsp;</td>
 </tr>
 <tr><td class="deptype" colspan=4>Constants</td></tr>
+<tr>
+    <td class="first"><tt>NCensus::PURGE_...</tt></td>
+    <td><tt>NGluingPermSearcher::PURGE_...</tt></td>
+    <td>&nbsp;</td>
+</tr>
 <tr>
     <td class="removed"><tt>NFileInfo::TYPE_BINARY</tt><br>
     Removed in Regina&nbsp;4.94</td>
@@ -321,6 +335,13 @@ The red cells indicate code that has now been removed.
     <td>See the comments above for the <tt>NFile</tt> class.</td>
 </tr>
 <tr>
+    <td class="first"><tt>Dim2Census::formCensus()</tt>,
+    <tt>Dim2Census::formPartialCensus()</tt></td>
+    <td>&mdash;</td>
+    <td>You should now call <tt>Dim2EdgePairing::findAllPairings()</tt>
+    and <tt>Dim2GluingPermSearcher::findAllPerms()</tt> directly.</td>
+</tr>
+<tr>
     <td class="first"><tt>NAngleStructureList::allowsStrict()</tt></td>
     <td><tt>NAngleStructureList::spansStrict()</tt></td>
     <td>&nbsp;</td>
@@ -336,6 +357,11 @@ The red cells indicate code that has now been removed.
     <td>&nbsp;</td>
 </tr>
 <tr>
+    <td class="first"><tt>NBoundaryComponent::getEulerCharacteristic()</tt></td>
+    <td><tt>NBoundaryComponent::getEulerChar()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
     <td class="first"><tt>NBoundaryComponent::getFace()</tt>,
     <tt>NBoundaryComponent::getNumberOfFaces()</tt></td>
     <td><tt>NBoundaryComponent::getTriangle()</tt>,
@@ -343,10 +369,22 @@ The red cells indicate code that has now been removed.
     <td>&nbsp;</td>
 </tr>
 <tr>
+    <td class="first"><tt>NCensus::formCensus()</tt>,
+    <tt>NCensus::formPartialCensus()</tt></td>
+    <td>&mdash;</td>
+    <td>You should now call <tt>NFacePairing::findAllPairings()</tt>
+    and <tt>NGluingPermSearcher::findAllPerms()</tt> directly.</td>
+</tr>
+<tr>
     <td class="removed"><tt>NCensus::formCensus(..., NProgressManager*)</tt><br>
     Removed in Regina&nbsp;4.94</td>
-    <td><tt>NCensus::formCensus(...)</tt></td>
+    <td>&mdash; (see above)</td>
     <td>The final NProgressManager argument has been removed.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NCensus::mightBeMinimal()</tt></td>
+    <td>NTriangulation::simplifyToLocalMinimal(false)</td>
+    <td>&nbsp;</td>
 </tr>
 <tr>
     <td class="first"><tt>NComponent::getFace()</tt>,
@@ -405,6 +443,13 @@ The red cells indicate code that has now been removed.
     in their place.  See the API docs for details.</td>
 </tr>
 <tr>
+    <td class="removed"><tt>NNormalSurface::boundarySlopes()</tt><br>
+    Removed in Regina&nbsp;4.96</td>
+    <td><tt>NNormalSurface::boundaryIntersections()</tt></td>
+    <td>This change is to clarify that the routine returns
+    algebraic intersection numbers, not (<i>m</i>,<i>l</i>) pairs.</td>
+</tr>
+<tr>
     <td class="first"><tt>NNormalSurface::findNonTrivialSphere()</tt></td>
     <td><tt>NTriangulation::hasNonTrivialSphereOrDisc()</tt></td>
     <td>&nbsp;</td>
@@ -412,6 +457,11 @@ The red cells indicate code that has now been removed.
 <tr>
     <td class="first"><tt>NNormalSurface::findVtxOctAlmostNormalSphere()</tt></td>
     <td><tt>NTriangulation::hasOctagonalAlmostNormalSphere()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NNormalSurface::getEulerCharacteristic()</tt></td>
+    <td><tt>NNormalSurface::getEulerChar()</tt></td>
     <td>&nbsp;</td>
 </tr>
 <tr>
@@ -483,10 +533,50 @@ The red cells indicate code that has now been removed.
     <td>&nbsp;</td>
 </tr>
 <tr>
+    <td class="removed"><tt>NScript::getLine()</tt>,
+    <tt>NScript::getNumberOfLines()</tt>,
+    <tt>NScript::addFirst()</tt>,
+    <tt>NScript::addLast()</tt>,
+    <tt>NScript::insertAtPosition()</tt>,
+    <tt>NScript::replaceAtPosition()</tt>,
+    <tt>NScript::removeLineAt()</tt>,
+    <tt>NScript::removeAllLines()</tt><br>
+    Removed in Regina&nbsp;4.96</td>
+    <td><tt>NScript::getText()</tt>,
+    <tt>NScript::setText()</tt>,
+    <tt>NScript::append()</tt></td>
+    <td>The <tt>NScript</tt> access methods now work with the text as a
+    whole, not one line at a time.</td>
+</tr>
+<tr>
     <td class="first"><tt>NSatRegion::createSFS(long, bool)</tt></td>
     <td><tt>NSatRegion::createSFS(bool)</tt></td>
     <td>The first argument (the number of boundary components)
     is now automatically deduced.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NSnapPeaTriangulation::NSnapPeaTriangulation(const NTriangulation&amp;, bool)</tt></td>
+    <td><tt>NSnapPeaTriangulation::NSnapPeaTriangulation(const NTriangulation&amp;)</tt></td>
+    <td>The second argument (whether to allow closed trianglations)
+    is ignored, since closed triangulations are now supported always.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NSnapPeaTriangulation::saveAsSnapPea()</tt></td>
+    <td><tt>NSnapPeaTriangulation::saveSnapPea()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NSnapPeaTriangulation::dump()</tt></td>
+    <td><tt>std::cout &lt;&lt; NSnapPeaTriangulation::snapPea()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NSnapPeaTriangulation::toRegina()</tt>,
+    <tt>NSnapPeaTriangulation::verifyTriangulation()</tt></td>
+    <td>&mdash;</td>
+    <td>These are no longer needed, since <tt>NSnapPeaTriangulation</tt>
+    is now a hybrid packet that combines SnapPea and Regina functionality,
+    and that inherits directly from <tt>NTriangulation</tt>.</td>
 </tr>
 <tr>
     <td class="first"><tt>NSurfaceFilter::getFilterID()</tt>,
@@ -622,6 +712,11 @@ The red cells indicate code that has now been removed.
     <td>&mdash;</td>
     <td>This is now handled automatically.</td>
 </tr>
+<tr>
+    <td class="first"><tt>NVertex::getLinkEulerCharacteristic()</tt></td>
+    <td><tt>NVertex::getLinkEulerChar()</tt></td>
+    <td>&nbsp;</td>
+</tr>
 <tr><td class="deptype" colspan=4>Global Routines</td></tr>
 <tr>
     <td class="first"><tt>edgeDescription()</tt></td>
@@ -660,16 +755,70 @@ The red cells indicate code that has now been removed.
     <td>&nbsp;</td>
 </tr>
 <tr>
+    <td class="first"><tt>readFileMagic()</tt></td>
+    <td><tt>open()</tt></td>
+    <td>The new <tt>open()</tt> routine is declared in
+    <tt>packet/npacket.h</tt>, not <tt>file/nxmlfile.h</tt>.</td>
+</tr>
+<tr>
     <td class="removed"><tt>readFromFile()</tt><br>
     Removed in Regina&nbsp;4.94</td>
     <td>&mdash;</td>
     <td>See the comments above for the <tt>NFile</tt> class.</td>
 </tr>
 <tr>
+    <td class="first"><tt>readPDF()</tt></td>
+    <td><tt>NPDF::NPDF()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>readSnapPea()</tt></td>
+    <td><tt>NSnapPeaTriangulation::NSnapPeaTriangulation()</tt></td>
+    <td>The new <tt>NSnapPeaTriangulation</tt> constructor also
+    preserves SnapPea-specific data (such as fillings and peripheral
+    curves), which the old routine does not.</td>
+</tr>
+<tr>
+    <td class="first"><tt>readXMLFile()</tt></td>
+    <td><tt>open()</tt></td>
+    <td>The new <tt>open()</tt> routine is declared in
+    <tt>packet/npacket.h</tt>, not <tt>file/nxmlfile.h</tt>.</td>
+</tr>
+<tr>
+    <td class="first"><tt>writeCSVStandard()</tt>,
+    <tt>writeCSVEdgeWeight()</tt></td>
+    <td><tt>NNormalSurfaceList::saveCSVStandard()</tt>,
+    <tt>NNormalSurfaceList::saveCSVEdgeWeight()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>writePDF()</tt></td>
+    <td><tt>NPDF::savePDF()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>writeRecogniser()</tt>,
+    <tt>writeRecognizer()</tt></td>
+    <td><tt>NTriangulation::saveRecogniser()</tt>,
+    <tt>NTriangulation::saveRecognizer()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>writeSnapPea()</tt></td>
+    <td><tt>NTriangulation::saveSnapPea()</tt> (for file output),
+    <tt>NTriangulation::snapPea()</tt> (for stream output)</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
     <td class="removed"><tt>writeToFile()</tt><br>
     Removed in Regina&nbsp;4.94</td>
     <td>&mdash;</td>
     <td>See the comments above for the <tt>NFile</tt> class.</td>
+</tr>
+<tr>
+    <td class="first"><tt>writeXMLFile()</tt></td>
+    <td><tt>NPacket::save()</tt></td>
+    <td>&nbsp;</td>
 </tr>
 <tr><td class="deptype" colspan=4>Global Arrays</td></tr>
 <tr>

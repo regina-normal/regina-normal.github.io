@@ -28,11 +28,11 @@ Package: regina-normal
 Architecture: any
 Section: math
 Depends:
-    ${shlibs:Depends}
-    ${perl:Depends}
-    ${python:Depends}
-    ${misc:Depends}
-    graphviz
+    ${shlibs:Depends},
+    ${perl:Depends},
+    ${python:Depends},
+    ${misc:Depends},
+    graphviz,
     regina-normal-doc (>= 4.96-0)
 Recommends: gap, evince | pdf-viewer
 Suggests: regina-normal-dev, regina-normal-mpi
@@ -55,11 +55,11 @@ Package: regina-normal-dev
 Architecture: any
 Section: libdevel
 Depends:
-    regina-normal (= ${binary:Version})
-    libboost-dev
-    libgmp-dev
-    libxml2-dev
-    zlib1g-dev
+    regina-normal (= ${binary:Version}),
+    libboost-dev,
+    libgmp-dev,
+    libxml2-dev,
+    zlib1g-dev,
     ${misc:Depends}
 Suggests: regina-normal-doc
 Description: development files for Regina, the 3-manifold topology software
@@ -82,9 +82,9 @@ Package: regina-normal-mpi
 Architecture: any
 Section: math
 Depends:
-    mpi-default-bin
-    ${shlibs:Depends}
-    ${perl:Depends}
+    mpi-default-bin,
+    ${shlibs:Depends},
+    ${perl:Depends},
     ${misc:Depends}
 Replaces: regina-normal (<= 4.3.1-6)
 Description: MPI utilities for Regina, the 3-manifold topology software
