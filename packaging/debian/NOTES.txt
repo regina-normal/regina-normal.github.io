@@ -19,6 +19,8 @@ To build in a clean chroot:
 - For each package build, as the user:
 
     $ pdebuild
+    $ cd /var/cache/pbuilder/results
+    ... and fetch the resulting build.
 
 ---------------
 STABLE / UBUNTU
