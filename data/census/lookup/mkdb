@@ -1,9 +1,0 @@
-#!/bin/sh
-set -e
-
-for i in *.gz; do
-  name=${i/.dat.gz/}
-  echo "Processing: $name"
-  zcat $i | ~/git/regina/m/utils/mkcensusdb \
-    ~/git/regina/engine/data/census/$name.tdb
-done
