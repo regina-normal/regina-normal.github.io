@@ -33,7 +33,7 @@ Depends:
     ${python:Depends}
     ${misc:Depends}
     graphviz
-    regina-normal-doc (>= 4.95-0)
+    regina-normal-doc (>= 4.96-0)
 Recommends: gap, evince | pdf-viewer
 Suggests: regina-normal-dev, regina-normal-mpi
 Description: software for 3-manifold topology and normal surfaces

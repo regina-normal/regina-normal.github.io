@@ -1,9 +1,8 @@
-regina-normal (4.95-1ubuntu1~trusty1) trusty; urgency=low
+regina-normal (4.96-1ubuntu1~trusty1) trusty; urgency=low
 
-  * Backported to ubuntu trusty.
-  * Bumped standards-version to 3.9.5 (no changes required).
+  * New upstream release, backported to ubuntu trusty.
 
- -- Ben Burton <bab@debian.org>  Thu,  5 Jun 2014 18:34:57 +0900
+ -- Ben Burton <bab@debian.org>  Fri, 29 Aug 2014 17:37:46 +1000
 
 regina-normal (4.95-1) unstable; urgency=low
 
