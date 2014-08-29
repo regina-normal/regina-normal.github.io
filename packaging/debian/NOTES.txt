@@ -1,6 +1,29 @@
 Notes for building Debian-based packages
 ----------------------------------------
 
+---
+SID
+---
+
+To build in a clean chroot:
+
+- Ensure the user (e.g., bab) is in sudoers:
+
+    $ su
+    # visudo
+
+- Once only, as root:
+
+    # pbuilder create --debootstrapopts --variant=buildd
+
+- For each package build, as the user:
+
+    $ pdebuild
+
+---------------
+STABLE / UBUNTU
+---------------
+
 To build only architecture-dependent binary packages;
 
     debuild -B
@@ -8,6 +31,10 @@ To build only architecture-dependent binary packages;
 To build only a source package:
 
     debuild -S
+
+---------
+OLD NOTES
+---------
 
 To build binary packages only on debian sid from a .dsc:
 
@@ -46,4 +73,4 @@ To build in a clean chroot:
 
 - Enter the chroot and build.
 
- -- Ben Burton <bab@debian.org>, Sat, 10 Sep 2011 13:15:17 +1000
+ -- Ben Burton <bab@debian.org>, Fri, 29 Aug 2014 22:28:37 +1000
