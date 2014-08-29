@@ -107,6 +107,13 @@ table.data th.first {
   border-width: 2px 2px 2px 2px;
 }
 
+table.data td.subheading {
+  font-weight: bold;
+  color: #3D3F53;
+  text-align: center;
+  border-width: 0px 2px 2px 2px;
+}
+
 table.data td {
   background-color: #F2F4F8;
   padding: 2px 2px 2px 2px;
