@@ -4,23 +4,23 @@ Priority: extra
 Maintainer: Ben Burton <bab@debian.org>
 Homepage: http://regina.sourceforge.net/
 Build-Depends:
-    debhelper (>= 7)
-    cmake (>= 2.8.7)
-    doxygen
-    libboost-python-dev (>= 1.39.0)
-    libboost-regex-dev
-    libcppunit-dev (>= 1.10.2-4)
-    libgmp-dev (>= 4.1.4-10)
-    libqt4-dev
-    libpopt-dev
-    libsource-highlight-dev
-    libtokyocabinet-dev
-    libxml2-dev
-    mpi-default-dev
-    pkg-config
-    python-dev (>= 2.6.6-3~)
-    shared-mime-info
-    xsltproc
+    debhelper (>= 7),
+    cmake (>= 2.8.7),
+    doxygen,
+    libboost-python-dev (>= 1.39.0),
+    libboost-regex-dev,
+    libcppunit-dev (>= 1.10.2-4),
+    libgmp-dev (>= 4.1.4-10),
+    libqt4-dev,
+    libpopt-dev,
+    libsource-highlight-dev,
+    libtokyocabinet-dev,
+    libxml2-dev,
+    mpi-default-dev,
+    pkg-config,
+    python-dev (>= 2.6.6-3~),
+    shared-mime-info,
+    xsltproc,
     zlib1g-dev
 Standards-Version: 3.9.3.1
 
