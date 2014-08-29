@@ -69,6 +69,7 @@
               </Component>
               <Component Id='Utils'
                Guid='0079C4E6-03BE-43F3-9A4B-1954EFF3F551'>
+                <File Name='censuslookup.exe'/>
                 <File Name='regconcat.exe' KeyPath='yes'/>
                 <File Name='regconvert.exe'/>
                 <File Name='regfiledump.exe'/>
@@ -84,6 +85,8 @@
                 <File Source='c:\Qt\4.8.5\bin\QtGui4.dll'/>
                 <File Source='c:\Boost\lib\libboost_python-mgw48-mt-1_54.dll'/>
                 <File Source='c:\Boost\lib\libboost_regex-mgw48-mt-1_54.dll'/>
+                <File Source='TODO\libtokyocabinet.dll'/>
+                <File Source='TODO\libbz2.dll'/>
                 <File Source='c:\MinGW\bin\libgcc_s_dw2-1.dll'/>
                 <File Source='c:\MinGW\bin\libgmp-10.dll'/>
                 <File Source='c:\MinGW\bin\libgmpxx-4.dll'/>
@@ -141,14 +144,15 @@
                         <File Name='about.html'/>
                         <File Name='angles-analysis.html'/>
                         <File Name='angles-coords.png'/>
+                        <File Name='angles-creation.html'/>
                         <File Name='angles-header.png'/>
+                        <File Name='angles-intree.png'/>
                         <File Name='angles-tautheader.png'/>
                         <File Name='angles-tautresults.png'/>
                         <File Name='angles.html'/>
                         <File Name='angles.png'/>
                         <File Name='basman.png'/>
                         <File Name='bibliography.html'/>
-                        <File Name='census-deactivate.png'/>
                         <File Name='citing.html'/>
                         <File Name='compiling-apidocs.html'/>
                         <File Name='compiling-flags.html'/>
@@ -186,12 +190,14 @@
                         <File Name='icon-filterprop.png'/>
                         <File Name='icon-pdf.png'/>
                         <File Name='icon-script.png'/>
+                        <File Name='icon-snappea.png'/>
                         <File Name='icon-surfaces.png'/>
                         <File Name='icon-text.png'/>
                         <File Name='icon-triangulation.png'/>
                         <File Name='import-isosig.png'/>
                         <File Name='import-snappea.png'/>
                         <File Name='license.html'/>
+                        <File Name='man-censuslookup.html'/>
                         <File Name='man-regconcat.html'/>
                         <File Name='man-regconvert.html'/>
                         <File Name='man-regfiledump.html'/>
@@ -210,11 +216,11 @@
                         <File Name='menu-newdim2tri.png'/>
                         <File Name='menu-newfilter.png'/>
                         <File Name='menu-newscript.png'/>
+                        <File Name='menu-newsnappea.png'/>
                         <File Name='menu-newsurfaces.png'/>
                         <File Name='menu-newtri.png'/>
                         <File Name='menu-options.png'/>
                         <File Name='menu-python.png'/>
-                        <File Name='menucensuslookup.png'/>
                         <File Name='menuclone.png'/>
                         <File Name='menucomponents.png'/>
                         <File Name='menuconnsum.png'/>
@@ -223,11 +229,16 @@
                         <File Name='menunew.png'/>
                         <File Name='menurefresh.png'/>
                         <File Name='menurename.png'/>
+                        <File Name='menutosnappea.png'/>
                         <File Name='menutri.png'/>
                         <File Name='newangles.png'/>
                         <File Name='newfilter-comb.png'/>
                         <File Name='newfilter-prop.png'/>
                         <File Name='newfilter.png'/>
+                        <File Name='newsnappea-convert.png'/>
+                        <File Name='newsnappea-example.png'/>
+                        <File Name='newsnappea-file.png'/>
+                        <File Name='newsnappea.png'/>
                         <File Name='newsurfaces.png'/>
                         <File Name='newtri-ast.png'/>
                         <File Name='newtri-dehydration.png'/>
@@ -243,19 +254,14 @@
                         <File Name='newtriangulation.png'/>
                         <File Name='normaldiscs.png'/>
                         <File Name='normalicon.png'/>
-                        <File Name='options-census.html'/>
-                        <File Name='options-census.png'/>
                         <File Name='options-general.png'/>
                         <File Name='options-python.html'/>
                         <File Name='options-python.png'/>
-                        <File Name='options-snappea.html'/>
-                        <File Name='options-snappea.png'/>
                         <File Name='options-tools.html'/>
                         <File Name='options-tools.png'/>
                         <File Name='options.html'/>
                         <File Name='packet-operations.html'/>
                         <File Name='packet-types.html'/>
-                        <File Name='packet-view.html'/>
                         <File Name='packet.html'/>
                         <File Name='packettree.png'/>
                         <File Name='packetview.png'/>
@@ -278,11 +284,21 @@
                         <File Name='script.png'/>
                         <File Name='services.html'/>
                         <File Name='sessions.html'/>
+                        <File Name='snappea-algebra.png'/>
+                        <File Name='snappea-analysis.html'/>
+                        <File Name='snappea-cusps.png'/>
+                        <File Name='snappea-file.png'/>
+                        <File Name='snappea-fill.png'/>
+                        <File Name='snappea-randomise.png'/>
+                        <File Name='snappea-recognition.png'/>
+                        <File Name='snappea-toregina.png'/>
+                        <File Name='snappea.html'/>
+                        <File Name='snappea.png'/>
+                        <File Name='snappeaheader.png'/>
                         <File Name='surfacelist.png'/>
                         <File Name='surfaces-analysis.html'/>
                         <File Name='surfaces-applyfilter.png'/>
                         <File Name='surfaces-compat-compute.png'/>
-                        <File Name='surfaces-compat-global.png'/>
                         <File Name='surfaces-compat-hash.png'/>
                         <File Name='surfaces-compat-local.png'/>
                         <File Name='surfaces-coordbox.png'/>
@@ -294,6 +310,7 @@
                         <File Name='surfaces-matching.png'/>
                         <File Name='surfaces-octagons.png'/>
                         <File Name='surfaces-rename.png'/>
+                        <File Name='surfaces-slopes.png'/>
                         <File Name='surfaces-summary.png'/>
                         <File Name='surfaces.html'/>
                         <File Name='taskindex.html'/>
@@ -304,9 +321,6 @@
                         <File Name='tri-barycentric.png'/>
                         <File Name='tri-bc.png'/>
                         <File Name='tri-cellular.png'/>
-                        <File Name='tri-census-found-box.png'/>
-                        <File Name='tri-census-found-boxonly.png'/>
-                        <File Name='tri-census-found-text.png'/>
                         <File Name='tri-comp.png'/>
                         <File Name='tri-composition-blocks.png'/>
                         <File Name='tri-composition-dehydration.png'/>
@@ -314,6 +328,9 @@
                         <File Name='tri-composition-name.png'/>
                         <File Name='tri-composition.png'/>
                         <File Name='tri-connsum-results.png'/>
+                        <File Name='tri-connsum-rp2.png'/>
+                        <File Name='tri-connsumwith-tri.png'/>
+                        <File Name='tri-connsumwith.png'/>
                         <File Name='tri-cutcrush-results.png'/>
                         <File Name='tri-cutcrush.png'/>
                         <File Name='tri-doublecover.png'/>
@@ -327,8 +344,7 @@
                         <File Name='tri-extract-components.png'/>
                         <File Name='tri-faces.png'/>
                         <File Name='tri-fpg.png'/>
-                        <File Name='tri-fundgroup.png'/>
-                        <File Name='tri-homology.png'/>
+                        <File Name='tri-homfund.png'/>
                         <File Name='tri-iso-result.png'/>
                         <File Name='tri-iso-select.png'/>
                         <File Name='tri-iso.png'/>
@@ -337,10 +353,13 @@
                         <File Name='tri-makeideal.png'/>
                         <File Name='tri-modification.html'/>
                         <File Name='tri-orient.png'/>
+                        <File Name='tri-puncture.png'/>
                         <File Name='tri-s3-known.png'/>
                         <File Name='tri-s3-unknown.png'/>
                         <File Name='tri-simplify.png'/>
                         <File Name='tri-skeleton.png'/>
+                        <File Name='tri-snappea-convert.png'/>
+                        <File Name='tri-snappea-converted.png'/>
                         <File Name='tri-snappea.png'/>
                         <File Name='tri-surfaces.png'/>
                         <File Name='tri-truncate.png'/>
@@ -410,6 +429,7 @@
                         <File Name='data-packet-normalsurfacelist.html'/>
                         <File Name='data-packet-pdf.html'/>
                         <File Name='data-packet-script.html'/>
+                        <File Name='data-packet-snappea.html'/>
                         <File Name='data-packet-surfacefilter.html'/>
                         <File Name='data-packet-text.html'/>
                         <File Name='data-packet-triangulation.html'/>
@@ -420,6 +440,7 @@
                         <File Name='data-realbdry-surface.html'/>
                         <File Name='data-reginadata.html'/>
                         <File Name='data-reln.html'/>
+                        <File Name='data-snappea.html'/>
                         <File Name='data-solidtorus.html'/>
                         <File Name='data-spanstrict.html'/>
                         <File Name='data-spantaut.html'/>
@@ -599,6 +620,14 @@
                         <File Name='classregina_1_1NBoundaryComponent.png'/>
                         <File Name='classregina_1_1NCensus-members.html'/>
                         <File Name='classregina_1_1NCensus.html'/>
+                        <File Name='classregina_1_1NCensusDB-members.html'/>
+                        <File Name='classregina_1_1NCensusDB.html'/>
+                        <File Name='classregina_1_1NCensusHit-members.html'/>
+                        <File Name='classregina_1_1NCensusHit.html'/>
+                        <File Name='classregina_1_1NCensusHit.png'/>
+                        <File Name='classregina_1_1NCensusHits-members.html'/>
+                        <File Name='classregina_1_1NCensusHits.html'/>
+                        <File Name='classregina_1_1NCensusHits.png'/>
                         <File Name='classregina_1_1NClosedPrimeMinSearcher-members.html'/>
                         <File Name='classregina_1_1NClosedPrimeMinSearcher.html'/>
                         <File Name='classregina_1_1NClosedPrimeMinSearcher.png'/>
@@ -611,6 +640,9 @@
                         <File Name='classregina_1_1NContainer-members.html'/>
                         <File Name='classregina_1_1NContainer.html'/>
                         <File Name='classregina_1_1NContainer.png'/>
+                        <File Name='classregina_1_1NCusp-members.html'/>
+                        <File Name='classregina_1_1NCusp.html'/>
+                        <File Name='classregina_1_1NCusp.png'/>
                         <File Name='classregina_1_1NDiscSetSurface-members.html'/>
                         <File Name='classregina_1_1NDiscSetSurface.html'/>
                         <File Name='classregina_1_1NDiscSetSurface.png'/>
@@ -700,6 +732,9 @@
                         <File Name='classregina_1_1NHomologicalData-members.html'/>
                         <File Name='classregina_1_1NHomologicalData.html'/>
                         <File Name='classregina_1_1NHomologicalData.png'/>
+                        <File Name='classregina_1_1NHyperbolicMinSearcher-members.html'/>
+                        <File Name='classregina_1_1NHyperbolicMinSearcher.html'/>
+                        <File Name='classregina_1_1NHyperbolicMinSearcher.png'/>
                         <File Name='classregina_1_1NIntegerBase-members.html'/>
                         <File Name='classregina_1_1NIntegerBase.html'/>
                         <File Name='classregina_1_1NIntegerBase.png'/>
@@ -954,6 +989,9 @@
                         <File Name='classregina_1_1NSurfaceSubset-members.html'/>
                         <File Name='classregina_1_1NSurfaceSubset.html'/>
                         <File Name='classregina_1_1NSurfaceSubset.png'/>
+                        <File Name='classregina_1_1NTautEnumeration-members.html'/>
+                        <File Name='classregina_1_1NTautEnumeration.html'/>
+                        <File Name='classregina_1_1NTautEnumeration.png'/>
                         <File Name='classregina_1_1NTetrahedron-members.html'/>
                         <File Name='classregina_1_1NTetrahedron.html'/>
                         <File Name='classregina_1_1NTetrahedron.png'/>
@@ -1064,6 +1102,9 @@
                         <File Name='classregina_1_1NXMLScriptReader-members.html'/>
                         <File Name='classregina_1_1NXMLScriptReader.html'/>
                         <File Name='classregina_1_1NXMLScriptReader.png'/>
+                        <File Name='classregina_1_1NXMLSnapPeaReader-members.html'/>
+                        <File Name='classregina_1_1NXMLSnapPeaReader.html'/>
+                        <File Name='classregina_1_1NXMLSnapPeaReader.png'/>
                         <File Name='classregina_1_1NXMLTextReader-members.html'/>
                         <File Name='classregina_1_1NXMLTextReader.html'/>
                         <File Name='classregina_1_1NXMLTextReader.png'/>
@@ -1285,6 +1326,7 @@
                         <File Name='group__maths.html'/>
                         <File Name='group__packet.html'/>
                         <File Name='group__progress.html'/>
+                        <File Name='group__snappea.html'/>
                         <File Name='group__split.html'/>
                         <File Name='group__subcomplex.html'/>
                         <File Name='group__surfaces.html'/>
@@ -1470,13 +1512,12 @@
                         <File Name='nvertex_8h.html'/>
                         <File Name='nxmlalgebrareader_8h.html'/>
                         <File Name='nxmlanglestructreader_8h.html'/>
-                        <File Name='nxmlcallback_8h.html'/>
                         <File Name='nxmldim2trireader_8h.html'/>
-                        <File Name='nxmlelementreader_8h.html'/>
                         <File Name='nxmlfile_8h.html'/>
                         <File Name='nxmlfilterreader_8h.html'/>
                         <File Name='nxmlpacketreader_8h.html'/>
                         <File Name='nxmlpacketreaders_8h.html'/>
+                        <File Name='nxmlsnappeareader_8h.html'/>
                         <File Name='nxmlsurfacereader_8h.html'/>
                         <File Name='nxmltreeresolver_8h.html'/>
                         <File Name='nxmltrireader_8h.html'/>
@@ -1592,6 +1633,8 @@
                         <File Name='structregina_1_1PacketInfo_3_01PACKET__PDF_01_4.html'/>
                         <File Name='structregina_1_1PacketInfo_3_01PACKET__SCRIPT_01_4-members.html'/>
                         <File Name='structregina_1_1PacketInfo_3_01PACKET__SCRIPT_01_4.html'/>
+                        <File Name='structregina_1_1PacketInfo_3_01PACKET__SNAPPEATRIANGULATION_01_4-members.html'/>
+                        <File Name='structregina_1_1PacketInfo_3_01PACKET__SNAPPEATRIANGULATION_01_4.html'/>
                         <File Name='structregina_1_1PacketInfo_3_01PACKET__SURFACEFILTER_01_4-members.html'/>
                         <File Name='structregina_1_1PacketInfo_3_01PACKET__SURFACEFILTER_01_4.html'/>
                         <File Name='structregina_1_1PacketInfo_3_01PACKET__TEXT_01_4-members.html'/>
@@ -1600,6 +1643,13 @@
                         <File Name='structregina_1_1PacketInfo_3_01PACKET__TRIANGULATION_01_4.html'/>
                         <File Name='structregina_1_1Returns-members.html'/>
                         <File Name='structregina_1_1Returns.html'/>
+                        <File Name='structregina_1_1SnapPeaException.html'/>
+                        <File Name='structregina_1_1SnapPeaException.png'/>
+                        <File Name='structregina_1_1SnapPeaFatalError-members.html'/>
+                        <File Name='structregina_1_1SnapPeaFatalError.html'/>
+                        <File Name='structregina_1_1SnapPeaFatalError.png'/>
+                        <File Name='structregina_1_1SnapPeaMemoryFull.html'/>
+                        <File Name='structregina_1_1SnapPeaMemoryFull.png'/>
                         <File Name='structregina_1_1boost_1_1remove__pointer-members.html'/>
                         <File Name='structregina_1_1boost_1_1remove__pointer.html'/>
                         <File Name='structregina_1_1stl_1_1select1st-members.html'/>
@@ -1623,11 +1673,12 @@
                         <File Name='tab_h.png'/>
                         <File Name='tab_s.png'/>
                         <File Name='tabs.css'/>
-                        <File Name='test.html'/>
                         <File Name='todo.html'/>
                         <File Name='triangulation_2dimtraits_8h.html'/>
                         <File Name='triangulation_2nfacetspec_8h.html'/>
                         <File Name='triangulation_2ngenericisomorphism_8h.html'/>
+                        <File Name='utilities_2nxmlcallback_8h.html'/>
+                        <File Name='utilities_2nxmlelementreader_8h.html'/>
                         <File Name='xmlutils_8h.html'/>
                         <File Name='zstream_8h.html'/>
                   </Component>
@@ -1639,15 +1690,13 @@
                     <File Name='README.txt' Id='examples_README' KeyPath='yes'/>
                     <File Name='closed-hyp-census.rga'/>
                     <File Name='closed-nor-census.rga'/>
-                    <File Name='closed-or-census-large.rga'/>
                     <File Name='closed-or-census.rga'/>
-                    <File Name='knot-link-census.rga'/>
+                    <File Name='cusped-hyp-nor-census.rga'/>
+                    <File Name='cusped-hyp-or-census.rga'/>
+                    <File Name='hyp-knot-link-census.rga'/>
                     <File Name='progress.py'/>
                     <File Name='progress.session'/>
                     <File Name='sample-misc.rga'/>
-                    <File Name='sig-3mfd-census.rga'/>
-                    <File Name='sig-prime-min-census.rga'/>
-                    <File Name='snappea-census.rga'/>
                     <File Name='tree.py'/>
                     <File Name='tree.session'/>
                     <File Name='triangulation.py'/>
@@ -1773,10 +1822,6 @@
                       <File Name='edit-delete-22.png'/>
                       <File Name='edit-delete-32.png'/>
                       <File Name='edit-delete-48.png'/>
-                      <File Name='edit-find-16.png'/>
-                      <File Name='edit-find-22.png'/>
-                      <File Name='edit-find-32.png'/>
-                      <File Name='edit-find-48.png'/>
                       <File Name='edit-paste-16.png'/>
                       <File Name='edit-paste-22.png'/>
                       <File Name='edit-paste-32.png'/>
@@ -1861,10 +1906,6 @@
                       <File Name='utilities-terminal-22.png'/>
                       <File Name='utilities-terminal-32.png'/>
                       <File Name='utilities-terminal-48.png'/>
-                      <File Name='view-list-text-16.png'/>
-                      <File Name='view-list-text-22.png'/>
-                      <File Name='view-list-text-32.png'/>
-                      <File Name='view-list-text-48.png'/>
                       <File Name='view-refresh-16.png'/>
                       <File Name='view-refresh-22.png'/>
                       <File Name='view-refresh-32.png'/>
@@ -1888,6 +1929,9 @@
                     <File Name='cone-16.png'/>
                     <File Name='cone-22.png'/>
                     <File Name='cone-32.png'/>
+                    <File Name='connectedsumwith-16.png'/>
+                    <File Name='connectedsumwith-22.png'/>
+                    <File Name='connectedsumwith-32.png'/>
                     <File Name='connsum-16.png'/>
                     <File Name='connsum-22.png'/>
                     <File Name='connsum-32.png'/>
@@ -1903,6 +1947,9 @@
                     <File Name='drilledge-16.png'/>
                     <File Name='drilledge-22.png'/>
                     <File Name='drilledge-32.png'/>
+                    <File Name='fill-16.png'/>
+                    <File Name='fill-22.png'/>
+                    <File Name='fill-32.png'/>
                     <File Name='filter_comb-16.png'/>
                     <File Name='filter_comb-22.png'/>
                     <File Name='filter_comb-32.png'/>
@@ -1936,6 +1983,9 @@
                     <File Name='packet_script-16.png'/>
                     <File Name='packet_script-22.png'/>
                     <File Name='packet_script-32.png'/>
+                    <File Name='packet_snappea-16.png'/>
+                    <File Name='packet_snappea-22.png'/>
+                    <File Name='packet_snappea-32.png'/>
                     <File Name='packet_surfaces-16.png'/>
                     <File Name='packet_surfaces-22.png'/>
                     <File Name='packet_surfaces-32.png'/>
@@ -1948,11 +1998,17 @@
                     <File Name='packet_view-16.png'/>
                     <File Name='packet_view-22.png'/>
                     <File Name='packet_view-32.png'/>
+                    <File Name='puncture-16.png'/>
+                    <File Name='puncture-22.png'/>
+                    <File Name='puncture-32.png'/>
                     <File Name='python_console-16.png'/>
                     <File Name='python_console-22.png'/>
                     <File Name='python_console-32.png'/>
                     <File Name='python_console-48.png'/>
                     <File Name='python_console-64.png'/>
+                    <File Name='randomise-16.png'/>
+                    <File Name='randomise-22.png'/>
+                    <File Name='randomise-32.png'/>
                     <File Name='regina-128.png'/>
                     <File Name='regina-16.png'/>
                     <File Name='regina-22.png'/>
@@ -1970,14 +2026,27 @@
                 </Directory>
 
                 <Directory Id='PKGDATADIR_data' Name='data'>
-                  <Component Id='Data'
-                   Guid='6B589D6A-9A36-4132-9CCA-52B5ACDBB39C'>
-                    <File Name='snappea-census-sec5.dat' KeyPath='yes'/>
-                    <File Name='snappea-census-sec6n.dat'/>
-                    <File Name='snappea-census-sec6o.dat'/>
-                    <File Name='snappea-census-sec7n.dat'/>
-                    <File Name='snappea-census-sec7o.dat'/>
-                  </Component>
+                 <Directory Id='PKGDATADIR_data_census' Name='census'>
+                   <Component Id='CensusData'
+                    Guid='TODO'>
+                     <File Name='closed-hyp-census-full.tdb'/>
+                     <File Name='closed-nor-census-11.tdb'/>
+                     <File Name='closed-or-census-11.tdb'/>
+                     <File Name='cusped-hyp-nor-census-9.tdb'/>
+                     <File Name='closed-hyp-or-census-9.tdb' KeyPath='yes'/>
+                     <File Name='hyp-knot-link-census.tdb'/>
+                   </Component>
+                 </Directory>
+                 <Directory Id='PKGDATADIR_data_snappea' Name='snappea'>
+                   <Component Id='SnapPeaData'
+                    Guid='6B589D6A-9A36-4132-9CCA-52B5ACDBB39C'>
+                     <File Name='snappea-census-sec5.dat' KeyPath='yes'/>
+                     <File Name='snappea-census-sec6n.dat'/>
+                     <File Name='snappea-census-sec6o.dat'/>
+                     <File Name='snappea-census-sec7n.dat'/>
+                     <File Name='snappea-census-sec7o.dat'/>
+                   </Component>
+                 </Directory>
                 </Directory>
 
                 <Directory Id='PKGDATADIR_pylib' Name='pylib'>
