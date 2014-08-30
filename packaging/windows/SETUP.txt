@@ -1,7 +1,13 @@
+-----------------------
+READY-MADE DEPENDENCIES
+-----------------------
+
 For a first-time mingw install:
+
   Don't forget /etc/fstab, which is necessary to have gcc on the path.
 
 Build dependencies from mingw:
+
   mingw-get install mingw32-libz
   mingw-get install mingw32-gmp
   mingw-get install mingw32-libpopt
@@ -10,23 +16,38 @@ Build dependencies from mingw:
   Do not install the msys-libxml2 package (this is broken).
 
 Build dependencies with standalone installers:
+
   CMake
   Doxygen
   Python
   Wix
-
-  Do not install standalone Qt (this is incompatible with newer MinGW).
+  Qt (needs >= 4.8.6)
 
 Other helpful stuff from mingw:
+
   mingw-get install msys-wget
   mingw-get install msys-unzip
   mingw-get install msys-zip
 
 Other helpful stuff with standalone installers:
+
   Graphviz
 
+------------------------
+HAND-ROLLED DEPENDENCIES
+------------------------
+
+You may wish to uninstall mmap wrappers first if you had used this machine
+for an earlier regina build, since the hand-rolled mmap wrapper can get picked
+up by libxml2 and pkg-config (via glib):
+
+  rm -i /mingw/include/sys/mman.h
+  rm -i /mingw/lib/libmman.*
+
 To build boost (verified for v1.54.0):
+
   Download .zip (not .tar.gz)
+  Unzip with -q (output is *very* slow and there is lots)
   Open cmd.exe (not mingw)
 
   set PATH=C:\MinGW\bin;%PATH%
@@ -40,49 +61,68 @@ To build boost (verified for v1.54.0):
   mv boost /c/Boost/include/boost-1_54 (or whatever version)
   mv stage/lib/* /c/Boost/lib
 
-To build Qt (verified for 4.8.5):
-  Unpack in /c/Qt/4.8.5
-  Open cmd.exe (not mingw)
+To build pkgconfig (verified for v0.28):
 
-  Edit /c/Qt/4.8.5/projects.pro and comment out:
-    SUBDIRS += tools
-    SUBDIRS += examples
-    SUBDIRS += demos
-
-  set PATH=C:\MinGW\bin;%PATH%
-  cd \Qt\4.8.5
-  configure -platform win32-g++ -release
-  mingw32-make
-
-  There is no need to install (the files are already in place).
-  My 4.8.5 build died somewhere beneath src/plugins, but the libraries were ok.
+  ./configure --prefix=/home/bab/software --with-internal-glib
 
 To build cppunit (verified for v1.12.1):
+
   ./configure --prefix=/home/bab/software
 
 To build source-highlight (verified for v3.1.7):
+
   Patch to change NO_ERROR to NO_RANGE_ERROR (see source-highlight.patch).
   ./configure --prefix=/home/bab/software --with-boost=/c/Boost
 
 To build libxml2:
+
   MinGW's msys-libxml2 (2.7.6) is broken, and libxml2 must be hand-rolled.
   ./configure --prefix=/home/bab/software --with-threads=win32
 
 To build the python system library for shipping:
+
   cd /c/Python27/Lib
   zip -r path/to/python27.zip . -x distutils/\* -x \*.pyc
   Also copy python27.dll from /c/Windows/System32
 
 To prepare the handbook:
+
   Build docs.zip from some other package (e.g., the Mac bundle),
   so that handbooks are stored as docs/en/regina{,-xml}.
 
+To build tokyocabinet:
+
+  Do this *last*, since other code (e.g., libxml2 and pkg-config)
+  might pick up the mmap wrappers installed below.
+
+  Install mmap wrappers for mingw:
+
+    From: https://code.google.com/p/mman-win32/
+    Repo: svn checkout http://mman-win32.googlecode.com/svn/trunk/ mman-win32
+    ./configure
+    (installs directly in /mingw/include/sys and /mingw/lib)
+
+  Check out the regina-specific MinGW port of tokyocabinet from regina's
+  git repository:
+
+    git clone ssh://bab@git.code.sf.net/p/regina/mingw
+
+  Configure, build and install:
+
+    ./configure --prefix=/home/bab/software --disable-bzip
+
+---------------
+BUILDING REGINA
+---------------
+
 To build regina:
+  TODO: My patches
+
   cmake -G 'MSYS Makefiles'
     -DCMAKE_INCLUDE_PATH=/mingw/include:/include:/c/Boost/include/boost-1_54
     -DCMAKE_LIBRARY_PATH=/mingw/lib:/lib:/c/Boost/lib
     -DCMAKE_INSTALL_PREFIX=/home/bab/software
-    -DQT_QMAKE_EXECUTABLE=/c/Qt/4.8.5/bin/qmake
+    -DQT_QMAKE_EXECUTABLE=/c/Qt/4.8.6/bin/qmake
     -DREGINA_DOCS=path/to/docs.zip
     ..
 
@@ -92,6 +132,10 @@ To run the test suite:
 
 To run locally:
   Copy all necessary DLLs into software/bin.
+
+----------------------
+BUILDING THE INSTALLER
+----------------------
 
 To prepare WiX for use:
   If WiX is not on the path, add aliases to ~/.bashrc:
