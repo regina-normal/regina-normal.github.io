@@ -23,7 +23,7 @@ Build-Depends:
     xsltproc,
     zlib1g-dev,
     dpkg-dev (>= 1.16.0)
-Standards-Version: 3.9.4.0
+Standards-Version: 3.9.5.0
 
 Package: regina-normal
 Architecture: any
