@@ -37,13 +37,6 @@ Other helpful stuff with standalone installers:
 HAND-ROLLED DEPENDENCIES
 ------------------------
 
-You may wish to uninstall mmap wrappers first if you had used this machine
-for an earlier regina build, since the hand-rolled mmap wrapper can get picked
-up by libxml2 and pkg-config (via glib):
-
-  rm -i /mingw/include/sys/mman.h
-  rm -i /mingw/lib/libmman.*
-
 To build boost (verified for v1.54.0):
 
   Download .zip (not .tar.gz)
@@ -74,6 +67,10 @@ To build source-highlight (verified for v3.1.7):
   Patch to change NO_ERROR to NO_RANGE_ERROR (see source-highlight.patch).
   ./configure --prefix=/home/bab/software --with-boost=/c/Boost
 
+To build qdbm, which replaces tokyocabinet for MinGW (verified for v1.8.78):
+
+  ./configure --prefix=/home/bab/software
+
 To build libxml2:
 
   MinGW's msys-libxml2 (2.7.6) is broken, and libxml2 must be hand-rolled.
@@ -90,33 +87,13 @@ To prepare the handbook:
   Build docs.zip from some other package (e.g., the Mac bundle),
   so that handbooks are stored as docs/en/regina{,-xml}.
 
-To build tokyocabinet:
-
-  Do this *last*, since other code (e.g., libxml2 and pkg-config)
-  might pick up the mmap wrappers installed below.
-
-  Install mmap wrappers for mingw:
-
-    From: https://code.google.com/p/mman-win32/
-    Repo: svn checkout http://mman-win32.googlecode.com/svn/trunk/ mman-win32
-    ./configure
-    (installs directly in /mingw/include/sys and /mingw/lib)
-
-  Check out the regina-specific MinGW port of tokyocabinet from regina's
-  git repository:
-
-    git clone ssh://bab@git.code.sf.net/p/regina/mingw
-
-  Configure, build and install:
-
-    ./configure --prefix=/home/bab/software --disable-bzip
-
 ---------------
 BUILDING REGINA
 ---------------
 
 To build regina:
-  TODO: My patches
+
+  Apply the patches from regina-mingw.patch (in this directory).
 
   cmake -G 'MSYS Makefiles'
     -DCMAKE_INCLUDE_PATH=/mingw/include:/include:/c/Boost/include/boost-1_54
@@ -127,10 +104,12 @@ To build regina:
     ..
 
 To run the test suite:
+
   export PATH="$PATH":/home/bab/software/bin
   make test ARGS=-V
 
 To run locally:
+
   Copy all necessary DLLs into software/bin.
 
 ----------------------
@@ -153,5 +132,5 @@ To help fill documentation entries in regina.wsx:
 
 To build the installer:
   candle Regina.wxs WixUI_Regina.wxs
-  light -ext WixUIExtension -o 'Regina 4.94.msi' Regina.wixobj WixUI_Regina.wixobj
+  light -ext WixUIExtension -o 'Regina 4.96.msi' Regina.wixobj WixUI_Regina.wixobj
 
