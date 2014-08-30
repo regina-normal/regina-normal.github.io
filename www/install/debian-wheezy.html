@@ -8,6 +8,14 @@
 
 <h1><a name="contents">Regina for Debian:  Wheezy (Debian 7.x)</a></h1>
 
+<div class="warning"><p>
+<b>Notice: Regina's repository has moved</b>,
+as of 31 August 2014.<br><br>
+The only difference is that <tt>http</tt> has changed to <tt>https</tt>.<br><br>
+Even if you have followed these steps before, you
+will need to add the new line to <tt>/etc/apt/sources.list</tt>
+as described in step&nbsp;2 below.
+</p></div>
 <p>
 Debian 7.x (Wheezy) already comes with Regina, but this is
 an <b>old version</b> (4.93).
@@ -26,7 +34,7 @@ Make Regina's repository a trusted source.  This helps keep your machine
 secure, and avoids messages like &ldquo;these packages cannot be
 authenticated&rdquo;.
 To do this,
-<a href="http://people.debian.org/~bab/regina-key.txt">download
+<a href="https://people.debian.org/~bab/regina-key.txt">download
  Regina's cryptographic signing key here</a>.
 Then, at a command prompt type:
 </p>
@@ -43,7 +51,7 @@ Add Regina's location to your list of repositories.  To do this, open
 <tt>/etc/apt/sources.list</tt> and add the following line:
 </p>
 <div class="example"><p>
-<tt>deb http://people.debian.org/~bab/regina wheezy/</tt>
+<tt>deb https://people.debian.org/~bab/regina wheezy/</tt>
 </p></div>
 </li>
 <li>
