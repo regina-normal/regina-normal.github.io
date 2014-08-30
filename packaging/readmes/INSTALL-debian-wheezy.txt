@@ -1,48 +1,8 @@
 Regina for Debian:  Wheezy (Debian 7.x)
 ---------------------------------------
 
-If you use Wheezy (the Debian 7.x release), you can obtain packages
-from the official Regina repository on people.debian.org.
+To install Regina under Wheezy (the Debian 7.x release), see:
 
-This means that Debian will automatically fetch dependencies for you, and
-your package manager will know when new versions of Regina are released.
+http://regina.sourceforge.net/install/debian-wheezy.html
 
-1. Make Regina's repository a trusted source.  This helps keep your machine
-   secure, and avoids messages like "these packages cannot be authenticated".
-   To do this, download Regina's cryptographic signing key:
-
-        http://people.debian.org/~bab/regina-key.txt
-
-   Then, at a command prompt type:
-
-        sudo apt-key add ~/Downloads/regina-key.txt
-
-   Here you should replace ~/Downloads/regina-key.txt with location of
-   the key file.  You can now delete regina-key.txt if you like.
-
-2. Add Regina's location to your list of repositories.  To do this, open
-   /etc/apt/sources.list and add the following line:
-
-     deb http://people.debian.org/~bab/regina wheezy/
-
-3. Update the list of available packages.  At a command prompt, type:
-
-     sudo apt-get update
-
-4. Install or upgrade Regina like you would any other package.  Type:
-
-     sudo apt-get install regina-normal
-
-If you are a C++ programmer and you wish to build Regina into your own
-projects, you should also install the package "regina-normal-dev".
-
-If you want the MPI-enabled utilities for use on high-performance clusters,
-you should install the package "regina-normal-mpi".
-
-You might notice that Wheezy already ships with Regina as part of its
-CD/DVD set.  However, this is the older version 4.93.  For the latest
-version of Regina, you should follow the steps outlined above.
-
-------------------------------------
-
-Ben Burton <bab@debian.org>, Mon, 11 Nov 2013 14:39:01 -0500
+- Ben Burton <bab@debian.org>, Sun, 31 Aug 2014 02:13:26 +1000

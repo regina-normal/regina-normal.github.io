@@ -1,20 +1,8 @@
 Regina for Debian:  Sid (Unstable)
 ----------------------------------
 
-If you run Sid (the Debian unstable release), you can install Regina from
-the usual Debian servers like any other package:
+To install Regina under Sid (the Debian unstable release), see:
 
-  example$ apt-get install regina-normal
+http://regina.sourceforge.net/install/debian-sid.html
 
-Sid always ships with the latest version of Regina (though it may take a
-day or two for new versions to appear on your Debian mirror).
-
-If you are a C++ programmer and you wish to build Regina into your own
-projects, you will also want the package "regina-normal-dev".
-
-If you want the MPI-enabled utilities for use on high-performance clusters,
-you will want the package "regina-normal-mpi".
-
-------------------------------------
-
-Ben Burton <bab@debian.org>, Mon, 11 Nov 2013 14:39:01 -0500
+- Ben Burton <bab@debian.org>, Sun, 31 Aug 2014 02:13:26 +1000
