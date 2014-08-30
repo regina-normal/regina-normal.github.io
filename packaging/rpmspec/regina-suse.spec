@@ -28,6 +28,7 @@ BuildRequires: gcc
 BuildRequires: gcc-c++
 BuildRequires: glibc-devel
 BuildRequires: gmp-devel
+BuildRequires: libbz2-devel
 BuildRequires: libcppunit-devel
 BuildRequires: libqt4-devel
 BuildRequires: libsource-highlight-devel
