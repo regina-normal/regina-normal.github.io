@@ -1,4 +1,4 @@
-cmake -G 'MSYS Makefiles' \
+cmake -G 'MSYS Makefiles' -DQDBM=1 \
   -DCMAKE_INCLUDE_PATH=/mingw/include:/include:/c/Boost/include/boost-1_54 \
   -DCMAKE_LIBRARY_PATH=/mingw/lib:/usr/lib:/c/Boost/lib \
   -DCMAKE_INSTALL_PREFIX=/home/bab/software \

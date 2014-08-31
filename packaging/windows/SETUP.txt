@@ -94,14 +94,7 @@ BUILDING REGINA
 To build regina:
 
   Apply the patches from regina-mingw.patch (in this directory).
-
-  cmake -G 'MSYS Makefiles'
-    -DCMAKE_INCLUDE_PATH=/mingw/include:/include:/c/Boost/include/boost-1_54
-    -DCMAKE_LIBRARY_PATH=/mingw/lib:/lib:/c/Boost/lib
-    -DCMAKE_INSTALL_PREFIX=/home/bab/software
-    -DQT_QMAKE_EXECUTABLE=/c/Qt/4.8.6/bin/qmake
-    -DREGINA_DOCS=path/to/docs.zip
-    ..
+  Run cmake-regina.sh (in this directory) to get all necessary cmake arguments.
 
 To run the test suite:
 

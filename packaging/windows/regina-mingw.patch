@@ -1,91 +1,7 @@
-diff -ru orig/regina-4.96//CMakeLists.txt regina-4.96/CMakeLists.txt
---- orig/regina-4.96//CMakeLists.txt	2014-08-29 13:49:41 +1000
-+++ regina-4.96/CMakeLists.txt	2014-08-30 18:29:31 +1000
-@@ -292,7 +292,7 @@
-   MESSAGE(FATAL_ERROR "Regina requires pkgconfig.")
- ENDIF(NOT PKG_CONFIG_FOUND)
- 
--PKG_CHECK_MODULES(TOKYOCABINET tokyocabinet)
-+PKG_CHECK_MODULES(TOKYOCABINET qdbm)
- MACRO_LOG_FEATURE(TOKYOCABINET_FOUND
-   "Tokyo Cabinet"
-   "Essential: database library for accessing census data"
-diff -ru orig/regina-4.96//engine/census/ncensus.cpp regina-4.96/engine/census/ncensus.cpp
---- orig/regina-4.96//engine/census/ncensus.cpp	2014-08-29 14:11:14 +1000
-+++ regina-4.96/engine/census/ncensus.cpp	2014-08-30 19:28:41 +1000
-@@ -35,10 +35,9 @@
- #include <algorithm>
- #include <cstdlib>
- #include <sstream>
--#include <stdbool.h> // cstdbool needs c++11
--#include <stdint.h> // cstdint needs c++11
--#include <tcbdb.h>
--#include <tcutil.h>
-+#include <depot.h>
-+#include <cabin.h>
-+#include <villa.h>
- #include "census/ncensus.h"
- #include "census/ngluingpermsearcher.h"
- #include "file/nglobaldirs.h"
-@@ -56,23 +55,22 @@
- bool NCensus::dbInit_ = false;
- 
- bool NCensusDB::lookup(const std::string& isoSig, NCensusHits* hits) const {
--    TCBDB* db = tcbdbnew();
--    if (! tcbdbopen(db, filename_.c_str(), BDBOREADER)) {
-+    VILLA* db;
-+    if (! (db = vlopen(filename_.c_str(), VL_OREADER, VL_CMPLEX))) {
-         std::cerr << "ERROR: Could not open census database: "
-             << filename_ << std::endl;
-         return false;
-     }
- 
--    TCLIST* records = tcbdbget4(db, isoSig.c_str(), isoSig.length());
-+    CBLIST* records = vlgetlist(db, isoSig.c_str(), isoSig.length());
-     if (records) {
--        int n = tclistnum(records);
-+        int n = cblistnum(records);
-         for (int i = 0; i < n; ++i)
--            hits->append(new NCensusHit(tclistval2(records, i), this));
--        tclistdel(records);
-+            hits->append(new NCensusHit(cblistval(records, i, 0), this));
-+        cblistclose(records);
-     }
- 
--    tcbdbclose(db);
--    tcbdbdel(db);
-+    vlclose(db);
-     return true;
- }
- 
-@@ -82,17 +80,17 @@
- 
- NCensusHits* NCensus::lookup(const std::string& isoSig) {
-     if (! dbInit_) {
--        closedOr_ = standardDB("closed-or-census-11.tdb",
-+        closedOr_ = standardDB("closed-or-census-11.qdb",
-             "Closed census (orientable)");
--        closedNor_ = standardDB("closed-nor-census-11.tdb",
-+        closedNor_ = standardDB("closed-nor-census-11.qdb",
-             "Closed census (non-orientable)");
--        closedHyp_ = standardDB("closed-hyp-census-full.tdb",
-+        closedHyp_ = standardDB("closed-hyp-census-full.qdb",
-             "Hodgson-Weeks closed hyperbolic census");
--        cuspedHypOr_ = standardDB("cusped-hyp-or-census-9.tdb",
-+        cuspedHypOr_ = standardDB("cusped-hyp-or-census-9.qdb",
-             "Cusped hyperbolic census (orientable)");
--        cuspedHypNor_ = standardDB("cusped-hyp-nor-census-9.tdb",
-+        cuspedHypNor_ = standardDB("cusped-hyp-nor-census-9.qdb",
-             "Cusped hyperbolic census (non-orientable)");
--        hypKnotLink_ = standardDB("hyp-knot-link-census.tdb",
-+        hypKnotLink_ = standardDB("hyp-knot-link-census.qdb",
-             "Hyperbolic knot and link complements");
-         dbInit_ = true;
-     }
-diff -ru orig/regina-4.96//engine/data/census/CMakeLists.txt regina-4.96/engine/data/census/CMakeLists.txt
---- orig/regina-4.96//engine/data/census/CMakeLists.txt	2014-08-29 16:50:28 +1000
-+++ regina-4.96/engine/data/census/CMakeLists.txt	2014-08-30 19:28:09 +1000
-@@ -2,20 +2,20 @@
+diff -ru old/regina-4.96/engine/data/census/CMakeLists.txt new/regina-4.96/engine/data/census/CMakeLists.txt
+--- old/regina-4.96/engine/data/census/CMakeLists.txt	2014-08-31 11:10:33.000000000 +1000
++++ new/regina-4.96/engine/data/census/CMakeLists.txt	2014-08-31 11:51:46.000000000 +1000
+@@ -2,7 +2,7 @@
  SET(CENSUSDATADIR ${PKGDATADIR}/data/census)
  
  INCLUDE_DIRECTORIES(${ENGINE_INCLUDES})
@@ -94,117 +10,18 @@ diff -ru orig/regina-4.96//engine/data/census/CMakeLists.txt regina-4.96/engine/
  TARGET_LINK_LIBRARIES(mkcensusdb ${ZLIB_LIBRARIES} ${TOKYOCABINET_LIBRARIES})
  
  SET(censusdata_DATA
--  closed-hyp-census-full.tdb
--  closed-nor-census-11.tdb
--  closed-or-census-11.tdb
--  cusped-hyp-nor-census-9.tdb
--  cusped-hyp-or-census-9.tdb
--  hyp-knot-link-census.tdb
-+  closed-hyp-census-full.qdb
-+  closed-nor-census-11.qdb
-+  closed-or-census-11.qdb
-+  cusped-hyp-nor-census-9.qdb
-+  cusped-hyp-or-census-9.qdb
-+  hyp-knot-link-census.qdb
-   )
- 
- FOREACH(db ${censusdata_DATA})
--  STRING(REGEX REPLACE [.]tdb$ .dat.gz siglist ${db})
-+  STRING(REGEX REPLACE [.]qdb$ .dat.gz siglist ${db})
-   ADD_CUSTOM_COMMAND(OUTPUT ${db} DEPENDS mkcensusdb ${siglist}
-     COMMAND mkcensusdb
-       ${PROJECT_SOURCE_DIR}/engine/data/census/${siglist}
-diff -ru orig/regina-4.96//engine/data/census/mkcensusdb.cpp regina-4.96/engine/data/census/mkcensusdb.cpp
---- orig/regina-4.96//engine/data/census/mkcensusdb.cpp	2014-08-29 16:37:53 +1000
-+++ regina-4.96/engine/data/census/mkcensusdb.cpp	2014-08-30 19:05:28 +1000
-@@ -35,12 +35,14 @@
- #include <cctype>
- #include <cstdlib>
- #include <iostream>
--#include <stdbool.h> // cstdbool needs c++11
--#include <stdint.h> // cstdint needs c++11
- #include <string>
--#include <tcbdb.h>
--#include <tcutil.h>
+diff -ru old/regina-4.96/engine/data/census/mkcensusdb.cpp new/regina-4.96/engine/data/census/mkcensusdb.cpp
+--- old/regina-4.96/engine/data/census/mkcensusdb.cpp	2014-08-31 11:40:21.000000000 +1000
++++ new/regina-4.96/engine/data/census/mkcensusdb.cpp	2014-08-31 11:53:14.000000000 +1000
+@@ -48,7 +48,10 @@
+ #include <tcbdb.h>
+ #include <tcutil.h>
+ #endif
 -#include "utilities/zstream.h"
-+#include <depot.h>
-+#include <cabin.h>
-+#include <villa.h>
 +
 +#include "regina-core.h"
 +#define REGINA_API
 +#include "../../utilities/zstream.cpp"
  
- void usage(const char* progName, const std::string& error = std::string()) {
-     if (! error.empty())
-@@ -72,9 +74,9 @@
-     }
- 
-     // Initialise the database.
--    TCBDB* db = tcbdbnew();
--    if (! tcbdbopen(db, outputFile.c_str(),
--            BDBOWRITER | BDBOCREAT | BDBOTRUNC)) {
-+    VILLA* db;
-+    if (! (db = vlopen(outputFile.c_str(),
-+            VL_OWRITER | VL_OCREAT | VL_OTRUNC | VL_OZCOMP, VL_CMPLEX))) {
-         std::cerr << "ERROR: Could not open database: " << outputFile
-             << std::endl;
-         std::exit(1);
-@@ -93,8 +95,7 @@
-         if (in.eof()) {
-             std::cerr << "ERROR: Signature " << sig
-                 << " is missing a corresponding name.\n\n";
--            tcbdbclose(db);
--            tcbdbdel(db);
-+            vlclose(db);
-             usage(argv[0]);
-         }
- 
-@@ -107,16 +108,15 @@
-         if (! *pos) {
-             std::cerr << "ERROR: Signature " << sig
-                 << " has an empty name.\n\n";
--            tcbdbclose(db);
--            tcbdbdel(db);
-+            vlclose(db);
-             usage(argv[0]);
-         }
- 
--        if (! tcbdbputdup2(db, sig.c_str(), pos)) {
-+        if (! vlput(db, sig.c_str(), sig.length(),
-+                pos, -1 /* strlen */, VL_DDUP)) {
-             std::cerr << "ERROR: Could not store the record for "
-                 << sig << " in the database." << std::endl;
--            tcbdbclose(db);
--            tcbdbdel(db);
-+            vlclose(db);
-             std::exit(1);
-         }
-         ++tot;
-@@ -125,23 +125,18 @@
-     // Close and tidy up.
-     in.close();
- 
--    // The following call to tcbdboptimise() does not change any options
--    // other than the bitwise compression option given in the final argument.
--    if (! tcbdboptimize(db, 0, 0, 0, -1, -1, BDBTBZIP)) {
-+    if (! vloptimize(db)) {
-         std::cerr << "ERROR: Could not optimise database: " << outputFile
-             << std::endl;
--        tcbdbclose(db);
--        tcbdbdel(db);
-+        vlclose(db);
-         std::exit(1);
-     }
- 
--    if (! tcbdbclose(db)) {
-+    if (! vlclose(db)) {
-         std::cerr << "ERROR: Could not close database: " << outputFile
-             << std::endl;
--        tcbdbdel(db);
-         std::exit(1);
-     }
--    tcbdbdel(db);
- 
-     std::cout << "Success: " << tot << " records." << std::endl;
-     return 0;
+ #ifdef QDBM_AS_TOKYOCABINET
+   #define DB_CLOSE(x) vlclose(x);
