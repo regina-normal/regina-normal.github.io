@@ -7,6 +7,7 @@ Build-Depends:
     debhelper (>= 7),
     cmake (>= 2.8.7),
     doxygen,
+    libboost-iostreams-dev,
     libboost-python-dev (>= 1.39.0),
     libboost-regex-dev,
     libcppunit-dev (>= 1.10.2-4),

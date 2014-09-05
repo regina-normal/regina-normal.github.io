@@ -84,6 +84,7 @@
                 <File Source='c:\Qt\4.8.6\bin\QtCore4.dll'/>
                 <File Source='c:\Qt\4.8.6\bin\QtGui4.dll'/>
                 <File Source='c:\Qt\4.8.6\bin\libwinpthread-1.dll'/>
+                <File Source='c:\Boost\lib\libboost_iostreams-mgw48-mt-1_54.dll'/>
                 <File Source='c:\Boost\lib\libboost_python-mgw48-mt-1_54.dll'/>
                 <File Source='c:\Boost\lib\libboost_regex-mgw48-mt-1_54.dll'/>
                 <File Source='c:\MinGW\bin\libgcc_s_dw2-1.dll'/>

@@ -46,7 +46,7 @@ To build boost (verified for v1.54.0):
   set PATH=C:\MinGW\bin;%PATH%
   cd path\to\boost
   bootstrap.bat mingw
-  b2 toolset=gcc --with-python --with-regex variant=release link=shared
+  b2 toolset=gcc --with-python --with-iostreams --with-regex variant=release link=shared
 
   Open mingw
 
