@@ -93,7 +93,6 @@ BUILDING REGINA
 
 To build regina:
 
-  Apply the patches from regina-mingw.patch (in this directory).
   Run cmake-regina.sh (in this directory) to get all necessary cmake arguments.
 
 To run the test suite:
