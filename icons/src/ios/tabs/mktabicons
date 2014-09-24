@@ -5,7 +5,7 @@
 set -e
 
 for i in "$@"; do
-  for j in 25 50; do
+  for j in 25 50 75; do
     rsvg -w$j -h$j $i.svg $i-$j.png
   done
 done
