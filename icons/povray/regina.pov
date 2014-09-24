@@ -116,11 +116,13 @@ light_source {
 	object {
 		tetskeleton
 		pigment { DarkTan }
+		// no_shadow
 	}
 	
 	object {
 		quadacbd
 		pigment { SeaGreen }
+		// no_shadow
 	}
 }
 
