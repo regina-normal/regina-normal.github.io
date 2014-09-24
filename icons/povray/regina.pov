@@ -48,10 +48,12 @@ camera {
 	look_at <0, 0, 0.2>
 }
 
+/*
 plane {
 	-loc, 4.1
-	texture { Starfield }
+	pigment { White }
 }
+*/
 
 light_source {
 	<4, 1, 0.4>
@@ -84,7 +86,7 @@ light_source {
 #declare b = <-1, root3, -root2 / 2>;
 #declare c = <-1, -root3, -root2 / 2>;
 #declare d = <0, 0, 3 * root2 / 2>;
-#declare tetthickness = 0.075;
+#declare tetthickness = 0.175;
 
 #declare tetskeleton = union {
 	cylinder { a, b, tetthickness }
@@ -172,32 +174,40 @@ light_source {
 #declare everything = union {
 	object {
 		tetskeleton
-		texture { T_Stone20 } // Brown = 20
+		pigment { DarkTan }
 	}
 	
+	/*
 	object {
 		tria
-		texture { T_Stone21 } // Red = 21
+//		pigment { MediumVioletRed }
+		pigment { Light_Purple }
 	}
 	
 	object {
 		trib
-		texture { T_Stone18 } // Green = 18
+//		pigment { SeaGreen }
+		pigment { SeaGreen }
 	}
 	
 	object {
 		tric
-		texture { T_Stone23 } // Orange = 23
+//		pigment { MandarinOrange }
+		pigment { MandarinOrange }
 	}
 	
 	object {
 		trid
-		texture { T_Stone13 } // Blue = 13
+//		pigment { SkyBlue }
+		pigment { SkyBlue }
 	}
+	*/
 	
 	object {
 		quadacbd
-		texture { T_Stone12 } // Pink = 12
+//		pigment { Light_Purple }
+//		pigment { Scarlet }
+		pigment { SeaGreen }
 	}
 }
 
