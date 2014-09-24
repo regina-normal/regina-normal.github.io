@@ -32,8 +32,6 @@
 /* end stub */
 
 #include "colors.inc"
-#include "textures.inc"
-#include "stones.inc"
 
 #declare Sheet1 = color rgbt <0, 5, 0, 0.95>;
 #declare Sheet2 = color rgbt <5, 0, 0, 0.95>;
@@ -47,13 +45,6 @@ camera {
 	sky <0,0,1>
 	look_at <0, 0, 0.2>
 }
-
-/*
-plane {
-	-loc, 4.1
-	pigment { White }
-}
-*/
 
 light_source {
 	<4, 1, 0.4>
@@ -101,45 +92,6 @@ light_source {
 	sphere { d, tetthickness }
 }
 
-#declare tridisc = prism {
-	linear_sweep linear_spline
-	-tetthickness/2, tetthickness/2,
-	4,
-	<0.5, 0>, <-0.25, root3/4>, <-0.25, -root3/4>, <0.5, 0>
-}
-
-#declare trid = object {
-	tridisc
-	rotate <-90, 0, 0>
-	translate <0, 0, root2>
-}
-
-#declare tria = object {
-	tridisc
-	rotate <-90, 0, 0>
-	translate <0, 0, root2>
-	rotate <0, 0, 180>
-	rotate <0, 109.47122, 0>
-}
-
-#declare trib = object {
-	tridisc
-	rotate <-90, 0, 0>
-	translate <0, 0, root2>
-	rotate <0, 0, 180>
-	rotate <0, 109.47122, 0>
-	rotate <0, 0, 120>
-}
-
-#declare tric = object {
-	tridisc
-	rotate <-90, 0, 0>
-	translate <0, 0, root2>
-	rotate <0, 0, 180>
-	rotate <0, 109.47122, 0>
-	rotate <0, 0, 240>
-}
-
 #declare quaddisc = prism {
 	linear_sweep linear_spline
 	-tetthickness/2, tetthickness/2,
@@ -177,36 +129,8 @@ light_source {
 		pigment { DarkTan }
 	}
 	
-	/*
-	object {
-		tria
-//		pigment { MediumVioletRed }
-		pigment { Light_Purple }
-	}
-	
-	object {
-		trib
-//		pigment { SeaGreen }
-		pigment { SeaGreen }
-	}
-	
-	object {
-		tric
-//		pigment { MandarinOrange }
-		pigment { MandarinOrange }
-	}
-	
-	object {
-		trid
-//		pigment { SkyBlue }
-		pigment { SkyBlue }
-	}
-	*/
-	
 	object {
 		quadacbd
-//		pigment { Light_Purple }
-//		pigment { Scarlet }
 		pigment { SeaGreen }
 	}
 }
