@@ -105,27 +105,11 @@ light_source {
 	<-root3/2, root3/2>, <root3/2, root3/2>
 }
 
-#declare quadabcd = object {
-	quaddisc
-	rotate <35.26439, 0, 0>
-	rotate <0, 0, 30>
-	pigment { Blue }
-}
-
 #declare quadacbd = object {
 	quaddisc
 	rotate <35.26439, 0, 0>
 	rotate <0, 0, 30>
 	rotate <0, 0, 120>
-	pigment { Blue }
-}
-
-#declare quadadbc = object {
-	quaddisc
-	rotate <35.26439, 0, 0>
-	rotate <0, 0, 30>
-	rotate <0, 0, 240>
-	pigment { Blue }
 }
 
 #declare everything = union {
