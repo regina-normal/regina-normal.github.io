@@ -41,6 +41,11 @@
 #declare loc = <4, 0.6, 0.2>;
 
 camera {
+	/* The image by default is 4:3 (width:height).
+	 * To make it square, uncomment the following code.
+	right x * image_width / image_height
+	up y
+	 */
 	location loc
 	sky <0,0,1>
 	look_at <0, 0, 0.2>
