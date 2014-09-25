@@ -1,0 +1,14 @@
+#!/bin/bash
+#
+# Note: on fink this requires librsvg2-bin.
+#
+set -e
+
+# The guidelines say "about 22px".
+# However, all of these icons are dwarfed by the standard iOS share icon.
+# Go a little larger.
+for i in "$@"; do
+  for j in 25 50 75; do
+    rsvg -w$j -h$j $i.svg $i-$j.png
+  done
+done
