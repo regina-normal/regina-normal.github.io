@@ -32,8 +32,6 @@
 /* end stub */
 
 #include "colors.inc"
-#include "textures.inc"
-#include "stones.inc"
 
 #declare Sheet1 = color rgbt <0, 5, 0, 0.95>;
 #declare Sheet2 = color rgbt <5, 0, 0, 0.95>;
@@ -43,14 +41,14 @@
 #declare loc = <4, 0.6, 0.2>;
 
 camera {
+	/* The image by default is 4:3 (width:height).
+	 * To make it square, uncomment the following code.
+	right x * image_width / image_height
+	up y
+	 */
 	location loc
 	sky <0,0,1>
 	look_at <0, 0, 0.2>
-}
-
-plane {
-	-loc, 4.1
-	texture { Starfield }
 }
 
 light_source {
@@ -84,7 +82,7 @@ light_source {
 #declare b = <-1, root3, -root2 / 2>;
 #declare c = <-1, -root3, -root2 / 2>;
 #declare d = <0, 0, 3 * root2 / 2>;
-#declare tetthickness = 0.075;
+#declare tetthickness = 0.175;
 
 #declare tetskeleton = union {
 	cylinder { a, b, tetthickness }
@@ -99,45 +97,6 @@ light_source {
 	sphere { d, tetthickness }
 }
 
-#declare tridisc = prism {
-	linear_sweep linear_spline
-	-tetthickness/2, tetthickness/2,
-	4,
-	<0.5, 0>, <-0.25, root3/4>, <-0.25, -root3/4>, <0.5, 0>
-}
-
-#declare trid = object {
-	tridisc
-	rotate <-90, 0, 0>
-	translate <0, 0, root2>
-}
-
-#declare tria = object {
-	tridisc
-	rotate <-90, 0, 0>
-	translate <0, 0, root2>
-	rotate <0, 0, 180>
-	rotate <0, 109.47122, 0>
-}
-
-#declare trib = object {
-	tridisc
-	rotate <-90, 0, 0>
-	translate <0, 0, root2>
-	rotate <0, 0, 180>
-	rotate <0, 109.47122, 0>
-	rotate <0, 0, 120>
-}
-
-#declare tric = object {
-	tridisc
-	rotate <-90, 0, 0>
-	translate <0, 0, root2>
-	rotate <0, 0, 180>
-	rotate <0, 109.47122, 0>
-	rotate <0, 0, 240>
-}
-
 #declare quaddisc = prism {
 	linear_sweep linear_spline
 	-tetthickness/2, tetthickness/2,
@@ -146,58 +105,24 @@ light_source {
 	<-root3/2, root3/2>, <root3/2, root3/2>
 }
 
-#declare quadabcd = object {
-	quaddisc
-	rotate <35.26439, 0, 0>
-	rotate <0, 0, 30>
-	pigment { Blue }
-}
-
 #declare quadacbd = object {
 	quaddisc
 	rotate <35.26439, 0, 0>
 	rotate <0, 0, 30>
 	rotate <0, 0, 120>
-	pigment { Blue }
-}
-
-#declare quadadbc = object {
-	quaddisc
-	rotate <35.26439, 0, 0>
-	rotate <0, 0, 30>
-	rotate <0, 0, 240>
-	pigment { Blue }
 }
 
 #declare everything = union {
 	object {
 		tetskeleton
-		texture { T_Stone20 } // Brown = 20
-	}
-	
-	object {
-		tria
-		texture { T_Stone21 } // Red = 21
-	}
-	
-	object {
-		trib
-		texture { T_Stone18 } // Green = 18
-	}
-	
-	object {
-		tric
-		texture { T_Stone23 } // Orange = 23
-	}
-	
-	object {
-		trid
-		texture { T_Stone13 } // Blue = 13
+		pigment { DarkTan }
+		// no_shadow
 	}
 	
 	object {
 		quadacbd
-		texture { T_Stone12 } // Pink = 12
+		pigment { SeaGreen }
+		// no_shadow
 	}
 }
 

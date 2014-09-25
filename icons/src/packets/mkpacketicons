@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# Note: on fink this requires librsvg2-bin.
+#
+set -e
+
+for i in "$@"; do
+  for j in 16 22 32; do
+    size=$j
+    rsvg -w$size -h$size $i.svg $i-$size.png
+    size=$(($j + $j))
+    rsvg -w$size -h$size $i.svg $i-$j@2x.png
+    size=$(($size + $j))
+    rsvg -w$size -h$size $i.svg $i-$j@3x.png
+  done
+done

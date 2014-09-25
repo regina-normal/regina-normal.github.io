@@ -1,0 +1,10 @@
+#!/bin/bash
+set -e
+
+for i in 16 29 32 40 50 57 58 64 72 76 80 90 100 114 120 128 144 152 180 256 512 1024; do
+  convert -geometry ${i}x${i} regina-bg.png regina-bg-$i.png
+done
+
+for i in 16 22 32 64 96 310 320 620 930; do
+  convert -geometry ${i}x${i} regina.png regina-$i.png
+done
