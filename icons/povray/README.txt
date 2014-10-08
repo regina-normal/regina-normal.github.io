@@ -15,4 +15,4 @@ Building the final image:
   in gimp:
     translate 36 pixels up
     add a (20, 20, 45) drop shadow
-    apply a gradient to the background
+    apply a gradient to the background: fffff8 - f9ffda
