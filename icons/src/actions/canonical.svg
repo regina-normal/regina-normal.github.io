@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="640px" height="640px" viewBox="0 0 640 640" enable-background="new 0 0 640 640" xml:space="preserve">
+<polyline fill="#F2C6C9" points="385,220 465,331 174,376 "/>
+<polygon fill="#BF6F74" points="382,452 174,376 465,331 "/>
+<polygon fill="#D69B9E" points="250,185 178.977,372.32 385,220 "/>
+<path fill="none" stroke="#C1272D" stroke-width="20" stroke-miterlimit="10" d="M615.25,319.5c0,163.2-132.3,295.5-295.5,295.5
+	S24.25,482.7,24.25,319.5S156.55,24,319.75,24S615.25,156.3,615.25,319.5z M320,112c-114.323,0-207,92.677-207,207
+	s92.677,207,207,207s207-92.677,207-207S434.323,112,320,112z"/>
+<circle fill="none" stroke="#C1272D" stroke-width="5" stroke-miterlimit="10" cx="319.75" cy="319.5" r="229"/>
+<circle fill="none" stroke="#C1272D" stroke-width="5" stroke-miterlimit="10" cx="319.75" cy="319.5" r="272.5"/>
+<polyline fill="none" stroke="#C1272D" stroke-width="20" stroke-linejoin="round" stroke-miterlimit="10" points="385,220 250,185 
+	174,376 382,452 465,331 385,220 174,376 465,331 "/>
+</svg>
