@@ -7,9 +7,6 @@
 	<path fill="none" d="M152,110C51.541,164.89,45,399.5,94,471s188.116,120.273,295,82c71.701-25.675,92-36,130-76
 		c71.501-75.264,51-296-43-367S249,57,152,110z"/>
 </g>
-<path fill="none" stroke="#9E005D" stroke-width="40" stroke-miterlimit="10" d="M231.158,208.947
-	c50.768-12.915,133.843-23.802,176.499-6.946c42.68,45.585,39.255,159.069,21.702,204.277C380,456,257,448,207,395.5
-	C194.361,347.296,189.926,262.033,231.158,208.947z"/>
 <line fill="none" stroke="#004775" stroke-width="40" stroke-linecap="round" stroke-miterlimit="10" x1="320" y1="320" x2="476" y2="110"/>
 <line fill="none" stroke="#004775" stroke-width="40" stroke-linecap="round" stroke-miterlimit="10" x1="519" y1="477" x2="320" y2="320"/>
 <path fill="none" stroke="#004775" stroke-width="40" stroke-linecap="round" stroke-miterlimit="10" d="M320,320"/>
@@ -18,4 +15,14 @@
 <line fill="none" stroke="#004775" stroke-width="40" stroke-linecap="round" stroke-miterlimit="10" x1="320" y1="320" x2="152" y2="110"/>
 <circle fill="#004775" stroke="#004878" stroke-width="14" stroke-miterlimit="10" cx="320.115" cy="320.115" r="36.115"/>
 <path fill="none" stroke="#000000" stroke-miterlimit="10" d="M759,175"/>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="201.124" y1="279.3604" x2="446.4399" y2="345.0926">
+	<stop  offset="0" style="stop-color:#85082A"/>
+	<stop  offset="0.2039" style="stop-color:#A22B4A"/>
+	<stop  offset="0.5781" style="stop-color:#D36780"/>
+	<stop  offset="0.8542" style="stop-color:#F18CA2"/>
+	<stop  offset="1" style="stop-color:#FD9AAF"/>
+</linearGradient>
+<path fill="url(#SVGID_1_)" fill-opacity="0.7" stroke="#9E005D" stroke-width="20" stroke-miterlimit="10" d="M231.158,208.947
+	c50.768-12.915,133.843-23.802,176.499-6.946c42.68,45.585,39.255,159.069,21.702,204.277C380,456,257,448,207,395.5
+	C194.361,347.296,189.926,262.033,231.158,208.947z"/>
 </svg>
