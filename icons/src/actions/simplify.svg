@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="640px"
-	 height="640px" viewBox="0 0 640 640" enable-background="new 0 0 640 640" xml:space="preserve">
-<g id="Layer_1">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="640px" height="640px" viewBox="0 0 640 640" enable-background="new 0 0 640 640" xml:space="preserve">
+<g id="Layer_1_1_">
 	<g>
 		
 			<rect x="21" y="18" fill="#E6E6F2" stroke="#636592" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="449" height="449"/>
@@ -18,20 +18,20 @@
 			<line fill="none" stroke="#636592" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="167.124" y1="159.696" x2="353.101" y2="141.099"/>
 	</g>
 </g>
-<g id="Layer_2">
-	<g>
-		
-			<rect x="395" y="400" fill="#29ABE2" stroke="#2E3192" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="224" height="220"/>
-		
-			<path fill="#29ABE2" stroke="#2E3192" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
-			M394.724,620L619,399.783L394.724,620z"/>
-	</g>
+<g>
+	
+		<rect x="395" y="400" fill="#29ABE2" stroke="#2E3192" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="224" height="220"/>
+	
+		<path fill="#29ABE2" stroke="#2E3192" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M394.724,620L619,399.783L394.724,620z"/>
+</g>
+<g>
 	<g>
 		<g>
-			<path fill="none" stroke="#C3922E" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" d="M91,504
-				c0,0,82.975,57.854,212.395,72.608"/>
+			<path fill="none" stroke="#C3922E" stroke-width="25" stroke-linecap="round" stroke-linejoin="round" d="M74.5,504
+				c41.26,43.5,111,66.5,205,66.5"/>
 			<g>
-				<polygon fill="#C3922E" points="272.964,611.158 291.106,575.245 277.852,537.257 363,580 				"/>
+				<polygon fill="#C3922E" points="237.371,626.047 260.97,570.5 237.371,514.953 369.046,570.5 				"/>
 			</g>
 		</g>
 	</g>
