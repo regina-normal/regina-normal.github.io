@@ -3,7 +3,8 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="640px" height="640px" viewBox="0 0 640 640" enable-background="new 0 0 640 640" xml:space="preserve">
-<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="195.8652" y1="598.877" x2="398.6699" y2="-158.0005" gradientTransform="matrix(1 0 0 -1 22.5 540)">
+<polygon fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" points="648.5,647.5 -11.285,647.5 -10.768,-8.5 648.5,-8.5 "/>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="218.3647" y1="-58.8755" x2="421.1694" y2="698.002">
 	<stop  offset="0" style="stop-color:#D6AB72"/>
 	<stop  offset="0.1305" style="stop-color:#D09F5D"/>
 	<stop  offset="0.5" style="stop-color:#C18026"/>
@@ -12,27 +13,27 @@
 </linearGradient>
 <polygon display="none" fill="url(#SVGID_1_)" stroke="#000000" stroke-miterlimit="10" points="639.5,639.5 0,639.5 0.5,-0.5 
 	639.5,-0.5 "/>
-<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="192.4033" y1="609.96" x2="400.8807" y2="-168.0886" gradientTransform="matrix(1 0 0 -1 22.5 540)">
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="214.9033" y1="-69.9595" x2="423.3805" y2="708.0881">
 	<stop  offset="0" style="stop-color:#AC7A6C"/>
 	<stop  offset="0.5056" style="stop-color:#945748"/>
 	<stop  offset="1" style="stop-color:#562D22"/>
 </linearGradient>
-<polygon fill="url(#SVGID_2_)" stroke="#000000" stroke-miterlimit="10" points="649.5,647.5 -11.252,647.5 -10.735,-9.5 
-	649.5,-9.5 "/>
-<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="195.8652" y1="598.877" x2="398.6699" y2="-158.0005" gradientTransform="matrix(1 0 0 -1 22.5 540)">
+<polygon display="none" fill="url(#SVGID_2_)" stroke="#000000" stroke-miterlimit="10" points="649.5,647.5 -11.252,647.5 
+	-10.735,-9.5 649.5,-9.5 "/>
+<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="218.3647" y1="-58.8755" x2="421.1694" y2="698.002">
 	<stop  offset="0" style="stop-color:#87835C"/>
 	<stop  offset="0.5" style="stop-color:#54541F"/>
 	<stop  offset="1" style="stop-color:#464012"/>
 </linearGradient>
 <polygon display="none" fill="url(#SVGID_3_)" stroke="#000000" stroke-miterlimit="10" points="639.5,639.5 0,639.5 0.5,-0.5 
 	639.5,-0.5 "/>
-<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="195.8643" y1="597.877" x2="398.6691" y2="-159.0014" gradientTransform="matrix(1 0 0 -1 22.5 540)">
+<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="214.6992" y1="-68.835" x2="422.842" y2="707.9647">
 	<stop  offset="0" style="stop-color:#9A6046"/>
 	<stop  offset="0.5" style="stop-color:#6E2405"/>
 	<stop  offset="1" style="stop-color:#4E0000"/>
 </linearGradient>
-<polygon display="none" fill="url(#SVGID_4_)" stroke="#000000" stroke-miterlimit="10" points="639.5,640.5 0,640.5 0.5,0.5 
-	639.5,0.5 "/>
+<polygon fill="url(#SVGID_4_)" fill-opacity="0.9" stroke="#000000" stroke-miterlimit="10" points="648.5,647.5 -10.994,647.5 
+	-10.478,-8.5 648.5,-8.5 "/>
 <g>
 	
 		<polygon fill="none" stroke="#FFFFFF" stroke-width="30" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
@@ -41,19 +42,17 @@
 		<line fill="none" stroke="#FFFFFF" stroke-width="30" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="337.478" y1="51" x2="425.728" y2="582.723"/>
 	
 		<polygon fill="#FFFFFF" fill-opacity="0.4" stroke="#FFFFFF" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
-		204.72,247.504 376.645,286.994 483.015,462.762 291.529,390.436 	"/>
+		204.72,247.504 376.645,286.994 483.015,462.762 291.529,390.435 	"/>
 	<g>
-		<g>
-			<defs>
-				<polygon id="SVGID_5_" points="405.044,333.92 459.231,423.463 599,394.316 559.18,254.059 6,367.104 42.591,469.743 
-					311.648,404.023 280.986,373.075 				"/>
-			</defs>
-			<clipPath id="SVGID_6_">
-				<use xlink:href="#SVGID_5_"  overflow="visible"/>
-			</clipPath>
-			
-				<line clip-path="url(#SVGID_6_)" fill="none" stroke="#FFFFFF" stroke-width="30" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="92.098" y1="414.204" x2="531.197" y2="361.869"/>
-		</g>
+		<defs>
+			<polygon id="SVGID_5_" points="405.044,333.92 459.231,423.463 599,394.317 559.18,254.059 6,367.104 42.591,469.743 
+				311.648,404.023 280.986,373.075 			"/>
+		</defs>
+		<clipPath id="SVGID_6_">
+			<use xlink:href="#SVGID_5_"  overflow="visible"/>
+		</clipPath>
+		
+			<line clip-path="url(#SVGID_6_)" fill="none" stroke="#FFFFFF" stroke-width="30" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="92.098" y1="414.204" x2="531.197" y2="361.869"/>
 	</g>
 </g>
 </svg>
