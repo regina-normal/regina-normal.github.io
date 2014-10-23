@@ -10,3 +10,5 @@ set -e
 for i in 16 29 32 40 58 64 76 80 120 128 152 180 256 512 1024; do
   rsvg -w$i -h$i app.svg app-$i.png
 done
+
+convert -alpha off app-1024.png appstore.png
