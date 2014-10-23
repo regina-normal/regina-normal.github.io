@@ -7,7 +7,11 @@ set -e
 # - iPad app: 76 152
 # - iPhone app: 120 180
 
-for i in 16 29 32 40 58 64 76 80 120 128 152 180 256 512 1024; do
+for i in 16; do
+  rsvg -w$i -h$i app-lores.svg app-$i.png
+done
+
+for i in 29 32 40 58 64 76 80 120 128 152 180 256 512 1024; do
   rsvg -w$i -h$i app.svg app-$i.png
 done
 
