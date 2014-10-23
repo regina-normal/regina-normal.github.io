@@ -23,3 +23,6 @@ done
 for i in 16 29 32 40 58 64 76 80 120 128 152 180 256 512 1024; do
   convert -geometry ${i}x${i} regina-bg.png regina-bg-$i.png
 done
+
+convert -geometry 1024x1024 regina-bg.png appstore.png
+
