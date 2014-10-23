@@ -1,0 +1,12 @@
+#!/bin/bash
+set -e
+
+# - App icon: 16 32 64 128 256 512 1024
+# - Spotlight: 40 80
+# - Settings: 29 58
+# - iPad app: 76 152
+# - iPhone app: 120 180
+
+for i in 16 29 32 40 58 64 76 80 120 128 152 180 256 512 1024; do
+  rsvg -w$i -h$i app.svg app-$i.png
+done
