@@ -16,3 +16,14 @@ for i in 29 32 40 58 64 76 80 120 128 152 180 256 512 1024; do
 done
 
 convert -alpha off app-1024.png appstore.png
+
+# Document icon:
+#
+# - Packets/Document: 32 64 96
+# - RGA DocType: 64 320
+# - QtUI: 16 22 32
+
+for i in 16 22 32 64 96 320; do
+  rsvg -w$i -h$i regina-doc.svg regina-doc-$i.png
+done
+
