@@ -8,8 +8,10 @@ set -e
 # - RGA DocType: 64 320
 # - QtUI: 16 22 32
 
+# Crop the transparent icon so it fills the available space a little more.
+# This is particularly useful for very small rendering sizes.
 for i in 16 22 32 64 96 310 320 620 930; do
-  convert -geometry ${i}x${i} regina.png regina-$i.png
+  convert -crop 3000x3000+36+42 -geometry ${i}x${i} regina.png regina-$i.png
 done
 
 # Background:
