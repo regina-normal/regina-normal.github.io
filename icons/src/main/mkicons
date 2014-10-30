@@ -34,13 +34,21 @@ for i in 16 22 32 48 64; do
 done
 
 # iOS icons:
-# - ReginaLarge: 310 620 930
-# - Packets/Document: 32 64 96
+# - ReginaLarge: 310 (x1,2,3)
+# - Packets/Document: 32 (x1,2,3)
 # - RGA DocType: 64 320
 rm -rf ios
 mkdir ios
-for i in 32 64 96 310 320 620 930; do
+for i in 32 310; do
   size=$i
-  rsvg -w$size -h$size regina.svg ios/regina-${size}.png
+  rsvg -w$size -h$size regina.svg ios/regina-${i}.png
+  size=$(($i+$i))
+  rsvg -w$size -h$size regina.svg ios/regina-${i}@2x.png
+  size=$(($i+$i+$i))
+  rsvg -w$size -h$size regina.svg ios/regina-${i}@3x.png
+done
+for i in 64 320; do
+  size=$i
+  rsvg -w$size -h$size regina.svg ios/regina-doc-${size}.png
 done
 
