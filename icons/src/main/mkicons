@@ -2,18 +2,21 @@
 set -e
 
 # OSX icons:
-rm -rf regina.iconset
-mkdir regina.iconset
+rm -rf regina.iconset x-regina.iconset
+mkdir regina.iconset x-regina.iconset
 for i in 16 32 128 256 512; do
   size=$i
   rsvg -w$size -h$size regina.svg regina.iconset/icon_${size}x${size}.png
+  rsvg -w$size -h$size x-regina.svg x-regina.iconset/icon_${size}x${size}.png
   size=$(($i + $i))
   rsvg -w$size -h$size regina.svg regina.iconset/icon_${i}x${i}@2x.png
+  rsvg -w$size -h$size x-regina.svg x-regina.iconset/icon_${i}x${i}@2x.png
 done
 xcrun iconutil -c icns regina.iconset
-rm -rf regina.iconset
+xcrun iconutil -c icns x-regina.iconset
+rm -rf regina.iconset x-regina.iconset
 
-# MSWindows icons: TODO
+# MSWindows icons (regina, x-regina): TODO
 
 # XDG icons:
 rm -rf xdg
@@ -21,6 +24,7 @@ mkdir xdg
 for i in 16 22 24 32 48 64 128 256; do
   size=$i
   rsvg -w$size -h$size regina.svg xdg/regina-${size}.png
+  rsvg -w$size -h$size x-regina.svg xdg/x-regina-${size}.png
 done
 
 # QtUI icons:
