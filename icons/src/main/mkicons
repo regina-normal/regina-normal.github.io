@@ -1,30 +1,46 @@
 #!/bin/bash
 set -e
 
-# Transparent:
-#
+# OSX icons:
+rm -rf regina.iconset
+mkdir regina.iconset
+for i in 16 32 128 256 512; do
+  size=$i
+  rsvg -w$size -h$size regina.svg regina.iconset/icon_${size}x${size}.png
+  size=$(($i + $i))
+  rsvg -w$size -h$size regina.svg regina.iconset/icon_${i}x${i}@2x.png
+done
+xcrun iconutil -c icns regina.iconset
+rm -rf regina.iconset
+
+# MSWindows icons: TODO
+
+# XDG icons:
+rm -rf xdg
+mkdir xdg
+for i in 16 22 24 32 48 64 128 256; do
+  size=$i
+  rsvg -w$size -h$size regina.svg xdg/regina-${size}.png
+done
+
+# QtUI icons:
+rm -rf qtui
+mkdir qtui
+for i in 16 22 32 48 64; do
+  size=$i
+  rsvg -w$size -h$size regina.svg qtui/regina-${i}.png
+  size=$(($i + $i))
+  rsvg -w$size -h$size regina.svg qtui/regina-${i}@2x.png
+done
+
+# iOS icons:
 # - ReginaLarge: 310 620 930
 # - Packets/Document: 32 64 96
 # - RGA DocType: 64 320
-# - QtUI: 16 22 32
-
-# Crop the transparent icon so it fills the available space a little more.
-# This is particularly useful for very small rendering sizes.
-for i in 16 22 32 64 96 310 320 620 930; do
-  convert -crop 3000x3000+36+42 -geometry ${i}x${i} regina.png regina-$i.png
+rm -rf ios
+mkdir ios
+for i in 32 64 96 310 320 620 930; do
+  size=$i
+  rsvg -w$size -h$size regina.svg ios/regina-${size}.png
 done
-
-# Background:
-#
-# - App icon: 16 32 64 128 256 512 1024
-# - Spotlight: 40 80
-# - Settings: 29 58
-# - iPad app: 76 152
-# - iPhone app: 120 180
-
-for i in 16 29 32 40 58 64 76 80 120 128 152 180 256 512 1024; do
-  convert -geometry ${i}x${i} regina-bg.png regina-bg-$i.png
-done
-
-convert -geometry 1024x1024 -alpha off regina-bg.png appstore.png
 
