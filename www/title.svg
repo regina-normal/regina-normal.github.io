@@ -121,6 +121,18 @@ GP/bAAEAGP/0AAEAGP/uAAIAF//0ABj/9AABABj/7gADAAL/yQAG//QAB//0AAEAF//0AAMABv/u\
 AAz/7gAR//QAAwAG/+gACf/uABH/7gACAAQABgAIAAAADAAMAAMADwAUAAQAFwAYAAoAAA==")}
 ]]>
 </style>
+<filter  id="AI_GaussianBlur_4">
+	<feGaussianBlur  stdDeviation="4"></feGaussianBlur>
+</filter>
+<g opacity="0.5">
+	<g filter="url(#AI_GaussianBlur_4)">
+		<path d="M144.557,89.33l-44.028-70.653c-2.233-3.442-7.107-3.707-9.565-0.207L35.1,101.157c-2.084,3.228-0.653,6.777,2.219,8.301
+			l75.886,38.33c3.239,1.502,6.392-0.008,7.702-2.627l24.011-50.279c0.004-0.008,0.007-0.015,0.01-0.022
+			C145.771,92.913,145.691,91.244,144.557,89.33z M112.777,89.916l-6.8-40.972l24.236,38.893 M92.402,36.674l9.061,54.591
+			L51.497,97.22L92.402,36.674z M108.317,132.567l-49.106-24.804l44.115-5.258 M118.425,123.927l-3.789-22.817l15.555-1.821
+			L118.425,123.927z"/>
+	</g>
+</g>
 <text transform="matrix(1 0 0 1 194 59)" fill="#1B1464" font-family="'Optima-Regular'" font-size="60">Regina</text>
 <text transform="matrix(1 0 0 1 194 108)"><tspan x="0" y="0" fill="#332500" font-family="'Optima-Regular'" font-size="24">Software for 3-manifold topology</tspan><tspan x="0" y="28.8" fill="#332500" font-family="'Optima-Regular'" font-size="24">and normal surface theory</tspan></text>
 <g>
