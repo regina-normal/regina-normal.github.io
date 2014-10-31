@@ -54,7 +54,7 @@ for i in 16 22 32 48 64; do
   rsvg -w$size -h$size regina.svg qtui/regina-${i}@2x.png
 done
 
-# iOS icons:
+# iOS document icons:
 # - ReginaLarge: 310 (x1,2,3)
 # - Packets/Document: 32 (x1,2,3)
 # - RGA DocType: 64 320
@@ -72,4 +72,23 @@ for i in 64 320; do
   size=$i
   rsvg -w$size -h$size regina.svg ios/regina-doc-${size}.png
 done
+
+# iOS app icons (reversed):
+# - App icon: 16 32 64 128 256 512 1024
+# - Spotlight: 40 80
+# - Settings: 29 58
+# - iPad app: 76 152
+# - iPhone app: 120 180
+
+rm -rf app
+mkdir app
+for i in 16; do
+  rsvg -w$i -h$i app-lores.svg app/app-$i.png
+done
+
+for i in 29 32 40 58 64 76 80 120 128 152 180 256 512 1024; do
+  rsvg -w$i -h$i app.svg app/app-$i.png
+done
+
+convert -alpha off app/app-1024.png appstore.png
 
