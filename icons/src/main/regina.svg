@@ -3,6 +3,14 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="640px" height="640px" viewBox="0 0 640 640" enable-background="new 0 0 640 640" xml:space="preserve">
+<filter  id="AI_GaussianBlur_4">
+	<feGaussianBlur  stdDeviation="4"></feGaussianBlur>
+</filter>
+<path filter="url(#AI_GaussianBlur_4)" d="M579.143,358.758L371.411,25.403c-10.536-16.242-33.536-17.492-45.131-0.977
+	L62.707,414.56c-9.832,15.227-3.082,31.977,10.466,39.165l358.045,180.85c15.282,7.087,30.157-0.038,36.338-12.396l113.29-237.229
+	c0.018-0.035,0.03-0.069,0.045-0.104C584.875,375.661,584.5,367.786,579.143,358.758z M429.204,361.521L397.12,168.208
+	l114.354,183.506 M333.07,110.313l42.749,257.569l-235.746,28.099L333.07,110.313z M408.162,562.76l-231.694-117.03l208.145-24.808
+	 M455.85,521.99l-17.876-107.655l73.391-8.594L455.85,521.99z"/>
 <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="306.7026" y1="18.6411" x2="468.5431" y2="622.6381">
 	<stop  offset="0" style="stop-color:#A16D55"/>
 	<stop  offset="0.0755" style="stop-color:#955C43"/>
