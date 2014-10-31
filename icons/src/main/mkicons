@@ -12,9 +12,11 @@ for i in 16 32 128 256 512; do
   rsvg -w$size -h$size regina.svg regina.iconset/icon_${i}x${i}@2x.png
   rsvg -w$size -h$size x-regina.svg x-regina.iconset/icon_${i}x${i}@2x.png
 done
-xcrun iconutil -c icns regina.iconset
-xcrun iconutil -c icns x-regina.iconset
-rm -rf regina.iconset x-regina.iconset
+if [ -x /usr/bin/xcrun ]; then
+  xcrun iconutil -c icns regina.iconset
+  xcrun iconutil -c icns x-regina.iconset
+  rm -rf regina.iconset x-regina.iconset
+fi
 
 # MSWindows icons:
 rm -f regina.ico x-regina.ico
