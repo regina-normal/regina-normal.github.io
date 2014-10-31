@@ -17,7 +17,8 @@ mv ios/regina-doc-*.png ~/git/regina/ios
 
 requires ios regina-310.png
 requires ios regina-310@2x.png
-mv ios/regina-310{,@2x}.png ~/git/regina/ios/Images.xcassets/ReginaLarge.imageset
+requires ios regina-310@3x.png
+mv ios/regina-310{,@2x,@3x}.png ~/git/regina/ios/Images.xcassets/ReginaLarge.imageset
 
 requires ios regina-32.png
 requires ios regina-32@2x.png
@@ -26,4 +27,4 @@ mv ios/regina-32{,@2x,@3x}.png ~/git/regina/ios/Images.xcassets/Packets/Document
 
 requires ios app-64.png
 requires ios app-80-1.png
-mv ios/app\*.png ~/git/regina/ios/Images.xcassets/AppIcon.appiconset
+mv ios/app*.png ~/git/regina/ios/Images.xcassets/AppIcon.appiconset
