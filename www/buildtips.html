@@ -297,7 +297,7 @@ Install the necessary portion of Boost into <tt>$SAGE_ROOT/local</tt>.
 This includes a version of Boost.Python that is built against Sage's own Python.
 <div class="example"><p>
 <tt>example$ cd boost_1_54_0</tt><br>
-<tt>example$ ./bootstrap.sh --prefix=$SAGE_ROOT/local --with-libraries=iostreams,python,regex</tt><br>
+<tt>example$ ./bootstrap.sh --prefix=$SAGE_ROOT/local --with-libraries=python,regex</tt><br>
 <tt>example$ ./b2 --layout=tagged install threading=multi</tt>
 </p></div></li>
 <li><b>Step 2:</b> Install Regina's Python module into Sage.
