@@ -26,12 +26,13 @@
 <polygon fill="url(#SVGID_1_)" points="341.654,9.243 355.099,253.972 354.038,388.162 384.725,431.979 441.488,627.165 
 	437.256,466.834 455.928,382.231 410.562,294.996 "/>
 <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="221.5908" y1="39.5259" x2="383.9398" y2="645.4208">
-	<stop  offset="0" style="stop-color:#A16D55"/>
-	<stop  offset="0.0755" style="stop-color:#955C43"/>
-	<stop  offset="0.18" style="stop-color:#8A4C32"/>
-	<stop  offset="0.3102" style="stop-color:#824127"/>
-	<stop  offset="0.4929" style="stop-color:#7D3B20"/>
-	<stop  offset="1" style="stop-color:#7C391E"/>
+	<stop  offset="0" style="stop-color:#B38973"/>
+	<stop  offset="0.0191" style="stop-color:#AF836D"/>
+	<stop  offset="0.1053" style="stop-color:#A26F57"/>
+	<stop  offset="0.207" style="stop-color:#975F46"/>
+	<stop  offset="0.333" style="stop-color:#8F533B"/>
+	<stop  offset="0.5096" style="stop-color:#8B4D34"/>
+	<stop  offset="1" style="stop-color:#8A4B32"/>
 </linearGradient>
 <path fill="url(#SVGID_2_)" d="M574.078,352.284L367.209,20.313c-10.492-16.174-33.396-17.419-44.943-0.972L59.788,407.854
 	c-9.792,15.163-3.069,31.844,10.422,39.003l356.558,180.098c15.219,7.058,30.032-0.038,36.187-12.345l112.819-236.243
@@ -119,9 +120,9 @@
 	</linearGradient>
 	<polygon fill="url(#SVGID_13_)" points="416.691,306.404 423.812,349.126 451.944,405.341 490.46,458.059 497.92,440.858 	"/>
 	<linearGradient id="SVGID_14_" gradientUnits="userSpaceOnUse" x1="270.6387" y1="218.9707" x2="429.1221" y2="493.472">
-		<stop  offset="0.0169" style="stop-color:#52835F"/>
-		<stop  offset="0.5" style="stop-color:#006D4F"/>
-		<stop  offset="1" style="stop-color:#004A33"/>
+		<stop  offset="0.0169" style="stop-color:#65A174"/>
+		<stop  offset="0.5" style="stop-color:#00825E"/>
+		<stop  offset="1" style="stop-color:#005C3F"/>
 	</linearGradient>
 	<path fill="url(#SVGID_14_)" d="M383.079,430.409l-68.296-25.16c-6.031-9.025-19.718-20.999-29.285-24.817l-67.881-111.643
 		c5.78-6.482,3.284-21.101,3.284-21.101l137.206,32.161L383.079,430.409z M423.812,349.126l17.151,103.394l33.961,12.669
