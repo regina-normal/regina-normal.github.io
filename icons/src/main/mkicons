@@ -1,16 +1,22 @@
 #!/bin/bash
 set -e
 
+# Usage: render source.svg dest.png size
+function render {
+  # rsvg -w$3 -h$3 "$1" "$2"
+  inkscape -z -e "$2" -w $3 -h $3 "$1"
+}
+
 # OSX icons:
 rm -rf regina.iconset x-regina.iconset
 mkdir regina.iconset x-regina.iconset
 for i in 16 32 128 256 512; do
   size=$i
-  rsvg -w$size -h$size regina.svg regina.iconset/icon_${size}x${size}.png
-  rsvg -w$size -h$size x-regina.svg x-regina.iconset/icon_${size}x${size}.png
+  render regina.svg regina.iconset/icon_${i}x${i}.png $size
+  render x-regina.svg x-regina.iconset/icon_${i}x${i}.png $size
   size=$(($i + $i))
-  rsvg -w$size -h$size regina.svg regina.iconset/icon_${i}x${i}@2x.png
-  rsvg -w$size -h$size x-regina.svg x-regina.iconset/icon_${i}x${i}@2x.png
+  render regina.svg regina.iconset/icon_${i}x${i}@2x.png $size
+  render x-regina.svg x-regina.iconset/icon_${i}x${i}@2x.png $size
 done
 if [ -x /usr/bin/xcrun ]; then
   xcrun iconutil -c icns regina.iconset
@@ -25,8 +31,8 @@ mkdir mswindows
 sizes="16 24 32 48 64 256"
 for i in $sizes; do
   size=$i
-  rsvg -w$size -h$size regina.svg mswindows/regina-${i}.png
-  rsvg -w$size -h$size x-regina.svg mswindows/x-regina-${i}.png
+  render regina.svg mswindows/regina-${i}.png $size
+  render x-regina.svg mswindows/x-regina-${i}.png $size
 done
 for i in regina x-regina; do
   sources=
@@ -42,8 +48,8 @@ rm -rf xdg
 mkdir xdg
 for i in 16 22 24 32 48 64 128 256; do
   size=$i
-  rsvg -w$size -h$size regina.svg xdg/regina-${size}.png
-  rsvg -w$size -h$size x-regina.svg xdg/x-regina-${size}.png
+  render regina.svg xdg/regina-${size}.png $size
+  render x-regina.svg xdg/x-regina-${size}.png $size
 done
 
 # QtUI icons:
@@ -51,9 +57,9 @@ rm -rf qtui
 mkdir qtui
 for i in 16 22 32 48 64; do
   size=$i
-  rsvg -w$size -h$size regina.svg qtui/regina-${i}.png
+  render regina.svg qtui/regina-${i}.png $size
   size=$(($i + $i))
-  rsvg -w$size -h$size regina.svg qtui/regina-${i}@2x.png
+  render regina.svg qtui/regina-${i}@2x.png $size
 done
 
 # iOS document icons:
@@ -64,15 +70,15 @@ rm -rf ios
 mkdir ios
 for i in 32 310; do
   size=$i
-  rsvg -w$size -h$size regina.svg ios/regina-${i}.png
+  render regina.svg ios/regina-${i}.png $size
   size=$(($i+$i))
-  rsvg -w$size -h$size regina.svg ios/regina-${i}@2x.png
+  render regina.svg ios/regina-${i}@2x.png $size
   size=$(($i+$i+$i))
-  rsvg -w$size -h$size regina.svg ios/regina-${i}@3x.png
+  render regina.svg ios/regina-${i}@3x.png $size
 done
 for i in 64 320; do
   size=$i
-  rsvg -w$size -h$size regina.svg ios/regina-doc-${size}.png
+  render regina.svg ios/regina-doc-${size}.png $size
 done
 
 # iOS app icons (reversed):
@@ -85,11 +91,11 @@ done
 rm -rf app
 mkdir app
 for i in 16; do
-  rsvg -w$i -h$i app-lores.svg app/app-$i.png
+  render app-lores.svg app/app-$i.png $i
 done
 
 for i in 29 32 40 58 64 76 80 120 128 152 180 256 512 1024; do
-  rsvg -w$i -h$i app.svg app/app-$i.png
+  render app.svg app/app-$i.png $i
 done
 
 convert -alpha off app/app-1024.png appstore.png
