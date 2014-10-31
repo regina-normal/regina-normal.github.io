@@ -16,7 +16,24 @@ xcrun iconutil -c icns regina.iconset
 xcrun iconutil -c icns x-regina.iconset
 rm -rf regina.iconset x-regina.iconset
 
-# MSWindows icons (regina, x-regina): TODO
+# MSWindows icons:
+rm -f regina.ico x-regina.ico
+rm -rf mswindows
+mkdir mswindows
+sizes="16 24 32 48 64 256"
+for i in $sizes; do
+  size=$i
+  rsvg -w$size -h$size regina.svg mswindows/regina-${i}.png
+  rsvg -w$size -h$size x-regina.svg mswindows/x-regina-${i}.png
+done
+for i in regina x-regina; do
+  sources=
+  for j in $sizes; do
+    sources="$sources mswindows/$i-$j.png"
+  done
+  convert $sources $i.ico
+done
+rm -rf mswindows
 
 # XDG icons:
 rm -rf xdg
