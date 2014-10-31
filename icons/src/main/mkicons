@@ -88,15 +88,18 @@ done
 # - iPad app: 76 152
 # - iPhone app: 120 180
 
-rm -rf app
-mkdir app
 for i in 16; do
-  render app-lores.svg app/app-$i.png $i
+  render app-lores.svg ios/app-$i.png $i
 done
 
 for i in 29 32 40 58 64 76 80 120 128 152 180 256 512 1024; do
-  render app.svg app/app-$i.png $i
+  render app.svg ios/app-$i.png $i
 done
 
-convert -alpha off app/app-1024.png appstore.png
+for i in 29 32 58 80 256 512; do
+  # These sizes are used twice.
+  cp -p ios/app-$i.png ios/app-${i}-1.png
+done
+
+convert -alpha off ios/app-1024.png appstore.png
 

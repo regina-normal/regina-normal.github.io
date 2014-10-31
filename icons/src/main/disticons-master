@@ -1,0 +1,29 @@
+#!/bin/bash
+set -e
+
+function requires {
+  if [ ! -d "$1" ]; then
+    echo "ERROR: Missing directory $1."
+    exit 1
+  fi
+  if [ ! -e "$1/$2" ]; then
+    echo "ERROR: Missing file $1/$2."
+    exit 1
+  fi
+}
+
+requires xdg regina-32.png
+requires xdg x-regina-32.png
+mv xdg/*.png ~/git/regina/qtui/src/xdg-icons
+
+requires qtui regina-32.png
+requires qtui regina-32@2x.png
+mv qtui/*.png ~/git/regina/qtui/src/icons
+
+requires . regina.ico
+requires . x-regina.ico
+mv *.ico ~/git/regina/qtui/src
+
+requires . regina.icns
+requires . x-regina.icns
+mv *.icns ~/git/regina/qtui/src
