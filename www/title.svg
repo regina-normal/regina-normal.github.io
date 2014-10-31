@@ -147,12 +147,13 @@ AAz/7gAR//QAAwAG/+gACf/uABH/7gACAAQABgAIAAAADAAMAAMADwAUAAQAFwAYAAoAAA==")}
 	<polygon fill="url(#SVGID_1_)" points="93.09,13.313 95.951,65.398 95.726,93.959 102.256,103.284 114.337,144.825 
 		113.437,110.702 117.41,92.696 107.755,74.13 	"/>
 	<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="67.5361" y1="19.7578" x2="102.089" y2="148.7108">
-		<stop  offset="0" style="stop-color:#A16D55"/>
-		<stop  offset="0.0755" style="stop-color:#955C43"/>
-		<stop  offset="0.18" style="stop-color:#8A4C32"/>
-		<stop  offset="0.3102" style="stop-color:#824127"/>
-		<stop  offset="0.4929" style="stop-color:#7D3B20"/>
-		<stop  offset="1" style="stop-color:#7C391E"/>
+		<stop  offset="0" style="stop-color:#B38973"/>
+		<stop  offset="0.0191" style="stop-color:#AF836D"/>
+		<stop  offset="0.1053" style="stop-color:#A26F57"/>
+		<stop  offset="0.207" style="stop-color:#975F46"/>
+		<stop  offset="0.333" style="stop-color:#8F533B"/>
+		<stop  offset="0.5096" style="stop-color:#8B4D34"/>
+		<stop  offset="1" style="stop-color:#8A4B32"/>
 	</linearGradient>
 	<path fill="url(#SVGID_2_)" d="M142.557,86.322L98.528,15.669c-2.233-3.442-7.107-3.707-9.565-0.207L33.1,98.149
 		c-2.084,3.228-0.653,6.777,2.219,8.301l75.886,38.33c3.239,1.502,6.392-0.008,7.702-2.627l24.011-50.279
@@ -240,9 +241,9 @@ AAz/7gAR//QAAwAG/+gACf/uABH/7gACAAQABgAIAAAADAAMAAMADwAUAAQAFwAYAAoAAA==")}
 		</linearGradient>
 		<polygon fill="url(#SVGID_13_)" points="109.06,76.558 110.575,85.65 116.562,97.614 124.76,108.834 126.348,105.174 		"/>
 		<linearGradient id="SVGID_14_" gradientUnits="userSpaceOnUse" x1="77.9756" y1="57.9502" x2="111.7051" y2="116.3714">
-			<stop  offset="0.0169" style="stop-color:#52835F"/>
-			<stop  offset="0.5" style="stop-color:#006D4F"/>
-			<stop  offset="1" style="stop-color:#004A33"/>
+			<stop  offset="0.0169" style="stop-color:#65A174"/>
+			<stop  offset="0.5" style="stop-color:#00825E"/>
+			<stop  offset="1" style="stop-color:#005C3F"/>
 		</linearGradient>
 		<path fill="url(#SVGID_14_)" d="M101.906,102.95L87.37,97.595c-1.283-1.921-4.196-4.469-6.232-5.281L66.69,68.553
 			c1.23-1.38,0.699-4.491,0.699-4.491l29.201,6.845L101.906,102.95z M110.575,85.65l3.65,22.005l7.228,2.696
