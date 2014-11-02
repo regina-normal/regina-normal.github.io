@@ -136,22 +136,22 @@ AAz/7gAR//QAAwAG/+gACf/uABH/7gACAAQABgAIAAAADAAMAAMADwAUAAQAFwAYAAoAAA==")}
 			L124.082,107.062z M111.92,87.183l-0.668-1.092l-6.677-40.228l24.477,39.277L111.92,87.183z"/>
 	</g>
 	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="85.2192" y1="13.9531" x2="119.8593" y2="143.2316">
-		<stop  offset="0" style="stop-color:#B3885D"/>
-		<stop  offset="0.0885" style="stop-color:#A57248"/>
-		<stop  offset="0.1915" style="stop-color:#9A6138"/>
-		<stop  offset="0.3199" style="stop-color:#92562C"/>
-		<stop  offset="0.5" style="stop-color:#8D4F26"/>
-		<stop  offset="1" style="stop-color:#8C4D24"/>
+		<stop  offset="0" style="stop-color:#B38F6B"/>
+		<stop  offset="0.0613" style="stop-color:#A8815E"/>
+		<stop  offset="0.1675" style="stop-color:#9C704F"/>
+		<stop  offset="0.2997" style="stop-color:#936544"/>
+		<stop  offset="0.4851" style="stop-color:#8D5E3E"/>
+		<stop  offset="1" style="stop-color:#8C5C3C"/>
 	</linearGradient>
 	<polygon fill="url(#SVGID_1_)" points="92.721,11.942 95.609,64.543 95.382,93.385 101.978,102.802 114.178,144.754 
 		113.269,110.294 117.281,92.109 107.53,73.36 	"/>
 	<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="66.9146" y1="18.4517" x2="101.8086" y2="148.6781">
-		<stop  offset="0" style="stop-color:#B3885D"/>
-		<stop  offset="0.0885" style="stop-color:#A57248"/>
-		<stop  offset="0.1915" style="stop-color:#9A6138"/>
-		<stop  offset="0.3199" style="stop-color:#92562C"/>
-		<stop  offset="0.5" style="stop-color:#8D4F26"/>
-		<stop  offset="1" style="stop-color:#8C4D24"/>
+		<stop  offset="0" style="stop-color:#B38F6B"/>
+		<stop  offset="0.0613" style="stop-color:#A8815E"/>
+		<stop  offset="0.1675" style="stop-color:#9C704F"/>
+		<stop  offset="0.2997" style="stop-color:#936544"/>
+		<stop  offset="0.4851" style="stop-color:#8D5E3E"/>
+		<stop  offset="1" style="stop-color:#8C5C3C"/>
 	</linearGradient>
 	<path fill="url(#SVGID_2_)" d="M142.676,85.673L98.213,14.321c-2.255-3.476-7.178-3.743-9.66-0.209L32.138,97.616
 		c-2.104,3.26-0.659,6.845,2.24,8.384l76.636,38.709c3.271,1.517,6.455-0.009,7.777-2.653l24.249-50.776

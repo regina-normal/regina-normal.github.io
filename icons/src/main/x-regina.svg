@@ -44,22 +44,22 @@
 			l29.942-3.506L423.466,399.926z M388.877,343.392l-1.9-3.105L367.989,225.88l69.608,111.704L388.877,343.392z"/>
 	</g>
 	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="312.9399" y1="135.1279" x2="411.4554" y2="502.7929">
-		<stop  offset="0" style="stop-color:#B3885D"/>
-		<stop  offset="0.0885" style="stop-color:#A57248"/>
-		<stop  offset="0.1915" style="stop-color:#9A6138"/>
-		<stop  offset="0.3199" style="stop-color:#92562C"/>
-		<stop  offset="0.5" style="stop-color:#8D4F26"/>
-		<stop  offset="1" style="stop-color:#8C4D24"/>
+		<stop  offset="0" style="stop-color:#B38F6B"/>
+		<stop  offset="0.0613" style="stop-color:#A8815E"/>
+		<stop  offset="0.1675" style="stop-color:#9C704F"/>
+		<stop  offset="0.2997" style="stop-color:#936544"/>
+		<stop  offset="0.4851" style="stop-color:#8D5E3E"/>
+		<stop  offset="1" style="stop-color:#8C5C3C"/>
 	</linearGradient>
 	<polygon fill="url(#SVGID_1_)" points="334.273,129.411 342.492,279.003 341.844,361.028 360.602,387.812 395.299,507.121 
 		392.711,409.117 404.125,357.403 376.395,304.079 	"/>
 	<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="260.8833" y1="147.9209" x2="360.1207" y2="518.2799">
-		<stop  offset="0" style="stop-color:#B3885D"/>
-		<stop  offset="0.0885" style="stop-color:#A57248"/>
-		<stop  offset="0.1915" style="stop-color:#9A6138"/>
-		<stop  offset="0.3199" style="stop-color:#92562C"/>
-		<stop  offset="0.5" style="stop-color:#8D4F26"/>
-		<stop  offset="1" style="stop-color:#8C4D24"/>
+		<stop  offset="0" style="stop-color:#B38F6B"/>
+		<stop  offset="0.0613" style="stop-color:#A8815E"/>
+		<stop  offset="0.1675" style="stop-color:#9C704F"/>
+		<stop  offset="0.2997" style="stop-color:#936544"/>
+		<stop  offset="0.4851" style="stop-color:#8D5E3E"/>
+		<stop  offset="1" style="stop-color:#8C5C3C"/>
 	</linearGradient>
 	<path fill="url(#SVGID_2_)" d="M476.345,339.098l-126.45-202.92c-6.414-9.886-20.414-10.647-27.473-0.594L161.98,373.064
 		c-5.985,9.269-1.876,19.465,6.371,23.841l217.95,110.087c9.302,4.313,18.356-0.023,22.119-7.546l68.961-144.406
