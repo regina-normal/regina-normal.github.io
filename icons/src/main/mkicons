@@ -1,30 +1,105 @@
 #!/bin/bash
 set -e
 
-# Transparent:
-#
-# - ReginaLarge: 310 620 930
-# - Packets/Document: 32 64 96
-# - RGA DocType: 64 320
-# - QtUI: 16 22 32
+# Usage: render source.svg dest.png size
+function render {
+  # rsvg -w$3 -h$3 "$1" "$2"
+  inkscape -z -e "$2" -w $3 -h $3 "$1"
+}
 
-# Crop the transparent icon so it fills the available space a little more.
-# This is particularly useful for very small rendering sizes.
-for i in 16 22 32 64 96 310 320 620 930; do
-  convert -crop 3000x3000+36+42 -geometry ${i}x${i} regina.png regina-$i.png
+# OSX icons:
+rm -rf regina.iconset x-regina.iconset
+mkdir regina.iconset x-regina.iconset
+for i in 16 32 128 256 512; do
+  size=$i
+  render regina.svg regina.iconset/icon_${i}x${i}.png $size
+  render x-regina.svg x-regina.iconset/icon_${i}x${i}.png $size
+  size=$(($i + $i))
+  render regina.svg regina.iconset/icon_${i}x${i}@2x.png $size
+  render x-regina.svg x-regina.iconset/icon_${i}x${i}@2x.png $size
+done
+if [ -x /usr/bin/xcrun ]; then
+  xcrun iconutil -c icns regina.iconset
+  xcrun iconutil -c icns x-regina.iconset
+  rm -rf regina.iconset x-regina.iconset
+fi
+
+# MSWindows icons:
+rm -f regina.ico x-regina.ico
+rm -rf mswindows
+mkdir mswindows
+sizes="16 24 32 48 64 256"
+for i in $sizes; do
+  size=$i
+  render regina.svg mswindows/regina-${i}.png $size
+  render x-regina.svg mswindows/x-regina-${i}.png $size
+done
+for i in regina x-regina; do
+  sources=
+  for j in $sizes; do
+    sources="$sources mswindows/$i-$j.png"
+  done
+  convert $sources $i.ico
+done
+rm -rf mswindows
+
+# XDG icons:
+rm -rf xdg
+mkdir xdg
+for i in 16 22 24 32 48 64 128 256; do
+  size=$i
+  render regina.svg xdg/regina-${size}.png $size
+  render x-regina.svg xdg/x-regina-${size}.png $size
 done
 
-# Background:
-#
+# QtUI icons:
+rm -rf qtui
+mkdir qtui
+for i in 16 22 32 48 64; do
+  size=$i
+  render regina.svg qtui/regina-${i}.png $size
+  size=$(($i + $i))
+  render regina.svg qtui/regina-${i}@2x.png $size
+done
+
+# iOS document icons:
+# - ReginaLarge: 310 (x1,2,3)
+# - Packets/Document: 32 (x1,2,3)
+# - RGA DocType: 64 320
+rm -rf ios
+mkdir ios
+for i in 32 310; do
+  size=$i
+  render regina.svg ios/regina-${i}.png $size
+  size=$(($i+$i))
+  render regina.svg ios/regina-${i}@2x.png $size
+  size=$(($i+$i+$i))
+  render regina.svg ios/regina-${i}@3x.png $size
+done
+for i in 64 320; do
+  size=$i
+  render regina.svg ios/regina-doc-${size}.png $size
+done
+
+# iOS app icons (reversed):
 # - App icon: 16 32 64 128 256 512 1024
 # - Spotlight: 40 80
 # - Settings: 29 58
 # - iPad app: 76 152
 # - iPhone app: 120 180
 
-for i in 16 29 32 40 58 64 76 80 120 128 152 180 256 512 1024; do
-  convert -geometry ${i}x${i} regina-bg.png regina-bg-$i.png
+for i in 16; do
+  render app-lores.svg ios/app-$i.png $i
 done
 
-convert -geometry 1024x1024 -alpha off regina-bg.png appstore.png
+for i in 29 32 40 58 64 76 80 120 128 152 180 256 512 1024; do
+  render app.svg ios/app-$i.png $i
+done
+
+for i in 29 32 58 80 256 512; do
+  # These sizes are used twice.
+  cp -p ios/app-$i.png ios/app-${i}-1.png
+done
+
+convert -alpha off ios/app-1024.png appstore.png
 
