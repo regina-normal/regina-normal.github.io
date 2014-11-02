@@ -1,0 +1,16 @@
+#!/bin/bash
+set -e
+
+if [ ! -d regina.iconset ]; then
+  echo "ERROR: Need to create regina.iconset."
+  exit 1
+fi
+if [ ! -d x-regina.iconset ]; then
+  echo "ERROR: Need to create x-regina.iconset."
+  exit 1
+fi
+
+xcrun iconutil -c icns regina.iconset
+xcrun iconutil -c icns x-regina.iconset
+rm -rf regina.iconset x-regina.iconset
+

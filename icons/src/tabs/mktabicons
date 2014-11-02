@@ -5,7 +5,11 @@
 set -e
 
 for i in "$@"; do
-  for j in 25 50 75; do
+  case "$i" in
+    graph* ) sizes="27 54 81";;
+    *) sizes="25 50 75";;
+  esac
+  for j in $sizes; do
     rsvg -w$j -h$j $i.svg $i-$j.png
   done
 done

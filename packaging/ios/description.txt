@@ -1,0 +1,9 @@
+This app is for research mathematicians in 3-manifold topology.
+
+Have you encountered 3-manifolds and normal surfaces, or heard about the desktop software packages Regina or SnapPy?  If so, then you might find this app useful.  If not, but if you are curious as to what it's all about, you might like to read about the Poincaré conjecture (http://www.claymath.org/millenium-problems/poincaré-conjecture), or hunt down a copy of Jeffrey Weeks' excellent book "The Shape of Space".
+
+Regina is a software package for 3-manifold topologists, with a focus on triangulations, normal surfaces, and angle structures.  It includes high-level tasks such as 3-sphere recognition, connected sum decomposition and Hakenness testing, comes with a rich database of census manifolds, and incorporates the SnapPea kernel for working with hyperbolic manifolds.
+
+This iPad app offers most of Regina's functionality, but not all.  In particular, the iPad version does not include Python support, and some more minor functions will not appear until a later release (such as isomorphism testing, or some of the more exotic import/export formats).  If you need any of these features then please download a desktop version of Regina from regina.sourceforge.net.
+
+If you have any questions, requests or feedback then please contact Ben or the Regina development team – see http://regina.sourceforge.net/ for details.
