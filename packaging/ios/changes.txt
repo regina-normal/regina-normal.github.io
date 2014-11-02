@@ -1,0 +1,7 @@
+4.96.2:
+
+Added support for viewing face pairing graphs.
+
+4.96.1:
+
+Initial upload.
