@@ -23,7 +23,7 @@
 		<stop  offset="0" style="stop-color:#9AD471"/>
 		<stop  offset="1" style="stop-color:#65A82F"/>
 	</linearGradient>
-	<path fill="url(#SVGID_1_)" stroke="#24420E" stroke-width="20" stroke-linecap="round" stroke-miterlimit="10" d="M321.035,158.59
+	<path fill="url(#SVGID_1_)" stroke="#24420E" stroke-width="18" stroke-linecap="round" stroke-miterlimit="10" d="M321.035,158.59
 		l-53-66.59H220l-4.964,75.135c8.917,41.179,13.858,89.912,14.123,116.926c0.265,27.015-4.324,81.222-14.123,121.832
 		c-9.388,38.903-10.506,68.332,0,79.456c10.506,11.123,41.229,22.777,73.541-9.005c32.312-31.782,64.268-103.955,66.213-145.669
 		C356.729,289.123,351.082,208.844,321.035,158.59z"/>
