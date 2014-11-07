@@ -11,7 +11,7 @@
 <circle fill="#143E51" cx="520.5" cy="107.5" r="34.5"/>
 <line fill="none" stroke="#143E51" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="475.97" y1="271.55" x2="386" y2="603"/>
 <line fill="none" stroke="#143E51" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="45" y1="313" x2="370.305" y2="172.411"/>
-<circle fill="#5C0F96" cx="242.5" cy="52.5" r="34.5"/>
-<circle fill="#5C0F96" cx="582.5" cy="371.5" r="34.5"/>
-<line fill="none" stroke="#5C0F96" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="242.5" y1="52.5" x2="582.5" y2="371.5"/>
+<circle fill="#7E1EC7" cx="242.5" cy="52.5" r="34.5"/>
+<circle fill="#7E1EC7" cx="582.5" cy="371.5" r="34.5"/>
+<line fill="none" stroke="#7E1EC7" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="242.5" y1="52.5" x2="582.5" y2="371.5"/>
 </svg>
