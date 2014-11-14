@@ -55,7 +55,7 @@ make test ARGS=-V
 make install
 
 # Clean up the Qt bundles, which are not laid out correctly.
-for i in QtCore QtGui QtWidgets QtSvg; do
+for i in QtCore QtGui QtWidgets QtSvg QtPrintSupport; do
   fwdir="$DEST/Regina.app/Contents/Frameworks/$i.framework"
   resdir="$fwdir/Versions/5/Resources"
 
@@ -82,5 +82,10 @@ for i in QtCore QtGui QtWidgets QtSvg; do
   echo "$i: setting up symlinks..."
   ( cd "$fwdir/Versions" ; ln -s 5 Current )
   ( cd "$fwdir" ; ln -s Versions/Current/Resources Resources )
+
+  if ( grep _debug "$fwdir/Resources/Info.plist" >/dev/null ); then
+    echo "$i: unbreaking Info.plist"
+    sed -i -e 's/_debug//' "$fwdir/Resources/Info.plist"
+  fi
 done
 

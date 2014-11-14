@@ -21,6 +21,10 @@ echo 'Signing python module...'
 codesign -s 'Developer ID' -v "$app"/Contents/MacOS/python/regina/*
 echo
 
+echo 'Signing plugins...'
+codesign -s 'Developer ID' -v "$app"/Contents/Plugins/*/*
+echo
+
 echo 'Signing standalone executables...'
 codesign -s 'Developer ID' -v "$app"/Contents/MacOS/{census*,reg*,sig*,tri*}
 echo
