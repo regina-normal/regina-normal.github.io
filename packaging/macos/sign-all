@@ -8,7 +8,7 @@ if ! [ -e "$1/Contents/MacOS/Regina" ]; then
 fi
 
 echo 'Signing frameworks...'
-codesign -s 'Developer ID' -v "$app"/Contents/Frameworks/*.framework/Versions/4
+codesign -s 'Developer ID' -v "$app"/Contents/Frameworks/*.framework/Versions/5
 echo
 
 echo 'Signing dylibs...'
