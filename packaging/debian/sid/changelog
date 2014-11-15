@@ -1,8 +1,9 @@
 regina-normal (4.96-2) unstable; urgency=low
 
   * Bumped standards-version to 3.9.5 (no changes required).
+  * Now installs /usr/bin/censuslookup, which was omitted from 4.96-1.
 
- -- Ben Burton <bab@debian.org>  Sat, 30 Aug 2014 00:21:00 +1000
+ -- Ben Burton <bab@debian.org>  Sat, 15 Nov 2014 22:01:46 +0530
 
 regina-normal (4.96-1) unstable; urgency=low
 
