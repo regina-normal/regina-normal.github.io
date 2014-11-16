@@ -1,6 +1,7 @@
 regina-normal (4.96-1ubuntu1~utopic1) utopic; urgency=low
 
   * Packaged recent upstream release for ubuntu utopic.
+  * Includes the patch to install the censuslookup manpage.
 
  -- Ben Burton <bab@debian.org>  Sat, 15 Nov 2014 19:02:22 +0530
 
