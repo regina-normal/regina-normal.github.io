@@ -3,7 +3,7 @@ regina-normal (4.97-1) unstable; urgency=low
   * New upstream release.
   * New build-depends: switched from Qt4 to Qt5, and also added
     libboost-iostreams-dev.
-  * Bumped standards-version to 3.9.5 (no changes required).
+  * Bumped standards-version to 3.9.6 (no changes required).
 
  -- Ben Burton <bab@debian.org>  Sat, 15 Nov 2014 22:01:46 +0530
 
