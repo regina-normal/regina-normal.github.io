@@ -8,6 +8,7 @@ usr/lib/python2.7/dist-packages/regina/__init__.py
 usr/lib/python2.7/dist-packages/regina/engine.so
 usr/share/applications
 usr/share/icons
+usr/share/man/man1/censuslookup.1
 usr/share/man/man1/reg*
 usr/share/man/man1/sig*
 usr/share/man/man1/tricensus.1
