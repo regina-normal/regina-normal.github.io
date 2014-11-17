@@ -1,0 +1,8 @@
+Regina for Ubuntu:  Utopic (Ubuntu 14.10)
+-----------------------------------------
+
+To install Regina under Utopic Unicorn (the Ubuntu 14.10 release), see:
+
+http://regina.sourceforge.net/install/ubuntu-utopic.html
+
+- Ben Burton <bab@debian.org>, Mon, 17 Nov 2014 22:42:18 +0530
