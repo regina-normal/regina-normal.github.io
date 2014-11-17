@@ -1,4 +1,4 @@
-regina-normal (4.96-2ubuntu1~trusty1) trusty; urgency=low
+regina-normal (4.96-1ubuntu1~trusty2) trusty; urgency=low
 
   * Now installs /usr/bin/censuslookup, which was omitted from the
     initial 4.96 package.
