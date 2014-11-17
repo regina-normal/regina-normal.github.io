@@ -1,4 +1,5 @@
 # Known to work for:
+# - SuSE 13.2 (i586, x86_64)
 # - SuSE 13.1 (i586, x86_64)
 # - SuSE 12.3 (i586, x86_64)
 # - SuSE 12.2 (i586, x86_64)
