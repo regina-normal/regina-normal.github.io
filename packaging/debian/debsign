@@ -5,6 +5,9 @@
 # - sha1sum and sha256sum have changed to gsha1sum and gsha256sum.
 # (Ben Burton, April 2012)
 
+# Explicitly use my old (non-default) key with Regina.
+DEBSIGN_KEYID=36B861C1
+
 # This program is designed to PGP sign a .dsc and .changes file pair
 # in the form needed for a legal Debian upload.  It is based in part
 # on dpkg-buildpackage.  It takes one argument: the name of the
