@@ -10,7 +10,8 @@ regina-normal (4.97-1) unstable; urgency=low
 regina-normal (4.96-2) unstable; urgency=low
 
   * Now installs the utility /usr/bin/censuslookup, which was inadvertently
-    omitted from 4.96-1 (closes: #769700).
+    omitted from 4.96-1 (closes: #769700).  Also installs the corresponding
+    manpage.
 
  -- Ben Burton <bab@debian.org>  Sat, 15 Nov 2014 22:01:46 +0530
 
