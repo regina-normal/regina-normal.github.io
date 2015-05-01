@@ -1,4 +1,5 @@
 # Known to work for:
+# - Fedora 21 (i386, x86_64)
 # - Fedora 20 (i386, x86_64)
 # - Fedora 19 (i386, x86_64)
 # - Fedora 18 (i386, x86_64)
