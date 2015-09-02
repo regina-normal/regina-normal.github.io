@@ -1,4 +1,5 @@
 # Known to work for:
+# - Mageia 5 (i586, x86_64)
 # - Mageia 4 (i586, x86_64)
 # - Mageia 3 (i586, x86_64)
 
