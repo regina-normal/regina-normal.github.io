@@ -22,6 +22,7 @@ Manual checks:
       - import snappy
   - tools
       - regfiledump data file from desktop
+      - censuslookup cPcbbbiht
       - /usr/bin/python; import regina
       - ensure that "make test" works (use files from checks/)
   - dependencies (apt-cache show regina-normal ; rpm -qR regina-normal)

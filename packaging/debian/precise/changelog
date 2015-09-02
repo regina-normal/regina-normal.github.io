@@ -1,3 +1,10 @@
+regina-normal (4.96-1ubuntu1~precise2) precise; urgency=low
+
+  * Now installs /usr/bin/censuslookup, which was omitted from the
+    initial 4.96 package.
+
+ -- Ben Burton <bab@debian.org>  Sat, 15 Nov 2014 22:01:46 +0530
+
 regina-normal (4.96-1ubuntu1~precise1) precise; urgency=low
 
   * New upstream release, backported to ubuntu precise.

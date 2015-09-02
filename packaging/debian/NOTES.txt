@@ -34,6 +34,10 @@ To build only a source package:
 
     debuild -S
 
+To force the .orig.tar.gz to be uploaded (not just the diff):
+
+    debuild -sa
+
 ---------
 OLD NOTES
 ---------

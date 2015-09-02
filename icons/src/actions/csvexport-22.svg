@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="640px" height="640px" viewBox="0 0 640 640" enable-background="new 0 0 640 640" xml:space="preserve">
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-29.1025" y1="395.4268" x2="579.1027" y2="746.5742" gradientTransform="matrix(1 0 0 1 45 -201)">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="0.2812" style="stop-color:#FBFBFB"/>
+	<stop  offset="0.5807" style="stop-color:#EEEEEE"/>
+	<stop  offset="0.8875" style="stop-color:#D9D9D9"/>
+	<stop  offset="1" style="stop-color:#CFCFCF"/>
+</linearGradient>
+<rect x="30" y="170" fill="url(#SVGID_1_)" width="580" height="400"/>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="45.8574" y1="187.915" x2="505.1452" y2="453.0849" gradientTransform="matrix(1 0 0 1 45 -201)">
+	<stop  offset="0" style="stop-color:#C7C7C7"/>
+	<stop  offset="0.1942" style="stop-color:#C3C3C3"/>
+	<stop  offset="0.4011" style="stop-color:#B6B6B6"/>
+	<stop  offset="0.6138" style="stop-color:#A1A1A1"/>
+	<stop  offset="0.8292" style="stop-color:#838383"/>
+	<stop  offset="1" style="stop-color:#666666"/>
+</linearGradient>
+<rect x="40" y="75" fill="url(#SVGID_2_)" width="561" height="89"/>
+<path fill="none" stroke="#4D4D4D" stroke-width="20" stroke-linejoin="round" stroke-miterlimit="10" d="M69.5,70h502.966
+	C591.812,70,601,80.5,601,100.5V570H40V100.5C40,80.5,50.754,70.71,69.5,70z"/>
+<line fill="none" stroke="#4D4D4D" stroke-width="20" stroke-miterlimit="10" x1="30" y1="164" x2="610" y2="164"/>
+<line fill="none" stroke="#534741" stroke-width="20" stroke-miterlimit="10" x1="90" y1="248" x2="230" y2="248"/>
+<line fill="none" stroke="#534741" stroke-width="20" stroke-miterlimit="10" x1="280" y1="248" x2="360" y2="248"/>
+<line fill="none" stroke="#534741" stroke-width="20" stroke-miterlimit="10" x1="411" y1="248" x2="551" y2="248"/>
+<line fill="none" stroke="#534741" stroke-width="20" stroke-miterlimit="10" x1="90" y1="425" x2="230" y2="425"/>
+<line fill="none" stroke="#534741" stroke-width="20" stroke-miterlimit="10" x1="280" y1="425" x2="360" y2="425"/>
+<line fill="none" stroke="#534741" stroke-width="20" stroke-miterlimit="10" x1="411" y1="425" x2="551" y2="425"/>
+<line fill="none" stroke="#534741" stroke-width="20" stroke-miterlimit="10" x1="90" y1="366" x2="230" y2="366"/>
+<line fill="none" stroke="#534741" stroke-width="20" stroke-miterlimit="10" x1="280" y1="366" x2="360" y2="366"/>
+<line fill="none" stroke="#534741" stroke-width="20" stroke-miterlimit="10" x1="411" y1="366" x2="551" y2="366"/>
+<line fill="none" stroke="#534741" stroke-width="20" stroke-miterlimit="10" x1="90" y1="307" x2="230" y2="307"/>
+<line fill="none" stroke="#534741" stroke-width="20" stroke-miterlimit="10" x1="280" y1="307" x2="360" y2="307"/>
+<line fill="none" stroke="#534741" stroke-width="20" stroke-miterlimit="10" x1="411" y1="307" x2="551" y2="307"/>
+<line fill="none" stroke="#534741" stroke-width="20" stroke-miterlimit="10" x1="90" y1="484" x2="230" y2="484"/>
+<line fill="none" stroke="#534741" stroke-width="20" stroke-miterlimit="10" x1="280" y1="484" x2="360" y2="484"/>
+<line fill="none" stroke="#534741" stroke-width="20" stroke-miterlimit="10" x1="411" y1="484" x2="551" y2="484"/>
+</svg>

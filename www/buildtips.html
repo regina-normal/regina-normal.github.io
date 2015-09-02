@@ -287,36 +287,51 @@ They assume that you already have <i>cmake</i>, <i>popt</i> and
 <p>
 <ul>
 <li><b>Step 0:</b>
-All the commands in Steps 1 and 2 should be executed inside a
+All the commands in Steps 1, 2 and 3 should be executed inside a
 shell created by running &ldquo;<tt><b>sage&nbsp;-sh</b></tt>&rdquo;.
 This sets environment variables so, for instance,
 &ldquo;<tt>python</tt>&rdquo; is now Sage's special Python and the environment
-variable <tt>$SAGE_ROOT</tt> is set.</li>
+variable <tt>$SAGE_LOCAL</tt> is set.</li>
+
 <li><b>Step 1:</b>
-Install the necessary portion of Boost into <tt>$SAGE_ROOT/local</tt>.
-This includes a version of Boost.Python that is built against Sage's own Python.
+Install the necessary portion of Boost into <tt>$SAGE_LOCAL</tt>.
+This includes a version of Boost.Python that is built against Sage's own Python:
+
 <div class="example"><p>
-<tt>example$ cd boost_1_54_0</tt><br>
-<tt>example$ ./bootstrap.sh --prefix=$SAGE_ROOT/local --with-libraries=iostreams,python,regex</tt><br>
-<tt>example$ ./b2 --layout=tagged install threading=multi</tt>
+<tt>&gt; cd boost-*</tt><br>
+<tt>&gt; ./bootstrap.sh --prefix=$SAGE_LOCAL --with-libraries=python,regex,iostreams</tt><br>
+<tt>&gt; ./b2 --layout=tagged install threading=multi</tt>
 </p></div></li>
-<li><b>Step 2:</b> Install Regina's Python module into Sage.
-Note that the <tt><b>cmake</b></tt> command below should be
-one (very long) line.
+
+<li><b>Step 2:</b>
+If you do not have <i>tokyocabinet</i> installed on your system,
+install it into <tt>$SAGE_LOCAL</tt> manually via:
+
 <div class="example"><p>
-<tt>example$ cd regina-4.96</tt><br>
-<tt>example$ mkdir build</tt><br>
-<tt>example$ cd build</tt><br>
-<tt>example$ cmake -DCMAKE_PREFIX_PATH=$SAGE_ROOT/local<br>
-&nbsp;&nbsp;&nbsp;&nbsp;-DCMAKE_INCLUDE_PATH=$SAGE_ROOT/local/include<br>
-&nbsp;&nbsp;&nbsp;&nbsp;-DCMAKE_LIBRARY_PATH=$SAGE_ROOT/local/lib<br>
-&nbsp;&nbsp;&nbsp;&nbsp;-DCMAKE_INSTALL_PREFIX=$SAGE_ROOT/local<br>
-&nbsp;&nbsp;&nbsp;&nbsp;-DBoost_LIBRARY_DIRS=$SAGE_ROOT/local/lib<br>
-&nbsp;&nbsp;&nbsp;&nbsp;-DDISABLE_GUI=1 -DREGINA_INSTALL_TYPE=XDG ..</tt><br>
-<tt>example$ make test ARGS=-V</tt><br>
-<tt>example$ make install</tt>
+<tt>&gt; cd tokyocabinet-*</tt><br>
+<tt>&gt; ./configure --prefix=$SAGE_LOCAL</tt><br>
+<tt>&gt; make</tt><br>
+<tt>&gt; make install</tt>
 </p></div></li>
-<li><b>Step 3:</b> Test.  Outside the &ldquo;<tt><b>sage -sh</b></tt>&rdquo;
+
+<li><b>Step 3:</b>
+Install Regina's Python module into Sage:
+
+<div class="example"><p>
+<tt>&gt; cd regina-4.96</tt><br>
+<tt>&gt; mkdir build</tt><br>
+<tt>&gt; cd build</tt><br>
+<tt>&gt; cmake -DCMAKE_PREFIX_PATH=$SAGE_LOCAL \</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;-DCMAKE_INCLUDE_PATH=$SAGE_LOCAL/include \</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;-DCMAKE_LIBRARY_PATH=$SAGE_LOCAL/lib \</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;-DCMAKE_INSTALL_PREFIX=$SAGE_LOCAL \</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;-DBoost_NO_BOOST_CMAKE=ON \</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;-DBoost_LIBRARY_DIRS=$SAGE_LOCAL/lib \</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;-DDISABLE_GUI=1 -DREGINA_INSTALL_TYPE=XDG ..</tt><br>
+<tt>&gt; make install</tt>
+</p></div></li>
+
+<li><b>Step 4:</b> Test.  Outside the &ldquo;<tt><b>sage -sh</b></tt>&rdquo;
 shell, start <tt><b>sage</b></tt>:
 <div class="example"><p>
 <tt>example$ sage</tt><br>

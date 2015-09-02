@@ -11,7 +11,7 @@ set -e
 # (at your option) any later version.
 
 host=people.debian.org
-suites="wheezy precise trusty"
+suites="wheezy jessie precise trusty utopic vivid"
 
 for suite in $suites; do
   echo "--------------------"
@@ -28,7 +28,7 @@ for suite in $suites; do
   echo "I: retrieving file to sign from remote host ..."
   scp "$host:$path" $tmp
   echo "I: signing ..."
-  gpg --detach-sign -o $sig $tmp
+  gpg --default-key 0x36B861C1 --detach-sign -o $sig $tmp
   echo "I: sending back signature ..."
   scp $sig "$host":"$path.gpg"
   echo "I: remote signing done."
