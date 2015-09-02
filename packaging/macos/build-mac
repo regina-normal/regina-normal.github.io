@@ -54,38 +54,3 @@ make
 make test ARGS=-V
 make install
 
-# Clean up the Qt bundles, which are not laid out correctly.
-for i in QtCore QtGui QtWidgets QtSvg QtPrintSupport; do
-  fwdir="$DEST/Regina.app/Contents/Frameworks/$i.framework"
-  resdir="$fwdir/Versions/5/Resources"
-
-  if [ -e "$resdir" ]; then
-    echo "ERROR: versioned Resources directory already exists."
-    exit 1
-  fi
-  if [ -d "$fwdir/Resources" ]; then
-    echo "$i: moving Resources/ into versioned framework directory..."
-    mv "$fwdir/Resources" "$resdir"
-  else
-    echo "$i: creating versioned Resources directory..."
-    mkdir "$resdir"
-  fi
-
-  echo "$i: adding missing Info.plist file to framework..."
-  cp ~/Qt5/5.3/clang_64/lib/$i.framework/Contents/Info.plist "$resdir"
-
-  if [ -e "$fwdir/Versions/Current" ]; then
-    echo "ERROR: Current symlink already exists."
-    exit 1
-  fi
-
-  echo "$i: setting up symlinks..."
-  ( cd "$fwdir/Versions" ; ln -s 5 Current )
-  ( cd "$fwdir" ; ln -s Versions/Current/Resources Resources )
-
-  if ( grep _debug "$fwdir/Resources/Info.plist" >/dev/null ); then
-    echo "$i: unbreaking Info.plist"
-    sed -i -e 's/_debug//' "$fwdir/Resources/Info.plist"
-  fi
-done
-
