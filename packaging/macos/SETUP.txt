@@ -49,6 +49,7 @@ Build-dependencies include:
     cppunit1.12.1
     doxygen
     gmp5
+    libgraphviz238-nox-dev
     libsource-highlight4
     libxml2
     libxslt-bin

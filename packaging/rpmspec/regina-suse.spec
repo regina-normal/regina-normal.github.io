@@ -17,7 +17,6 @@ URL: http://regina.sourceforge.net/
 Packager: Ben Burton <bab@debian.org>
 BuildRoot: %{_tmppath}/%{name}-buildroot
 
-Requires: graphviz
 Requires: mimehandler(application/pdf)
 Requires: python
 Conflicts: regina
@@ -29,6 +28,7 @@ BuildRequires: gcc
 BuildRequires: gcc-c++
 BuildRequires: glibc-devel
 BuildRequires: gmp-devel
+BuildRequires: graphviz-devel
 BuildRequires: libbz2-devel
 BuildRequires: libcppunit-devel
 BuildRequires: libqt4-devel
