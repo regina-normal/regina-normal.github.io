@@ -2,90 +2,59 @@
 READY-MADE DEPENDENCIES
 -----------------------
 
-For a first-time mingw install:
+Install MSYS2:
 
-  Don't forget /etc/fstab, which is necessary to have gcc on the path.
+  Download the 32-bit installer from https://msys2.github.io/
+  Follow instructions on that page to update the core packages
 
-Build dependencies from mingw:
+Install basic utilities from MSYS2:
 
-  mingw-get install mingw32-libz
-  mingw-get install mingw32-gmp
-  mingw-get install mingw32-libpopt
-  mingw-get install mingw32-pthreads-w32
+  pacman -S diffutils git man-db patch perl openssh tar unzip vim wget zip
 
-  Do not install the msys-libxml2 package (this is broken).
+  Edit ~/.bashrc to add the line:
 
-Build dependencies with standalone installers:
+    export PKG_CONFIG_PATH="$PKG_CONFIG_PATH":/home/bab/software/lib/pkgconfig
 
-  CMake
-  Doxygen
-  Python
-  Wix
-  Qt (needs >= 4.8.6)
+Install build dependencies from mingw-w64:
 
-Other helpful stuff from mingw:
+  pacman -S make libxslt
+  pacman -S mingw-w64-i686-toolchain
+  pacman -S mingw-w64-i686-boost
+  pacman -S mingw-w64-i686-cmake
+  pacman -S mingw-w64-i686-cppunit
+  pacman -S mingw-w64-i686-doxygen
+  pacman -S mingw-w64-i686-libxml2
+  pacman -S mingw-w64-i686-popt
 
-  mingw-get install msys-wget
-  mingw-get install msys-unzip
-  mingw-get install msys-zip
+Install build dependencies with standalone installers:
 
-Other helpful stuff with standalone installers:
+  Qt5 (from qt-project.org)
+  Wix (from wixtoolset.org)
 
-  Graphviz
+Install other helpful stuff with standalone installers:
+
+  Graphviz (from graphviz.org)
 
 ------------------------
 HAND-ROLLED DEPENDENCIES
 ------------------------
 
-To build boost (verified for v1.54.0):
+To build graphviz (verified for v2.38.0):
 
-  Download .zip (not .tar.gz)
-  Unzip with -q (output is *very* slow and there is lots)
-  Open cmd.exe (not mingw)
+  ./configure --prefix=/home/bab/software --enable-python=no --with-x=no
+  make ; make install
 
-  set PATH=C:\MinGW\bin;%PATH%
-  cd path\to\boost
-  bootstrap.bat mingw
-  b2 toolset=gcc --with-python --with-iostreams --with-regex variant=release link=shared
+To build source-highlight (verified for v3.1.8):
 
-  Open mingw
-
-  cd path/to/boost
-  mv boost /c/Boost/include/boost-1_54 (or whatever version)
-  mv stage/lib/* /c/Boost/lib
-
-To build pkgconfig (verified for v0.28):
-
-  ./configure --prefix=/home/bab/software --with-internal-glib
-
-To build cppunit (verified for v1.12.1):
-
-  ./configure --prefix=/home/bab/software
-
-To build source-highlight (verified for v3.1.7):
-
-  Patch to change NO_ERROR to NO_RANGE_ERROR (see source-highlight.patch).
-  ./configure --prefix=/home/bab/software --with-boost=/c/Boost
+  ./configure --prefix=/home/bab/software --with-boost-libdir=/mingw32/lib
+  make ; make install
 
 To build qdbm, which replaces tokyocabinet for MinGW (verified for v1.8.78):
 
   ./configure --prefix=/home/bab/software
+  make ; make install
 
-To build libxml2:
-
-  MinGW's msys-libxml2 (2.7.6) is broken, and libxml2 must be hand-rolled.
-  ./configure --prefix=/home/bab/software --with-threads=win32
-
-To build the python system library for shipping:
-
-  cd /c/Python27/Lib
-  zip -r path/to/python27.zip . -x distutils/\* -x \*.pyc
-  Also copy python27.dll from /c/Windows/System32
-
-To prepare the handbook:
-
-  Build docs.zip from some other package (e.g., the Mac bundle),
-  so that handbooks are stored as docs/en/regina{,-xml}.
+  (Note: tokyocabinet does not build because glob.h is missing.)
 
 ---------------
 BUILDING REGINA
@@ -94,6 +63,11 @@ BUILDING REGINA
 To build regina:
 
   Run cmake-regina.sh (in this directory) to get all necessary cmake arguments.
+
+
+
+
+
 
 To run the test suite:
 
@@ -107,6 +81,12 @@ To run locally:
 ----------------------
 BUILDING THE INSTALLER
 ----------------------
+
+To build the python system library for shipping:
+
+  cd /c/Python27/Lib
+  zip -r path/to/python27.zip . -x distutils/\* -x \*.pyc
+  Also copy python27.dll from /c/Windows/System32
 
 To prepare WiX for use:
   If WiX is not on the path, add aliases to ~/.bashrc:
