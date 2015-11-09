@@ -77,21 +77,22 @@ To run locally:
 BUILDING THE INSTALLER
 ----------------------
 
-TODO: Revise this section - it dates back to the last release from 2014.
-
 To build the python system library for shipping:
 
-  cd /c/Python27/Lib
-  zip -r path/to/python27.zip . -x distutils/\* -x \*.pyc
-  Also copy python27.dll from /c/Windows/System32
+  cd /mingw32/lib/python2.7
+  zip -r ~/python/python27.zip . -x distutils/\* -x \*.pyc -x \*.pyo
 
 To prepare WiX for use:
   If WiX is not on the path, add aliases to ~/.bashrc:
-    alias candle='"/c/Program Files/WiX Toolset v3.7/bin/candle"'
-    alias light='"/c/Program Files/WiX Toolset v3.7/bin/light"'
+    alias candle='"/c/Program Files/WiX Toolset v3.10/bin/candle"'
+    alias light='"/c/Program Files/WiX Toolset v3.10/bin/light"'
 
 To generate unique IDs for the windows installer:
   Build UUIDgen (gcc UUIDgen.c -lole32 -o UUIDgen)
+
+
+--- TODO: Revise from here down. ---
+
 
 To help fill documentation entries in regina.wsx:
   ls -1 ~/foo/MinGW/msys/1.0/home/bab/software/share/regina/docs/en/regina |
@@ -101,5 +102,5 @@ To help fill documentation entries in regina.wsx:
 
 To build the installer:
   candle Regina.wxs WixUI_Regina.wxs
-  light -ext WixUIExtension -o 'Regina 4.96.msi' Regina.wixobj WixUI_Regina.wixobj
+  light -ext WixUIExtension -o 'Regina 4.97.msi' Regina.wixobj WixUI_Regina.wixobj
 
