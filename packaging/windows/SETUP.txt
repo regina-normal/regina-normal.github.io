@@ -29,20 +29,12 @@ Install build dependencies from mingw-w64:
 Install build dependencies with standalone installers:
 
   Qt5 (from qt-project.org)
-  Wix (from wixtoolset.org)
-
-Install other helpful stuff with standalone installers:
-
   Graphviz (from graphviz.org)
+  Wix (from wixtoolset.org)
 
 ------------------------
 HAND-ROLLED DEPENDENCIES
 ------------------------
-
-To build graphviz (verified for v2.38.0):
-
-  ./configure --prefix=/home/bab/software --enable-python=no --with-x=no
-  make ; make install
 
 To build source-highlight (verified for v3.1.8):
 
@@ -64,11 +56,6 @@ To build regina:
 
   Run cmake-regina.sh (in this directory) to get all necessary cmake arguments.
 
-
-
-
-
-
 To run the test suite:
 
   export PATH="$PATH":/home/bab/software/bin
@@ -78,9 +65,19 @@ To run locally:
 
   Copy all necessary DLLs into software/bin.
 
+  - Most DLLs come from /mingw32/bin/, and perhaps /bin/.
+
+  - Some DLLs come from graphviz.
+      * From lib/release/dll/:
+        gvc cdt cgraph Pathplan gvplugin_core gvplugin_neato_layout
+      * From bin/:
+        ltdl libexpat libglib-2.0-0
+
 ----------------------
 BUILDING THE INSTALLER
 ----------------------
+
+TODO: Revise this section - it dates back to the last release from 2014.
 
 To build the python system library for shipping:
 
