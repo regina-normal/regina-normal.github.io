@@ -77,30 +77,33 @@ To run locally:
 BUILDING THE INSTALLER
 ----------------------
 
-To build the python system library for shipping:
+Package the python system library for shipping:
 
   cd /mingw32/lib/python2.7
   zip -r ~/python/python27.zip . -x distutils/\* -x \*.pyc -x \*.pyo
 
 To prepare WiX for use:
+
   If WiX is not on the path, add aliases to ~/.bashrc:
     alias candle='"/c/Program Files/WiX Toolset v3.10/bin/candle"'
     alias light='"/c/Program Files/WiX Toolset v3.10/bin/light"'
 
-To generate unique IDs for the windows installer:
-  Build UUIDgen (gcc UUIDgen.c -lole32 -o UUIDgen)
+Update the WiX source file:
 
+  - Update the Regina version in Regina.wxs.template.
 
---- TODO: Revise from here down. ---
+  - Check the list of files that Regina.wxs.template installs.
 
+      * If more unique IDs are required (e.g., there are new * components),
+        then run "uuidgen" (which comes with msys32) to generate them.
 
-To help fill documentation entries in regina.wsx:
-  ls -1 ~/foo/MinGW/msys/1.0/home/bab/software/share/regina/docs/en/regina |
-    sed -e "s#^#                        <File Name='#"
-        -e "s#\$#'/>#" 
-    > /tmp/foo
+  - Run "make install" from the source tree, ensuring that ~/software is
+    clean of any old Regina files.
 
-To build the installer:
+  - Run "perl mkwxs.pl" to generate Regina.wxs.
+
+Build the installer:
+
   candle Regina.wxs WixUI_Regina.wxs
   light -ext WixUIExtension -o 'Regina 4.97.msi' Regina.wixobj WixUI_Regina.wixobj
 
