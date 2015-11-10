@@ -2,7 +2,7 @@
 use strict;
 
 open(TEMPLATE, '<', 'Regina.wxs.template') or die;
-open(WXS, '>', 'Regina.wxs.tmp') or die;
+open(WXS, '>', 'Regina.wxs') or die;
 
 my $line;
 my $partial = '';
