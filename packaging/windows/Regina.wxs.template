@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='windows-1252'?>
 <Wix xmlns='http://schemas.microsoft.com/wix/2006/wi'>
   <Product Id='*'
-   Name='Regina 4.96'
+   Name='Regina 4.97'
    UpgradeCode='C3D9D7D7-6614-4F3F-9D8E-EEA184C24A99'
    Language='1033'
    Codepage='1252'
-   Version='4.96.0'
+   Version='4.97.0'
    Manufacturer='Regina development team'>
     <Package Id='*'
      Keywords='Installer'
-     Description='Regina 4.96 Installer'
+     Description='Regina 4.97 Installer'
      Manufacturer='Regina development team'
      Languages='1033'
      Compressed='yes'
@@ -22,7 +22,7 @@
     </InstallExecuteSequence>
 
     <Media Id='1' Cabinet='Regina.cab' EmbedCab='yes' DiskPrompt='Disk #1'/>
-    <Property Id='DiskPrompt' Value='Regina 4.96 Installation [1]'/>
+    <Property Id='DiskPrompt' Value='Regina 4.97 Installation [1]'/>
     <UIRef Id='WixUI_Regina'/>
     <UIRef Id='WixUI_ErrorProgressText'/>
     <Property Id='WIXUI_INSTALLDIR' Value='INSTALLDIR'/>
@@ -32,7 +32,7 @@
     <Directory Id='TARGETDIR' Name='SourceDir'>
       <Directory Id='ProgramFilesFolder' Name='PFiles'>
         <Directory Id='Regina' Name='Regina'>
-          <Directory Id='INSTALLDIR' Name='Regina 4.96'
+          <Directory Id='INSTALLDIR' Name='Regina 4.97'
            FileSource='c:\msys32\home\bab\software'>
 
             <Directory Id='BINDIR' Name='bin'>
@@ -49,7 +49,7 @@
                    Advertise='yes'/>
                   <Shortcut Id='desktopRegina'
                    Directory='DesktopFolder'
-                   Name='Regina 4.96'
+                   Name='Regina 4.97'
                    WorkingDirectory='PersonalFolder'
                    Icon='regina.ico'
                    Advertise='yes'/>
@@ -244,7 +244,7 @@
         </Directory>
       </Directory>
       <Directory Id='ProgramMenuFolder' Name='Programs'>
-        <Directory Id='ProgramMenuDir' Name='Regina 4.96'>
+        <Directory Id='ProgramMenuDir' Name='Regina 4.97'>
           <Component Id='ProgramMenuDir'
            Guid='2EF46552-9E7B-4822-A773-621B48A205B4'>
             <RemoveFolder Id='ProgramMenuDir' On='uninstall'/>
@@ -259,7 +259,7 @@
     </Directory>
 
     <Feature Id='Complete'
-     Title='Regina 4.96'
+     Title='Regina 4.97'
      Description='The complete package.'
      AllowAdvertise='no'
      InstallDefault='local'
@@ -301,9 +301,9 @@
     </Feature>
 
     <Icon Id='regina.ico'
-     SourceFile='c:\msys32\home\bab\src\regina-4.96\qtui\src\regina.ico'/>
+     SourceFile='c:\msys32\home\bab\src\regina-4.97\qtui\src\regina.ico'/>
     <Icon Id='manual.ico'
-     SourceFile='c:\msys32\home\bab\src\regina-4.96\qtui\src\manual.ico'/>
+     SourceFile='c:\msys32\home\bab\src\regina-4.97\qtui\src\manual.ico'/>
   </Product>
 </Wix>
 
