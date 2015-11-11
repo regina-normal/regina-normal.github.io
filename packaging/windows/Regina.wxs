@@ -116,6 +116,20 @@
                  KeyPath='yes'/>
                 <File Source='c:\msys32\home\bab\python\python27.zip'/>
               </Component>
+              <Component Id='QtConf'
+               Guid='7C377F9D-9AF4-4855-8E36-7298223610A5'>
+                <File Source='c:\msys32\home\bab\src\regina-4.97\qtui\src\qt.conf'
+                 KeyPath='yes'/>
+              </Component>
+              <Directory Id='BINDIR_plugins' Name='plugins'>
+                <Directory Id='BINDIR_plugins_platforms' Name='platforms'>
+                  <Component Id='QtPlatforms'
+                   Guid='8265E5B7-99EE-4BC3-84FD-B2C871AD10C3'>
+                    <File Source='c:\Qt\Qt5.5.1\5.5\mingw492_32\plugins\platforms\qwindows.dll'
+                     KeyPath='yes'/>
+                  </Component>
+                </Directory>
+              </Directory>
             </Directory>
 
             <Directory Id='LIBDIR' Name='lib'>
@@ -2289,6 +2303,8 @@
         <ComponentRef Id='CoreDLLs'/>
         <ComponentRef Id='PythonCore'/>
         <ComponentRef Id='PythonModule'/>
+        <ComponentRef Id='QtConf'/>
+        <ComponentRef Id='QtPlatforms'/>
         <ComponentRef Id='Examples'/>
         <ComponentRef Id='Syntax'/>
         <ComponentRef Id='IconsOxygen'/>
