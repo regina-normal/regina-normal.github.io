@@ -3,21 +3,6 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="640px"
 	 height="640px" viewBox="0 0 640 640" enable-background="new 0 0 640 640" xml:space="preserve">
-<style type="text/css">
-<![CDATA[
-@font-face{font-family:'MyriadPro-Regular';src:url("data:;base64,\
-T1RUTwACACAAAQAAQ0ZGIL3G4WQAAABYAAAB02NtYXAACQBsAAAALAAAACwAAAABAAAAAwAAAAwA\
-BAAgAAAABAAEAAEAAAA3//8AAAA3////ygABAAAAAAEABAIAAQEBEk15cmlhZFByby1SZWd1bGFy\
-AAEBAR74GwH4GAT4HAwV+zH7jvr6+kwF974P98ERuvg4EgACAQHa50NvcHlyaWdodCAxOTkyLCAx\
-OTk0LCAxOTk3LCAyMDAwLCAyMDA0IEFkb2JlIFN5c3RlbXMgSW5jb3Jwb3JhdGVkLiBBbGwgcmln\
-aHRzIHJlc2VydmVkLiBNeXJpYWQgaXMgZWl0aGVyIGEgcmVnaXN0ZXJlZCB0cmFkZW1hcmsgb3Ig\
-YSB0cmFkZW1hcmsgb2YgQWRvYmUgU3lzdGVtcyBJbmNvcnBvcmF0ZWQgaW4gdGhlIFVuaXRlZCBT\
-dGF0ZXMgYW5kL29yIG90aGVyIGNvdW50cmllcy4vRlNUeXBlIDggZGVmAAAAABgAAgEBTnL4iIu9\
-+Oy9AYu9+CS9A4sE+Ij5UPyIBveO+8UV+z73kwX36Ab7IPvAFfc+95MF/JIH/AZeFfc+95P3PvuT\
-BfwG+L8V9z77k/s++5MFDviVoHb41dQBxPguA8T5HhVC99KJB/uu/NMF5gb3r/jkBcUHDoCW94eR\
-93+W9y+WmJejlgb7ZZa4kaWR+AuR9z+RBx6gYl8MCYsMC84K4wvjjwwNAA==")}
-]]>
-</style>
 <g id="Layer_4">
 	<polyline fill="#FFFFFF" points="258.392,47.65 48.481,439.606 451.991,583.351 591.691,305.051 	"/>
 </g>
@@ -29,6 +14,8 @@ BfwG+L8V9z77k/s++5MFDviVoHb41dQBxPguA8T5HhVC99KJB/uu/NMF5gb3r/jkBcUHDoCW94eR\
 	
 		<polygon fill="url(#SVGID_1_)" stroke="#534741" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
 		48.481,439.606 451.991,583.351 591.691,305.051 258.392,47.65 	"/>
-	<text transform="matrix(1 0 0 1 253.2646 409.3438)" fill="#534741" font-family="'MyriadPro-Regular'" font-size="260.1843">7</text>
+	<g>
+		<path fill="#534741" d="M374.768,240.229v15.09l-73.63,154.025h-23.676l73.37-149.602v-0.521h-82.736v-18.993H374.768z"/>
+	</g>
 </g>
 </svg>

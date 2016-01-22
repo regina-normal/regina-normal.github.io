@@ -3,23 +3,6 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="640px"
 	 height="640px" viewBox="0 0 640 640" enable-background="new 0 0 640 640" xml:space="preserve">
-<style type="text/css">
-<![CDATA[
-@font-face{font-family:'MyriadPro-Regular';src:url("data:;base64,\
-T1RUTwACACAAAQAAQ0ZGIBL39sAAAABgAAACHWNtYXAARgBtAAAALAAAADQAAAABAAAAAwAAAAwA\
-BAAoAAAABgAEAAEAAgAxADT//wAAADEANP///9D/zgABAAAAAAAAAQAEAgABAQESTXlyaWFkUHJv\
-LVJlZ3VsYXIAAQEBHvgbAfgYBPgcDBX7MfuO+vr6TAX3vg/3wxG6+IISAAIBAdrnQ29weXJpZ2h0\
-IDE5OTIsIDE5OTQsIDE5OTcsIDIwMDAsIDIwMDQgQWRvYmUgU3lzdGVtcyBJbmNvcnBvcmF0ZWQu\
-IEFsbCByaWdodHMgcmVzZXJ2ZWQuIE15cmlhZCBpcyBlaXRoZXIgYSByZWdpc3RlcmVkIHRyYWRl\
-bWFyayBvciBhIHRyYWRlbWFyayBvZiBBZG9iZSBTeXN0ZW1zIEluY29ycG9yYXRlZCBpbiB0aGUg\
-VW5pdGVkIFN0YXRlcyBhbmQvb3Igb3RoZXIgY291bnRyaWVzLi9GU1R5cGUgOCBkZWYAAAAAEgAV\
-AAMBAU5zufiIi7347L0Bi734JL0DiwT4iPlQ/IgG9477xRX7PveTBffoBvsg+8AV9z73kwX8kgf8\
-Bl4V9z73k/c++5MF/Ab4vxX3PvuT+z77kwUO+JWgdvjM3Yt3EveA4BOw94AW4PkeQAYT0PsiP5xI\
-9wXIBY0GDviVoHb3RdD30+ABmuT3ad4D+CQW90Xm0DD4KCwH+7b8MwVR98L7RQf7afeKFY0H9zP3\
-cZ2pm6efsRmOBolpimlpGvttBw6AlveHkfd/lvcvlpiXo5YG+2WWuJGlkfgLkfc/kQceoGJfDAmL\
-DAvOCuML448MDQAAAA==")}
-]]>
-</style>
 <g id="Layer_4">
 	<polyline fill="#FFFFFF" points="258.392,47.65 48.481,439.606 451.991,583.351 591.691,305.051 	"/>
 </g>
@@ -31,6 +14,11 @@ DAvOCuML448MDQAAAA==")}
 	
 		<polygon fill="url(#SVGID_1_)" stroke="#534741" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
 		48.481,439.606 451.991,583.351 591.691,305.051 258.392,47.65 	"/>
-	<text transform="matrix(1 0 0 1 186.5293 409.3438)" fill="#534741" font-family="'MyriadPro-Regular'" font-size="260.1843">14</text>
+	<g>
+		<path fill="#534741" d="M247.931,261.563h-0.521l-29.4,15.871l-4.423-17.432l36.945-19.773h19.513v169.115h-22.115V261.563z"/>
+		<path fill="#534741" d="M402.477,409.344v-46.052h-78.574v-15.09l75.452-107.974h24.717V345.34h23.676v17.952h-23.676v46.052
+			H402.477z M402.477,345.34v-56.458c0-8.847,0.26-17.692,0.78-26.539h-0.78c-5.204,9.887-9.366,17.171-14.05,24.977l-41.368,57.499
+			v0.521H402.477z"/>
+	</g>
 </g>
 </svg>

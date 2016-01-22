@@ -3,23 +3,6 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="640px"
 	 height="640px" viewBox="0 0 640 640" enable-background="new 0 0 640 640" xml:space="preserve">
-<style type="text/css">
-<![CDATA[
-@font-face{font-family:'MyriadPro-Regular';src:url("data:;base64,\
-T1RUTwACACAAAQAAQ0ZGIPVBCrUAAABYAAACJGNtYXAACQBrAAAALAAAACwAAAABAAAAAwAAAAwA\
-BAAgAAAABAAEAAEAAAA2//8AAAA2////ywABAAAAAAEABAIAAQEBEk15cmlhZFByby1SZWd1bGFy\
-AAEBAR74GwH4GAT4HAwV+zH7jvr6+kwF974P98ERuviJEgACAQHa50NvcHlyaWdodCAxOTkyLCAx\
-OTk0LCAxOTk3LCAyMDAwLCAyMDA0IEFkb2JlIFN5c3RlbXMgSW5jb3Jwb3JhdGVkLiBBbGwgcmln\
-aHRzIHJlc2VydmVkLiBNeXJpYWQgaXMgZWl0aGVyIGEgcmVnaXN0ZXJlZCB0cmFkZW1hcmsgb3Ig\
-YSB0cmFkZW1hcmsgb2YgQWRvYmUgU3lzdGVtcyBJbmNvcnBvcmF0ZWQgaW4gdGhlIFVuaXRlZCBT\
-dGF0ZXMgYW5kL29yIG90aGVyIGNvdW50cmllcy4vRlNUeXBlIDggZGVmAAAAABcAAgEBTsP4iIu9\
-+Oy9AYu9+CS9A4sE+Ij5UPyIBveO+8UV+z73kwX36Ab7IPvAFfc+95MF/JIH/AZeFfc+95P3PvuT\
-BfwG+L8V9z77k/s++5MFDviVgM/3xc33MNcBreL3ouQD+DT5KBV7dYqHcR85gUNqVVYIS0tdJvsU\
-Gvs95vsA9x/3G9z3AvcL9xM63vsHQ1VpYmweiAaa9tTw9x6ipI+ijJ2KCPss/KcVL1ra9okfm4+Y\
-kZUeuqO8rMAb3MBTLi5YTD8fDoCW94eR93+W9y+WmJejlgb7ZZa4kaWR+AuR9z+RBx6gYl8MCYsM\
-C84K4wvjjwwN")}
-]]>
-</style>
 <g id="Layer_4">
 	<polyline fill="#FFFFFF" points="258.392,47.65 48.481,439.606 451.991,583.351 591.691,305.051 	"/>
 </g>
@@ -31,6 +14,13 @@ C84K4wvjjwwN")}
 	
 		<polygon fill="url(#SVGID_1_)" stroke="#534741" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
 		48.481,439.606 451.991,583.351 591.691,305.051 258.392,47.65 	"/>
-	<text transform="matrix(1 0 0 1 253.2646 409.3438)" fill="#534741" font-family="'MyriadPro-Regular'" font-size="260.1843">6</text>
+	<g>
+		<path fill="#534741" d="M361.498,256.359c-4.683-0.26-10.667,0-17.172,1.041c-35.904,5.984-54.897,32.262-58.799,60.101h0.78
+			c8.065-10.667,22.115-19.514,40.848-19.514c29.92,0,50.995,21.595,50.995,54.638c0,30.961-21.075,59.581-56.199,59.581
+			c-36.165,0-59.84-28.1-59.84-72.069c0-33.303,11.968-59.581,28.62-76.232c14.049-13.789,32.782-22.375,54.117-24.977
+			c6.764-1.041,12.488-1.301,16.65-1.301V256.359z M354.994,353.926c0-24.196-13.789-38.767-34.864-38.767
+			c-13.79,0-26.538,8.586-32.782,20.814c-1.562,2.602-2.602,5.984-2.602,10.146c0.521,27.84,13.269,48.394,37.205,48.394
+			C341.725,394.514,354.994,378.122,354.994,353.926z"/>
+	</g>
 </g>
 </svg>
