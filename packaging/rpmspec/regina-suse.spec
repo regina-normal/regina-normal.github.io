@@ -1,9 +1,6 @@
 # Known to work for:
 # - SuSE 13.2 (i586, x86_64)
 # - SuSE 13.1 (i586, x86_64)
-# - SuSE 12.3 (i586, x86_64)
-# - SuSE 12.2 (i586, x86_64)
-# - SuSE 12.1 (i586, x86_64)
 
 Name: regina-normal
 Summary: Software for 3-manifold topology and normal surfaces
@@ -23,6 +20,7 @@ Conflicts: regina
 
 BuildRequires: boost-devel
 BuildRequires: cmake
+BuildRequires: cppunit-devel
 BuildRequires: doxygen
 BuildRequires: gcc
 BuildRequires: gcc-c++
@@ -30,17 +28,14 @@ BuildRequires: glibc-devel
 BuildRequires: gmp-devel
 BuildRequires: graphviz-devel
 BuildRequires: libbz2-devel
-BuildRequires: libcppunit-devel
-BuildRequires: libqt4-devel
+BuildRequires: libqt5-qtbase-devel
+BuildRequires: libQt5Svg-devel
+# For SuSE >= 13.2, this can become libqt5-qtsvg-devel.
 BuildRequires: libsource-highlight-devel
 BuildRequires: libstdc++-devel
 BuildRequires: libtokyocabinet-devel
 BuildRequires: libxml2-devel
-%if 0%{?suse_version} >= 1220
 BuildRequires: libxslt-tools
-%else
-BuildRequires: libxslt1
-%endif
 BuildRequires: pkg-config
 BuildRequires: popt-devel
 BuildRequires: python-devel
@@ -73,9 +68,7 @@ export LIB_SUFFIX=$(echo %_lib | cut -b4-)
 
 # We can't use packaging mode for SuSE 11.x, since libsource-highlight is missing.
 cmake -DDISABLE_RPATH=1 -DCMAKE_INSTALL_PREFIX=/usr -DLIB_SUFFIX=$LIB_SUFFIX -DDISABLE_MPI=1 \
-%if 0%{?suse_version} >= 1200
   -DPACKAGING_MODE=1 \
-%endif
   ..
 
 %make_jobs
@@ -89,42 +82,22 @@ popd
 %post
 /sbin/ldconfig
 
-%if 0%{?suse_version} <= 1130
-  %{_bindir}/update-desktop-database --quiet "%{_datadir}/applications" || true
-%else
-  %desktop_database_post
-%endif
+%desktop_database_post
 
 # Hand-roll our own update-mime-database so we can pipe output to /dev/null.
 %{_bindir}/update-mime-database "%{_datadir}/mime" &> /dev/null || true
 
-%if 0%{?suse_version} <= 1130
-  if test -x %{_bindir}/gtk-update-icon-cache; then
-    %{_bindir}/gtk-update-icon-cache --quiet --force "%{_datadir}/icons/hicolor" || true
-  fi
-%else
-  %icon_theme_cache_post
-%endif
+%icon_theme_cache_post
 
 %postun
 /sbin/ldconfig
 
-%if 0%{?suse_version} <= 1130
-  %{_bindir}/update-desktop-database --quiet "%{_datadir}/applications" || true
-%else
-  %desktop_database_postun
-%endif
+%desktop_database_postun
 
 # Hand-roll our own update-mime-database so we can pipe output to /dev/null.
 %{_bindir}/update-mime-database "%{_datadir}/mime" &> /dev/null || true
 
-%if 0%{?suse_version} <= 1130
-  if test -x %{_bindir}/gtk-update-icon-cache; then
-    %{_bindir}/gtk-update-icon-cache --quiet --force "%{_datadir}/icons/hicolor" || true
-  fi
-%else
-  %icon_theme_cache_postun
-%endif
+%icon_theme_cache_postun
 
 %clean
 rm -rf $RPM_BUILD_ROOT
