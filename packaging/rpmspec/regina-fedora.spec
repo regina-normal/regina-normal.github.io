@@ -1,10 +1,6 @@
 # Known to work for:
+# - Fedora 23 (i386, x86_64)
 # - Fedora 22 (i386, x86_64)
-# - Fedora 21 (i386, x86_64)
-# - Fedora 20 (i386, x86_64)
-# - Fedora 19 (i386, x86_64)
-# - Fedora 18 (i386, x86_64)
-# - Fedora 17 (i386, x86_64)
 
 Name: regina-normal
 Summary: Software for 3-manifold topology and normal surfaces
@@ -38,7 +34,8 @@ BuildRequires: libxslt
 BuildRequires: pkgconfig
 BuildRequires: popt-devel
 BuildRequires: python-devel
-BuildRequires: qt-devel
+BuildRequires: qt5-qtbase-devel
+BuildRequires: qt5-qtsvg-devel
 BuildRequires: shared-mime-info
 BuildRequires: source-highlight-devel
 BuildRequires: tokyocabinet-devel
