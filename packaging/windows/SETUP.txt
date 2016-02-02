@@ -7,6 +7,12 @@ Install MSYS2:
   Download the 32-bit installer from https://msys2.github.io/
   Follow instructions on that page to update the core packages
 
+  General notes for how to use the package manager:
+
+    pacman -Qe             # list installed packages with versions
+    pacman -Syu            # full system update
+    pacman -S foo bar baz  # install one or more packages
+
 Install basic utilities from MSYS2:
 
   pacman -S diffutils git man-db patch perl openssh tar unzip vim wget zip
