@@ -1,6 +1,7 @@
 # Known to work for:
-# - SuSE 13.2 (i586, x86_64)
-# - SuSE 13.1 (i586, x86_64)
+# - openSuSE Leap 42.1 (x86_64)
+# - openSuSE 13.2 (i586, x86_64)
+# - openSuSE 13.1 (i586, x86_64)
 
 Name: regina-normal
 Summary: Software for 3-manifold topology and normal surfaces
