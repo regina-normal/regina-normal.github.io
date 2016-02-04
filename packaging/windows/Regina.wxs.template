@@ -118,7 +118,7 @@
               </Component>
               <Component Id='QtConf'
                Guid='7C377F9D-9AF4-4855-8E36-7298223610A5'>
-                <File Source='c:\msys32\home\bab\src\regina-4.97\qtui\src\qt.conf'
+                <File Source='c:\msys32\home\bab\git\regina\qtui\src\qt.conf'
                  KeyPath='yes'/>
               </Component>
               <Directory Id='BINDIR_plugins' Name='plugins'>
@@ -329,9 +329,9 @@
     </Feature>
 
     <Icon Id='regina.ico'
-     SourceFile='c:\msys32\home\bab\src\regina-4.97\qtui\src\regina.ico'/>
+     SourceFile='c:\msys32\home\bab\git\regina\qtui\src\regina.ico'/>
     <Icon Id='manual.ico'
-     SourceFile='c:\msys32\home\bab\src\regina-4.97\qtui\src\manual.ico'/>
+     SourceFile='c:\msys32\home\bab\git\regina\qtui\src\manual.ico'/>
   </Product>
 </Wix>
 
