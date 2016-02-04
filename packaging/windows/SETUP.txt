@@ -12,6 +12,7 @@ Install MSYS2:
     pacman -Qe             # list installed packages with versions
     pacman -Syu            # full system update
     pacman -S foo bar baz  # install one or more packages
+    pacman -Ss foo         # search for package whose name contains "foo"
 
 Install basic utilities from MSYS2:
 
@@ -23,7 +24,7 @@ Install basic utilities from MSYS2:
 
 Install build dependencies from mingw-w64:
 
-  pacman -S make libxslt
+  pacman -S make libxslt texinfo
   pacman -S mingw-w64-i686-toolchain
   pacman -S mingw-w64-i686-boost
   pacman -S mingw-w64-i686-cmake
