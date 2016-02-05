@@ -1,0 +1,226 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="regina.css">
+    <title>Regina - Important Bugs</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000"
+    link="#0000EE" vlink="#551A8B" alink="#FF0000">
+
+<h1><a name="contents">Regina - Important Bugs</a></h1>
+<p>
+<table class="contentswrapper" cellspacing=0>
+<tbody>
+<tr><td valign="top">
+    <table class="contents" cellspacing=0><tbody>
+    <tr><td><a href="#defaultalg">Normal surface enumeration ignores
+    arguments (Feb 2016)</a></td></tr>
+    <tr><td><a href="#mod">Mod and gcd broken for extremely large integers
+    (Nov 2013)</a></td></tr>
+    <tr><td><a href="index.html">Back to main page ...</a></td></tr>
+    </tbody></table>
+</td></tr>
+</tbody>
+</table>
+<p>
+This page lists some important bugs that appeared in previous versions
+of Regina, which might have affected your computations.
+<p>
+Please write to the developers if you need further information or
+assistance.
+
+<h2><a name="defaultalg">Normal surface enumeration ignores arguments
+(Feb 2016)</a></h2>
+<h3>Summary</h3>
+<table cellspacing=0 border=0 class="data"><tbody>
+<tr>
+    <td class="topsubheading">Affected versions</td>
+    <td class="top">4.94&ndash;4.96</td>
+    <td class="top">Fixed in the git repository, and the (soon to be released)
+    version 5.0.</td>
+</tr>
+<tr>
+    <td class="subheading">Main symptom</td>
+    <td>&nbsp;</td>
+    <td>Regina computed embedded vertex normal surfaces,
+    even if you asked for something else (e.g., fundamental surfaces, or
+    immersed/singular surfaces).</td>
+</tr>
+<tr>
+    <td class="subheading">Affected users</td>
+    <td>C++ programmers only</td>
+    <td>This only affected C++ programmers, and only those who called the
+    <tt>NNormalSurfaceList::enumerate()</tt> function in a certain way.</td>
+</tr>
+<tr>
+    <td class="subheading">Was I affected?</td>
+    <td>Easy to test</td>
+    <td>Just examine your C++ code and see if your calls to
+    <tt>enumerate()</tt> follow the pattern described below.</td>
+</table>
+
+<p>
+<h3>Details</h3>
+<p>
+Only C++ programmers were affected by this issue.
+If you only used Regina through Python or the graphical user interface,
+then you were not affected.
+<p>
+The problem was triggered when the user called
+<tt>NNormalSurfaceList::enumerate(tri, coords, which)</tt>, and:
+<ul>
+    <li>the <tt>NormalList</tt> argument <tt>which</tt>
+    contained exactly one flag (e.g., only <tt>NS_FUNDAMENTAL</tt>,
+    or only <tt>NS_IMMERSED_SINGULAR</tt>, but not a combination such as
+    <tt>NS_FUNDAMENTAL | NS_EMBEDDED_ONLY</tt>); and</li>
+    <li>the optional <tt>NormalAlg</tt> argument (which
+    specifies an enumeration algorithm) was <i>not</i> passed.</li>
+</ul>
+If these conditions were met, then the flag passed in <tt>which</tt>
+would be ignored.  Instead:
+<ul>
+    <li>if the flag you passed was <tt>NS_LIST_DEFAULT</tt>, then Regina
+    would compute immersed and/or singular vertex surfaces
+    (i.e., it assumed the flags <tt>NS_VERTEX | NS_IMMERSED_SINGULAR</tt>
+    instead);</li>
+    <li>if you passed any other flag, then Regina would compute
+    embedded vertex surfaces (i.e., it assumed the default flags
+    <tt>NS_VERTEX | NS_EMBEDDED_ONLY</tt> instead).
+</ul>
+<p>
+The problem did <i>not</i> occur if:
+<ul>
+<li>you did not pass the <tt>which</tt> argument (which is also optional),
+e.g., <tt>NNormalSurfaceList::enumerate(tri, coords)</tt>; or
+<li>you passed multiple flags in the <tt>which</tt> argument, e.g.,
+<tt>NNormalSurfaceList::enumerate(tri, coords,
+NS_FUNDAMENTAL | NS_EMBEDDED_ONLY)</tt>; or</li>
+<li>you passed an additional algorithm argument, e.g.,
+<tt>NNormalSurfaceList::enumerate(tri, coords, NS_FUNDAMENTAL,
+NS_ALG_DEFAULT)</tt>.</li>
+</ul>
+<p>
+The cause of the problem was that versions 4.94&ndash;4.96 of Regina
+contained <i>two</i> <tt>enumerate()</tt> functions: the modern function that
+takes <tt>NormalList</tt> and <tt>NormalAlg</tt> flags, and an old deprecated
+function that took a <tt>bool</tt> argument for whether to enumerate
+embedded surfaces only.
+If a single flag was passed (of the enum type <tt>NormalListFlag</tt>),
+then the C++ priority rules for type conversions meant that this was
+interpreted as a <tt>bool</tt> instead of implicitly calling the
+<tt>NormalList(NormalListFlag)</tt> constructor.
+Therefore the old function would be called instead.
+<p>
+This has been fixed in Regina 5.0 by removing the old deprecated
+function entirely.
+<p>
+It is easy to test whether you are affected by this issue:
+<ul>
+<li>You can examine your C++ code, to see if you are calling
+<tt>NNormalSurface::enumerate()</tt> in the manner described above
+(with exactly one <tt>NormalList</tt> flag, and without passing the
+additional algorithm argument);</li>
+<li>If you have saved your data to file, then you can see what enumeration
+flags were actually used.  You can see these flags in the
+graphical user interface at the top of the normal surface viewer,
+or you can call <tt>list.which()</tt> in Python or C++.</li>
+</ul>
+<p>
+While you wait for Regina 5.0 to be released, there is a simple workaround:
+in your C++ code, change your function call from
+<tt>NNormalSurfaceList::enumerate(tri, coords, which)</tt>
+to explicitly pass an additional algorithm argument, as in
+<tt>NNormalSurfaceList::enumerate(tri, coords, which, NS_ALG_DEFAULT)</tt>.
+<p>
+<i><a href="#contents">(Back to top...)</a></i>
+
+<h2><a name="defaultalg">Mod and gcd broken for extremely large integers
+(Nov 2013)</a></h2>
+<p>
+<h3>Summary</h3>
+<table cellspacing=0 border=0 class="data"><tbody>
+<tr>
+    <td class="topsubheading">Affected versions</td>
+    <td class="top">4.94 only</td>
+    <td class="top">Fixed in version 4.95.</td>
+</tr>
+<tr>
+    <td class="subheading">Main symptom</td>
+    <td>&nbsp;</td>
+    <td>The <tt>mod</tt> and <tt>gcd</tt> operations gave incorrect results
+    in some rare scenarios when working with extremely large integers.</td>
+</tr>
+<tr>
+    <td class="subheading">Affected users</td>
+    <td>All users</td>
+    <td>This affected all users, but only in rare situations which are
+    unlikely to be seen in practice (described below).</td>
+</tr>
+<tr>
+    <td class="subheading">Was I affected?</td>
+    <td>Unlikely</td>
+    <td>The bug was quite difficult to trigger, and had relatively benign
+    impacts unless you were working with experimental code direct from
+    the repository.  See below for details.</td>
+</table>
+<p>
+<h3>Details</h3>
+<p>
+
+<p>
+This issue only appeared where large integers were present, and only then in
+certain rare scenarios.  Here &ldquo;large integer&rdquo; means an
+integer too large to fit into a native <tt>long</tt> type on a computer
+(i.e., its absolute value is &ge; 2<sup>31</sup> on a typical 32-bit
+machine, or &ge; 2<sup>63</sup> on a typical 64-bit machine).
+<p>
+There were in fact two bugs, both thankfully hard to trigger:
+<ul>
+<li>The operation (<i>x</i> mod <i>m</i>) was broken in the following
+scenario:
+    <ul>
+    <li><i>x</i> was both negative and small enough to store as a
+    native <tt>long</tt> integer; and</li>
+    <li>the modulus <i>m</i> had at some stage been too large to fit
+    into a native <tt>long</tt>, it had subsequently been modified through
+    some arithmetic operations so that
+    it was now small enough to fit into a <tt>long</tt>, but the calculation
+    engine had not yet optimised its storage and was still using a large
+    integer representation of <i>m</i>; and</li>
+    <li>the modulus <i>m</i> was now small enough so that
+    |<i>m</i>| &le; |<i>x</i>|.</li>
+    </ul>
+If all of these conditions were met then the mod operation did nothing
+(i.e., it just returned <i>x</i>).</li>
+<li>The gcd operation was broken precisely when computing
+gcd(<tt>LONG_MIN</tt>, 0) or gcd(0, <tt>LONG_MIN</tt>).
+Here <tt>LONG_MIN</tt> represents the lowest integer that can be stored
+as a native <tt>long</tt> (typically -2<sup>31</sup> on a 32-bit machine,
+or -2<sup>63</sup> on a 64-bit machine).
+In this case the gcd would be missing a factor of two (i.e., it would
+return <tt>-LONG_MIN</tt>/2 instead of the correct answer
+<tt>-LONG_MIN</tt>).</li>
+</ul>
+<p>
+The <tt>mod</tt> error could in theory affect Regina's algebraic code (e.g.,
+matrix computations related to homology).  However, if you were simply calling
+<tt>getHomologyH1()</tt> on 3-manifold triangluations, it is extremely
+unlikely that you would encounter the bug.  The more dangerous scenario
+is if you were using experimental (and more complex) algebraic code from
+the git repository (and in fact, this is how the bug was spotted).
+<p>
+The <tt>gcd</tt> error was extremely rare, in that there was only one
+pair of integers that could trigger it.  In theory this error could affect
+normal surface enumeration, but here the symptom would have been both
+mild and obvious: you would have seen vertex surfaces that were not
+scaled down to their lowest integer multiple.
+<p>
+<i><a href="#contents">(Back to top...)</a></i>
+
+<p class="return">
+<a href="index.html"><img src="regina.svg" alt="Back to main page ..."
+    border="0" width="32" height="32" align="middle"></a>
+<a href="index.html">Back to main page ...</a></p>
+
+</body>
+</html>
+
