@@ -1,6 +1,7 @@
 #! /bin/sh
 
-# This is a variant of debsign designed to work on MacOS with Fink.
+# This is a variant of debsign designed to work on MacOS with Fink, to be
+# used for uploading packages to Regina's repository on people.debian.org.
 # - Some paths have changed from /usr to /sw;
 # - sha1sum and sha256sum have changed to gsha1sum and gsha256sum.
 # (Ben Burton, April 2012)
