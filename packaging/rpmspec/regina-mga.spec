@@ -1,7 +1,5 @@
 # Known to work for:
 # - Mageia 5 (i586, x86_64)
-# - Mageia 4 (i586, x86_64)
-# - Mageia 3 (i586, x86_64)
 
 Name: regina-normal
 Summary: Software for 3-manifold topology and normal surfaces
@@ -31,7 +29,8 @@ BuildRequires: gmpxx-devel
 BuildRequires: graphviz-devel
 BuildRequires: libstdc++-devel
 BuildRequires: libxml2-devel
-BuildRequires: qt4-devel
+BuildRequires: qtbase5-devel
+BuildRequires: qtsvg5-devel
 BuildRequires: pkgconfig
 BuildRequires: popt-devel
 BuildRequires: python-devel

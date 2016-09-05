@@ -1,11 +1,37 @@
-regina-normal (4.97-1) unstable; urgency=low
+regina-normal (5.0-1) unstable; urgency=low
 
   * New upstream release.
   * New build-depends: switched from Qt4 to Qt5, and also added
     libboost-iostreams-dev.
+  * Added debian/watch (thanks to bartm).
+  * Thanks to Anton Gladky for the NMU below; this issue is now fixed upstream.
+  * Now builds under gcc6 (closes: #811680).
   * Bumped standards-version to 3.9.6 (no changes required).
 
  -- Ben Burton <bab@debian.org>  Sat, 15 Nov 2014 22:01:46 +0530
+
+regina-normal (4.96-4) unstable; urgency=low
+
+  * Fix FTBFS on some architectures, which was due to an assumption in the
+    snappea kernel that char was signed (closes: #836678).
+
+ -- Ben Burton <bab@debian.org>  Mon, 05 Sep 2016 12:18:35 +1000
+
+regina-normal (4.96-3) unstable; urgency=low
+
+  * Fix FTBFS with gcc-6 due to ambiguity in resolving std::make_tuple vs
+    boost::python::make_tuple (closes: #811680).
+  * Altered previous NMU patch to be consistent with how this was fixed
+    upstream (thanks Anton for the NMU).
+
+ -- Ben Burton <bab@debian.org>  Sat, 02 Jul 2016 09:38:33 +1000
+
+regina-normal (4.96-2.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Fix FTBFS due to ambiguous call of overloaded method. (Closes: #808456)
+
+ -- Anton Gladky <gladk@debian.org>  Sat, 02 Jan 2016 00:00:47 +0100
 
 regina-normal (4.96-2) unstable; urgency=low
 

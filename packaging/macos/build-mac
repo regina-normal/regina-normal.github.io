@@ -44,8 +44,9 @@ rm -rf "$DEST/Regina.app"
 
 cmake \
   -DCMAKE_INSTALL_PREFIX="$DEST" \
+  -DBOOST_ROOT=/sw/opt/boost-1_58 \
   -DPYTHON_EXECUTABLE="$pybin" \
-  -DCMAKE_PREFIX_PATH=/Users/bab/Qt5/5.3/clang_64 \
+  -DCMAKE_PREFIX_PATH=/Users/bab/Qt5/5.6/clang_64 \
   -DPACKAGING_MODE=1 \
   -DDISABLE_MPI=1 \
   ..

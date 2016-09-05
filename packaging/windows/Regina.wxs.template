@@ -1,0 +1,337 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<Wix xmlns='http://schemas.microsoft.com/wix/2006/wi'>
+  <Product Id='*'
+   Name='Regina 5.0'
+   UpgradeCode='C3D9D7D7-6614-4F3F-9D8E-EEA184C24A99'
+   Language='1033'
+   Codepage='1252'
+   Version='5.0.0'
+   Manufacturer='Regina development team'>
+    <Package Id='*'
+     Keywords='Installer'
+     Description='Regina 5.0 Installer'
+     Manufacturer='Regina development team'
+     Languages='1033'
+     Compressed='yes'
+     SummaryCodepage='1252'/>
+    <Upgrade Id='C3D9D7D7-6614-4F3F-9D8E-EEA184C24A99'>
+      <UpgradeVersion OnlyDetect='no' Property="PREVIOUSFOUND" Minimum="0.0.0"/>
+    </Upgrade>
+    <InstallExecuteSequence>
+      <RemoveExistingProducts After="InstallInitialize"/>
+    </InstallExecuteSequence>
+
+    <Media Id='1' Cabinet='Regina.cab' EmbedCab='yes' DiskPrompt='Disk #1'/>
+    <Property Id='DiskPrompt' Value='Regina 5.0 Installation [1]'/>
+    <UIRef Id='WixUI_Regina'/>
+    <UIRef Id='WixUI_ErrorProgressText'/>
+    <Property Id='WIXUI_INSTALLDIR' Value='INSTALLDIR'/>
+    <WixVariable Id="WixUIBannerBmp" Value="banner.bmp"/>
+    <WixVariable Id="WixUIDialogBmp" Value="dialog.bmp"/>
+
+    <Directory Id='TARGETDIR' Name='SourceDir'>
+      <Directory Id='ProgramFilesFolder' Name='PFiles'>
+        <Directory Id='Regina' Name='Regina'>
+          <Directory Id='INSTALLDIR' Name='Regina 5.0'
+           FileSource='c:\msys32\home\bab\software'>
+
+            <Directory Id='BINDIR' Name='bin'>
+              <Component Id='MainExecutable'
+               Guid='73EDE905-640E-49AA-97FD-F690BAE5BD4C'>
+                <File Id='regina_gui.exe'
+                 Name='regina-gui.exe'
+                 KeyPath='yes'>
+                  <Shortcut Id='startmenuRegina'
+                   Directory='ProgramMenuDir'
+                   Name='Regina'
+                   WorkingDirectory='PersonalFolder'
+                   Icon='regina.ico'
+                   Advertise='yes'/>
+                  <Shortcut Id='desktopRegina'
+                   Directory='DesktopFolder'
+                   Name='Regina 5.0'
+                   WorkingDirectory='PersonalFolder'
+                   Icon='regina.ico'
+                   Advertise='yes'/>
+                </File>
+                <File Name='libregina-engine.dll'/>
+                <File Name='x-regina.ico' Id='x_regina.ico'/>
+                <ProgId Id='Regina.rgafile'
+                 Description='Regina data file'
+                 Icon='x_regina.ico'>
+                  <Extension Id='rga' ContentType='application/x-regina'>
+                    <Verb Id='open'
+                     Command='Open'
+                     TargetFile='regina_gui.exe'
+                     Argument='"%1"'/>
+                  </Extension>
+                </ProgId>
+              </Component>
+              <Component Id='Utils'
+               Guid='0079C4E6-03BE-43F3-9A4B-1954EFF3F551'>
+                <File Name='censuslookup.exe'/>
+                <File Name='regconcat.exe' KeyPath='yes'/>
+                <File Name='regconvert.exe'/>
+                <File Name='regfiledump.exe'/>
+                <File Name='regfiletype.exe'/>
+                <File Name='regina-python'/>
+                <File Name='sigcensus.exe'/>
+                <File Name='tricensus.exe'/>
+                <File Name='trisetcmp.exe'/>
+              </Component>
+              <Component Id='CoreDLLs'
+               Guid='7D74E2A7-1970-4751-94E2-DB9674CA2C64'>
+                <File Source='c:\Qt\Qt5.5.1\5.5\mingw492_32\bin\Qt5Core.dll'/>
+                <File Source='c:\Qt\Qt5.5.1\5.5\mingw492_32\bin\Qt5Gui.dll'/>
+                <File Source='c:\Qt\Qt5.5.1\5.5\mingw492_32\bin\Qt5Svg.dll'/>
+                <File Source='c:\Qt\Qt5.5.1\5.5\mingw492_32\bin\Qt5Widgets.dll'/>
+                <File Source='c:\Program Files\Graphviz2.38\bin\cdt.dll'/>
+                <File Source='c:\Program Files\Graphviz2.38\bin\cgraph.dll'/>
+                <File Source='c:\Program Files\Graphviz2.38\bin\gvc.dll'/>
+                <File Source='c:\Program Files\Graphviz2.38\bin\gvplugin_core.dll'/>
+                <File Source='c:\Program Files\Graphviz2.38\bin\gvplugin_neato_layout.dll'/>
+                <File Source='c:\Program Files\Graphviz2.38\bin\libexpat.dll'/>
+                <File Source='c:\Program Files\Graphviz2.38\bin\libglib-2.0-0.dll'/>
+                <File Source='c:\Program Files\Graphviz2.38\bin\ltdl.dll'/>
+                <File Source='c:\Program Files\Graphviz2.38\bin\PathPlan.dll'/>
+                <File Source='c:\msys32\mingw32\bin\libboost_iostreams-mt.dll'/>
+                <File Source='c:\msys32\mingw32\bin\libboost_python-mt.dll'/>
+                <File Source='c:\msys32\mingw32\bin\libboost_regex-mt.dll'/>
+                <File Source='c:\msys32\mingw32\bin\libbz2-1.dll'/>
+                <File Source='c:\msys32\mingw32\bin\libgcc_s_dw2-1.dll'/>
+                <File Source='c:\msys32\mingw32\bin\libgmp-10.dll'/>
+                <File Source='c:\msys32\mingw32\bin\libgmpxx-4.dll'/>
+                <File Source='c:\msys32\mingw32\bin\libiconv-2.dll'/>
+                <File Source='c:\msys32\mingw32\bin\libicudt56.dll'/>
+                <File Source='c:\msys32\mingw32\bin\libicuuc56.dll'/>
+                <File Source='c:\msys32\mingw32\bin\libstdc++-6.dll'
+                 KeyPath='yes'/>
+                <File Source='c:\msys32\mingw32\bin\libwinpthread-1.dll'/>
+                <File Source='c:\msys32\mingw32\bin\libxml2-2.dll'/>
+                <File Source='c:\msys32\mingw32\bin\zlib1.dll'/>
+              </Component>
+              <Component Id='PythonCore'
+               Guid='487000C7-4872-4E6D-A110-4492A9A30F3C'>
+                <File Source='c:\msys32\mingw32\bin\libpython2.7.dll'
+                 KeyPath='yes'/>
+                <File Source='c:\msys32\home\bab\python\python27.zip'/>
+              </Component>
+              <Component Id='QtConf'
+               Guid='7C377F9D-9AF4-4855-8E36-7298223610A5'>
+                <File Source='c:\msys32\home\bab\git\regina\qtui\src\qt.conf'
+                 KeyPath='yes'/>
+              </Component>
+              <Directory Id='BINDIR_plugins' Name='plugins'>
+                <Directory Id='BINDIR_plugins_platforms' Name='platforms'>
+                  <Component Id='QtPlatforms'
+                   Guid='8265E5B7-99EE-4BC3-84FD-B2C871AD10C3'>
+                    <File Source='c:\Qt\Qt5.5.1\5.5\mingw492_32\plugins\platforms\qwindows.dll'
+                     KeyPath='yes'/>
+                  </Component>
+                </Directory>
+              </Directory>
+            </Directory>
+
+            <Directory Id='LIBDIR' Name='lib'>
+              <Directory Id='PKGLIBDIR' Name='regina'>
+                <Directory Id='PYLIBDIR' Name='python'>
+                  <Directory Id='PYMODULEDIR' Name='regina'>
+                    <Component Id='PythonModule'
+                     Guid='08F2657D-7CD7-4343-87A3-935CDA64C286'>
+                      <File Name='engine.pyd' KeyPath='yes'/>
+                      <File Name='__init__.py'/>
+                    </Component>
+                  </Directory>
+                </Directory>
+              </Directory>
+            </Directory>
+
+            <Directory Id='DATADIR' Name='share'>
+              <Directory Id='PKGDATADIR' Name='regina'>
+                <Directory Id='PKGDATADIR_docs' Name='docs'>
+                  <Directory Id='PKGDATADIR_docs_en' Name='en'>
+                    <Directory Id='PKGDATADIR_docs_en_regina' Name='regina'>
+                      <Component Id='HandbookRegina_EN'
+                       Guid='7CB45E64-59E6-4AD0-A3FE-1359AD242D4E'>
+                        <File Name='index.html'
+                         Id='regina_en_index.html'
+                         KeyPath='yes'>
+                          <Shortcut Id='startmenuHandbook'
+                           Directory='ProgramMenuDir'
+                           Name="Users' Handbook"
+                           Icon='manual.ico'
+                           Advertise='yes'/>
+                        </File>
+                        <File Name='kde-default.css'
+                         Id='regina_kde_default.css'/>
+                        <File Name='regina_logo.png'
+                         Id='regina_regina_logo.png'/>
+                        <File Name='*.{html,png}'/>
+                      </Component>
+                    </Directory>
+
+                    <Directory Id='PKGDATADIR_docs_en_regina_xml' Name='regina-xml'>
+                      <Component Id='HandbookReginaXML_EN'
+                       Guid='A36E5E58-37AB-4CE0-96D8-8563D42E1182'>
+                        <File Name='index.html'
+                         Id='regina_xml_en_index.html'
+                         KeyPath='yes'>
+                          <Shortcut Id='startmenuXMLHandbook'
+                           Directory='ProgramMenuDir'
+                           Name='File Format Reference'
+                           Icon='manual.ico'
+                           Advertise='yes'/>
+                        </File>
+                        <File Name='kde-default.css'
+                         Id='regina_xml_kde_default.css'/>
+                        <File Name='regina_logo.png'
+                         Id='regina_xml_regina_logo.png'/>
+                        <File Name='*.{html,png}'/>
+                      </Component>
+                    </Directory>
+                  </Directory>
+                </Directory>
+
+                <Directory Id='PKGDATADIR_engine_docs' Name='engine-docs'>
+                  <Component Id='APIDocs'
+                   Guid='8627189D-1555-46C7-BD6A-8719B08AC9EA'>
+                        <File Name='index.html'
+                         Id='engine_docs_index.html'
+                         KeyPath='yes'>
+                          <Shortcut Id='startmenuEngineDocs'
+                           Directory='ProgramMenuDir'
+                           Name='Python API Reference'
+                           Icon='manual.ico'
+                           Advertise='yes'/>
+                        </File>
+                        <File Name='*.{html,png,css}'/>
+                  </Component>
+                </Directory>
+
+                <Directory Id='PKGDATADIR_examples' Name='examples'>
+                  <Component Id='Examples'
+                   Guid='55C80D32-D843-4C37-B6E7-B19028139CA1'>
+                    <File Name='README.txt' Id='examples_README' KeyPath='yes'/>
+                    <File Name='*.{rga,py,session}'/>
+                  </Component>
+                </Directory>
+
+                <Directory Id='PKGDATADIR_syntax' Name='syntax'>
+                  <Component Id='Syntax'
+                   Guid='C8681025-2207-4D2B-84DA-E3186DE066F2'>
+                    <File Name='default.style' KeyPath='yes'/>
+                    <File Name='*.lang'/>
+                  </Component>
+                </Directory>
+
+                <Directory Id='PKGDATADIR_icons' Name='icons'>
+                  <Directory Id='PKGDATADIR_icons_oxygen' Name='oxygen'>
+                    <Component Id='IconsOxygen'
+                     Guid='03A55226-8477-4348-93D0-EB8AC080595A'>
+                      <File Name='*.png'/>
+                    </Component>
+                  </Directory>
+
+                  <Component Id='IconsRegina'
+                   Guid='555B7874-574B-4323-9D12-9DF00DF9024B'>
+                    <File Name='SOURCES' KeyPath='yes'/>
+                    <File Name='*.png'/>
+                  </Component>
+                </Directory>
+
+                <Directory Id='PKGDATADIR_data' Name='data'>
+                 <Directory Id='PKGDATADIR_data_census' Name='census'>
+                   <Component Id='CensusData'
+                    Guid='C4C8C04A-F2E3-4051-8EFD-DD555A661F2F'>
+                     <File Name='cusped-hyp-or-census-9.qdb' KeyPath='yes'/>
+                     <File Name='*.qdb'/>
+                   </Component>
+                 </Directory>
+                 <Directory Id='PKGDATADIR_data_snappea' Name='snappea'>
+                   <Component Id='SnapPeaData'
+                    Guid='6B589D6A-9A36-4132-9CCA-52B5ACDBB39C'>
+                     <File Name='snappea-census-sec5.dat' KeyPath='yes'/>
+                     <File Name='*.dat'/>
+                   </Component>
+                 </Directory>
+                </Directory>
+
+                <Directory Id='PKGDATADIR_pylib' Name='pylib'>
+                  <Component Id='PythonLibs'
+                   Guid='D15EEF3C-ED2A-4F24-A30F-87F942BB7589'>
+                    <File Name='loadCensus.py' KeyPath='yes'/>
+                    <File Name='packetType.py'/>
+                    <File Name='README.txt' Id='pylib_README'/>
+                  </Component>
+                </Directory>
+              </Directory>
+            </Directory>
+          </Directory>
+        </Directory>
+      </Directory>
+      <Directory Id='ProgramMenuFolder' Name='Programs'>
+        <Directory Id='ProgramMenuDir' Name='Regina 5.0'>
+          <Component Id='ProgramMenuDir'
+           Guid='2EF46552-9E7B-4822-A773-621B48A205B4'>
+            <RemoveFolder Id='ProgramMenuDir' On='uninstall'/>
+            <RegistryValue Root='HKCU'
+             Key='Software\[Manufacturer]\[ProductName]'
+             Type='string' Value='' KeyPath='yes'/>
+          </Component>
+        </Directory>
+      </Directory>
+
+      <Directory Id='DesktopFolder' Name='Desktop'/>
+    </Directory>
+
+    <Feature Id='Complete'
+     Title='Regina 5.0'
+     Description='The complete package.'
+     AllowAdvertise='no'
+     InstallDefault='local'
+     Display='expand'
+     Level='1'
+     ConfigurableDirectory='INSTALLDIR'>
+      <Feature Id='MainProgram'
+       Title='Program and data'
+       Description='The main executable and all supporting data.'
+       AllowAdvertise='no'
+       InstallDefault='local'
+       Absent='disallow'
+       Level='1'>
+        <ComponentRef Id='MainExecutable'/>
+        <ComponentRef Id='Utils'/>
+        <ComponentRef Id='CoreDLLs'/>
+        <ComponentRef Id='PythonCore'/>
+        <ComponentRef Id='PythonModule'/>
+        <ComponentRef Id='QtConf'/>
+        <ComponentRef Id='QtPlatforms'/>
+        <ComponentRef Id='Examples'/>
+        <ComponentRef Id='Syntax'/>
+        <ComponentRef Id='IconsOxygen'/>
+        <ComponentRef Id='IconsRegina'/>
+        <ComponentRef Id='PythonLibs'/>
+        <ComponentRef Id='CensusData'/>
+        <ComponentRef Id='SnapPeaData'/>
+        <ComponentRef Id='ProgramMenuDir'/>
+      </Feature>
+      <Feature Id='Documentation'
+       Title='Documentation'
+       Description="The users' handbooks and Python API reference."
+       AllowAdvertise='no'
+       InstallDefault='local'
+       Absent='disallow'
+       Level='2'>
+        <ComponentRef Id='HandbookRegina_EN'/>
+        <ComponentRef Id='HandbookReginaXML_EN'/>
+        <ComponentRef Id='APIDocs'/>
+      </Feature>
+    </Feature>
+
+    <Icon Id='regina.ico'
+     SourceFile='c:\msys32\home\bab\git\regina\qtui\src\regina.ico'/>
+    <Icon Id='manual.ico'
+     SourceFile='c:\msys32\home\bab\git\regina\qtui\src\manual.ico'/>
+  </Product>
+</Wix>
+

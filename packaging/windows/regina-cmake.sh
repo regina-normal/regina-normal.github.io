@@ -1,7 +1,6 @@
+#!/bin/sh
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/home/bab/software/lib/pkgconfig:/c/Program Files/Graphviz2.38/lib/pkgconfig"
 cmake -G 'MSYS Makefiles' -DQDBM=1 \
-  -DCMAKE_INCLUDE_PATH=/mingw/include:/include:/c/Boost/include/boost-1_54 \
-  -DCMAKE_LIBRARY_PATH=/mingw/lib:/usr/lib:/c/Boost/lib \
+  -DCMAKE_PREFIX_PATH=/c/Qt/Qt5.5.1/5.5/mingw492_32 \
   -DCMAKE_INSTALL_PREFIX=/home/bab/software \
-  -DQT_QMAKE_EXECUTABLE=/c/Qt/4.8.6/bin/qmake \
-  -DREGINA_DOCS=/home/bab/src/docs.zip \
   ..

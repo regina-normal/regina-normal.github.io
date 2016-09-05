@@ -103,11 +103,15 @@ table.data th {
   border-width: 2px 2px 2px 0px;
 }
 
-table.data th.first {
+table.data th.first, table.data td.topfirst, table.data td.topsubheading {
   border-width: 2px 2px 2px 2px;
 }
 
-table.data td.subheading {
+table.data td.top {
+  border-width: 2px 2px 2px 0px;
+}
+
+table.data td.subheading, td.topsubheading {
   font-weight: bold;
   color: #3D3F53;
   text-align: center;

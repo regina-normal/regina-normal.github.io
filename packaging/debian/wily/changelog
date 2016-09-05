@@ -1,9 +1,22 @@
-regina-normal (4.96-1ubuntu1~utopic1) utopic; urgency=low
+regina-normal (4.96-3ubuntu1~wily1) wily; urgency=low
 
-  * Packaged recent upstream release for ubuntu utopic.
-  * Includes the patch to install the censuslookup manpage.
+  * Packaged latest upstream release for ubuntu wily.
 
- -- Ben Burton <bab@debian.org>  Sat, 15 Nov 2014 19:02:22 +0530
+ -- Ben Burton <bab@debian.org>  Fri,  1 May 2015 16:42:03 +1000
+
+regina-normal (4.96-2) unstable; urgency=low
+
+  * Now installs the utility /usr/bin/censuslookup, which was inadvertently
+    omitted from 4.96-1 (closes: #769700).  Also installs the corresponding
+    manpage.
+
+ -- Ben Burton <bab@debian.org>  Sat, 15 Nov 2014 22:01:46 +0530
+
+regina-normal (4.96-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Ben Burton <bab@debian.org>  Fri, 29 Aug 2014 17:37:46 +1000
 
 regina-normal (4.95-1) unstable; urgency=low
 

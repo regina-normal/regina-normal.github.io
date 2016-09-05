@@ -25,7 +25,7 @@ import os, sys, re, commands
 from math import ceil
 
 name = "Regina"
-version = "4.96"
+version = "5.0"
 
 allow64 = commands.getstatusoutput('sysctl -n hw.optional.x86_64')[1]
 if allow64 == '1':
@@ -46,6 +46,8 @@ elif kernel == '13':
     osver = 'Mavericks'
 elif kernel == '14':
     osver = 'Yosemite'
+elif kernel == '15':
+    osver = 'El Capitan'
 else:
     print 'Unknown MacOS kernel version:', kernel
     sys.exit(1)

@@ -11,7 +11,7 @@ To build debian/ubuntu packages:
 
   - Signing on the master build machine:
 
-    ~/svn/regina/packaging/debian/debsign *.changes
+    ~/svn/regina/packaging/debian/debsign-regina *.changes
 
   - Uploading from the master machine (assumes debian/dput.cf -> ~/.dpub.cf):
   
