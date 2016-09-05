@@ -1,19 +1,18 @@
 #!/bin/sh
 
-# This is a variant of debsign designed to work on MacOS with Fink, to be 
-# used for uploading packages to Regina's repository on people.debian.org.
+# This is a variant of debsign designed to work on MacOS with Fink.
 #
 # This script is taken from devscripts 2.16.7 (22 August 2016), with the
 # following changes:
 #
 # - sha1sum and sha256sum have changed to gsha1sum and gsha256sum.
 #
-# - the default keyid is set to my 1024-bit Regina signing key (instead of the
-#   empty string, which is now commented out far below).
+# - the default keyid is set to my 4096-bit key from the Debian keyring
+#   (instead of the empty string, which is now commented out far below).
 #
 # (Ben Burton, September 2016)
 #
-DEFAULT_DEBSIGN_KEYID=36B861C1
+DEFAULT_DEBSIGN_KEYID=542D38D9
 
 # This program is designed to GPG sign a .dsc and .changes file pair
 # in the form needed for a legal Debian upload.  It is based in part
