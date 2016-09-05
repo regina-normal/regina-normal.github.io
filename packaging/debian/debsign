@@ -1,30 +1,24 @@
-#! /bin/sh
+#!/bin/sh
 
-# This is a variant of debsign designed to work on MacOS with Fink, to be
+# This is a variant of debsign designed to work on MacOS with Fink, to be 
 # used for uploading packages to Regina's repository on people.debian.org.
-# - Some paths have changed from /usr to /sw;
+#
+# This script is taken from devscripts 2.16.7 (22 August 2016), with the
+# following changes:
+#
 # - sha1sum and sha256sum have changed to gsha1sum and gsha256sum.
-# (Ben Burton, April 2012)
+#
+# - the default keyid is set to my 1024-bit Regina signing key (instead of the
+#   empty string, which is now commented out far below).
+#
+# (Ben Burton, September 2016)
+#
+DEFAULT_DEBSIGN_KEYID=36B861C1
 
-# Explicitly use my old (non-default) key with Regina.
-DEBSIGN_KEYID=36B861C1
-
-# This program is designed to PGP sign a .dsc and .changes file pair
+# This program is designed to GPG sign a .dsc and .changes file pair
 # in the form needed for a legal Debian upload.  It is based in part
 # on dpkg-buildpackage.  It takes one argument: the name of the
-# .changes file.  It also takes some options:
-#  -e<maintainer>  Sign using key of <maintainer> (takes precedence over -m)
-#  -m<maintainer>  Sign using key of <maintainer>
-#  -k<key>     The PGP/GPG key ID to use; overrides -m
-#  -p<type>    <type> is either pgp or gpg to specify which to use
-#  -spgp,-sgpg The program takes arguments like pgp or gpg respectively
-#  -S          Source-only .changes file
-#  -a<arch>    Debian architecture
-#  -t<type>    GNU machine type
-#  --multi     Search for multiarch .changes files
-#  -r [username@]remotehost  The changes (and dsc) files live on remotehost
-#  --no-conf, --noconf  Don't read configuration files
-#  --help, --version
+# .changes file.
 
 # Debian GNU/Linux debsign.  Copyright (C) 1999 Julian Gilbey.
 # Modifications to work with GPG by Joseph Carter and Julian Gilbey
@@ -40,7 +34,7 @@ DEBSIGN_KEYID=36B861C1
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with this program. If not, see <http://www.gnu.org/licenses/>.
+# along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 # Abort if anything goes wrong
 set -e
@@ -88,8 +82,6 @@ usage () {
                     such a case
     -k<keyid>       The key to use for signing
     -p<sign-command>  The command to use for signing
-    -sgpg           The sign-command is called like GPG
-    -spgp           The sign-command is called like PGP
     -e<maintainer>  Sign using key of <maintainer> (takes precedence over -m)
     -m<maintainer>  The same as -e
     -S              Use changes file made for source-only upload
@@ -115,7 +107,7 @@ $MODIFIED_CONF_MSG"
 
 version () {
     echo \
-"This is debsign, from the Debian devscripts package, version 2.10.69+squeeze1
+"This is debsign, from the Debian devscripts package, version 2.16.7
 This code is copyright 1999 by Julian Gilbey, all rights reserved.
 This program comes with ABSOLUTELY NO WARRANTY.
 You are free to redistribute this code under the terms of the
@@ -185,37 +177,31 @@ signfile () {
     ASCII_SIGNED_FILE="${UNSIGNED_FILE}.asc"
     (cat "$1" ; echo "") > "$UNSIGNED_FILE"
 
-    if [ $signinterface = gpg ]
-    then
-	gpgversion=`gpg --version | head -n 1 | cut -d' ' -f3`
-	gpgmajorversion=`echo $gpgversion | cut -d. -f1`
-	gpgminorversion=`echo $gpgversion | cut -d. -f2`
+    gpgversion=`$signcommand --version | head -n 1 | cut -d' ' -f3`
+    gpgmajorversion=`echo $gpgversion | cut -d. -f1`
+    gpgminorversion=`echo $gpgversion | cut -d. -f2`
 
-	if [ $gpgmajorversion -gt 1 -o $gpgminorversion -ge 4 ]
-	then
-		$signcommand --local-user "$2" --clearsign \
-		    --list-options no-show-policy-urls \
-		    --armor --textmode --output "$ASCII_SIGNED_FILE"\
-		    "$UNSIGNED_FILE" || \
-		{ SAVESTAT=$?
-		  echo "$PROGNAME: gpg error occurred!  Aborting...." >&2
-		  stty $savestty 2>/dev/null || true
-		  exit $SAVESTAT
-		}
-	else
-		$signcommand --local-user "$2" --clearsign \
-		    --no-show-policy-url \
-		    --armor --textmode --output "$ASCII_SIGNED_FILE" \
-		    "$UNSIGNED_FILE" || \
-		{ SAVESTAT=$?
-		  echo "$PROGNAME: gpg error occurred!  Aborting...." >&2
-		  stty $savestty 2>/dev/null || true
-		  exit $SAVESTAT
-		}
-	fi
+    if [ $gpgmajorversion -gt 1 -o $gpgminorversion -ge 4 ]
+    then
+	    $signcommand --local-user "$2" --clearsign \
+		--list-options no-show-policy-urls \
+		--armor --textmode --output "$ASCII_SIGNED_FILE"\
+		"$UNSIGNED_FILE" || \
+	    { SAVESTAT=$?
+	      echo "$PROGNAME: $signcommand error occurred!  Aborting...." >&2
+	      stty $savestty 2>/dev/null || true
+	      exit $SAVESTAT
+	    }
     else
-	$signcommand -u "$2" +clearsig=on -fast \
-	    < "$UNSIGNED_FILE" > "$ASCII_SIGNED_FILE"
+	    $signcommand --local-user "$2" --clearsign \
+		--no-show-policy-url \
+		--armor --textmode --output "$ASCII_SIGNED_FILE" \
+		"$UNSIGNED_FILE" || \
+	    { SAVESTAT=$?
+	      echo "$PROGNAME: $signcommand error occurred!  Aborting...." >&2
+	      stty $savestty 2>/dev/null || true
+	      exit $SAVESTAT
+	    }
     fi
     stty $savestty 2>/dev/null || true
     echo
@@ -243,8 +229,11 @@ check_already_signed () {
     elif [ "$opt_re_sign" = "false" ]; then
 	resign="false"
     else
-	printf "The .$2 file is already signed.\nWould you like to use the current signature? [Yn]"
-	read response
+	response=n
+	if [ -z "$DEBSIGN_ALWAYS_RESIGN" ]; then
+	    printf "The .$2 file is already signed.\nWould you like to use the current signature? [Yn]"
+	    read response
+	fi
 	case $response in
 	[Nn]*) resign="true" ;;
 	*)     resign="false" ;;
@@ -267,13 +256,13 @@ check_already_signed () {
 unset GREP_OPTIONS
 
 # Boilerplate: set config variables
+DEFAULT_DEBSIGN_ALWAYS_RESIGN=
 DEFAULT_DEBSIGN_PROGRAM=
-DEFAULT_DEBSIGN_SIGNLIKE=
 DEFAULT_DEBSIGN_MAINT=
-DEFAULT_DEBSIGN_KEYID=
+# DEFAULT_DEBSIGN_KEYID=
 DEFAULT_DEBRELEASE_DEBS_DIR=..
-VARS="DEBSIGN_PROGRAM DEBSIGN_SIGNLIKE DEBSIGN_MAINT DEBSIGN_KEYID"
-VARS="$VARS DEBRELEASE_DEBS_DIR"
+VARS="DEBSIGN_ALWAYS_RESIGN DEBSIGN_PROGRAM DEBSIGN_MAINT"
+VARS="$VARS DEBSIGN_KEYID DEBRELEASE_DEBS_DIR"
 
 if [ "$1" = "--no-conf" -o "$1" = "--noconf" ]; then
     shift
@@ -300,18 +289,9 @@ else
 
 	set | egrep '^(DEBSIGN|DEBRELEASE|DEVSCRIPTS)_')
 
-    # check sanity
-    case "$DEBSIGN_SIGNLIKE" in
-	gpg|pgp) ;;
-	*) DEBSIGN_SIGNLIKE= ;;
-    esac
-
     # We do not replace this with a default directory to avoid accidentally
     # signing a broken package
-    DEBRELEASE_DEBS_DIR="`echo \"$DEBRELEASE_DEBS_DIR\" | sed -e 's%/\+%/%g; s%\(.\)/$%\1%;'`"
-    if ! [ -d "$DEBRELEASE_DEBS_DIR" ]; then
-	debsdir_warning="config file specified DEBRELEASE_DEBS_DIR directory $DEBRELEASE_DEBS_DIR does not exist!"
-    fi
+    DEBRELEASE_DEBS_DIR="$(echo "${DEBRELEASE_DEBS_DIR%/}" | sed -e 's%/\+%/%g')"
 
     # set config message
     MODIFIED_CONF=''
@@ -332,59 +312,52 @@ fi
 maint="$DEBSIGN_MAINT"
 signkey="$DEBSIGN_KEYID"
 debsdir="$DEBRELEASE_DEBS_DIR"
+debsdir_warning="config file specified DEBRELEASE_DEBS_DIR directory $DEBRELEASE_DEBS_DIR does not exist!"
 
 signcommand=''
 if [ -n "$DEBSIGN_PROGRAM" ]; then
     signcommand="$DEBSIGN_PROGRAM"
 else
-    if [ \( -n "$GNUPGHOME" -a -e "$GNUPGHOME" \) -o -e $HOME/.gnupg ] && \
-	command -v gpg > /dev/null 2>&1; then
+    if command -v gpg > /dev/null 2>&1; then
 	signcommand=gpg
-    elif command -v pgp > /dev/null 2>&1; then
-	signcommand=pgp
+    elif command -v gpg2 > /dev/null 2>&1; then
+	signcommand=gpg2
     fi
 fi
 
-if [ -n "$DEBSIGN_SIGNLIKE" ]; then
-    forcesigninterface="$DEBSIGN_SIGNLIKE"
-fi
+TEMP=$(getopt -n "$PROGNAME" -o 'p:m:e:k:Sa:t:r:h' \
+	      -l 'multi,re-sign,no-re-sign,debs-dir:' \
+	      -l 'noconf,no-conf,help,version' \
+	      -- "$@") || (rc=$?; usage >&2; exit $rc)
 
-while [ $# != 0 ]
+eval set -- "$TEMP"
+
+while true
 do
-    value="`echo x\"$1\" | sed -e 's/^x-.//'`"
     case "$1" in
-	-spgp)	forcesigninterface=pgp ;;
-	-sgpg)	forcesigninterface=gpg ;;
-	-p*)	signcommand="$value" ;;
-	-m*)	maint="$value" ;;
-	-e*)	maint="$value" ;;     # Order matters: -m before -e!
-	-k*)	signkey="$value" ;;
-	-S)	sourceonly="true" ;;
-	-a*)	targetarch="$value" ;;
-	-t*)	targetgnusystem="$value" ;;
+	-p) signcommand="$2"; shift ;;
+	-m) maint="$2"; shift ;;
+	-e) maint="$2"; shift ;;
+	-k) signkey="$2"; shift ;;
+	-S) sourceonly="true" ;;
+	-a) targetarch="$2"; shift ;;
+	-t) targetgnusystem="$2"; shift ;;
 	--multi) multiarch="true" ;;
 	--re-sign)    opt_re_sign="true" ;;
 	--no-re-sign) opt_re_sign="false" ;;
-	-r*)	if [ -n "$value" ]; then remotehost=$value;
-		elif [ $# -lt 1 ]; then
-		    echo "$PROGNAME: -r option missing argument!" >&2
-		    usage >&2; exit 1;
-		else shift; remotehost=$1;
-		fi
+	-r)	remotehost=$2; shift
 		# Allow for the [user@]host:filename format
-		hostpart="`echo $remotehost | sed -e 's/:.*//'`"
-		filepart="`echo $remotehost | sed -e 's/[^:]*:\?//'`"
-		if [ -n "$filepart" ]; then
+		hostpart="${remotehost%:*}"
+		filepart="${remotehost#*:}"
+		if [ -n "$filepart" -a "$filepart" != "$remotehost" ]; then
 		    remotehost="$hostpart"
 		    set -- "$@" "$filepart"
 		fi
 		;;
-	--debs-dir=*)
-	    opt_debsdir="`echo \"$1\" | sed -e 's/^--debs-dir=//; s%/\+%/%g; s%\(.\)/$%\1%;'`"
-	    ;;
 	--debs-dir)
 	    shift
-	    opt_debsdir="`echo \"$1\" | sed -e 's%/\+%/%g; s%\(.\)/$%\1%;'`"
+	    opt_debsdir="$(echo "${1%/}" | sed -e 's%/\+%/%g')"
+	    debsdir_warning="could not find directory $opt_debsdir!"
 	    ;;
 	--no-conf|--noconf)
 		echo "$PROGNAME: $1 is only acceptable as the first command-line option!" >&2
@@ -393,38 +366,15 @@ do
 		usage; exit 0 ;;
 	--version)
 		version; exit 0 ;;
-	-*)	echo "$PROGNAME: Unrecognised option: $1" >&2
-		usage >&2; exit 1 ;;
-	*)	break ;;
+	--)	shift; break ;;
     esac
     shift
 done
 
 debsdir=${opt_debsdir:-$debsdir}
-# check sanity of debsdir
-if ! [ -d "$debsdir" ]; then
-    if [ -n "$debsdir_warning" ]; then
-        echo "$PROGNAME: $debsdir_warning" >&2
-        exit 1
-    else
-        echo "$PROGNAME: could not find directory $debsdir!" >&2
-        exit 1
-    fi
-fi
 
 if [ -z "$signcommand" ]; then
-    echo "Could not find a signing program (pgp or gpg)!" >&2
-    exit 1
-fi
-
-if test -n "$forcesigninterface" ; then
-    signinterface=$forcesigninterface
-else
-    signinterface=$signcommand
-fi
-
-if [ "$signinterface" != gpg -a "$signinterface" != pgp ]; then
-    echo "Unknown signing interface $signinterface; please specify -spgp or -sgpg" >&2
+    echo "Could not find a signing program!" >&2
     exit 1
 fi
 
@@ -683,6 +633,11 @@ for valid format" >&2;
 # out its name from debian/changelog
 case $# in
     0)	# We have to parse debian/changelog to find the current version
+	# check sanity of debsdir
+	if ! [ -d "$debsdir" ]; then
+	    echo "$PROGNAME: $debsdir_warning" >&2
+	    exit 1
+	fi
 	if [ -n "$remotehost" ]; then
 	    echo "$PROGNAME: Need to specify a .changes, .dsc or .commands file location with -r!" >&2
 	    exit 1
@@ -692,14 +647,20 @@ case $# in
 	    exit 1
 	fi
 
-	mustsetvar package "`dpkg-parsechangelog | sed -n 's/^Source: //p'`" \
-	    "source package"
-	mustsetvar version "`dpkg-parsechangelog | sed -n 's/^Version: //p'`" \
-	    "source version"
+	mustsetvar package "`dpkg-parsechangelog -SSource`" "source package"
+	mustsetvar version "`dpkg-parsechangelog -SVersion`" "source version"
 
 	if [ "x$sourceonly" = x ]
 	then
-	    mustsetvar arch "`dpkg-architecture -a${targetarch} -t${targetgnusystem} -qDEB_HOST_ARCH`" "build architecture"
+	    if [ -n "$targetarch" ] && [ -n "$targetgnusystem" ]; then
+		mustsetvar arch "$(dpkg-architecture "-a${targetarch}" "-t${targetgnusystem}" -qDEB_HOST_ARCH)" "build architecture"
+	    elif [ -n "$targetarch" ]; then
+		mustsetvar arch "$(dpkg-architecture "-a${targetarch}" -qDEB_HOST_ARCH)" "build architecture"
+	    elif [ -n "$targetgnusystem" ]; then
+		mustsetvar arch "$(dpkg-architecture "-t${targetgnusystem}" -qDEB_HOST_ARCH)" "build architecture"
+	    else
+		mustsetvar arch "$(dpkg-architecture -qDEB_HOST_ARCH)" "build architecture"
+	    fi
 	else
 	    arch=source
 	fi
