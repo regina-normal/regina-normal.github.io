@@ -1,0 +1,8 @@
+Regina for Ubuntu:  Wily Werewolf (Ubuntu 15.10)
+------------------------------------------------
+
+To install Regina under Wily Werewolf (the Ubuntu 15.10 release), see:
+
+http://regina.sourceforge.net/install/ubuntu-wily.html
+
+- Ben Burton <bab@debian.org>, Tue,  6 Sep 2016 14:21:12 +0530

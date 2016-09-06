@@ -11,7 +11,7 @@ To build debian/ubuntu packages:
 
   - Signing on the master build machine:
 
-    ~/svn/regina/packaging/debian/debsign-regina *.changes
+    ~/git/regina-aux/packaging/debian/debsign-regina *.changes
 
   - Uploading from the master machine (assumes debian/dput.cf -> ~/.dpub.cf):
   
@@ -24,7 +24,7 @@ To build debian/ubuntu packages:
   - More information:
 
     See debian/NOTES.txt.
-    
+
 To make a MacOS bundle:
 
   - On the build machine:
