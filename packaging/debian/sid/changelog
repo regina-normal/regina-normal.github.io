@@ -6,7 +6,10 @@ regina-normal (5.0-1) unstable; urgency=low
   * Added debian/watch (thanks to bartm).
   * Thanks to Anton Gladky for the NMU below; this issue is now fixed upstream.
   * Now builds under gcc6 (closes: #811680).
-  * Bumped standards-version to 3.9.6 (no changes required).
+  * Removed regina-gui from the debian menu system, following the recent
+    policy update.  Kept the menu entry for regina-python, since this
+    command-line application does not provide a .desktop file.
+  * Bumped standards-version to 3.9.7.
 
  -- Ben Burton <bab@debian.org>  Sat, 15 Nov 2014 22:01:46 +0530
 
