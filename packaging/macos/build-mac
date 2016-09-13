@@ -1,20 +1,61 @@
 #!/bin/bash
 set -e
 
+builddep="cmake boost1.58-nopython boost1.58-systempython cppunit1.12.1 doxygen gmp5 libgraphviz238-nox-dev libsource-highlight4 libxslt-bin pkgconfig popt tokyocabinet9"
+buildconflict="libxml2 libiconv-dev"
+
 allow64=`sysctl -n hw.optional.x86_64`
 if [ "x$allow64" != "x1" ]; then
   echo '32-bit builds are no longer supported.'
   exit 1
 fi
 
-# Make sure we have uninstalled libxml2 and libiconv-dev, so that we
-# pick up Apple's versions of these.
-for pkg in libxml2 libiconv-dev; do
-  if ! (apt-cache policy "$pkg" | grep Installed:..none > /dev/null); then
-    echo "Please uninstall the fink package $pkg."
-    exit 1
+echo 'Checking build dependencies...'
+broken=
+for i in $builddep; do
+  if (! apt-cache policy "$i" 2> /dev/null | grep 'Installed:.\d' > /dev/null); then
+    echo "Missing build dependency: $i"
+    broken=1
   fi
 done
+
+for i in $buildconflict; do
+  if (! apt-cache policy "$i" 2> /dev/null | grep Installed:..none > /dev/null); then
+    echo "Found build conflict: $i"
+    broken=1
+  fi
+done
+
+if [ -n "$broken" ]; then
+  echo 'Please fix these errors and try again.'
+  exit 1
+fi
+
+# Make sure we have patched fink appropriately.
+echo 'Checking for fink patches...'
+
+if (! grep -e '-mtune=core2 -march=core2' /sw/include/gmp.h > /dev/null); then
+  echo "Your GMP is not patched to build for the core2 architecture."
+  exit 1
+fi;
+
+gvlib=/sw/lib/graphviz-2.38/libgvc.dylib
+if [ ! -e "$gvlib" ]; then
+  echo "Your graphviz libraries are missing."
+  exit 1
+elif (otool -L "$gvlib" | grep -i java > /dev/null); then
+  echo "Your Graphviz is not patched to remove the dependency on java."
+  exit 1
+fi
+
+shlib=/sw/lib/libsource-highlight.dylib
+if [ ! -e "$shlib" ]; then
+  echo "Your source-highlight library is missing."
+  exit 1
+elif (! otool -L "$shlib" | grep boost.1.58 > /dev/null); then
+  echo "Your source-highlight is not patched to use boost 1.58."
+  exit 1
+fi
 
 # Extract the default python version on MacOS and rewrite it as a
 # version-specific pythonX.Y, so newer platforms will use the same
