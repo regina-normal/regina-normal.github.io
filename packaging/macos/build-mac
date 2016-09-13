@@ -48,6 +48,15 @@ elif (otool -L "$gvlib" | grep -i java > /dev/null); then
   exit 1
 fi
 
+bplib=/sw/opt/boost-1_58/lib/libboost_python.dylib
+if [ ! -e "$bplib" ]; then
+  echo "Your boost.python library is missing."
+  exit 1
+elif (otool -L "$bplib" | grep -i python.framework > /dev/null); then
+  echo "Your boost.python is not patched to avoid linking against python."
+  exit 1
+fi
+
 shlib=/sw/lib/libsource-highlight.dylib
 if [ ! -e "$shlib" ]; then
   echo "Your source-highlight library is missing."
