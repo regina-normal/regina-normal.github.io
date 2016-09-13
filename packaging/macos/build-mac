@@ -17,6 +17,13 @@ fi
 
 echo 'Checking build dependencies...'
 broken=
+
+qmake=/Users/bab/Qt5/5.7/clang_64/bin/qmake
+if [ ! -e "$qmake" ]; then
+  echo "Missing build dependency: Qt standalone installation"
+  broken=1
+fi
+
 for i in $builddep; do
   if (! apt-cache policy "$i" 2> /dev/null | grep 'Installed:.\d' > /dev/null); then
     echo "Missing build dependency: $i"
