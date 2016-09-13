@@ -1,6 +1,11 @@
 #!/bin/bash
 set -e
 
+if [ ! -e engine/output.h ]; then
+  echo "Please run from within Regina's main source directory."
+  exit 1
+fi
+
 builddep="cmake boost1.58-nopython boost1.58-systempython cppunit1.12.1 doxygen gmp5 libgraphviz238-nox-dev libsource-highlight4 libxslt-bin pkgconfig popt tokyocabinet9"
 buildconflict="libxml2 libiconv-dev"
 

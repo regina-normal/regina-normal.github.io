@@ -40,7 +40,7 @@ Building the MacOS bundle for x86_64 (we no longer support 32-bit machines):
 The runtime bundle stands alone, but to build you still need fink installed.
 Build-dependencies include:
 
-  Nokia's standalone Qt install
+  Standalone Qt install from qt-project.org
 
   Fink packages:
     boost1.58-nopython
