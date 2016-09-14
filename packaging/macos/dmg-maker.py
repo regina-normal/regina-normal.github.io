@@ -48,6 +48,8 @@ elif kernel == '14':
     osver = 'Yosemite'
 elif kernel == '15':
     osver = 'El Capitan'
+elif kernel == '16':
+    osver = 'Sierra'
 else:
     print 'Unknown MacOS kernel version:', kernel
     sys.exit(1)
