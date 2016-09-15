@@ -103,8 +103,9 @@
                 <File Source='c:\msys32\mingw32\bin\libgmp-10.dll'/>
                 <File Source='c:\msys32\mingw32\bin\libgmpxx-4.dll'/>
                 <File Source='c:\msys32\mingw32\bin\libiconv-2.dll'/>
-                <File Source='c:\msys32\mingw32\bin\libicudt56.dll'/>
-                <File Source='c:\msys32\mingw32\bin\libicuuc56.dll'/>
+                <File Source='c:\msys32\mingw32\bin\libicudt57.dll'/>
+                <File Source='c:\msys32\mingw32\bin\libicuuc57.dll'/>
+                <File Source='c:\msys32\mingw32\bin\liblzma-5.dll'/>
                 <File Source='c:\msys32\mingw32\bin\libstdc++-6.dll'
                  KeyPath='yes'/>
                 <File Source='c:\msys32\mingw32\bin\libwinpthread-1.dll'/>
