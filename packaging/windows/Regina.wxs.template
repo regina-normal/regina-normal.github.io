@@ -81,14 +81,15 @@
               </Component>
               <Component Id='CoreDLLs'
                Guid='7D74E2A7-1970-4751-94E2-DB9674CA2C64'>
-                <File Source='c:\Qt\Qt5.5.1\5.5\mingw492_32\bin\Qt5Core.dll'/>
-                <File Source='c:\Qt\Qt5.5.1\5.5\mingw492_32\bin\Qt5Gui.dll'/>
-                <File Source='c:\Qt\Qt5.5.1\5.5\mingw492_32\bin\Qt5Svg.dll'/>
-                <File Source='c:\Qt\Qt5.5.1\5.5\mingw492_32\bin\Qt5Widgets.dll'/>
+                <File Source='c:\Qt\Qt5.7.0\5.7\mingw53_32\bin\Qt5Core.dll'/>
+                <File Source='c:\Qt\Qt5.7.0\5.7\mingw53_32\bin\Qt5Gui.dll'/>
+                <File Source='c:\Qt\Qt5.7.0\5.7\mingw53_32\bin\Qt5Svg.dll'/>
+                <File Source='c:\Qt\Qt5.7.0\5.7\mingw53_32\bin\Qt5Widgets.dll'/>
                 <File Source='c:\Program Files\Graphviz2.38\bin\cdt.dll'/>
                 <File Source='c:\Program Files\Graphviz2.38\bin\cgraph.dll'/>
                 <File Source='c:\Program Files\Graphviz2.38\bin\gvc.dll'/>
                 <File Source='c:\Program Files\Graphviz2.38\bin\gvplugin_core.dll'/>
+                <File Source='c:\Program Files\Graphviz2.38\bin\gvplugin_dot_layout.dll'/>
                 <File Source='c:\Program Files\Graphviz2.38\bin\gvplugin_neato_layout.dll'/>
                 <File Source='c:\Program Files\Graphviz2.38\bin\libexpat.dll'/>
                 <File Source='c:\Program Files\Graphviz2.38\bin\libglib-2.0-0.dll'/>
@@ -125,7 +126,7 @@
                 <Directory Id='BINDIR_plugins_platforms' Name='platforms'>
                   <Component Id='QtPlatforms'
                    Guid='8265E5B7-99EE-4BC3-84FD-B2C871AD10C3'>
-                    <File Source='c:\Qt\Qt5.5.1\5.5\mingw492_32\plugins\platforms\qwindows.dll'
+                    <File Source='c:\Qt\Qt5.7.0\5.7\mingw53_32\plugins\platforms\qwindows.dll'
                      KeyPath='yes'/>
                   </Component>
                 </Directory>
