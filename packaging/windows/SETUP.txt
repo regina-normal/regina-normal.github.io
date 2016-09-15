@@ -76,7 +76,8 @@ To run locally:
 
   - Some DLLs come from graphviz.
       * From lib/release/dll/:
-        gvc cdt cgraph Pathplan gvplugin_core gvplugin_neato_layout
+        gvc cdt cgraph Pathplan gvplugin_core
+        gvplugin_dot_layout gvplugin_neato_layout
       * From bin/:
         ltdl libexpat libglib-2.0-0
 
