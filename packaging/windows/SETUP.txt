@@ -32,11 +32,11 @@ Install build dependencies from mingw-w64:
   pacman -S mingw-w64-i686-doxygen
   pacman -S mingw-w64-i686-libxml2
   pacman -S mingw-w64-i686-popt
-  pacman -S mingw-w64-i686-graphviz
 
 Install build dependencies with standalone installers:
 
   Qt5 (from qt-project.org)
+  Graphviz (from graphviz.org)
   Wix (from wixtoolset.org)
 
 ------------------------
