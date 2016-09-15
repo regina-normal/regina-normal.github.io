@@ -21,7 +21,6 @@ Install basic utilities from MSYS2:
   Edit ~/.bashrc to add the line:
 
     export PKG_CONFIG_PATH="$PKG_CONFIG_PATH":/home/bab/software/lib/pkgconfig
-    export PATH="$PATH":/mingw32/bin
 
 Install build dependencies from mingw-w64:
 
@@ -38,7 +37,9 @@ Install build dependencies with standalone installers:
 
   Qt5 (from qt-project.org)
   Graphviz (from graphviz.org)
-  Wix (from wixtoolset.org)
+  Wix (from wixtoolset.org) - may require .NET to be installed separately
+
+NOTE: To put gcc on the path, you need to run the mingw32 shell, not msys2.
 
 ------------------------
 HAND-ROLLED DEPENDENCIES
@@ -64,7 +65,7 @@ BUILDING REGINA
 
 To build regina:
 
-  Run cmake-regina.sh (in this directory) to get all necessary cmake arguments.
+  Run regina-cmake.sh (in this directory) to get all necessary cmake arguments.
 
 To run the test suite:
 
