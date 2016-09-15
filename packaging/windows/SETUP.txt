@@ -78,12 +78,10 @@ To run locally:
 
   - Most DLLs come from /mingw32/bin/, and perhaps /bin/.
 
-  - Some DLLs come from graphviz.
-      * From lib/release/dll/:
-        gvc cdt cgraph Pathplan gvplugin_core
-        gvplugin_dot_layout gvplugin_neato_layout
-      * From bin/:
-        ltdl libexpat libglib-2.0-0
+  - Some DLLs come from graphviz bin/:
+      gvc cdt cgraph Pathplan gvplugin_core
+      gvplugin_dot_layout gvplugin_neato_layout
+      ltdl libexpat libglib-2.0-0
 
 ----------------------
 BUILDING THE INSTALLER
