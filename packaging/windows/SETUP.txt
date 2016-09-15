@@ -21,6 +21,7 @@ Install basic utilities from MSYS2:
   Edit ~/.bashrc to add the line:
 
     export PKG_CONFIG_PATH="$PKG_CONFIG_PATH":/home/bab/software/lib/pkgconfig
+    export PATH="$PATH":/mingw32/bin
 
 Install build dependencies from mingw-w64:
 
