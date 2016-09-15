@@ -45,11 +45,13 @@ HAND-ROLLED DEPENDENCIES
 
 To build source-highlight (verified for v3.1.8):
 
+  (download from gnu.org/software/src-highlite/)
   ./configure --prefix=/home/bab/software --with-boost-libdir=/mingw32/lib
   make ; make install
 
 To build qdbm, which replaces tokyocabinet for MinGW (verified for v1.8.78):
 
+  (download from fallabs.com/qdbm/)
   ./configure --prefix=/home/bab/software
   make ; make install
 
