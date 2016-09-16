@@ -115,7 +115,7 @@ Update the WiX source file:
 Build the installer:
 
   candle Regina.wxs WixUI_Regina.wxs
-  light -ext WixUIExtension -o 'Regina 4.97.msi' Regina.wixobj WixUI_Regina.wixobj
+  light -ext WixUIExtension -o 'Regina 5.0.msi' Regina.wixobj WixUI_Regina.wixobj
 
 To package the installer as an ISO image for VirtualBox:
 
