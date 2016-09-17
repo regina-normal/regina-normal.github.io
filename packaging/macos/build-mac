@@ -1,19 +1,33 @@
 #!/bin/bash
 set -e
 
+# -----------------------------------------------------------------------
+# Build dependencies
+# -----------------------------------------------------------------------
+
+# The MacOS bundle (which is now 64-bit only) runs standalone, but
+# requires fink to build.
+#
+# The necessary packages are listed under $builddep below.  In addition, you
+# will need Qt5 installed from qt-project.org (not via fink).
+
+builddep="cmake boost1.58-nopython boost1.58-systempython cppunit1.12.1 doxygen gmp5 libgraphviz238-nox-dev libsource-highlight4 libxslt-bin pkgconfig popt tokyocabinet9"
+buildconflict="libxml2 libiconv-dev"
+
+# Basic sanity checks:
+
 if [ ! -e engine/output.h ]; then
   echo "Please run from within Regina's main source directory."
   exit 1
 fi
-
-builddep="cmake boost1.58-nopython boost1.58-systempython cppunit1.12.1 doxygen gmp5 libgraphviz238-nox-dev libsource-highlight4 libxslt-bin pkgconfig popt tokyocabinet9"
-buildconflict="libxml2 libiconv-dev"
 
 allow64=`sysctl -n hw.optional.x86_64`
 if [ "x$allow64" != "x1" ]; then
   echo '32-bit builds are no longer supported.'
   exit 1
 fi
+
+# Build dependencies and conflicts:
 
 echo 'Checking build dependencies...'
 broken=
@@ -43,7 +57,8 @@ if [ -n "$broken" ]; then
   exit 1
 fi
 
-# Make sure we have patched fink appropriately.
+# Ensure fink is patched appropriately:
+
 echo 'Checking for fink patches...'
 
 if (! grep -e '-mtune=core2 -march=core2' /sw/include/gmp.h > /dev/null); then
@@ -78,6 +93,8 @@ elif (! otool -L "$shlib" | grep boost.1.58 > /dev/null); then
   exit 1
 fi
 
+# Determine the system python version:
+
 # Extract the default python version on MacOS and rewrite it as a
 # version-specific pythonX.Y, so newer platforms will use the same
 # (older) version against which it was built.
@@ -93,6 +110,8 @@ if [ ! -e "$pybin" ]; then
   echo "Broken python: $pybin"
   exit 1
 fi
+
+# Build the package!
 
 if [ -d build ]; then
   echo "Please remove the build/ subdirectory and try again."
