@@ -11,8 +11,24 @@ set -e
 # The necessary packages are listed under $builddep below.  In addition, you
 # will need Qt5 installed from qt-project.org (not via fink).
 
-builddep="cmake boost1.58-nopython boost1.58-systempython cppunit1.12.1 doxygen gmp5 libgraphviz238-nox-dev libsource-highlight4 libxslt-bin pkgconfig popt tokyocabinet9"
-buildconflict="libxml2 libiconv-dev"
+builddep="
+  boost1.58-nopython
+  boost1.58-systempython
+  cmake
+  cppunit1.12.1
+  doxygen
+  gmp5
+  libgraphviz238-nox-dev
+  libsource-highlight4
+  libxslt-bin
+  pkgconfig
+  popt
+  tokyocabinet9
+  "
+buildconflict="
+  libiconv-dev
+  libxml2
+  "
 
 # Basic sanity checks:
 
