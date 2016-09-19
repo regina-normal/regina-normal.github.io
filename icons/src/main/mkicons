@@ -86,17 +86,19 @@ done
 # - Spotlight: 40 80
 # - Settings: 29 58
 # - iPad app: 76 152
+# - iPad Pro app: 167
+# - iPad notifications: 20 40
 # - iPhone app: 120 180
 
 for i in 16; do
   render app-lores.svg ios/app-$i.png $i
 done
 
-for i in 29 32 40 58 64 76 80 120 128 152 180 256 512 1024; do
+for i in 20 29 32 40 58 64 76 80 120 128 152 167 180 256 512 1024; do
   render app.svg ios/app-$i.png $i
 done
 
-for i in 29 32 58 80 256 512; do
+for i in 29 32 40 58 80 256 512; do
   # These sizes are used twice.
   cp -p ios/app-$i.png ios/app-${i}-1.png
 done

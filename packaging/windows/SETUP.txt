@@ -37,7 +37,9 @@ Install build dependencies with standalone installers:
 
   Qt5 (from qt-project.org)
   Graphviz (from graphviz.org)
-  Wix (from wixtoolset.org)
+  Wix (from wixtoolset.org) - may require .NET to be installed separately
+
+NOTE: To put gcc on the path, you need to run the mingw32 shell, not msys2.
 
 ------------------------
 HAND-ROLLED DEPENDENCIES
@@ -45,11 +47,13 @@ HAND-ROLLED DEPENDENCIES
 
 To build source-highlight (verified for v3.1.8):
 
+  (download from gnu.org/software/src-highlite/)
   ./configure --prefix=/home/bab/software --with-boost-libdir=/mingw32/lib
   make ; make install
 
 To build qdbm, which replaces tokyocabinet for MinGW (verified for v1.8.78):
 
+  (download from fallabs.com/qdbm/)
   ./configure --prefix=/home/bab/software
   make ; make install
 
@@ -61,7 +65,7 @@ BUILDING REGINA
 
 To build regina:
 
-  Run cmake-regina.sh (in this directory) to get all necessary cmake arguments.
+  Run regina-cmake.sh (in this directory) to get all necessary cmake arguments.
 
 To run the test suite:
 
@@ -74,11 +78,10 @@ To run locally:
 
   - Most DLLs come from /mingw32/bin/, and perhaps /bin/.
 
-  - Some DLLs come from graphviz.
-      * From lib/release/dll/:
-        gvc cdt cgraph Pathplan gvplugin_core gvplugin_neato_layout
-      * From bin/:
-        ltdl libexpat libglib-2.0-0
+  - Some DLLs come from graphviz bin/:
+      gvc cdt cgraph Pathplan gvplugin_core
+      gvplugin_dot_layout gvplugin_neato_layout
+      ltdl libexpat libglib-2.0-0
 
 ----------------------
 BUILDING THE INSTALLER
@@ -112,7 +115,7 @@ Update the WiX source file:
 Build the installer:
 
   candle Regina.wxs WixUI_Regina.wxs
-  light -ext WixUIExtension -o 'Regina 4.97.msi' Regina.wixobj WixUI_Regina.wixobj
+  light -ext WixUIExtension -o 'Regina 5.0.msi' Regina.wixobj WixUI_Regina.wixobj
 
 To package the installer as an ISO image for VirtualBox:
 

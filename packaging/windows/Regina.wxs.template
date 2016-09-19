@@ -81,14 +81,15 @@
               </Component>
               <Component Id='CoreDLLs'
                Guid='7D74E2A7-1970-4751-94E2-DB9674CA2C64'>
-                <File Source='c:\Qt\Qt5.5.1\5.5\mingw492_32\bin\Qt5Core.dll'/>
-                <File Source='c:\Qt\Qt5.5.1\5.5\mingw492_32\bin\Qt5Gui.dll'/>
-                <File Source='c:\Qt\Qt5.5.1\5.5\mingw492_32\bin\Qt5Svg.dll'/>
-                <File Source='c:\Qt\Qt5.5.1\5.5\mingw492_32\bin\Qt5Widgets.dll'/>
+                <File Source='c:\Qt\Qt5.7.0\5.7\mingw53_32\bin\Qt5Core.dll'/>
+                <File Source='c:\Qt\Qt5.7.0\5.7\mingw53_32\bin\Qt5Gui.dll'/>
+                <File Source='c:\Qt\Qt5.7.0\5.7\mingw53_32\bin\Qt5Svg.dll'/>
+                <File Source='c:\Qt\Qt5.7.0\5.7\mingw53_32\bin\Qt5Widgets.dll'/>
                 <File Source='c:\Program Files\Graphviz2.38\bin\cdt.dll'/>
                 <File Source='c:\Program Files\Graphviz2.38\bin\cgraph.dll'/>
                 <File Source='c:\Program Files\Graphviz2.38\bin\gvc.dll'/>
                 <File Source='c:\Program Files\Graphviz2.38\bin\gvplugin_core.dll'/>
+                <File Source='c:\Program Files\Graphviz2.38\bin\gvplugin_dot_layout.dll'/>
                 <File Source='c:\Program Files\Graphviz2.38\bin\gvplugin_neato_layout.dll'/>
                 <File Source='c:\Program Files\Graphviz2.38\bin\libexpat.dll'/>
                 <File Source='c:\Program Files\Graphviz2.38\bin\libglib-2.0-0.dll'/>
@@ -102,8 +103,9 @@
                 <File Source='c:\msys32\mingw32\bin\libgmp-10.dll'/>
                 <File Source='c:\msys32\mingw32\bin\libgmpxx-4.dll'/>
                 <File Source='c:\msys32\mingw32\bin\libiconv-2.dll'/>
-                <File Source='c:\msys32\mingw32\bin\libicudt56.dll'/>
-                <File Source='c:\msys32\mingw32\bin\libicuuc56.dll'/>
+                <File Source='c:\msys32\mingw32\bin\libicudt57.dll'/>
+                <File Source='c:\msys32\mingw32\bin\libicuuc57.dll'/>
+                <File Source='c:\msys32\mingw32\bin\liblzma-5.dll'/>
                 <File Source='c:\msys32\mingw32\bin\libstdc++-6.dll'
                  KeyPath='yes'/>
                 <File Source='c:\msys32\mingw32\bin\libwinpthread-1.dll'/>
@@ -114,18 +116,17 @@
                Guid='487000C7-4872-4E6D-A110-4492A9A30F3C'>
                 <File Source='c:\msys32\mingw32\bin\libpython2.7.dll'
                  KeyPath='yes'/>
-                <File Source='c:\msys32\home\bab\python\python27.zip'/>
               </Component>
               <Component Id='QtConf'
                Guid='7C377F9D-9AF4-4855-8E36-7298223610A5'>
-                <File Source='c:\msys32\home\bab\git\regina\qtui\src\qt.conf'
+                <File Source='c:\msys32\home\bab\software\regina-5.0\qtui\src\qt.conf'
                  KeyPath='yes'/>
               </Component>
               <Directory Id='BINDIR_plugins' Name='plugins'>
                 <Directory Id='BINDIR_plugins_platforms' Name='platforms'>
                   <Component Id='QtPlatforms'
                    Guid='8265E5B7-99EE-4BC3-84FD-B2C871AD10C3'>
-                    <File Source='c:\Qt\Qt5.5.1\5.5\mingw492_32\plugins\platforms\qwindows.dll'
+                    <File Source='c:\Qt\Qt5.7.0\5.7\mingw53_32\plugins\platforms\qwindows.dll'
                      KeyPath='yes'/>
                   </Component>
                 </Directory>
@@ -135,6 +136,12 @@
             <Directory Id='LIBDIR' Name='lib'>
               <Directory Id='PKGLIBDIR' Name='regina'>
                 <Directory Id='PYLIBDIR' Name='python'>
+                  <Component Id='PythonCoreLibs'
+                   Guid='F8BD8335-473C-4406-9F86-CEBB40CD2752'>
+                    <File Source='c:\msys32\home\bab\python\python27.zip'
+                     KeyPath='yes'/>
+                    <File Source='c:\msys32\mingw32\lib\python2.7\lib-dynload\zlib.pyd'/>
+                  </Component>
                   <Directory Id='PYMODULEDIR' Name='regina'>
                     <Component Id='PythonModule'
                      Guid='08F2657D-7CD7-4343-87A3-935CDA64C286'>
@@ -303,6 +310,7 @@
         <ComponentRef Id='Utils'/>
         <ComponentRef Id='CoreDLLs'/>
         <ComponentRef Id='PythonCore'/>
+        <ComponentRef Id='PythonCoreLibs'/>
         <ComponentRef Id='PythonModule'/>
         <ComponentRef Id='QtConf'/>
         <ComponentRef Id='QtPlatforms'/>
@@ -329,9 +337,9 @@
     </Feature>
 
     <Icon Id='regina.ico'
-     SourceFile='c:\msys32\home\bab\git\regina\qtui\src\regina.ico'/>
+     SourceFile='c:\msys32\home\bab\software\regina-5.0\qtui\src\regina.ico'/>
     <Icon Id='manual.ico'
-     SourceFile='c:\msys32\home\bab\git\regina\qtui\src\manual.ico'/>
+     SourceFile='c:\msys32\home\bab\software\regina-5.0\qtui\src\manual.ico'/>
   </Product>
 </Wix>
 

@@ -1,20 +1,115 @@
 #!/bin/bash
 set -e
 
+# -----------------------------------------------------------------------
+# Build dependencies
+# -----------------------------------------------------------------------
+
+# The MacOS bundle (which is now 64-bit only) runs standalone, but
+# requires fink to build.
+#
+# The necessary packages are listed under $builddep below.  In addition, you
+# will need Qt5 installed from qt-project.org (not via fink).
+
+builddep="
+  boost1.58-nopython
+  boost1.58-systempython
+  cmake
+  cppunit1.12.1
+  doxygen
+  gmp5
+  libgraphviz238-nox-dev
+  libsource-highlight4
+  libxslt-bin
+  pkgconfig
+  popt
+  tokyocabinet9
+  "
+buildconflict="
+  libiconv-dev
+  libxml2
+  "
+
+# Basic sanity checks:
+
+if [ ! -e engine/output.h ]; then
+  echo "Please run from within Regina's main source directory."
+  exit 1
+fi
+
 allow64=`sysctl -n hw.optional.x86_64`
 if [ "x$allow64" != "x1" ]; then
   echo '32-bit builds are no longer supported.'
   exit 1
 fi
 
-# Make sure we have uninstalled libxml2 and libiconv-dev, so that we
-# pick up Apple's versions of these.
-for pkg in libxml2 libiconv-dev; do
-  if ! (apt-cache policy "$pkg" | grep Installed:..none > /dev/null); then
-    echo "Please uninstall the fink package $pkg."
-    exit 1
+# Build dependencies and conflicts:
+
+echo 'Checking build dependencies...'
+broken=
+
+qmake=/Users/bab/Qt5/5.7/clang_64/bin/qmake
+if [ ! -e "$qmake" ]; then
+  echo "Missing build dependency: Qt standalone installation"
+  broken=1
+fi
+
+for i in $builddep; do
+  if (! apt-cache policy "$i" 2> /dev/null | grep 'Installed:.\d' > /dev/null); then
+    echo "Missing build dependency: $i"
+    broken=1
   fi
 done
+
+for i in $buildconflict; do
+  if (! apt-cache policy "$i" 2> /dev/null | grep Installed:..none > /dev/null); then
+    echo "Found build conflict: $i"
+    broken=1
+  fi
+done
+
+if [ -n "$broken" ]; then
+  echo 'Please fix these errors and try again.'
+  exit 1
+fi
+
+# Ensure fink is patched appropriately:
+
+echo 'Checking for fink patches...'
+
+if (! grep -e '-mtune=core2 -march=core2' /sw/include/gmp.h > /dev/null); then
+  echo "Your GMP is not patched to build for the core2 architecture."
+  exit 1
+fi;
+
+gvlib=/sw/lib/graphviz-2.38/libgvc.dylib
+if [ ! -e "$gvlib" ]; then
+  echo "Your graphviz libraries are missing."
+  exit 1
+elif (otool -L "$gvlib" | grep -i java > /dev/null); then
+  echo "Your Graphviz is not patched to remove the dependency on java."
+  exit 1
+fi
+
+bplib=/sw/opt/boost-1_58/lib/libboost_python.dylib
+if [ ! -e "$bplib" ]; then
+  echo "Your boost.python library is missing."
+  exit 1
+elif (otool -L "$bplib" | grep -i python.framework > /dev/null); then
+  echo "Your boost.python is not patched to avoid linking against python."
+  exit 1
+fi
+
+shlib=/sw/lib/libsource-highlight.dylib
+if [ ! -e "$shlib" ]; then
+  echo "Your source-highlight library is missing."
+  exit 1
+elif (! otool -L "$shlib" | grep boost.1.58 > /dev/null); then
+  echo "Your source-highlight is not patched to use boost 1.58."
+  exit 1
+fi
+
+# Determine the system python version:
 
 # Extract the default python version on MacOS and rewrite it as a
 # version-specific pythonX.Y, so newer platforms will use the same
@@ -32,6 +127,8 @@ if [ ! -e "$pybin" ]; then
   exit 1
 fi
 
+# Build the package!
+
 if [ -d build ]; then
   echo "Please remove the build/ subdirectory and try again."
   exit 1
@@ -46,7 +143,7 @@ cmake \
   -DCMAKE_INSTALL_PREFIX="$DEST" \
   -DBOOST_ROOT=/sw/opt/boost-1_58 \
   -DPYTHON_EXECUTABLE="$pybin" \
-  -DCMAKE_PREFIX_PATH=/Users/bab/Qt5/5.6/clang_64 \
+  -DCMAKE_PREFIX_PATH=/Users/bab/Qt5/5.7/clang_64 \
   -DPACKAGING_MODE=1 \
   -DDISABLE_MPI=1 \
   ..

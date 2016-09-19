@@ -5,7 +5,7 @@ To build MacOS binaries for release:
 
 - Copy regina-X.Y.tar.gz and this macos/ directory to the build machine.
 
-- On the build machine:
+- On the build machine (typically a guest VM):
 
     cd
     rm -rf Regina.app
@@ -19,7 +19,7 @@ To build MacOS binaries for release:
     tar -zcf regina.tgz Regina.app
     copy regina.tgz to the signing machine
 
-- On the signing machine:
+- On the signing machine (typically the host machine):
 
     cd temporary_path
     tar -zxf path/to/regina.tgz
@@ -30,47 +30,4 @@ To build MacOS binaries for release:
     ./dmg_maker.py temporary_path/Regina.app
 
     collect Regina-X.Y.dmg for distribution
-
-
-FURTHER DETAILS
----------------
-
-Building the MacOS bundle for x86_64 (we no longer support 32-bit machines):
-
-The runtime bundle stands alone, but to build you still need fink installed.
-Build-dependencies include:
-
-  Nokia's standalone Qt install
-
-  Fink packages:
-    boost1.55-nopython
-    boost1.55-systempython
-    cmake
-    cppunit1.12.1
-    doxygen
-    gmp5
-    libgraphviz238-nox-dev
-    libsource-highlight4
-    libxml2
-    libxslt-bin
-    pkgconfig
-    popt
-    tokyocabinet9
-
-    REMOVE libxml2, libiconv-dev
-
-To configure:
-
-  cmake -DCMAKE_INSTALL_PREFIX=path/to/install/location
-    -DPYTHON_EXECUTABLE=/usr/bin/python
-    -DREGINA_INSTALL_TYPE=Bundle
-    ..
-
-Then:
-
-  make
-  make test ARGS=-V
-  make install
-
-At this point the bundle Regina.app should be ready in the install location.
 

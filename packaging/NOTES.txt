@@ -11,20 +11,24 @@ To build debian/ubuntu packages:
 
   - Signing on the master build machine:
 
-    ~/svn/regina/packaging/debian/debsign-regina *.changes
+    ~/git/regina-aux/packaging/debian/debsign-regina *.changes
 
-  - Uploading from the master machine (assumes debian/dput.cf -> ~/.dpub.cf):
-  
+  - Uploading from the master machine (assumes debian/dput.cf -> ~/.dput.cf):
+
     /opt/dput/dput regina *.changes  (do this for each debian/ubuntu suite)
     debian/sign-remote.sh <suite>
 
+    Depending on the dput configuration, you might need to run
+        "mini-dinstall -b" on the remote machine.  This happens after dput,
+        but before sign-remote.
     Every time a new dput run is made, sign-remote must be run.
-    Every time a new suite is added, sign-remote must be edited to include it.
+    Every time a new suite is added, the local sign-remote and the remote
+        .mini-dinstall.conf must be edited to include it.
 
   - More information:
 
     See debian/NOTES.txt.
-    
+
 To make a MacOS bundle:
 
   - On the build machine:

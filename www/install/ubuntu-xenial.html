@@ -1,0 +1,119 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../regina.css">
+    <title>Regina for Ubuntu:  Xenial (Ubuntu 16.04 LTS)</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000"
+    link="#0000EE" vlink="#551A8B" alink="#FF0000">
+
+<h1><a name="contents">Regina for Ubuntu:  Xenial (Ubuntu 16.04 LTS)</a></h1>
+
+<p>
+Ubuntu 16.04 LTS (Xenial Xerus) already comes with Regina, but this will
+be forever fixed at version 4.96.
+</p>
+<p>
+To keep up-to-date with the <b>newest version</b> of Regina,
+follow these instructions.
+</p>
+<p>
+<b>You only need to follow these steps the first time you install Regina.</b>
+After this, Ubuntu's Software Updater will handle upgrades for you,
+just like for any other Ubuntu package.
+</p>
+<ol>
+<li>
+<p>
+Add Regina's location to your list of repositories.
+To do this,
+open the Ubuntu Software application and select
+<i>Software &amp; Updates</i> from the main menu.
+</p>
+<ul>
+<li><p>
+Under <i>Authentication</i>, import Regina's cryptographic signing keys.
+This helps keep your machine secure, and Ubuntu may refuse to install
+Regina without them.  You can
+<a href="https://people.debian.org/~bab/regina-keys.txt">download
+ Regina's cryptographic signing keys here</a>.
+</p>
+<p align="center"><img src="xenial/ubuntu-importkey.png"></p>
+<p>
+When you import this key file, you should see two new keys in the list of
+trusted software providers, under the names <i>Ben Burton</i>
+and <i>Benjamin Burton</i>.
+After the import, you can delete <tt>regina-keys.txt</tt> if you like.
+</p>
+<p align="center"><img src="xenial/ubuntu-withkey.png"></p>
+</li>
+<li><p>
+Under <i>Ubuntu Software</i>, enable the community-maintained free and
+open-source software (universe) if this has not been done before.
+</p>
+<p align="center"><img src="xenial/ubuntu-universe.png"></p>
+</li>
+<li><p>
+Under <i>Other Software</i>, click the <i>Add...</i> button.  When Ubuntu
+asks you for an APT line, type:
+</p>
+<div class="example"><p>
+<tt>deb https://people.debian.org/~bab/regina xenial/</tt>
+</p></div>
+<p align="center"><img src="xenial/ubuntu-aptline.png"></p>
+</li>
+<li>
+<p>
+Now close the Software &amp; Updates box.
+Ubuntu should offer to reload the information about available software.
+Press <i>Reload</i>, so that Ubuntu can see the new packages for Regina.
+</p>
+<p align="center"><img src="xenial/ubuntu-update.png"></p>
+</li>
+</ul>
+</li>
+<li><p>
+Unfortunately, <b>the new 16.04 Ubuntu Software application
+<a href="http://askubuntu.com/questions/761210/16-04-cannot-install-anything-from-ubuntu-software-center">has major bugs</a></b> with regards to third-party software,
+and so your best solution is to finish the installation by typing
+commands into a terminal window.
+</p>
+<ul>
+<li><p>
+Open a new terminal window, and type:
+</p>
+<div class="example"><p>
+<tt>sudo apt-get install regina-normal</tt>
+</p></div>
+<p align="center"><img src="xenial/ubuntu-install.png"></p>
+</li>
+</ul>
+</li>
+</ol>
+<p>
+The procedure above only installs the main packages
+<tt>regina-normal</tt> and <tt>regina-normal-doc</tt>, which is all that
+most people will need.
+</p>
+<ul>
+<li>
+<p>
+If you are a C++ programmer and you wish to build Regina into your own
+projects, you should also install the package <tt>regina-normal-dev</tt>.
+</p>
+</li>
+<li>
+<p>
+If you want the MPI-enabled utilities for use on high-performance clusters,
+you should install the package <tt>regina-normal-mpi</tt>.
+</p>
+</li>
+</ul>
+<p class="return">
+<a href="../index.html#download"><img src="../regina.svg"
+    alt="Back to main page ..."
+    border="0" width="32" height="32" align="middle"></a>
+<a href="../index.html#download">Back to main page ...</a></p>
+
+</body>
+</html>
+
