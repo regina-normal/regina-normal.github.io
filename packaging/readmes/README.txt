@@ -1,5 +1,5 @@
-Regina:  Software for 3-manifold topology and normal surface theory
--------------------------------------------------------------------
+Regina:  Software for low-dimensional topology
+----------------------------------------------
 
 All information about these packages is on the Regina website:
 
