@@ -3,8 +3,8 @@
 # - Fedora 22 (i386, x86_64)
 
 Name: regina-normal
-Summary: Software for 3-manifold topology and normal surfaces
-Version: 4.96
+Summary: Mathematical software for low-dimensional topology
+Version: 5.0
 Release: 1.%{_vendor}
 License: GPL
 # I wish there were a more sane group (like Applications/Mathematics).
@@ -42,13 +42,16 @@ BuildRequires: tokyocabinet-devel
 BuildRequires: zlib-devel
 
 %description
-Regina is a suite of mathematical software for 3-manifold topologists.
-It focuses on the study of 3-manifold triangulations and normal surfaces.
+Regina is a software package for 3-manifold and 4-manifold topologists,
+with a focus on triangulations, normal surfaces and angle structures.
 
-Other highlights of Regina include angle structures, census enumeration,
-combinatorial recognition of triangulations, and high-level tasks such
-as 3-sphere recognition and connected sum decomposition.  Regina comes
-with a full graphical user interface, and also offers Python bindings
+For 3-manifolds, it includes high-level tasks such as 3-sphere recognition,
+connected sum decomposition and Hakenness testing, comes with a rich
+database of census manifolds, and incorporates the SnapPea kernel for
+working with hyperbolic manifolds.  For 4-manifolds, it offers a range of
+combinatorial and algebraic tools, plus support for normal hypersurfaces.
+
+Regina comes with a full graphical user interface, as well as Python bindings
 and a low-level C++ programming interface.
 
 %prep
@@ -120,6 +123,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/*/*
 
 %changelog
+* Tue Sep 20 2016 Ben Burton <bab@debian.org> 5.0
+- New upstream release.
+
 * Fri Aug 29 2014 Ben Burton <bab@debian.org> 4.96
 - New upstream release.
 

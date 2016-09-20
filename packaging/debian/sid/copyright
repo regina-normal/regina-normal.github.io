@@ -7,7 +7,7 @@ Upstream Authors:
 
   The primary developers of Regina are:
 
-    Benjamin Burton <bab@debian.org>
+    Benjamin Burton <bab@maths.uq.edu.au>
     Ryan Budney <rybu@uvic.ca>
     William Pettersson <william.pettersson@gmail.com>
 
@@ -17,8 +17,8 @@ Upstream Authors:
 
 Copyright:
 
-  Regina - Software for 3-manifold topology and normal surface theory
-  Copyright (c) 1999-2013, The Regina development team
+  Regina - Software for 3-manifolds, 4-manifolds and normal surface theory
+  Copyright (c) 1999-2016, The Regina development team
 
 
   CITATION:
@@ -28,7 +28,7 @@ Copyright:
 
     Benjamin A. Burton, Ryan Budney, William Pettersson, et al.,
     "Regina: Software for 3-manifold topology and normal surface theory",
-    http://regina.sourceforge.net/, 1999-2013.
+    http://regina.sourceforge.net/, 1999-2016.
 
 
   COPYING AND MODIFICATION:
@@ -72,10 +72,11 @@ Copyright:
 
   Regina includes portions of the SnapPea kernel and its successor SnapPy,
   which it uses for some geometric calculations.  The SnapPea kernel was
-  written by Jeff Weeks, and SnapPy was written by Marc Culler, Nathan
-  Dunfield, and others.  SnapPy and the corresponding SnapPea kernel are
-  distributed under the terms of the GNU General Public License, version 2
-  or any later version, as published by the Free Software Foundation.
+  originally written by Jeff Weeks.  SnapPy, where this kernel is now
+  maintained, is primarily developed by Marc Culler and Nathan Dunfield,
+  with contributions from many people.  SnapPy and the corresponding SnapPea
+  kernel are distributed under the terms of the GNU General Public License,
+  version 2 or any later version, as published by the Free Software Foundation.
 
 
   NORMALIZ LIBRARY:
@@ -111,8 +112,9 @@ Copyright:
   The python icons are based on applications-python.svg as shipped with the
   humanity-icon-theme package in Ubuntu 11.04, the contents of which
   are licensed under the GNU General Public License version 2.
+  The die icon is based on an image from openclipart.org, which has been
+  released into the public domain.
 
 
 On Debian GNU/Linux systems, the complete text of the GNU General
 Public License can be found in `/usr/share/common-licenses/GPL'.
-
