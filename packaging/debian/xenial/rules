@@ -73,7 +73,7 @@ install: build
 
 	# Install a pixmap for the menu system.
 	$(INSTALL_DIR) debian/regina-normal/usr/share/pixmaps
-	$(INSTALL_FILE) icons/regina.xpm debian/regina-normal/usr/share/pixmaps/regina-normal.xpm
+	$(INSTALL_FILE) debian/regina.xpm debian/regina-normal/usr/share/pixmaps/regina-normal.xpm
 
 	# Install lintian overrides.
 	for pkg in `dh_listpackages`; do \
