@@ -2,16 +2,14 @@ regina-normal (5.0-1) unstable; urgency=low
 
   * New upstream release.
   * New build-depends: switched from Qt4 to Qt5, and also added
-    libboost-iostreams-dev.
+    libboost-iostreams-dev and libgraphviz-dev.
   * Added debian/watch (thanks to bartm).
-  * Thanks to Anton Gladky for the NMU below; this issue is now fixed upstream.
-  * Now builds under gcc6 (closes: #811680).
   * Removed regina-gui from the debian menu system, following the recent
     policy update.  Kept the menu entry for regina-python, since this
     command-line application does not provide a .desktop file.
-  * Bumped standards-version to 3.9.7.
+  * Bumped standards-version to 3.9.8.
 
- -- Ben Burton <bab@debian.org>  Sat, 15 Nov 2014 22:01:46 +0530
+ -- Ben Burton <bab@debian.org>  Tue, 20 Sep 2016 10:03:24 +1000
 
 regina-normal (4.96-4) unstable; urgency=low
 

@@ -1,8 +1,15 @@
-regina-normal (4.96-4ubuntu1~xenial1) xenial; urgency=low
+regina-normal (5.0-1ubuntu1~xenial1) xenial; urgency=low
 
-  * Packaged latest upstream release for ubuntu xenial.
+  * New upstream release, packaged for xenial.
+  * New build-depends: switched from Qt4 to Qt5, and also added
+    libboost-iostreams-dev and libgraphviz-dev.
+  * Added debian/watch (thanks to bartm).
+  * Removed regina-gui from the debian menu system, following the recent
+    policy update.  Kept the menu entry for regina-python, since this
+    command-line application does not provide a .desktop file.
+  * Bumped standards-version to 3.9.8.
 
- -- Ben Burton <bab@debian.org>  Tue, 06 Sep 2016 12:51:43 +0530
+ -- Ben Burton <bab@debian.org>  Tue, 20 Sep 2016 10:03:24 +1000
 
 regina-normal (4.96-4) unstable; urgency=low
 

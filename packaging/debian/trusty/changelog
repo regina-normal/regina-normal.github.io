@@ -1,13 +1,50 @@
-regina-normal (4.96-1ubuntu1~trusty2) trusty; urgency=low
+regina-normal (5.0-1ubuntu1~trusty1) trusty; urgency=low
 
-  * Now installs /usr/bin/censuslookup, which was omitted from the
-    initial 4.96 package.
+  * New upstream release, packaged for trusty.
+  * New build-depends: switched from Qt4 to Qt5, and also added
+    libboost-iostreams-dev and libgraphviz-dev.
+  * Added debian/watch (thanks to bartm).
+  * Removed regina-gui from the debian menu system, following the recent
+    policy update.  Kept the menu entry for regina-python, since this
+    command-line application does not provide a .desktop file.
+  * Bumped standards-version to 3.9.8.
+
+ -- Ben Burton <bab@debian.org>  Tue, 20 Sep 2016 10:03:24 +1000
+
+regina-normal (4.96-4) unstable; urgency=low
+
+  * Fix FTBFS on some architectures, which was due to an assumption in the
+    snappea kernel that char was signed (closes: #836678).
+
+ -- Ben Burton <bab@debian.org>  Mon, 05 Sep 2016 12:18:35 +1000
+
+regina-normal (4.96-3) unstable; urgency=low
+
+  * Fix FTBFS with gcc-6 due to ambiguity in resolving std::make_tuple vs
+    boost::python::make_tuple (closes: #811680).
+  * Altered previous NMU patch to be consistent with how this was fixed
+    upstream (thanks Anton for the NMU).
+
+ -- Ben Burton <bab@debian.org>  Sat, 02 Jul 2016 09:38:33 +1000
+
+regina-normal (4.96-2.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Fix FTBFS due to ambiguous call of overloaded method. (Closes: #808456)
+
+ -- Anton Gladky <gladk@debian.org>  Sat, 02 Jan 2016 00:00:47 +0100
+
+regina-normal (4.96-2) unstable; urgency=low
+
+  * Now installs the utility /usr/bin/censuslookup, which was inadvertently
+    omitted from 4.96-1 (closes: #769700).  Also installs the corresponding
+    manpage.
 
  -- Ben Burton <bab@debian.org>  Sat, 15 Nov 2014 22:01:46 +0530
 
-regina-normal (4.96-1ubuntu1~trusty1) trusty; urgency=low
+regina-normal (4.96-1) unstable; urgency=low
 
-  * New upstream release, backported to ubuntu trusty.
+  * New upstream release.
 
  -- Ben Burton <bab@debian.org>  Fri, 29 Aug 2014 17:37:46 +1000
 
