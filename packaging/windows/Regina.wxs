@@ -81,14 +81,15 @@
               </Component>
               <Component Id='CoreDLLs'
                Guid='7D74E2A7-1970-4751-94E2-DB9674CA2C64'>
-                <File Source='c:\Qt\Qt5.5.1\5.5\mingw492_32\bin\Qt5Core.dll'/>
-                <File Source='c:\Qt\Qt5.5.1\5.5\mingw492_32\bin\Qt5Gui.dll'/>
-                <File Source='c:\Qt\Qt5.5.1\5.5\mingw492_32\bin\Qt5Svg.dll'/>
-                <File Source='c:\Qt\Qt5.5.1\5.5\mingw492_32\bin\Qt5Widgets.dll'/>
+                <File Source='c:\Qt\Qt5.7.0\5.7\mingw53_32\bin\Qt5Core.dll'/>
+                <File Source='c:\Qt\Qt5.7.0\5.7\mingw53_32\bin\Qt5Gui.dll'/>
+                <File Source='c:\Qt\Qt5.7.0\5.7\mingw53_32\bin\Qt5Svg.dll'/>
+                <File Source='c:\Qt\Qt5.7.0\5.7\mingw53_32\bin\Qt5Widgets.dll'/>
                 <File Source='c:\Program Files\Graphviz2.38\bin\cdt.dll'/>
                 <File Source='c:\Program Files\Graphviz2.38\bin\cgraph.dll'/>
                 <File Source='c:\Program Files\Graphviz2.38\bin\gvc.dll'/>
                 <File Source='c:\Program Files\Graphviz2.38\bin\gvplugin_core.dll'/>
+                <File Source='c:\Program Files\Graphviz2.38\bin\gvplugin_dot_layout.dll'/>
                 <File Source='c:\Program Files\Graphviz2.38\bin\gvplugin_neato_layout.dll'/>
                 <File Source='c:\Program Files\Graphviz2.38\bin\libexpat.dll'/>
                 <File Source='c:\Program Files\Graphviz2.38\bin\libglib-2.0-0.dll'/>
@@ -102,8 +103,9 @@
                 <File Source='c:\msys32\mingw32\bin\libgmp-10.dll'/>
                 <File Source='c:\msys32\mingw32\bin\libgmpxx-4.dll'/>
                 <File Source='c:\msys32\mingw32\bin\libiconv-2.dll'/>
-                <File Source='c:\msys32\mingw32\bin\libicudt56.dll'/>
-                <File Source='c:\msys32\mingw32\bin\libicuuc56.dll'/>
+                <File Source='c:\msys32\mingw32\bin\libicudt57.dll'/>
+                <File Source='c:\msys32\mingw32\bin\libicuuc57.dll'/>
+                <File Source='c:\msys32\mingw32\bin\liblzma-5.dll'/>
                 <File Source='c:\msys32\mingw32\bin\libstdc++-6.dll'
                  KeyPath='yes'/>
                 <File Source='c:\msys32\mingw32\bin\libwinpthread-1.dll'/>
@@ -114,18 +116,17 @@
                Guid='487000C7-4872-4E6D-A110-4492A9A30F3C'>
                 <File Source='c:\msys32\mingw32\bin\libpython2.7.dll'
                  KeyPath='yes'/>
-                <File Source='c:\msys32\home\bab\python\python27.zip'/>
               </Component>
               <Component Id='QtConf'
                Guid='7C377F9D-9AF4-4855-8E36-7298223610A5'>
-                <File Source='c:\msys32\home\bab\git\regina\qtui\src\qt.conf'
+                <File Source='c:\msys32\home\bab\software\regina-5.0\qtui\src\qt.conf'
                  KeyPath='yes'/>
               </Component>
               <Directory Id='BINDIR_plugins' Name='plugins'>
                 <Directory Id='BINDIR_plugins_platforms' Name='platforms'>
                   <Component Id='QtPlatforms'
                    Guid='8265E5B7-99EE-4BC3-84FD-B2C871AD10C3'>
-                    <File Source='c:\Qt\Qt5.5.1\5.5\mingw492_32\plugins\platforms\qwindows.dll'
+                    <File Source='c:\Qt\Qt5.7.0\5.7\mingw53_32\plugins\platforms\qwindows.dll'
                      KeyPath='yes'/>
                   </Component>
                 </Directory>
@@ -135,6 +136,12 @@
             <Directory Id='LIBDIR' Name='lib'>
               <Directory Id='PKGLIBDIR' Name='regina'>
                 <Directory Id='PYLIBDIR' Name='python'>
+                  <Component Id='PythonCoreLibs'
+                   Guid='F8BD8335-473C-4406-9F86-CEBB40CD2752'>
+                    <File Source='c:\msys32\home\bab\python\python27.zip'
+                     KeyPath='yes'/>
+                    <File Source='c:\msys32\mingw32\lib\python2.7\lib-dynload\zlib.pyd'/>
+                  </Component>
                   <Directory Id='PYMODULEDIR' Name='regina'>
                     <Component Id='PythonModule'
                      Guid='08F2657D-7CD7-4343-87A3-935CDA64C286'>
@@ -188,8 +195,8 @@
                         <File Name='dim2-euler.png'/>
                         <File Name='dim2-id.png'/>
                         <File Name='dim2triangulation.png'/>
-                        <File Name='dim2triangulations.html'/>
-                        <File Name='dock.png'/>
+                        <File Name='dim4triangulation.png'/>
+                        <File Name='dim5triangulation.png'/>
                         <File Name='errmime1.png'/>
                         <File Name='errmime2.png'/>
                         <File Name='export-snappea.png'/>
@@ -205,14 +212,26 @@
                         <File Name='gpl-license.html'/>
                         <File Name='helplink.png'/>
                         <File Name='history.html'/>
+                        <File Name='hypersurfacelist.png'/>
+                        <File Name='hypersurfaces-coordbox.png'/>
+                        <File Name='hypersurfaces-coords.png'/>
+                        <File Name='hypersurfaces-intree.png'/>
+                        <File Name='hypersurfaces-matching.png'/>
+                        <File Name='hypersurfaces-rename.png'/>
+                        <File Name='hypersurfaces-summary.png'/>
+                        <File Name='hypersurfaces-tri-results.png'/>
+                        <File Name='hypersurfaces-tri.png'/>
                         <File Name='i18n-export.png'/>
                         <File Name='i18n-import.png'/>
                         <File Name='icon-angles.png'/>
                         <File Name='icon-container.png'/>
                         <File Name='icon-dim2triangulation.png'/>
+                        <File Name='icon-dim4triangulation.png'/>
+                        <File Name='icon-dim8triangulation.png'/>
                         <File Name='icon-filter.png'/>
                         <File Name='icon-filtercomb.png'/>
                         <File Name='icon-filterprop.png'/>
+                        <File Name='icon-hypersurfaces.png'/>
                         <File Name='icon-pdf.png'/>
                         <File Name='icon-script.png'/>
                         <File Name='icon-snappea.png'/>
@@ -252,13 +271,12 @@
                         <File Name='menudelete.png'/>
                         <File Name='menumove.png'/>
                         <File Name='menunew.png'/>
-                        <File Name='menurefresh.png'/>
                         <File Name='menurename.png'/>
                         <File Name='menutosnappea.png'/>
-                        <File Name='menutri.png'/>
+                        <File Name='menutri-2d.png'/>
+                        <File Name='menutri-3d.png'/>
+                        <File Name='menutri-4d.png'/>
                         <File Name='newangles.png'/>
-                        <File Name='newfilter-comb.png'/>
-                        <File Name='newfilter-prop.png'/>
                         <File Name='newfilter.png'/>
                         <File Name='newsnappea-convert.png'/>
                         <File Name='newsnappea-example.png'/>
@@ -266,6 +284,7 @@
                         <File Name='newsnappea.png'/>
                         <File Name='newsurfaces.png'/>
                         <File Name='newtri-ast.png'/>
+                        <File Name='newtri-bundle.png'/>
                         <File Name='newtri-dehydration.png'/>
                         <File Name='newtri-empty.png'/>
                         <File Name='newtri-example.png'/>
@@ -273,6 +292,7 @@
                         <File Name='newtri-lens.png'/>
                         <File Name='newtri-loop.png'/>
                         <File Name='newtri-lst.png'/>
+                        <File Name='newtri-nor.png'/>
                         <File Name='newtri-sfs.png'/>
                         <File Name='newtri-splitting.png'/>
                         <File Name='newtri.png'/>
@@ -311,6 +331,7 @@
                         <File Name='sessions.html'/>
                         <File Name='snappea-algebra.png'/>
                         <File Name='snappea-analysis.html'/>
+                        <File Name='snappea-canonical.png'/>
                         <File Name='snappea-cusps.png'/>
                         <File Name='snappea-file.png'/>
                         <File Name='snappea-fill.png'/>
@@ -326,15 +347,11 @@
                         <File Name='surfaces-compat-compute.png'/>
                         <File Name='surfaces-compat-hash.png'/>
                         <File Name='surfaces-compat-local.png'/>
-                        <File Name='surfaces-coordbox.png'/>
                         <File Name='surfaces-coords.png'/>
                         <File Name='surfaces-enumerating.png'/>
                         <File Name='surfaces-filtering.html'/>
                         <File Name='surfaces-header.png'/>
-                        <File Name='surfaces-intree.png'/>
-                        <File Name='surfaces-matching.png'/>
                         <File Name='surfaces-octagons.png'/>
-                        <File Name='surfaces-rename.png'/>
                         <File Name='surfaces-slopes.png'/>
                         <File Name='surfaces-summary.png'/>
                         <File Name='surfaces.html'/>
@@ -344,9 +361,10 @@
                         <File Name='textview.png'/>
                         <File Name='tri-analysis.html'/>
                         <File Name='tri-barycentric.png'/>
-                        <File Name='tri-bc.png'/>
+                        <File Name='tri-bdrycomponents-ideal.png'/>
+                        <File Name='tri-bdrycomponents-real.png'/>
                         <File Name='tri-cellular.png'/>
-                        <File Name='tri-comp.png'/>
+                        <File Name='tri-components.png'/>
                         <File Name='tri-composition-blocks.png'/>
                         <File Name='tri-composition-dehydration.png'/>
                         <File Name='tri-composition-isosig.png'/>
@@ -365,36 +383,43 @@
                         <File Name='tri-editgluings.png'/>
                         <File Name='tri-editnames.png'/>
                         <File Name='tri-eltmove.png'/>
-                        <File Name='tri-eltmovebox.png'/>
+                        <File Name='tri-eltmovebox-3d.png'/>
+                        <File Name='tri-eltmovebox-4d.png'/>
                         <File Name='tri-extract-components.png'/>
-                        <File Name='tri-faces.png'/>
-                        <File Name='tri-fpg.png'/>
+                        <File Name='tri-graphs-dual.png'/>
+                        <File Name='tri-graphs-tree.png'/>
                         <File Name='tri-homfund.png'/>
                         <File Name='tri-iso-result.png'/>
                         <File Name='tri-iso-select.png'/>
                         <File Name='tri-iso.png'/>
                         <File Name='tri-make0eff-connsum.png'/>
                         <File Name='tri-make0eff.png'/>
-                        <File Name='tri-makeideal.png'/>
                         <File Name='tri-modification.html'/>
                         <File Name='tri-orient.png'/>
                         <File Name='tri-puncture.png'/>
+                        <File Name='tri-recognition-manifold.png'/>
                         <File Name='tri-s3-known.png'/>
                         <File Name='tri-s3-unknown.png'/>
+                        <File Name='tri-simplify-fail.png'/>
+                        <File Name='tri-simplify-harder.png'/>
+                        <File Name='tri-simplify-keeptrying.png'/>
                         <File Name='tri-simplify.png'/>
                         <File Name='tri-skeleton.png'/>
                         <File Name='tri-snappea-convert.png'/>
                         <File Name='tri-snappea-converted.png'/>
                         <File Name='tri-snappea.png'/>
                         <File Name='tri-surfaces.png'/>
-                        <File Name='tri-truncate.png'/>
+                        <File Name='tri-triangles.png'/>
+                        <File Name='tri-tribdry.png'/>
+                        <File Name='tri-tribdrybox.png'/>
+                        <File Name='tri-tribdryresult.png'/>
+                        <File Name='tri-truncate-makeideal.png'/>
                         <File Name='tri-tv-entry.png'/>
                         <File Name='tri-tv-results.png'/>
                         <File Name='tri-tv.png'/>
                         <File Name='tri-vertexlinks.png'/>
                         <File Name='tri-vertexlinksbox.png'/>
                         <File Name='tri-vertexlinksresult.png'/>
-                        <File Name='tri-vertices.png'/>
                         <File Name='tri-viewgluings.png'/>
                         <File Name='triangulation.png'/>
                         <File Name='triangulations.html'/>
@@ -733,6 +758,7 @@
                         <File Name='classregina_1_1NCusp.png'/>
                         <File Name='classregina_1_1NCyclotomic-members.html'/>
                         <File Name='classregina_1_1NCyclotomic.html'/>
+                        <File Name='classregina_1_1NCyclotomic.png'/>
                         <File Name='classregina_1_1NDiscSetSurface-members.html'/>
                         <File Name='classregina_1_1NDiscSetSurface.html'/>
                         <File Name='classregina_1_1NDiscSetSurface.png'/>
@@ -960,6 +986,7 @@
                         <File Name='classregina_1_1NPluggedTorusBundle.png'/>
                         <File Name='classregina_1_1NPolynomial-members.html'/>
                         <File Name='classregina_1_1NPolynomial.html'/>
+                        <File Name='classregina_1_1NPolynomial.png'/>
                         <File Name='classregina_1_1NPosOrder-members.html'/>
                         <File Name='classregina_1_1NPosOrder.html'/>
                         <File Name='classregina_1_1NPrimes-members.html'/>
@@ -968,6 +995,13 @@
                         <File Name='classregina_1_1NPrismSetSurface.html'/>
                         <File Name='classregina_1_1NProgressTracker-members.html'/>
                         <File Name='classregina_1_1NProgressTracker.html'/>
+                        <File Name='classregina_1_1NProgressTracker.png'/>
+                        <File Name='classregina_1_1NProgressTrackerBase-members.html'/>
+                        <File Name='classregina_1_1NProgressTrackerBase.html'/>
+                        <File Name='classregina_1_1NProgressTrackerBase.png'/>
+                        <File Name='classregina_1_1NProgressTrackerOpen-members.html'/>
+                        <File Name='classregina_1_1NProgressTrackerOpen.html'/>
+                        <File Name='classregina_1_1NProgressTrackerOpen.png'/>
                         <File Name='classregina_1_1NProperty-members.html'/>
                         <File Name='classregina_1_1NProperty.html'/>
                         <File Name='classregina_1_1NProperty.png'/>
@@ -1092,9 +1126,6 @@
                         <File Name='classregina_1_1NTreeTraversal-members.html'/>
                         <File Name='classregina_1_1NTreeTraversal.html'/>
                         <File Name='classregina_1_1NTreeTraversal.png'/>
-                        <File Name='classregina_1_1NTriBool-members.html'/>
-                        <File Name='classregina_1_1NTriBool.html'/>
-                        <File Name='classregina_1_1NTriBool__Illegal__Integer__Conversion.html'/>
                         <File Name='classregina_1_1NTriSolidTorus-members.html'/>
                         <File Name='classregina_1_1NTriSolidTorus.html'/>
                         <File Name='classregina_1_1NTriSolidTorus.png'/>
@@ -1512,6 +1543,7 @@
                         <File Name='facenumber_8h.html'/>
                         <File Name='facenumbering_8h.html'/>
                         <File Name='facetpairing_8h.html'/>
+                        <File Name='facetspec_8h.html'/>
                         <File Name='files.html'/>
                         <File Name='filterregistry_8h.html'/>
                         <File Name='flags_8h.html'/>
@@ -1606,7 +1638,7 @@
                         <File Name='globalarray_8h.html'/>
                         <File Name='globals.html'/>
                         <File Name='globals_defs.html'/>
-                        <File Name='globals_type.html'/>
+                        <File Name='globals_vars.html'/>
                         <File Name='group__algebra.html'/>
                         <File Name='group__alias.html'/>
                         <File Name='group__angle.html'/>
@@ -1634,6 +1666,7 @@
                         <File Name='hierarchy.html'/>
                         <File Name='hscoordregistry_8h.html'/>
                         <File Name='hypercoords_8h.html'/>
+                        <File Name='hyperflags_8h.html'/>
                         <File Name='i18n.html'/>
                         <File Name='i18nutils_8h.html'/>
                         <File Name='intrusiverefcounter_8h.html'/>
@@ -1868,6 +1901,8 @@
                         <File Name='structregina_1_1Dim4GluingPermSearcher_1_1PentEdgeState.html'/>
                         <File Name='structregina_1_1Dim4GluingPermSearcher_1_1PentTriangleState-members.html'/>
                         <File Name='structregina_1_1Dim4GluingPermSearcher_1_1PentTriangleState.html'/>
+                        <File Name='structregina_1_1FacetSpec-members.html'/>
+                        <File Name='structregina_1_1FacetSpec.html'/>
                         <File Name='structregina_1_1FuncDelete-members.html'/>
                         <File Name='structregina_1_1FuncDelete.html'/>
                         <File Name='structregina_1_1FuncNew-members.html'/>
@@ -1911,8 +1946,6 @@
                         <File Name='structregina_1_1NEulerSearcher_1_1TetEdgeState.html'/>
                         <File Name='structregina_1_1NEulerSearcher_1_1TetVertexState-members.html'/>
                         <File Name='structregina_1_1NEulerSearcher_1_1TetVertexState.html'/>
-                        <File Name='structregina_1_1NFacetSpec-members.html'/>
-                        <File Name='structregina_1_1NFacetSpec.html'/>
                         <File Name='structregina_1_1NGroupExpressionTerm-members.html'/>
                         <File Name='structregina_1_1NGroupExpressionTerm.html'/>
                         <File Name='structregina_1_1NNormalHypersurfaceList_1_1HypersurfaceInserter-members.html'/>
@@ -1941,6 +1974,8 @@
                         <File Name='structregina_1_1Output-members.html'/>
                         <File Name='structregina_1_1Output.html'/>
                         <File Name='structregina_1_1Output.png'/>
+                        <File Name='structregina_1_1OutputBase-members.html'/>
+                        <File Name='structregina_1_1OutputBase.html'/>
                         <File Name='structregina_1_1PacketInfo.html'/>
                         <File Name='structregina_1_1Returns-members.html'/>
                         <File Name='structregina_1_1Returns.html'/>
@@ -2395,6 +2430,12 @@
                     <File Name='insert-22@2x.png'/>
                     <File Name='insert-32.png'/>
                     <File Name='insert-32@2x.png'/>
+                    <File Name='lock-16.png'/>
+                    <File Name='lock-16@2x.png'/>
+                    <File Name='lock-22.png'/>
+                    <File Name='lock-22@2x.png'/>
+                    <File Name='lock-32.png'/>
+                    <File Name='lock-32@2x.png'/>
                     <File Name='locked-16.png'/>
                     <File Name='locked-16@2x.png'/>
                     <File Name='locked-22.png'/>
@@ -2683,6 +2724,7 @@
         <ComponentRef Id='Utils'/>
         <ComponentRef Id='CoreDLLs'/>
         <ComponentRef Id='PythonCore'/>
+        <ComponentRef Id='PythonCoreLibs'/>
         <ComponentRef Id='PythonModule'/>
         <ComponentRef Id='QtConf'/>
         <ComponentRef Id='QtPlatforms'/>
@@ -2709,9 +2751,9 @@
     </Feature>
 
     <Icon Id='regina.ico'
-     SourceFile='c:\msys32\home\bab\git\regina\qtui\src\regina.ico'/>
+     SourceFile='c:\msys32\home\bab\software\regina-5.0\qtui\src\regina.ico'/>
     <Icon Id='manual.ico'
-     SourceFile='c:\msys32\home\bab\git\regina\qtui\src\manual.ico'/>
+     SourceFile='c:\msys32\home\bab\software\regina-5.0\qtui\src\manual.ico'/>
   </Product>
 </Wix>
 

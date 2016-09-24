@@ -70,11 +70,15 @@ BUILDING REGINA
 To build regina:
 
   Run regina-cmake.sh (in this directory) to get all necessary cmake arguments.
+  make
+  make install
 
-To run the test suite:
+To run the test suite (requires "make install" first):
 
   export PATH="$PATH":/home/bab/software/bin
-  make test ARGS=-V
+  testsuite/regtestsuite.exe
+
+  (Since switching to mingw's python, regina-python is not working at all...)
 
 To run locally:
 
