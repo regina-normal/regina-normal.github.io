@@ -39,6 +39,10 @@ Install build dependencies with standalone installers:
   Graphviz (from graphviz.org)
   Wix (from wixtoolset.org) - may require .NET to be installed separately
 
+Ensure the following are UNINSTALLED:
+
+  Python2.7 (from python.org) - causes problems with MinGW's math.h
+
 NOTE: To put gcc on the path, you need to run the mingw32 shell, not msys2.
 
 ------------------------
