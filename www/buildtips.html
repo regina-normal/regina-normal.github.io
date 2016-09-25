@@ -17,7 +17,6 @@
     <tr><td><a href="#macosx">MacOS X</a></td></tr>
     <tr><td><a href="#windows">Windows</a></td></tr>
     <tr><td><a href="#cluster">Cluster environments</a></td></tr>
-    <tr><td><a href="#sage">Sage</a></td></tr>
     <tr><td><a href="index.html">Back to main page ...</a></td></tr>
     </tbody></table>
 </td></tr>
@@ -274,74 +273,6 @@ against Regina:
 <tt>example$ g++ `regina-engine-config --cflags --libs` myprog.cpp
 -o myprog</tt>
 </p></div>
-
-<h2><a name="sage">Sage</a></h2>
-
-<p>
-Nathan Dunfield has reported a successful installation of Regina's
-Python bindings under <a href="http://www.sagemath.org/">Sage</a>.
-<p>
-The following steps have been verified for MacOS&nbsp;X and GNU/Linux.
-They assume that you already have <i>cmake</i>, <i>popt</i> and
-<i>libxml2</i> installed on your system.
-<p>
-<ul>
-<li><b>Step 0:</b>
-All the commands in Steps 1, 2 and 3 should be executed inside a
-shell created by running &ldquo;<tt><b>sage&nbsp;-sh</b></tt>&rdquo;.
-This sets environment variables so, for instance,
-&ldquo;<tt>python</tt>&rdquo; is now Sage's special Python and the environment
-variable <tt>$SAGE_LOCAL</tt> is set.</li>
-
-<li><b>Step 1:</b>
-Install the necessary portion of Boost into <tt>$SAGE_LOCAL</tt>.
-This includes a version of Boost.Python that is built against Sage's own Python:
-
-<div class="example"><p>
-<tt>&gt; cd boost-*</tt><br>
-<tt>&gt; ./bootstrap.sh --prefix=$SAGE_LOCAL --with-libraries=python,regex,iostreams</tt><br>
-<tt>&gt; ./b2 --layout=tagged install threading=multi</tt>
-</p></div></li>
-
-<li><b>Step 2:</b>
-If you do not have <i>tokyocabinet</i> installed on your system,
-install it into <tt>$SAGE_LOCAL</tt> manually via:
-
-<div class="example"><p>
-<tt>&gt; cd tokyocabinet-*</tt><br>
-<tt>&gt; ./configure --prefix=$SAGE_LOCAL</tt><br>
-<tt>&gt; make</tt><br>
-<tt>&gt; make install</tt>
-</p></div></li>
-
-<li><b>Step 3:</b>
-Install Regina's Python module into Sage:
-
-<div class="example"><p>
-<tt>&gt; cd regina-4.96</tt><br>
-<tt>&gt; mkdir build</tt><br>
-<tt>&gt; cd build</tt><br>
-<tt>&gt; cmake -DCMAKE_PREFIX_PATH=$SAGE_LOCAL \</tt><br>
-<tt>&nbsp;&nbsp;&nbsp;&nbsp;-DCMAKE_INCLUDE_PATH=$SAGE_LOCAL/include \</tt><br>
-<tt>&nbsp;&nbsp;&nbsp;&nbsp;-DCMAKE_LIBRARY_PATH=$SAGE_LOCAL/lib \</tt><br>
-<tt>&nbsp;&nbsp;&nbsp;&nbsp;-DCMAKE_INSTALL_PREFIX=$SAGE_LOCAL \</tt><br>
-<tt>&nbsp;&nbsp;&nbsp;&nbsp;-DBoost_NO_BOOST_CMAKE=ON \</tt><br>
-<tt>&nbsp;&nbsp;&nbsp;&nbsp;-DBoost_LIBRARY_DIRS=$SAGE_LOCAL/lib \</tt><br>
-<tt>&nbsp;&nbsp;&nbsp;&nbsp;-DDISABLE_GUI=1 -DREGINA_INSTALL_TYPE=XDG ..</tt><br>
-<tt>&gt; make</tt>
-<tt>&gt; make install</tt>
-</p></div></li>
-
-<li><b>Step 4:</b> Test.  Outside the &ldquo;<tt><b>sage -sh</b></tt>&rdquo;
-shell, start <tt><b>sage</b></tt>:
-<div class="example"><p>
-<tt>example$ sage</tt><br>
-<tt>sage: import regina</tt><br>
-<tt>sage: M = regina.NExampleTriangulation.weberSeifert()</tt><br>
-<tt>sage: print M.getHomologyH1()</tt><br>
-<tt>3 Z_5</tt>
-</p></div></li>
-</ul>
 
 <p class="return">
 <a href="index.html"><img src="regina.svg" alt="Back to main page ..."

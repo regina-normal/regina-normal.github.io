@@ -61,11 +61,15 @@ Debian.
 <h2><a name="news">News</a></h2>
 
 <p class="header">
-<b>6 September 2016:</b>
-Packages for Fedora&nbsp;23-24, Ubuntu&nbsp;16.04 (Xenial) and
-OpenSuSE Leap&nbsp;42.1 are now
-<a href="#linux">available for download</a>.
-See also recent packages for Debian&nbsp;8.0 (Jessie) and Mageia&nbsp;5.
+<b>26 September 2016:</b>
+Version 5.0 is out!
+This is a big release&mdash;it adds 4-manifolds, normal hypersurfaces,
+tree decompositions and more, and includes a major overhaul for C++ and
+Python users as well.
+Packages are available for MacOS, Windows and GNU/Linux,
+and there are also customised versions of Regina for the iPad and Sage.
+You can <a href="#new">read more about what's new</a>,
+or go ahead and <a href="#download">download the new version</a>.
 </p>
 <p class="header">
 <b>5 September 2016:</b>
@@ -73,23 +77,6 @@ An issue has been found in Regina&nbsp;4.94&ndash;4.96 that affects
 programmers who enumerate normal surfaces directly in C++.
 See the <a href="bugs.html">bugs page</a> for a discussion and a workaround.
 </p>
-<p class="header">
-<b>31 October 2014:</b>
-Regina comes to the iPad!  Just follow the <a href="#ios">download link</a>.
-Feedback is always welcome, especially for a fresh new port such as this.
-</p>
-<p class="header">
-<b>31 August 2014:</b>
-Version 4.96 is out!
-This is a big release&mdash;it adds
-certification of hyperbolicity (using strict angle structures
-and linear programming), richer SnapPea/SnapPy support, faster and richer
-census lookup, stronger group simplification and recognition,
-non-orientable prime decomposition, several new constructions
-and operations on triangulations, plus more simplifications and cleanups
-of the GUI and the API.
-You can <a href="#new">read more about what's new</a>,
-or go ahead and <a href="#download">download the new version</a>.
 <p>
 <i><a href="#contents">(Back to contents...)</a></i>
 
@@ -115,7 +102,7 @@ of features</a>.
 
 <h2><a name="screenshots">Screenshots</a></h2>
 
-All of the screenshots below were taken with Regina&nbsp;4.96 running on
+All of the screenshots below were taken with Regina&nbsp;5.0 running on
 MacOS&nbsp;X.  Click on each thumbnail for a full-sized version.
 <p>
 <table border=0>
@@ -147,8 +134,9 @@ MacOS&nbsp;X.  Click on each thumbnail for a full-sized version.
 Regina is available for
 <a href="#macos">MacOS</a>,
 <a href="#windows">Windows</a>,
-<a href="#linux">GNU/Linux</a>, and
-<a href="#ios">iPad</a>.
+<a href="#linux">GNU/Linux</a>,
+<a href="#ios">iPad</a>, and
+<a href="#sage">Sage</a>.
 <p>
 If you encounter any problems when you run Regina, you can check the
 <a href="docs/troubleshooting.html">troubleshooting page</a> to
@@ -164,10 +152,11 @@ Just drag Regina into your Applications folder.
 <tr><th class="first" colspan=2>MacOS Version</th><th>Installer</th></tr>
 <tr><td class="firstjoin">Sierra (10.12)<br>
     El Capitan (10.11)<br>
-    Yosemite (10.10)
+    Yosemite (10.10)<br>
+    Mavericks (10.09)
     </td>
     <td><img src="osicons/os_macosx.png" border=0 hspace=5></td>
-    <td align="center"><a href="http://prdownloads.sourceforge.net/regina/Regina-4.96.dmg">Download</a></td>
+    <td align="center"><a href="http://prdownloads.sourceforge.net/regina/Regina-5.0.dmg">Download</a></td>
     </tr>
 </tbody></table>
 </blockquote>
@@ -178,10 +167,9 @@ Regina on Windows uses a standard point-and-click installer.
 <p>
 <blockquote><table cellspacing=0 border=0 align=center class="data"><tbody>
 <tr><th class="first" colspan=2>Windows Version</th><th>Installer</th></tr>
-<tr><td class="firstjoin">Windows&nbsp;8<br>Windows&nbsp;7<br>
-    Windows&nbsp;Vista<br>Windows&nbsp;XP (see below)</td>
+<tr><td class="firstjoin">Windows&nbsp;8<br>Windows&nbsp;7</td>
     <td><img src="osicons/os_win_other.png" border=0 hspace=5></td>
-    <td align="center"><a href="http://prdownloads.sourceforge.net/regina/Regina 4.96.msi">Download</a></td>
+    <td align="center"><a href="http://prdownloads.sourceforge.net/regina/Regina 5.0.msi">Download</a></td>
     </tr>
 </tbody></table>
 </blockquote>
@@ -199,12 +187,6 @@ for a similar reason
 (<i>&ldquo;Regina ... is not commonly downloaded and could harm your
 computer.&rdquo;</i>).
 Click <i>Actions</i> and you will be able to run the installer.</li>
-<li><i>Windows XP</i> users might find that Regina will not start
-(<i>&ldquo;The application failed to initialize properly ...&rdquo;</i>).
-The problem seems to be an obscure missing DLL,
-and the error message is spectacularly unhelpful;
-one known solution is to install Python&nbsp;2.x from
-<a href="http://python.org/download/">python.org</a>.</li>
 </ul>
 
 <a name="linux"><h4 class="divide">GNU/Linux</h4></a>
@@ -225,115 +207,55 @@ and he can build you an MPI-enabled package.
     <th>32-bit package (i386 or i586)</th>
     <th>64-bit package (amd64 or x86_64)</th>
     </tr>
-<tr><td rowspan=3 class="firstjoin">Debian</td>
-    <td rowspan=3><img src="osicons/os_debian.png" border=0 hspace=5></td>
+<tr><td rowspan=2 class="firstjoin">Debian</td>
+    <td rowspan=2><img src="osicons/os_debian.png" border=0 hspace=5></td>
     <td>8.x (jessie)</td>
     <td align="center"><a href="install/debian-jessie.html">Install</a></td>
     <td align="center"><a href="install/debian-jessie.html">Install</a></td>
-    </tr>
-<tr>
-    <td>7.x (wheezy)</td>
-    <td align="center"><a href="install/debian-wheezy.html">Install</a></td>
-    <td align="center"><a href="install/debian-wheezy.html">Install</a></td>
     </tr>
 <tr>
     <td>unstable (sid)</td>
     <td align="center"><a href="install/debian-sid.html">Install</a></td>
     <td align="center"><a href="install/debian-sid.html">Install</a></td>
     </tr>
-<tr><td rowspan=6 class="altfirstjoin">Fedora</td>
-    <td rowspan=6 class="alt"><img src="osicons/os_fedora.png" border=0 hspace=5></td>
+<tr><td rowspan=2 class="altfirstjoin">Fedora</td>
+    <td rowspan=2 class="alt"><img src="osicons/os_fedora.png" border=0 hspace=5></td>
     <td class="alt">24</td>
-    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.96-1.fedora24.i686.rpm">Download</a></td>
-    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.96-1.fedora24.x86_64.rpm">Download</a></td>
+    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-5.0-1.fedora24.i686.rpm">Download</a></td>
+    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-5.0-1.fedora24.x86_64.rpm">Download</a></td>
     </tr>
 <tr>
     <td class="alt">23</td>
-    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.96-1.fedora23.i686.rpm">Download</a></td>
-    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.96-1.fedora23.x86_64.rpm">Download</a></td>
+    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-5.0-1.fedora23.i686.rpm">Download</a></td>
+    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-5.0-1.fedora23.x86_64.rpm">Download</a></td>
     </tr>
-<tr>
-    <td class="alt">22</td>
-    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.96-1.fedora22.i686.rpm">Download</a></td>
-    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.96-1.fedora22.x86_64.rpm">Download</a></td>
-    </tr>
-<tr>
-    <td class="alt">21</td>
-    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.96-1.fedora21.i686.rpm">Download</a></td>
-    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.96-1.fedora21.x86_64.rpm">Download</a></td>
-    </tr>
-<tr>
-    <td class="alt">20</td>
-    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.96-1.fedora20.i686.rpm">Download</a></td>
-    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.96-1.fedora20.x86_64.rpm">Download</a></td>
-    </tr>
-<tr>
-    <td class="alt">19</td>
-    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.96-1.fedora19.i686.rpm">Download</a></td>
-    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.96-1.fedora19.x86_64.rpm">Download</a></td>
-    </tr>
-<tr><td rowspan=3 class="firstjoin">Mageia</td>
-    <td rowspan=3><img src="osicons/os_mandriva.png" border=0 hspace=5></td>
+<tr><td rowspan=1 class="firstjoin">Mageia</td>
+    <td rowspan=1><img src="osicons/os_mandriva.png" border=0 hspace=5></td>
     <td>5</td>
-    <td align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.96-1.mga5.i586.rpm">Download</a></td>
-    <td align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.96-1.mga5.x86_64.rpm">Download</a></td>
+    <td align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-5.0-1.mga5.i586.rpm">Download</a></td>
+    <td align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-5.0-1.mga5.x86_64.rpm">Download</a></td>
     </tr>
-<tr>
-    <td>4</td>
-    <td align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.96-1.mga4.i586.rpm">Download</a></td>
-    <td align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.96-1.mga4.x86_64.rpm">Download</a></td>
-    </tr>
-<tr>
-    <td>3</td>
-    <td align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.96-1.mga3.i586.rpm">Download</a></td>
-    <td align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.96-1.mga3.x86_64.rpm">Download</a></td>
-    </tr>
-<tr><td rowspan=4 class="altfirstjoin">openSUSE</td>
-    <td rowspan=4 class="alt"><img src="osicons/os_opensuse.png" border=0 hspace=5></td>
+<tr><td rowspan=2 class="altfirstjoin">openSUSE</td>
+    <td rowspan=2 class="alt"><img src="osicons/os_opensuse.png" border=0 hspace=5></td>
     <td class="alt">Leap&nbsp;42.1</td>
     <td class="alt" align="center">n/a</td>
-    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.96-1.suse42.1.x86_64.rpm">Download</a></td>
+    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-5.0-1.suse42.1.x86_64.rpm">Download</a></td>
     </tr>
 <tr>
     <td class="alt">13.2</td>
-    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.96-1.suse13.2.i586.rpm">Download</a></td>
-    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.96-1.suse13.2.x86_64.rpm">Download</a></td>
+    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-5.0-1.suse13.2.i586.rpm">Download</a></td>
+    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-5.0-1.suse13.2.x86_64.rpm">Download</a></td>
     </tr>
-<tr>
-    <td class="alt">13.1</td>
-    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.96-1.suse13.1.i586.rpm">Download</a></td>
-    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.96-1.suse13.1.x86_64.rpm">Download</a></td>
-    </tr>
-<tr>
-    <td class="alt">12.3</td>
-    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.96-1.suse12.3.i586.rpm">Download</a></td>
-    <td class="alt" align="center"><a href="http://prdownloads.sourceforge.net/regina/regina-normal-4.96-1.suse12.3.x86_64.rpm">Download</a></td>
-    </tr>
-<tr><td rowspan=5 class="firstjoin">Ubuntu</td>
-    <td rowspan=5><img src="osicons/os_ubuntu.png" border=0 hspace=5></td>
-    <td>16.04 (xenial)</td>
+<tr><td rowspan=2 class="firstjoin">Ubuntu</td>
+    <td rowspan=2><img src="osicons/os_ubuntu.png" border=0 hspace=5></td>
+    <td>16.04 LTS (xenial)</td>
     <td align="center"><a href="install/ubuntu-xenial.html">Install</a></td>
     <td align="center"><a href="install/ubuntu-xenial.html">Install</a></td>
-    </tr>
-<tr>
-    <td>15.10 (wily)</td>
-    <td align="center"><a href="install/ubuntu-wily.html">Install</a></td>
-    <td align="center"><a href="install/ubuntu-wily.html">Install</a></td>
-    </tr>
-<tr>
-    <td>15.04 (vivid)</td>
-    <td align="center"><a href="install/ubuntu-vivid.html">Install</a></td>
-    <td align="center"><a href="install/ubuntu-vivid.html">Install</a></td>
     </tr>
 <tr>
     <td>14.04 LTS (trusty)</td>
     <td align="center"><a href="install/ubuntu-trusty.html">Install</a></td>
     <td align="center"><a href="install/ubuntu-trusty.html">Install</a></td>
-    </tr>
-<tr>
-    <td>12.04 LTS (precise)</td>
-    <td align="center"><a href="install/ubuntu-precise.html">Install</a></td>
-    <td align="center"><a href="install/ubuntu-precise.html">Install</a></td>
     </tr>
 </tbody></table></blockquote>
 
@@ -361,7 +283,7 @@ Otherwise you can always build from source (see below).
 <ul><li>
 If you are using some other distribution (e.g., RedHat, Slackware, &hellip;),
 then you will need to build Regina from source.
-You can <a href="http://prdownloads.sourceforge.net/regina/regina-4.96.tar.gz">download the source code here</a>.
+You can <a href="http://prdownloads.sourceforge.net/regina/regina-5.0.tar.gz">download the source code here</a>.
 Please see the <a href="source.html">separate page on building Regina</a>
 for instructions on how to build Regina and
 what libraries and tools you will need to have installed.
@@ -382,6 +304,27 @@ features then please download one of the desktop versions listed above.
     </tr>
 </tbody></table>
 </blockquote>
+
+<a name="sage"><h4 class="divide">Sage</h4></a>
+
+Matthias Goerner has kindly prepared Sage packages for Regina.
+These offer a Python-only interface to Regina's mathematical engine&mdash;they
+do not include Regina's graphical user interface or command-line tools.
+If you need these features then please download one of the desktop versions
+listed above.
+<p>
+<blockquote><table cellspacing=0 border=0 align=center class="data"><tbody>
+<tr><th class="first" colspan=2>Sage Version</th><th>Installer</th></tr>
+<tr><td class="firstjoin">Any</td>
+    <td><img src="osicons/sage.png" border=0 hspace=10 vspace=10/></td>
+    <td align="center"><a href="http://sageregina.unhyperbolic.org/">Instructions</a></td>
+    </tr>
+</tbody></table>
+</blockquote>
+<p>
+Of course, whilst the packages are written to work with any modern version
+of Sage, your experiences might vary (particular with an older Sage and/or
+operating system).  See the instructions page for details.
 <p>
 <i><a href="#contents">(Back to contents...)</a></i>
 
@@ -393,8 +336,6 @@ Regina comes with rich documentation for both users and developers.
 
 The Regina Handbook is full of screenshots, and walks you through the
 different things that Regina can do.
-The handbook was completely refurbished for Regina&nbsp;4.90, so you
-might want to take a fresh look.
 <p>
 You can read the handbook from within Regina by selecting
 <i>Help</i>&nbsp;&rarr;&nbsp;<i>Regina Handbook</i>
@@ -415,36 +356,44 @@ You can also <a href="engine-docs/index.html">read it here online</a>.
 <p>
 <i><a href="#contents">(Back to contents...)</a></i>
 
-<h2><a name="new">What's new in version 4.96 (August&nbsp;2014)?</a></h2>
+<h2><a name="new">What's new in version 5.0 (September&nbsp;2016)?</a></h2>
 
 Some of the main highlights in version&nbsp;5.0:
 
 <h4>Features</h4>
 <ul>
-<li>Regina can now certify hyperbolicity rigorously and quickly, using
-  angle structures and linear programming.  See the Recognition tab
-  in the triangulation viewer.</li>
-<li>SnapPea triangulations are now a separate type of packet.  They
-  use both Regina's and SnapPea's internal data structures, so all of
-  SnapPea's internal information (e.g., fillings and peripheral curves)
-  will be preserved when you import from SnapPea/SnapPy.  SnapPea's
-  filling routines are also made available directly through Regina.</li>
-<li>Census lookup is now automatic (see the Recognition tab), extremely
-  fast, and draws on a much larger database of 296,862 triangulations.</li>
-<li>You can now puncture manifolds, build connected sums, make 1-4 moves,
-  and decompose non-orientable manifolds into prime pieces.</li>
-<li>The API has many more conveniences for Python and C++ users, plus
-  some structural changes under the hood in preparation for the
-  coming 4-manifolds release.</li>
+<li>Regina now works with 4-manifolds!  It also offers a more basic
+  framework for triangulations in higher dimensions (up to 15).</li>
+<li>You can now enumerate, study and triangulate normal hypersurfaces in
+  4-manifold triangulations.</li>
+<li>Regina now builds and manipulates tree decompositions of graphs,
+  including dual graphs of triangulations.  This is particularly
+  useful for fixed-parameter tractable algorithms.</li>
+<li>Turaev-Viro invariants are now computed using exact arithmetic.</li>
+<li>When fast-and-greedy simplification fails, you can now try
+  &ldquo;exhaustive simplification&rdquo;, which searches through the
+ Pachner graph.</li>
 </ul>
-<h4>Other optimisations</h4>
+<h4>Python and C++</h4>
 <ul>
-<li>Simplification and recognition of fundamental groups is now much
-  stronger, thanks to Nielsen moves and new recognition heuristics.</li>
-<li>Enumeration of taut angle structures is now much faster, thanks to
-  new tree traversal / linear programming machinery.</li>
-<li>The commit / refresh buttons are gone from the user interface
-  (all changes now take effect immediately).</li>
+<li>The API (functions, classes, etc.) has had an enormous overhaul.
+  Many things are now simpler, shorter, and more consistent.
+  Most of the old classes and functions have been kept for backward
+  compatibility, but <b>will be removed</b> in the next release.</li>
+<li>Regina is now based on the newer C++11 standard.</li>
+<li>Python now interacts with Regina more naturally, and error messages
+  are likely to be both fewer and more helpful.  Thanks to
+  Matthias Goerner for his help with this.</li>
+<li>Regina no longer clobbers Python's own builtin <tt>open()</tt> function!
+  For Regina's verison of <tt>open()</tt>, you can still call
+  <tt>regina.open()</tt>.</li>
+</ul>
+<h4>Optimisations</h4>
+<ul>
+<li>Many widespread structural changes under the hood.</li>
+<li>Several new optimisations, most notably including treewidth-based
+  algorithms for Turaev-Viro invariants
+  (<a href="arxiv.org/abs/1503.04099">arXiv:1503.04099</a>).</li>
 </ul>
 <p>
 <i><a href="#contents">(Back to contents...)</a></i>
