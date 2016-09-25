@@ -84,6 +84,8 @@ To run locally:
 
   Copy all necessary DLLs into software/bin.
 
+  Copy python27.zip and zlib.pyd into software/lib/regina/python.
+
   - Most DLLs come from /mingw32/bin/, and perhaps /bin/.
 
   - Some DLLs come from graphviz bin/:
