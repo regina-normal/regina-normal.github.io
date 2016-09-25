@@ -29,7 +29,7 @@ BuildRequires: gmp-devel
 BuildRequires: graphviz-devel
 BuildRequires: libbz2-devel
 BuildRequires: libqt5-qtbase-devel
-BuildRequires: libqt5-qtsvg-devel.
+BuildRequires: libqt5-qtsvg-devel
 BuildRequires: libsource-highlight-devel
 BuildRequires: libstdc++-devel
 BuildRequires: libtokyocabinet-devel

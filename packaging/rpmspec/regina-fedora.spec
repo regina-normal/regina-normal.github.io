@@ -61,8 +61,8 @@ and a low-level C++ programming interface.
 mkdir -p %{_target_platform}
 pushd %{_target_platform}
 
-export QTDIR="%{_qt4_prefix}"
-export PATH="%{_qt4_bindir}:$PATH"
+export QTDIR="%{_qt5_prefix}"
+export PATH="%{_qt5_bindir}:$PATH"
 export CFLAGS="${CFLAGS:--O2}"
 export CXXFLAGS="${CXXFLAGS:--O2}"
 export FFLAGS="${FFLAGS:--O2}"
