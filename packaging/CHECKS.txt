@@ -17,7 +17,7 @@ Manual checks:
       - open data file from desktop / file manager
       - tab completion (both script and standalone)
   - regina-python
-      - print NExampleTriangulation.lens8_3().getHomologyH1()
+      - print NExampleTriangulation.lens8_3().homology()
       - tab completion
       - import snappy
   - tools
