@@ -61,12 +61,10 @@ and a low-level C++ programming interface.
 %build
 export CFLAGS="${CFLAGS:-%optflags}"
 export CPPFLAGS="${CPPFLAGS:-%optflags}"
-export QTDIR="%qt4dir"
-export PATH="%qt4dir/bin:$PATH"
 export LIB_SUFFIX=$(echo %_lib | cut -b4-)
 
-%cmake -DDISABLE_RPATH=1 -DCMAKE_INSTALL_PREFIX=/usr -DLIB_SUFFIX=$LIB_SUFFIX \
-  -DDISABLE_MPI=1 -DPACKAGING_MODE=1
+%cmake_qt5 -DDISABLE_RPATH=1 -DCMAKE_INSTALL_PREFIX=/usr \
+  -DLIB_SUFFIX=$LIB_SUFFIX -DDISABLE_MPI=1 -DPACKAGING_MODE=1
 %make
 LD_LIBRARY_PATH=`pwd`/engine:"$LD_LIBRARY_PATH" %make test ARGS=-V
 
