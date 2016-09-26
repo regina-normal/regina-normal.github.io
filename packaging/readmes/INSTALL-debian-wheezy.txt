@@ -1,8 +1,0 @@
-Regina for Debian:  Wheezy (Debian 7.x)
----------------------------------------
-
-To install Regina under Wheezy (the Debian 7.x release), see:
-
-http://regina.sourceforge.net/install/debian-wheezy.html
-
-- Ben Burton <bab@debian.org>, Sun, 31 Aug 2014 02:13:26 +1000

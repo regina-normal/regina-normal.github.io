@@ -1,8 +1,0 @@
-Regina for Ubuntu:  Vivid Vervet (Ubuntu 15.04)
------------------------------------------------
-
-To install Regina under Vivid Vervet (the Ubuntu 15.04 release), see:
-
-http://regina.sourceforge.net/install/ubuntu-vivid.html
-
-- Ben Burton <bab@debian.org>, Tue,  6 Sep 2016 14:21:12 +0530

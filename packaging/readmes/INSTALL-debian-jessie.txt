@@ -1,0 +1,8 @@
+Regina for Debian:  Jessie (Debian 8.x)
+---------------------------------------
+
+To install Regina under Jessie (the Debian 8.x release), see:
+
+http://regina.sourceforge.net/install/debian-jessie.html
+
+- Ben Burton <bab@debian.org>, Mon, 26 Sep 2016 14:51:55 +1000
