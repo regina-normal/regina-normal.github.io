@@ -74,6 +74,11 @@ cmake -DDISABLE_RPATH=1 -DCMAKE_INSTALL_PREFIX=/usr -DLIB_SUFFIX=$LIB_SUFFIX -DD
   ..
 
 %make_jobs
+
+# The debug symbols in regina's python module are so enormous that my VMs
+# run out of space.  Honestly, 2GB should be enough for a package build...
+/usr/bin/strip `pwd`/python/regina/engine.so
+
 LD_LIBRARY_PATH=`pwd`/engine:"$LD_LIBRARY_PATH" make %{?_smp_mflags} VERBOSE=1 test ARGS=-V
 
 %install

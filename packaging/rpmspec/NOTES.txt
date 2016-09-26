@@ -9,6 +9,10 @@ Preparing, building and installing:
   - Check ~/.rpmmacros (rpm --showrc):
       %_topdir /home/bab/rpm
       %_vendor fedora19 (or whatever)
+  - For mageia, also disable debug symbols:
+      %_enable_debug_packages %{nil}
+      %debug_package %{nil}
+      %debugcflags %{nil}
   - Clean out ~/rpm:
       - Subdirs SOURCES, SPECS, BUILD, SRPMS, RPMS
   - Uninstall (rpm -e regina-normal)
