@@ -1,7 +1,7 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="regina.css">
-    <title>Regina - Deprecation Guide</title>
+    <title>Regina - Moving from 4.x to 5.x</title>
 </head>
 <body bgcolor="#FFFFFF" text="#000000"
     link="#0000EE" vlink="#551A8B" alink="#FF0000" class="deprecation">
@@ -38,6 +38,8 @@ There are some general rules that cover many of the changes:
 all been renamed to <tt>x.countFoo()</tt>.  The exception is that some
 have been renamed to <tt>x.size()</tt> where this makes sense;
 all such exceptions are listed in the table below.</li>
+<li>Template implementation headers of the form <tt>foo.tcc</tt>
+have been renamed to <tt>foo-impl.h</tt>.
 </ul>
 <p>
 Beyond these general rules, many other routines and classes will be
@@ -70,13 +72,35 @@ Regina&nbsp;5.0.
 </tr>
 <tr><td class="deptype" colspan=4>Headers</td></tr>
 <tr>
-    <td class="first"><tt>*.tcc</tt></td>
-    <td><tt>*-impl.h</tt></td>
+    <td class="first"><tt>census/dim2edgepairing.h</tt></td>
+    <td><tt>dim2/dim2edgepairing.h</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>census/nfacepairing.h</tt></td>
+    <td><tt>triangulation/nfacepairing.h</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>census/ngenericfacetpairing.h</tt> and
+    <tt>-impl.h</tt></td>
+    <td><tt>generic/facetpairing.h</tt> and <tt>-impl.h</tt></td>
     <td>&nbsp;</td>
 </tr>
 <tr>
     <td class="first"><tt>foreign/csvsurfacelist.h</tt></td>
     <td><tt>surfaces/nnormalsurfacelist.h</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>generic/dimtraits.h</tt></td>
+    <td>&mdash;</td>
+    <td>With the new templated triangulation code, <tt>dimtraits</tt>
+    now serves no purpose.</td>
+</tr>
+<tr>
+    <td class="first"><tt>generic/nfacetspec.h</tt></td>
+    <td><tt>generic/facetspec.h</tt></td>
     <td>&nbsp;</td>
 </tr>
 <tr>
@@ -93,13 +117,14 @@ Regina&nbsp;5.0.
     <td class="first"><tt>triangulation/dimtraits.h</tt>,
     <tt>triangulation/nfacetspec.h</tt>,
     <tt>triangulation/ngenericisomorphism.h</tt></td>
-    <td><tt>generic/dimtraits.h</tt>,
-    <tt>generic/nfacetspec.h</tt>,
+    <td>&mdash;,
+    <tt>generic/facetspec.h</tt>,
     <tt>generic/ngenericisomorphism.h</tt></td>
-    <td>&nbsp;</td>
+    <td>The header <tt>dimtraits.h</tt> is now empty.</td>
 </tr>
 <tr>
-    <td class="first"><tt>triangulation/nperm.h</tt></td>
+    <td class="removed"><tt>triangulation/nperm.h</tt><br>
+    Removed in Regina&nbsp;5.0</td>
     <td><tt>maths/nperm4.h</tt></td>
     <td>This header provided the class <tt>NPerm</tt>, which has likewise been
         renamed to <tt>NPerm4</tt>.</td>
@@ -174,6 +199,18 @@ Regina&nbsp;5.0.
     <tt>surfaces/normalcoords.h</tt>.</td>
 </tr>
 <tr>
+    <td class="first"><tt>NNormalSurfaceVector::coordType</tt></td>
+    <td><tt>NNormalSurfaceVector::coordsID</tt></td>
+    <td>Applies to every subclass of <tt>NNormalSurfaceVector</tt>.
+    This is now a constant of type <tt>NormalCoords</tt>.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NPacket::packetType</tt></td>
+    <td><tt>NPacket::typeID</tt></td>
+    <td>Applies to every subclass of <tt>NPacket</tt>.
+    This is now a constant of type <tt>PacketType</tt>.</td>
+</tr>
+<tr>
     <td class="first"><tt>NS_FACE_ARCS</tt></td>
     <td><tt>NS_TRIANGLE_ARCS</tt></td>
     <td>&nbsp;</td>
@@ -185,6 +222,11 @@ Regina&nbsp;5.0.
     <td><tt>NSurfaceFilter::filterTypeID</tt></td>
     <td>This change also applies to every subclass of
     <tt>NSurfaceFilter</tt>.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NVertex::NON_STANDARD_BDRY</tt></td>
+    <td><tt>NVertex::INVALID</tt></td>
+    <td>&nbsp;</td>
 </tr>
 <tr><td class="deptype" colspan=4>Classes</td></tr>
 <tr>
@@ -287,7 +329,8 @@ Regina&nbsp;5.0.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="first"><tt>NPerm</tt></td>
+    <td class="removed"><tt>NPerm</tt><br>
+    Removed in Regina&nbsp;5.0</td>
     <td><tt>NPerm4</tt></td>
     <td>&nbsp;</td>
 </tr>
@@ -296,6 +339,13 @@ Regina&nbsp;5.0.
     <td>&mdash;</td>
     <td>Instead, just loop through the elements
         of <tt>NPerm4::S4</tt> directly.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>NPrismSetSurface</tt><br>
+    Removed in Regina&nbsp;5.0</td>
+    <td>&mdash;</td>
+    <td>Removed from Python, but just deprecated in C++.
+    This class never had any function.</td>
 </tr>
 <tr>
     <td class="removed"><tt>NProgress, NProgressFinished,
@@ -319,6 +369,11 @@ Regina&nbsp;5.0.
     <td>&mdash;</td>
     <td>Just use <tt>NNormalSurfaceList</tt> and/or
         <tt>NSurfaceSubset</tt> directly.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NThread</tt></td>
+    <td><tt>std::thread</tt> and related classes</td>
+    <td>&nbsp;</td>
 </tr>
 <tr>
     <td class="removed"><tt>NTriBool</tt><br>
@@ -350,16 +405,6 @@ Regina&nbsp;5.0.
     Removed in Regina&nbsp;4.94</td>
     <td>&mdash;</td>
     <td>See the comments above for the <tt>NFile</tt> class.</td>
-</tr>
-<tr>
-    <td class="first"><tt>...::toString()</tt></td>
-    <td><tt>...::str()</tt></td>
-    <td>&nbsp;</td>
-</tr>
-<tr>
-    <td class="first"><tt>...::toStringLong()</tt></td>
-    <td><tt>...::detail()</tt></td>
-    <td>&nbsp;</td>
 </tr>
 <tr>
     <td class="removed"><tt>...::writeToFile(NFile&amp;)</tt><br>
@@ -535,7 +580,8 @@ Regina&nbsp;5.0.
 <tr>
     <td class="first"><tt>NManifold::getHomologyH1()</tt></td>
     <td><tt>NManifold::homology()</tt></td>
-    <td>Applies to all subclasses of <tt>NManifold</tt>.</td>
+    <td>Applies to all subclasses of <tt>NManifold</tt>.
+    <tt>homology()</tt> also has an alias <tt>homologyH1()</tt>.</td>
 </tr>
 <tr>
     <td class="first"><tt>NMarkedAbelianGroup::...</tt></td>
@@ -566,18 +612,30 @@ Regina&nbsp;5.0.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="first"><tt>NNormalSurface::getFaceArcs()</tt></td>
-    <td><tt>NNormalSurface::triangleArcs()</tt></td>
+    <td class="first"><tt>NNormalSurface::getFaceArcs()</tt>,
+    <td><tt>NNormalSurface::arcs()</tt></td>
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="first"><tt>NNormalSurfaceList::enumerate()</tt>,
+    <td class="first"><tt>NNormalSurface::getTriangleCoord()</tt>,
+    <tt>NNormalSurface::getQuadCoord()</tt>,
+    <tt>NNormalSurface::getOctCoord()</tt>,
+    <tt>NNormalSurface::getTriangleArcs()</tt>, etc.</td>
+    <td><tt>NNormalSurface::triangles()</tt>,
+    <tt>NNormalSurface::quads()</tt>,
+    <tt>NNormalSurface::octs()</tt>,
+    <tt>NNormalSurface::arcs()</tt>, etc.</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>NNormalSurfaceList::enumerate()</tt>,
     <tt>NNormalSurfaceList::enumerateStandardDirect()</tt>,
     <tt>NNormalSurfaceList::enumerateStandardANDirect()</tt>,
     <tt>NNormalSurfaceList::enumerateFundPrimal()</tt>,
     <tt>NNormalSurfaceList::enumerateFundDual()</tt>,
     <tt>NNormalSurfaceList::enumerateFundCD()</tt>,
-    <tt>NNormalSurfaceList::enumerateFundFullCone()</tt></td>
+    <tt>NNormalSurfaceList::enumerateFundFullCone()</tt><br>
+    Removed in Regina&nbsp;5.0</td>
     <td><tt>NNormalSurfaceList::enumerate(NTriangulation*, NormalCoords,
     NormalList, NormalAlg, NProgressTracker*)</td>
     <td>All of the old enumeration routines have been amalgamated into a
@@ -599,14 +657,67 @@ Regina&nbsp;5.0.
     this function is no longer necessary.</td>
 </tr>
 <tr>
+    <td class="first"><tt>NNormalSurfaceList::getNumberOfSurfaces()</tt></td>
+    <td><tt>NNormalSurfaceList::size()</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
     <td class="first"><tt>NNormalSurfaceSubset::getFlavour()</tt></td>
     <td><tt>NNormalSurfaceSubset::coords()</td>
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="first"><tt>NNormalSurfaceVector::getFaceArcs()</tt></td>
-    <td><tt>NNormalSurfaceVector::triangleArcs()</tt></td>
+    <td class="first"><tt>NNormalSurfaceSubset::getNumberOfSurfaces()</tt></td>
+    <td><tt>NNormalSurfaceSubset::size()</td>
     <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NNormalSurfaceVector::getFaceArcs()</tt></td>
+    <td><tt>NNormalSurfaceVector::arcs()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NNormalSurfaceVector::getTriangleCoord()</tt>,
+    <tt>NNormalSurfaceVector::getQuadCoord()</tt>,
+    <tt>NNormalSurfaceVector::getOctCoord()</tt>,
+    <tt>NNormalSurfaceVector::getTriangleArcs()</tt>, etc.</td>
+    <td><tt>NNormalSurfaceVector::triangles()</tt>,
+    <tt>NNormalSurfaceVector::quads()</tt>,
+    <tt>NNormalSurfaceVector::octs()</tt>,
+    <tt>NNormalSurfaceVector::arcs()</tt>, etc.</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NPacket::getPacketLabel()</tt>,
+    <tt>NPacket::setPacketLabel()</tt>,
+    <tt>NPacket::getPacketType()</tt>,
+    <tt>NPacket::getPacketTypeName()</tt></td>
+    <td><tt>NPacket::label()</tt>,
+    <tt>NPacket::setLabel()</tt>,
+    <tt>NPacket::type()</tt>,
+    <tt>NPacket::typeName()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NPacket::getTreeParent()</tt>,
+    <tt>NPacket::getFirstTreeChild()</tt>,
+    <tt>NPacket::getLastTreeChild()</tt>,
+    <tt>NPacket::getNextTreeSibling()</tt>,
+    <tt>NPacket::getPrevTreeSibling()</tt>,
+    <tt>NPacket::getMatriarch()</tt></td>
+    <td><tt>NPacket::parent()</tt>,
+    <tt>NPacket::firstChild()</tt>,
+    <tt>NPacket::lastChild()</tt>,
+    <tt>NPacket::nextSibling()</tt>,
+    <tt>NPacket::prevSibling()</tt>,
+    <tt>NPacket::root()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>NPacket::getXMLReader()</tt><br>
+    Removed in Regina&nbsp;5.0</td>
+    <td><tt>NPacket::xmlReader()</tt></td>
+    <td>Applies to every subclass of <tt>NPacket</tt>.</td>
 </tr>
 <tr>
     <td class="removed"><tt>NPacket::readPacket()</tt><br>
@@ -621,10 +732,17 @@ Regina&nbsp;5.0.
     <td>See the comments above for the <tt>NFile</tt> class.</td>
 </tr>
 <tr>
-    <td class="first"><tt>NPerm4::setPerm()</tt></td>
+    <td class="removed"><tt>NPerm&lt;n&gt;::setPerm()<br>
+    Removed in Regina&nbsp;5.0</tt></td>
     <td>&mdash;</td>
     <td>Instead, just use the assignment operator, as in
         <tt>p = NPerm4(1,2)</tt>.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>NPerm&lt;n&gt;::toString()<br>
+    Removed in Regina&nbsp;5.0</tt></td>
+    <td><tt>NPerm&lt;n&gt;::str()</tt></td>
+    <td>&nbsp;</td>
 </tr>
 <tr>
     <td class="first"><tt>NPillowTwoSphere::getFace()</tt>,
@@ -680,6 +798,17 @@ Regina&nbsp;5.0.
     and that inherits directly from <tt>NTriangulation</tt>.</td>
 </tr>
 <tr>
+    <td class="first"><tt>NSpiralSolidTorus::getNumberOfTetrahedra()</tt></td>
+    <td><tt>NSpiralSolidTorus::size()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NStandardTriangulation::getHomologyH1()</tt></td>
+    <td><tt>NStandardTriangulation::homology()</tt></td>
+    <td>Applies to all subclasses of <tt>NStandardTriangulation</tt>.
+    <tt>homology()</tt> also has an alias <tt>homologyH1()</tt>.</td>
+</tr>
+<tr>
     <td class="removed"><tt>NSurfaceFilter::getFilterID()</tt>,
     <tt>NSurfaceFilter::getFilterName()</tt><br>
     Removed in Regina&nbsp;5.0</td>
@@ -706,6 +835,24 @@ Regina&nbsp;5.0.
     <td>See the comments above for the <tt>NFile</tt> class.</td>
 </tr>
 <tr>
+    <td class="first"><tt>NSurfaceFilterProperties::addEC()</tt>,
+    <tt>NSurfaceFilterProperties::removeEC()</tt>,
+    <tt>NSurfaceFilterProperties::removeAllECs()</tt></td>
+    <td><tt>NSurfaceFilterProperties::addEulerChar()</tt>,
+    <tt>NSurfaceFilterProperties::removeEulerChar()</tt>,
+    <tt>NSurfaceFilterProperties::removeAllEulerChars()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NSurfaceFilterProperties::getEC()</tt>,
+    <tt>NSurfaceFilterProperties::getECs()</tt>,
+    <tt>NSurfaceFilterProperties::getNumberOfECs()</tt></td>
+    <td><tt>NSurfaceFilterProperties::eulerChar()</tt>,
+    <tt>NSurfaceFilterProperties::eulerChars()</tt>,
+    <tt>NSurfaceFilterProperties::countEulerChars()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
     <td class="removed"><tt>NSurfaceSet::getShareableObject()</tt><br>
     Removed in Regina&nbsp;4.94</td>
     <td>&mdash;</td>
@@ -720,8 +867,19 @@ Regina&nbsp;5.0.
     longer create tetrahedra independently.</td>
 </tr>
 <tr>
-    <td class="first"><tt>NTetrahedron::getFace()</tt>,
-    <tt>NTetrahedron::getFaceMapping()</tt></td>
+    <td class="removed"><tt>NTetrahedron::getAdjacentTetrahedron()</tt>,
+    <tt>NTetrahedron::getAdjacentTetrahedronGluing()</tt>,
+    <tt>NTetrahedron::getAdjacentFace()</tt><br>
+    Removed in Regina&nbsp;5.0</td>
+    <td><tt>NTetrahedron::adjacentTetrahedron()</tt>,
+    <tt>NTetrahedron::adjacentGluing()</tt>,
+    <tt>NTetrahedron::adjacentFace()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>NTetrahedron::getFace()</tt>,
+    <tt>NTetrahedron::getFaceMapping()</tt><br>
+    Removed in Regina&nbsp;5.0</td>
     <td><tt>NTetrahedron::triangle()</tt>,
     <tt>NTetrahedron::triangleMapping()</tt></td>
     <td>&nbsp;</td>
@@ -739,23 +897,19 @@ Regina&nbsp;5.0.
     longer create tetrahedra independently.</td>
 </tr>
 <tr>
-    <td class="first"><tt>NTriangulation::faceIndex()</tt>,
+    <td class="removed"><tt>NTriangulation::faceIndex()</tt>,
     <tt>NTriangulation::getFace()</tt>,
     <tt>NTriangulation::getFaceIndex()</tt>,
     <tt>NTriangulation::getFaces()</tt>,
     <tt>NTriangulation::getNumberOfFaces()</tt>,
-    <tt>NTriangulation::hasBoundaryFaces()</tt></td>
+    <tt>NTriangulation::hasBoundaryFaces()</tt><br>
+    Removed in Regina&nbsp;5.0</td>
     <td><tt>NTriangle::index()</tt>,
     <tt>NTriangulation::triangle()</tt>,
     <tt>NTriangle::index()</tt>,
     <tt>NTriangulation::triangles()</tt>,
     <tt>NTriangulation::countTriangles()</tt>,
     <tt>NTriangulation::hasBoundaryTriangles()</tt></td>
-    <td>&nbsp;</td>
-</tr>
-<tr>
-    <td class="first"><tt>NTriangulation::getAdjacentTetrahedronGluing()</tt></td>
-    <td><tt>NTriangulation::adjacentGluing()</tt></td>
     <td>&nbsp;</td>
 </tr>
 <tr>
@@ -767,6 +921,16 @@ Regina&nbsp;5.0.
         for ideal triangulations.  The old <tt>getEulerCharacteristic()</tt>
         was equivalent to the new <tt>eulerCharTri()</tt>.</td>
 </tr>
+<tr>
+    <td class="first"><tt>NTriangulation::getHomologyH1()</tt>,
+    <tt>NTriangulation::getHomologyH1Rel()</tt>,
+    <tt>NTriangulation::getHomologyH1Bdry()</tt></td>
+    <td><tt>NTriangulation::homology()</tt>,
+    <tt>NTriangulation::homologyRel()</tt>,
+    <tt>NTriangulation::homologyBdry()</tt></td>
+    <td><tt>homology()</tt> also has the alias <tt>homologyH1()</tt>.</td>
+</tr>
+<tr>
 <tr>
     <td class="first"><tt>NTriangulation::getNumberOfSimplices()</tt></td>
     <td><tt>NTriangulation::size()</tt></td>
@@ -800,23 +964,19 @@ Regina&nbsp;5.0.
 </tr>
 <tr><td class="deptype" colspan=4>Global Routines</td></tr>
 <tr>
-    <td class="first"><tt>edgeDescription()</tt></td>
-    <td><tt>NPerm4::trunc2()</tt></td>
+    <td class="removed"><tt>edgeDescription()</tt>,
+    <tt>edgeOrdering()</tt><br>
+    Removed in Regina&nbsp;5.0</td>
+    <td><tt>NPerm4::trunc2()</tt>,
+    <tt>NEdge::ordering()</tt></td>
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="first"><tt>edgeOrdering()</tt></td>
-    <td><tt>NEdge::ordering()</tt></td>
-    <td>This no longer guarantees an even permutation.</td>
-</tr>
-<tr>
-    <td class="first"><tt>faceDescription()</tt></td>
-    <td><tt>NPerm4::trunc3()</tt></td>
-    <td>&nbsp;</td>
-</tr>
-<tr>
-    <td class="first"><tt>faceOrdering()</tt></td>
-    <td><tt>NFace::ordering[]</tt></td>
+    <td class="removed"><tt>faceDescription()</tt>,
+    <tt>faceOrdering()</tt><br>
+    Removed in Regina&nbsp;5.0</td>
+    <td><tt>NPerm4::trunc3()</tt>,
+    <tt>NTriangle::ordering()</tt></td>
     <td>&nbsp;</td>
 </tr>
 <tr>
@@ -828,6 +988,20 @@ Regina&nbsp;5.0.
 <tr>
     <td class="first"><tt>forFlavour()</tt></td>
     <td><tt>forCoords()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>perm3to4()</tt>,
+    <tt>perm4to5()</tt>,
+    <tt>perm3to5()</tt></td>
+    <td><tt>NPerm&lt;n&gt;::extend()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>perm4to3()</tt>,
+    <tt>perm5to3()</tt>,
+    <tt>perm5to4()</tt></td>
+    <td><tt>NPerm&lt;n&gt;::contract()</tt></td>
     <td>&nbsp;</td>
 </tr>
 <tr>
@@ -910,33 +1084,54 @@ Regina&nbsp;5.0.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="first"><tt>allPermsS2[]</tt></td>
+    <td class="removed"><tt>allPermsS2[]</tt><br>
+    Removed in Regina&nbsp;5.0</td>
     <td><tt>NPerm4::S2[]</tt></td>
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="first"><tt>allPermsS3[]</tt>, <tt>orderedPermsS3[]</tt></td>
-    <td><tt>NPerm4::S3[]</tt>, <tt>NPerm4::orderedS3[]</tt></td>
+    <td class="removed"><tt>allPermsS3[]</tt>, <tt>orderedPermsS3[]</tt><br>
+    Removed in Regina&nbsp;5.0</td>
+    <td><tt>NPerm4::S3[]</tt>, <tt>NPerm4::orderedS3[]</tt><br>
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="first"><tt>allPermsS4[]</tt>,
-        <tt>allPermsS4Inv[]</tt>, <tt>orderedPermsS4[]</tt></td>
+    <td class="removed"><tt>allPermsS4[]</tt>,
+        <tt>allPermsS4Inv[]</tt>, <tt>orderedPermsS4[]</tt><br>
+        Removed in Regina&nbsp;5.0</td>
     <td><tt>NPerm4::S4[]</tt>, <tt>NPerm4::invS4[]</tt>,
         <tt>NPerm4::orderedS4[]</tt></td>
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="first"><tt>NPerm4::invS3[]</tt>,
-        <tt>allPermsS3Inv[]</tt></td>
+    <td class="removed"><tt>NPerm4::invS3[]</tt>,
+        <tt>allPermsS3Inv[]</tt><br>
+        Removed in Regina&nbsp;5.0</td>
     <td><tt>NPerm3::invS3[]</tt></td>
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="first"><tt>NPerm4::invS2[]</tt>,
-        <tt>allPermsS2Inv[]</tt></td>
+    <td class="removed"><tt>NPerm4::invS2[]</tt>,
+        <tt>allPermsS2Inv[]</tt><br>
+        Removed in Regina&nbsp;5.0</td>
     <td>&mdash;</td>
-    <td>This class is unnecessary, since inverses in S2 are trivial.</td>
+    <td>This array is unnecessary, since inverses in S2 are trivial.</td>
+</tr>
+<tr>
+    <td class="first"><tt>vertexSplit[][]</tt>,
+    <tt>vertexSplitMeeting[][][]</tt>,
+    <tt>vertexSplitPartner[][]</tt>,
+    <tt>vertexSplitString[]</tt></td>
+    <td><tt>quadSeparating[][]</tt>,
+    <tt>quadMeeting[][][]</tt>,
+    <tt>quadPartner[][]</tt>,
+    <tt>quadString[]</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>vertexSplitDefn[][]</tt></td>
+    <td><tt>NEdge::ordering()</tt></td>
+    <td>This might switch the images of 2 and 3.</td>
 </tr>
 <tr><td class="deptype" colspan=4>Macros</td></tr>
 <tr>
