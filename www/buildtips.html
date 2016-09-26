@@ -94,15 +94,16 @@ of Fink's, set <tt>PYTHON_EXECUTABLE</tt> to <tt>/usr/bin/python</tt>.</li>
 default <tt>/usr/local</tt> by setting <tt>CMAKE_INSTALL_PREFIX</tt>.
 This controls where the application bundle will appear when you run
 <tt>make&nbsp;install</tt>.</li>
-<li>Modern Qt installations install themselves in a standard location
-(<tt>/Library/Frameworks/</tt>), which Regina can find automatically.
-However, if your Qt is installed somewhere else (e.g., beneath your home
-directory, or provided by Fink) then you will need to set
-<tt>QT_QMAKE_EXECUTABLE</tt>
-to the location of the <tt>qmake</tt> executable.</li>
+<li>To tell Regina where to find Qt, set <tt>CMAKE_PREFIX_PATH</tt> to the
+relevant Qt directory containing <tt>include/</tt>, <tt>lib/</tt> and so on.
+For a typical Qt installation, this looks something like
+<tt>.../Qt5.7.0/5.7/clang_64</tt>.</li>
+<li>To tell Regina where to find Boost, set <tt>BOOST_ROOT</tt> to the
+relevant Boost directory containing <tt>include/</tt>, <tt>lib/</tt> and so on.
+For Fink's current Boost packages, this looks something like
+<tt>/sw/opt/boost-1_58</tt>.</li>
 <li>If you want a full, unix-like installation instead of just an
-application bundle
-(with programs in <tt>prefix/bin/</tt>,
+application bundle (with programs in <tt>prefix/bin/</tt>,
 libraries in <tt>prefix/lib/</tt>
 data in <tt>prefix/share/regina/</tt> and so on),
 set <tt>REGINA_INSTALL_TYPE</tt> to <tt>XDG</tt>.</li>
@@ -114,16 +115,11 @@ on the user's desktop:
 </p>
 <div class="example">
 <p>
-<tt>example$ cmake -DPYTHON_EXECUTABLE=/usr/bin/python -DCMAKE_INSTALL_PREFIX=/Users/bab/Desktop ..</tt>
-</p>
-</div>
-<p>
-Another example that makes a full unix-like installation beneath the default
-<tt>/usr/local/</tt> prefix, and that uses the version of Qt provided by Fink:
-</p>
-<div class="example">
-<p>
-<tt>example$ cmake -DREGINA_INSTALL_TYPE=XDG -DQT_QMAKE_EXECUTABLE=/sw/lib/qt4-mac/bin/qmake -DPYTHON_EXECUTABLE=/usr/bin/python ..</tt>
+<tt>example$ cmake -DPYTHON_EXECUTABLE=/usr/bin/python
+-DCMAKE_INSTALL_PREFIX=/Users/bab/Desktop
+-DCMAKE_PREFIX_PATH=/Users/bab/Qt5/5.7/clang_64
+-DBOOST_ROOT=/sw/opt/boost-1_58
+..</tt>
 </p>
 </div>
 

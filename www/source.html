@@ -72,9 +72,6 @@ and/or mail the authors for assistance.
 The following table lists the tools and
 libraries that you will need to build Regina.
 <p>
-Note that very old versions of GCC may crash when building Regina;
-see the <a href="#gcc">compiler note below</a>.
-<p>
 <b>It is highly recommended that you download ready-made packages of these
 tools and libraries</b>.  This is the best way to provide standard
 installations in standard locations that
@@ -96,6 +93,11 @@ between different RPM-based distributions).
 <table cellspacing=0 border=0 class="data">
 <tr><th class="first">Component</th><th>Required For</th>
     <th>Version</th><th>Package Names</th></tr>
+<tr><td class="reqfirst">C++ compiler</td>
+    <td class="req">Build infrastructure</td>
+    <td>Must support C++11</td>
+    <td>g++ (DEB)<br>gcc-c++ (RPM)
+    </td></tr>
 <tr><td class="reqfirst">CMake</td>
     <td class="req">Build infrastructure</td>
     <td>&ge; 2.8.11</td>
@@ -110,7 +112,7 @@ between different RPM-based distributions).
     including <em>libgmp</em> and <em>libgmpxx</em></td>
     <td class="req">Calculation engine</td>
     <td>&nbsp;</td>
-    <td>libgmp-dev / libgmp3-dev (DEB)<br>
+    <td>libgmp-dev (DEB)<br>
     gmp-devel (plus gmpxx-devel on some systems) (RPM)
     </td></tr>
 <tr><td class="reqfirst">GNOME XML library <em>(libxml2)</em></td>
@@ -132,7 +134,7 @@ between different RPM-based distributions).
     <em>libboost_iostreams</em>, <em>libboost_python</em> and
     <em>libboost_regex</em></td>
     <td class="req">Multiple components</td>
-    <td>&nbsp;</td>
+    <td>Preferably <a href="#boost">not&nbsp;1.60</a></td>
     <td>libboost-iostreams-dev, libboost-python-dev &amp; libboost-regex-dev (DEB)<br>boost-devel (RPM)
     </td></tr>
 <tr><td class="reqfirst">Qt&nbsp;5 libraries, including the
@@ -140,7 +142,9 @@ between different RPM-based distributions).
     <td class="req">Graphical user interface</td>
     <td>&nbsp;</td>
     <td>qtbase5-dev &amp; libqt5svg5-dev (DEB)<br>
-    qt-devel / qt4-devel / libqt4-devel (RPM)
+    libqt5-qtbase-devel &amp; libqt5-qtsvg-devel, or<br>
+    qt5-qtbase-devel &amp; qt5-qtsvg-devel, or<br>
+    qtbase5-devel &amp; qtsvg5-devel (RPM)
     </td></tr>
 <tr><td class="optfirst">Python development libraries</td>
     <td class="opt">Python scripting</td>
@@ -184,14 +188,18 @@ between different RPM-based distributions).
     </td></tr>
 </table>
 
-<h3><a name="gcc">Old GCC Versions</a></h3>
+<h3><a name="boost">Errors in Boost 1.60</a></h3>
 <p>
-We have encountered an issue in which very old versions of the GNU Compiler
-Collection (such as gcc&nbsp;4.1.2)
-crash on 64-bit systems with an internal compiler error.  It appears to be
-<a href="http://gcc.gnu.org/bugzilla/show_bug.cgi?id=31167">this problem</a>,
-which was fixed in GCC 4.3.0 (March 2008).  The best suggestion we have
-to avoid this problem is to use a modern C++ compiler.
+If you are using Boost&nbsp;1.60, you may encounter errors at runtime when
+using Regina's python interface.  These errors will be of the form
+&ldquo;no to_python (by-value) converter for C++ type &hellip;&rdquo;.
+This is a <a href="https://github.com/boostorg/python/issues/56">known
+issue</a> with Boost&nbsp;1.60, and does not occur in other Boost versions.
+<p>
+The next release of Regina (likely Regina&nbsp;5.1)
+will have a patch to work around this problem.  In the meantime, you can apply
+<a href="files/regina-5.0.patch">this patch</a> to your
+Regina&nbsp;5.0 sources, which should fix the issue.
 
 <p class="return">
 <a href="index.html"><img src="regina.svg" alt="Back to main page ..."
