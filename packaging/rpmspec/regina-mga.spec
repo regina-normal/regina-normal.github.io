@@ -55,6 +55,14 @@ combinatorial and algebraic tools, plus support for normal hypersurfaces.
 Regina comes with a full graphical user interface, as well as Python bindings
 and a low-level C++ programming interface.
 
+# With debug symbols, the size of the python module becomes outrageous.
+%define _enable_debug_packages %{nil}
+%define debug_package %{nil}
+%define debugcflags %{nil}
+
+# Regina needs rpath for the graphviz plugins.
+%define _cmake_skip_rpath %{nil}
+
 %prep
 %setup -n regina-%{version}
 
