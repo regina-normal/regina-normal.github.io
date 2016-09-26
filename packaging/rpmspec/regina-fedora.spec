@@ -1,6 +1,6 @@
 # Known to work for:
+# - Fedora 24 (i386, x86_64)
 # - Fedora 23 (i386, x86_64)
-# - Fedora 22 (i386, x86_64)
 
 Name: regina-normal
 Summary: Mathematical software for low-dimensional topology
@@ -10,6 +10,7 @@ License: GPL
 # I wish there were a more sane group (like Applications/Mathematics).
 Group: Applications/Engineering
 Source: http://prdownloads.sourceforge.net/regina/regina-%{version}.tar.gz
+Patch0: regina-5.0.patch
 URL: http://regina.sourceforge.net/
 Packager: Ben Burton <bab@debian.org>
 BuildRoot: %{_tmppath}/%{name}-buildroot
@@ -56,6 +57,7 @@ and a low-level C++ programming interface.
 
 %prep
 %setup -n regina-%{version}
+%patch0 -p1
 
 %build
 mkdir -p %{_target_platform}
