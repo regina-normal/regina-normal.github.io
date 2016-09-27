@@ -134,7 +134,7 @@ between different RPM-based distributions).
     <em>libboost_iostreams</em>, <em>libboost_python</em> and
     <em>libboost_regex</em></td>
     <td class="req">Multiple components</td>
-    <td>Preferably <a href="#boost">not&nbsp;1.60</a></td>
+    <td>&ge; 1.55</td>
     <td>libboost-iostreams-dev, libboost-python-dev &amp; libboost-regex-dev (DEB)<br>boost-devel (RPM)
     </td></tr>
 <tr><td class="reqfirst">Qt&nbsp;5 libraries, including the
@@ -187,19 +187,6 @@ between different RPM-based distributions).
     cppunit-devel / libcppunit-devel (RPM)
     </td></tr>
 </table>
-
-<h3><a name="boost">Errors in Boost 1.60</a></h3>
-<p>
-If you are using Boost&nbsp;1.60, you may encounter errors at runtime when
-using Regina's python interface.  These errors will be of the form
-&ldquo;no to_python (by-value) converter for C++ type &hellip;&rdquo;.
-This is a <a href="https://github.com/boostorg/python/issues/56">known
-issue</a> with Boost&nbsp;1.60, and does not occur in other Boost versions.
-<p>
-The next release of Regina (likely Regina&nbsp;5.1)
-will have a patch to work around this problem.  In the meantime, you can apply
-<a href="files/regina-5.0.patch">this patch</a> to your
-Regina&nbsp;5.0 sources, which should fix the issue.
 
 <p class="return">
 <a href="index.html"><img src="regina.svg" alt="Back to main page ..."
