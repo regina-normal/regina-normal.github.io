@@ -262,15 +262,6 @@
                    </Component>
                  </Directory>
                 </Directory>
-
-                <Directory Id='PKGDATADIR_pylib' Name='pylib'>
-                  <Component Id='PythonLibs'
-                   Guid='D15EEF3C-ED2A-4F24-A30F-87F942BB7589'>
-                    <File Name='loadCensus.py' KeyPath='yes'/>
-                    <File Name='packetType.py'/>
-                    <File Name='README.txt' Id='pylib_README'/>
-                  </Component>
-                </Directory>
               </Directory>
             </Directory>
           </Directory>
