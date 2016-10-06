@@ -329,7 +329,7 @@ TEMP=$(getopt -n "$PROGNAME" -o 'p:m:e:k:Sa:t:r:h' \
 	      -l 'noconf,no-conf,help,version' \
 	      -- "$@") || (rc=$?; usage >&2; exit $rc)
 
-eval set -- "$TEMP"
+eval set "$TEMP"
 
 while true
 do
