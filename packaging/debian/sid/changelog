@@ -1,3 +1,9 @@
+regina-normal (5.0-2) unstable; urgency=low
+
+  * Build with -O2 instead of -O3 on arm64, to avoid assembly errors.
+
+ -- Ben Burton <bab@debian.org>  Thu,  6 Oct 2016 14:17:53 +1000
+
 regina-normal (5.0-1) unstable; urgency=low
 
   * New upstream release.

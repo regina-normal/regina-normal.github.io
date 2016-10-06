@@ -14,6 +14,16 @@ ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
 	INSTALL_PROGRAM += -s
 endif
 
+ifeq ($(shell dpkg-architecture -qDEB_BUILD_ARCH),arm64)
+	# The arm64 build fails under -O3.
+	# The error is not dissimilar to that seen in #839249.
+	# As a stop-gap for now, just use -O2 instead.
+	arch_flags =  "-DCMAKE_C_FLAGS_RELEASE='-O2 -DNDEBUG'"
+	arch_flags += "-DCMAKE_CXX_FLAGS_RELEASE='-O2 -DNDEBUG'"
+else
+	arch_flags =
+endif
+
 # Find the default python version so we can pass it to ./configure.  This 
 # keeps things sane when multiple python*-dev packages are installed.
 pyver = $(subst python,,$(shell /usr/bin/pyversions --default))
@@ -25,7 +35,7 @@ ${build_dir}:
 
 	mkdir -p ${build_dir}
 	cd ${build_dir} && \
-		cmake $(CURDIR) \
+		cmake $(CURDIR) $(arch_flags) \
 		-DPACKAGE_NAME=regina-normal -DPACKAGING_MODE=1 \
 		$(DEB_CMAKE_CUSTOM_FLAGS) \
 		-DPYTHON_EXECUTABLE=/usr/bin/python${pyver} \
