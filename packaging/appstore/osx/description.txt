@@ -4,9 +4,6 @@ Have you encountered 3-manifolds and normal surfaces, or heard about the desktop
 
 Regina is a software package for 3-manifold and 4-manifold topologists, with a focus on triangulations, normal surfaces, and angle structures.  For 3-manifolds, it includes high-level tasks such as 3-sphere recognition, connected sum decomposition and Hakenness testing, comes with a rich database of census manifolds, and incorporates the SnapPea kernel for working with hyperbolic manifolds.  For 4-manifolds, Regina offers several combinatorial and algebraic tools, as well as support for normal hypersurfaces.
 
-This Mac App Store version is almost identical to the Mac app that you can download from regina.sourceforge.net.  The main advantage is that both this and the iPad version will support iCloud in a future release (which is not possible for externally downloaded apps).  There are some minor disadvantages of this version:
-
-• it does not support syntax highlighting for Python scripts;
-• it is sandboxed, which is excellent for security but which limits your ability to read and write arbitrary files from Python.
+This Mac App Store version is almost identical to the Mac app that you can download from regina.sourceforge.net.  The main advantage is that both this and the iPad version may support iCloud in a future release (which is not possible for externally downloaded apps).  The main disadvantage is that it is sandboxed, which is excellent for security but which limits your ability to read and write arbitrary files from Python.
 
 If you have any questions, requests or feedback then please contact Ben or the Regina development team – see http://regina.sourceforge.net/ for details.

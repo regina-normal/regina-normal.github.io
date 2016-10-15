@@ -1,0 +1,1 @@
+Restores syntax highlighting for script packets, which was disabled in the first Mac App Store version.
