@@ -162,16 +162,15 @@ There are some minor differences between the two versions.
 The Mac App Store version:
 <ul>
 <li>will notify you of upgrades automatically;</li>
-<li>will support iCloud in a future release
+<li>may support iCloud in a future release
 (which is not possible for a direct download);</li>
-<li>does not support syntax highlighting for
-script packets (due to a license incompatibility);
 <li>is sandboxed, which limits file access through Python (see below).</li>
 </ul>
 <p>
 Sandboxing is a security measure that comes with the Mac App Store:
 it ensures that apps only access files
-that users choose themselves through the graphical user interface.
+that users themselves choose through the MacOS graphical file dialogs
+(<i>Open</i>, <i>Save</i>, etc.).
 For Regina, this means that when you open a Python console through the
 graphical user interface, you cannot access arbitrary files using
 Python commands.  If this causes you difficulties, then remember:
