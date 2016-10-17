@@ -1,1 +1,1 @@
-Restores syntax highlighting for script packets, which was disabled in the first Mac App Store release of Regina.
+Restores syntax highlighting for script packets, which was disabled in the first Mac App Store release of Regina.  Also removes Regina's ancient "Python libraries" facility (which will likewise be removed from other platforms in Regina 5.1).
