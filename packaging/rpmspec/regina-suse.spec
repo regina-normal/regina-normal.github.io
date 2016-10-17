@@ -4,7 +4,7 @@
 
 Name: regina-normal
 Summary: Mathematical software for low-dimensional topology
-Version: 5.0
+Version: 5.1
 Release: 1.%{_vendor}
 License: GPL
 # I wish there were a more sane group (like Applications/Mathematics).
@@ -30,7 +30,6 @@ BuildRequires: graphviz-devel
 BuildRequires: libbz2-devel
 BuildRequires: libqt5-qtbase-devel
 BuildRequires: libqt5-qtsvg-devel
-BuildRequires: libsource-highlight-devel
 BuildRequires: libstdc++-devel
 BuildRequires: libtokyocabinet-devel
 BuildRequires: libxml2-devel
@@ -68,10 +67,7 @@ mkdir build
 cd build
 export LIB_SUFFIX=$(echo %_lib | cut -b4-)
 
-# We can't use packaging mode for SuSE 11.x, since libsource-highlight is missing.
-cmake -DDISABLE_RPATH=1 -DCMAKE_INSTALL_PREFIX=/usr -DLIB_SUFFIX=$LIB_SUFFIX -DDISABLE_MPI=1 \
-  -DPACKAGING_MODE=1 \
-  ..
+cmake -DDISABLE_RPATH=1 -DCMAKE_INSTALL_PREFIX=/usr -DLIB_SUFFIX=$LIB_SUFFIX -DDISABLE_MPI=1 -DPACKAGING_MODE=1 ..
 
 %make_jobs
 
@@ -129,6 +125,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/*/*
 
 %changelog
+* Tue Sep 20 2016 Ben Burton <bab@debian.org> 5.1
+- New upstream release.
+
 * Tue Sep 20 2016 Ben Burton <bab@debian.org> 5.0
 - New upstream release.
 

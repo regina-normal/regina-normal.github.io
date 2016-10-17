@@ -17,7 +17,7 @@ Upstream Authors:
 
 Copyright:
 
-  Regina - Software for 3-manifolds, 4-manifolds and normal surface theory
+  Regina - Software for low-dimensional topology
   Copyright (c) 1999-2016, The Regina development team
 
 
@@ -27,7 +27,7 @@ Copyright:
   you would any other paper that you use.  A suggested form of reference is:
 
     Benjamin A. Burton, Ryan Budney, William Pettersson, et al.,
-    "Regina: Software for 3-manifold topology and normal surface theory",
+    "Regina: Software for low-dimensional topology",
     http://regina.sourceforge.net/, 1999-2016.
 
 
@@ -99,10 +99,9 @@ Copyright:
 
   SYNTAX HIGHLIGHTING:
 
-  Regina includes code from Source-highlight-qt and language definitions
-  from GNU Source-highlight, which it uses to highlight Python scripts.
-  Both projects are by Lorenzo Bettini and others, and are distributed
-  under the terms of the GNU General Public License, version 3.
+  Regina's graphical user interface includes the PythonSyntaxHighlighter class
+  by Frankie Simon and others, which it uses for highlighting Python scripts.
+  This class is distributed under the X11 license.
 
 
   ICONS:

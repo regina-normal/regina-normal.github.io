@@ -19,7 +19,6 @@ builddep="
   doxygen
   gmp5
   libgraphviz238-nox-dev
-  libsource-highlight4
   libxslt-bin
   pkgconfig
   popt
@@ -97,15 +96,6 @@ if [ ! -e "$bplib" ]; then
   exit 1
 elif (otool -L "$bplib" | grep -i python.framework > /dev/null); then
   echo "Your boost.python is not patched to avoid linking against python."
-  exit 1
-fi
-
-shlib=/sw/lib/libsource-highlight.dylib
-if [ ! -e "$shlib" ]; then
-  echo "Your source-highlight library is missing."
-  exit 1
-elif (! otool -L "$shlib" | grep boost.1.58 > /dev/null); then
-  echo "Your source-highlight is not patched to use boost 1.58."
   exit 1
 fi
 

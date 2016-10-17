@@ -4,13 +4,12 @@
 
 Name: regina-normal
 Summary: Mathematical software for low-dimensional topology
-Version: 5.0
+Version: 5.1
 Release: 1.%{_vendor}
 License: GPL
 # I wish there were a more sane group (like Applications/Mathematics).
 Group: Applications/Engineering
 Source: http://prdownloads.sourceforge.net/regina/regina-%{version}.tar.gz
-Patch0: regina-5.0.patch
 URL: http://regina.sourceforge.net/
 Packager: Ben Burton <bab@debian.org>
 BuildRoot: %{_tmppath}/%{name}-buildroot
@@ -38,7 +37,6 @@ BuildRequires: python-devel
 BuildRequires: qt5-qtbase-devel
 BuildRequires: qt5-qtsvg-devel
 BuildRequires: shared-mime-info
-BuildRequires: source-highlight-devel
 BuildRequires: tokyocabinet-devel
 BuildRequires: zlib-devel
 
@@ -125,6 +123,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/*/*
 
 %changelog
+* Tue Sep 20 2016 Ben Burton <bab@debian.org> 5.1
+- New upstream release.
+
 * Tue Sep 20 2016 Ben Burton <bab@debian.org> 5.0
 - New upstream release.
 

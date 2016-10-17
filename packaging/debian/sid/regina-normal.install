@@ -3,7 +3,7 @@ usr/bin/reg*
 usr/bin/sig*
 usr/bin/tricensus
 usr/bin/trisetcmp
-usr/lib/libregina-engine.so.5.0
+usr/lib/libregina-engine.so.5.1
 usr/lib/python2.7/dist-packages/regina/__init__.py
 usr/lib/python2.7/dist-packages/regina/engine.so
 usr/share/applications

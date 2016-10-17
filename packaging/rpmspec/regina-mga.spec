@@ -3,7 +3,7 @@
 
 Name: regina-normal
 Summary: Mathematical software for low-dimensional topology
-Version: 5.0
+Version: 5.1
 Release: 1.%{_vendor}
 License: GPL
 # I wish there were a more sane group (like Applications/Mathematics).
@@ -35,7 +35,6 @@ BuildRequires: pkgconfig
 BuildRequires: popt-devel
 BuildRequires: python-devel
 BuildRequires: shared-mime-info
-BuildRequires: source-highlight-devel
 BuildRequires: tokyocabinet-devel
 BuildRequires: xsltproc
 BuildRequires: zlib-devel
@@ -117,6 +116,9 @@ rm -rf %{buildroot}
 %{_mandir}/*/*
 
 %changelog
+* Tue Sep 20 2016 Ben Burton <bab@debian.org> 5.1
+- New upstream release.
+
 * Tue Sep 20 2016 Ben Burton <bab@debian.org> 5.0
 - New upstream release.
 

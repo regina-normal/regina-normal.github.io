@@ -49,12 +49,6 @@ NOTE: To put gcc on the path, you need to run the mingw32 shell, not msys2.
 HAND-ROLLED DEPENDENCIES
 ------------------------
 
-To build source-highlight (verified for v3.1.8):
-
-  (download from gnu.org/software/src-highlite/)
-  ./configure --prefix=/home/bab/software --with-boost-libdir=/mingw32/lib
-  make ; make install
-
 To build qdbm, which replaces tokyocabinet for MinGW (verified for v1.8.78):
 
   (download from fallabs.com/qdbm/)
@@ -125,7 +119,7 @@ Update the WiX source file:
 Build the installer:
 
   candle Regina.wxs WixUI_Regina.wxs
-  light -ext WixUIExtension -o 'Regina 5.0.msi' Regina.wixobj WixUI_Regina.wixobj
+  light -ext WixUIExtension -o 'Regina 5.1.msi' Regina.wixobj WixUI_Regina.wixobj
 
 To package the installer as an ISO image for VirtualBox:
 

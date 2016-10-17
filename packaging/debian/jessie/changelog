@@ -1,4 +1,12 @@
+regina-normal (5.1-1~jessie.1) jessie; urgency=low
+
+  * New upstream release, packaged for jessie.
+  * Removed build-depends on libsource-highlight-dev, which is no longer used.
+
+ -- Ben Burton <bab@debian.org>  Tue, 20 Sep 2016 10:03:24 +1000
+
 regina-normal (5.0-1~jessie.1) jessie; urgency=low
+
 
   * New upstream release, packaged for jessie.
   * New build-depends: switched from Qt4 to Qt5, and also added

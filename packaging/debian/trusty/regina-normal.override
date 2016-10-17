@@ -2,7 +2,7 @@
 regina-normal: unusual-interpreter usr/share/regina-normal/internal/scripts/runscript.py #!/bin/false
 
 # Regina does not provide a standalone library package.
-regina-normal: package-name-doesnt-match-sonames libregina-engine5.0
+regina-normal: package-name-doesnt-match-sonames libregina-engine5.1
 
 # The graphviz plugins are in a non-standard directory, so rpath is required.
 regina-normal: binary-or-shlib-defines-rpath usr/bin/regina-gui /usr/lib/graphviz
