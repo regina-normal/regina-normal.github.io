@@ -1,25 +1,6 @@
-regina-normal (5.1-1) unstable; urgency=low
+regina-normal (5.0-1ubuntu1~yakkety1) yakkety; urgency=low
 
-  * New upstream release.
-  * Removed build-depends on libsource-highlight-dev, which is no longer used.
-
- -- Ben Burton <bab@debian.org>  Tue, 20 Sep 2016 10:03:24 +1000
-
-regina-normal (5.0-3) unstable; urgency=low
-
-  * Updated the debian watch file.
-
- -- Ben Burton <bab@debian.org>  Thu,  6 Oct 2016 14:17:53 +1000
-
-regina-normal (5.0-2) unstable; urgency=low
-
-  * Build with -O2 instead of -O3 on arm64, to avoid assembly errors.
-
- -- Ben Burton <bab@debian.org>  Thu,  6 Oct 2016 14:17:53 +1000
-
-regina-normal (5.0-1) unstable; urgency=low
-
-  * New upstream release.
+  * New upstream release, packaged for yakkety.
   * New build-depends: switched from Qt4 to Qt5, and also added
     libboost-iostreams-dev and libgraphviz-dev.
   * Added debian/watch (thanks to bartm).

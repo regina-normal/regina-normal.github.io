@@ -1,0 +1,5 @@
+?package(regina-normal):needs="text"\
+  section="Applications/Science/Mathematics"\
+  title="Regina Python Session"\
+  command="/usr/bin/regina-python"\
+  icon="/usr/share/pixmaps/regina-normal.xpm"
