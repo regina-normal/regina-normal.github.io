@@ -1,0 +1,2 @@
+version=4
+http://sf.net/regina/ regina-(\d\S*)\.(?:tar\.xz|txz|tar\.bz2|tbz2|tar\.gz|tgz)
