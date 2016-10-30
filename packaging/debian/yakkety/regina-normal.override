@@ -1,10 +1,8 @@
 # These scripts are not meant to be run.
 regina-normal: unusual-interpreter usr/share/regina-normal/internal/scripts/runscript.py #!/bin/false
-regina-normal: unusual-interpreter usr/share/regina-normal/pylib/loadCensus.py #!/bin/false
-regina-normal: unusual-interpreter usr/share/regina-normal/pylib/packetType.py #!/bin/false
 
 # Regina does not provide a standalone library package.
-regina-normal: package-name-doesnt-match-sonames libregina-engine5.0
+regina-normal: package-name-doesnt-match-sonames libregina-engine5.1
 
 # The graphviz plugins are in a non-standard directory, so rpath is required.
 regina-normal: binary-or-shlib-defines-rpath usr/bin/regina-gui /usr/lib/graphviz

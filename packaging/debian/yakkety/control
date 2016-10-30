@@ -16,7 +16,6 @@ Build-Depends:
     libgraphviz-dev,
     libpopt-dev,
     libqt5svg5-dev,
-    libsource-highlight-dev,
     libtokyocabinet-dev,
     libxml2-dev,
     mpi-default-dev,
@@ -37,7 +36,7 @@ Depends:
     ${perl:Depends},
     ${python:Depends},
     ${misc:Depends},
-    regina-normal-doc (>= 5.0-0)
+    regina-normal-doc (>= 5.1-0)
 Recommends: gap, evince | pdf-viewer
 Suggests: regina-normal-dev, regina-normal-mpi
 Description: mathematical software for low-dimensional topology
