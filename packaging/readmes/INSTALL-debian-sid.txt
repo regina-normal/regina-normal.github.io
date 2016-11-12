@@ -1,8 +1,0 @@
-Regina for Debian:  Sid (Unstable)
-----------------------------------
-
-To install Regina under Sid (the Debian unstable release), see:
-
-http://regina.sourceforge.net/install/debian-sid.html
-
-- Ben Burton <bab@debian.org>, Sun, 31 Aug 2014 02:13:26 +1000

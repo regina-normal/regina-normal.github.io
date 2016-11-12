@@ -1,14 +1,8 @@
-Auxiliary files for Regina
---------------------------
+Regina Web Directory
+--------------------
 
-This directory contains files for use by the project maintainers, such
-as packaging scripts and website material.
+This directory contains the sources for the website
+http://regina.sourceforge.net/.
 
-Users should not need to check out these files.  Instead:
+Only the original software author(s) should need to use this directory.
 
-* For software downloads and data files, see http://regina.sourceforge.net/ .
-
-* For the bleeding-edge source code, check out the main repository at
-  http://sourceforge.net/p/regina/git/ .
-
- -- Ben Burton <bab@debian.org>, Sat,  5 Oct 2013 14:14:52 -0400

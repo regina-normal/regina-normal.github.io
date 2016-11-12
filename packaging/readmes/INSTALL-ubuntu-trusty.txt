@@ -1,8 +1,0 @@
-Regina for Ubuntu:  Trusty (Ubuntu 14.04 LTS)
----------------------------------------------
-
-To install Regina under Trusty Tahr (the Ubuntu 14.04 LTS release), see:
-
-http://regina.sourceforge.net/install/ubuntu-trusty.html
-
-- Ben Burton <bab@debian.org>, Sun, 31 Aug 2014 02:13:26 +1000

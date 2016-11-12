@@ -1,2 +1,0 @@
-#!/bin/sh
-~/src/git-graph/git-graph.rb regina-git-std | dot -Tpng /dev/stdin

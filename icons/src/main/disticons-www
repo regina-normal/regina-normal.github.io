@@ -1,4 +1,0 @@
-#!/bin/bash
-set -e
-
-cp regina.svg title.svg ../../../www
