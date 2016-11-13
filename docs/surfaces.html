@@ -1,5 +1,5 @@
-<html><head><title>Chapter�5.�Normal Surfaces and Hypersurfaces</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina Handbook"><link rel="up" href="index.html" title="The Regina Handbook"><link rel="prev" href="snappea-analysis.html" title="Analysis and Modification"><link rel="next" href="surfaces-analysis.html" title="Analysis"><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2">�</td></tr><tr id="logo"><td valign="top"><a href="http://regina.sourceforge.net/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Normal Surfaces and Hypersurfaces</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="snappea-analysis.html">Prev</a></td><td align="center" class="navCenter" width="34%">�</td><td align="right" class="navRight" width="33%">�
-		      <a accesskey="n" href="surfaces-analysis.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="surfaces"></a>Chapter�5.�Normal Surfaces and Hypersurfaces</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="surfaces.html#surfaces-creation">Enumerating Normal Surfaces and Hypersurfaces</a></span></dt><dt><span class="sect1"><a href="surfaces-analysis.html">Analysis</a></span></dt><dd><dl><dt><span class="sect2"><a href="surfaces-analysis.html#surfaces-summary">Summary of (Hyper)surfaces</a></span></dt><dt><span class="sect2"><a href="surfaces-analysis.html#surfaces-coords">Details of Individual (Hyper)surfaces</a></span></dt><dt><span class="sect2"><a href="surfaces-analysis.html#surfaces-viewmatching">Original Matching Equations</a></span></dt><dt><span class="sect2"><a href="surfaces-analysis.html#surfaces-compat">Compatibility Between (Hyper)surfaces</a></span></dt><dt><span class="sect2"><a href="surfaces-analysis.html#idp140324131803712">Crushing and Cutting</a></span></dt><dt><span class="sect2"><a href="surfaces-analysis.html#hypersurfaces-triangulate">Triangulating Hypersurfaces</a></span></dt></dl></dd><dt><span class="sect1"><a href="surfaces-filtering.html">Filtering Surfaces (3-D)</a></span></dt><dd><dl><dt><span class="sect2"><a href="surfaces-filtering.html#surfaces-filtercreate">Creating Filters</a></span></dt><dt><span class="sect2"><a href="surfaces-filtering.html#surfaces-filterprop">Filtering by Surface Properties</a></span></dt><dt><span class="sect2"><a href="surfaces-filtering.html#surfaces-filtercomb">Combining Several Filters</a></span></dt></dl></dd></dl></div><p>
+<html><head><title>Chapter 5. Normal Surfaces and Hypersurfaces</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina Handbook"><link rel="up" href="index.html" title="The Regina Handbook"><link rel="prev" href="snappea-analysis.html" title="Analysis and Modification"><link rel="next" href="surfaces-analysis.html" title="Analysis"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina.sourceforge.net/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Normal Surfaces and Hypersurfaces</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="snappea-analysis.html">Prev</a></td><td align="center" class="navCenter" width="34%"> </td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="surfaces-analysis.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="surfaces"></a>Chapter 5. Normal Surfaces and Hypersurfaces</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="surfaces.html#surfaces-creation">Enumerating Normal Surfaces and Hypersurfaces</a></span></dt><dt><span class="sect1"><a href="surfaces-analysis.html">Analysis</a></span></dt><dd><dl><dt><span class="sect2"><a href="surfaces-analysis.html#surfaces-summary">Summary of (Hyper)surfaces</a></span></dt><dt><span class="sect2"><a href="surfaces-analysis.html#surfaces-coords">Details of Individual (Hyper)surfaces</a></span></dt><dt><span class="sect2"><a href="surfaces-analysis.html#surfaces-viewmatching">Original Matching Equations</a></span></dt><dt><span class="sect2"><a href="surfaces-analysis.html#surfaces-compat">Compatibility Between (Hyper)surfaces</a></span></dt><dt><span class="sect2"><a href="surfaces-analysis.html#idp140273543417272">Crushing and Cutting</a></span></dt><dt><span class="sect2"><a href="surfaces-analysis.html#hypersurfaces-triangulate">Triangulating Hypersurfaces</a></span></dt></dl></dd><dt><span class="sect1"><a href="surfaces-filtering.html">Filtering Surfaces (3-D)</a></span></dt><dd><dl><dt><span class="sect2"><a href="surfaces-filtering.html#surfaces-filtercreate">Creating Filters</a></span></dt><dt><span class="sect2"><a href="surfaces-filtering.html#surfaces-filterprop">Filtering by Surface Properties</a></span></dt><dt><span class="sect2"><a href="surfaces-filtering.html#surfaces-filtercomb">Combining Several Filters</a></span></dt></dl></dd></dl></div><p>
   In this chapter we deal with
   <em class="firstterm">normal surfaces</em> within 3-manifold triangulations, and
   <em class="firstterm">normal hypersurfaces</em> within 4-manifold triangulations.
@@ -12,7 +12,7 @@
   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>T</code></em></span> in a (possibly empty) collection of
   triangles and/or quadrilaterals, where:
   </p><div class="itemizedlist"><ul type="disc"><li><p>each <em class="firstterm">triangle</em>
-    &#8220;truncates&#8221; one vertex of the tetrahedron, separating it
+    “truncates” one vertex of the tetrahedron, separating it
     from the opposite triangle;
    </p></li><li><p>each <em class="firstterm">quadrilateral</em>
     separates two opposite edges of the tetrahedron.
@@ -24,10 +24,10 @@
   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>T</code></em></span> in a (possibly empty) collection of
   tetrahedra and/or prisms, where:
   </p><div class="itemizedlist"><ul type="disc"><li><p>each <em class="firstterm">tetrahedron</em>
-    &#8220;truncates&#8221; one vertex of the pentachoron, separating it
+    “truncates” one vertex of the pentachoron, separating it
     from the opposite 3-face;
    </p></li><li><p>each <em class="firstterm">prism</em>
-    &#8220;truncates&#8221; one edge of the pentachoron, separating it
+    “truncates” one edge of the pentachoron, separating it
     from the opposite 2-face.
    </p></li></ul></div><p>
  </p><p>
@@ -37,7 +37,7 @@
   3-manifolds, <span class="application">Regina</span> can also work with
   <em class="firstterm">almost normal surfaces</em>
   (which are like normal surfaces but with an extra
-  &#8220;exceptional disc&#8221;),
+  “exceptional disc”),
   and <em class="firstterm">spun-normal surfaces</em> (with infinitely
   many triangles spinning out towards the vertices).
  </p><p>
@@ -63,15 +63,15 @@
    corresponding 4-manifold triangulation.
    <span class="application">Regina</span> will <a href="packet.html#packet-uneditable" title="Uneditable Packets">not let you modify</a>
    a triangulation that has any associated normal surfaces or
-   hypersurfaces (or <a href="angles.html" title="Chapter�6.�Angle Structures">angle structures</a>),
+   hypersurfaces (or <a href="angles.html" title="Chapter 6. Angle Structures">angle structures</a>),
    and the triangulation will be marked with a padlock to remind you of this.
   </p><p>
    <span class="inlinemediaobject"><img src="hypersurfaces-intree.png"></span>
   </p><p>
    To create a new normal surface or hypersurface list, select either
-   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Packet Tree</span></span>&#8594;<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">New Normal Surface List (3-D)</span></span>
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Packet Tree</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">New Normal Surface List (3-D)</span></span>
    or
-   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Packet Tree</span></span>&#8594;<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">New Normal Hypersurface List (4-D)</span></span>
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Packet Tree</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">New Normal Hypersurface List (4-D)</span></span>
    from the menu (or press the corresponding toolbar button).
   </p><p>
    <span class="inlinemediaobject"><img src="menu-newsurfaces.png"></span>
@@ -166,7 +166,7 @@
            other than multiples of itself.
           </p><p>
            <span class="application">Regina</span> will only compute one (hyper)surface for each
-           extreme ray&#8212;specifically, the smallest integer vector along
+           extreme ray—specifically, the smallest integer vector along
            each ray.  This means that the coordinates of each vertex
            (hyper)surface will have greatest common divisor one.
           </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Fundamental (hyper)surfaces</span></span></dt><dd><p>
@@ -185,7 +185,7 @@
        <span class="emphasis"><em>immersed</em></span>
        and <span class="emphasis"><em>singular</em></span> (hyper)surfaces.
        <span class="application">Regina</span> currently offers only very basic support for such
-       (hyper)surfaces&#8212;it will not even tell you which are immersed
+       (hyper)surfaces—it will not even tell you which are immersed
        and which are singular; moreover, the enumeration process could
        become <span class="emphasis"><em>much</em></span> slower.
       </p></dd></dl></div><p>
@@ -207,8 +207,8 @@
    or surfaces with no octagons at all.  The coordinate viewer makes it easy
    <a href="surfaces-analysis.html#surfaces-propoctagon">to spot which is which</a>.
   </p></div><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>
-    If you have a data file from <span class="application">Regina</span>�4.5.1 or earlier,
+    If you have a data file from <span class="application">Regina</span> 4.5.1 or earlier,
     it will not show almost normal surfaces with more than one octagon.
     See the discussion on <a href="surfaces-analysis.html#surfaces-deflegacyan">legacy
     coordinates</a> for details.
-   </p></div></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="snappea-analysis.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="surfaces-analysis.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">Analysis and Modification�</td><td width="34%" align="center" class="navCenter"><a href="index.html">Up</a></td><td width="33%" align="right" class="navRight">�Analysis</td></tr></table></div></body></html>
+   </p></div></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="snappea-analysis.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="surfaces-analysis.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">Analysis and Modification </td><td width="34%" align="center" class="navCenter"><a href="index.html">Up</a></td><td width="33%" align="right" class="navRight"> Analysis</td></tr></table></div></body></html>

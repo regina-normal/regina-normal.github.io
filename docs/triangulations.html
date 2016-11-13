@@ -1,5 +1,5 @@
-<html><head><title>Chapter 3. Triangulations</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina Handbook"><link rel="up" href="index.html" title="The Regina Handbook"><link rel="prev" href="packet-operations.html" title="General Operations on Packets"><link rel="next" href="tri-analysis.html" title="Analysis"><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina.sourceforge.net/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Triangulations</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="packet-operations.html">Prev</a></td><td align="center" class="navCenter" width="34%"> </td><td align="right" class="navRight" width="33%"> 
-		      <a accesskey="n" href="tri-analysis.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="triangulations"></a>Chapter 3. Triangulations</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="triangulations.html#tri-creation">Creation</a></span></dt><dd><dl><dt><span class="sect2"><a href="triangulations.html#tri-new">New Triangulations</a></span></dt><dt><span class="sect2"><a href="triangulations.html#tri-imported">Importing Triangulations</a></span></dt><dt><span class="sect2"><a href="triangulations.html#tri-census-creation">Creating a Census</a></span></dt></dl></dd><dt><span class="sect1"><a href="tri-analysis.html">Analysis</a></span></dt><dd><dl><dt><span class="sect2"><a href="tri-analysis.html#tri-identify">Identifying the Manifold (2-D and 3-D)</a></span></dt><dt><span class="sect2"><a href="tri-analysis.html#tri-basicprops">Validity, Orientability and Other Basic Properties (All Dimensions)</a></span></dt><dt><span class="sect2"><a href="tri-analysis.html#tri-viewgluings">Viewing Facet Gluings (All Dimensions)</a></span></dt><dt><span class="sect2"><a href="tri-analysis.html#tri-skeleton">Skeletal Information (All Dimensions)</a></span></dt><dt><span class="sect2"><a href="tri-analysis.html#tri-algebra">Algebraic Invariants (3-D and 4-D)</a></span></dt><dt><span class="sect2"><a href="tri-analysis.html#tri-composition">Combinatorial Composition (3-D)</a></span></dt><dt><span class="sect2"><a href="tri-analysis.html#tri-recognition">High-Level Recognition Routines (3-D)</a></span></dt><dt><span class="sect2"><a href="tri-analysis.html#tri-snappea"><span class="application">SnapPea</span> Calculations (3-D)</a></span></dt><dt><span class="sect2"><a href="tri-analysis.html#tri-decomposition">Decomposition (All Dimensions)</a></span></dt><dt><span class="sect2"><a href="tri-analysis.html#tri-vertexlinks">Triangulating Vertex Links (3-D and 4-D)</a></span></dt><dt><span class="sect2"><a href="tri-analysis.html#tri-tribdry">Triangulating Boundary Components (4-D)</a></span></dt></dl></dd><dt><span class="sect1"><a href="tri-modification.html">Modification</a></span></dt><dd><dl><dt><span class="sect2"><a href="tri-modification.html#tri-editgluings">Editing Gluings (All Dimensions)</a></span></dt><dt><span class="sect2"><a href="tri-modification.html#tri-simplification">Automatic Simplification (3-D and 4-D)</a></span></dt><dt><span class="sect2"><a href="tri-modification.html#tri-elementarymove">Manual Simplification: Elementary Moves (3-D and 4-D)</a></span></dt><dt><span class="sect2"><a href="tri-modification.html#tri-make0eff">0-Efficiency (3-D)</a></span></dt><dt><span class="sect2"><a href="tri-modification.html#tri-real-ideal">Switching Between Real and Ideal (3-D and 4-D)</a></span></dt><dt><span class="sect2"><a href="tri-modification.html#tri-barycentric">Subdivision (3-D and 4-D)</a></span></dt><dt><span class="sect2"><a href="tri-modification.html#tri-orient">Orienting Triangulations and Double Covers (All Dimensions)</a></span></dt><dt><span class="sect2"><a href="tri-modification.html#tri-puncturedrill">Puncturing and Drilling (3-D)</a></span></dt><dt><span class="sect2"><a href="tri-modification.html#tri-connsumwith">Building Connected Sums (3-D)</a></span></dt><dt><span class="sect2"><a href="tri-modification.html#tri-cutcrush">Cutting Along and Crushing Normal Surfaces (3-D)</a></span></dt></dl></dd></dl></div><p>
+<html><head><title>ChapterÂ 3.Â Triangulations</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina Handbook"><link rel="up" href="index.html" title="The Regina Handbook"><link rel="prev" href="packet-operations.html" title="General Operations on Packets"><link rel="next" href="tri-analysis.html" title="Analysis"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2">Â </td></tr><tr id="logo"><td valign="top"><a href="http://regina.sourceforge.net/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Triangulations</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="packet-operations.html">Prev</a></td><td align="center" class="navCenter" width="34%">Â </td><td align="right" class="navRight" width="33%">Â 
+		      <a accesskey="n" href="tri-analysis.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="triangulations"></a>ChapterÂ 3.Â Triangulations</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="triangulations.html#tri-creation">Creation</a></span></dt><dd><dl><dt><span class="sect2"><a href="triangulations.html#tri-new">New Triangulations</a></span></dt><dt><span class="sect2"><a href="triangulations.html#tri-imported">Importing Triangulations</a></span></dt><dt><span class="sect2"><a href="triangulations.html#tri-census-creation">Creating a Census</a></span></dt></dl></dd><dt><span class="sect1"><a href="tri-analysis.html">Analysis</a></span></dt><dd><dl><dt><span class="sect2"><a href="tri-analysis.html#tri-identify">Identifying the Manifold (2-D and 3-D)</a></span></dt><dt><span class="sect2"><a href="tri-analysis.html#tri-basicprops">Validity, Orientability and Other Basic Properties (All Dimensions)</a></span></dt><dt><span class="sect2"><a href="tri-analysis.html#tri-viewgluings">Viewing Facet Gluings (All Dimensions)</a></span></dt><dt><span class="sect2"><a href="tri-analysis.html#tri-skeleton">Skeletal Information (All Dimensions)</a></span></dt><dt><span class="sect2"><a href="tri-analysis.html#tri-algebra">Algebraic Invariants (3-D and 4-D)</a></span></dt><dt><span class="sect2"><a href="tri-analysis.html#tri-composition">Combinatorial Composition (3-D)</a></span></dt><dt><span class="sect2"><a href="tri-analysis.html#tri-recognition">High-Level Recognition Routines (3-D)</a></span></dt><dt><span class="sect2"><a href="tri-analysis.html#tri-snappea"><span class="application">SnapPea</span> Calculations (3-D)</a></span></dt><dt><span class="sect2"><a href="tri-analysis.html#tri-decomposition">Decomposition (All Dimensions)</a></span></dt><dt><span class="sect2"><a href="tri-analysis.html#tri-vertexlinks">Triangulating Vertex Links (3-D and 4-D)</a></span></dt><dt><span class="sect2"><a href="tri-analysis.html#tri-tribdry">Triangulating Boundary Components (4-D)</a></span></dt></dl></dd><dt><span class="sect1"><a href="tri-modification.html">Modification</a></span></dt><dd><dl><dt><span class="sect2"><a href="tri-modification.html#tri-editgluings">Editing Gluings (All Dimensions)</a></span></dt><dt><span class="sect2"><a href="tri-modification.html#tri-simplification">Automatic Simplification (3-D and 4-D)</a></span></dt><dt><span class="sect2"><a href="tri-modification.html#tri-elementarymove">Manual Simplification: Elementary Moves (3-D and 4-D)</a></span></dt><dt><span class="sect2"><a href="tri-modification.html#tri-make0eff">0-Efficiency (3-D)</a></span></dt><dt><span class="sect2"><a href="tri-modification.html#tri-real-ideal">Switching Between Real and Ideal (3-D and 4-D)</a></span></dt><dt><span class="sect2"><a href="tri-modification.html#tri-barycentric">Subdivision (3-D and 4-D)</a></span></dt><dt><span class="sect2"><a href="tri-modification.html#tri-orient">Orienting Triangulations and Double Covers (All Dimensions)</a></span></dt><dt><span class="sect2"><a href="tri-modification.html#tri-puncturedrill">Puncturing and Drilling (3-D)</a></span></dt><dt><span class="sect2"><a href="tri-modification.html#tri-connsumwith">Building Connected Sums (3-D)</a></span></dt><dt><span class="sect2"><a href="tri-modification.html#tri-cutcrush">Cutting Along and Crushing Normal Surfaces (3-D)</a></span></dt></dl></dd></dl></div><p>
   Manifolds in <span class="application">Regina</span> are typically represented by
   <em class="firstterm">triangulations</em>.
   A <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span>-manifold triangulation consists of a
@@ -24,24 +24,24 @@
   The downside of this flexibility is that, if you are not careful,
   your triangulation might not represent a <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span>-manifold at all.
   This is only a problem for dimensions
-  <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span> &#8805; 3,
+  <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span>Â â‰¥Â 3,
   and if it happens in dimensions
-  <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span> = 3 or 4 then <span class="application">Regina</span> will
+  <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span>Â =Â 3Â orÂ 4 then <span class="application">Regina</span> will
   <a href="tri-analysis.html#tri-basicprops" title="Validity, Orientability and Other Basic Properties (All Dimensions)">tell you about it</a> when you view
   the triangulation.
  </p><p>
   <span class="application">Regina</span> offers rich support for triangulations of dimensions 2, 3 and 4.
   However, it also offers more basic support for triangulations of
-  dimensions 5 &#8804; <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span> &#8804; 15.
+  dimensions 5Â â‰¤Â <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span>Â â‰¤Â 15.
   These higher-dimensional triangulations are not supported in the <span class="acronym">GUI</span>;
   instead you will
-  need to use either <a href="python.html" title="Chapter 8. Python Scripting"><span class="application">Python</span> scripting</a>
-  or <a href="compiling.html" title="Chapter 10. Compiling Regina Into Your Projects"><span class="application">C++</span> programming</a>.
+  need to use either <a href="python.html" title="ChapterÂ 8.Â Python Scripting"><span class="application">Python</span> scripting</a>
+  or <a href="compiling.html" title="ChapterÂ 10.Â Compiling Regina Into Your Projects"><span class="application">C++</span> programming</a>.
  </p><p>
   The remainder of this chapter talks through triangulations of
   dimensions 2, 3 and 4 only.
  </p><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>
-   If you are more familiar with <a href="http://www.math.uic.edu/t3m/SnapPy/" target="_top"><span class="application">SnapPea</span> / <span class="application">SnapPy</span></a>, you should be aware that
+   If you are more familiar with <a href="http://www.math.uic.edu/t3m/SnapPy/" target="_top"><span class="application">SnapPea</span>Â /Â <span class="application">SnapPy</span></a>, you should be aware that
    <span class="application">Regina</span> and <span class="application">SnapPy</span> are different programs with different aims,
    and (importantly) with different underlying data structures.
    <span class="application">SnapPy</span> stores information with 3-manifold triangulations
@@ -52,18 +52,18 @@
    If you wish to work with a file from <span class="application">SnapPea</span> or <span class="application">SnapPy</span> and you need to
    preserve <span class="application">SnapPy</span>'s extra information (such as fillings and
    peripheral curves), you should work with a
-   <a href="snappea.html" title="Chapter 4. SnapPea Triangulations"><span class="application">SnapPea</span> triangulation</a> instead.
+   <a href="snappea.html" title="ChapterÂ 4.Â SnapPea Triangulations"><span class="application">SnapPea</span> triangulation</a> instead.
    The trade-off is that,
    while you will still have access to much of <span class="application">Regina</span>'s functionality,
    you will lose some of <span class="application">Regina</span>'s fine-grained control over the
    triangulation (in particular, the ability to
    <a href="tri-modification.html" title="Modification">modify it</a>).
    See the chapter on
-   <a href="snappea.html" title="Chapter 4. SnapPea Triangulations"><span class="application">SnapPea</span> triangulations</a> for details.
+   <a href="snappea.html" title="ChapterÂ 4.Â SnapPea Triangulations"><span class="application">SnapPea</span> triangulations</a> for details.
   </p></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="tri-creation"></a>Creation</h2></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="tri-new"></a>New Triangulations</h3></div></div></div><p>
     The simplest way to create a triangulation is through the
     various
-    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Packet Tree</span></span>&#8594;<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">New Triangulation</span></span>
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Packet Tree</span></span>â†’<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">New Triangulation</span></span>
     menu items (or the corresponding toolbar buttons),
     which will create a new triangulation of the given dimension from scratch.
    </p><p>
@@ -86,7 +86,7 @@
      <span class="application">Regina</span> offers a selection of ready-made sample triangulations,
      which you can play with to discover how <span class="application">Regina</span> works.
      These include examples of knot complements and 2-knot complements,
-     well-known spaces such as the Poincaré homology sphere and
+     well-known spaces such as the PoincarÃ© homology sphere and
      the Weber-Seifert dodecahedral space, and many others.
      Simply select an example from the list provided and <span class="application">Regina</span> will
      build the corresponding triangulation for you.
@@ -116,8 +116,8 @@
      isomorphism signature: for 3-manifolds you can view it through the
      <a href="tri-analysis.html#tri-composition-isosig" title="Isomorphism Signature">triangulation composition</a>
      tab, and in other dimensions you can access it through
-     <a href="python.html" title="Chapter 8. Python Scripting"><span class="application">Python</span> scripting</a>
-     or <a href="compiling.html" title="Chapter 10. Compiling Regina Into Your Projects"><span class="application">C++</span> programming</a>.
+     <a href="python.html" title="ChapterÂ 8.Â Python Scripting"><span class="application">Python</span> scripting</a>
+     or <a href="compiling.html" title="ChapterÂ 10.Â Compiling Regina Into Your Projects"><span class="application">C++</span> programming</a>.
     </p><div class="caution" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Caution</h3><p>
      Isomorphism signatures are <span class="emphasis"><em>case sensitive</em></span>!
      Be sure that you are entering upper-case and lower-case correctly
@@ -135,9 +135,9 @@
      <span class="inlinemediaobject"><img src="newtri-nor.png"></span>
     </p><p>
      For orientable surfaces the genus represents the number of handles
-     (e.g., the torus has orientable genus 1), and for non-orientable
+     (e.g., the torus has orientable genusÂ 1), and for non-orientable
      surfaces the genus represents the number of crosscaps
-     (e.g., the Klein bottle has non-orientable genus 2).
+     (e.g., the Klein bottle has non-orientable genusÂ 2).
     </p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="tri-new-lens"></a>Layered Lens Space (3-manifolds only)</h4></div></div></div><p>
      This will create a layered lens space with the given parameters.
      This involves building two <a href="triangulations.html#tri-new-layered" title="Layered Solid Torus (3-manifolds only)">layered
@@ -168,8 +168,8 @@
      The parameters for the Seifert fibred space must be given as a sequence of pairs of
      integers (<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>a<sub>1</sub></code></em></span>,<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>b<sub>1</sub></code></em></span>) (<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>a<sub>2</sub></code></em></span>,<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>b<sub>2</sub></code></em></span>) ... (<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>a<sub><span class="replaceable"><em class="replaceable"><code>n</code></em></span></sub></code></em></span>,<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>b<sub><span class="replaceable"><em class="replaceable"><code>n</code></em></span></sub></code></em></span>), where each pair
      (<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>a<sub><span class="replaceable"><em class="replaceable"><code>i</code></em></span></sub></code></em></span>,<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>b<sub><span class="replaceable"><em class="replaceable"><code>i</code></em></span></sub></code></em></span>) describes a single exceptional fibre.
-     An example is (2,-1) (3,4) (5,-4), which represents the
-     Poincaré homology sphere.
+     An example is (2,-1)Â (3,4)Â (5,-4), which represents the
+     PoincarÃ© homology sphere.
      The two integers in each pair must be
      relatively prime, and none of <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>a<sub>1</sub></code></em></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>a<sub>2</sub></code></em></span>, ..., <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>a<sub><span class="replaceable"><em class="replaceable"><code>n</code></em></span></sub></code></em></span> may be zero.
     </p><p>
@@ -187,7 +187,7 @@
      and commas: any punctuation, or even just spaces, will suffice.
     </p></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="tri-new-layered"></a>Layered Solid Torus (3-manifolds only)</h4></div></div></div><p>
      This will create a layered solid torus with the given parameters.
-     This is a solid torus built from a two-triangle Möbius band by
+     This is a solid torus built from a two-triangle MÃ¶bius band by
      repeatedly adding new layers of tetrahedra onto the boundary.
      Layered solid tori were introduced by Jaco and Rubinstein
      [<a href="bibliography.html#bib-0-efficiency" title="[JR03]"><span class="abbrev">JR03</span></a>],
@@ -255,21 +255,21 @@
      triangulation in the drop-down box.  If your triangulation
      represents the 3-manifold <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>M</code></em></span>, then
      <span class="application">Regina</span> will build the 4-manifold
-     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>M</code></em></span> × I or
-     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>M</code></em></span> × S<sup>1</sup> respectively.
+     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>M</code></em></span>Â Ã—Â I or
+     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>M</code></em></span>Â Ã—Â S<sup>1</sup> respectively.
     </p><p>
      <span class="inlinemediaobject"><img src="newtri-bundle.png"></span>
     </p><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>
      <span class="application">Regina</span> is also able to build non-trivial bundles, formed by
      gluing the two boundaries of
-     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>M</code></em></span> × I according to a
+     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>M</code></em></span>Â Ã—Â I according to a
      given monodromy.  However, this construction is only accessible through
-     <a href="python.html" title="Chapter 8. Python Scripting"><span class="application">Python</span> scripting</a>
-     or <a href="compiling.html" title="Chapter 10. Compiling Regina Into Your Projects"><span class="application">C++</span> programming</a>.
+     <a href="python.html" title="ChapterÂ 8.Â Python Scripting"><span class="application">Python</span> scripting</a>
+     or <a href="compiling.html" title="ChapterÂ 10.Â Compiling Regina Into Your Projects"><span class="application">C++</span> programming</a>.
     </p></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="tri-imported"></a>Importing Triangulations</h3></div></div></div><p>
     You can import triangulations into <span class="application">Regina</span> from other
-    programs, such as <a href="http://www.math.uic.edu/t3m/SnapPy/" target="_top"><span class="application">SnapPea</span> / <span class="application">SnapPy</span></a> or <a href="http://www.ms.unimelb.edu.au/~snap/orb.html" target="_top"><span class="application">Orb</span></a>.  This is done through the
-    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">File</span></span>&#8594;<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guisubmenu">Import</span></span>
+    programs, such as <a href="http://www.math.uic.edu/t3m/SnapPy/" target="_top"><span class="application">SnapPea</span>Â /Â <span class="application">SnapPy</span></a> or <a href="http://www.ms.unimelb.edu.au/~snap/orb.html" target="_top"><span class="application">Orb</span></a>.  This is done through the
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">File</span></span>â†’<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guisubmenu">Import</span></span>
     menu.  For details, see the chapter on
     <a href="foreign.html#foreign-import" title="Importing">importing and exporting data</a>.
    </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="tri-census-creation"></a>Creating a Census</h3></div></div></div><p>
@@ -280,4 +280,4 @@
     For very long calculations,
     <a href="man-tricensus-mpi.html" title="tricensus-mpi"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">tricensus-mpi</strong></span></span></a>
     may be used to distribute the computation across a cluster of machines.
-   </p></div></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="packet-operations.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="tri-analysis.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">General Operations on Packets </td><td width="34%" align="center" class="navCenter"><a href="index.html">Up</a></td><td width="33%" align="right" class="navRight"> Analysis</td></tr></table></div></body></html>
+   </p></div></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="packet-operations.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="tri-analysis.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">General Operations on PacketsÂ </td><td width="34%" align="center" class="navCenter"><a href="index.html">Up</a></td><td width="33%" align="right" class="navRight">Â Analysis</td></tr></table></div></body></html>

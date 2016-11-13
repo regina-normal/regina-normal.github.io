@@ -1,7 +1,7 @@
-<html><head><title>Filtering Surfaces (3-D)</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina Handbook"><link rel="up" href="surfaces.html" title="Chapter�5.�Normal Surfaces and Hypersurfaces"><link rel="prev" href="surfaces-analysis.html" title="Analysis"><link rel="next" href="angles.html" title="Chapter�6.�Angle Structures"><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2">�</td></tr><tr id="logo"><td valign="top"><a href="http://regina.sourceforge.net/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Filtering Surfaces (3-D)</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="surfaces-analysis.html">Prev</a></td><td align="center" class="navCenter" width="34%">Normal Surfaces and Hypersurfaces</td><td align="right" class="navRight" width="33%">�
+<html><head><title>Filtering Surfaces (3-D)</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina Handbook"><link rel="up" href="surfaces.html" title="Chapter 5. Normal Surfaces and Hypersurfaces"><link rel="prev" href="surfaces-analysis.html" title="Analysis"><link rel="next" href="angles.html" title="Chapter 6. Angle Structures"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina.sourceforge.net/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Filtering Surfaces (3-D)</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="surfaces-analysis.html">Prev</a></td><td align="center" class="navCenter" width="34%">Normal Surfaces and Hypersurfaces</td><td align="right" class="navRight" width="33%"> 
 		      <a accesskey="n" href="angles.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="surfaces-filtering"></a>Filtering Surfaces (3-D)</h2></div></div></div><p>
    Large triangulations often contain a great many
-   &#8220;junk surfaces&#8221;, and it is sometimes desirable to restrict
+   “junk surfaces”, and it is sometimes desirable to restrict
    a long normal surface list to just those surfaces that satisfy
    some simple constraints.  For surfaces within 3-manifold triangulations,
    <span class="application">Regina</span> allows you to do this using
@@ -28,13 +28,13 @@
    <span class="emphasis"><em>view</em></span> it: the underlying list is not changed.
    Moreover, only the
    <a href="surfaces-analysis.html#surfaces-coords" title="Details of Individual (Hyper)surfaces">coordinate viewer</a>
-   will be filtered&#8212;other tabs (such as the
+   will be filtered—other tabs (such as the
    <a href="surfaces-analysis.html#surfaces-summary" title="Summary of (Hyper)surfaces">summary tab</a> or
    <a href="surfaces-analysis.html#surfaces-compat" title="Compatibility Between (Hyper)surfaces">compatility matrices</a>)
    will be unaffected.
   </p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="surfaces-filtercreate"></a>Creating Filters</h3></div></div></div><p>
     To create a new filter, select
-    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Packet Tree</span></span>&#8594;<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">New Filter</span></span>
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Packet Tree</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">New Filter</span></span>
     from the menu (or press the corresponding toolbar button).
    </p><p>
     <span class="inlinemediaobject"><img src="menu-newfilter.png"></span>
@@ -102,7 +102,7 @@
     or <span class="emphasis"><em>any</em></span> of the packets beneath it
     (<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">OR</span></span>).
     You will also see a box listing
-    which &#8220;child filters&#8221; are being combined.
+    which “child filters” are being combined.
    </p><p>
     <span class="inlinemediaobject"><img src="filtercomb.png"></span>
    </p><p>
@@ -111,7 +111,7 @@
     although they may be other combination filters if you need to build
     up more complex boolean expressions.
     A combination filter will only combine its
-    <span class="emphasis"><em>immediate</em></span> children&#8212;not its
+    <span class="emphasis"><em>immediate</em></span> children—not its
     children's children and so on.
     In the example below, the combination filter
     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>C</code></em></span> will only combine the children
@@ -119,8 +119,8 @@
     In turn, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>Q</code></em></span> will combine
     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>X</code></em></span> and <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>Y</code></em></span>;
     the result (depending on how the filters are set) might look something like
-    &#8220;<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>P</code></em></span> and
-    (<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>X</code></em></span> or <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>Y</code></em></span>)&#8221;.
+    “<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>P</code></em></span> and
+    (<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>X</code></em></span> or <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>Y</code></em></span>)”.
    </p><p>
     <span class="inlinemediaobject"><img src="filtercombtree.png"></span>
-   </p></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="surfaces-analysis.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="angles.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">Analysis�</td><td width="34%" align="center" class="navCenter"><a href="surfaces.html">Up</a></td><td width="33%" align="right" class="navRight">�Angle Structures</td></tr></table></div></body></html>
+   </p></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="surfaces-analysis.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="angles.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">Analysis </td><td width="34%" align="center" class="navCenter"><a href="surfaces.html">Up</a></td><td width="33%" align="right" class="navRight"> Angle Structures</td></tr></table></div></body></html>

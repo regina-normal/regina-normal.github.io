@@ -1,17 +1,17 @@
-<html><head><title>Exporting</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina Handbook"><link rel="up" href="foreign.html" title="Chapter 7. Importing and Exporting Data"><link rel="prev" href="foreign.html" title="Chapter 7. Importing and Exporting Data"><link rel="next" href="python.html" title="Chapter 8. Python Scripting"><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina.sourceforge.net/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Exporting</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="foreign.html">Prev</a></td><td align="center" class="navCenter" width="34%">Importing and Exporting Data</td><td align="right" class="navRight" width="33%"> 
+<html><head><title>Exporting</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina Handbook"><link rel="up" href="foreign.html" title="ChapterÂ 7.Â Importing and Exporting Data"><link rel="prev" href="foreign.html" title="ChapterÂ 7.Â Importing and Exporting Data"><link rel="next" href="python.html" title="ChapterÂ 8.Â Python Scripting"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2">Â </td></tr><tr id="logo"><td valign="top"><a href="http://regina.sourceforge.net/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Exporting</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="foreign.html">Prev</a></td><td align="center" class="navCenter" width="34%">Importing and Exporting Data</td><td align="right" class="navRight" width="33%">Â 
 		      <a accesskey="n" href="python.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="foreign-export"></a>Exporting</h2></div></div></div><p>
    An <em class="firstterm">export</em> involves writing data from your
    working packet tree into some foreign file format.
    For most formats you can only export small pieces of your packet tree
    at a time (such as individual triangulations).
    All exports are done through the
-   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">File</span></span>&#8594;<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guisubmenu">Export</span></span>
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">File</span></span>â†’<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guisubmenu">Export</span></span>
    menu.
   </p><p>
    <span class="inlinemediaobject"><img src="menu-export.png"></span>
   </p><p>
    When you select an action from the
-   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">File</span></span>&#8594;<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guisubmenu">Export</span></span>
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">File</span></span>â†’<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guisubmenu">Export</span></span>
    menu, <span class="application">Regina</span> will ask you which packet to export.
    For most export formats <span class="application">Regina</span> will only export the selected packet,
    but for some formats (such as
@@ -43,10 +43,10 @@
    </p><p>
     There are two menu items for exporting to a <span class="application">Regina</span> data
     file.  If you choose
-    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">File</span></span>&#8594;<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guisubmenu">Export</span></span>&#8594;<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem"><span class="application">Regina</span> Data File</span></span>,
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">File</span></span>â†’<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guisubmenu">Export</span></span>â†’<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem"><span class="application">Regina</span> Data File</span></span>,
     the data will be exported as compressed <span class="acronym">XML</span> (the standard
     file format).  If you choose
-    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">File</span></span>&#8594;<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guisubmenu">Export</span></span>&#8594;<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem"><span class="application">Regina</span> Data File (Uncompressed)</span></span>,
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">File</span></span>â†’<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guisubmenu">Export</span></span>â†’<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem"><span class="application">Regina</span> Data File (Uncompressed)</span></span>,
     the data will be saved as plain <span class="acronym">XML</span> (which means you
     can view the <span class="acronym">XML</span> in your favourite text editor).
     <span class="application">Regina</span> is capable of reading data files in either compressed or
@@ -64,7 +64,7 @@
     (either one of <span class="application">Regina</span>'s <a href="packet-types.html#packet-triangulation" title="3-Manifold Triangulations">native
     triangulations</a> or a hybrid
     <a href="packet-types.html#packet-snappea" title="SnapPea Triangulations"><span class="application">SnapPea</span> triangulation</a>)
-    to the file format used by <a href="http://www.math.uic.edu/t3m/SnapPy/" target="_top"><span class="application">SnapPea</span> / <span class="application">SnapPy</span></a>.  This is a plain text format,
+    to the file format used by <a href="http://www.math.uic.edu/t3m/SnapPy/" target="_top"><span class="application">SnapPea</span>Â /Â <span class="application">SnapPy</span></a>.  This is a plain text format,
     and is described in more detail in the section on
     <a href="foreign.html#import-snappea" title="SnapPea Triangulations"><span class="application">SnapPea</span> imports</a>.
    </p><p>
@@ -112,7 +112,7 @@
     Exporting to <span class="application">C++</span> can be useful if you wish to hard-code a
     triangulation in your own <span class="application">C++</span> project.
     See the separate chapter on
-    <a href="compiling.html" title="Chapter 10. Compiling Regina Into Your Projects">building <span class="application">Regina</span> into your own code</a>.
+    <a href="compiling.html" title="ChapterÂ 10.Â Compiling Regina Into Your Projects">building <span class="application">Regina</span> into your own code</a>.
    </p><p>
     During the export, <span class="application">Regina</span> will tell you how it will write any
     international characters (that is, letters or symbols
@@ -153,7 +153,7 @@
    </p><p>
     If you simply wish to view <span class="acronym">PDF</span> packets in a different viewer,
     you do not need to go to the trouble of exporting the
-    packet&#8212;instead you can
+    packetâ€”instead you can
     <a href="options-tools.html" title="Tools Options">configure <span class="application">Regina</span></a> to use your
     favourite viewer by default.
    </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="export-pyscript"></a><span class="application">Python</span> Scripts</h3></div></div></div><p>
@@ -170,4 +170,4 @@
     not found on a typical English keyboard).
     See the <a href="foreign-export.html#export-cpp" title="C++ Source Code"><span class="application">C++</span> exports</a> section
     above for more information on text encodings.
-   </p></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="foreign.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="python.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">Importing and Exporting Data </td><td width="34%" align="center" class="navCenter"><a href="foreign.html">Up</a></td><td width="33%" align="right" class="navRight"> <span class="application">Python</span> Scripting</td></tr></table></div></body></html>
+   </p></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="foreign.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="python.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">Importing and Exporting DataÂ </td><td width="34%" align="center" class="navCenter"><a href="foreign.html">Up</a></td><td width="33%" align="right" class="navRight">Â <span class="application">Python</span> Scripting</td></tr></table></div></body></html>
