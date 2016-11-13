@@ -1,0 +1,53 @@
+<html><head><title>Python Options</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina Handbook"><link rel="up" href="options.html" title="Chapter 9. Configuration"><link rel="prev" href="options.html" title="Chapter 9. Configuration"><link rel="next" href="options-tools.html" title="Tools Options"><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina.sourceforge.net/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1><span class="application">Python</span> Options</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="options.html">Prev</a></td><td align="center" class="navCenter" width="34%">Configuration</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="options-tools.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="options-python"></a><span class="application">Python</span> Options</h2></div></div></div><p>
+   The <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel"><span class="application">Python</span></span></span> options panel controls the behaviour
+   of <span class="application">Python</span> consoles, and allows you to manage your active
+   <a href="options-python.html#python-libraries"><span class="application">Python</span> libraries</a>.
+  </p><p>
+   <span class="inlinemediaobject"><img src="options-python.png"></span>
+  </p><p>
+   The settings here are:
+  </p><div class="glosslist"><dl><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Auto-indent</span></span></dt><dd><p>
+     If checked, <span class="application">Regina</span> will automatically indent each new command in
+     a <span class="application">Python</span> console with spaces to match the previous line.
+     You can of course add more spaces or remove them using backspace
+     before you type your command.
+    </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Spaces per tab</span></span></dt><dd><p>
+     Controls the number of spaces that are inserted into the command
+     box when you press <span><strong class="keycap">Tab</strong></span>.
+    </p></dd><dt><a name="python-libraries"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel"><span class="application">Python</span> libraries</span></span></dt><dd><p>
+      <em class="firstterm"><span class="application">Python</span> libraries</em> are files containing
+      code that is run automatically at the beginning of every
+      <a href="python.html#python-starting" title="Starting a Python Session"><span class="application">Python</span> session</a>
+      (each time you open a graphical console, run a script packet,
+      or start <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-python</strong></span></span> from the command line).
+      A typical <span class="application">Python</span> library defines one or more useful functions.
+     </p><p>
+      The idea of <span class="application">Python</span> libraries is that you can save your own
+      frequently-used code in a file, and then add
+      this file to the list of libraries here in the <span class="application">Python</span> options panel.
+     </p><p>
+      When you no longer wish to use a library, you can remove it from
+      the list or you can just <span class="emphasis"><em>deactivate</em></span> it.
+      Deactivating means the code will
+      <span class="emphasis"><em>not be run automatically</em></span>, but the file will remain
+      here in the list so that you can easily activate it again.
+      Active libraries are marked with a tick, and deactivated libraries are
+      marked with a no-entry sign (as seen in the illustration above).
+     </p><p>
+      <span class="application">Regina</span> ships with some example <span class="application">Python</span> libraries.
+      These are usually installed in
+      <code class="filename">/usr/share/regina/pylib/</code>, though this may
+      differ with your <span class="application"><span class="acronym">GNU</span>/Linux</span> distribution.
+     </p><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>
+      On <span class="application"><span class="acronym">GNU</span>/Linux</span> and <span class="application">MacOS X</span>, the list of <span class="application">Python</span> libraries is stored in
+      the file <code class="filename">~/.regina-libs</code>.
+      This is a plain text file, with each library filename
+      written on a separate line.  <span class="application">Regina</span> will ignore
+      any blank lines or lines beginning with a hash (#).
+      You are welcome to edit this file directly if you prefer.
+     </p><p>
+      On <span class="application">Windows</span> this list is stored in the registry,
+      and you should only edit it through the <span class="application">Python</span> configuration panel
+      as described above.
+     </p></div></dd></dl></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="options.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="options-tools.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">Configuration </td><td width="34%" align="center" class="navCenter"><a href="options.html">Up</a></td><td width="33%" align="right" class="navRight"> Tools Options</td></tr></table></div></body></html>

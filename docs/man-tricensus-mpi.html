@@ -1,0 +1,243 @@
+<html><head><title>tricensus-mpi</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina Handbook"><link rel="up" href="utils.html" title="Appendix B. Command Line: Specialised Utilities"><link rel="prev" href="man-tricensus.html" title="tricensus"><link rel="next" href="man-tricensus-mpi-status.html" title="tricensus-mpi-status"><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina.sourceforge.net/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>tricensus-mpi</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="man-tricensus.html">Prev</a></td><td align="center" class="navCenter" width="34%">Command Line: Specialised Utilities</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="man-tricensus-mpi-status.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="man-tricensus-mpi"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>tricensus-mpi &#8212; Distribute a triangulation census amongst several machines using <span class="acronym">MPI</span></p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">tricensus-mpi</strong></span></span> [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-D, --depth=</code></span><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>levels</code></em></span>] [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-x, --dryrun</code></span>] [[<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-2, --dim2</code></span>] |  [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-4, --dim4</code></span>]] [[<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-o, --orientable</code></span>] |  [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-n, --nonorientable</code></span>]] [[<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-f, --finite</code></span>] |  [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-d, --ideal</code></span>]] [[<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-m, --minimal</code></span>] |  [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-M, --minprime</code></span>] |  [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-N, --minprimep2</code></span>] |  [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-h, --minhyp</code></span>]] [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-s, --sigs</code></span>] {<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>pairs-file</code></em></span>} {<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>output-file-prefix</code></em></span>}</p></div></div><div class="refsect1" lang="en"><a name="idp140324134739792"></a><h2>Description</h2><p>
+    Allows multiple processes, possibly running on a cluster of
+    different machines, to
+    collaborate in forming a census of 2-, 3- or 4-manifold triangulations.
+    Coordination is done through <span class="acronym">MPI</span> (the Message Passing Interface),
+    and the entire census is run as a single <span class="acronym">MPI</span> job.
+    This program is well suited for high-performance clusters.
+   </p><p>
+    The default behaviour is to enumerate 3-manifold triangulations.
+    If you wish to enumerate 2-manifold or 4-manifold triangulations instead,
+    you must pass <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--dim2</code></span> or <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--dim4</code></span>
+    respectively.
+   </p><p>
+    To prepare a census for distribution amongst several processes or
+    machines, the census must be split into smaller pieces.
+    Running <a href="man-tricensus.html" title="tricensus"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">tricensus</strong></span></span></a>
+    with option <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--genpairs</code></span> (which is very fast) will create
+    a list of facet pairings
+    (e.g., tetrahedron face pairings for 3-manifold triangulations,
+    triangle edge pairings for 2-manifold triangulations, and so on).
+    Each facet pairing must be analysed in order to complete the census.
+   </p><p>
+    The full list of facet pairings should be stored in a single file,
+    which is passed on the command-line as
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>pairs-file</code></em></span>.
+    This file must contain one facet pairing per line, and each of these
+    facet pairings must be in canonical form (i.e., must be a
+    minimal representative of its isomorphism class).  The facet
+    pairings generated by
+    <a href="man-tricensus.html" title="tricensus"><strong class="userinput"><code>tricensus
+    --genpairs</code></strong></a> are guaranteed to satisfy these conditions.
+   </p><p>
+    The <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">tricensus-mpi</strong></span></span> utility has two modes of
+    operation: default mode, and subsearch mode.  These are explained
+    separately under <a href="man-tricensus-mpi.html#man-tricensus-mpi-modes" title="Modes of Operation">modes
+    of operation</a> below.
+   </p><p>
+    In both modes, one <span class="acronym">MPI</span> process acts as the controller and the remaining
+    processes all act as slaves.  The controller reads the list of facet
+    pairings from <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>pairs-file</code></em></span>, constructs a
+    series of tasks based on these, and farms these tasks
+    out to the slaves for processing.  Each slave processes one task
+    at a time, asking the controller for a new task when it is finished
+    with the previous one.
+   </p><p>
+    At the end of each task, if any triangulations were found then
+    the slave responsible will save these triangulations to an output file.
+    The output file will have a name of the form
+    <code class="filename"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>output-file-prefix</code></em></span>_<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>p</code></em></span>.rga</code>
+    in default mode or
+    <code class="filename"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>output-file-prefix</code></em></span>_<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>p</code></em></span>-<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>s</code></em></span>.rga</code>
+    in subsearch mode.
+    Here <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>output-file-prefix</code></em></span> is passed on the
+    command line, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>p</code></em></span> is the number
+    of the facet pairing being processed, and <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>s</code></em></span>
+    is the number of the subsearch within that facet pairing
+    (both facet pairings and subsearches are numbered from 1 upwards).
+    If no triangulations were found then the slave will not write
+    any output file at all.
+   </p><p>
+    The controller and slave
+    processes all take the same <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">tricensus-mpi</strong></span></span>
+    options (excluding <span class="acronym">MPI</span>-specific options, which are generally supplied
+    by an <span class="acronym">MPI</span> wrapper program such as <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">mpirun</strong></span></span> or
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">mpiexec</strong></span></span>).
+    The different roles of the processes are determined solely by their
+    <span class="acronym">MPI</span> process rank (the controller is always the process with rank 0).
+    It should therefore be possible to start all <span class="acronym">MPI</span> processes by
+    running a single command, as illustrated in the examples below.
+   </p><p>
+    As the census progresses, the controller keeps a detailed log of each
+    slave's activities, including how long each slave task has taken and how
+    many triangulations have been found.  This log is written to the file
+    <code class="filename"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>output-file-prefix</code></em></span>.log</code>.
+    The utility
+    <a href="man-tricensus-mpi-status.html" title="tricensus-mpi-status"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">tricensus-mpi-status</strong></span></span></a>
+    can parse this log and produce a shorter human-readable summary.
+   </p><div class="important" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Important</h3><p>
+    It is <span class="emphasis"><em>highly recommended</em></span>
+    that you use the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--sigs</code></span> option.  This will keep
+    output files small, and will significantly reduce the memory footprint
+    of <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">tricensus-mpi</strong></span></span> itself.
+   </p></div></div><div class="refsect1" lang="en"><a name="man-tricensus-mpi-modes"></a><h2>Modes of Operation</h2><p>
+    As discussed above, there are two basic modes of operation.
+    These are default mode (used when <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--depth</code></span> is not
+    passed), and subsearch mode (used when <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--depth</code></span> is
+    passed).
+   </p><div class="itemizedlist"><ul type="disc"><li><p>
+     In <span class="emphasis"><em>default mode</em></span>, the controller simply
+     reads the list of facet pairings and gives each pairing
+     to a slave for processing, one after another.
+    </p></li><li><p>
+     In <span class="emphasis"><em>subsearch mode</em></span>, more work is pushed to
+     the controller and the slave tasks are shorter.  Here the
+     controller reads one facet pairing at a time and begins processing
+     that facet pairing.  A fixed depth is supplied in the argument
+     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--depth</code></span>; each time that depth is reached in the
+     search tree, the
+     subsearch from that point on is given as a task to the next idle slave.
+     Meanwhile the controller backtracks (as though the subsearch had
+     finished) and continues, farming the next subsearch out when
+     the given depth is reached again, and so on.
+    </p></li></ul></div><p>
+    The modes can be visualised as follows.
+    For each facet pairing, consider the corresponding recursive search
+    as a large search tree.  In default mode, the entire tree is
+    processed at once as a single slave task.  In subsearch mode, each
+    subtree rooted at the given depth is processed as a separate slave
+    task (and all processing between the root and the given depth is
+    done by the controller).
+   </p><p>
+    The main difference between the different modes of operation is
+    the lengths of the slave tasks, which can have a variety of effects.
+   </p><div class="itemizedlist"><ul type="disc"><li><p>
+     In default mode the slave tasks are quite long.
+     This means the parallelisation can become very poor towards the
+     end of the census, with some slaves sitting idle for
+     a long time as they wait for the remaining slaves to finish.
+    </p></li><li><p>
+     As we move to subsearch mode with increasing depth, the slave
+     tasks become shorter and the slaves' finish times will be closer
+     together (thus avoiding the idle slave inefficiency described above).
+     Moreover, with a more refined subsearch,
+     the progress information stored in the log will be more detailed,
+     giving a better idea of how long the census has to go.  On the
+     other hand, more work is pushed to the single-process controller
+     (risking a bottleneck if the depth is too great, with slaves now
+     sitting idle as they wait for new tasks).  In addition the <span class="acronym">MPI</span> overhead
+     is greater, and the number of output files can become extremely large.
+    </p></li></ul></div><p>
+    In the end, experimentation is the best way to decide whether to run
+    in subsearch mode and at what depth.  Be aware of the option
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--dryrun</code></span>, which can give a quick overview of the
+    search space (and in particular, show how many subsearches are
+    required for each facet pairing at any given depth).
+   </p></div><div class="refsect1" lang="en"><a name="idp140324134778288"></a><h2>Options</h2><p>
+    The census options accepted by <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">tricensus-mpi</strong></span></span>
+    are identical to the options for <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">tricensus</strong></span></span>
+    See the
+    <a href="man-tricensus.html" title="tricensus"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">tricensus</strong></span></span> reference</a>
+    for details.
+   </p><p>
+    Some options from <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">tricensus</strong></span></span> are not
+    available here (e.g., tetrahedra and boundary options), since these must
+    be supplied earlier on when generating the initial list of facet pairings.
+   </p><p>
+    There are new options specific to <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">tricensus-mpi</strong></span></span>,
+    which are as follows.
+   </p><div class="variablelist"><dl><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-D, --depth=</code></span><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>levels</code></em></span></span></dt><dd><p>
+       Indicates that subsearch mode should be used (instead of default
+       mode).  The argument <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>levels</code></em></span> specifies
+       at what depth in the search tree processing should pass from the
+       controller to a new slave task.
+      </p><p>
+       The given depth must be strictly positive (running at depth zero
+       is equivalent to running in default mode).
+      </p><p>
+       See the <a href="man-tricensus-mpi.html#man-tricensus-mpi-modes" title="Modes of Operation">modes of
+       operation</a> section above for further information, as well
+       as hints on choosing a good value for <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>levels</code></em></span>.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-x, --dryrun</code></span></span></dt><dd><p>
+       Specifies that a fast dry run should be performed, instead of a
+       full census.
+      </p><p>
+       In a dry run, each time a slave accepts a task it
+       will immediately mark it as finished with no triangulations found.
+       The behaviour of the controller remains unchanged.
+      </p><p>
+       The result will be an empty census.  The benefit of a dry run is
+       the log file it produces, which will show precisely how facet pairings
+       would be divided into subsearches in a real census run.
+       In particular, the log file will show how
+       many subsearches each facet pairing produces (the utility
+       <a href="man-tricensus-mpi-status.html" title="tricensus-mpi-status"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">tricensus-mpi-status</strong></span></span></a>
+       can help extract this information from the log).
+      </p><p>
+       At small subsearch depths, a dry run should be extremely fast.
+       As the depth increases however, the dry run will become
+       slower due to the extra work given to the controller.
+      </p><p>
+       This option is only useful in subsearch mode (it can be used in
+       default mode, but the results are uninteresting).
+       See the <a href="man-tricensus-mpi.html#man-tricensus-mpi-modes" title="Modes of Operation">modes of
+       operation</a> section above for further details.
+      </p></dd></dl></div></div><div class="refsect1" lang="en"><a name="idp140324134795952"></a><h2>Examples</h2><p>
+    Suppose we wish to form a census of all 6-tetrahedron closed
+    non-orientable 3-manifold triangulations, optimised for
+    prime minimal P2-irreducible triangulations (so some
+    non-prime, non-minimal or non-P2-irreducible triangulations may be omitted).
+   </p><p>
+    We begin by using <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">tricensus</strong></span></span> to generate a full
+    list of face pairings.
+   </p><pre class="screen">
+    <code class="prompt">example$</code> <strong class="userinput"><code>tricensus --genpairs -t 6 -i &gt; 6.pairs</code></strong>
+    Total face pairings: 97
+    <code class="prompt">example$</code>
+</pre><p>
+    We now use <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">tricensus-mpi</strong></span></span> to run the distributed
+    census.  A wrapper program such as <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">mpirun</strong></span></span>
+    or <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">mpiexec</strong></span></span> can generally
+    be used to start the <span class="acronym">MPI</span> processes, though this depends on your
+    specific <span class="acronym">MPI</span> implementation.  The following command runs a distributed
+    census on 10 processors using the <span class="application">MPICH</span> implementation of <span class="acronym">MPI</span>.
+   </p><pre class="screen">
+    <code class="prompt">example$</code> <strong class="userinput"><code>mpirun -np 10 /usr/bin/tricensus-mpi -Nnf 6.pairs 6-nor</code></strong>
+    <code class="prompt">example$</code>
+</pre><p>
+     The current state of processing is kept in the controller log
+     <code class="filename">6-nor.log</code>.  You can watch this log with the help of
+     <a href="man-tricensus-mpi-status.html" title="tricensus-mpi-status"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">tricensus-mpi-status</strong></span></span></a>.
+    </p><pre class="screen">
+    <code class="prompt">example$</code> <strong class="userinput"><code>tricensus-mpi-status 6-nor.log</code></strong>
+    Pairing 1: done, 0 found
+    ...
+    Pairing 85: done, 0 found
+    Pairing 86: done, 7 found
+    Pairing 87: running
+    Pairing 88: running
+    Still running, 15 found, last activity: Wed Jun 10 05:57:34 2009
+    <code class="prompt">example$</code>
+</pre><p>
+     Once the census is finished, the resulting triangulations will be
+     saved in files such as
+     <code class="filename">6-nor_8.rga</code>,
+     <code class="filename">6-nor_86.rga</code> and so on.
+    </p></div><div class="refsect1" lang="en"><a name="idp140324134815728"></a><h2><span class="application">MacOS X</span> and <span class="application">Windows</span> Users</h2><p>
+    This utility is not shipped with the drag-and-drop app bundle for
+    <span class="application">MacOS X</span> or with the <span class="application">Windows</span> installer.
+   </p></div><div class="refsect1" lang="en"><a name="idp140324134819456"></a><h2>See Also</h2><p>
+    <a href="man-censuslookup.html" title="censuslookup">censuslookup</a>,
+    <a href="man-regconcat.html" title="regconcat">regconcat</a>,
+    <a href="man-sigcensus.html" title="sigcensus">sigcensus</a>,
+    <a href="man-tricensus.html" title="tricensus">tricensus</a>,
+    <a href="man-tricensus-mpi-status.html" title="tricensus-mpi-status">tricensus-mpi-status</a>,
+    <a href="man-regina-gui.html" title="regina-gui">regina-gui</a>.
+   </p></div><div class="refsect1" lang="en"><a name="idp140324134825216"></a><h2>Author</h2><p>
+    This utility was written by Benjamin Burton
+    <code class="email">&lt;<a href="mailto:bab@maths.uq.edu.au">bab@maths.uq.edu.au</a>&gt;</code>.
+    Many people have been involved in the development
+   of <span class="application">Regina</span>; see the <a href="credits.html#acknowledgements" title="Acknowledgements">acknowledgements
+   page</a> for a full list of credits.
+   </p></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="man-tricensus.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="man-tricensus-mpi-status.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">tricensus </td><td width="34%" align="center" class="navCenter"><a href="utils.html">Up</a></td><td width="33%" align="right" class="navRight"> tricensus-mpi-status</td></tr></table></div></body></html>

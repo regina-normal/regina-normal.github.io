@@ -1,0 +1,262 @@
+<html><head><title>Sample Python Sessions</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina Handbook"><link rel="up" href="python.html" title="Chapter 8. Python Scripting"><link rel="prev" href="python-snappy.html" title="Talking with SnapPy"><link rel="next" href="options.html" title="Chapter 9. Configuration"><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina.sourceforge.net/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Sample <span class="application">Python</span> Sessions</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="python-snappy.html">Prev</a></td><td align="center" class="navCenter" width="34%"><span class="application">Python</span> Scripting</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="options.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sessions"></a>Sample <span class="application">Python</span> Sessions</h2></div></div></div><p>
+   Several sample <span class="application">Python</span> sessions are reproduced below.
+   Each session was started by running
+   <strong class="userinput"><code>regina-python</code></strong>
+   from the command line.
+  </p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sessiontriangulation"></a>Working with a triangulation</h3></div></div></div><pre class="programlisting">example$ regina-python
+Regina 5.0
+Software for low-dimensional topology
+Copyright (c) 1999-2016, The Regina development team
+&gt;&gt;&gt; ################################
+... #
+... #  Sample Python Script
+... #
+... #  Illustrates different queries and actions on a 3-manifold triangulation
+... #  and its normal surfaces.
+... #
+... #  See the file "triangulation.session" for the results of running this
+... #  script.
+... #
+... ################################
+... 
+&gt;&gt;&gt; # Create a new (3,4,7) layered solid torus.  This is a 3-tetrahedron
+... # triangulation of a solid torus.
+... t = NTriangulation()
+&gt;&gt;&gt; t.insertLayeredSolidTorus(3,4)
+&lt;regina.engine.Simplex3 object at 0x11396e6e0&gt;
+&gt;&gt;&gt; print t
+Triangulation with 3 tetrahedra
+&gt;&gt;&gt; 
+&gt;&gt;&gt; # Print the full skeleton of the triangulation.
+... print t.detail()
+Size of the skeleton:
+  Tetrahedra: 3
+  Triangles: 7
+  Edges: 5
+  Vertices: 1
+
+Tetrahedron gluing:
+  Tet  |  glued to:      (012)      (013)      (023)      (123)
+  -----+-------------------------------------------------------
+    0  |              boundary   boundary    1 (012)    1 (130)
+    1  |               0 (023)    0 (312)    2 (013)    2 (120)
+    2  |               1 (312)    1 (023)    2 (312)    2 (230)
+
+Vertices:
+  Tet  |  vertex:    0   1   2   3
+  -----+--------------------------
+    0  |             0   0   0   0
+    1  |             0   0   0   0
+    2  |             0   0   0   0
+
+Edges:
+  Tet  |  edge:   01  02  03  12  13  23
+  -----+--------------------------------
+    0  |           0   1   2   2   1   3
+    1  |           1   2   3   3   2   4
+    2  |           2   4   3   3   4   3
+
+Triangles:
+  Tet  |  face:  012 013 023 123
+  -----+------------------------
+    0  |           0   1   2   3
+    1  |           2   3   4   5
+    2  |           5   4   6   6
+
+
+&gt;&gt;&gt; 
+&gt;&gt;&gt; # Calculate some algebraic properties of the triangulation.
+... print t.homology()
+Z
+&gt;&gt;&gt; print t.homologyBdry()
+2 Z
+&gt;&gt;&gt; 
+&gt;&gt;&gt; # Test for 0-efficiency, which asks Regina to search for certain types
+... # of normal surfaces.
+... print t.isZeroEfficient()
+False
+&gt;&gt;&gt; 
+&gt;&gt;&gt; # Make our own list of vertex normal surfaces in standard coordinates.
+... surfaces = NNormalSurfaceList.enumerate(t, NS_STANDARD)
+&gt;&gt;&gt; 
+&gt;&gt;&gt; # Verify that the normal surface list is already a child packet of the
+... # triangulation.  This happens automatically whenever you enumerate
+... # normal surfaces (or angle structures).
+... if surfaces.getTreeParent() == t:
+...     print "OK: Parent-child relationship is correct."
+... else:
+...     print "ERROR: Parent-child relationship is incorrect."
+... 
+OK: Parent-child relationship is correct.
+&gt;&gt;&gt; 
+&gt;&gt;&gt; # Print the full list of vertex normal surfaces.
+... print surfaces.detail()
+Embedded, vertex surfaces
+Coordinates: Standard normal (tri-quad)
+Number of surfaces is 9
+1 1 1 1 ; 0 0 0 || 1 1 0 0 ; 1 0 0 || 0 0 0 0 ; 0 2 0
+0 0 1 1 ; 1 0 0 || 1 1 1 1 ; 0 0 0 || 1 1 1 1 ; 0 0 0
+0 0 0 0 ; 0 2 0 || 0 0 1 1 ; 1 0 0 || 1 1 1 1 ; 0 0 0
+0 0 0 0 ; 0 0 2 || 0 0 0 0 ; 0 2 0 || 0 0 1 1 ; 1 0 0
+1 1 0 0 ; 0 0 1 || 1 1 0 0 ; 0 0 0 || 0 0 0 0 ; 0 1 0
+3 3 0 0 ; 0 0 1 || 1 1 0 0 ; 0 0 2 || 1 1 0 0 ; 0 0 1
+0 0 1 1 ; 1 0 0 || 1 1 0 0 ; 1 0 0 || 0 0 0 0 ; 0 2 0
+0 0 0 0 ; 0 1 0 || 0 0 0 0 ; 1 0 0 || 0 0 0 0 ; 0 1 0
+1 1 1 1 ; 0 0 0 || 1 1 1 1 ; 0 0 0 || 1 1 1 1 ; 0 0 0
+
+&gt;&gt;&gt; 
+&gt;&gt;&gt; # Print the Euler characteristic and orientability of each surface.
+... for i in range(surfaces.size()):
+...     s = surfaces.surface(i)
+...     print "Chi =", s.eulerChar(), "; Or =", s.isOrientable()
+... 
+Chi = -1 ; Or = True
+Chi = 0 ; Or = True
+Chi = 0 ; Or = True
+Chi = 0 ; Or = True
+Chi = 0 ; Or = False
+Chi = 1 ; Or = True
+Chi = -2 ; Or = True
+Chi = -1 ; Or = False
+Chi = 1 ; Or = True
+&gt;&gt;&gt; 
+&gt;&gt;&gt; # List all surfaces with more than one quad in the first tetrahedron.
+... for i in range(surfaces.size()):
+...     s = surfaces.surface(i)
+...     if s.quads(0,0) + s.quads(0,1) + s.quads(0,2) &gt; 1:
+...         print s
+... 
+0 0 0 0 ; 0 2 0 || 0 0 1 1 ; 1 0 0 || 1 1 1 1 ; 0 0 0
+0 0 0 0 ; 0 0 2 || 0 0 0 0 ; 0 2 0 || 0 0 1 1 ; 1 0 0
+&gt;&gt;&gt; 
+&gt;&gt;&gt; # Tidy up.
+... # Delete the triangulation.  This will automatically delete the surface
+... # list, which is a child of the triangulation in the packet tree.
+... t = None
+&gt;&gt;&gt;
+</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sessiontree"></a>Working with a packet tree</h3></div></div></div><pre class="programlisting">example$ regina-python
+Regina 5.0
+Software for low-dimensional topology
+Copyright (c) 1999-2016, The Regina development team
+&gt;&gt;&gt; ################################
+... #
+... #  Sample Python Script
+... #
+... #  Illustrates the traversal and manipulation of an entire packet tree.
+... #
+... #  See the file "tree.session" for the results of running this script.
+... #
+... ################################
+... 
+&gt;&gt;&gt; # Create a new census of all closed orientable 3-manifold
+... # triangulations with two tetrahedra.
+... census = NContainer()
+&gt;&gt;&gt; NCensus.formCensus(census, 2, NBoolSet.sTrue,
+...     NBoolSet.sTrue, NBoolSet.sFalse, 0, 0)
+16
+&gt;&gt;&gt; 
+&gt;&gt;&gt; # Calculate the homology of each triangulation in the census.
+... # The triangulations are all children of the "census" container.
+... tri = census.firstChild()
+&gt;&gt;&gt; while tri != None:
+...     print tri.label() + ":", tri.homology()
+...     tri = tri.nextSibling()
+... 
+Item 1: Z_7
+Item 2: Z_5
+Item 3: Z
+Item 4: Z_3
+Item 5: Z_8
+Item 6: 0
+Item 7: 0
+Item 8: 0
+Item 9: Z_2
+Item 10: 0
+Item 11: 0
+Item 12: Z_3
+Item 13: 0
+Item 14: Z_3
+Item 15: 2 Z_2
+Item 16: Z_2
+&gt;&gt;&gt; 
+&gt;&gt;&gt; # Remove all triangulations with trivial homology from the tree.
+... tri = census.firstChild()
+&gt;&gt;&gt; while tri != None:
+...     next = tri.nextSibling()
+...     hom = tri.homology()
+...     if hom.isTrivial():
+...         tri.makeOrphan()
+...     tri = next
+... 
+&gt;&gt;&gt; 
+&gt;&gt;&gt; # Print the homology of each remaining triangulation.
+... tri = census.firstChild()
+&gt;&gt;&gt; while tri != None:
+...     print tri.label() + ":", tri.homology()
+...     tri = tri.nextSibling()
+... 
+Item 1: Z_7
+Item 2: Z_5
+Item 3: Z
+Item 4: Z_3
+Item 5: Z_8
+Item 9: Z_2
+Item 12: Z_3
+Item 14: Z_3
+Item 15: 2 Z_2
+Item 16: Z_2
+&gt;&gt;&gt;
+</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="sessionprogress"></a>Reporting progress of long operations</h3></div></div></div><pre class="programlisting">example$ regina-python
+Regina 5.0
+Software for low-dimensional topology
+Copyright (c) 1999-2016, The Regina development team
+&gt;&gt;&gt; ################################
+... #
+... #  Sample Python Script
+... #
+... #  Illustrates progress reporting during long operations.
+... #
+... #  See the file "progress.session" for the results of running this script.
+... #
+... ################################
+... 
+&gt;&gt;&gt; import time
+&gt;&gt;&gt; 
+&gt;&gt;&gt; # Create an 18-tetrahedron triangulation of a knot complement with real
+... # boundary faces (not an ideal vertex).  The knot is L106003 from the
+... # knot/link census.  We used Regina to truncate the ideal vertex, and
+... # then copied the isomorphism signature so that we can reconstruct the
+... # triangulation here.
+... sig = 'sfLfvQvwwMQQQccjghjkmqlonrnrqpqrnsnksaisnrobocksks'
+&gt;&gt;&gt; tri = NTriangulation(sig)
+&gt;&gt;&gt; print tri.size(), 'tetrahedra'
+18 tetrahedra
+&gt;&gt;&gt; 
+&gt;&gt;&gt; # Create a progress tracker to use during the normal surface enumeration.
+... # This will report the state of progress while the enumeration runs in
+... # the background.
+... tracker = NProgressTracker()
+&gt;&gt;&gt; 
+&gt;&gt;&gt; # Start the normal surface enumeration.
+... # Because we are passing a progress tracker to enumerate(), the
+... # enumeration will start in the background and control will return
+... # immediately to the python console.
+... surfaces = NNormalSurfaceList.enumerate(tri, NS_STANDARD, NS_VERTEX,
+...     NS_ALG_DEFAULT, tracker)
+&gt;&gt;&gt; 
+&gt;&gt;&gt; # At this point the enumeration is up and running.
+... # Output a progress report every half-second until it finishes.
+... while not tracker.isFinished():
+...     print 'Progress:', tracker.percent(), '%'
+...     time.sleep(0.5)
+... 
+Progress: 0.774536132812 %
+Progress: 51.85546875 %
+Progress: 89.0057373047 %
+&gt;&gt;&gt; 
+&gt;&gt;&gt; # The surface enumeration is now complete.
+... print surfaces.size(), 'normal surfaces'
+2319 normal surfaces
+&gt;&gt;&gt;
+</pre></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="python-snappy.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="options.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">Talking with <span class="application">SnapPy</span> </td><td width="34%" align="center" class="navCenter"><a href="python.html">Up</a></td><td width="33%" align="right" class="navRight"> Configuration</td></tr></table></div></body></html>

@@ -1,0 +1,1292 @@
+<html><head><title>Analysis</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina Handbook"><link rel="up" href="triangulations.html" title="Chapter 3. Triangulations"><link rel="prev" href="triangulations.html" title="Chapter 3. Triangulations"><link rel="next" href="tri-modification.html" title="Modification"><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina.sourceforge.net/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Analysis</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="triangulations.html">Prev</a></td><td align="center" class="navCenter" width="34%">Triangulations</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="tri-modification.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="tri-analysis"></a>Analysis</h2></div></div></div><p>
+   <span class="application">Regina</span> offers a wealth of information about
+   triangulations, spread across the many different tabs in the
+   triangulation viewer.  Here we walk through the different properties
+   and invariants that <span class="application">Regina</span> can compute.
+  </p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="tri-identify"></a>Identifying the Manifold (2-D and 3-D)</h3></div></div></div><p>
+    An important feature of 2-manifolds, as opposed to other dimensions,
+    is that the underlying manifold is easy to recognise from its
+    triangulation.  For connected 2-manifold triangulations, <span class="application">Regina</span>
+    will display the exact 2-manifold at the top of the triangulation
+    viewer, as illustrated below.
+   </p><p>
+    <span class="inlinemediaobject"><img src="dim2-id.png"></span>
+   </p><p>
+    For orientable 2-manifolds, the <em class="firstterm">genus</em>
+    refers to the number of handles (e.g., the torus has orientable
+    genus 1).  For non-orientable 2-manifolds, the
+    <em class="firstterm">genus</em> refers to the number of crosscaps
+    (e.g., the Klein bottle has non-orientable genus 2).
+   </p><p>
+    <span class="application">Regina</span> will also display the Euler characteristic at the top of the
+    triangulation viewer, marked with the symbol &#967;.  It will show this
+    even for disconnected surfaces also.
+   </p><p>
+    For 3-manifold triangulations, <span class="application">Regina</span>
+    will try to identify the manifold automatically using a range of
+    relatively fast techniques, though a result is no longer guaranteed.
+    If <span class="application">Regina</span> does identify the underlying 3-manifold, this will be
+    shown on the <a href="tri-analysis.html#tri-recognition" title="High-Level Recognition Routines (3-D)">recognition tab</a>.
+    If you do not see a result immediatey, you can of course use all of
+    the machinery that <span class="application">Regina</span> offers to probe harder and seek an answer.
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-recognition-manifold.png"></span>
+   </p><p>
+    For triangulations in dimension &#8805; 4, <span class="application">Regina</span> does not
+    currently have any automated recognition routines&#8212;you will
+    need to manually work with <span class="application">Regina</span>'s various combinatorial and
+    algebraic tools to seek an answer.
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="tri-basicprops"></a>Validity, Orientability and Other Basic Properties (All Dimensions)</h3></div></div></div><p>
+    At the top of each triangulation viewer is a header listing some
+    basic properties of the triangulation (circled in red below).
+   </p><p>
+    <span class="inlinemediaobject"><img src="triheader.png"></span>
+   </p><p>
+    In this header, the following words might appear:
+   </p><p>
+    </p><div class="glosslist"><dl><dt><a name="tri-propclosed"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Closed</span></span></dt><dd><p>
+        Signifies that the link of every vertex is a sphere.
+       </p><p>
+        This means that the triangulation has no boundary facets
+        (e.g., no boundary triangles in dimension 3, or
+        no boundary tetrahedra in dimension 4), and that
+        the triangulation also has no ideal vertices.
+       </p></dd><dt><a name="tri-propideal"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Ideal bdry</span></span></dt><dd><p>
+        Signifies that at least one vertex of the triangulation is
+        <em class="firstterm">ideal</em>.  An ideal vertex is one
+        whose link is a closed manifold but not a sphere.
+       </p><p>
+        You can locate any ideal vertices using the
+        <a href="tri-analysis.html#tri-faces" title="Viewing Faces">skeleton viewers</a>.
+       </p></dd><dt><a name="tri-propbdry"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Real bdry</span></span></dt><dd><p>
+        Signifies that the triangulation contains one or more boundary
+        facets (i.e., boundary edges, triangles or tetrahedra for a
+        2-, 3- or 4-manifold respectively).
+       </p><p>
+        For 2-manifolds, this is just written as <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">with
+        boundary</span></span>, since ideal boundary components do not
+        appear until dimension &#8805; 3.
+       </p></dd><dt><a name="tri-proporient"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Orientable</span></span> /
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">non-orientable</span></span> /
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">oriented</span></span> /
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">not oriented</span></span></dt><dd><p>
+        The words <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">orientable</span></span>
+        or <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">non-orientable</span></span> indicate
+        whether or not the triangulation represents an orientable
+        manifold.
+       </p><p>
+        If the triangulation is orientable, <span class="application">Regina</span> will also tell you
+        whether or not it is <em class="firstterm">oriented</em>; that is, whether
+        the vertex labels on each top-dimensional simplex
+        (e.g., the labels 0,1,2,3 on each tetrahedron in a 3-manifold)
+        induce a consistent orientation for all top-dimensional simplices
+        in the entire triangulation.
+       </p><p>
+        If you need a consistent orientation for all top-dimensional
+        simplices but you see <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">orientable but not oriented</span></span>
+        instead, you can fix this by
+        <a href="tri-modification.html#tri-orient" title="Orienting Triangulations and Double Covers (All Dimensions)">orienting your triangulation</a>.
+       </p></dd><dt><a name="tri-propconn"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Connected</span></span> /
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">disconnected</span></span></dt><dd><p>
+       The words <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">connected</span></span>
+       or <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">disconnected</span></span> indicate
+       whether or not the triangulation forms a single connected component.
+      </p></dd><dt><a name="tri-propvalid"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Invalid triangulation</span></span></dt><dd><p>
+        Signifies that the triangulation is &#8220;broken&#8221; to the
+        point where <span class="application">Regina</span> cannot do any serious work with it.
+        This never happens in dimension 2, but it can happen with
+        3- and 4-manifold triangulations, and this can be for one of
+        two reasons:
+        </p><div class="itemizedlist"><ul type="disc"><li><p>some vertex link is neither a closed manifold
+          nor a topological ball;</p></li><li><p>as a result of the gluings between top-dimensional
+          simplices, some edge is identified with itself in reverse,
+          or (in 4-D only) some triangle is identified with itself under a
+          non-identity reflection or rotation.</p></li></ul></div><p>
+       </p><p>
+        You can locate the offending vertex, edge and/or triangle using the
+        <a href="tri-analysis.html#tri-faces" title="Viewing Faces">skeleton viewers</a>.
+        If the triangulation is invalid, no other information will appear
+        in the banner.
+       </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Empty</span></span></dt><dd><p>
+       Signifies that the triangulation contains no simplices at all.
+       In this case, no other information will appear in the banner.
+      </p></dd></dl></div><p>
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="tri-viewgluings"></a>Viewing Facet Gluings (All Dimensions)</h3></div></div></div><p>
+    The <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Gluings</span></span> tab shows how the facets of the
+    top-dimensional simplices (i.e., edges of triangles, faces of
+    tetrahedra or facets of pentachora for 2-, 3- and 4-manifolds
+    respectively) are glued to each other in pairs.
+   </p><p>
+    The facet gluings are presented in a table.
+    For a <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span>-manifold triangulation,
+    each row represents a <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span>-simplex,
+    and the (<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span>+1) columns on the right
+    represent the (<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span>+1) facets of each
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span>-simplex.
+    The <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span>-simplices are numbered 0,1,2,&#8230;,
+    and the (<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span>+1) vertices of each
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span>-simplex are numbered
+    0,1,&#8230;,<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span>.
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-viewgluings.png"></span>
+   </p><p>
+    Each cell of this table represents a single facet of a single
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span>-simplex.  For instance, in the
+    3-manifold example illustrated above, the cell circled in red
+    represents face 123 of tetrahedron 1 (that is, the
+    triangular face formed from vertices 1,2,3 of tetrahedron 1).
+   </p><p>
+    The contents of the cell show how the facet is glued.  In the example
+    above, the circled cell contains <code class="literal">8 (312)</code>,
+    indicating that face 123 of tetrahedron 1 is glued to
+    face 312 of tetrahedron 8 using the affine map that
+    matches vertices 1,2,3 of tetrahedron 1 with vertices
+    3,1,2 of tetrahedron 8 respectively.
+    The same gluing can be seen from the opposite direction in the row
+    for tetrahedron 8.
+   </p><p>
+    An empty cell indicates that a facet is not glued to anything at all;
+    that is, the facet forms part of the <span class="emphasis"><em>boundary</em></span> of
+    the manifold.  In the table above there are two boundary triangles:
+    face 013 of tetrahedron 0, and face 123 of
+    tetrahedron 4.  In our example these join together to form the torus
+    boundary of the figure eight knot complement.
+   </p><p>
+    You can modify the triangulation by typing new facet gluings directly
+    into this table.  See the section on
+    <a href="tri-modification.html#tri-editgluings" title="Editing Gluings (All Dimensions)">modifying triangulations</a> for
+    details.
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="tri-skeleton"></a>Skeletal Information (All Dimensions)</h3></div></div></div><p>
+    The <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Skeleton</span></span> tab holds
+    two smaller tabs offering combinatorial information about
+    the skeleton and dual skeleton of the triangulation.
+   </p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="tri-skeleton-skelcomp"></a>Skeletal Components</h4></div></div></div><p>
+     On the left of the
+     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Skeleton</span></span>&#8594;<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Skeletal Components</span></span>
+     tab, you will see the total number of faces of each dimension
+     in the triangulation.  This includes vertices, edges, triangles,
+     tetrahedra (for 3- and 4-manifolds), and pentachora (for 4-manifolds).
+     On the right of the tab, you will see the total number of
+     components and boundary components in the triangulation,
+     as well as the Euler characteristic.
+    </p><p>
+     Next to each total count is a <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guibutton">View</span></span> button.
+     By pressing this, you can see more detailed
+     information about each of the faces, components or boundary components.
+     A full explanation of this detailed information
+     <a href="tri-analysis.html#tri-faces" title="Viewing Faces">appears below</a>.
+     (The exception is the top-dimensional faces, i.e., the
+     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span>-simplices in a
+     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span>-manifold triangulation&#8212;they have
+     no view button because you can examine them in detail on the
+     <a href="tri-analysis.html#tri-viewgluings" title="Viewing Facet Gluings (All Dimensions)">gluings tab</a> instead.)
+    </p><p>
+     <span class="inlinemediaobject"><img src="tri-skeleton.png"></span>
+    </p><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="tri-euler"></a>Euler Characteristic</h5></div></div></div><p>
+      For 2-manifolds, the Euler characteristic is simply marked &#967;, and has
+      its usual meaning (vertices &#8722; edges + triangles).  For 3- and 4-manifolds,
+      <span class="application">Regina</span> computes <span class="emphasis"><em>two</em></span> Euler characteristics:
+      </p><div class="itemizedlist"><ul type="disc"><li><p>
+        <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">&#967; (Triangulation)</span></span> measures Euler
+        characteristic in the purely combinatorial sense: that is, the
+        alternating sum of the number of faces of each dimension
+        in the triangulation.
+       </p></li><li><p>
+        <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">&#967; (Manifold)</span></span> measures Euler characteristic
+        in a more topological sense: this assumes that we have made the
+        manifold compact by truncating all ideal vertices and replacing
+        them with real boundary components.
+        For 3-manifolds, if the triangulation is invalid then we likewise
+        assume that invalid vertices and the midpoints of invalid edges
+        are truncated.  For 4-manifolds, if the triangulation is invalid
+        then <span class="application">Regina</span> will not compute &#967; (Manifold) at all.
+       </p></li></ul></div><p>
+     </p><p>
+      For a compact 3-manifold or 4-manifold triangulation, both these
+      Euler characteristics should be the same.
+     </p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="tri-faces"></a>Viewing Faces</h5></div></div></div><p>
+      For each facial dimension <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>k</code></em></span>,
+      if you click on the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guibutton">View</span></span> button next
+      to the total count of <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>k</code></em></span>-faces, you will see a
+      table that lists details of each individual
+      <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>k</code></em></span>-face of the triangulation.
+     </p><p>
+      <span class="inlinemediaobject"><img src="tri-edges.png"></span>
+     </p><p>
+      This table contains four columns:
+      </p><div class="glosslist"><dl><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Face #</span></span></dt><dd><p>
+          Identifies each <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>k</code></em></span>-face with an individual
+          <em class="firstterm">face number</em>.
+         </p><p>
+         </p><p>
+          For each facial dimension <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>k</code></em></span>, the
+          <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>k</code></em></span>-faces are numbered consecutively
+          0,1,2,&#8230;.
+          That is, each triangulation has vertices numbered
+          0,1,2,&#8230;, as well as edges numbered
+          0,1,2,&#8230;, as well as triangles numbered
+          0,1,2,&#8230;, and so on.
+         </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Type</span></span></dt><dd><p>
+         Gives some basic information about the
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>k</code></em></span>-face.
+         Text you might see here includes:
+         </p><div class="glosslist"><dl><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Bdry</span></span></dt><dd><p>
+             Indicates that the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>k</code></em></span>-face
+             lies entirely within a real boundary component
+             of the triangulation.
+            </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Ideal</span></span></dt><dd><p>
+             Indicates an ideal vertex in a 3- or 4-manifold
+             triangulation, i.e., a vertex whose link is a closed
+             manifold but not a sphere.
+            </p><p>
+             For an ideal vertex in a 3-manifold triangulation,
+             this column will also identify the precise surface of the
+             vertex link (e.g., torus, Klein bottle, etc.).
+             For an ideal vertex in a 4-manifold triangulation,
+             you can always <a href="tri-analysis.html#tri-vertexlinks" title="Triangulating Vertex Links (3-D and 4-D)">triangulate the
+             vertex link</a> and study it using all of <span class="application">Regina</span>'s
+             3-manifold machinery.
+            </p></dd><dt><a name="tri-faces-invalid"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Invalid</span></span></dt><dd><p>
+             Indicates that this is an invalid face.
+             This can only occur in a 3- or 4-manifold triangulation
+             (not in dimension 2).
+            </p><p>
+             An invalid vertex is one whose link
+             is neither a ball nor a closed manifold.
+             An invalid edge is one that is identified with itself in
+             reverse, or (for 4-manifolds) has a link that is neither a
+             sphere nor a ball.
+             An invalid triangle (for 4-manifolds only) is one that is
+             identified with itself under a non-identity reflection or
+             rotation.
+            </p><p>
+             If any face is invalid, then the entire triangulation will
+             also be <a href="tri-analysis.html#tri-propvalid">marked as invalid</a>.
+            </p></dd></dl></div><p>
+        </p><p>
+         If the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>k</code></em></span>-face does not have any of
+         the properties listed above, then the second column of the table
+         will be left empty.
+        </p><p>
+         There is one exception to this: for triangular faces in 3-manifolds,
+         <span class="application">Regina</span> will always use the second column of the table to
+         describe the combinatorial shape of the triangle.
+         Possible shapes include:
+        </p><p>
+         <span class="inlinemediaobject"><img src="tri-triangles.png"></span>
+        </p><p>
+         </p><div class="glosslist"><a name="tri-faces-shapes"></a><dl><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Triangle</span></span></dt><dd><p>
+            No vertices or edges of the triangle are identified.
+           </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Scarf</span></span></dt><dd><p>
+            Two vertices of the triangle are identified; all edges are distinct.
+           </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Parachute</span></span></dt><dd><p>
+            All three vertices of the triangle are identified; all edges are
+            distinct.
+           </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Möbius band</span></span></dt><dd><p>
+            Two edges of the triangle are identified to form a Möbius band
+            (causing all three vertices to be identified); the third edge
+            remains distinct.
+           </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Cone</span></span></dt><dd><p>
+            Two edges of the triangle are identified to form a cone (causing
+            two vertices to be identified); the third edge and third vertex
+            remain distinct.
+           </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Horn</span></span></dt><dd><p>
+            Two edges of the triangle are identified to form a cone and all
+            the third vertex is identified with the others; the third edge
+            remains distinct.
+           </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Dunce hat</span></span></dt><dd><p>
+            All three edges of the triangle are identified, some with
+            orientable and some with non-orientable gluings.
+           </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">L(3,1)</span></span></dt><dd><p>
+            All three edges of the triangle are identified using non-orientable
+            gluings; note that this forms a spine for the lens space L(3,1).
+           </p></dd></dl></div><p>
+        </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Degree</span></span></dt><dd><p>
+         The third column of the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>k</code></em></span>-face table
+         lists the <em class="firstterm">degree</em> of each face.
+         This is the number of individual
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>k</code></em></span>-faces of individual tetrahedra
+         or pentachora (for 3-manifolds or 4-manifolds respectively)
+         that are identified together to make this
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>k</code></em></span>-face of the triangulation.
+        </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Triangles / Tetrahedra / Pentachora
+         (vertices)</span></span></dt><dd><p>
+          The fourth and final column of the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>k</code></em></span>-face
+          table indicates precisely which <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>k</code></em></span>-faces of
+          which tetrahedra or pentachora come together to form each overall
+          <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>k</code></em></span>-face of the triangulation.
+          An example for edges in a 3-manifold triangulation might be
+          <code class="literal">0 (31), 1 (01), 0 (02)</code>,
+          which indicates a degree 3 edge obtained by identifying
+          edges 31 and 02 of tetrahedron 0, and
+          edge 01 of tetrahedron 1.
+          Here &#8220;edge 31&#8221; means the edge running from
+          vertex 3 to vertex 1 of the tetrahedron, and so on.
+         </p><p>
+          The order of vertices in this list is important: the previous
+          example also shows that
+          vertex 3 of tetrahedron 0,
+          vertex 0 of tetrahedron 1, and
+          vertex 0 of tetrahedron 0 all represent
+          the <span class="emphasis"><em>same end</em></span> of the edge.
+         </p><p>
+          For edges of 3-manifolds and triangles in 4-manifolds,
+          the order of tetrahedra or pentachora respectively is also important:
+          tetrahedra or pentachora are written in the order in which one sees
+          them when walking around the edge link or triangle link respectively.
+         </p></dd></dl></div><p>
+     </p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="tri-components"></a>Viewing Components</h5></div></div></div><p>
+      If you click on the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guibutton">View</span></span> button beside the
+      component count, you will see a table listing details of the individual
+      connected components of the triangulation.
+     </p><p>
+      <span class="inlinemediaobject"><img src="tri-components.png"></span>
+     </p><p>
+      The columns in this table are:
+      </p><div class="glosslist"><dl><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Cmpt #</span></span></dt><dd><p>
+         Identifies each connected component with an
+         individual <em class="firstterm">component number</em>, starting from 0
+         and counting upwards.
+        </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Type</span></span></dt><dd><p>
+         Gives some additional information about the individual
+         component, similar to the <a href="tri-analysis.html#tri-basicprops" title="Validity, Orientability and Other Basic Properties (All Dimensions)">basic
+         properties</a> that you can view for each triangulation.
+         Text you might see here includes:
+         </p><div class="glosslist"><dl><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Invalid</span></span></dt><dd><p>
+            Indicates that this component is invalid.
+            A component is considered invalid if it contains any
+            <a href="tri-analysis.html#tri-propvalid">invalid vertices,
+            edges or triangles</a>.
+           </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Real</span></span> /
+            <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Ideal</span></span></dt><dd><p>
+            For valid components of 3-manifold and 4-manifold triangulations,
+            the text <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Real</span></span> indicates that the
+            the component contains no ideal vertices, and the text
+            <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Ideal</span></span> indicates that the component
+            contains at least one ideal vertex.
+            Recall that an <em class="firstterm">ideal vertex</em> is a vertex
+            whose link is a closed manifold but not a sphere.
+           </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Orbl</span></span> /
+            <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Non-orbl</span></span></dt><dd><p>
+            Indicates whether the component is orientable or
+            non-orientable.
+           </p></dd></dl></div><p>
+        </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Size</span></span></dt><dd><p>
+         Gives the number of top-dimensional simplices
+         (i.e., triangles, tetrahedra or pentachora for a
+         2-, 3- or 4-manifold triangulation respectively)
+         that belong to each connected component.
+        </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Triangles / Tetrahedra / Pentachora</span></span></dt><dd><p>
+          Lists the individual top-dimensional simplices that belong
+          to each connected component.
+         </p></dd></dl></div><p>
+     </p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="tri-bdrycomponents"></a>Viewing Boundary Components</h5></div></div></div><p>
+      If you click on the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guibutton">View</span></span> button beside the
+      total count of boundary components,
+      you will see a table listing the individual boundary components of
+      the triangulation.
+      This includes:
+      </p><div class="itemizedlist"><ul type="disc"><li><p>
+        <em class="firstterm">real</em> boundary components,
+        which in a 2-, 3- or 4-manifold triangulation
+        are formed from one or more boundary edges, triangles or tetrahedra
+        respectively;
+       </p></li><li><p>
+        <em class="firstterm">ideal</em> boundary components, which consist
+        of a single vertex whose link is a closed manifold but not a sphere;
+       </p></li><li><p>
+        <em class="firstterm">invalid vertices</em>, which only appear in
+        4-manifold triangulations&#8212;these consist of a single invalid
+        vertex that does not already belong to some other boundary
+        component (e.g., a vertex whose link is an ideal 3-manifold
+        triangulation).
+       </p></li></ul></div><p>
+     </p><p>
+      <span class="inlinemediaobject"><img src="tri-bdrycomponents-real.png"></span>
+      <span class="inlinemediaobject"><img src="tri-bdrycomponents-ideal.png"></span>
+     </p><p>
+      The columns in this table are:
+      </p><div class="glosslist"><dl><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Cmpt #</span></span></dt><dd><p>
+         Identifies each boundary component with an
+         individual <em class="firstterm">boundary component number</em>,
+         starting from 0 and counting upwards.
+        </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Type</span></span></dt><dd><p>
+         Either <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Real</span></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Ideal</span></span>,
+         or <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Invalid vertex</span></span>, as outlined above.
+        </p><p>
+         This column is not shown for 2-manifold triangulations, which
+         can never have ideal or invalid vertices.
+        </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Size</span></span></dt><dd><p>
+         For a real boundary component in a 2-, 3- or 4-manifold
+         triangulation, this gives the number of edges, triangles or
+         tetrahedra respectively that make up the component.
+         For an ideal boundary component or an invalid vertex,
+         this shows the degree of the corresponding vertex.
+        </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Edges / Triangles / Tetrahedra /
+         Vertex</span></span></dt><dd><p>
+          For a real boundary component in a 2-, 3- or 4-manifold
+          triangulation, this lists the individual boundary edges,
+          triangles or tetrahedra respectively that it contains.
+          For an ideal boundary component or an invalid vertex,
+          this lists which individual tetrahedron or pentachoron
+          vertices are identified to form the overall ideal
+          or invalid vertex of the triangulation.
+         </p><p>
+          Edges, triangles, tetrahedra and vertices are described
+          in the same manner as in the individual
+          <a href="tri-analysis.html#tri-faces" title="Viewing Faces">face viewers</a>.
+         </p></dd></dl></div><p>
+     </p></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="tri-skeleton-graphs"></a>Graphs (All Dimensions)</h4></div></div></div><p>
+     The <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Skeleton</span></span>&#8594;<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Graphs</span></span> tab
+     is used to visualise the large-scale structure of the triangulation.
+    </p><p>
+     <span class="application">Regina</span> can display a variety of graphs about the triangulation.
+     Simply select which graph you want to see in the drop-dox box,
+     as indicated below.
+    </p><p>
+     <span class="inlinemediaobject"><img src="tri-graphs-dual.png"></span>
+    </p><p>
+     The graphs that <span class="application">Regina</span> displays include:
+     </p><div class="glosslist"><dl><dt><a name="tri-graphs-dual"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Dual graph</span></span></dt><dd><p>
+         The dual graph (which is illustrated above) gives a
+         visual representation of how the top-dimensional
+         simplices of the triangulation are glued together.
+         This is sometimes known as the <em class="firstterm">edge pairing</em>,
+         <em class="firstterm">face pairing</em> or <em class="firstterm">facet pairing
+         graph</em> (for 2-, 3- and 4-manifolds respectively).
+        </p><p>
+         Every node of this graph represents a top-dimensional simplex;
+         that is, a triangle, tetrahedron or pentachoron in a 2-, 3- or
+         4-manifold triangulation respectively.
+         Every arc of this graph represents a gluing between two such
+         simplices along a pair of facets; that is, a pair of edges,
+         triangles or tetrahedra for 2-, 3- and 4-manifolds respectively.
+        </p><p>
+         Nodes will be labelled by the corresponding simplex numbers
+         (though these labels can be
+         <a href="options.html#options-fpg-labels">turned off</a>).
+         The dual graph of a closed <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span>-manifold
+         triangulation is always (<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span>+1)-valent;
+         for bounded triangulation some nodes may have smaller degree
+         (but never larger).
+        </p></dd><dt><a name="tri-graphs-tree"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Tree decomposition</span></span></dt><dd><p>
+         A <em class="firstterm">tree decomposition</em> (illustrated below)
+         models the dual graph using a rooted tree.
+         <span class="application">Regina</span> uses these tree decompositions in some of its
+         fixed-parameter tractable algorithms
+         [<a href="bibliography.html#bib-turaevviro-fpt" title="[Bur15]"><span class="abbrev">Bur15</span></a>].
+        </p><p>
+         <span class="inlinemediaobject"><img src="tri-graphs-tree.png"></span>
+        </p><p>
+         Each node of the tree decomposition is called a
+         <em class="firstterm">bag</em>, and contains a
+         <span class="emphasis"><em>set</em></span> of nodes of the
+         dual graph.  The <em class="firstterm">width</em> of the
+         tree decomposition is one less than the size of the largest bag;
+         for fast algorithms, this width should be as small as possible.
+         <span class="application">Regina</span> will display both the width and the number of bags
+         above the graph itself.
+        </p><p>
+         <span class="application">Regina</span> does not guarantee to find a tree decomposition of
+         the smallest possible width (i.e., it does not compute the precise
+         <em class="firstterm">treewidth</em> of the dual graph, which is an
+         NP-hard problem).  Instead it uses fast heuristics that are
+         found to produce relatively low-width tree decompositions in practice.
+        </p></dd><dt><a name="tri-graphs-nice"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Nice tree decomposition</span></span></dt><dd><p>
+         This is a variant of the tree decomposition that is less concise,
+         but more useful in practice for algorithms.
+        </p><p>
+         In a <em class="firstterm">nice</em> tree decomposition, the root
+         bag is empty, and the leaf bags each contain just one node of the
+         dual graph.  Moreover, every non-leaf bag either
+         (i) has exactly one child bag, which it clones and then
+         either adds or removes exactly one node of the dual graph;
+         or (ii) has exactly two identical child bags, which it clones
+         precisely.
+        </p><p>
+         As with tree decompositions, <span class="application">Regina</span> will display both the
+         width of the nice tree decomposition and the number of bags
+         that it contains.  Typically the width will be the same as for the
+         (plain) tree decomposition above, but the number of bags may
+         be significantly larger (though still linear in the overall
+         size of the triangulation).
+        </p></dd></dl></div><p>
+    </p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="tri-algebra"></a>Algebraic Invariants (3-D and 4-D)</h3></div></div></div><p>
+    The <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Algebra</span></span> tab
+    holds several smaller tabs that describe different
+    algebraic invariants of the triangulation.
+   </p><p>
+    If the triangulation contains ideal vertices, these invariants
+    will be computed <span class="emphasis"><em>assuming the ideal vertices have
+    been truncated</em></span>, leaving a small boundary component
+    where each ideal vertex used to be.
+   </p><div class="caution" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Caution</h3><p>
+     For 3-manifold triangulations, there is no guarantee that
+     <a href="tri-analysis.html#tri-faces-invalid">invalid edges</a>
+     (edges glued to themselves in reverse) will be handled correctly.
+     In particular, the projective plane cusps they produce may be ignored.
+    </p><p>
+     For 4-manifold triangulations,
+     if the triangulation is invalid for any reason&#8212;in particular,
+     if it has invalid edges or triangles&#8212;then <span class="application">Regina</span> will not
+     attempt to compute any algebraic invariants at all.
+    </p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="tri-algebra-homfund"></a>Homology and Fundamental Group</h4></div></div></div><p>
+     The <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Algebra</span></span>&#8594;<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Homology &amp;
+     Fund. Group</span></span>
+     tab presents several homology groups of the triangulation
+     (on the left side of the panel),
+     as well as the fundamental group (on the right side of the panel).
+    </p><p>
+     The homology groups on the left include the first homology group
+     H<sub>1</sub>(M), and the second homology group
+     H<sub>2</sub>(M).
+     For 3-manifolds (but not 4-manifolds), several additional groups
+     will be shown:
+     H<sub>1</sub>(M, &#8706;M),
+      the relative first homology group with respect to the boundary;
+     H<sub>1</sub>(&#8706;M),
+      the first homology group of the boundary; and
+     H<sub>2</sub>(M ; Z<sub>2</sub>),
+      the second homology group with coefficients in Z<sub>2</sub>.
+    </p><p>
+     The fundamental group on the right will be
+     presented as a set of generators and relations.
+     <span class="application">Regina</span> will also try to recognise the common name of this
+     group (though the recognition code is fairly naïve); if it can then
+     the common name (such as &#8220;Z<sub>2</sub>&#8221;)
+     will be displayed above the generators and relations.
+    </p><p>
+     <span class="inlinemediaobject"><img src="tri-homfund.png"></span>
+    </p><p>
+     <span class="application">Regina</span> attempts to simplify the presentation as far as it can
+     (using small cancellation theory and Nielsen moves).
+     However, if this is not satisfactory then there are further things
+     you can try:
+     </p><div class="itemizedlist"><ul type="disc"><li><p>
+        If you have <a href="http://www.gap-system.org/" target="_top"><span class="application"><span class="acronym">GAP</span>
+   (Groups, Algorithms and Programming)</span></a> installed on your system,
+        then you can use <span class="application"><span class="acronym">GAP</span></span> to simplify the group presentation
+        by pressing the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guibutton">Using GAP</span></span> button.
+        You can try this more than once if you like: sometimes
+        <span class="application"><span class="acronym">GAP</span></span> finds a better presentation when run a second or third time.
+       </p></li><li><p>
+        If you seem to be stuck in a local &#8220;well&#8221;, you can
+        try to escape by pressing the
+        <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guibutton">Relator explosion</span></span> button.
+        This will attempt to multiply old relators together in a
+        moderately intelligent way to build new relators, which might be
+        more useful for later simplifications.
+        This process has been found particularly useful when trying
+        to prove that a group is trivial.
+       </p><p>
+        The <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guibutton">Relator explosion</span></span> button
+        will make the group presentation larger&#8212;sometimes
+        <span class="emphasis"><em>much</em></span> larger.
+        After pressing this button, you should simplify the presentation
+        again before trying anything else.
+        You can press the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guibutton">Using Regina</span></span> button
+        to simplify the presentation using <span class="application">Regina</span>'s own code,
+        or you can press <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guibutton">Using GAP</span></span> as described above.
+       </p></li></ul></div><p>
+    </p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>
+     If you press the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guibutton">Relator explosion</span></span> button
+     for a group presentation that is already very large, then
+     the increase in size could be enormous&#8212;so enormous that it
+     could crash <span class="application">Regina</span> entirely by exceeding the available memory on
+     your machine.
+    </p></div><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>
+     If you cannot read the superscript digits in the fundamental group
+     presentation, or if you cannot read the blackboard-bold Z symbols
+     in the homology groups, try
+     <a href="options.html#options-general" title="General Options">disabling unicode symbols</a>
+     in <span class="application">Regina</span>'s settings.
+    </p></div><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>
+      If <span class="application">Regina</span> is having trouble starting <span class="application"><span class="acronym">GAP</span></span>, you can tell it how
+      to start <span class="application"><span class="acronym">GAP</span></span> in the
+      <a href="options-tools.html" title="Tools Options">tools options</a>.
+     </p><p>
+      If you wish to see a full transcript of the conversation between
+      <span class="application">Regina</span> and <span class="application"><span class="acronym">GAP</span></span>, start <span class="application">Regina</span> from the command-line by running
+      <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-gui</strong></span></span>.  The entire conversation
+      will be shown in the text console where you ran
+      <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-gui</strong></span></span> command.
+     </p></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="tri-algebra-turaevviro"></a>Turaev-Viro Invariants (3-D)</h4></div></div></div><p>
+     For 3-manifold triangulations, the
+     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Algebra</span></span>&#8594;<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Turaev-Viro</span></span>
+     tab allows you to compute Turaev-Viro state sum invariants with
+     arbitrary parameters.
+     As of <span class="application">Regina</span> 5.0, these invariants are computed using exact
+     arithmetic in an appropriate cyclotomic field (so, unlike previous
+     versions, there is no need to worry about floating-point inaccuracies).
+    </p><p>
+     <span class="inlinemediaobject"><img src="tri-tv.png"></span>
+    </p><p>
+     Each Turaev-Viro invariant is defined by a set of
+     <em class="firstterm">initial data</em>:
+     an integer <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>r</code></em></span> &#8805; 3 and a
+     root of unity <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>q</code></em></span><sub>0</sub> of degree 2<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>r</code></em></span>
+     (see Section 7 of [<a href="bibliography.html#bib-turaevviro" title="[TV92]"><span class="abbrev">TV92</span></a>] for details).
+    </p><div class="itemizedlist"><ul type="disc"><li><p>
+      For even values of <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>r</code></em></span>,
+      <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>q</code></em></span><sub>0</sub> must be a primitive (2<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>r</code></em></span>)th root of unity,
+      and <span class="application">Regina</span> computes only one invariant (since all such
+      roots yield essentially the same information).
+     </p></li><li><p>
+      For odd values of <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>r</code></em></span>,
+      <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>q</code></em></span><sub>0</sub> may either be a primitive
+      (2<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>r</code></em></span>)th root of unity or a primitive
+      <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>r</code></em></span>th root of unity.
+      <span class="application">Regina</span> computes both invariants, and marks them as
+      &#8220;odd&#8221; and &#8220;even&#8221; respectively.
+     </p></li></ul></div><p>
+     To compute a Turaev-Viro invariant, simply enter the integer
+     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>r</code></em></span> into the box provided and press
+     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Calculate</span></span>.
+    </p><p>
+     <span class="inlinemediaobject"><img src="tri-tv-entry.png"></span>
+    </p><p>
+     <span class="application">Regina</span> will compute the corresponding invariant(s) as requested,
+     and display them in the table below as elements of the corresponding
+     cyclotomic field.
+     These field elements are expressed as polynomials in &#950;, where
+     &#950; denotes the primitive root of unity <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>q</code></em></span><sub>0</sub> from the initial data.
+    </p><p>
+     <span class="inlinemediaobject"><img src="tri-tv-results.png"></span>
+    </p><div class="caution" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Caution</h3><p>
+     Only small values of <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>r</code></em></span>
+     should be used, since the time required to calculate the
+     invariant grows exponentially with <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>r</code></em></span>.
+    </p></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="tri-algebra-cellular"></a>Cellular Information (3-D)</h4></div></div></div><p>
+     For 3-manifold triangulations, the
+     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Algebra</span></span>&#8594;<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Cellular Info</span></span> tab
+     contains further information on the standard and dual CW-decompositions,
+     a variety of homology groups and mappings, the
+     Kawauchi-Kojima invariants of the torsion linking form, and
+     comments on where the triangulation might be embeddable.
+    </p><p>
+     <span class="inlinemediaobject"><img src="tri-cellular.png"></span>
+    </p><p>
+     As with the other algebraic invariants described above,
+     all information here refers to the <span class="emphasis"><em>compact</em></span>
+     manifold obtained by
+     truncating any ideal vertices and leaving real boundary surfaces intact.
+    </p><p>
+     The information here includes:
+     </p><div class="glosslist"><dl><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Cells</span></span></dt><dd><p>
+         Lists the number of cells of each dimension for a standard
+         CW-decomposition of the manifold.  This is a list of four
+         numbers, counting the 0-cells, 1-cells, 2-cells and 3-cells
+         respectively.
+        </p><p>
+         For a closed triangulation (no ideal vertices), this is simply
+         the number of vertices, edges, triangles and tetrahedra.  For an
+         ideal triangulation this takes into account the truncation of
+         ideal vertices, and is therefore a little more complex.
+        </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Dual cells</span></span></dt><dd><p>
+         Lists the number of cells of each dimension in the
+         dual CW-decomposition.  As before, this is a list of four
+         numbers that count the 0-cells, 1-cells, 2-cells and 3-cells
+         in order.
+       </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Euler characteristic</span></span></dt><dd><p>
+        Gives the Euler characteristic of the manifold, as computed from
+        the CW-decompositions.
+       </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Homology groups</span></span></dt><dd><p>
+        Lists the homology groups of the manifold with coefficients in
+        the integers.  The four groups
+        H<sub>0</sub>, H<sub>1</sub>,
+        H<sub>2</sub> and H<sub>3</sub> are listed
+        in order.
+       </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Boundary homology groups</span></span></dt><dd><p>
+        Lists the homology groups of the boundary of the manifold, again
+        with coefficients in the integers.  The three groups
+        H<sub>0</sub>, H<sub>1</sub> and
+        H<sub>2</sub> are listed in order.
+       </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">H<sub>1</sub>(&#8706;M &#8594; M)</span></span></dt><dd><p>
+        Since the boundary is a submanifold of the original manifold,
+        there is an induced map on the first homology group.  This
+        item on the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Cellular Info</span></span> tab
+        describes some properties of this induced map.
+       </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Torsion form rank vector</span></span></dt><dd><p>
+         Given an oriented 3-manifold <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>M</code></em></span>,
+         there is a symmetric bilinear function
+         tH<sub>1</sub>(<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>M</code></em></span>) x tH<sub>1</sub>(<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>M</code></em></span>) &#8212;&gt; Q/Z
+         where tH<sub>1</sub>(<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>M</code></em></span>) is the torsion subgroup of H<sub>1</sub>(<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>M</code></em></span>).
+         It is computed in this way: let <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>x</code></em></span> and <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>y</code></em></span> be 1-dimensional
+         torsion homology classes.  Then <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>x</code></em></span> is the boundary of
+         some 2-cycle <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>z</code></em></span> (transverse to <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>y</code></em></span>) for some integer <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span>.
+         The <em class="firstterm">torsion linking form</em> of
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>x</code></em></span> and <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>y</code></em></span> is the
+         oriented intersection number of <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>z</code></em></span> and <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>y</code></em></span>, divided by <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span>.
+        </p><p>
+         Kawauchi and Kojima
+         gave a complete classification of such torsion linking forms
+         [<a href="bibliography.html#bib-kktorsionlinkingform" title="[KK80]"><span class="abbrev">KK80</span></a>].  <span class="application">Regina</span> computes the
+         torsion linking form, and implements the Kawauchi-Kojima
+         classification.
+        </p><p>
+         This item on the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Cellular Info</span></span> tab
+         is the first of the three Kawauchi-Kojima invariants of the
+         torsion linking form on the torsion subgroup of H<sub>1</sub>:
+         the <em class="firstterm">torsion form rank vector</em>, which
+         lists the prime power decomposition of the torsion subgroup of
+         H<sub>1</sub>(<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>M</code></em></span>).
+         For example, if H<sub>1</sub>(<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>M</code></em></span>) is a direct sum of <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span> copies of
+         Z<sub>20</sub> and <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>m</code></em></span> copies of
+         Z<sub>18</sub>, then the torsion form rank vector
+         would be: 2(<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>m</code></em></span> <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span>) 3(0 <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>m</code></em></span>) 5(<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span>)
+         since
+         the group is isomorphic to
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>m</code></em></span>Z<sub>2</sub> +
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span>Z<sub>2^2</sub> +
+         0Z<sub>3</sub> +
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>m</code></em></span>Z<sub>3^2</sub> +
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span>Z<sub>5</sub>.
+        </p><p>
+         Note that the Kawauchi-Kojima invariants are only computed for
+         connected orientable manifolds.
+        </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Sigma vector</span></span></dt><dd><p>
+         This item is the second of the three Kawauchi-Kojima invariants
+         described above: the <em class="firstterm">2-torsion sigma vector</em>,
+         which is relevant for manifolds in which H<sub>1</sub>
+         has 2-torsion.  It is an orientation-sensitive invariant, where
+         the orientation is chosen so that the first tetrahedron in the
+         triangulation is positively-oriented with its standard parametrisation.
+        </p><p>
+         As above, the Kawauchi-Kojima invariants are only computed
+         for connected orientable manifolds.
+        </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Legendre symbol vector</span></span></dt><dd><p>
+         This is the third of the three Kawauchi-Kojima invariants of the
+         torsion linking form:
+         the <em class="firstterm">odd p-torsion Legendre symbol
+         vector</em>, originally constructed by Seifert,
+         which is relevant for manifolds in which H<sub>1</sub>
+         has odd torsion.
+        </p><p>
+         Again, the Kawauchi-Kojima invariants are only computed for
+         connected orientable manifolds.
+        </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Comments</span></span></dt><dd><p>
+         This final item on the
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Cellular Info</span></span> tab comments upon
+         where the manifold might embed.  In particular, it attempts to
+         make deductions about whether the manifold might embed in
+         R<sup>3</sup>, S<sup>3</sup>,
+         S<sup>4</sup>, or a homology sphere. If the manifold
+         is orientable it tests for the hyperbolicity of the torsion linking
+         form.  It also performs the Kawauchi-Kojima 2-torsion test, useful
+         for determining if a manifold with boundary does not embed in any
+         homology 4-sphere.
+        </p><p>
+         The information in this field might change in future releases
+         of <span class="application">Regina</span> (i.e., it might become more detailed
+         as more tests become available).
+         Currently it examines the homology, the Kawauchi-Kojima
+         invariants and some other elementary properties, and uses
+         C. T. C. Wall's theorem that 3-manifolds embed
+         in S<sup>5</sup>.
+        </p><p>
+         These comments are provided for both orientable and
+         non-orientable manifolds.  In the non-orientable case they may
+         provide additional information about the embeddability of the
+         <a href="tri-modification.html#tri-orient" title="Orienting Triangulations and Double Covers (All Dimensions)">orientable double cover</a>.
+        </p></dd></dl></div><p>
+    </p><p>
+     The paper [<a href="bibliography.html#bib-budney-emb11" title="[Bud08]"><span class="abbrev">Bud08</span></a>] illustrates how
+     the information on this tab can be used in studying embedding problems.
+    </p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="tri-composition"></a>Combinatorial Composition (3-D)</h3></div></div></div><p>
+    For 3-manifold triangulations, the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Composition</span></span> tab
+    offers more detailed information about the combinatorial
+    structure of the triangulation.
+   </p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="tri-composition-isomorphism"></a>Isomorphism / Subcomplex Testing</h4></div></div></div><p>
+     The upper portion of the composition tab is for testing
+     combinatorial isomorphism, or testing whether one triangulation is a
+     subcomplex of another.  Simply select some other
+     triangulation <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>T</code></em></span> from the drop-down box
+     (indicated by the arrow in the diagram below).
+    </p><p>
+     <span class="inlinemediaobject"><img src="tri-iso.png"></span>
+    </p><p>
+     Each time you select a different triangulation
+     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>T</code></em></span> in the drop-down box,
+     <span class="application">Regina</span> will immediately test for any of the following relationships:
+     </p><div class="itemizedlist"><ul type="disc"><li><p>
+       whether this triangulation and <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>T</code></em></span>
+       are isomorphic (i.e., identical up to a relabelling of tetrahedra
+       and their vertices);
+      </p></li><li><p>
+       whether this triangulation is isomorphic to a subcomplex of
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>T</code></em></span> (i.e., <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>T</code></em></span>
+       can be obtained from this triangulation by adding more tetrahedra
+       and/or gluing more faces together, again with a possible relabelling);
+      </p></li><li><p>
+       whether <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>T</code></em></span> is isomorphic to a subcomplex of
+       this triangulation.
+      </p></li></ul></div><p>
+    </p><p>
+     <span class="inlinemediaobject"><img src="tri-iso-result.png"></span>
+    </p><p>
+     The relationship, if any, will be reported immediately beneath
+     the drop-down box (as illustrated above).  If a relationship is found,
+     you can click on the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guibutton">Details</span></span> button for
+     the precise relabelling (i.e., the mapping between tetrahedron
+     labels and between vertices in each tetrahedron).
+    </p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="tri-composition-composition"></a>Combinatorial Recognition, Building Blocks,
+     Isomorphism Signatures and Dehydrations</h4></div></div></div><p>
+     In the lower portion of the composition tab is a large box
+     containing details on the combinatorial composition of the triangulation.
+     Here <span class="application">Regina</span> will search for well-structured features within the
+     triangulation, and deduce from them what it can.
+     Sometimes it can recognise the construction and completely identify
+     both the triangulation and the underlying 3-manifold; other times
+     it yields little or no useful information.
+    </p><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>
+      If your aim is just to determine the underlying 3-manifold by any means
+      possible, see the
+      <a href="tri-analysis.html#tri-recognition" title="High-Level Recognition Routines (3-D)">recognition tab</a> instead.
+      The recognition tab combines the results of this combinatorial
+      recognition with slower but stronger routines, including
+      3-sphere, 3-ball and solid torus recognition, census lookup,
+      and more.
+     </p></div><p>
+     <span class="inlinemediaobject"><img src="tri-composition.png"></span>
+    </p><p>
+     In this composition box you will find the following information:
+    </p><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="tri-composition-name"></a>Recognising Families of Triangulations and 3-Manifolds</h5></div></div></div><p>
+      <span class="application">Regina</span> knows about many infinite families of triangulations.
+      If your triangulation belongs to one of these families then
+      <span class="application">Regina</span> will detect this and report the results here.
+      <span class="application">Regina</span> is particularly good at recognising
+      well-structured triangulations of Seifert fibred spaces and graph manifolds.
+     </p><p>
+      <span class="inlinemediaobject"><img src="tri-composition-name.png"></span>
+     </p><p>
+      If it does recognise your triangulation, <span class="application">Regina</span> will name the
+      3-manifold and also the triangulation itself.  See
+      [<a href="bibliography.html#bib-burton-phd" title="[Bur03]"><span class="abbrev">Bur03</span></a>] and [<a href="bibliography.html#bib-burton-nor7" title="[Bur07c]"><span class="abbrev">Bur07c</span></a>]
+      for details on the various families of triangulations and what their names
+      and parameters mean.
+     </p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="tri-composition-isosig"></a>Isomorphism Signature</h5></div></div></div><p>
+      An <em class="firstterm">isomorphism signature</em> is a compact sequence
+      of letters, digits and/or punctuation that identifies a
+      triangulation uniquely up to combinatorial isomorphism.
+      <span class="application">Regina</span> will report the isomorphism signature for your
+      triangulation here.
+     </p><p>
+      <span class="inlinemediaobject"><img src="tri-composition-isosig.png"></span>
+     </p><p>
+      Every triangulation has an isomorphism signature (even
+      disconnected triangulations or triangulations with boundary).
+      The main features of isomorphism signatures are that they are fast
+      to compute, and that two triangulations have the same signature
+      <span class="emphasis"><em>if and only if</em></span> they are isomorphic.
+      See [<a href="bibliography.html#bib-burton-simps3" title="[Bur11b]"><span class="abbrev">Bur11b</span></a>] and
+      [<a href="bibliography.html#bib-burton-pachner-orprime" title="[Bur11c]"><span class="abbrev">Bur11c</span></a>] for details.
+     </p><p>
+      To convert an isomorphism signature back into a triangulation,
+      you can either <a href="triangulations.html#tri-new-isosig" title="Isomorphism Signature">create a new
+      triangulation</a> from a signature, or
+      <a href="foreign.html#import-isosiglist" title="Isomorphism Signature Lists">import a list of
+      isomorphism signatures</a>.  Be aware that the resulting
+      triangulation might not use the same tetrahedron and vertex
+      labels as the original.
+     </p><p>
+      Isomorphism signatures are case-sensitive (i.e., upper-case and
+      lower-case matters).
+      To copy the isomorphism signature to the clipboard, simply select
+      the line in the box and choose
+      <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Edit</span></span>&#8594;<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Copy</span></span>.
+     </p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="tri-composition-dehydration"></a>Dehydration</h5></div></div></div><p>
+      Like isomorphism signatures, a <span class="emphasis"><em>dehydration string</em></span>
+      is a short sequence of letters from which you can reconstruct
+      your triangulation.  Only some triangulations have dehydration
+      strings (they must be connected with no boundary triangles and
+      &#8804; 25 tetrahedra), and they are not unique up to isomorphism
+      (so relabelling tetrahedra might change the dehydration string).
+      If it exists, the dehydration string will be reported here.
+     </p><p>
+      <span class="inlinemediaobject"><img src="tri-composition-dehydration.png"></span>
+     </p><p>
+      Dehydration strings first appeared in early censuses of hyperbolic
+      3-manifolds.  See [<a href="bibliography.html#bib-cuspedcensus" title="[CHW99]"><span class="abbrev">CHW99</span></a>] for details.
+     </p><p>
+      To convert a dehydration string back into a triangulation,
+      you can either <a href="triangulations.html#tri-new-dehydration" title="Dehydration (3-manifolds only)">create a new
+      triangulation</a> from its dehydration, or
+      <a href="foreign.html#import-dehydrationlist" title="Dehydrated Triangulation Lists">import a list of
+      dehydration strings</a>.  Be aware that the resulting triangulation
+      might not use the same tetrahedron and vertex labels as the
+      original.
+     </p><p>
+      As with isomorphism signatures, you can copy a dehydration string
+      to the clipboard by selecting the line in the box and choosing
+      <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Edit</span></span>&#8594;<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Copy</span></span>.
+     </p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="tri-composition-blocks"></a>Building Blocks</h5></div></div></div><p>
+      The remainder of the composition box describes combinatorial
+      building blocks within the triangulation.
+      <span class="application">Regina</span> knows about several families of building blocks
+      (such as <a href="triangulations.html#tri-new-layered" title="Layered Solid Torus (3-manifolds only)">layered
+      solid tori</a>), and it will search for these within the
+      triangulation.
+      If it finds any building blocks that it
+      recognises then it will give details here, including any parameters
+      for the blocks and where they occur within the triangulation.
+     </p><p>
+      <span class="inlinemediaobject"><img src="tri-composition-blocks.png"></span>
+     </p><p>
+      See [<a href="bibliography.html#bib-burton-phd" title="[Bur03]"><span class="abbrev">Bur03</span></a>]
+      and [<a href="bibliography.html#bib-burton-nor7" title="[Bur07c]"><span class="abbrev">Bur07c</span></a>] for details on the various
+      families of building blocks that <span class="application">Regina</span> understands.
+     </p></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="tri-recognition"></a>High-Level Recognition Routines (3-D)</h3></div></div></div><p>
+    For 3-manifold triangulations, the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Recognition</span></span> tab
+    attempts to identify the underlying manifold through a variety of
+    techniques,
+    and also computes other high-level properties of the triangulation.
+    It offers a combination of slow but exact procedures
+    (such as 3-sphere, 3-ball and solid torus recognition),
+    and fast "opportunistic" procedures such as combinatorial recognition
+    and census lookup.
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-surfaces.png"></span>
+   </p><p>
+    For large triangulations, many of these properties are
+    not automatically calculated (since some algorithms require
+    worst-case exponential time).
+    If a property is listed as <code class="literal">Unknown</code>, press
+    the corresponding <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guibutton">Calculate</span></span> button
+    (and be prepared to wait):
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-s3-unknown.png"></span>
+   </p><p>
+    The result will appear as soon as the calculation is done:
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-s3-known.png"></span>
+   </p><p>
+    You might see different properties appear on the
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Recognition</span></span> tab, according to whether your
+    triangulation is closed, ideal, or has real boundary.
+    The different properties that you might see include:
+   </p><p>
+    </p><div class="glosslist"><dl><dt><a name="tri-prop3sphere"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">3-sphere</span></span></dt><dd><p>
+       Determines whether this is a triangulation
+       of the 3-sphere.
+       This uses a complete, exact 3-sphere recognition algorithm, i.e.,
+       it guarantees to terminate with the correct result.
+       The algorithm is highly optimised, and incorporates techniques from
+       [<a href="bibliography.html#bib-rubin-3sphere1" title="[Rub95]"><span class="abbrev">Rub95</span></a>],
+       [<a href="bibliography.html#bib-rubin-3sphere2" title="[Rub97]"><span class="abbrev">Rub97</span></a>],
+       [<a href="bibliography.html#bib-thinposition" title="[Tho94]"><span class="abbrev">Tho94</span></a>],
+       [<a href="bibliography.html#bib-0-efficiency" title="[JR03]"><span class="abbrev">JR03</span></a>],
+       [<a href="bibliography.html#bib-burton-quadoct" title="[Bur10b]"><span class="abbrev">Bur10b</span></a>], and
+       [<a href="bibliography.html#bib-bo-branching" title="[BO12]"><span class="abbrev">BO12</span></a>].
+      </p><p>
+       This property is only shown for closed 3-manifolds.
+      </p></dd><dt><a name="tri-prop3ball"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">3-ball</span></span></dt><dd><p>
+       Determines whether this is a triangulation of the 3-dimensional ball.
+       Again this uses a complete, exact algorithm that guarantees to
+       terminate with the correct result.
+       The algorithm is a simple modification of the 3-sphere recognition
+       algorithm as described above.
+      </p><p>
+       This property is only shown for 3-manifolds with real boundary
+       triangles and no ideal vertices.
+      </p></dd><dt><a name="tri-propsolidtorus"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Solid torus</span></span></dt><dd><p>
+       Determines whether this is a triangulation of the solid torus,
+       or equivalently, the unknot complement.
+       Once again this uses a complete, exact algorithm that guarantees to
+       terminate with the correct result [<a href="bibliography.html#bib-bo-branching" title="[BO12]"><span class="abbrev">BO12</span></a>].
+      </p><p>
+       This property is shown for ideal triangulations as well as
+       3-manifolds with real boundary triangles.
+       For ideal triangulations, the ideal vertices will be treated as
+       though they were truncated.
+      </p></dd><dt><a name="tri-prop0eff"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Zero-efficient</span></span></dt><dd><p>
+       Indicates whether the triangulation is 0-efficient.  A
+       triangulation is <em class="firstterm">0-efficient</em> if its only
+       normal spheres and discs are vertex linking, and if it has no 2-sphere
+       boundary components.
+       If a closed orientable triangulation is not 0-efficient (and has
+       more than two tetrahedra), this indicates that either the
+       triangulation is non-minimal or the underlying 3-manifold is non-prime.
+       See [<a href="bibliography.html#bib-0-efficiency" title="[JR03]"><span class="abbrev">JR03</span></a>] for details on 0-efficiency.
+      </p><p>
+       This property is only shown for
+       <span class="application">Regina</span>'s native <a href="packet-types.html#packet-triangulation" title="3-Manifold Triangulations">triangulation
+       packets</a>, not its hybrid
+       <a href="packet-types.html#packet-snappea" title="SnapPea Triangulations"><span class="application">SnapPea</span> triangulation packets</a>.
+      </p></dd><dt><a name="tri-propsplitting"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Splitting surface</span></span></dt><dd><p>
+       Determines whether the triangulation has a splitting
+       surface.  A <em class="firstterm">splitting surface</em> is a compact
+       normal surface consisting of precisely one quad per tetrahedron
+       and no other normal (or almost normal) discs.
+       See [<a href="bibliography.html#bib-burton-phd" title="[Bur03]"><span class="abbrev">Bur03</span></a>] for details.
+      </p><p>
+       This property is only shown for
+       <span class="application">Regina</span>'s native <a href="packet-types.html#packet-triangulation" title="3-Manifold Triangulations">triangulation
+       packets</a>, not its hybrid
+       <a href="packet-types.html#packet-snappea" title="SnapPea Triangulations"><span class="application">SnapPea</span> triangulation packets</a>.
+      </p></dd><dt><a name="tri-irreducible"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Irreducible</span></span></dt><dd><p>
+       Determines whether the triangulation represents an
+       irreducible manifold.
+       A closed 3-manifold is <em class="firstterm">irreducible</em> if every
+       embedded sphere bounds a ball.
+      </p><p>
+       This property is only shown for valid triangulations of closed,
+       orientable and connected 3-manifolds.
+      </p></dd><dt><a name="tri-haken"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Haken</span></span></dt><dd><p>
+       Determines whether the triangulation represents an
+       Haken manifold.
+       A closed orientable irreducible 3-manifold is
+       <em class="firstterm">Haken</em> if it contains an embedded closed
+       two-sided incompressible surface.
+      </p><p>
+       This property is only shown for valid triangulations of closed,
+       orientable, connected and irreducible 3-manifolds.
+      </p></dd><dt><a name="tri-strict"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Strict angle structure</span></span></dt><dd><p>
+       Determines whether the triangulation supports a strict angle
+       structure.  This is an angle structure in which all angles are
+       strictly positive; see the
+       <a href="angles-analysis.html#angles-propstrict">chapter on angle structures</a>
+       for details.
+      </p><p>
+       This property is only shown for ideal triangulations with no real
+       boundary triangles.
+      </p></dd><dt><a name="tri-hyperbolic"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Hyperbolic</span></span></dt><dd><p>
+       Attempts to certify that the underlying 3-manifold is hyperbolic
+       or non-hyperbolic.  Any result that is shown here will be rigorous
+       (i.e., based on exact arithmetic, and not subject to floating
+       point error).
+      </p><p>
+       For example, <span class="application">Regina</span> might certify that a 3-manifold is
+       hyperbolic because it finds a strict angle stucture
+       [<a href="bibliography.html#bib-futer-angled" title="[FG11]"><span class="abbrev">FG11</span></a>], or <span class="application">Regina</span> might certify that a
+       3-manifold is non-hyperbolic because it passes
+       solid torus recognition as described above.
+      </p><p>
+       This property is only shown for ideal triangulations with no real
+       boundary triangles.
+      </p></dd><dt><a name="tri-manifold"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Manifold</span></span></dt><dd><p>
+        This field, which is always shown at the bottom of the panel,
+        combines the exact algorithms above with the
+        combinatorial recognition routines from the
+        <a href="tri-analysis.html#tri-composition-name" title="Recognising Families of Triangulations and 3-Manifolds">composition tab</a>,
+        in a multi-pronged attempt
+        to conclusively identify the underlying 3-manifold.
+        If the 3-manifold can be determined by any of these methods,
+        it will be listed here.
+       </p></dd><dt><a name="tri-censuslookup"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Census</span></span></dt><dd><p>
+        <span class="application">Regina</span> ships with several large census databases,
+        containing hundreds of thousands of 3-manifold triangulations.
+        This field, also shown at the
+        bottom of the panel, will search for your triangulation across all of
+        these databases.  <span class="application">Regina</span> will search for any isomorphic copy
+        (i.e., it does not matter if your tetrahedra and/or vertices
+        have been relabelled).
+       </p><p>
+        Currently these databases include:
+        closed prime <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>P</code></em></span><sup>2</sup>-irreducible 3-manifold triangulations
+        (&#8804; 11 tetrahedra, both orientable and non-orientable)
+        [<a href="bibliography.html#bib-burton-genus" title="[Bur11a]"><span class="abbrev">Bur11a</span></a>];
+        cusped hyperbolic 3-manifold triangulations
+        (&#8804; 9 tetrahedra, both orientable and non-orientable)
+        [<a href="bibliography.html#bib-burton-complete" title="[Bur14c]"><span class="abbrev">Bur14c</span></a>];
+        closed hyperbolic 3-manifold triangulations
+        (the Hodgson-Weeks census)
+        [<a href="bibliography.html#bib-closedhypcensus" title="[HW94]"><span class="abbrev">HW94</span></a>];
+        plus hyperbolic knot and link complements (as tabulated by Joe Christy).
+       </p></dd></dl></div><p>
+   </p><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>
+    None of the tests on this tab will attempt a
+    connected sum decomposition, so if the 3-manifold is non-prime then
+    it will probably not be recognised.  Try running a
+    <a href="tri-analysis.html#tri-decomposition-connsum" title="Connected Sum Decomposition (3-D)">connected sum
+    decomposition</a> first, and then recognising each of the
+    prime summands.
+   </p></div><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>
+    Unlike the exact algorithms such as 3-sphere recognition and
+    solid torus recognition (which may be slow but will
+    work in all settings), the "opportunistic"
+    combinatorial recognition and census lookup will benefit from a
+    well-structured triangulation.  If <span class="application">Regina</span> does not recognise
+    the 3-manifold, try <a href="tri-modification.html#tri-simplification" title="Automatic Simplification (3-D and 4-D)">simplifying</a>
+    the triangulation, or performing
+    <a href="tri-modification.html#tri-elementarymove" title="Manual Simplification: Elementary Moves (3-D and 4-D)">elementary moves</a>.
+   </p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="tri-snappea"></a><span class="application">SnapPea</span> Calculations (3-D)</h3></div></div></div><p>
+    <span class="application">SnapPea</span> is an excellent piece of software with a strong focus
+    on hyperbolic 3-manifolds, originally by Jeffrey Weeks
+    and now further developed by Marc Culler and Nathan Dunfield as the
+    <span class="application">Python</span>-based <a href="http://www.math.uic.edu/t3m/SnapPy/" target="_top"><span class="application">SnapPy</span></a>.
+    Portions of the <span class="application">SnapPea</span> kernel are built into <span class="application">Regina</span>, which
+    allows <span class="application">Regina</span> to compute information related to hyperbolic
+    structures.
+   </p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>
+     Be aware that much of the information gained through the <span class="application">SnapPea</span> kernel
+     is inexact.  In particular, it may be subject to numerical instability
+     or floating point error.
+     If you wish to rigorously certify that a manifold is hyperbolic, see the
+     <a href="tri-analysis.html#tri-hyperbolic">recognition tab</a>.
+    </p></div><p>
+    There are two ways in which you can use <span class="application">SnapPea</span> within <span class="application">Regina</span>:
+    </p><div class="itemizedlist"><ul type="disc"><li><p>
+      If you are working with one of <span class="application">Regina</span>'s native
+      <a href="packet-types.html#packet-triangulation" title="3-Manifold Triangulations">3-manifold triangulation packets</a>,
+      you can view some basic information (the solution type and the
+      hyperbolic volume) through the triangulation
+      <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel"><span class="application">SnapPea</span></span></span> tab, as described below.
+     </p></li><li><p>
+      If you are working with one of <span class="application">Regina</span>'s hybrid
+      <a href="packet-types.html#packet-snappea" title="SnapPea Triangulations"><span class="application">SnapPea</span> triangulation packets</a>,
+      you can view richer information on hyperbolic structures
+      (including tetrahedron shapes), and you can perform Dehn
+      fillings on the cusps.  See the
+      <a href="snappea.html" title="Chapter 4. SnapPea Triangulations">chapter on <span class="application">SnapPea</span> triangulations</a>
+      for details.
+     </p></li></ul></div><p>
+   </p><p>
+    For <span class="application">Regina</span>'s native 3-manifold triangulations, the
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel"><span class="application">SnapPea</span></span></span> tab will ask <span class="application">SnapPea</span> to solve for a
+    complete hyperbolic structure, and will then display the following
+    basic summary information:
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-snappea.png"></span>
+   </p><p>
+    </p><div class="glosslist"><dl><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Solution Type</span></span></dt><dd><p>
+       This describes the type of solution that <span class="application">SnapPea</span> found
+       to the hyperbolic gluing equations.
+       For explanations of the possible solution types,
+       see the <a href="snappea-analysis.html#snappea-volumetype">chapter on <span class="application">SnapPea</span>
+       triangulations</a>.
+      </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Volume</span></span></dt><dd><p>
+       This gives the volume of the underlying 3-manifold, along with the
+       estimated number of decimal places of accuracy.
+       This accuracy measure is an <span class="emphasis"><em>estimate only</em></span>
+       (based on the differences between terms in Newton's method).
+      </p></dd></dl></div><p>
+   </p><p>
+    If you would like a richer interface with the <span class="application">SnapPea</span> kernel,
+    you can press the button marked <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Convert to a <span class="application">SnapPea</span>
+    triangulation</span></span>.  This will build a new hybrid
+    <a href="packet-types.html#packet-snappea" title="SnapPea Triangulations"><span class="application">SnapPea</span> triangulation packet</a>,
+    which will appear beneath the original (native <span class="application">Regina</span>)
+    triangulation in the packet tree.
+    See the <span class="application">SnapPea</span> triangulations chapter for further information about
+    <a href="snappea.html#snappea-fromregina" title="Converting from a Regina Triangulation">this conversion process</a>, or
+    about <a href="snappea.html" title="Chapter 4. SnapPea Triangulations">what you can do with <span class="application">SnapPea</span>
+    triangulations</a> in general.
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="tri-decomposition"></a>Decomposition (All Dimensions)</h3></div></div></div><p>
+    <span class="application">Regina</span> implements some high-level algorithms for decomposition
+    manifolds into &#8220;atomic pieces&#8221;.  These include the following:
+   </p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="tri-decomposition-component"></a>Connected Components</h4></div></div></div><p>
+     If your triangulation is
+     <a href="tri-analysis.html#tri-basicprops" title="Validity, Orientability and Other Basic Properties (All Dimensions)">disconnected</a>, you may wish to
+     break it into its connected components.  To do this, select
+     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Triangulation</span></span>&#8594;<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Extract Components</span></span>.
+     You must open the triangulation for viewing before you can do this.
+    </p><p>
+     <span class="inlinemediaobject"><img src="menucomponents.png"></span>
+    </p><p>
+     <span class="application">Regina</span> will create several new triangulations, one for each
+     connected component.  These will be added beneath the original in
+     the packet tree.  Your original (disconnected) triangulation will
+     remain unchanged.
+    </p><p>
+     <span class="inlinemediaobject"><img src="tri-extract-components.png"></span>
+    </p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="tri-decomposition-connsum"></a>Connected Sum Decomposition (3-D)</h4></div></div></div><p>
+     For 3-manifolds,
+     if your triangulation is <a href="tri-analysis.html#tri-basicprops" title="Validity, Orientability and Other Basic Properties (All Dimensions)">closed
+     and connected</a>, <span class="application">Regina</span> can decompose it into a
+     connected sum of prime, non-sphere 3-manifolds.
+     To do this, select
+     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">3-D Triangulation</span></span>&#8594;<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Connected Sum Decomposition</span></span>
+     from the menu.
+     You must open the triangulation for viewing before you can do this.
+    </p><p>
+     <span class="inlinemediaobject"><img src="menuconnsum.png"></span>
+    </p><p>
+     Again, <span class="application">Regina</span> will create several new triangulations, one for
+     each prime summand.  These will be added beneath the original in
+     the packet tree, and your original triangulation will remain unchanged.
+     If your original triangulation is a 3-sphere then no prime summands
+     will be produced at all.
+    </p><p>
+     <span class="inlinemediaobject"><img src="tri-connsum-results.png"></span>
+    </p><p>
+     With a few exceptions (RP<sup>3</sup> and
+     the twisted and non-twisted products
+     S<sup>2</sup>×S<sup>1</sup>),
+     each of the new triangulations is guaranteed to be
+     <a href="tri-analysis.html#tri-prop0eff">0-efficient</a> (i.e., they will
+     have no non-vertex-linking normal spheres).
+     The underlying algorithm is based on
+     Jaco-Rubinstein crushing
+     [<a href="bibliography.html#bib-crushing-dcg" title="[Bur14b]"><span class="abbrev">Bur14b</span></a>]
+     [<a href="bibliography.html#bib-0-efficiency" title="[JR03]"><span class="abbrev">JR03</span></a>],
+     and uses <a href="tri-analysis.html#tri-prop3sphere">3-sphere recognition</a>
+     to ensure that none of the summands are trivial.
+    </p><p>
+     If your triangulation is non-orientable and contains an embedded
+     two-sided projective plane, then the connected sum decomposition algorithm
+     <span class="emphasis"><em>might</em></span> fail (but it might still succeed)
+     [<a href="bibliography.html#bib-crushing-dcg" title="[Bur14b]"><span class="abbrev">Bur14b</span></a>].
+     If it does fail then <span class="application">Regina</span> will detect this and inform you.
+    </p><p>
+     <span class="inlinemediaobject"><img src="tri-connsum-rp2.png"></span>
+    </p><div class="caution" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Caution</h3><p>
+     Connected sum decomposition can be very slow for larger
+     triangulations, since the underlying normal surface algorithms have
+     worst-case exponential running time.
+    </p></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="tri-vertexlinks"></a>Triangulating Vertex Links (3-D and 4-D)</h3></div></div></div><p>
+    In a 3-manifold or 4-manifold triangulation,
+    if you wish to examine a vertex link in more detail then
+    you can explicitly construct it by selecting
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Triangulation</span></span>&#8594;<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Vertex Links</span></span>
+    from the menu.
+    This will build the link of the selected vertex
+    as a new 2-manifold or 3-manifold triangulation respectively.
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-vertexlinks.png"></span>
+   </p><p>
+    You will be asked which vertex link you wish to construct,
+    as illustrated below.
+    For each available vertex, the drop-down list will show the vertex number
+    (as seen in the <a href="tri-analysis.html#tri-faces" title="Viewing Faces">skeleton viewer</a>),
+    along with details of the individual tetrahedron or pentachoron vertices
+    that combine to form that particular vertex of the triangulation.
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-vertexlinksbox.png"></span>
+   </p><p>
+    Once the vertex link is constructed, the resulting 2-manifold or
+    3-manifold trianguation will appear beneath the original 3-manifold or
+    4-manifold triangulation in the packet tree.
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-vertexlinksresult.png"></span>
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="tri-tribdry"></a>Triangulating Boundary Components (4-D)</h3></div></div></div><p>
+    Likewise, if you wish to study a boundary component of a 4-manifold
+    in detail, you can explicitly construct it by selecting
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">4-D Triangulation</span></span>&#8594;<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Boundary Components</span></span>.
+    This will build the selected boundary component
+    as a new 3-manifold triangulation.
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-tribdry.png"></span>
+   </p><p>
+    You will be asked which boundary component you wish to construct,
+    as illustrated below.
+    You can triangulate both real boundary components (formed from
+    boundary tetrahedra) and ideal boundary components (represented by
+    vertices whose links are closed 3-manifolds but not spheres).
+   </p><p>
+    In the drop-down list, boundary components will be listed
+    using their boundary component numbers, as seen in the
+    <a href="tri-analysis.html#tri-bdrycomponents" title="Viewing Boundary Components">skeleton viewer</a>.
+    In addition, each real boundary component will include details
+    of its constituent boundary tetrahedra, and each ideal boundary
+    component will include details of the ideal vertex whose
+    link it represents.
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-tribdrybox.png"></span>
+   </p><p>
+    Once the boundary component is constructed, the resulting 3-manifold
+    trianguation will appear beneath the original 4-manifold triangulation
+    in the packet tree.
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-tribdryresult.png"></span>
+   </p></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="triangulations.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="tri-modification.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">Triangulations </td><td width="34%" align="center" class="navCenter"><a href="triangulations.html">Up</a></td><td width="33%" align="right" class="navRight"> Modification</td></tr></table></div></body></html>

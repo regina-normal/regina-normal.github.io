@@ -1,0 +1,257 @@
+<html><head><title>Chapter 7. Importing and Exporting Data</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina Handbook"><link rel="up" href="index.html" title="The Regina Handbook"><link rel="prev" href="angles-analysis.html" title="Analysis"><link rel="next" href="foreign-export.html" title="Exporting"><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina.sourceforge.net/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Importing and Exporting Data</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="angles-analysis.html">Prev</a></td><td align="center" class="navCenter" width="34%"> </td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="foreign-export.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="foreign"></a>Chapter 7. Importing and Exporting Data</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="foreign.html#foreign-import">Importing</a></span></dt><dd><dl><dt><span class="sect2"><a href="foreign.html#import-regina"><span class="application">Regina</span> Data Files</a></span></dt><dt><span class="sect2"><a href="foreign.html#import-snappea"><span class="application">SnapPea</span> Triangulations</a></span></dt><dt><span class="sect2"><a href="foreign.html#import-orb"><span class="application">Orb</span> / <span class="application">Casson</span> Triangulations</a></span></dt><dt><span class="sect2"><a href="foreign.html#import-isosiglist">Isomorphism Signature Lists</a></span></dt><dt><span class="sect2"><a href="foreign.html#import-dehydrationlist">Dehydrated Triangulation Lists</a></span></dt><dt><span class="sect2"><a href="foreign.html#import-pdf"><span class="acronym">PDF</span> Documents</a></span></dt><dt><span class="sect2"><a href="foreign.html#import-pyscript"><span class="application">Python</span> Scripts</a></span></dt></dl></dd><dt><span class="sect1"><a href="foreign-export.html">Exporting</a></span></dt><dd><dl><dt><span class="sect2"><a href="foreign-export.html#export-rga"><span class="application">Regina</span> Data Files</a></span></dt><dt><span class="sect2"><a href="foreign-export.html#export-snappea"><span class="application">SnapPea</span> Triangulations</a></span></dt><dt><span class="sect2"><a href="foreign-export.html#export-recogniser"><span class="application">3-Manifold Recogniser</span> Triangulations</a></span></dt><dt><span class="sect2"><a href="foreign-export.html#export-cpp"><span class="application">C++</span> Source Code</a></span></dt><dt><span class="sect2"><a href="foreign-export.html#export-csvsurfacelist">Spreadsheet-Readable (<span class="acronym">CSV</span>) Surface Lists</a></span></dt><dt><span class="sect2"><a href="foreign-export.html#export-pdf"><span class="acronym">PDF</span> Documents</a></span></dt><dt><span class="sect2"><a href="foreign-export.html#export-pyscript"><span class="application">Python</span> Scripts</a></span></dt></dl></dd></dl></div><p>
+  By default, <span class="application">Regina</span> reads and writes
+  <code class="filename">.rga</code> data files in its own compressed
+  <span class="acronym">XML</span> file format.
+  However, <span class="application">Regina</span> can also import data from and export data to several
+  other file formats, which allows you to pass data between <span class="application">Regina</span> and
+  other applications.
+  This chapter outlines the available import and export formats.
+ </p><p>
+  If you are writing filters for some other program and you need a full
+  specification for <span class="application">Regina</span>'s own <span class="acronym">XML</span> file format, select
+  <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Help</span></span>&#8594;<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guisubmenu">File Format Reference</span></span> from the menu.
+ </p><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="foreign-import"></a>Importing</h2></div></div></div><p>
+   An <em class="firstterm">import</em> involves reading data from some
+   foreign file format and inserting it into your working packet tree
+   (effectively merging it into whatever file you already have open).
+   All imports are done through the
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">File</span></span>&#8594;<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guisubmenu">Import</span></span>
+   menu.
+  </p><p>
+   <span class="inlinemediaobject"><img src="menu-import.png"></span>
+  </p><p>
+   When you select an action from the
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">File</span></span>&#8594;<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guisubmenu">Import</span></span>
+   menu, you will first be asked to select a file.
+   Once you have chosen the file to import, a second window will appear
+   asking for additional details:
+  </p><p>
+   <span class="inlinemediaobject"><img src="import-snappea.png"></span>
+  </p><p>
+   </p><div class="glosslist"><dl><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Import beneath:</span></span></dt><dd><p>
+      Here you select where in the packet tree the imported data will appear.
+      The import will appear as a child packet, directly beneath
+      whatever &#8220;parent&#8221; you choose here.
+     </p></dd><dt><a name="import-label"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Label:</span></span></dt><dd><p>
+      This will be the label (i.e., the name) of the new packet containing
+      the imported data.
+     </p></dd></dl></div><p>
+  </p><p>
+   <span class="application">Regina</span> can import data from the following file formats:
+  </p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="import-regina"></a><span class="application">Regina</span> Data Files</h3></div></div></div><p>
+    You can import another <span class="application">Regina</span> data file.
+    This effectively lets you insert the contents of one file inside another.
+   </p><p>
+    This is a convenient way of merging two data files into one.
+    You can also merge data files from the command-line using the
+    <a href="man-regconcat.html" title="regconcat"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regconcat</strong></span></span></a>
+    utility.
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="import-snappea"></a><span class="application">SnapPea</span> Triangulations</h3></div></div></div><p>
+    You can import a 3-manifold triangulation from <a href="http://www.math.uic.edu/t3m/SnapPy/" target="_top"><span class="application">SnapPea</span> / <span class="application">SnapPy</span></a>,
+    the excellent software for studying hyperbolic 3-manifolds by
+    Culler, Dunfield and Weeks.
+    Note that you can also perform some <span class="application">SnapPea</span> calculations
+    <a href="tri-analysis.html#tri-snappea" title="SnapPea Calculations (3-D)">directly within <span class="application">Regina</span></a>.
+   </p><p>
+    After the import, the triangulation will appear in <span class="application">Regina</span> as a
+    hybrid <a href="packet-types.html#packet-snappea" title="SnapPea Triangulations"><span class="application">SnapPea</span> triangulation</a>;
+    this ensures that <span class="application">SnapPea</span>-specific data (such as fillings and
+    peripheral curves) will be preserved.
+    You can then <a href="snappea-analysis.html#snappea-toregina" title="Converting to a Regina Triangulation">convert this</a>
+    to one of <span class="application">Regina</span>'s <a href="packet-types.html#packet-triangulation" title="3-Manifold Triangulations">native
+    triangulations</a> if you wish.
+   </p><p>
+    The file that you import should be a plain text file in
+    <span class="application">SnapPea</span>'s triangulation format; an example is shown below.
+    Any international characters should be encoded in <span class="acronym">UTF-8</span>.
+   </p><pre class="programlisting">
+    % Triangulation
+    m002
+    geometric_solution  2.02988321
+    nonorientable_manifold
+    CS_unknown
+
+    0 2
+        Klein   0.000000000000   0.000000000000
+        Klein   0.000000000000   0.000000000000
+
+    2
+       1    1    1    1
+     0132 3120 2130 3102
+       0    1    0    0
+      0  0  0  0  0  0  1 -1  0  0  0  0  1 -1  0  0
+      0  1 -1  0  0  0  0  0 -1  0  0  1  0  0  0  0
+      0  0  1 -1 -1  0  1  0  1  0  0 -1 -1  1  0  0
+      0  0  1 -1 -1  0  1  0  1  0  0 -1 -1  1  0  0
+      0.500000000000   0.866025403784
+
+       0    0    0    0
+     0132 3120 2130 3102
+       0    1    0    0
+      0  1 -1  0  0  0  0  0 -1  0  0  1  0  0  0  0
+      0  0  0  0  0  0  1 -1  0  0  0  0  1 -1  0  0
+      0 -1  1  0  1  0  0 -1  1  0  0 -1 -1  0  1  0
+      0 -1  1  0  1  0  0 -1  1  0  0 -1 -1  0  1  0
+      0.500000000000   0.866025403784
+   </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="import-orb"></a><span class="application">Orb</span> / <span class="application">Casson</span> Triangulations</h3></div></div></div><p>
+    You can import a 3-manifold triangulation from <span class="application">Orb</span> / <span class="application">Casson</span> format.
+    <a href="http://www.ms.unimelb.edu.au/~snap/orb.html" target="_top"><span class="application">Orb</span></a> is a variant of <span class="application">SnapPea</span> for calculating hyperbolic
+    structures on 3-orbifolds and 3-manifolds, written by Damien Heard.
+   </p><p>
+    The file that you import
+    should be a plain text file in <span class="application">Orb</span> / <span class="application">Casson</span> format, which
+    describes a triangulation in terms of its 1-skeleton.  The beginning
+    of an example file is illustrated below.
+    Any international characters should be encoded in <span class="acronym">UTF-8</span>.
+   </p><pre class="programlisting">
+    % orb
+    8knot
+    1  0  1.000  1vu  2uw  1ux  2xv  1xw  2vu
+    2  0  1.000  1wu  2wx  1xv  2xu  1vw  2vw
+
+    ...
+   </pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="import-isosiglist"></a>Isomorphism Signature Lists</h3></div></div></div><p>
+    You can import a list of isomorphism signatures from a text file.
+    This is a space-efficient, plain-text method of storing a list
+    of 2-, 3- or 4-manifold triangulations.
+   </p><p>
+    An <em class="firstterm">isomorphism signature</em> is a
+    compact sequence of letters, digits and/or punctuation that identifies a
+    triangulation uniquely up to combinatorial isomorphism.
+    See the <a href="tri-analysis.html#tri-composition-isosig" title="Isomorphism Signature">composition viewer</a>
+    for a more detailed discussion on isomorphism signatures, or
+    [<a href="bibliography.html#bib-burton-pachner-orprime" title="[Bur11c]"><span class="abbrev">Bur11c</span></a>] for examples of their use
+    and a precise description of the 3-manifold signature format.
+   </p><p>
+    The list should be stored in a plain text file with one triangulation
+    per line.  Each line may contain an arbitrary amount of data, but the
+    first word of each line should be the isomorphism signature.
+    Note that isomorphism signatures are <span class="emphasis"><em>case sensitive</em></span>
+    (i.e., upper-case and lower-case matter).  An example file is shown below.
+   </p><pre class="programlisting">
+    dLQbcbchxjn   L(11,3)
+    dLQbcbchxjj   L(10,3)
+    dLQbcbcahrs   L(5,2)
+    dLQbcbcahks   S3
+    dLQbcbchhjw   L(9,2)
+   </pre><p>
+    In an isomorphism signature list, all signatures must represent
+    triangulations of the same dimension (so, for example, the list
+    cannot contain a mix of 3-manifold and 4-manifold signatures).  The
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">File</span></span>&#8594;<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guisubmenu">Import</span></span>
+    menu has different menu items for importing lists in each dimension.
+   </p><p>
+    The import will appear in your packet tree as a new
+    <a href="packet-types.html#packet-container" title="Container Packets">container</a>,
+    which will contain a new triangulation for each isomorphism signature
+    in the list.
+   </p><p>
+    <span class="inlinemediaobject"><img src="import-isosig.png"></span>
+   </p><p>
+    If you just wish to reconstruct a triangulation from a single
+    isomorphism signature (not from many signatures), you can do this
+    more easily by creating a
+    <a href="triangulations.html#tri-new-isosig" title="Isomorphism Signature">new triangulation</a>.
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="import-dehydrationlist"></a>Dehydrated Triangulation Lists</h3></div></div></div><p>
+    You can import a list of dehydration strings from a text file.
+    Like <a href="foreign.html#import-isosiglist" title="Isomorphism Signature Lists">isomorphism signatures</a>,
+    dehydration strings allow you to encode a list of 3-manifold
+    triangulations in a space-efficient, plain-text manner.
+   </p><p>
+    Dehydration strings are
+    <a href="tri-analysis.html#tri-composition-dehydration" title="Dehydration">less powerful</a>
+    than isomorphism signatures.  They feature in hyperbolic census papers
+    such as [<a href="bibliography.html#bib-cuspedcensus" title="[CHW99]"><span class="abbrev">CHW99</span></a>],
+    in which the dehydration format is explicitly described.
+   </p><p>
+    The list should be stored in a plain text file with one triangulation
+    per line.  Each line may contain an arbitrary amount of data, but the
+    first word of each line should be the dehydration
+    string.  An example file is shown below.
+   </p><pre class="programlisting">
+    dafbcccaadl   N3,1   Z/3 + Z
+    dadcbccdjkd   N3,2   Z
+    dadbcccbbcv   N3,3   Z
+    dadbcccccdm   N3,4   Z
+    dadbcccaqhx   N3,5   Z/2 + Z/2 + Z
+   </pre><p>
+    As with isomorphism signatures,
+    the import will appear in your packet tree as a new
+    <a href="packet-types.html#packet-container" title="Container Packets">container</a>,
+    which will contain a new triangulation for each dehydration string
+    in the list.
+   </p><p>
+    If you just wish to reconstruct a triangulation from a single
+    dehydration string (not from many strings), you can do this
+    more easily by creating a
+    <a href="triangulations.html#tri-new-dehydration" title="Dehydration (3-manifolds only)">new triangulation</a>.
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="import-pdf"></a><span class="acronym">PDF</span> Documents</h3></div></div></div><p>
+    You can import a <span class="acronym">PDF</span> document, which will appear in your data file
+    as a <a href="packet-types.html#packet-pdf" title="PDF Documents"><span class="acronym">PDF</span> packet</a>.
+    This you to document your work with formulae, diagrams and
+    anything else that can appear on the printed page.
+   </p><p>
+    This is the only way of creating a <span class="acronym">PDF</span> packet within <span class="application">Regina</span>.
+    If you select
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Packet Tree</span></span>&#8594;<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">New PDF Document</span></span>
+    from the menu, <span class="application">Regina</span> will go through exactly the same import
+    process as described here.
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="import-pyscript"></a><span class="application">Python</span> Scripts</h3></div></div></div><p>
+    You can import a <span class="application">Python</span> script, which will appear in your data
+    file as a <a href="python.html#python-script" title="Script Packets">script packet</a>.
+   </p><p>
+    Script packets can include pre-set <span class="emphasis"><em>variables</em></span>
+    that reference other packets in your data file.
+    If the imported file begins with a specially
+    formatted comment block, <span class="application">Regina</span> will recognise this and set
+    variables in your script packet accordingly.
+    This comment block will be written automatically when you
+    <a href="foreign-export.html#export-pyscript" title="Python Scripts">export a script packet</a>
+    to a <span class="application">Python</span> file.
+    The special comment block is used only for setting variables, and will
+    not appear in the code for your new script packet.
+   </p><p>
+    An example of such a comment block appears below.
+   </p><pre class="programlisting">
+    ### Regina Script: Homology Summary
+    ###
+    ### Variable tri: 3-Manifolds
+    ###
+    ### Begin Script
+
+    # See the users' handbook for more elaborate sample Python
+    # sessions.
+
+    # Output the homology of each triangulation.
+    t = tri.firstChild()
+    while t != None:
+        print t.label() + ":", t.homology()
+        t = t.nextSibling()
+   </pre><p>
+    The comment block must appear at the very beginning
+    of the file, and each line must begin with three hashes
+    (<code class="literal">###</code>).  A line of the form
+    &#8220;<code class="literal">### Regina Script: <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>label</code></em></span></code>&#8221;
+    suggests to <span class="application">Regina</span> a <a href="foreign.html#import-label">default label</a>
+    for your new packet.
+    Each line of the form
+    &#8220;<code class="literal">### Variable <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>name</code></em></span>: <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>value</code></em></span></code>&#8221;
+    tells <span class="application">Regina</span> to add the variable <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>name</code></em></span>
+    to the new script packet, and to make it refer to the packet
+    in your data file named <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>value</code></em></span>.
+   </p><p><a name="encodings"></a>
+    During the import, <span class="application">Regina</span> will tell you how it will interpret any
+    international characters in the script (that is, letters or symbols
+    not found on a typical English keyboard).  Such characters are
+    stored using a <em class="firstterm">text encoding</em>, such as
+    <span class="acronym">UTF-8</span> (a popular modern standard and the default in <span class="application">Regina</span>),
+    or <span class="acronym">LATIN1</span> (which has a long history of use with many Western European
+    languages).
+    If your script uses a different encoding, you will need to set this
+    in <a href="options.html#options-encoding"><span class="application">Regina</span>'s options</a>.
+    If you only ever use letters or symbols found on a typical English keyboard,
+    you do not need to worry about this at all.
+   </p><p>
+    <span class="inlinemediaobject"><img src="i18n-import.png"></span>
+   </p></div></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="angles-analysis.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="foreign-export.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">Analysis </td><td width="34%" align="center" class="navCenter"><a href="index.html">Up</a></td><td width="33%" align="right" class="navRight"> Exporting</td></tr></table></div></body></html>
