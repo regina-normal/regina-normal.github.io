@@ -5,7 +5,8 @@ resources=/Volumes/Regina/Regina.app/Contents/Resources
 large=/Users/bab/git/regina-aux/data/census
 
 if [ ! -f buildtips.html ]; then
-  echo "ERROR: This script must be run from within the www/ directory."
+  echo "ERROR: This script must be run from within the root directory"
+  echo "       of the website repository."
   exit 1
 fi
 
@@ -14,18 +15,11 @@ if [ ! -d "$resources/examples" ]; then
   exit 2
 fi
 
-cd ..
-rm -rf staging
+rm -rf census docs engine-docs
 
-cp -pr www staging
-cp -pr "$resources/examples" staging/census
-cp -pf "$large"/*.rga staging/census
-cp -pr "$resources/docs/en/regina" staging/docs
-cp -pr "$resources/engine-docs" staging
+cp -pr "$resources/examples" census
+cp -pf "$large"/*.rga census
+cp -pr "$resources/docs/en/regina" docs
+cp -pr "$resources/engine-docs" .
 
-chmod -R a+r staging
-
-tar -zcf staging.tgz staging
-rm -rf staging
-
-echo "The tarball is waiting for you in ../staging.tgz."
+echo "Done."

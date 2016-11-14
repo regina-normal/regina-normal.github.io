@@ -1,0 +1,77 @@
+<html><head><title>Analysis</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina Handbook"><link rel="up" href="angles.html" title="Chapter 6. Angle Structures"><link rel="prev" href="angles-creation.html" title="Enumerating Angle Structures"><link rel="next" href="foreign.html" title="Chapter 7. Importing and Exporting Data"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina.sourceforge.net/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Analysis</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="angles-creation.html">Prev</a></td><td align="center" class="navCenter" width="34%">Angle Structures</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="foreign.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="angles-analysis"></a>Analysis</h2></div></div></div><p>
+   When you open an angle structure list for viewing, you will see a
+   table with all of the angle structures in your list.
+  </p><p>
+   <span class="inlinemediaobject"><img src="angles-coords.png"></span>
+  </p><p>
+   Above this table is a header
+   displaying the total number of angle structures.
+   If you enumerated <a href="angles-creation.html#angles-tautonly">taut structures
+   only</a>, this will be reported in the header also:
+  </p><p>
+   <span class="inlinemediaobject"><img src="angles-tautheader.png"></span>
+  </p><p>
+   Otherwise the header will indicate whether
+   or not the convex span of these angle structures
+   contains any <a href="angles-analysis.html#angles-propstrict">strict</a>
+   and/or <a href="angles-analysis.html#angles-proptaut">taut</a> structures
+   (these terms are defined below).
+  </p><p>
+   <span class="inlinemediaobject"><img src="angles-header.png"></span>
+  </p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="angles-viewstructurecoords"></a>Details of Individual Angle Structures</h3></div></div></div><p>
+    Each row of the table represents a single angle structure
+    in this list.
+   </p><p>
+    The leftmost column is used to indicate special types of angle structure.
+    Possible values include:
+    </p><div class="glosslist"><dl><dt><a name="angles-propstrict"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Strict</span></span></dt><dd><p>
+       Indicates a strict angle structure (all of its angles are
+       strictly between 0 and π).
+      </p></dd><dt><a name="angles-proptaut"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Taut</span></span></dt><dd><p>
+        Indicates a taut angle structure (all of its angles are
+        equal to either 0 or π).
+       </p><p>
+        Here we use the Kang-Rubinstein definition of taut angle
+        structure [<a href="bibliography.html#bib-kang-taut" title="[KR05]"><span class="abbrev">KR05</span></a>],
+        which is based on the angles alone.  We do not use Lackenby's
+        definition [<a href="bibliography.html#bib-lackenby-taut" title="[Lac00a]"><span class="abbrev">Lac00a</span></a>],
+        which also requires consistent coorientations on the 2-faces of
+        the triangulation.
+       </p><p>
+        Note that some taut structures may be listed as
+        <a href="angles-analysis.html#angles-propveering">veering</a> instead
+        (which indicates a stronger combinatorial structure).
+       </p></dd><dt><a name="angles-propveering"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Veering</span></span></dt><dd><p>
+        Indicates a veering structure.
+        This is a taut structure with additional (and very strong)
+        combinatorial constraints; for details see
+        [<a href="bibliography.html#bib-hodgson-veering" title="[HRST11]"><span class="abbrev">HRST11</span></a>].
+       </p><p>
+        Note that we use the Hodgson et al. definition
+        of veering structure [<a href="bibliography.html#bib-hodgson-veering" title="[HRST11]"><span class="abbrev">HRST11</span></a>].
+        This is slightly more general than Agol's original definition
+        [<a href="bibliography.html#bib-agol-ideal" title="[Ago11]"><span class="abbrev">Ago11</span></a>], in the same sense that
+        the Kang-Rubinstein definition of taut angle structure is
+        slightly more general than Lackenby's.  In particular, we do not
+        require consistent coorientations on the 2-faces of the triangulation.
+       </p></dd></dl></div><p>
+    If an angle structure is neither strict nor taut, the
+    leftmost cell will be left empty.
+   </p><p>
+    The remaining columns list the individual angles that are assigned
+    to edges in tetrahedra.
+    These columns are labelled
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">0:01/23</span></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">0:02/13</span></span>,
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">0:03/12</span></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">1:01/23</span></span>,
+    etc., where column
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>t</code></em></span>:<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>ab</code></em></span>/<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>cd</code></em></span>
+    represents the angle assigned to tetrahedron
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>t</code></em></span> along the edge that joins tetrahedron vertices
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>a</code></em></span> and <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>b</code></em></span>, as
+    well as the (opposite) edge that joins tetrahedron vertices
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>c</code></em></span> and <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span>.
+    Here 0 ≤ <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>t</code></em></span> &lt; <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span>,
+    and <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>a</code></em></span>,<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>b</code></em></span>,<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>c</code></em></span>,<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span>
+    are some permutation of 0,1,2,3.
+   </p></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="angles-creation.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="foreign.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">Enumerating Angle Structures </td><td width="34%" align="center" class="navCenter"><a href="angles.html">Up</a></td><td width="33%" align="right" class="navRight"> Importing and Exporting Data</td></tr></table></div></body></html>

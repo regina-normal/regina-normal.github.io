@@ -1,0 +1,112 @@
+<html><head><title>General Operations on Packets</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina Handbook"><link rel="up" href="packet.html" title="Chapter 2. Working with Packets"><link rel="prev" href="packet-types.html" title="Different Packet Types"><link rel="next" href="triangulations.html" title="Chapter 3. Triangulations"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina.sourceforge.net/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>General Operations on Packets</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="packet-types.html">Prev</a></td><td align="center" class="navCenter" width="34%">Working with Packets</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="triangulations.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="packet-operations"></a>General Operations on Packets</h2></div></div></div><p>
+   The <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Packet Tree</span></span> menu contains
+   operations that can be applied to any packet in <span class="application">Regina</span>.  Most of
+   these operations are also offered as toolbar buttons.
+   Here we describe each of these operations in turn.
+  </p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="packet-new"></a>Creating New Packets</h3></div></div></div><p>
+    New packets of any type can be created through the corresponding
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">New ...</span></span> item in the
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Packet Tree</span></span> menu, or by pressing the toolbar
+    button with the corresponding packet icon.
+   </p><p>
+    <span class="inlinemediaobject"><img src="menunew.png"></span>
+   </p><p>
+    For example, to create a new 3-manifold triangulation, either select
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Packet Tree</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">New 3-D Triangulation</span></span>
+    in the menu, or press the toolbar button with the following icon:
+    <span class="inlinemediaobject"><img src="icon-triangulation.png"></span>
+   </p><p>
+    When you create a new packet, you will be asked where in the
+    tree your new packet should appear.  Choose a suitable parent
+    in the box marked <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Create beneath:</span></span>, and your
+    new packet will be added as a child of whatever you choose here.
+   </p><p>
+    <span class="inlinemediaobject"><img src="newtriangulation.png"></span>
+   </p><p>
+    You might also be asked for some additional information, according to
+    which type of packet you are creating.  In the example above, you
+    must select the <span class="emphasis"><em>type</em></span> of triangulation to create;
+    moreover, since the user
+    has selected to use an isomorphism signature, you must type
+    in the isomorphism signature as well.
+   </p><p>
+    The new packet will be given a label automatically, though you can of course
+    <a href="packet-operations.html#packet-rename" title="Renaming Packets">rename it</a> if you like.
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="packet-clone"></a>Cloning Packets</h3></div></div></div><p>
+    To make an identical copy of an existing packet, you can use
+    either the
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Packet Tree</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Clone Packet</span></span>
+    or the
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Packet Tree</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Clone Subtree</span></span>
+    menu item.  <span class="application">Regina</span> will clone whatever packet is
+    currently selected, and the clone will be added adjacent to it
+    in the tree.
+   </p><p>
+    <span class="inlinemediaobject"><img src="menuclone.png"></span>
+   </p><p>
+    If you choose <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Clone Packet</span></span>, only the
+    selected packet will be copied (not any of its children).
+    If you choose <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Clone Subtree</span></span>, <span class="application">Regina</span>
+    will clone not only the selected packet but also the entire subtree
+    beneath it (<span class="abbrev">i.e.</span>, its children, their children and so on).
+   </p><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>
+    If you have selected some packet in the tree but you have different
+    packets open for viewing or editing, it is the
+    <span class="emphasis"><em>selected packet in the tree</em></span> that will be cloned,
+    not the packets that you are currently viewing.
+   </p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="packet-rename"></a>Renaming Packets</h3></div></div></div><p>
+    By selecting
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Packet Tree</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Rename</span></span>
+    from the menu (or the corresponding toolbar button),
+    you can give the selected packet a new label.
+   </p><p>
+    <span class="inlinemediaobject"><img src="menurename.png"></span>
+   </p><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>
+    If you have selected some packet in the tree but you have different
+    packets open for viewing or editing, it is the
+    <span class="emphasis"><em>selected packet in the tree</em></span> that will be renamed,
+    not the packets that you are currently viewing.
+   </p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="packet-delete"></a>Deleting Packets and Subtrees</h3></div></div></div><p>
+    If you select
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Packet Tree</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Delete</span></span>
+    from the menu (or press the corresponding toolbar button),
+    whatever packet you have selected in the tree will be deleted.
+    Note that all <span class="emphasis"><em>children</em></span> of the selected packet
+    will also be deleted, and their children and so on.
+   </p><p>
+    <span class="inlinemediaobject"><img src="menudelete.png"></span>
+   </p><div class="caution" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Caution</h3><p>
+    If you have selected some packet in the tree but you have different
+    packets open for viewing or editing, it is the
+    <span class="emphasis"><em>selected packet in the tree</em></span> that will be
+    deleted, not the packets that you are currently viewing.
+    Be careful, since deleting a packet cannot be undone!
+   </p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="packet-move"></a>Moving Around the Tree</h3></div></div></div><p>
+    The
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Packet Tree</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Move</span></span>
+    submenu allows you to reorganise your packet tree by moving packets
+    around.  Whenever a packet moves, all of its children (and their
+    children and so on) will move along with it.
+   </p><p>
+    <span class="inlinemediaobject"><img src="menumove.png"></span>
+   </p><p>
+    Selecting <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Higher Level</span></span> or
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Lower Level</span></span> will move the selected packet to a
+    different parent (either shallower or deeper in the tree respectively).
+    The remaining options will keep the same parent, but will move the
+    selected packet up or down with respect to its “siblings”.
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Up</span></span> or <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Down</span></span> will move the
+    packet by one step, and
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Top</span></span> or <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Bottom</span></span> will make it
+    the first or last child respectively of its parent.
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Jump Up</span></span> or <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Jump Down</span></span> will move
+    the packet several steps at a time; the precise number of steps can be
+    configured in <span class="application">Regina</span>'s <a href="options.html#options-general" title="General Options">general
+    settings</a>.
+   </p><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>
+    All of the actions in the
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Packet Tree</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Move</span></span>
+    menu have keyboard shortcuts, allowing you to reorganise the
+    packet tree quickly using just the keyboard.
+   </p></div></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="packet-types.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="triangulations.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">Different Packet Types </td><td width="34%" align="center" class="navCenter"><a href="packet.html">Up</a></td><td width="33%" align="right" class="navRight"> Triangulations</td></tr></table></div></body></html>

@@ -1,0 +1,450 @@
+<html><head><title>Modification</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina Handbook"><link rel="up" href="triangulations.html" title="Chapter 3. Triangulations"><link rel="prev" href="tri-analysis.html" title="Analysis"><link rel="next" href="snappea.html" title="Chapter 4. SnapPea Triangulations"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina.sourceforge.net/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Modification</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="tri-analysis.html">Prev</a></td><td align="center" class="navCenter" width="34%">Triangulations</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="snappea.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="tri-modification"></a>Modification</h2></div></div></div><p>
+   There are many ways of modifying a 3-manifold triangulation.
+   Many of these can be found in the various
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Triangulation</span></span> menus,
+   which appear when you open a triangulation for viewing.
+  </p><p>
+   <span class="inlinemediaobject"><img src="menutri-2d.png"></span>
+   <span class="inlinemediaobject"><img src="menutri-3d.png"></span>
+   <span class="inlinemediaobject"><img src="menutri-4d.png"></span>
+  </p><div class="caution" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Caution</h3><p>
+   If you open one triangulation for viewing but then select another in
+   the packet tree, all modifications will apply to
+   <span class="emphasis"><em>the triangulation that you have open</em></span> for viewing.
+  </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="tri-editgluings"></a>Editing Gluings (All Dimensions)</h3></div></div></div><p>
+    The simplest way to modify a triangulation is to open the
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Gluings</span></span> tab and edit the facet gluings table directly.
+    This allows you to change the gluings between triangles, tetrahedra or
+    pentachora for 2-, 3- and 4-manifolds respectively.
+    See the notes on <a href="tri-analysis.html#tri-viewgluings" title="Viewing Facet Gluings (All Dimensions)">viewing
+    facet gluings</a> for details on how to read the table.
+   </p><p>
+    You can add and remove triangles, tetrahedra or pentachora using the
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Add …</span></span> and <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Remove …</span></span>
+    buttons above the table (the Add button is marked
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Add Triangle</span></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Add Tet</span></span>
+    or <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Add Pent</span></span> for 2-, 3- and 4-manifolds
+    respectively, and likewise for the Remove button).
+    To change the gluings between existing triangles, tetrahedra or
+    pentachora, just type the new gluings directly into the table.
+    If you want to remove a gluing (i.e., make a facet part of the
+    triangulation boundary), simply delete the contents of the cell.
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-editgluings.png"></span>
+   </p><p>
+    If you like, you can also <span class="emphasis"><em>name</em></span> triangles,
+    tetrahedra or pentachora to help
+    keep track of their roles within the triangulation.
+    Click on the cell in the leftmost column (containing the number that
+    identifies that triangle, tetrahedron or pentachoron),
+    and type a new name directly into the cell.
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-editnames.png"></span>
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="tri-simplification"></a>Automatic Simplification (3-D and 4-D)</h3></div></div></div><p>
+    <span class="application">Regina</span> has a rich set of <a href="tri-modification.html#tri-elementarymove" title="Manual Simplification: Elementary Moves (3-D and 4-D)">fast and
+    effective moves</a> for simplifying
+    a triangulation without changing the underlying manifold.
+    If you press the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guibutton">Simplify</span></span> button (or select
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Triangulation</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Simplify</span></span>),
+    then <span class="application">Regina</span> will use a combination of these moves to reduce the
+    triangulation to as few tetrahedra (in 3-D) or pentachora (in 4-D)
+    as it can [<a href="bibliography.html#bib-burton-hyamfest" title="[Bur13]"><span class="abbrev">Bur13</span></a>].
+    This procedure is always fast and often very effective, but there is
+    <span class="emphasis"><em>no guarantee</em></span> that this will produce the
+    smallest possible triangulation:
+    <span class="application">Regina</span> might get stuck at a local minimum from which it cannot
+    see how to escape.
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-simplify.png"></span>
+   </p><p>
+    If your triangulation has boundary, this routine will also try to
+    make the number of boundary triangles (in 3-D) or
+    boundary tetrahedra (in 4-D) as small as it can, though again
+    there is no guarantee of reaching a global minimum.
+   </p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="tri-simplify-exhaustive"></a>Exhaustive Simplification (3-D)</h4></div></div></div><p>
+     For 3-manifolds, if <span class="application">Regina</span> cannot
+     simplify the triangulation immediately using its fast heuristics,
+     then it will offer to perform a slower, more exhaustive search.  Press
+     the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Try harder</span></span> button, as shown below:
+    </p><p>
+     <span class="inlinemediaobject"><img src="tri-simplify-fail.png"></span>
+    </p><p>
+     At this point, <span class="application">Regina</span> will begin an exhaustive search through the
+     Pachner graph (this is essentially the graph that relates all
+     triangulations of the underlying manifold through
+     2-3 and 3-2 Pachner moves):
+    </p><p>
+     <span class="inlinemediaobject"><img src="tri-simplify-harder.png"></span>
+    </p><p>
+     You can stop this search at any time by pressing the
+     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Cancel</span></span> button.
+    </p><p>
+     Since the Pachner graph is infinite, <span class="application">Regina</span> will only search up to
+     a certain number of tetrahedra.  If this still fails, it will offer
+     to search further, and you can press <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Keep trying</span></span>
+     to continue the search using more tetrahedra than before.
+     This cycle of ever-expanding searches will continue for as long as
+     you like: <span class="application">Regina</span> will only stop if you decline to keep searching,
+     or you cancel a search while it is running, or it finds a smaller
+     triangulation.
+    </p><p>
+     <span class="inlinemediaobject"><img src="tri-simplify-keeptrying.png"></span>
+    </p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>
+     When searching the Pachner graph, both the time and memory
+     consumption grow at a super-exponential rate relative to the number
+     of tetrahedra.  If you continue to press <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Keep trying</span></span>
+     over and over, you may well run out of time or memory (or both).
+    </p></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="tri-elementarymove"></a>Manual Simplification: Elementary Moves (3-D and 4-D)</h3></div></div></div><p>
+    Instead of using automatic simplification, you might wish to modify
+    your triangulation manually one step at a time.  You can do this
+    using <em class="firstterm">elementary moves</em>, which are small
+    local modifications
+    to the triangulation that preserve the underlying manifold.
+    To perform elementary moves, select
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Triangulation</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Elementary Move</span></span>
+   from the menu.
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-eltmove.png"></span>
+   </p><p>
+    This will bring up a box containing all the elementary moves that
+    can be performed upon your triangulation.  There are many different
+    types of moves available, and this list may continue to grow with
+    future releases of <span class="application">Regina</span>.
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-eltmovebox-3d.png"></span>
+   </p><p>
+    For each type of move, you will be offered a drop-down list of
+    locations at which the move can be performed.  If a move is disabled
+    (greyed out), this means there are no suitable locations in your
+    triangulation for that move type.
+   </p><p>
+    Select a move, and then press <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guibutton">Apply</span></span> to perform it.
+    You may continue to apply one move after another.  When you are done,
+    press <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guibutton">Close</span></span> to close the elementary move box.
+   </p><p>
+    We only give a brief summary of the various types of move here.
+    The full details are in the <a href="python-access.html#python-docs" title="Documentation"><span class="acronym">API</span>
+    documentation</a>, and for 3-manifolds you can also read about
+    them in plain English [<a href="bibliography.html#bib-burton-hyamfest" title="[Bur13]"><span class="abbrev">Bur13</span></a>].
+   </p><p>
+    The available moves for 3-manifolds (as illustrated above) are:
+    </p><div class="glosslist"><dl><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">3-2 Move</span></span></dt><dd><p>
+       Replaces three tetrahedra joined along a degree 3 edge
+       with two tetrahedra joined along a triangle.
+      </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">2-3 Move</span></span></dt><dd><p>
+       Replaces two tetrahedra joined along a triangle
+       with three tetrahedra joined along a degree 3 edge.
+      </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">1-4 Move</span></span></dt><dd><p>
+       Replaces one tetrahedron
+       with four tetrahedra that meet at a new internal degree 4 vertex.
+      </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">4-4 Move</span></span></dt><dd><p>
+       Replaces four tetrahedra joined along a degree 4 edge
+       with four tetrahedra joined along a new
+       degree 4 edge that points in a different direction.
+      </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">2-0 Move (Edge)</span></span></dt><dd><p>
+       Takes two tetrahedra joined along a degree 2 edge and
+       squashes them flat.
+      </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">2-0 Move (Vertex)</span></span></dt><dd><p>
+       Takes two tetrahedra that meet at a degree 2 vertex and
+       squashes them flat.
+      </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">2-1 Move</span></span></dt><dd><p>
+       Merges the tetrahedron containing a degree 1 edge with an
+       adjacent tetrahedron.
+      </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Open Book</span></span></dt><dd><p>
+       Takes an internal triangle with two boundary edges and
+       “unglues” that triangle, creating two new boundary
+       triangles and exposing the tetrahedra inside to the boundary.
+      </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Close Book</span></span></dt><dd><p>
+       Folds together two adjacent boundary triangles around a common
+       boundary edge, with the result of simplifying the boundary.
+      </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Shell Boundary</span></span></dt><dd><p>
+       Removes an “unnecessary tetrahedron” that sits along
+       the boundary of the triangulation.
+      </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Collapse Edge</span></span></dt><dd><p>
+       Takes an edge between two distinct vertices and collapses it to a point.
+       Any tetrahedra that contained the edge will be “flattened
+       away”.
+      </p></dd></dl></div><p>
+   </p><p>
+    For 4-manifold triangulations, <span class="application">Regina</span> offers a similar selection
+    of moves, as illustrated below:
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-eltmovebox-4d.png"></span>
+   </p><p>
+    In brief, these 4-manifold moves are:
+    </p><div class="glosslist"><dl><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">4-2 Move</span></span></dt><dd><p>
+       Replaces four pentachora joined along a degree 4 edge
+       with two pentachora glued together along a tetrahedron.
+      </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">3-3 Move</span></span></dt><dd><p>
+       Replaces three pentachora joined along a degree 3 triangle
+       with three pentachora joined along a new degree 3 triangle
+       that is aligned in a different direction.
+      </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">2-4 Move</span></span></dt><dd><p>
+       Replaces two pentachora glued together along a tetrahedron
+       with four pentachora joined along a new degree 4 edge.
+      </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">1-5 Move</span></span></dt><dd><p>
+       Replaces one pentachoron
+       with five pentachora that meet at a new internal degree 5 vertex.
+      </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">2-0 Move (Triangle)</span></span></dt><dd><p>
+       Takes two pentachora joined along a degree 2 triangle and
+       squashes them flat.
+      </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">2-0 Move (Edge)</span></span></dt><dd><p>
+       Takes two pentachora that meet at a degree 2 edge and
+       squashes them flat.
+      </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Open Book</span></span></dt><dd><p>
+       Takes an internal tetrahedron with one, two or three boundary
+       triangles and
+       “unglues” that tetrahedron, creating two new boundary
+       tetrahedra and exposing the pentachora inside to the boundary.
+      </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Shell Boundary</span></span></dt><dd><p>
+       Removes an “unnecessary pentachoron” that sits along
+       the boundary of the triangulation.
+      </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Collapse Edge</span></span></dt><dd><p>
+       Takes an edge between two distinct vertices and collapses it to a point.
+       Any pentachora that contained the edge will be “flattened
+       away”.
+      </p></dd></dl></div><p>
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="tri-make0eff"></a>0-Efficiency (3-D)</h3></div></div></div><p>
+    A 3-manifold triangulation is <em class="firstterm">0-efficient</em> if its only
+    normal spheres and discs are vertex linking, and if it has no 2-sphere
+    boundary components [<a href="bibliography.html#bib-0-efficiency" title="[JR03]"><span class="abbrev">JR03</span></a>].
+    0-efficient triangulations have significant theoretical and
+    practical advantages, and often use relatively few tetrahedra.
+   </p><p>
+    If your triangulation is
+    <a href="tri-analysis.html#tri-basicprops" title="Validity, Orientability and Other Basic Properties (All Dimensions)">closed, orientable and connected</a>,
+    you can convert it into a 0-efficient triangulation of the same
+    3-manifold by selecting
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">3-D Triangulation</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Make 0-Efficient</span></span>.
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-make0eff.png"></span>
+   </p><p>
+    If your triangulation represents a composite 3-manifold then it
+    cannot be made 0-efficient—in this case a full connected sum
+    decomposition will be inserted beneath your triangulation in the
+    packet tree, and your original triangulation will be left unchanged.
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-make0eff-connsum.png"></span>
+   </p><p>
+    There are also two exceptional prime orientable manifolds that cannot be
+    made 0-efficient: RP<sup>3</sup> and
+    S<sup>2</sup>×S<sup>1</sup>.
+    <span class="application">Regina</span> will notify you if your triangulation represents one of
+    these manifolds.
+   </p><div class="caution" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Caution</h3><p>
+    The algorithm to make a triangulation 0-efficient
+    runs in worst-case exponential time, though it is often still
+    extremely fast in practice.
+    If your triangulation is large, you should consider whether
+    <a href="tri-modification.html#tri-simplification" title="Automatic Simplification (3-D and 4-D)">automatic simplification</a>
+    will suffice: this is much faster at reducing the number of
+    tetrahedra, and often produces a 0-efficient result.
+    You can <span class="emphasis"><em>test</em></span> the result for 0-efficiency via the
+    <a href="tri-analysis.html#tri-recognition" title="High-Level Recognition Routines (3-D)">recognition tab</a>.
+   </p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="tri-real-ideal"></a>Switching Between Real and Ideal (3-D and 4-D)</h3></div></div></div><p>
+    You can convert between <em class="firstterm">real</em> boundary
+    components (formed from boundary triangles in 3-D, or boundary
+    tetrahedra in 4-D) and
+    <em class="firstterm">ideal</em> boundary components (formed from
+    individual vertices with closed non-spherical vertex links).
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-truncate-makeideal.png"></span>
+   </p><p>
+    If you have an ideal triangulation, you can select
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Triangulation</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Truncate Ideal Vertices</span></span>
+    to convert your ideal vertices into real boundary components.
+    <span class="application">Regina</span> will subdivide the triangulation and delete a small
+    neighbourhood of each ideal vertex.
+    Any <a href="tri-analysis.html#tri-faces-invalid">invalid vertices</a>
+    will be truncated also.
+   </p><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>
+    Because of the subdivision, this operation will greatly
+    increase the size of the triangulation.  After you truncate ideal
+    vertices, try
+    <a href="tri-modification.html#tri-simplification" title="Automatic Simplification (3-D and 4-D)">simplifying your triangulation</a>.
+   </p></div><p>
+    Conversely: if your triangulation has real boundary components and you
+    wish to convert this into an ideal triangulation, select
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Triangulation</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Make Ideal</span></span>.
+   </p><p>
+    Each real boundary component will be “coned” to a new
+    ideal vertex: in 3-D this means adding one new tetrahedron for
+    each boundary triangle, or in 4-D one new pentachoron for each
+    boundary tetrahedron.
+   </p><p>
+    Your boundary components will all become ideal, but there are some caveats:
+    </p><div class="itemizedlist"><ul type="disc"><li><p>
+      Your triangulation will contain new ideal vertices as described above,
+      but also <span class="emphasis"><em>internal vertices</em></span> whose links are
+      spheres.  To get rid of these internal vertices, try
+      <a href="tri-modification.html#tri-simplification" title="Automatic Simplification (3-D and 4-D)">simplifying your triangulation</a>.
+     </p></li><li><p>
+      Any <span class="emphasis"><em>spherical</em></span> boundary components will
+      disappear entirely; that is, they will be filled in with balls.
+     </p></li></ul></div><p>
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="tri-barycentric"></a>Subdivision (3-D and 4-D)</h3></div></div></div><p>
+    You can perform a barycentric subdivision on your triangulation by
+    selecting
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Triangulation</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Barycentric Subdivision</span></span>.
+    In 3-D this involves splitting each original tetrahedron into
+    24 = 4! smaller
+    tetrahedra, with new vertices added at the
+    centroid of each tetrahedron, triangle and edge.
+    In 4-D, each original pentachoron splits into
+    120 = 5! smaller pentachora.
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-barycentric.png"></span>
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="tri-orient"></a>Orienting Triangulations and Double Covers (All Dimensions)</h3></div></div></div><p>
+    If your triangulation is
+    <a href="tri-analysis.html#tri-basicprops" title="Validity, Orientability and Other Basic Properties (All Dimensions)">orientable but not oriented</a>,
+    you may wish to reorder the vertices of each top-dimensional simplex
+    (e.g., vertices 0,1,2,3 of each tetrahedron in a 3-manifold) so that
+    adjacent simplices have consistent orientations.
+    To do this, press the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guibutton">Orient</span></span> button (or select
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Triangulation</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Orient</span></span>
+    from the menu).
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-orient.png"></span>
+   </p><p>
+    To convert a non-orientable triangulation into its orientable double cover,
+    select
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Triangulation</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Double Cover</span></span>.
+    If your triangulation has any orientable components, they will
+    simply be duplicated.
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-doublecover.png"></span>
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="tri-puncturedrill"></a>Puncturing and Drilling (3-D)</h3></div></div></div><p>
+    You can puncture a 3-manifold triangulation; that is, remove a small ball
+    from its interior and retriangulate.
+    To do this, select
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">3-D Triangulation</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Puncture</span></span>.
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-puncture.png"></span>
+   </p><p>
+    This will work correctly regardless of whether the triangulation is
+    closed, ideal, and/or has real boundary triangles.  There will be
+    a new 2-sphere boundary, formed from two new boundary triangles.
+   </p><p>
+    You can also drill out a small regular neighbourhood of an edge
+    of your triangulation.  To do this, select
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">3-D Triangulation</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Drill Edge</span></span>.
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-drilledge.png"></span>
+   </p><p>
+    You will be asked which edge to drill out, as illustrated below.
+    For each available edge, the drop-down list shows the edge number
+    (as seen in the <a href="tri-analysis.html#tri-faces" title="Viewing Faces">skeleton viewer</a>),
+    along with details of the individual tetrahedron edges that combine to
+    form that edge of the triangulation.
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-drilledgebox.png"></span>
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="tri-connsumwith"></a>Building Connected Sums (3-D)</h3></div></div></div><p>
+    You can combine two 3-manifold triangulations by forming their connected
+    sum.  This will convert some triangulation <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>X</code></em></span>
+    into the connected sum
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>X</code></em></span> # <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>Y</code></em></span>
+    for some other triangulation <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>Y</code></em></span>
+    (note that
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>Y</code></em></span> is allowed to be the same as
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>X</code></em></span>).
+    If both <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>X</code></em></span> and <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>Y</code></em></span>
+    are <a href="tri-analysis.html#tri-proporient">oriented</a> triangulations then
+    the connected sum will respect these orientations, and will be
+    oriented also.
+   </p><p>
+    The triangulation <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>X</code></em></span> must be one of
+    <span class="application">Regina</span>'s native <a href="packet-types.html#packet-triangulation" title="3-Manifold Triangulations">triangulation
+    packets</a>, since
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>X</code></em></span> will be modified directly.
+    The triangulation <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>Y</code></em></span> may be either a
+    native triangulation packet or a hybrid
+    <a href="packet-types.html#packet-snappea" title="SnapPea Triangulations"><span class="application">SnapPea</span> triangulation</a>,
+    since <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>Y</code></em></span> will not be modified.
+   </p><p>
+    To form this connected sum, first open the the triangulation
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>X</code></em></span> for viewing, and then select
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">3-D Triangulation</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Connected Sum With</span></span>
+    from the menu.
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-connsumwith.png"></span>
+   </p><p>
+    <span class="application">Regina</span> will ask you which other triangulation to sum with;
+    in other words, <span class="application">Regina</span> will ask you for the triangulation
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>Y</code></em></span>.
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-connsumwith-tri.png"></span>
+   </p><p>
+    The triangulation <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>X</code></em></span> will be changed directly
+    into the connected sum.  The result will most likely contain multiple
+    vertices, and you may wish to
+    <a href="tri-modification.html#tri-simplification" title="Automatic Simplification (3-D and 4-D)">simplify the resulting
+    triangulation</a> before proceeding further.
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="tri-cutcrush"></a>Cutting Along and Crushing Normal Surfaces (3-D)</h3></div></div></div><p>
+    If you have a normal surface in a 3-manifold triangulation,
+    you can either cut along your surface or crush it to a point.
+    </p><div class="itemizedlist"><ul type="disc"><li><p>
+       <span class="emphasis"><em>Cutting along</em></span> a surface involves carefully
+       slicing along the surface and retriangulating the resulting
+       polyhedra.  The resulting triangulation will have new real
+       boundary component(s) corresponding to the original surface.
+      </p><p>
+       This operation has the advantages that it will never change the
+       topology of the
+       3-manifold beyond the simple act of slicing along the surface,
+       and it will never introduce ideal vertices or invalid edges.
+      </p><p>
+       The main drawback is that it can
+       vastly increase the total number of tetrahedra.
+       This has severe implications if you need to do anything
+       computationally intensive with the resulting triangulation.
+      </p></li><li><p>
+       <span class="emphasis"><em>Crushing a surface</em></span> is a potentially destructive
+       operation, but when used carefully can be extremely powerful.
+       The crushing operation was originally described by
+       Jaco and Rubinstein [<a href="bibliography.html#bib-0-efficiency" title="[JR03]"><span class="abbrev">JR03</span></a>];
+       see [<a href="bibliography.html#bib-crushing-dcg" title="[Bur14b]"><span class="abbrev">Bur14b</span></a>] for a simplified treatment.
+       In essence, the surface is first collapsed to a point,
+       and then any non-tetrahedron pieces that remain are
+       “flattened away”.
+      </p><p>
+       One key advantage of crushing is that it always
+       <span class="emphasis"><em>reduces</em></span> the number of tetrahedra
+       (unless you crush vertex links, in which case the triangulation
+       stays the same).
+      </p><p>
+       The main disadvantage is that it can change the topology
+       of your triangulation, sometimes dramatically.
+       For example, it can create ideal vertices, undo connected sums,
+       change the genus of boundary components, and delete entire summands.
+       In some cases it can even make your triangulation invalid
+       (for instance, edges might become identified with themselves in
+       reverse).
+      </p><p>
+       You should only crush a surface when you have theoretical
+       arguments that tell you exactly what might change and how to detect it.
+       Examples of such arguments appear in
+       [<a href="bibliography.html#bib-0-efficiency" title="[JR03]"><span class="abbrev">JR03</span></a>], where crushing is used to
+       great effect.
+      </p></li></ul></div><p>
+   </p><p>
+    To cut along or crush a normal surface: open the list of normal
+    surfaces, select your surface in the list, and then choose either
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Normal Surfaces</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Cut Along Surface</span></span>
+    or
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Normal Surfaces</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Crush Surface</span></span>.
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-cutcrush.png"></span>
+   </p><p>
+    <span class="application">Regina</span> will create a new triangulation where the surface has been
+    cut along or crushed accordingly.  This new trianguation will appear
+    beneath the normal surfaces in the packet tree.
+    Your original triangulation will not be changed.
+   </p><p>
+    Note that you could end up with a disconnected triangulation.
+    If so, you can
+    <a href="tri-analysis.html#tri-decomposition-component" title="Connected Components">extract connected
+    components</a> to work with one at a time.
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-cutcrush-results.png"></span>
+   </p></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="tri-analysis.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="snappea.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">Analysis </td><td width="34%" align="center" class="navCenter"><a href="triangulations.html">Up</a></td><td width="33%" align="right" class="navRight"> <span class="application">SnapPea</span> Triangulations</td></tr></table></div></body></html>
