@@ -392,7 +392,37 @@ You can also <a href="engine-docs/index.html">read it here online</a>.
 
 <h2><a name="new">What's new in version 5.1 (December&nbsp;2016)?</a></h2>
 
-Some of the main highlights in version&nbsp;5.1:
+Version&nbsp;5.1 is a major overhaul for Python and C++ users.  There
+are also enhancements to the mathematics and the user interface,
+but these are relatively minor (and are not listed here).
+
+<h4>Python and C++</h4>
+<ul>
+<li>All of the code that was deprecated in version&nbsp;5.0 has now been
+    removed entirely.
+    See the page on
+    <a href="http://regina-normal.github.io/regina4to5.html">moving from
+    4.x to 5.x</a> for instructions on how to update your scripts.</li>
+<li>Many class and header names have changed, but most of these changes
+    follow a standard pattern (classes of the form <tt>NFoo</tt> become
+    <tt>Foo</tt>, and
+    headers of the form <tt>nfoo.h</tt> become <tt>foo.h</tt>).
+    The old class and header
+    names have been kept, and will not be removed until Regina&nbsp;6.0.
+    See the page on
+    <a href="http://regina-normal.github.io/regina5to6.html">moving from
+    5.x to 6.x</a> for details.</li>
+<li>More of Regina's triangulation code is now generic, which means
+    you can do more with higher-dimensional triangulations (e.g.,
+    triangulate boundary components, or compute homology).</li>
+<li>The old &ldquo;python libraries&rdquo; facility has been removed,
+    since Python
+    itself offers better and more standardised ways of importing code.</li>
+</ul>
+
+<p>
+Version&nbsp;5.0 came out in September&mdash;if you missed it,
+this was a big release:
 
 <h4>Features</h4>
 <ul>
