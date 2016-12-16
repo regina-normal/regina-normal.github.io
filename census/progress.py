@@ -16,19 +16,19 @@ import time
 # then copied the isomorphism signature so that we can reconstruct the
 # triangulation here.
 sig = 'sfLfvQvwwMQQQccjghjkmqlonrnrqpqrnsnksaisnrobocksks'
-tri = NTriangulation(sig)
+tri = Triangulation3(sig)
 print tri.size(), 'tetrahedra'
 
 # Create a progress tracker to use during the normal surface enumeration.
 # This will report the state of progress while the enumeration runs in
 # the background.
-tracker = NProgressTracker()
+tracker = ProgressTracker()
 
 # Start the normal surface enumeration.
 # Because we are passing a progress tracker to enumerate(), the
 # enumeration will start in the background and control will return
 # immediately to the python console.
-surfaces = NNormalSurfaceList.enumerate(tri, NS_STANDARD, NS_VERTEX,
+surfaces = NormalSurfaces.enumerate(tri, NS_STANDARD, NS_VERTEX,
     NS_ALG_DEFAULT, tracker)
 
 # At this point the enumeration is up and running.
