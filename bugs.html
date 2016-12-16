@@ -35,8 +35,7 @@ assistance.
 <tr>
     <td class="topsubheading">Affected versions</td>
     <td class="top">4.94&ndash;4.96</td>
-    <td class="top">Fixed in the git repository in Feb&nbsp;2016,
-    and in the (soon to be released) version 5.0.</td>
+    <td class="top">Fixed in version 5.0.</td>
 </tr>
 <tr>
     <td class="subheading">Main symptom</td>
@@ -110,12 +109,12 @@ interpreted as a <tt>bool</tt> instead of implicitly calling the
 <tt>NormalList(NormalListFlag)</tt> constructor.
 Therefore the old function would be called instead.
 <p>
-This has been fixed in Regina 5.0 by removing the old deprecated
+This was fixed in Regina 5.0 by removing the old deprecated
 function entirely.
 <p>
-It is easy to test whether you are affected by this issue:
+It is easy to test whether you were affected by this issue:
 <ul>
-<li>You can examine your C++ code, to see if you are calling
+<li>You can examine your C++ code, to see if you were calling
 <tt>NNormalSurface::enumerate()</tt> in the manner described above
 (with exactly one <tt>NormalList</tt> flag, and without passing the
 additional algorithm argument);</li>
@@ -124,13 +123,6 @@ flags were actually used.  You can see these flags in the
 graphical user interface at the top of the normal surface viewer,
 or you can call <tt>list.which()</tt> in Python or C++.</li>
 </ul>
-<p>
-While you wait for Regina 5.0 to be released, there is a simple workaround:
-in your C++ code, change your function call from
-<tt>NNormalSurfaceList::enumerate(tri, coords, which)</tt>
-to explicitly pass an additional algorithm argument, as in
-<tt>NNormalSurfaceList::enumerate(tri, coords, which, NS_ALG_DEFAULT)</tt>.
-<p>
 <i><a href="#contents">(Back to top...)</a></i>
 
 <h2><a name="defaultalg">Mod and gcd broken for extremely large integers
