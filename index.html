@@ -39,7 +39,8 @@
     <table class="contents" cellspacing=0><tbody>
     <tr><td><a href="data.html">Census data and related articles</a></td></tr>
     <tr><td><a href="source.html">Building from source</a></td></tr>
-    <tr><td><a href="bugs.html">Important bugs</a></td></tr>
+    <tr><td><a href="https://github.com/regina-normal/regina">Git repository</a></td></tr>
+    <tr><td><a href="bugs.html">Past important bugs</a></td></tr>
     <tr><td><a href="docs/troubleshooting.html">Troubleshooting and FAQ</a></td></tr>
     </tbody></table>
 </td></tr>
@@ -104,21 +105,19 @@ Click on each thumbnail below for a full-sized version of the screenshot.
 <table border=0>
 <tr>
     <td align=center><a href="shots/tri.png"><img src="shots/tri-mini.png"
-        vspace=5 align=middle border=0
+        hspace=5 align=middle border=0
         alt="Screenshot thumbnail"></a></td>
-    <td>Studying 3-manifold triangulations</td>
-</tr>
-<tr>
     <td align=center><a href="shots/surfaces.png"><img src="shots/surfaces-mini.png"
-        vspace=5 align=middle border=0
+        hspace=5 align=middle border=0
         alt="Screenshot thumbnail"></a></td>
-    <td>Normal surfaces and angle structures</td>
+    <td align=center><a href="shots/scripting.png"><img src="shots/scripting-mini.png"
+        hspace=5 align=middle border=0
+        alt="Screenshot thumbnail"></a></td>
 </tr>
 <tr>
-    <td align=center><a href="shots/scripting.png"><img src="shots/scripting-mini.png"
-        vspace=5 align=middle border=0
-        alt="Screenshot thumbnail"></a></td>
-    <td>In-built Python scripting</td>
+    <td align="center">Studying 3-manifold<br>triangulations</td>
+    <td align="center">Normal surfaces and<br>angle structures</td>
+    <td align="center">In-built Python<br>scripting</td>
 </tr>
 </table>
 <p>
@@ -325,11 +324,14 @@ what libraries and tools you will need to have installed.
 
 <a name="ios"><h4 class="divide">iPad</h4></a>
 
-The iPad app offers most but not all of Regina's functionality.
-In particular, it does not support Python scripting or manifolds of
-dimension &geq;&nbsp;5, and it does not work
-with some of the more exotic import/export formats.  If you need these
-features then please download one of the desktop versions listed above.
+The iPad app offers most of Regina's functionality (now including
+Python scripting), but not all.  For
+example, the iPad version does not support some of the more exotic
+import/export formats, and some mathematical functions are only
+accessible through Python (such as isomorphism testing, or manifolds of
+dimension &geq;&nbsp;5).
+If you need these features then please download one of the
+desktop versions listed above.
 <p>
 <blockquote><table cellspacing=0 border=0 align=center class="data"><tbody>
 <tr><th class="first">iOS Version</th><th>Installer</th></tr>
@@ -390,7 +392,16 @@ You can also <a href="engine-docs/index.html">read it here online</a>.
 <p>
 <i><a href="#contents">(Back to contents...)</a></i>
 
-<h2><a name="new">What's new in version 5.1 (December&nbsp;2016)?</a></h2>
+<h2><a name="new">What's new in version 5.1?</a></h2>
+
+Regina has just had two major releases in quick succession:
+<ul>
+<li>Regina&nbsp;5.0, which introduced many new mathematical features;</li>
+<li>Regina&nbsp;5.1, which made significant changes to the
+Python&nbsp;/&nbsp;C++ interface.</li>
+</ul>
+
+<h4 class="divide">Version 5.1 (December 2016)</h4>
 
 Version&nbsp;5.1 is a major overhaul for Python and C++ users.  There
 are also enhancements to the mathematics and the user interface,
@@ -401,7 +412,7 @@ but these are relatively minor (and are not listed here).
 <li>All of the code that was deprecated in version&nbsp;5.0 has now been
     removed entirely.
     See the page on
-    <a href="http://regina-normal.github.io/regina4to5.html">moving from
+    <a href="regina4to5.html">moving from
     4.x to 5.x</a> for instructions on how to update your scripts.</li>
 <li>Many class and header names have changed, but most of these changes
     follow a standard pattern (classes of the form <tt>NFoo</tt> become
@@ -410,7 +421,7 @@ but these are relatively minor (and are not listed here).
     The old class and header
     names have been kept, and will not be removed until Regina&nbsp;6.0.
     See the page on
-    <a href="http://regina-normal.github.io/regina5to6.html">moving from
+    <a href="regina5to6.html">moving from
     5.x to 6.x</a> for details.</li>
 <li>More of Regina's triangulation code is now generic, which means
     you can do more with higher-dimensional triangulations (e.g.,
@@ -420,7 +431,8 @@ but these are relatively minor (and are not listed here).
     itself offers better and more standardised ways of importing code.</li>
 </ul>
 
-<p>
+<h4 class="divide">Version 5.0 (September 2016)</h4>
+
 Version&nbsp;5.0 came out in September&mdash;if you missed it,
 this was a big release:
 
