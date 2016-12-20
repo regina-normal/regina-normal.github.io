@@ -62,45 +62,41 @@
 <p>Helper class for storing all the ways in which a given face of codimension <em>codim</em> in a <em>dim</em>-dimensional triangulation appears within the various top-dimensional simplices.  
  <a href="classregina_1_1detail_1_1FaceStorage.html#details">More...</a></p>
 
-<p><code>#include &lt;generic/detail/face.h&gt;</code></p>
+<p><code>#include &lt;triangulation/detail/face.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a78e86fa90e94527a99977f8107a45f53"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1FaceStorage.html#a78e86fa90e94527a99977f8107a45f53">degree</a> () const </td></tr>
-<tr class="memdesc:a78e86fa90e94527a99977f8107a45f53"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the degree of this face.  <a href="#a78e86fa90e94527a99977f8107a45f53">More...</a><br/></td></tr>
-<tr class="separator:a78e86fa90e94527a99977f8107a45f53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2100ef2b6da1205b16001389637c06ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1FaceStorage.html#a2100ef2b6da1205b16001389637c06ed">getDegree</a> () const </td></tr>
-<tr class="memdesc:a2100ef2b6da1205b16001389637c06ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated routine that returns the degree of this face.  <a href="#a2100ef2b6da1205b16001389637c06ed">More...</a><br/></td></tr>
-<tr class="separator:a2100ef2b6da1205b16001389637c06ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac96eb3b94edb6359959c641e22236afc"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classregina_1_1FaceEmbedding.html">FaceEmbedding</a>&lt; dim, dim-codim &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1FaceStorage.html#ac96eb3b94edb6359959c641e22236afc">embedding</a> (size_t index) const </td></tr>
-<tr class="memdesc:ac96eb3b94edb6359959c641e22236afc"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> one of the ways in which this face appears within a top-dimensional simplex of the underlying triangluation.  <a href="#ac96eb3b94edb6359959c641e22236afc">More...</a><br/></td></tr>
-<tr class="separator:ac96eb3b94edb6359959c641e22236afc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb0211982679b6df27b0def7c118b6bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> const <br class="typebreak"/>
-<a class="el" href="classregina_1_1FaceEmbedding.html">FaceEmbedding</a>&lt; dim, dim-codim &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1FaceStorage.html#afb0211982679b6df27b0def7c118b6bb">getEmbedding</a> (size_t index) const </td></tr>
-<tr class="memdesc:afb0211982679b6df27b0def7c118b6bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated routine that returns one of the ways in which this face appears within a top-dimensional simplex of the underlying triangulation.  <a href="#afb0211982679b6df27b0def7c118b6bb">More...</a><br/></td></tr>
-<tr class="separator:afb0211982679b6df27b0def7c118b6bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e60de35b722db23a780552eb9d6fb0f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classregina_1_1FaceEmbedding.html">FaceEmbedding</a><br class="typebreak"/>
+<tr class="memitem:aac96492727dc5fdfc20c611e37633602"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1FaceStorage.html#aac96492727dc5fdfc20c611e37633602">degree</a> () const </td></tr>
+<tr class="memdesc:aac96492727dc5fdfc20c611e37633602"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the degree of this face.  <a href="#aac96492727dc5fdfc20c611e37633602">More...</a><br/></td></tr>
+<tr class="separator:aac96492727dc5fdfc20c611e37633602"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e4f3a919a1bc44bb47cb2c47b55ce6a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classregina_1_1FaceEmbedding.html">FaceEmbedding</a>&lt; dim, dim-codim &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1FaceStorage.html#a4e4f3a919a1bc44bb47cb2c47b55ce6a">embedding</a> (size_t index) const </td></tr>
+<tr class="memdesc:a4e4f3a919a1bc44bb47cb2c47b55ce6a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> one of the ways in which this face appears within a top-dimensional simplex of the underlying triangluation.  <a href="#a4e4f3a919a1bc44bb47cb2c47b55ce6a">More...</a><br/></td></tr>
+<tr class="separator:a4e4f3a919a1bc44bb47cb2c47b55ce6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a520fc9ee5ab6bcee50ca27de710e4927"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classregina_1_1FaceEmbedding.html">FaceEmbedding</a><br class="typebreak"/>
 &lt; dim, dim-codim &gt;<br class="typebreak"/>
- &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1FaceStorage.html#a6e60de35b722db23a780552eb9d6fb0f">begin</a> () const </td></tr>
-<tr class="memdesc:a6e60de35b722db23a780552eb9d6fb0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A begin function for iterating through all appearances of this face within the various top-dimensional simplices of the underlying triangulation.  <a href="#a6e60de35b722db23a780552eb9d6fb0f">More...</a><br/></td></tr>
-<tr class="separator:a6e60de35b722db23a780552eb9d6fb0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cdc9ff8a10c7860d20fa560fdf5bb34"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classregina_1_1FaceEmbedding.html">FaceEmbedding</a><br class="typebreak"/>
+ &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1FaceStorage.html#a520fc9ee5ab6bcee50ca27de710e4927">begin</a> () const </td></tr>
+<tr class="memdesc:a520fc9ee5ab6bcee50ca27de710e4927"><td class="mdescLeft">&#160;</td><td class="mdescRight">A begin function for iterating through all appearances of this face within the various top-dimensional simplices of the underlying triangulation.  <a href="#a520fc9ee5ab6bcee50ca27de710e4927">More...</a><br/></td></tr>
+<tr class="separator:a520fc9ee5ab6bcee50ca27de710e4927"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6fe1cb4689cfe36d15ae27bbc6de18b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classregina_1_1FaceEmbedding.html">FaceEmbedding</a><br class="typebreak"/>
 &lt; dim, dim-codim &gt;<br class="typebreak"/>
- &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1FaceStorage.html#a4cdc9ff8a10c7860d20fa560fdf5bb34">end</a> () const </td></tr>
-<tr class="memdesc:a4cdc9ff8a10c7860d20fa560fdf5bb34"><td class="mdescLeft">&#160;</td><td class="mdescRight">An end function for iterating through all appearances of this face within the various top-dimensional simplices of the underlying triangulation.  <a href="#a4cdc9ff8a10c7860d20fa560fdf5bb34">More...</a><br/></td></tr>
-<tr class="separator:a4cdc9ff8a10c7860d20fa560fdf5bb34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2916d739dea91cd1b5a16a5c1f41e33a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classregina_1_1FaceEmbedding.html">FaceEmbedding</a>&lt; dim, dim-codim &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1FaceStorage.html#a2916d739dea91cd1b5a16a5c1f41e33a">front</a> () const </td></tr>
-<tr class="memdesc:a2916d739dea91cd1b5a16a5c1f41e33a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the first appearance of this face within a top-dimensional simplex of the underlying triangluation.  <a href="#a2916d739dea91cd1b5a16a5c1f41e33a">More...</a><br/></td></tr>
-<tr class="separator:a2916d739dea91cd1b5a16a5c1f41e33a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae21874c24507063f89a2889493212be6"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classregina_1_1FaceEmbedding.html">FaceEmbedding</a>&lt; dim, dim-codim &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1FaceStorage.html#ae21874c24507063f89a2889493212be6">back</a> () const </td></tr>
-<tr class="memdesc:ae21874c24507063f89a2889493212be6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the last appearance of this face within a top-dimensional simplex of the underlying triangluation.  <a href="#ae21874c24507063f89a2889493212be6">More...</a><br/></td></tr>
-<tr class="separator:ae21874c24507063f89a2889493212be6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+ &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1FaceStorage.html#aa6fe1cb4689cfe36d15ae27bbc6de18b">end</a> () const </td></tr>
+<tr class="memdesc:aa6fe1cb4689cfe36d15ae27bbc6de18b"><td class="mdescLeft">&#160;</td><td class="mdescRight">An end function for iterating through all appearances of this face within the various top-dimensional simplices of the underlying triangulation.  <a href="#aa6fe1cb4689cfe36d15ae27bbc6de18b">More...</a><br/></td></tr>
+<tr class="separator:aa6fe1cb4689cfe36d15ae27bbc6de18b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2d57928ddd7deb8071540c338a223f5"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classregina_1_1FaceEmbedding.html">FaceEmbedding</a>&lt; dim, dim-codim &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1FaceStorage.html#ab2d57928ddd7deb8071540c338a223f5">front</a> () const </td></tr>
+<tr class="memdesc:ab2d57928ddd7deb8071540c338a223f5"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the first appearance of this face within a top-dimensional simplex of the underlying triangluation.  <a href="#ab2d57928ddd7deb8071540c338a223f5">More...</a><br/></td></tr>
+<tr class="separator:ab2d57928ddd7deb8071540c338a223f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54dcfef4931d8b36e453ead4dac26736"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classregina_1_1FaceEmbedding.html">FaceEmbedding</a>&lt; dim, dim-codim &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1FaceStorage.html#a54dcfef4931d8b36e453ead4dac26736">back</a> () const </td></tr>
+<tr class="memdesc:a54dcfef4931d8b36e453ead4dac26736"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the last appearance of this face within a top-dimensional simplex of the underlying triangluation.  <a href="#a54dcfef4931d8b36e453ead4dac26736">More...</a><br/></td></tr>
+<tr class="separator:a54dcfef4931d8b36e453ead4dac26736"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2c22f338840773e0720f2dedc73f8cc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1FaceStorage.html#ae2c22f338840773e0720f2dedc73f8cc">inMaximalForest</a> () const </td></tr>
+<tr class="memdesc:ae2c22f338840773e0720f2dedc73f8cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether a codimension-1-face represents a dual edge in the maximal forest that has been chosen for the dual 1-skeleton of the triangulation.  <a href="#ae2c22f338840773e0720f2dedc73f8cc">More...</a><br/></td></tr>
+<tr class="separator:ae2c22f338840773e0720f2dedc73f8cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:ae78ab657f38c10e7ba8866d5f91b29e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1FaceStorage.html#ae78ab657f38c10e7ba8866d5f91b29e3">push_back</a> (const <a class="el" href="classregina_1_1FaceEmbedding.html">FaceEmbedding</a>&lt; dim, dim-codim &gt; &amp;emb)</td></tr>
-<tr class="memdesc:ae78ab657f38c10e7ba8866d5f91b29e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal routine to help build the skeleton of a triangulation.  <a href="#ae78ab657f38c10e7ba8866d5f91b29e3">More...</a><br/></td></tr>
-<tr class="separator:ae78ab657f38c10e7ba8866d5f91b29e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25c2e07eb96409c1c93b1710ca102724"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1FaceStorage.html#a25c2e07eb96409c1c93b1710ca102724">push_back</a> (const <a class="el" href="classregina_1_1FaceEmbedding.html">FaceEmbedding</a>&lt; dim, dim-codim &gt; &amp;emb)</td></tr>
+<tr class="memdesc:a25c2e07eb96409c1c93b1710ca102724"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal routine to help build the skeleton of a triangulation.  <a href="#a25c2e07eb96409c1c93b1710ca102724">More...</a><br/></td></tr>
+<tr class="separator:a25c2e07eb96409c1c93b1710ca102724"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;int dim, int codim&gt;<br/>
@@ -120,17 +116,17 @@ class regina::detail::FaceStorage&lt; dim, codim &gt;</h3>
   </dd>
 </dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ae21874c24507063f89a2889493212be6"></a>
+<a class="anchor" id="a54dcfef4931d8b36e453ead4dac26736"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;int dim, int codim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classregina_1_1FaceEmbedding.html">FaceEmbedding</a>&lt; dim, dim-2 &gt; &amp; <a class="el" href="classregina_1_1detail_1_1FaceStorage.html">regina::detail::FaceStorage</a>&lt; dim &gt;::back </td>
+          <td class="memname">const <a class="el" href="classregina_1_1FaceEmbedding.html">FaceEmbedding</a>&lt; dim, dim-codim &gt; &amp; <a class="el" href="classregina_1_1detail_1_1FaceStorage.html">regina::detail::FaceStorage</a>&lt; dim, codim &gt;::back </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -144,23 +140,23 @@ template&lt;int dim&gt; </div>
 </div><div class="memdoc">
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the last appearance of this face within a top-dimensional simplex of the underlying triangluation. </p>
-<p>This is equivalent to calling <code>embedding(<a class="el" href="classregina_1_1detail_1_1FaceStorage.html#a78e86fa90e94527a99977f8107a45f53" title="Returns the degree of this face.">degree()</a>-1)</code>.</p>
-<p>In most cases, the ordering of appearances is arbitrary. The exception is for codimension 2, where the appearances of a face are ordered in a way that follows the link around the face (which in codimension 2 is always a path or a cycle). In particular, for a boundary face of codimension 2, both <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#a2916d739dea91cd1b5a16a5c1f41e33a" title="Returns the first appearance of this face within a top-dimensional simplex of the underlying trianglu...">front()</a> and <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#ae21874c24507063f89a2889493212be6" title="Returns the last appearance of this face within a top-dimensional simplex of the underlying trianglua...">back()</a> will refer to the two appearances of this face on the (<em>dim</em>-1)-dimensional boundary.</p>
+<p>This is equivalent to calling <code>embedding(<a class="el" href="classregina_1_1detail_1_1FaceStorage.html#aac96492727dc5fdfc20c611e37633602" title="Returns the degree of this face.">degree()</a>-1)</code>.</p>
+<p>In most cases, the ordering of appearances is arbitrary. The exception is for codimension 2, where the appearances of a face are ordered in a way that follows the link around the face (which in codimension 2 is always a path or a cycle). In particular, for a boundary face of codimension 2, both <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#ab2d57928ddd7deb8071540c338a223f5" title="Returns the first appearance of this face within a top-dimensional simplex of the underlying trianglu...">front()</a> and <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#a54dcfef4931d8b36e453ead4dac26736" title="Returns the last appearance of this face within a top-dimensional simplex of the underlying trianglua...">back()</a> will refer to the two appearances of this face on the (<em>dim</em>-1)-dimensional boundary.</p>
 <dl class="section return"><dt>Returns</dt><dd>details of the last appearance. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a6e60de35b722db23a780552eb9d6fb0f"></a>
+<a class="anchor" id="a520fc9ee5ab6bcee50ca27de710e4927"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;int dim, int codim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::deque&lt; <a class="el" href="classregina_1_1FaceEmbedding.html">FaceEmbedding</a>&lt; dim, dim-2 &gt; &gt;::const_iterator <a class="el" href="classregina_1_1detail_1_1FaceStorage.html">regina::detail::FaceStorage</a>&lt; dim &gt;::begin </td>
+          <td class="memname">std::vector&lt; <a class="el" href="classregina_1_1FaceEmbedding.html">FaceEmbedding</a>&lt; dim, dim-codim &gt; &gt;::const_iterator <a class="el" href="classregina_1_1detail_1_1FaceStorage.html">regina::detail::FaceStorage</a>&lt; dim, codim &gt;::begin </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -175,23 +171,23 @@ template&lt;int dim&gt; </div>
 
 <p>A begin function for iterating through all appearances of this face within the various top-dimensional simplices of the underlying triangulation. </p>
 <p>In most cases, the ordering of appearances is arbitrary. The exception is for codimension 2, where these appearances are ordered in a way that follows the link around the face (which in codimension 2 is always a path or a cycle).</p>
-<p>An iteration from <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#a6e60de35b722db23a780552eb9d6fb0f" title="A begin function for iterating through all appearances of this face within the various top-dimensiona...">begin()</a> to <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#a4cdc9ff8a10c7860d20fa560fdf5bb34" title="An end function for iterating through all appearances of this face within the various top-dimensional...">end()</a> will run through <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#a78e86fa90e94527a99977f8107a45f53" title="Returns the degree of this face.">degree()</a> appearances in total.</p>
-<dl class="section user"><dt>Python:</dt><dd>Not present. However, Python users can call the Python-only routine embeddings(), which will return all appearances (from <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#a6e60de35b722db23a780552eb9d6fb0f" title="A begin function for iterating through all appearances of this face within the various top-dimensiona...">begin()</a> through to <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#a4cdc9ff8a10c7860d20fa560fdf5bb34" title="An end function for iterating through all appearances of this face within the various top-dimensional...">end()</a>) in a Python sequence.</dd></dl>
+<p>An iteration from <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#a520fc9ee5ab6bcee50ca27de710e4927" title="A begin function for iterating through all appearances of this face within the various top-dimensiona...">begin()</a> to <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#aa6fe1cb4689cfe36d15ae27bbc6de18b" title="An end function for iterating through all appearances of this face within the various top-dimensional...">end()</a> will run through <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#aac96492727dc5fdfc20c611e37633602" title="Returns the degree of this face.">degree()</a> appearances in total.</p>
+<dl class="section user"><dt>Python:</dt><dd>Not present. However, Python users can call the Python-only routine embeddings(), which will return all appearances (from <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#a520fc9ee5ab6bcee50ca27de710e4927" title="A begin function for iterating through all appearances of this face within the various top-dimensiona...">begin()</a> through to <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#aa6fe1cb4689cfe36d15ae27bbc6de18b" title="An end function for iterating through all appearances of this face within the various top-dimensional...">end()</a>) in a Python sequence.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a iterator that points to the first appearance. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a78e86fa90e94527a99977f8107a45f53"></a>
+<a class="anchor" id="aac96492727dc5fdfc20c611e37633602"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;int dim, int codim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">size_t <a class="el" href="classregina_1_1detail_1_1FaceStorage.html">regina::detail::FaceStorage</a>&lt; dim &gt;::degree </td>
+          <td class="memname">size_t <a class="el" href="classregina_1_1detail_1_1FaceStorage.html">regina::detail::FaceStorage</a>&lt; dim, codim &gt;::degree </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -211,17 +207,17 @@ template&lt;int dim&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ac96eb3b94edb6359959c641e22236afc"></a>
+<a class="anchor" id="a4e4f3a919a1bc44bb47cb2c47b55ce6a"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;int dim, int codim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classregina_1_1FaceEmbedding.html">FaceEmbedding</a>&lt; dim, dim-2 &gt; &amp; <a class="el" href="classregina_1_1detail_1_1FaceStorage.html">regina::detail::FaceStorage</a>&lt; dim &gt;::embedding </td>
+          <td class="memname">const <a class="el" href="classregina_1_1FaceEmbedding.html">FaceEmbedding</a>&lt; dim, dim-codim &gt; &amp; <a class="el" href="classregina_1_1detail_1_1FaceStorage.html">regina::detail::FaceStorage</a>&lt; dim, codim &gt;::embedding </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
@@ -236,11 +232,11 @@ template&lt;int dim&gt; </div>
 </div><div class="memdoc">
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> one of the ways in which this face appears within a top-dimensional simplex of the underlying triangluation. </p>
-<p>For convenience, you can also use <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#a6e60de35b722db23a780552eb9d6fb0f" title="A begin function for iterating through all appearances of this face within the various top-dimensiona...">begin()</a> and <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#a4cdc9ff8a10c7860d20fa560fdf5bb34" title="An end function for iterating through all appearances of this face within the various top-dimensional...">end()</a> to iterate through all such appearances.</p>
+<p>For convenience, you can also use <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#a520fc9ee5ab6bcee50ca27de710e4927" title="A begin function for iterating through all appearances of this face within the various top-dimensiona...">begin()</a> and <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#aa6fe1cb4689cfe36d15ae27bbc6de18b" title="An end function for iterating through all appearances of this face within the various top-dimensional...">end()</a> to iterate through all such appearances.</p>
 <p>In most cases, the ordering of appearances is arbitrary. The exception is for codimension 2, where these appearances are ordered in a way that follows the link around the face (which in codimension 2 is always a path or a cycle).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">index</td><td>the index of the requested appearance. This must be between 0 and <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#a78e86fa90e94527a99977f8107a45f53" title="Returns the degree of this face.">degree()</a>-1 inclusive. </td></tr>
+    <tr><td class="paramname">index</td><td>the index of the requested appearance. This must be between 0 and <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#aac96492727dc5fdfc20c611e37633602" title="Returns the degree of this face.">degree()</a>-1 inclusive. </td></tr>
   </table>
   </dd>
 </dl>
@@ -248,17 +244,17 @@ template&lt;int dim&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a4cdc9ff8a10c7860d20fa560fdf5bb34"></a>
+<a class="anchor" id="aa6fe1cb4689cfe36d15ae27bbc6de18b"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;int dim, int codim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::deque&lt; <a class="el" href="classregina_1_1FaceEmbedding.html">FaceEmbedding</a>&lt; dim, dim-2 &gt; &gt;::const_iterator <a class="el" href="classregina_1_1detail_1_1FaceStorage.html">regina::detail::FaceStorage</a>&lt; dim &gt;::end </td>
+          <td class="memname">std::vector&lt; <a class="el" href="classregina_1_1FaceEmbedding.html">FaceEmbedding</a>&lt; dim, dim-codim &gt; &gt;::const_iterator <a class="el" href="classregina_1_1detail_1_1FaceStorage.html">regina::detail::FaceStorage</a>&lt; dim, codim &gt;::end </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -273,23 +269,23 @@ template&lt;int dim&gt; </div>
 
 <p>An end function for iterating through all appearances of this face within the various top-dimensional simplices of the underlying triangulation. </p>
 <p>In most cases, the ordering of appearances is arbitrary. The exception is for codimension 2, where these appearances are ordered in a way that follows the link around the face (which in codimension 2 is always a path or a cycle).</p>
-<p>An iteration from <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#a6e60de35b722db23a780552eb9d6fb0f" title="A begin function for iterating through all appearances of this face within the various top-dimensiona...">begin()</a> to <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#a4cdc9ff8a10c7860d20fa560fdf5bb34" title="An end function for iterating through all appearances of this face within the various top-dimensional...">end()</a> will run through <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#a78e86fa90e94527a99977f8107a45f53" title="Returns the degree of this face.">degree()</a> appearances in total.</p>
-<dl class="section user"><dt>Python:</dt><dd>Not present. However, Python users can call the Python-only routine embeddings(), which will return all appearances (from <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#a6e60de35b722db23a780552eb9d6fb0f" title="A begin function for iterating through all appearances of this face within the various top-dimensiona...">begin()</a> through to <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#a4cdc9ff8a10c7860d20fa560fdf5bb34" title="An end function for iterating through all appearances of this face within the various top-dimensional...">end()</a>) in a Python sequence.</dd></dl>
+<p>An iteration from <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#a520fc9ee5ab6bcee50ca27de710e4927" title="A begin function for iterating through all appearances of this face within the various top-dimensiona...">begin()</a> to <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#aa6fe1cb4689cfe36d15ae27bbc6de18b" title="An end function for iterating through all appearances of this face within the various top-dimensional...">end()</a> will run through <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#aac96492727dc5fdfc20c611e37633602" title="Returns the degree of this face.">degree()</a> appearances in total.</p>
+<dl class="section user"><dt>Python:</dt><dd>Not present. However, Python users can call the Python-only routine embeddings(), which will return all appearances (from <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#a520fc9ee5ab6bcee50ca27de710e4927" title="A begin function for iterating through all appearances of this face within the various top-dimensiona...">begin()</a> through to <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#aa6fe1cb4689cfe36d15ae27bbc6de18b" title="An end function for iterating through all appearances of this face within the various top-dimensional...">end()</a>) in a Python sequence.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a "beyond the end" iterator that comes immediately after the last appearance. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a2916d739dea91cd1b5a16a5c1f41e33a"></a>
+<a class="anchor" id="ab2d57928ddd7deb8071540c338a223f5"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;int dim, int codim&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classregina_1_1FaceEmbedding.html">FaceEmbedding</a>&lt; dim, dim-2 &gt; &amp; <a class="el" href="classregina_1_1detail_1_1FaceStorage.html">regina::detail::FaceStorage</a>&lt; dim &gt;::front </td>
+          <td class="memname">const <a class="el" href="classregina_1_1FaceEmbedding.html">FaceEmbedding</a>&lt; dim, dim-codim &gt; &amp; <a class="el" href="classregina_1_1detail_1_1FaceStorage.html">regina::detail::FaceStorage</a>&lt; dim, codim &gt;::front </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -304,71 +300,37 @@ template&lt;int dim&gt; </div>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the first appearance of this face within a top-dimensional simplex of the underlying triangluation. </p>
 <p>This is equivalent to calling <code>*begin()</code>, or <code>embedding(0)</code>.</p>
-<p>In most cases, the ordering of appearances is arbitrary. The exception is for codimension 2, where the appearances of a face are ordered in a way that follows the link around the face (which in codimension 2 is always a path or a cycle). In particular, for a boundary face of codimension 2, both <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#a2916d739dea91cd1b5a16a5c1f41e33a" title="Returns the first appearance of this face within a top-dimensional simplex of the underlying trianglu...">front()</a> and <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#ae21874c24507063f89a2889493212be6" title="Returns the last appearance of this face within a top-dimensional simplex of the underlying trianglua...">back()</a> will refer to the two appearances of this face on the (<em>dim</em>-1)-dimensional boundary.</p>
+<p>In most cases, the ordering of appearances is arbitrary. The exception is for codimension 2, where the appearances of a face are ordered in a way that follows the link around the face (which in codimension 2 is always a path or a cycle). In particular, for a boundary face of codimension 2, both <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#ab2d57928ddd7deb8071540c338a223f5" title="Returns the first appearance of this face within a top-dimensional simplex of the underlying trianglu...">front()</a> and <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#a54dcfef4931d8b36e453ead4dac26736" title="Returns the last appearance of this face within a top-dimensional simplex of the underlying trianglua...">back()</a> will refer to the two appearances of this face on the (<em>dim</em>-1)-dimensional boundary.</p>
 <dl class="section return"><dt>Returns</dt><dd>details of the first appearance. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a2100ef2b6da1205b16001389637c06ed"></a>
+<a class="anchor" id="ae2c22f338840773e0720f2dedc73f8cc"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
+template&lt;int dim, int codim&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">size_t <a class="el" href="classregina_1_1detail_1_1FaceStorage.html">regina::detail::FaceStorage</a>&lt; dim &gt;::getDegree </td>
+          <td class="memname">bool <a class="el" href="classregina_1_1detail_1_1FaceStorage.html">regina::detail::FaceStorage</a>&lt; dim, codim &gt;::inMaximalForest </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Deprecated routine that returns the degree of this face. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000205">Deprecated:</a></b></dt><dd>Simply call <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#a78e86fa90e94527a99977f8107a45f53" title="Returns the degree of this face.">degree()</a> instead.</dd></dl>
-<p>See <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#a78e86fa90e94527a99977f8107a45f53" title="Returns the degree of this face.">degree()</a> for further details. </p>
+<p>Determines whether a codimension-1-face represents a dual edge in the maximal forest that has been chosen for the dual 1-skeleton of the triangulation. </p>
+<p>This routine is only available for faces of codimension 1; that is, (<em>dim</em>-1)-faces of a <em>dim</em>-dimensional triangulation.</p>
+<p>When the skeletal structure of a triangulation is first computed, a maximal forest in the dual 1-skeleton of the triangulation is also constructed. Each dual edge in this maximal forest represents a (<em>dim</em>-1)-face of the (primal) triangulation.</p>
+<p>This maximal forest will remain fixed until the triangulation changes, at which point it will be recomputed (as will all other skeletal objects, such as connected components and so on). There is no guarantee that, when it is recomputed, the maximal forest will use the same dual edges as before.</p>
+<p>This routine identifies whether this (<em>dim</em>-1)-face belongs to the dual forest. In this sense it performs a similar role to <a class="el" href="classregina_1_1detail_1_1SimplexBase.html#ad94e278cecc60dc511841cb08705f1c7" title="Determines whether the given facet of this simplex belongs to the maximal forest that has been chosen...">Simplex::facetInMaximalForest()</a>, but this routine is typically easier to use.</p>
+<p>If the skeleton has already been computed, then this routine is very fast (since it just returns a precomputed answer).</p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if and only if this (<em>dim</em>-1)-face represents a dual edge in the maximal forest. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="afb0211982679b6df27b0def7c118b6bb"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;int dim&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="classregina_1_1FaceEmbedding.html">FaceEmbedding</a>&lt; dim, dim-2 &gt; &amp; <a class="el" href="classregina_1_1detail_1_1FaceStorage.html">regina::detail::FaceStorage</a>&lt; dim &gt;::getEmbedding </td>
-          <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>index</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Deprecated routine that returns one of the ways in which this face appears within a top-dimensional simplex of the underlying triangulation. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000206">Deprecated:</a></b></dt><dd>Simply call <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#ac96eb3b94edb6359959c641e22236afc" title="Returns one of the ways in which this face appears within a top-dimensional simplex of the underlying...">embedding()</a> instead.</dd></dl>
-<p>See <a class="el" href="classregina_1_1detail_1_1FaceStorage.html#ac96eb3b94edb6359959c641e22236afc" title="Returns one of the ways in which this face appears within a top-dimensional simplex of the underlying...">embedding()</a> for further details. </p>
-
-</div>
-</div>
-<a class="anchor" id="ae78ab657f38c10e7ba8866d5f91b29e3"></a>
+<a class="anchor" id="a25c2e07eb96409c1c93b1710ca102724"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -378,7 +340,7 @@ template&lt;int dim, int codim&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classregina_1_1detail_1_1FaceStorage.html">regina::detail::FaceStorage</a>&lt; dim &gt;::push_back </td>
+          <td class="memname">void <a class="el" href="classregina_1_1detail_1_1FaceStorage.html">regina::detail::FaceStorage</a>&lt; dim, codim &gt;::push_back </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classregina_1_1FaceEmbedding.html">FaceEmbedding</a>&lt; dim, dim-codim &gt; &amp;&#160;</td>
           <td class="paramname"><em>emb</em></td><td>)</td>
@@ -404,7 +366,7 @@ template&lt;int dim, int codim&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>generic/detail/<a class="el" href="detail_2face_8h.html">face.h</a></li>
+<li>triangulation/detail/<a class="el" href="triangulation_2detail_2face_8h.html">face.h</a></li>
 </ul>
 </div><!-- contents -->
 <hr>

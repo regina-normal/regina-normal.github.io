@@ -58,7 +58,7 @@
 <p>A template that stores information about a particular type of packet.  
  <a href="structregina_1_1PacketInfo.html#details">More...</a></p>
 
-<p><code>#include &lt;packet/npacket.h&gt;</code></p>
+<p><code>#include &lt;packet/packet.h&gt;</code></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;PacketType packetType&gt;<br/>
 struct regina::PacketInfo&lt; packetType &gt;</h3>
@@ -68,7 +68,7 @@ struct regina::PacketInfo&lt; packetType &gt;</h3>
 <p>To iterate through cases for a given value of <a class="el" href="structregina_1_1PacketInfo.html" title="A template that stores information about a particular type of packet.">PacketInfo</a> that is not known until runtime, see the various <a class="el" href="group__packet.html#gad31b2cdd885ea449cc4abea375c5b49d" title="Allows the user to call a template function whose template parameter matches a given value of PacketT...">forPacket()</a> routines defined in <a class="el" href="packetregistry_8h.html" title="Provides access to a registry of all packet types known to Regina.">packetregistry.h</a>.</p>
 <p>At a bare minimum, each specialisation of this template must provide:</p>
 <ul>
-<li>a typedef <em>Class</em> that represents the corresponding <a class="el" href="classregina_1_1NPacket.html" title="Represents a packet of information that may be individually edited or operated upon.">NPacket</a> subclass;</li>
+<li>a typedef <em>Class</em> that represents the corresponding <a class="el" href="classregina_1_1Packet.html" title="Represents a packet of information that may be individually edited or operated upon.">Packet</a> subclass;</li>
 <li>a static function name() that returns a C-style string giving the human-readable name of the packet type.</li>
 </ul>
 <dl class="section user"><dt>Python:</dt><dd>Not present.</dd></dl>
@@ -79,7 +79,7 @@ struct regina::PacketInfo&lt; packetType &gt;</h3>
   </dd>
 </dl>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>packet/<a class="el" href="npacket_8h.html">npacket.h</a></li>
+<li>packet/<a class="el" href="packet_8h.html">packet.h</a></li>
 </ul>
 </div><!-- contents -->
 <hr>

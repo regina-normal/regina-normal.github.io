@@ -48,63 +48,16 @@
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">ndisc.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Deals with individual normal discs and sets of normal discs in a normal surface.  
+<p>Deprecated header.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;cassert&gt;</code><br/>
-<code>#include &quot;<a class="el" href="regina-core_8h.html">regina-core.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="nnormalsurface_8h.html">surfaces/nnormalsurface.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="ntriangulation_8h.html">triangulation/ntriangulation.h</a>&quot;</code><br/>
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structregina_1_1NDiscSpec.html">regina::NDiscSpec</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies a single normal disc in a normal surface.  <a href="structregina_1_1NDiscSpec.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NDiscSetTet.html">regina::NDiscSetTet</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a set of normal discs inside a single tetrahedron.  <a href="classregina_1_1NDiscSetTet.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NDiscSetTetData.html">regina::NDiscSetTetData&lt; T &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores data of type <code>T</code> for every normal disc inside a single tetrahedron.  <a href="classregina_1_1NDiscSetTetData.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NDiscSetSurface.html">regina::NDiscSetSurface</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the set of all normal discs forming a normal surface.  <a href="classregina_1_1NDiscSetSurface.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NDiscSetSurfaceData.html">regina::NDiscSetSurfaceData&lt; T &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores data of type <code>T</code> for every normal disc within a particular normal surface.  <a href="classregina_1_1NDiscSetSurfaceData.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NDiscSpecIterator.html">regina::NDiscSpecIterator</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An iterator used for running through all normal discs in a normal surface.  <a href="classregina_1_1NDiscSpecIterator.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespaceregina"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceregina.html">regina</a></td></tr>
-<tr class="memdesc:namespaceregina"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the entire Regina calculation engine. <br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ga876e554eb4fda7ead0f73db0324841d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__engine.html#ga74a5f137da12842a64dce0a7c78fb3f9">REGINA_API</a> std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__surfaces.html#ga876e554eb4fda7ead0f73db0324841d7">regina::operator&lt;&lt;</a> (std::ostream &amp;out, const NDiscSpec &amp;spec)</td></tr>
-<tr class="memdesc:ga876e554eb4fda7ead0f73db0324841d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the given disc specifier to the given output stream.  <a href="group__surfaces.html#ga876e554eb4fda7ead0f73db0324841d7">More...</a><br/></td></tr>
-<tr class="separator:ga876e554eb4fda7ead0f73db0324841d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga691d08a8f65b1322e0846cf55b319461"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__engine.html#ga74a5f137da12842a64dce0a7c78fb3f9">REGINA_API</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__surfaces.html#ga691d08a8f65b1322e0846cf55b319461">regina::numberDiscsAwayFromVertex</a> (int discType, int vertex)</td></tr>
-<tr class="memdesc:ga691d08a8f65b1322e0846cf55b319461"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether or not normal discs of the given type are numbered away from the given vertex.  <a href="group__surfaces.html#ga691d08a8f65b1322e0846cf55b319461">More...</a><br/></td></tr>
-<tr class="separator:ga691d08a8f65b1322e0846cf55b319461"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0355cb839a1c4401eb06ea08d175047d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__engine.html#ga74a5f137da12842a64dce0a7c78fb3f9">REGINA_API</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__surfaces.html#ga0355cb839a1c4401eb06ea08d175047d">regina::discOrientationFollowsEdge</a> (int discType, int vertex, int edgeStart, int edgeEnd)</td></tr>
-<tr class="memdesc:ga0355cb839a1c4401eb06ea08d175047d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether or not the natural boundary orientation of a normal disc of the given type follows the given directed normal arc.  <a href="group__surfaces.html#ga0355cb839a1c4401eb06ea08d175047d">More...</a><br/></td></tr>
-<tr class="separator:ga0355cb839a1c4401eb06ea08d175047d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Deals with individual normal discs and sets of normal discs in a normal surface. </p>
+<div class="textblock"><code>#include &quot;<a class="el" href="disc_8h.html">surfaces/disc.h</a>&quot;</code><br/>
+</div><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Deprecated header. </p>
 </div></div><!-- contents -->
 <hr>
 Copyright &copy; 1999-2016, The Regina development team

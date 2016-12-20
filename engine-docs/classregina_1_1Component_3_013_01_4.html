@@ -56,14 +56,14 @@
 <a href="#friends">Friends</a> &#124;
 <a href="classregina_1_1Component_3_013_01_4-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">regina::Component&lt; 3 &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__triangulation.html">3-Manifold Triangulations</a></div></div>  </div>
+<div class="title">regina::Component&lt; 3 &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__dim3.html">3-Manifold Triangulations</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
 <p>Represents a connected component of a 3-manifold triangulation.  
  <a href="classregina_1_1Component_3_013_01_4.html#details">More...</a></p>
 
-<p><code>#include &lt;triangulation/ncomponent.h&gt;</code></p>
+<p><code>#include &lt;triangulation/dim3.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for regina::Component&lt; 3 &gt;:</div>
 <div class="dyncontent">
@@ -76,7 +76,7 @@ Inheritance diagram for regina::Component&lt; 3 &gt;:</div>
 <area href="structregina_1_1Output.html" alt="regina::Output&lt; ComponentBase&lt; dim &gt; &gt;" shape="rect" coords="0,0,363,24"/>
 <area href="classregina_1_1alias_1_1Simplices.html" alt="regina::alias::Simplices&lt; ComponentBase&lt; dim &gt;, dim &gt;" shape="rect" coords="373,0,736,24"/>
 <area href="classregina_1_1alias_1_1SimplexAt.html" alt="regina::alias::SimplexAt&lt; ComponentBase&lt; dim &gt;, dim, false &gt;" shape="rect" coords="746,0,1109,24"/>
-<area href="classregina_1_1NMarkedElement.html" title="A base class for elements of NMarkedVector." alt="regina::NMarkedElement" shape="rect" coords="1492,0,1855,24"/>
+<area href="classregina_1_1MarkedElement.html" title="A base class for elements of MarkedVector." alt="regina::MarkedElement" shape="rect" coords="1492,0,1855,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -86,12 +86,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0ccbdf3a8316bf8efe300365690c57d1"><td class="memTemplItemLeft" align="right" valign="top">size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classregina_1_1Component_3_013_01_4.html#a0ccbdf3a8316bf8efe300365690c57d1">countFaces</a> () const </td></tr>
 <tr class="memdesc:a0ccbdf3a8316bf8efe300365690c57d1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the number of <em>subdim</em>-faces in this component.  <a href="#a0ccbdf3a8316bf8efe300365690c57d1">More...</a><br/></td></tr>
 <tr class="separator:a0ccbdf3a8316bf8efe300365690c57d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30e2ca18615b555f0ec45260b33ac69f"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Component_3_013_01_4.html#a30e2ca18615b555f0ec45260b33ac69f">countBoundaryComponents</a> () const </td></tr>
-<tr class="memdesc:a30e2ca18615b555f0ec45260b33ac69f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the number of boundary components in this component.  <a href="#a30e2ca18615b555f0ec45260b33ac69f">More...</a><br/></td></tr>
-<tr class="separator:a30e2ca18615b555f0ec45260b33ac69f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0e1ae0e3b8072812484a2105f59d892"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Component_3_013_01_4.html#ae0e1ae0e3b8072812484a2105f59d892">getNumberOfBoundaryComponents</a> () const </td></tr>
-<tr class="memdesc:ae0e1ae0e3b8072812484a2105f59d892"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated function that returns the number of boundary components in this component.  <a href="#ae0e1ae0e3b8072812484a2105f59d892">More...</a><br/></td></tr>
-<tr class="separator:ae0e1ae0e3b8072812484a2105f59d892"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82ed83d8c2a1dcc7ab219592b12f1927"><td class="memTemplParams" colspan="2">template&lt;int subdim&gt; </td></tr>
 <tr class="memitem:a82ed83d8c2a1dcc7ab219592b12f1927"><td class="memTemplItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="classregina_1_1Face.html">Face</a><br class="typebreak"/>
 &lt; 3, subdim &gt; * &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classregina_1_1Component_3_013_01_4.html#a82ed83d8c2a1dcc7ab219592b12f1927">faces</a> () const </td></tr>
@@ -101,13 +95,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad6ca1608008ed238f8eec3567f950aa8"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1Face.html">Face</a>&lt; 3, subdim &gt; *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classregina_1_1Component_3_013_01_4.html#ad6ca1608008ed238f8eec3567f950aa8">face</a> (size_t <a class="el" href="classregina_1_1detail_1_1ComponentBase.html#a3a28a6d9db50b417449d0119f8ad1064">index</a>) const </td></tr>
 <tr class="memdesc:ad6ca1608008ed238f8eec3567f950aa8"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the requested <em>subdim</em>-face in this component.  <a href="#ad6ca1608008ed238f8eec3567f950aa8">More...</a><br/></td></tr>
 <tr class="separator:ad6ca1608008ed238f8eec3567f950aa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22e7129beabf5e99f4fcadcdd5768dcc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1NBoundaryComponent.html">NBoundaryComponent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Component_3_013_01_4.html#a22e7129beabf5e99f4fcadcdd5768dcc">boundaryComponent</a> (size_t <a class="el" href="classregina_1_1detail_1_1ComponentBase.html#a3a28a6d9db50b417449d0119f8ad1064">index</a>) const </td></tr>
-<tr class="memdesc:a22e7129beabf5e99f4fcadcdd5768dcc"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the requested boundary component in this component.  <a href="#a22e7129beabf5e99f4fcadcdd5768dcc">More...</a><br/></td></tr>
-<tr class="separator:a22e7129beabf5e99f4fcadcdd5768dcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77f90d9c7691bb43f63e6ff728cde566"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> <br class="typebreak"/>
-<a class="el" href="classregina_1_1NBoundaryComponent.html">NBoundaryComponent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Component_3_013_01_4.html#a77f90d9c7691bb43f63e6ff728cde566">getBoundaryComponent</a> (size_t <a class="el" href="classregina_1_1detail_1_1ComponentBase.html#a3a28a6d9db50b417449d0119f8ad1064">index</a>) const </td></tr>
-<tr class="memdesc:a77f90d9c7691bb43f63e6ff728cde566"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated routine that returns the requested boundary component of this triangulation.  <a href="#a77f90d9c7691bb43f63e6ff728cde566">More...</a><br/></td></tr>
-<tr class="separator:a77f90d9c7691bb43f63e6ff728cde566"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b3f34b8731f082fac4210805c44dbc2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Component_3_013_01_4.html#a1b3f34b8731f082fac4210805c44dbc2">isIdeal</a> () const </td></tr>
 <tr class="memdesc:a1b3f34b8731f082fac4210805c44dbc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if this component is ideal.  <a href="#a1b3f34b8731f082fac4210805c44dbc2">More...</a><br/></td></tr>
 <tr class="separator:a1b3f34b8731f082fac4210805c44dbc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -120,23 +107,23 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a22a8f3741390ff409122bb9f21dace11"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1ComponentBase.html#a22a8f3741390ff409122bb9f21dace11">size</a> () const</td></tr>
 <tr class="memdesc:a22a8f3741390ff409122bb9f21dace11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of top-dimensional simplices in this component.  <a href="#a22a8f3741390ff409122bb9f21dace11">More...</a><br/></td></tr>
 <tr class="separator:a22a8f3741390ff409122bb9f21dace11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60b7f161ead339456cf551d299e61167"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1ComponentBase.html#a60b7f161ead339456cf551d299e61167">getNumberOfSimplices</a> () const</td></tr>
-<tr class="memdesc:a60b7f161ead339456cf551d299e61167"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated routine that returns the number of top-dimensional simplices in this component.  <a href="#a60b7f161ead339456cf551d299e61167">More...</a><br/></td></tr>
-<tr class="separator:a60b7f161ead339456cf551d299e61167"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17aa8a6c0270c4c98da0bb772c1dbfd7"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="classregina_1_1Simplex.html">Simplex</a><br class="typebreak"/>
+<tr class="memitem:a17aa8a6c0270c4c98da0bb772c1dbfd7"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="group__generic.html#gad4bfc8e4b6a2b1452937e33f56ab9eb3">Simplex</a><br class="typebreak"/>
 &lt; dim &gt; * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1ComponentBase.html#a17aa8a6c0270c4c98da0bb772c1dbfd7">simplices</a> () const</td></tr>
 <tr class="memdesc:a17aa8a6c0270c4c98da0bb772c1dbfd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all top-dimensional simplices in this component.  <a href="#a17aa8a6c0270c4c98da0bb772c1dbfd7">More...</a><br/></td></tr>
 <tr class="separator:a17aa8a6c0270c4c98da0bb772c1dbfd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af91c7f70916dc0ccaa4dd5b3cf238a4d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> const <br class="typebreak"/>
-std::vector&lt; <a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt; dim &gt; * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1ComponentBase.html#af91c7f70916dc0ccaa4dd5b3cf238a4d">getSimplices</a> () const</td></tr>
-<tr class="memdesc:af91c7f70916dc0ccaa4dd5b3cf238a4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated routine that returns all of the top-dimensional simplices in this component.  <a href="#af91c7f70916dc0ccaa4dd5b3cf238a4d">More...</a><br/></td></tr>
-<tr class="separator:af91c7f70916dc0ccaa4dd5b3cf238a4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f112be31ded1b2d5c3d5b4976c04ff5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt; dim &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1ComponentBase.html#a8f112be31ded1b2d5c3d5b4976c04ff5">simplex</a> (size_t <a class="el" href="classregina_1_1detail_1_1ComponentBase.html#a3a28a6d9db50b417449d0119f8ad1064">index</a>) const</td></tr>
+<tr class="memitem:a8f112be31ded1b2d5c3d5b4976c04ff5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__generic.html#gad4bfc8e4b6a2b1452937e33f56ab9eb3">Simplex</a>&lt; dim &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1ComponentBase.html#a8f112be31ded1b2d5c3d5b4976c04ff5">simplex</a> (size_t <a class="el" href="classregina_1_1detail_1_1ComponentBase.html#a3a28a6d9db50b417449d0119f8ad1064">index</a>) const</td></tr>
 <tr class="memdesc:a8f112be31ded1b2d5c3d5b4976c04ff5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the top-dimensional simplex at the given index in this component.  <a href="#a8f112be31ded1b2d5c3d5b4976c04ff5">More...</a><br/></td></tr>
 <tr class="separator:a8f112be31ded1b2d5c3d5b4976c04ff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6be41b7e7c848209472ddec9a70e9bba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> <a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt; dim &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1ComponentBase.html#a6be41b7e7c848209472ddec9a70e9bba">getSimplex</a> (size_t <a class="el" href="classregina_1_1detail_1_1ComponentBase.html#a3a28a6d9db50b417449d0119f8ad1064">index</a>) const</td></tr>
-<tr class="memdesc:a6be41b7e7c848209472ddec9a70e9bba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated routine that returns the top-dimensional simplex at the given index in this component.  <a href="#a6be41b7e7c848209472ddec9a70e9bba">More...</a><br/></td></tr>
-<tr class="separator:a6be41b7e7c848209472ddec9a70e9bba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace42c216566fdbe94163ee2c91c69e44"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1ComponentBase.html#ace42c216566fdbe94163ee2c91c69e44">countBoundaryComponents</a> () const</td></tr>
+<tr class="memdesc:ace42c216566fdbe94163ee2c91c69e44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of boundary components in this component.  <a href="#ace42c216566fdbe94163ee2c91c69e44">More...</a><br/></td></tr>
+<tr class="separator:ace42c216566fdbe94163ee2c91c69e44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ec25ea3f5db52660ba5f191f05c3570"><td class="memItemLeft" align="right" valign="top">const std::vector<br class="typebreak"/>
+&lt; <a class="el" href="classregina_1_1BoundaryComponent.html">BoundaryComponent</a>&lt; dim &gt; * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1ComponentBase.html#a3ec25ea3f5db52660ba5f191f05c3570">boundaryComponents</a> () const</td></tr>
+<tr class="memdesc:a3ec25ea3f5db52660ba5f191f05c3570"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all boundary components in this component.  <a href="#a3ec25ea3f5db52660ba5f191f05c3570">More...</a><br/></td></tr>
+<tr class="separator:a3ec25ea3f5db52660ba5f191f05c3570"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81f91bc21bf234fa2a2569eec77a6d38"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1BoundaryComponent.html">BoundaryComponent</a>&lt; dim &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1ComponentBase.html#a81f91bc21bf234fa2a2569eec77a6d38">boundaryComponent</a> (size_t <a class="el" href="classregina_1_1detail_1_1ComponentBase.html#a3a28a6d9db50b417449d0119f8ad1064">index</a>) const</td></tr>
+<tr class="memdesc:a81f91bc21bf234fa2a2569eec77a6d38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the boundary component at the given index in this component.  <a href="#a81f91bc21bf234fa2a2569eec77a6d38">More...</a><br/></td></tr>
+<tr class="separator:a81f91bc21bf234fa2a2569eec77a6d38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d0a95c3a4cafdc576fe1bb33470aa3f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1ComponentBase.html#a9d0a95c3a4cafdc576fe1bb33470aa3f">isValid</a> () const</td></tr>
 <tr class="memdesc:a9d0a95c3a4cafdc576fe1bb33470aa3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if this component is valid.  <a href="#a9d0a95c3a4cafdc576fe1bb33470aa3f">More...</a><br/></td></tr>
 <tr class="separator:a9d0a95c3a4cafdc576fe1bb33470aa3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,9 +136,6 @@ std::vector&lt; <a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt;
 <tr class="memitem:a4329e37b7caa483f74ac0d7ee03a8849"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1ComponentBase.html#a4329e37b7caa483f74ac0d7ee03a8849">countBoundaryFacets</a> () const</td></tr>
 <tr class="memdesc:a4329e37b7caa483f74ac0d7ee03a8849"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of boundary facets in this component.  <a href="#a4329e37b7caa483f74ac0d7ee03a8849">More...</a><br/></td></tr>
 <tr class="separator:a4329e37b7caa483f74ac0d7ee03a8849"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad182d7f24f851987febea8a8eb47da09"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1ComponentBase.html#ad182d7f24f851987febea8a8eb47da09">getNumberOfBoundaryFacets</a> () const</td></tr>
-<tr class="memdesc:ad182d7f24f851987febea8a8eb47da09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated routine that returns the number of boundary facets in this component.  <a href="#ad182d7f24f851987febea8a8eb47da09">More...</a><br/></td></tr>
-<tr class="separator:ad182d7f24f851987febea8a8eb47da09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2e99dc80d19f27ca65afa132a83a40d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1ComponentBase.html#ae2e99dc80d19f27ca65afa132a83a40d">writeTextShort</a> (std::ostream &amp;out) const</td></tr>
 <tr class="memdesc:ae2e99dc80d19f27ca65afa132a83a40d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a short text representation of this object to the given output stream.  <a href="#ae2e99dc80d19f27ca65afa132a83a40d">More...</a><br/></td></tr>
 <tr class="separator:ae2e99dc80d19f27ca65afa132a83a40d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -167,15 +151,9 @@ std::vector&lt; <a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt;
 <tr class="memitem:a32299f4324901625192bff989009f8ad"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structregina_1_1Output.html#a32299f4324901625192bff989009f8ad">detail</a> () const</td></tr>
 <tr class="memdesc:a32299f4324901625192bff989009f8ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a detailed text representation of this object.  <a href="#a32299f4324901625192bff989009f8ad">More...</a><br/></td></tr>
 <tr class="separator:a32299f4324901625192bff989009f8ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea0ab182c97fe654b8929d1fe41dc564"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structregina_1_1Output.html#aea0ab182c97fe654b8929d1fe41dc564">toString</a> () const</td></tr>
-<tr class="memdesc:aea0ab182c97fe654b8929d1fe41dc564"><td class="mdescLeft">&#160;</td><td class="mdescRight">A deprecated alias for str().  <a href="#aea0ab182c97fe654b8929d1fe41dc564">More...</a><br/></td></tr>
-<tr class="separator:aea0ab182c97fe654b8929d1fe41dc564"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af32f5abced4d1365c34980741b564765"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structregina_1_1Output.html#af32f5abced4d1365c34980741b564765">toStringLong</a> () const</td></tr>
-<tr class="memdesc:af32f5abced4d1365c34980741b564765"><td class="mdescLeft">&#160;</td><td class="mdescRight">A deprecated alias for detail().  <a href="#af32f5abced4d1365c34980741b564765">More...</a><br/></td></tr>
-<tr class="separator:af32f5abced4d1365c34980741b564765"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1146e93dc85e06321b9664c6576428d9"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NMarkedElement.html#a1146e93dc85e06321b9664c6576428d9">markedIndex</a> () const </td></tr>
-<tr class="memdesc:a1146e93dc85e06321b9664c6576428d9"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the index at which this object is stored in an <a class="el" href="classregina_1_1NMarkedVector.html" title="A vector of objects with fast, space-efficient reverse lookup of array indices.">NMarkedVector</a>.  <a href="#a1146e93dc85e06321b9664c6576428d9">More...</a><br/></td></tr>
-<tr class="separator:a1146e93dc85e06321b9664c6576428d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf29dbd59ab567de78a4cf083988a0e8"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1MarkedElement.html#abf29dbd59ab567de78a4cf083988a0e8">markedIndex</a> () const </td></tr>
+<tr class="memdesc:abf29dbd59ab567de78a4cf083988a0e8"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the index at which this object is stored in an <a class="el" href="classregina_1_1MarkedVector.html" title="A vector of objects with fast, space-efficient reverse lookup of array indices.">MarkedVector</a>.  <a href="#abf29dbd59ab567de78a4cf083988a0e8">More...</a><br/></td></tr>
+<tr class="separator:abf29dbd59ab567de78a4cf083988a0e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -199,9 +177,9 @@ class regina::Component&lt; 3 &gt;</h3>
 
 <p>Represents a connected component of a 3-manifold triangulation. </p>
 <p>This is a specialisation of the generic <a class="el" href="classregina_1_1Component.html" title="A connected component of a dim-manifold triangulation.">Component</a> class template; see the <a class="el" href="classregina_1_1Component.html" title="A connected component of a dim-manifold triangulation.">Component</a> documentation for an overview of how this class works.</p>
-<p>This 3-dimensional specialisation contains some extra functionality. In particular, each 3-dimensional component also stores details on lower-dimensional faces (i.e., vertices, edges and triangles), as well as boundary components. </p>
+<p>This 3-dimensional specialisation contains some extra functionality. In particular, each 3-dimensional component also stores details on lower-dimensional faces (i.e., vertices, edges and triangles). </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a22e7129beabf5e99f4fcadcdd5768dcc"></a>
+<a class="anchor" id="a81f91bc21bf234fa2a2569eec77a6d38"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -209,7 +187,7 @@ class regina::Component&lt; 3 &gt;</h3>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classregina_1_1NBoundaryComponent.html">NBoundaryComponent</a> * <a class="el" href="classregina_1_1Component.html">regina::Component</a>&lt; 3 &gt;::boundaryComponent </td>
+          <td class="memname"><a class="el" href="classregina_1_1BoundaryComponent.html">BoundaryComponent</a>&lt;dim&gt;* <a class="el" href="classregina_1_1detail_1_1ComponentBase.html">regina::detail::ComponentBase</a>&lt; dim &gt;::boundaryComponent </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
@@ -218,15 +196,16 @@ class regina::Component&lt; 3 &gt;</h3>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the requested boundary component in this component. </p>
+<p>Returns the boundary component at the given index in this component. </p>
+<p>Note that the index of a boundary component within this component may not be the same as its index within the overall triangulation.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">index</td><td>the index of the requested boundary component in this component. This should be between 0 and <a class="el" href="classregina_1_1Component_3_013_01_4.html#a30e2ca18615b555f0ec45260b33ac69f" title="Returns the number of boundary components in this component.">countBoundaryComponents()</a>-1 inclusive. Note that the index of a boundary component in the component need not be the index of the same boundary component in the entire triangulation. </td></tr>
+    <tr><td class="paramname">index</td><td>specifies which boundary component to return; this should be between 0 and countBoundaryComponents()-1 inclusive. </td></tr>
   </table>
   </dd>
 </dl>
@@ -234,7 +213,7 @@ class regina::Component&lt; 3 &gt;</h3>
 
 </div>
 </div>
-<a class="anchor" id="a30e2ca18615b555f0ec45260b33ac69f"></a>
+<a class="anchor" id="a3ec25ea3f5db52660ba5f191f05c3570"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -242,7 +221,7 @@ class regina::Component&lt; 3 &gt;</h3>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">size_t <a class="el" href="classregina_1_1Component.html">regina::Component</a>&lt; 3 &gt;::countBoundaryComponents </td>
+          <td class="memname">const std::vector&lt;<a class="el" href="classregina_1_1BoundaryComponent.html">BoundaryComponent</a>&lt;dim&gt;*&gt;&amp; <a class="el" href="classregina_1_1detail_1_1ComponentBase.html">regina::detail::ComponentBase</a>&lt; dim &gt;::boundaryComponents </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -250,12 +229,40 @@ class regina::Component&lt; 3 &gt;</h3>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the number of boundary components in this component. </p>
+<p>Returns all boundary components in this component. </p>
+<p>The reference that is returned will remain valid only for as long as this component object exists. In particular, the reference will become invalid any time that the triangulation changes (since all component objects will be destroyed and others rebuilt in their place).</p>
+<dl class="section user"><dt>Python:</dt><dd>This routine returns a python list.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the list of all boundary components. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ace42c216566fdbe94163ee2c91c69e44"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classregina_1_1detail_1_1ComponentBase.html">regina::detail::ComponentBase</a>&lt; dim &gt;::countBoundaryComponents </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the number of boundary components in this component. </p>
 <dl class="section return"><dt>Returns</dt><dd>the number of boundary components. </dd></dl>
 
 </div>
@@ -389,168 +396,6 @@ template&lt;int subdim&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a77f90d9c7691bb43f63e6ff728cde566"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classregina_1_1NBoundaryComponent.html">NBoundaryComponent</a> * <a class="el" href="classregina_1_1Component.html">regina::Component</a>&lt; 3 &gt;::getBoundaryComponent </td>
-          <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>index</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Deprecated routine that returns the requested boundary component of this triangulation. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000425">Deprecated:</a></b></dt><dd>This routine has been renamed to <a class="el" href="classregina_1_1Component_3_013_01_4.html#a22e7129beabf5e99f4fcadcdd5768dcc" title="Returns the requested boundary component in this component.">boundaryComponent()</a>. See the <a class="el" href="classregina_1_1Component_3_013_01_4.html#a22e7129beabf5e99f4fcadcdd5768dcc" title="Returns the requested boundary component in this component.">boundaryComponent()</a> documentation for further details. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ae0e1ae0e3b8072812484a2105f59d892"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">size_t <a class="el" href="classregina_1_1Component.html">regina::Component</a>&lt; 3 &gt;::getNumberOfBoundaryComponents </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Deprecated function that returns the number of boundary components in this component. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000424">Deprecated:</a></b></dt><dd>Simply call <a class="el" href="classregina_1_1Component_3_013_01_4.html#a30e2ca18615b555f0ec45260b33ac69f" title="Returns the number of boundary components in this component.">countBoundaryComponents()</a> instead. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ad182d7f24f851987febea8a8eb47da09"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> size_t <a class="el" href="classregina_1_1detail_1_1ComponentBase.html">regina::detail::ComponentBase</a>&lt; dim &gt;::getNumberOfBoundaryFacets </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Deprecated routine that returns the number of boundary facets in this component. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000201">Deprecated:</a></b></dt><dd>Simply call countBoundaryFacets() instead.</dd></dl>
-<p>See countBoundaryFacets() for further details. </p>
-
-</div>
-</div>
-<a class="anchor" id="a60b7f161ead339456cf551d299e61167"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> size_t <a class="el" href="classregina_1_1detail_1_1ComponentBase.html">regina::detail::ComponentBase</a>&lt; dim &gt;::getNumberOfSimplices </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Deprecated routine that returns the number of top-dimensional simplices in this component. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000198">Deprecated:</a></b></dt><dd>Simply call size() instead.</dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>the number of top-dimensional simplices. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a6be41b7e7c848209472ddec9a70e9bba"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> <a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt;dim&gt;* <a class="el" href="classregina_1_1detail_1_1ComponentBase.html">regina::detail::ComponentBase</a>&lt; dim &gt;::getSimplex </td>
-          <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>index</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Deprecated routine that returns the top-dimensional simplex at the given index in this component. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000200">Deprecated:</a></b></dt><dd>Simply call simplex() instead.</dd></dl>
-<p>See simplices() for further details. </p>
-
-</div>
-</div>
-<a class="anchor" id="af91c7f70916dc0ccaa4dd5b3cf238a4d"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> const std::vector&lt;<a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt;dim&gt;*&gt;&amp; <a class="el" href="classregina_1_1detail_1_1ComponentBase.html">regina::detail::ComponentBase</a>&lt; dim &gt;::getSimplices </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Deprecated routine that returns all of the top-dimensional simplices in this component. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000199">Deprecated:</a></b></dt><dd>Simply call simplices() instead.</dd></dl>
-<p>See simplices() for further details. </p>
-
-</div>
-</div>
 <a class="anchor" id="aa95e0d9237200586cc627fa822533bda"></a>
 <div class="memitem">
 <div class="memproto">
@@ -600,7 +445,6 @@ template&lt;int subdim&gt; </div>
 </div><div class="memdoc">
 
 <p>Returns the index of this component within the underlying triangulation. </p>
-<p>This is identical to calling the deprecated function <code>t-&gt;componentIndex(this)</code>, where <em>t</em> represents the underlying triangulation.</p>
 <dl class="section return"><dt>Returns</dt><dd>the index of this component. </dd></dl>
 
 </div>
@@ -654,7 +498,7 @@ template&lt;int subdim&gt; </div>
 </div><div class="memdoc">
 
 <p>Determines if this component is ideal. </p>
-<p>This is the case if and only if it contains an ideal vertex as described by <a class="el" href="classregina_1_1Face_3_013_00_010_01_4.html#a0b6964b03eaaad0c3530e062a0d3eebb" title="Determines if this vertex is an ideal vertex.">NVertex::isIdeal()</a>.</p>
+<p>This is the case if and only if it contains an ideal vertex as described by Vertex&lt;3&gt;::isIdeal().</p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if and only if this component is ideal. </dd></dl>
 
 </div>
@@ -714,7 +558,7 @@ template&lt;int subdim&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a1146e93dc85e06321b9664c6576428d9"></a>
+<a class="anchor" id="abf29dbd59ab567de78a4cf083988a0e8"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -722,7 +566,7 @@ template&lt;int subdim&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">size_t regina::NMarkedElement::markedIndex </td>
+          <td class="memname">size_t regina::MarkedElement::markedIndex </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -735,8 +579,8 @@ template&lt;int subdim&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the index at which this object is stored in an <a class="el" href="classregina_1_1NMarkedVector.html" title="A vector of objects with fast, space-efficient reverse lookup of array indices.">NMarkedVector</a>. </p>
-<p>If this object does not belong to an <a class="el" href="classregina_1_1NMarkedVector.html" title="A vector of objects with fast, space-efficient reverse lookup of array indices.">NMarkedVector</a>, the return value is undefined.</p>
+<p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the index at which this object is stored in an <a class="el" href="classregina_1_1MarkedVector.html" title="A vector of objects with fast, space-efficient reverse lookup of array indices.">MarkedVector</a>. </p>
+<p>If this object does not belong to an <a class="el" href="classregina_1_1MarkedVector.html" title="A vector of objects with fast, space-efficient reverse lookup of array indices.">MarkedVector</a>, the return value is undefined.</p>
 <dl class="section return"><dt>Returns</dt><dd>the index at which this object is stored. </dd></dl>
 
 </div>
@@ -749,7 +593,7 @@ template&lt;int subdim&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt;dim&gt;* <a class="el" href="classregina_1_1detail_1_1ComponentBase.html">regina::detail::ComponentBase</a>&lt; dim &gt;::simplex </td>
+          <td class="memname"><a class="el" href="group__generic.html#gad4bfc8e4b6a2b1452937e33f56ab9eb3">Simplex</a>&lt;dim&gt;* <a class="el" href="classregina_1_1detail_1_1ComponentBase.html">regina::detail::ComponentBase</a>&lt; dim &gt;::simplex </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
@@ -783,7 +627,7 @@ template&lt;int subdim&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::vector&lt;<a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt;dim&gt;*&gt;&amp; <a class="el" href="classregina_1_1detail_1_1ComponentBase.html">regina::detail::ComponentBase</a>&lt; dim &gt;::simplices </td>
+          <td class="memname">const std::vector&lt;<a class="el" href="group__generic.html#gad4bfc8e4b6a2b1452937e33f56ab9eb3">Simplex</a>&lt;dim&gt;*&gt;&amp; <a class="el" href="classregina_1_1detail_1_1ComponentBase.html">regina::detail::ComponentBase</a>&lt; dim &gt;::simplices </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -854,60 +698,6 @@ template&lt;int subdim&gt; </div>
 <p>This text should be human-readable, should fit on a single line, and should not end with a newline. Where possible, it should use plain ASCII characters.</p>
 <dl class="section user"><dt>Python:</dt><dd>In addition to str(), this is also used as the Python "stringification" function <code>__str__()</code>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a short text representation of this object. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="aea0ab182c97fe654b8929d1fe41dc564"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> std::string <a class="el" href="structregina_1_1Output.html">regina::Output</a>&lt; <a class="el" href="classregina_1_1detail_1_1ComponentBase.html#a20da0ee3cb23bbb6cf5a5fc2c58f3fd4">ComponentBase</a>&lt; dim &gt; , false  &gt;::toString </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>A deprecated alias for str(). </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000253">Deprecated:</a></b></dt><dd>This routine has (at long last) been deprecated; use the simpler-to-type str() instead.</dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>a short text representation of this object. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="af32f5abced4d1365c34980741b564765"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> std::string <a class="el" href="structregina_1_1Output.html">regina::Output</a>&lt; <a class="el" href="classregina_1_1detail_1_1ComponentBase.html#a20da0ee3cb23bbb6cf5a5fc2c58f3fd4">ComponentBase</a>&lt; dim &gt; , false  &gt;::toStringLong </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>A deprecated alias for detail(). </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000254">Deprecated:</a></b></dt><dd>This routine has (at long last) been deprecated; use the simpler-to-type detail() instead.</dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>a long text representation of this object. </dd></dl>
 
 </div>
 </div>
@@ -1029,7 +819,7 @@ template&lt;int subdim&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>triangulation/<a class="el" href="ncomponent_8h.html">ncomponent.h</a></li>
+<li>triangulation/dim3/<a class="el" href="component3_8h.html">component3.h</a></li>
 </ul>
 </div><!-- contents -->
 <hr>

@@ -62,7 +62,7 @@
 <p>Implementation details for numbering <em>subdim</em>-faces of a <em>dim</em>-dimensional simplex.  
  <a href="classregina_1_1detail_1_1FaceNumberingImpl.html#details">More...</a></p>
 
-<p><code>#include &lt;generic/detail/facenumbering.h&gt;</code></p>
+<p><code>#include &lt;triangulation/detail/facenumbering.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for regina::detail::FaceNumberingImpl&lt; dim, subdim, lex &gt;:</div>
 <div class="dyncontent">
@@ -75,12 +75,12 @@ Inheritance diagram for regina::detail::FaceNumberingImpl&lt; dim, subdim, lex &
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ga5eea7a2ffbccd1271f4fdfa80fa02556"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classregina_1_1NPerm.html">NPerm</a>&lt; dim+1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__detail.html#ga5eea7a2ffbccd1271f4fdfa80fa02556">ordering</a> (unsigned face)</td></tr>
-<tr class="memdesc:ga5eea7a2ffbccd1271f4fdfa80fa02556"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a <em>subdim</em>-face number within a <em>dim</em>-dimensional simplex, returns the corresponding canonical ordering of the simplex vertices.  <a href="group__detail.html#ga5eea7a2ffbccd1271f4fdfa80fa02556">More...</a><br/></td></tr>
-<tr class="separator:ga5eea7a2ffbccd1271f4fdfa80fa02556"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacdefe7ae32765b4c805df01888041ed5"><td class="memItemLeft" align="right" valign="top">static unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__detail.html#gacdefe7ae32765b4c805df01888041ed5">faceNumber</a> (<a class="el" href="classregina_1_1NPerm.html">NPerm</a>&lt; dim+1 &gt; vertices)</td></tr>
-<tr class="memdesc:gacdefe7ae32765b4c805df01888041ed5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifies which <em>subdim</em>-face in a <em>dim</em>-dimensional simplex is represented by the first (<em>subdim</em> + 1) elements of the given permutation.  <a href="group__detail.html#gacdefe7ae32765b4c805df01888041ed5">More...</a><br/></td></tr>
-<tr class="separator:gacdefe7ae32765b4c805df01888041ed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga317bc3a01d0543daddb4c00ab4d27d5b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classregina_1_1Perm.html">Perm</a>&lt; dim+1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__detail.html#ga317bc3a01d0543daddb4c00ab4d27d5b">ordering</a> (unsigned face)</td></tr>
+<tr class="memdesc:ga317bc3a01d0543daddb4c00ab4d27d5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a <em>subdim</em>-face number within a <em>dim</em>-dimensional simplex, returns the corresponding canonical ordering of the simplex vertices.  <a href="group__detail.html#ga317bc3a01d0543daddb4c00ab4d27d5b">More...</a><br/></td></tr>
+<tr class="separator:ga317bc3a01d0543daddb4c00ab4d27d5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7466eaf4d128e641797687eb31f13e7e"><td class="memItemLeft" align="right" valign="top">static unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__detail.html#ga7466eaf4d128e641797687eb31f13e7e">faceNumber</a> (<a class="el" href="classregina_1_1Perm.html">Perm</a>&lt; dim+1 &gt; vertices)</td></tr>
+<tr class="memdesc:ga7466eaf4d128e641797687eb31f13e7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifies which <em>subdim</em>-face in a <em>dim</em>-dimensional simplex is represented by the first (<em>subdim</em> + 1) elements of the given permutation.  <a href="group__detail.html#ga7466eaf4d128e641797687eb31f13e7e">More...</a><br/></td></tr>
+<tr class="separator:ga7466eaf4d128e641797687eb31f13e7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0bd32f838bfb204c98ddb985ce1ba3c0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__detail.html#ga0bd32f838bfb204c98ddb985ce1ba3c0">containsVertex</a> (unsigned face, unsigned vertex)</td></tr>
 <tr class="memdesc:ga0bd32f838bfb204c98ddb985ce1ba3c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests whether the given <em>subdim</em>-face of a <em>dim</em>-dimensional simplex contains the given vertex of the simplex.  <a href="group__detail.html#ga0bd32f838bfb204c98ddb985ce1ba3c0">More...</a><br/></td></tr>
 <tr class="separator:ga0bd32f838bfb204c98ddb985ce1ba3c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -98,7 +98,7 @@ class regina::detail::FaceNumberingImpl&lt; dim, subdim, lex &gt;</h3>
 <p>Implementation details for numbering <em>subdim</em>-faces of a <em>dim</em>-dimensional simplex. </p>
 <p>This numbering scheme can be accessed via FaceNumbering&lt;dim, subdim&gt; or <a class="el" href="classregina_1_1Face.html">Face&lt;dim, subdim&gt;</a>, both of which use this as a base class. End users should not need to refer to <a class="el" href="classregina_1_1detail_1_1FaceNumberingImpl.html" title="Implementation details for numbering subdim-faces of a dim-dimensional simplex.">FaceNumberingImpl</a> directly.</p>
 <p>See the <a class="el" href="classregina_1_1FaceNumbering.html" title="Specifies how subdim-faces are numbered within a dim-dimensional simplex.">FaceNumbering</a> template class notes for further information, including details of how the face numbering scheme works.</p>
-<dl class="section user"><dt>Python:</dt><dd>This base class is not present, and neither is FaceNumbering&lt;dim, subdim&gt;. Python users can access these routines through the class <a class="el" href="classregina_1_1Face.html">Face&lt;dim, subdim&gt;</a> (which in Python becomes <a class="el" href="classregina_1_1Face.html" title="Represents a subdim-face in the skeleton of a dim-dimensional triangulation.">Face</a><em>dim</em>_<em>subdim</em>, or one of the typedefs in <a class="el" href="stddim.html">standard dimensions</a> such as Dim2Edge, NVertex and so on).</dd></dl>
+<dl class="section user"><dt>Python:</dt><dd>This base class is not present, and neither is FaceNumbering&lt;dim, subdim&gt;. Python users can access these routines through the class <a class="el" href="classregina_1_1Face.html">Face&lt;dim, subdim&gt;</a> (which in Python becomes <a class="el" href="classregina_1_1Face.html" title="Represents a subdim-face in the skeleton of a dim-dimensional triangulation.">Face</a><em>dim</em>_<em>subdim</em>, or one of the type aliases such as Vertex3, Edge2 and so on).</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">dim</td><td>the dimension of the simplex whose faces are being numbered. This must be between 1 and 15 inclusive. </td></tr>
@@ -108,7 +108,7 @@ class regina::detail::FaceNumberingImpl&lt; dim, subdim, lex &gt;</h3>
   </dd>
 </dl>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
-<li>generic/detail/<a class="el" href="detail_2facenumbering_8h.html">facenumbering.h</a></li>
+<li>triangulation/detail/<a class="el" href="triangulation_2detail_2facenumbering_8h.html">facenumbering.h</a></li>
 </ul>
 </div><!-- contents -->
 <hr>

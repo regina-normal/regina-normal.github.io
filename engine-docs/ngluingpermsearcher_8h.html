@@ -48,91 +48,17 @@
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">ngluingpermsearcher.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Supports searching through all possible sets of tetrahedron gluing permutations for a given tetrahedron face pairing.  
+<p>Deprecated header.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="regina-core_8h.html">regina-core.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="ngluingperms_8h.html">census/ngluingperms.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="nqitmask_8h.html">utilities/nqitmask.h</a>&quot;</code><br/>
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NGluingPermSearcher.html">regina::NGluingPermSearcher</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A utility class for searching through all possible gluing permutation sets that correspond to a given tetrahedron face pairing.  <a href="classregina_1_1NGluingPermSearcher.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NEulerSearcher.html">regina::NEulerSearcher</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A gluing permutation search class that offers a specialised search algorithm for when all vertex links must all have a given fixed Euler characteristic.  <a href="classregina_1_1NEulerSearcher.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structregina_1_1NEulerSearcher_1_1TetVertexState.html">regina::NEulerSearcher::TetVertexState</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A structure used to track equivalence classes of tetrahedron vertices as the gluing permutation set is constructed.  <a href="structregina_1_1NEulerSearcher_1_1TetVertexState.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structregina_1_1NEulerSearcher_1_1TetEdgeState.html">regina::NEulerSearcher::TetEdgeState</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A structure used to track equivalence classes of tetrahedron edges as the gluing permutation set is constructed.  <a href="structregina_1_1NEulerSearcher_1_1TetEdgeState.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NCompactSearcher.html">regina::NCompactSearcher</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A gluing permutation search class that offers a specialised search algorithm for when only compact (finite) 3-manifold triangulations are required.  <a href="classregina_1_1NCompactSearcher.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structregina_1_1NCompactSearcher_1_1TetVertexState.html">regina::NCompactSearcher::TetVertexState</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A structure used to track equivalence classes of tetrahedron vertices as the gluing permutation set is constructed.  <a href="structregina_1_1NCompactSearcher_1_1TetVertexState.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structregina_1_1NCompactSearcher_1_1TetEdgeState.html">regina::NCompactSearcher::TetEdgeState</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A structure used to track equivalence classes of tetrahedron edges as the gluing permutation set is constructed.  <a href="structregina_1_1NCompactSearcher_1_1TetEdgeState.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NClosedPrimeMinSearcher.html">regina::NClosedPrimeMinSearcher</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A gluing permutation search class that offers a specialised search algorithm for when (i) only closed prime minimal P2-irreducible triangulations are required, and (ii) the given face pairing has order at least three.  <a href="classregina_1_1NClosedPrimeMinSearcher.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NHyperbolicMinSearcher.html">regina::NHyperbolicMinSearcher</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A gluing permutation search class that offers a specialised search algorithm for when only minimal ideal triangulations of cusped finite-volume hyperbolic 3-manifolds are required.  <a href="classregina_1_1NHyperbolicMinSearcher.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespaceregina"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceregina.html">regina</a></td></tr>
-<tr class="memdesc:namespaceregina"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the entire Regina calculation engine. <br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a272e93c379e8c3b87be7013a6428967b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ngluingpermsearcher_8h.html#a272e93c379e8c3b87be7013a6428967b">PRUNE_HIGH_DEG_EDGE_SET</a>&#160;&#160;&#160;1</td></tr>
-<tr class="memdesc:a272e93c379e8c3b87be7013a6428967b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies whether the NClosedPrimeMinSearcher census generation code should prune on high-degree edges.  <a href="#a272e93c379e8c3b87be7013a6428967b">More...</a><br/></td></tr>
-<tr class="separator:a272e93c379e8c3b87be7013a6428967b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:gac5925ac4ae59f01c975987cd90e827dd"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__census.html#gac5925ac4ae59f01c975987cd90e827dd">regina::UseGluingPerms</a> )(const NGluingPermSearcher *, void *)</td></tr>
-<tr class="memdesc:gac5925ac4ae59f01c975987cd90e827dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">A routine used to do arbitrary processing upon a particular set of tetrahedron gluing permutations.  <a href="group__census.html#gac5925ac4ae59f01c975987cd90e827dd">More...</a><br/></td></tr>
-<tr class="separator:gac5925ac4ae59f01c975987cd90e827dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Supports searching through all possible sets of tetrahedron gluing permutations for a given tetrahedron face pairing. </p>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="a272e93c379e8c3b87be7013a6428967b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PRUNE_HIGH_DEG_EDGE_SET&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Specifies whether the NClosedPrimeMinSearcher census generation code should prune on high-degree edges. </p>
-<p>It is well known that a closed prime minimal P^2-irreducible triangulation formed from at least three tetrahedra can never have an edge of degree one or two. Combining this with the fact that such a triangulation must always have one vertex, a simple Euler characteristic calculation shows that there must be precisely n+1 edges, where <em>n</em> is the number of tetrahedra.</p>
-<p>A little arithmetic then shows that, for any <em>k</em> edges, the sum of their edge degrees can be no more than 3(n+k-1); otherwise one of the remaining edges will be forced to have degree one or two. This observation is the basis behind the high-degree edge pruning that this option controls.</p>
-<p>To enable pruning on high-degree edges, set this macro to 1 (the default for Regina's main source distribution); to disable it, set it to 0. </p>
-
-</div>
-</div>
-</div><!-- contents -->
+<div class="textblock"><code>#include &quot;<a class="el" href="gluingpermsearcher3_8h.html">census/gluingpermsearcher3.h</a>&quot;</code><br/>
+</div><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Deprecated header. </p>
+</div></div><!-- contents -->
 <hr>
 Copyright &copy; 1999-2016, The Regina development team
 <br>

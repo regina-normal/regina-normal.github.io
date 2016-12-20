@@ -58,7 +58,7 @@
 <p>Helper class that indicates what data type <em>Base</em> uses to store its list of <em>subdim</em>-faces.  
  <a href="structregina_1_1detail_1_1FaceListHolder.html#details">More...</a></p>
 
-<p><code>#include &lt;generic/detail/face.h&gt;</code></p>
+<p><code>#include &lt;triangulation/detail/face.h&gt;</code></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;class, int&gt;<br/>
 struct regina::detail::FaceListHolder&lt; class, int &gt;</h3>
@@ -68,7 +68,7 @@ struct regina::detail::FaceListHolder&lt; class, int &gt;</h3>
 <p><em>Base</em> should have a template function faces&lt;subdim&gt;() that returns a const reference to this type. That is, Base::faces&lt;subdim&gt; should have return type <code>const FaceListHolder&lt;Base, subdim&gt;::Holder&amp;</code>.</p>
 <p>For each such class <em>Base</em>, this <a class="el" href="structregina_1_1detail_1_1FaceListHolder.html" title="Helper class that indicates what data type Base uses to store its list of subdim-faces.">FaceListHolder</a> template should be specialised in the same header where <em>Base</em> is defined. For all other types <em>T</em>, the template class FaceListHolder&lt;T, subdim&gt; will remain undefined. </p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>generic/alias/<a class="el" href="alias_2face_8h.html">face.h</a></li>
+<li>triangulation/alias/<a class="el" href="triangulation_2alias_2face_8h.html">face.h</a></li>
 </ul>
 </div><!-- contents -->
 <hr>

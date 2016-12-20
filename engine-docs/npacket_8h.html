@@ -48,66 +48,16 @@
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">npacket.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Deals with packets of information that form the working data objects.  
+<p>Deprecated header.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;iostream&gt;</code><br/>
-<code>#include &lt;memory&gt;</code><br/>
-<code>#include &lt;set&gt;</code><br/>
-<code>#include &quot;<a class="el" href="regina-core_8h.html">regina-core.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="output_8h.html">output.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="npacketlistener_8h.html">packet/npacketlistener.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="packettype_8h.html">packet/packettype.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="safepointeebase_8h.html">utilities/safepointeebase.h</a>&quot;</code><br/>
-<code>#include &lt;boost/noncopyable.hpp&gt;</code><br/>
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structregina_1_1PacketInfo.html">regina::PacketInfo&lt; packetType &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A template that stores information about a particular type of packet.  <a href="structregina_1_1PacketInfo.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NPacket.html">regina::NPacket</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a packet of information that may be individually edited or operated upon.  <a href="classregina_1_1NPacket.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NPacket_1_1ChangeEventSpan.html">regina::NPacket::ChangeEventSpan</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An object that facilitates firing packetToBeChanged() and packetWasChanged() events.  <a href="classregina_1_1NPacket_1_1ChangeEventSpan.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespaceregina"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceregina.html">regina</a></td></tr>
-<tr class="memdesc:namespaceregina"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the entire Regina calculation engine. <br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:gaad9d413dab5c36f4a57d9ca811d24188"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__packet.html#gaad9d413dab5c36f4a57d9ca811d24188">REGINA_PACKET</a>(class_, id)</td></tr>
-<tr class="memdesc:gaad9d413dab5c36f4a57d9ca811d24188"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines various constants, types and virtual functions for a subclass of NPacket.  <a href="group__packet.html#gaad9d413dab5c36f4a57d9ca811d24188">More...</a><br/></td></tr>
-<tr class="separator:gaad9d413dab5c36f4a57d9ca811d24188"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad7b8ff3226c3356a8b73c5e46f64c268"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__packet.html#gad7b8ff3226c3356a8b73c5e46f64c268">REGINA_PACKET_FROM</a>(class_, helper)</td></tr>
-<tr class="memdesc:gad7b8ff3226c3356a8b73c5e46f64c268"><td class="mdescLeft">&#160;</td><td class="mdescRight">An alternative to REGINA_PACKET, for scenarios where the relevant PacketInfo specialisation is not visible.  <a href="group__packet.html#gad7b8ff3226c3356a8b73c5e46f64c268">More...</a><br/></td></tr>
-<tr class="separator:gad7b8ff3226c3356a8b73c5e46f64c268"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ga2d6a902db1b126c9ac973f971de947d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__engine.html#ga74a5f137da12842a64dce0a7c78fb3f9">REGINA_API</a> NPacket *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__packet.html#ga2d6a902db1b126c9ac973f971de947d2">regina::open</a> (const char *filename)</td></tr>
-<tr class="memdesc:ga2d6a902db1b126c9ac973f971de947d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a Regina data file, and returns the corresponding packet tree.  <a href="group__packet.html#ga2d6a902db1b126c9ac973f971de947d2">More...</a><br/></td></tr>
-<tr class="separator:ga2d6a902db1b126c9ac973f971de947d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabbd62ba08bb4b7f7ac90890531b22aec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__engine.html#ga74a5f137da12842a64dce0a7c78fb3f9">REGINA_API</a> NPacket *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__packet.html#gabbd62ba08bb4b7f7ac90890531b22aec">regina::open</a> (std::istream &amp;s)</td></tr>
-<tr class="memdesc:gabbd62ba08bb4b7f7ac90890531b22aec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a Regina data file from the given input stream, and returns the corresponding packet tree.  <a href="group__packet.html#gabbd62ba08bb4b7f7ac90890531b22aec">More...</a><br/></td></tr>
-<tr class="separator:gabbd62ba08bb4b7f7ac90890531b22aec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Deals with packets of information that form the working data objects. </p>
+<div class="textblock"><code>#include &quot;<a class="el" href="packet_8h.html">packet/packet.h</a>&quot;</code><br/>
+</div><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Deprecated header. </p>
 </div></div><!-- contents -->
 <hr>
 Copyright &copy; 1999-2016, The Regina development team

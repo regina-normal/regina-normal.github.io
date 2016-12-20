@@ -53,6 +53,7 @@
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pro-types">Protected Types</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
@@ -66,7 +67,7 @@
 <p>Provides core functionality for <em>dim</em>-dimensional triangulations.  
  <a href="classregina_1_1detail_1_1TriangulationBase.html#details">More...</a></p>
 
-<p><code>#include &lt;generic/detail/triangulation.h&gt;</code></p>
+<p><code>#include &lt;triangulation/detail/triangulation.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for regina::detail::TriangulationBase&lt; int &gt;:</div>
 <div class="dyncontent">
@@ -79,13 +80,12 @@ Inheritance diagram for regina::detail::TriangulationBase&lt; int &gt;:</div>
 <area href="classregina_1_1alias_1_1FaceOfTriangulation.html" alt="regina::alias::FaceOfTriangulation&lt; TriangulationBase&lt; dim &gt;, dim &gt;" shape="rect" coords="1242,56,1646,80"/>
 <area href="classregina_1_1alias_1_1FacesOfTriangulation.html" alt="regina::alias::FacesOfTriangulation&lt; TriangulationBase&lt; dim &gt;, dim &gt;" shape="rect" coords="1656,56,2060,80"/>
 <area href="classregina_1_1FaceList.html" title="Stores the list of all subdim-faces of a dim-dimensional triangulation." alt="regina::FaceList&lt; dim, subdim &gt;" shape="rect" coords="0,0,404,24"/>
-<area href="classregina_1_1Triangulation.html" alt="regina::Triangulation&lt; dim &gt;" shape="rect" coords="1035,168,1439,192"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a9f3023c0479b8cc8aeec3dffa6fa62eb"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="classregina_1_1Simplex.html">Simplex</a><br class="typebreak"/>
+<tr class="memitem:a9f3023c0479b8cc8aeec3dffa6fa62eb"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="group__generic.html#gad4bfc8e4b6a2b1452937e33f56ab9eb3">Simplex</a><br class="typebreak"/>
 &lt; dim &gt; * &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a9f3023c0479b8cc8aeec3dffa6fa62eb">SimplexIterator</a></td></tr>
 <tr class="memdesc:a9f3023c0479b8cc8aeec3dffa6fa62eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to iterate through top-dimensional simplices.  <a href="#a9f3023c0479b8cc8aeec3dffa6fa62eb">More...</a><br/></td></tr>
 <tr class="separator:a9f3023c0479b8cc8aeec3dffa6fa62eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -93,16 +93,17 @@ Public Types</h2></td></tr>
 &lt; dim &gt; * &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#acb85b172fe187672d3495a557aa394bf">ComponentIterator</a></td></tr>
 <tr class="memdesc:acb85b172fe187672d3495a557aa394bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to iterate through connected components.  <a href="#acb85b172fe187672d3495a557aa394bf">More...</a><br/></td></tr>
 <tr class="separator:acb85b172fe187672d3495a557aa394bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afaff07ebf1a7c7d92dc100c1fdc343ba"><td class="memItemLeft" align="right" valign="top">typedef std::vector<br class="typebreak"/>
+&lt; <a class="el" href="classregina_1_1BoundaryComponent.html">BoundaryComponent</a>&lt; dim &gt;<br class="typebreak"/>
+ * &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#afaff07ebf1a7c7d92dc100c1fdc343ba">BoundaryComponentIterator</a></td></tr>
+<tr class="memdesc:afaff07ebf1a7c7d92dc100c1fdc343ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to iterate through boundary components.  <a href="#afaff07ebf1a7c7d92dc100c1fdc343ba">More...</a><br/></td></tr>
+<tr class="separator:afaff07ebf1a7c7d92dc100c1fdc343ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9277bf15589bb730bded019289311ac7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a9277bf15589bb730bded019289311ac7">makeCanonical</a> ()</td></tr>
 <tr class="memdesc:a9277bf15589bb730bded019289311ac7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Relabel the top-dimensional simplices and their vertices so that this triangulation is in canonical form.  <a href="#a9277bf15589bb730bded019289311ac7">More...</a><br/></td></tr>
 <tr class="separator:a9277bf15589bb730bded019289311ac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3055b8c8346976930a1383dd91cba8ff"><td class="memTemplParams" colspan="2"><a class="anchor" id="a3055b8c8346976930a1383dd91cba8ff"></a>
-template&lt;int subdim&gt; </td></tr>
-<tr class="memitem:a3055b8c8346976930a1383dd91cba8ff"><td class="memTemplItemLeft" align="right" valign="top">size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><b>getNumberOfFaces</b> () const </td></tr>
-<tr class="separator:a3055b8c8346976930a1383dd91cba8ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Constructors and Destructors</div></td></tr>
 <tr class="memitem:aaa79cc9e7f5b4f6ea27045ebf3c8fabc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#aaa79cc9e7f5b4f6ea27045ebf3c8fabc">TriangulationBase</a> ()</td></tr>
 <tr class="memdesc:aaa79cc9e7f5b4f6ea27045ebf3c8fabc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="#aaa79cc9e7f5b4f6ea27045ebf3c8fabc">More...</a><br/></td></tr>
@@ -110,6 +111,9 @@ template&lt;int subdim&gt; </td></tr>
 <tr class="memitem:a51f24cf3815b0d19d5afeae1860fcd0f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a51f24cf3815b0d19d5afeae1860fcd0f">TriangulationBase</a> (const <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">TriangulationBase</a>&lt; dim &gt; &amp;copy)</td></tr>
 <tr class="memdesc:a51f24cf3815b0d19d5afeae1860fcd0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new copy of the given triangulation.  <a href="#a51f24cf3815b0d19d5afeae1860fcd0f">More...</a><br/></td></tr>
 <tr class="separator:a51f24cf3815b0d19d5afeae1860fcd0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa664ef0a04f31b2df1594f2a8dbb1322"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#aa664ef0a04f31b2df1594f2a8dbb1322">TriangulationBase</a> (const <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">TriangulationBase</a>&lt; dim &gt; &amp;copy, bool cloneProps)</td></tr>
+<tr class="memdesc:aa664ef0a04f31b2df1594f2a8dbb1322"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new copy of the given triangulation, with the option of whether or not to clone its computed properties also.  <a href="#aa664ef0a04f31b2df1594f2a8dbb1322">More...</a><br/></td></tr>
+<tr class="separator:aa664ef0a04f31b2df1594f2a8dbb1322"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace45d0a52d9a2a853f890d1006fedf7c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#ace45d0a52d9a2a853f890d1006fedf7c">~TriangulationBase</a> ()</td></tr>
 <tr class="memdesc:ace45d0a52d9a2a853f890d1006fedf7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys this triangulation.  <a href="#ace45d0a52d9a2a853f890d1006fedf7c">More...</a><br/></td></tr>
 <tr class="separator:ace45d0a52d9a2a853f890d1006fedf7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -117,40 +121,23 @@ template&lt;int subdim&gt; </td></tr>
 <tr class="memitem:a6ca55a972a8c21f7e87960431d9ef64c"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a6ca55a972a8c21f7e87960431d9ef64c">size</a> () const </td></tr>
 <tr class="memdesc:a6ca55a972a8c21f7e87960431d9ef64c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the number of top-dimensional simplices in the triangulation.  <a href="#a6ca55a972a8c21f7e87960431d9ef64c">More...</a><br/></td></tr>
 <tr class="separator:a6ca55a972a8c21f7e87960431d9ef64c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af520138d14508124ffba56446cc91aa5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#af520138d14508124ffba56446cc91aa5">getNumberOfSimplices</a> () const </td></tr>
-<tr class="memdesc:af520138d14508124ffba56446cc91aa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated routine that returns the number of top-dimensional simplices in the triangulation.  <a href="#af520138d14508124ffba56446cc91aa5">More...</a><br/></td></tr>
-<tr class="separator:af520138d14508124ffba56446cc91aa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a721e084ec08bb631e35e14ff1c844f63"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="classregina_1_1Simplex.html">Simplex</a><br class="typebreak"/>
+<tr class="memitem:a721e084ec08bb631e35e14ff1c844f63"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="group__generic.html#gad4bfc8e4b6a2b1452937e33f56ab9eb3">Simplex</a><br class="typebreak"/>
 &lt; dim &gt; * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a721e084ec08bb631e35e14ff1c844f63">simplices</a> () const </td></tr>
 <tr class="memdesc:a721e084ec08bb631e35e14ff1c844f63"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> all top-dimensional simplices in the triangulation.  <a href="#a721e084ec08bb631e35e14ff1c844f63">More...</a><br/></td></tr>
 <tr class="separator:a721e084ec08bb631e35e14ff1c844f63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53ba54e03f1a777d6efbb079227c2a4b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> const <br class="typebreak"/>
-std::vector&lt; <a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt; dim &gt; * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a53ba54e03f1a777d6efbb079227c2a4b">getSimplices</a> () const </td></tr>
-<tr class="memdesc:a53ba54e03f1a777d6efbb079227c2a4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated routine that returns all of the top-dimensional simplices in the triangulation.  <a href="#a53ba54e03f1a777d6efbb079227c2a4b">More...</a><br/></td></tr>
-<tr class="separator:a53ba54e03f1a777d6efbb079227c2a4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2e269a7332e80aeec3603881fd175d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt; dim &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#ae2e269a7332e80aeec3603881fd175d3">simplex</a> (size_t index)</td></tr>
+<tr class="memitem:ae2e269a7332e80aeec3603881fd175d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__generic.html#gad4bfc8e4b6a2b1452937e33f56ab9eb3">Simplex</a>&lt; dim &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#ae2e269a7332e80aeec3603881fd175d3">simplex</a> (size_t index)</td></tr>
 <tr class="memdesc:ae2e269a7332e80aeec3603881fd175d3"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the top-dimensional simplex at the given index in the triangulation.  <a href="#ae2e269a7332e80aeec3603881fd175d3">More...</a><br/></td></tr>
 <tr class="separator:ae2e269a7332e80aeec3603881fd175d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34ab68add2b36aa759661a3dba52f58c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> <a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt; dim &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a34ab68add2b36aa759661a3dba52f58c">getSimplex</a> (size_t index)</td></tr>
-<tr class="memdesc:a34ab68add2b36aa759661a3dba52f58c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated routine that returns the top-dimensional simplex at the given index in the triangulation.  <a href="#a34ab68add2b36aa759661a3dba52f58c">More...</a><br/></td></tr>
-<tr class="separator:a34ab68add2b36aa759661a3dba52f58c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61ac843dd4a46316960d65a56c28fff8"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt; dim &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a61ac843dd4a46316960d65a56c28fff8">simplex</a> (size_t index) const </td></tr>
+<tr class="memitem:a61ac843dd4a46316960d65a56c28fff8"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__generic.html#gad4bfc8e4b6a2b1452937e33f56ab9eb3">Simplex</a>&lt; dim &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a61ac843dd4a46316960d65a56c28fff8">simplex</a> (size_t index) const </td></tr>
 <tr class="memdesc:a61ac843dd4a46316960d65a56c28fff8"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the top-dimensional simplex at the given index in the triangulation.  <a href="#a61ac843dd4a46316960d65a56c28fff8">More...</a><br/></td></tr>
 <tr class="separator:a61ac843dd4a46316960d65a56c28fff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81b7a336d5871fab5779f75a88a032eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> const <br class="typebreak"/>
-<a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt; dim &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a81b7a336d5871fab5779f75a88a032eb">getSimplex</a> (size_t index) const </td></tr>
-<tr class="memdesc:a81b7a336d5871fab5779f75a88a032eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated routine that returns the top-dimensional simplex at the given index in the triangulation.  <a href="#a81b7a336d5871fab5779f75a88a032eb">More...</a><br/></td></tr>
-<tr class="separator:a81b7a336d5871fab5779f75a88a032eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ce68133679df7667c7347499133f240"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a2ce68133679df7667c7347499133f240">simplexIndex</a> (const <a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt; dim &gt; *<a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#ae2e269a7332e80aeec3603881fd175d3">simplex</a>) const </td></tr>
-<tr class="memdesc:a2ce68133679df7667c7347499133f240"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated routine that returns the index of the given top-dimensional simplex in the triangulation.  <a href="#a2ce68133679df7667c7347499133f240">More...</a><br/></td></tr>
-<tr class="separator:a2ce68133679df7667c7347499133f240"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad107a418e2691dc5ad7bb9e90dcba437"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt; dim &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#ad107a418e2691dc5ad7bb9e90dcba437">newSimplex</a> ()</td></tr>
+<tr class="memitem:ad107a418e2691dc5ad7bb9e90dcba437"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__generic.html#gad4bfc8e4b6a2b1452937e33f56ab9eb3">Simplex</a>&lt; dim &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#ad107a418e2691dc5ad7bb9e90dcba437">newSimplex</a> ()</td></tr>
 <tr class="memdesc:ad107a418e2691dc5ad7bb9e90dcba437"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new top-dimensional simplex and adds it to this triangulation.  <a href="#ad107a418e2691dc5ad7bb9e90dcba437">More...</a><br/></td></tr>
 <tr class="separator:ad107a418e2691dc5ad7bb9e90dcba437"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a829224a264241e43a8f2bbdf5bfcb253"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt; dim &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a829224a264241e43a8f2bbdf5bfcb253">newSimplex</a> (const std::string &amp;desc)</td></tr>
+<tr class="memitem:a829224a264241e43a8f2bbdf5bfcb253"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__generic.html#gad4bfc8e4b6a2b1452937e33f56ab9eb3">Simplex</a>&lt; dim &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a829224a264241e43a8f2bbdf5bfcb253">newSimplex</a> (const std::string &amp;desc)</td></tr>
 <tr class="memdesc:a829224a264241e43a8f2bbdf5bfcb253"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new top-dimensional simplex with the given description and adds it to this triangulation.  <a href="#a829224a264241e43a8f2bbdf5bfcb253">More...</a><br/></td></tr>
 <tr class="separator:a829224a264241e43a8f2bbdf5bfcb253"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b349c4e1fb4b27a9b20ed53b277a7ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a7b349c4e1fb4b27a9b20ed53b277a7ba">removeSimplex</a> (<a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt; dim &gt; *<a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#ae2e269a7332e80aeec3603881fd175d3">simplex</a>)</td></tr>
+<tr class="memitem:a7b349c4e1fb4b27a9b20ed53b277a7ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a7b349c4e1fb4b27a9b20ed53b277a7ba">removeSimplex</a> (<a class="el" href="group__generic.html#gad4bfc8e4b6a2b1452937e33f56ab9eb3">Simplex</a>&lt; dim &gt; *<a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#ae2e269a7332e80aeec3603881fd175d3">simplex</a>)</td></tr>
 <tr class="memdesc:a7b349c4e1fb4b27a9b20ed53b277a7ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the given top-dimensional simplex from this triangulation.  <a href="#a7b349c4e1fb4b27a9b20ed53b277a7ba">More...</a><br/></td></tr>
 <tr class="separator:a7b349c4e1fb4b27a9b20ed53b277a7ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9f36b004ba6af3d6ce11bdb655650ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#ac9f36b004ba6af3d6ce11bdb655650ec">removeSimplexAt</a> (size_t index)</td></tr>
@@ -169,17 +156,13 @@ std::vector&lt; <a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt;
 <tr class="memitem:a2ea7f4ec2de2b34dbe345bf2ac71274d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a2ea7f4ec2de2b34dbe345bf2ac71274d">countComponents</a> () const </td></tr>
 <tr class="memdesc:a2ea7f4ec2de2b34dbe345bf2ac71274d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the number of connected components in this triangulation.  <a href="#a2ea7f4ec2de2b34dbe345bf2ac71274d">More...</a><br/></td></tr>
 <tr class="separator:a2ea7f4ec2de2b34dbe345bf2ac71274d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07b66283609320290206e1ca4004c614"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a07b66283609320290206e1ca4004c614">getNumberOfComponents</a> () const </td></tr>
-<tr class="memdesc:a07b66283609320290206e1ca4004c614"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated routine that returns the number of connected components in this triangulation.  <a href="#a07b66283609320290206e1ca4004c614">More...</a><br/></td></tr>
-<tr class="separator:a07b66283609320290206e1ca4004c614"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0dad220753e25845aa715b3a8747179"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#af0dad220753e25845aa715b3a8747179">countBoundaryComponents</a> () const </td></tr>
+<tr class="memdesc:af0dad220753e25845aa715b3a8747179"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the number of boundary components in this triangulation.  <a href="#af0dad220753e25845aa715b3a8747179">More...</a><br/></td></tr>
+<tr class="separator:af0dad220753e25845aa715b3a8747179"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac42b62f7033765a5e146cdaa855e62c1"><td class="memTemplParams" colspan="2">template&lt;int subdim&gt; </td></tr>
 <tr class="memitem:ac42b62f7033765a5e146cdaa855e62c1"><td class="memTemplItemLeft" align="right" valign="top">size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#ac42b62f7033765a5e146cdaa855e62c1">countFaces</a> () const </td></tr>
 <tr class="memdesc:ac42b62f7033765a5e146cdaa855e62c1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the number of <em>subdim</em>-faces in this triangulation.  <a href="#ac42b62f7033765a5e146cdaa855e62c1">More...</a><br/></td></tr>
 <tr class="separator:ac42b62f7033765a5e146cdaa855e62c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe3f5cc17fb2daff24640b30287bddaf"><td class="memTemplParams" colspan="2">template&lt;int subdim&gt; </td></tr>
-<tr class="memitem:abe3f5cc17fb2daff24640b30287bddaf"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#abe3f5cc17fb2daff24640b30287bddaf">getNumberOfFaces</a> () const </td></tr>
-<tr class="memdesc:abe3f5cc17fb2daff24640b30287bddaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated routine that returns the number of <em>subdim</em>-faces in this triangulation.  <a href="#abe3f5cc17fb2daff24640b30287bddaf">More...</a><br/></td></tr>
-<tr class="separator:abe3f5cc17fb2daff24640b30287bddaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ff2a6ce37f4021f6d93309ec29a2232"><td class="memItemLeft" align="right" valign="top">std::vector&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a0ff2a6ce37f4021f6d93309ec29a2232">fVector</a> () const </td></tr>
 <tr class="memdesc:a0ff2a6ce37f4021f6d93309ec29a2232"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the f-vector of this triangulation, which counts the number of faces of all dimensions.  <a href="#a0ff2a6ce37f4021f6d93309ec29a2232">More...</a><br/></td></tr>
 <tr class="separator:a0ff2a6ce37f4021f6d93309ec29a2232"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -187,10 +170,10 @@ std::vector&lt; <a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt;
 &lt; dim &gt; * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#af52f03e39a1ac74ad4572d6dc3cb6081">components</a> () const </td></tr>
 <tr class="memdesc:af52f03e39a1ac74ad4572d6dc3cb6081"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> all connected components of this triangulation.  <a href="#af52f03e39a1ac74ad4572d6dc3cb6081">More...</a><br/></td></tr>
 <tr class="separator:af52f03e39a1ac74ad4572d6dc3cb6081"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a063f51a8c5f88e26ee430064d980a193"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> const <br class="typebreak"/>
-std::vector&lt; <a class="el" href="classregina_1_1Component.html">Component</a>&lt; dim &gt; * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a063f51a8c5f88e26ee430064d980a193">getComponents</a> () const </td></tr>
-<tr class="memdesc:a063f51a8c5f88e26ee430064d980a193"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated routine that returns all connected components of this triangulation.  <a href="#a063f51a8c5f88e26ee430064d980a193">More...</a><br/></td></tr>
-<tr class="separator:a063f51a8c5f88e26ee430064d980a193"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeea09cab6930d8333a969f7a3ef5eec6"><td class="memItemLeft" align="right" valign="top">const std::vector<br class="typebreak"/>
+&lt; <a class="el" href="classregina_1_1BoundaryComponent.html">BoundaryComponent</a>&lt; dim &gt; * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#aeea09cab6930d8333a969f7a3ef5eec6">boundaryComponents</a> () const </td></tr>
+<tr class="memdesc:aeea09cab6930d8333a969f7a3ef5eec6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> all boundary components of this triangulation.  <a href="#aeea09cab6930d8333a969f7a3ef5eec6">More...</a><br/></td></tr>
+<tr class="separator:aeea09cab6930d8333a969f7a3ef5eec6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90b031c48014d00ee9fee402dd989ef5"><td class="memTemplParams" colspan="2">template&lt;int subdim&gt; </td></tr>
 <tr class="memitem:a90b031c48014d00ee9fee402dd989ef5"><td class="memTemplItemLeft" align="right" valign="top">const <a class="el" href="classregina_1_1FaceList.html">FaceList</a>&lt; dim, subdim &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a90b031c48014d00ee9fee402dd989ef5">faces</a> () const </td></tr>
 <tr class="memdesc:a90b031c48014d00ee9fee402dd989ef5"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> an object that allows iteration through and random access to all <em>subdim</em>-faces of this triangulation.  <a href="#a90b031c48014d00ee9fee402dd989ef5">More...</a><br/></td></tr>
@@ -198,17 +181,13 @@ std::vector&lt; <a class="el" href="classregina_1_1Component.html">Component</a>
 <tr class="memitem:aa5ee1eaa26fe337535ca3945ef063972"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1Component.html">Component</a>&lt; dim &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#aa5ee1eaa26fe337535ca3945ef063972">component</a> (size_t index) const </td></tr>
 <tr class="memdesc:aa5ee1eaa26fe337535ca3945ef063972"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the requested connected component of this triangulation.  <a href="#aa5ee1eaa26fe337535ca3945ef063972">More...</a><br/></td></tr>
 <tr class="separator:aa5ee1eaa26fe337535ca3945ef063972"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a855675725502f984ea24db34e6b2a9d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> <a class="el" href="classregina_1_1Component.html">Component</a><br class="typebreak"/>
-&lt; dim &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a855675725502f984ea24db34e6b2a9d8">getComponent</a> (size_t index) const </td></tr>
-<tr class="memdesc:a855675725502f984ea24db34e6b2a9d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated routine that returns the requested connected component of this triangulation.  <a href="#a855675725502f984ea24db34e6b2a9d8">More...</a><br/></td></tr>
-<tr class="separator:a855675725502f984ea24db34e6b2a9d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a085d2ef5acff06731f06d2e78a80bc3a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1BoundaryComponent.html">BoundaryComponent</a>&lt; dim &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a085d2ef5acff06731f06d2e78a80bc3a">boundaryComponent</a> (size_t index) const </td></tr>
+<tr class="memdesc:a085d2ef5acff06731f06d2e78a80bc3a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the requested boundary component of this triangulation.  <a href="#a085d2ef5acff06731f06d2e78a80bc3a">More...</a><br/></td></tr>
+<tr class="separator:a085d2ef5acff06731f06d2e78a80bc3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0333fa8a47302bcf44fa05e3158d9761"><td class="memTemplParams" colspan="2">template&lt;int subdim&gt; </td></tr>
 <tr class="memitem:a0333fa8a47302bcf44fa05e3158d9761"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1Face.html">Face</a>&lt; dim, subdim &gt; *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a0333fa8a47302bcf44fa05e3158d9761">face</a> (size_t index) const </td></tr>
 <tr class="memdesc:a0333fa8a47302bcf44fa05e3158d9761"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the requested <em>subdim</em>-face of this triangulation.  <a href="#a0333fa8a47302bcf44fa05e3158d9761">More...</a><br/></td></tr>
 <tr class="separator:a0333fa8a47302bcf44fa05e3158d9761"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f19e3f339c50f0b40dfa28c02d31878"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a6f19e3f339c50f0b40dfa28c02d31878">componentIndex</a> (const <a class="el" href="classregina_1_1Component.html">Component</a>&lt; dim &gt; *<a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#aa5ee1eaa26fe337535ca3945ef063972">component</a>) const </td></tr>
-<tr class="memdesc:a6f19e3f339c50f0b40dfa28c02d31878"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated routine that returns the index of the given connected component in this triangulation.  <a href="#a6f19e3f339c50f0b40dfa28c02d31878">More...</a><br/></td></tr>
-<tr class="separator:a6f19e3f339c50f0b40dfa28c02d31878"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Basic Properties</div></td></tr>
 <tr class="memitem:ad26eb19438346ff47f0bf56598070a0a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#ad26eb19438346ff47f0bf56598070a0a">isEmpty</a> () const </td></tr>
 <tr class="memdesc:ad26eb19438346ff47f0bf56598070a0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether this triangulation is empty.  <a href="#ad26eb19438346ff47f0bf56598070a0a">More...</a><br/></td></tr>
@@ -231,6 +210,22 @@ std::vector&lt; <a class="el" href="classregina_1_1Component.html">Component</a>
 <tr class="memitem:a52193108182bb6cefd2ea267f35479ab"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a52193108182bb6cefd2ea267f35479ab">isOriented</a> () const </td></tr>
 <tr class="memdesc:a52193108182bb6cefd2ea267f35479ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if this triangulation is oriented; that is, if the vertices of its top-dimensional simplices are labelled in a way that preserves orientation across adjacent facets.  <a href="#a52193108182bb6cefd2ea267f35479ab">More...</a><br/></td></tr>
 <tr class="separator:a52193108182bb6cefd2ea267f35479ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb338fc35c6ab52d7568896e4e4d4371"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#aeb338fc35c6ab52d7568896e4e4d4371">eulerCharTri</a> () const </td></tr>
+<tr class="memdesc:aeb338fc35c6ab52d7568896e4e4d4371"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the Euler characteristic of this triangulation.  <a href="#aeb338fc35c6ab52d7568896e4e4d4371">More...</a><br/></td></tr>
+<tr class="separator:aeb338fc35c6ab52d7568896e4e4d4371"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Algebraic Properties</div></td></tr>
+<tr class="memitem:a21ba3093cb762d6dd200243170f29090"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classregina_1_1GroupPresentation.html">GroupPresentation</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a21ba3093cb762d6dd200243170f29090">fundamentalGroup</a> () const </td></tr>
+<tr class="memdesc:a21ba3093cb762d6dd200243170f29090"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the fundamental group of this triangulation.  <a href="#a21ba3093cb762d6dd200243170f29090">More...</a><br/></td></tr>
+<tr class="separator:a21ba3093cb762d6dd200243170f29090"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af74cde5c3b790195df3e10e2e53e390b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#af74cde5c3b790195df3e10e2e53e390b">simplifiedFundamentalGroup</a> (<a class="el" href="classregina_1_1GroupPresentation.html">GroupPresentation</a> *newGroup)</td></tr>
+<tr class="memdesc:af74cde5c3b790195df3e10e2e53e390b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies the triangulation that you have simplified the presentation of its fundamental group.  <a href="#af74cde5c3b790195df3e10e2e53e390b">More...</a><br/></td></tr>
+<tr class="separator:af74cde5c3b790195df3e10e2e53e390b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe5cba1c19ba697c73c7ee7d2d0bca20"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classregina_1_1AbelianGroup.html">AbelianGroup</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#abe5cba1c19ba697c73c7ee7d2d0bca20">homology</a> () const </td></tr>
+<tr class="memdesc:abe5cba1c19ba697c73c7ee7d2d0bca20"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the first homology group for this triangulation.  <a href="#abe5cba1c19ba697c73c7ee7d2d0bca20">More...</a><br/></td></tr>
+<tr class="separator:abe5cba1c19ba697c73c7ee7d2d0bca20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada9c5cfbc3e88b51ce9bb9a1974c9396"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classregina_1_1AbelianGroup.html">AbelianGroup</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#ada9c5cfbc3e88b51ce9bb9a1974c9396">homologyH1</a> () const </td></tr>
+<tr class="memdesc:ada9c5cfbc3e88b51ce9bb9a1974c9396"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the first homology group for this triangulation.  <a href="#ada9c5cfbc3e88b51ce9bb9a1974c9396">More...</a><br/></td></tr>
+<tr class="separator:ada9c5cfbc3e88b51ce9bb9a1974c9396"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Skeletal Transformations</div></td></tr>
 <tr class="memitem:a2711fd7c7115ce19b6833f0d61c42bec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a2711fd7c7115ce19b6833f0d61c42bec">orient</a> ()</td></tr>
 <tr class="memdesc:a2711fd7c7115ce19b6833f0d61c42bec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Relabels the vertices of top-dimensional simplices in this triangulation so that all simplices are oriented consistently, if possible.  <a href="#a2711fd7c7115ce19b6833f0d61c42bec">More...</a><br/></td></tr>
@@ -239,13 +234,16 @@ std::vector&lt; <a class="el" href="classregina_1_1Component.html">Component</a>
 <tr class="memitem:ae061e36e8ecbfa2f1edc36ed9eb99a51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#ae061e36e8ecbfa2f1edc36ed9eb99a51">makeDoubleCover</a> ()</td></tr>
 <tr class="memdesc:ae061e36e8ecbfa2f1edc36ed9eb99a51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts this triangulation into its double cover.  <a href="#ae061e36e8ecbfa2f1edc36ed9eb99a51">More...</a><br/></td></tr>
 <tr class="separator:ae061e36e8ecbfa2f1edc36ed9eb99a51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13345c67f4c82d9976863c8c5372db5b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a13345c67f4c82d9976863c8c5372db5b">barycentricSubdivision</a> ()</td></tr>
+<tr class="memdesc:a13345c67f4c82d9976863c8c5372db5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does a barycentric subdivision of the triangulation.  <a href="#a13345c67f4c82d9976863c8c5372db5b">More...</a><br/></td></tr>
+<tr class="separator:a13345c67f4c82d9976863c8c5372db5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc25a58b48e39f3c7f8621b84432d294"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#adc25a58b48e39f3c7f8621b84432d294">finiteToIdeal</a> ()</td></tr>
 <tr class="memdesc:adc25a58b48e39f3c7f8621b84432d294"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts each real boundary component into a cusp (i.e., an ideal vertex).  <a href="#adc25a58b48e39f3c7f8621b84432d294">More...</a><br/></td></tr>
 <tr class="separator:adc25a58b48e39f3c7f8621b84432d294"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Decompositions</div></td></tr>
-<tr class="memitem:a85435d4303792273aad5e662a7d67426"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a85435d4303792273aad5e662a7d67426">splitIntoComponents</a> (<a class="el" href="classregina_1_1NPacket.html">NPacket</a> *componentParent=0, bool setLabels=true)</td></tr>
-<tr class="memdesc:a85435d4303792273aad5e662a7d67426"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits a disconnected triangulation into many smaller triangulations, one for each component.  <a href="#a85435d4303792273aad5e662a7d67426">More...</a><br/></td></tr>
-<tr class="separator:a85435d4303792273aad5e662a7d67426"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a269bd2c09cea50d26a2a6bb125d55652"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a269bd2c09cea50d26a2a6bb125d55652">splitIntoComponents</a> (<a class="el" href="classregina_1_1Packet.html">Packet</a> *componentParent=0, bool setLabels=true)</td></tr>
+<tr class="memdesc:a269bd2c09cea50d26a2a6bb125d55652"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits a disconnected triangulation into many smaller triangulations, one for each component.  <a href="#a269bd2c09cea50d26a2a6bb125d55652">More...</a><br/></td></tr>
+<tr class="separator:a269bd2c09cea50d26a2a6bb125d55652"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Isomorphism Testing</div></td></tr>
 <tr class="memitem:a00301fd26f1eaaa4df55b94b8369a054"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a00301fd26f1eaaa4df55b94b8369a054">isIdenticalTo</a> (const <a class="el" href="classregina_1_1Triangulation.html">Triangulation</a>&lt; dim &gt; &amp;other) const </td></tr>
 <tr class="memdesc:a00301fd26f1eaaa4df55b94b8369a054"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if this triangulation is combinatorially identical to the given triangulation.  <a href="#a00301fd26f1eaaa4df55b94b8369a054">More...</a><br/></td></tr>
@@ -291,6 +289,12 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab2309f88209fdc55a5408838e5983caf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deduces the number of top-dimensional simplices in a connected triangulation from its isomorphism signature.  <a href="#ab2309f88209fdc55a5408838e5983caf">More...</a><br/></td></tr>
 <tr class="separator:ab2309f88209fdc55a5408838e5983caf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a3ef8ae8c6af5b7757dddc44327ea3133"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a3ef8ae8c6af5b7757dddc44327ea3133">dimension</a> = dim</td></tr>
+<tr class="memdesc:a3ef8ae8c6af5b7757dddc44327ea3133"><td class="mdescLeft">&#160;</td><td class="mdescRight">A compile-time constant that gives the dimension of the triangulation.  <a href="#a3ef8ae8c6af5b7757dddc44327ea3133">More...</a><br/></td></tr>
+<tr class="separator:a3ef8ae8c6af5b7757dddc44327ea3133"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-types"></a>
 Protected Types</h2></td></tr>
 <tr class="memitem:ga0be8028a8f015b7fff2e37769a17dfac"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="classregina_1_1Face.html">Face</a>&lt; dim, <br class="typebreak"/>
@@ -306,15 +310,24 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a4cf5ad2a8b5eb264f015405a4a89bb1d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a4cf5ad2a8b5eb264f015405a4a89bb1d">calculatedSkeleton</a> () const </td></tr>
 <tr class="memdesc:a4cf5ad2a8b5eb264f015405a4a89bb1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the skeletal objects and properties of this triangulation have been calculated.  <a href="#a4cf5ad2a8b5eb264f015405a4a89bb1d">More...</a><br/></td></tr>
 <tr class="separator:a4cf5ad2a8b5eb264f015405a4a89bb1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d04b371303f07f238af57faf82c9402"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a1d04b371303f07f238af57faf82c9402">calculateSkeleton</a> ()</td></tr>
-<tr class="memdesc:a1d04b371303f07f238af57faf82c9402"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates all skeletal objects for this triangulation.  <a href="#a1d04b371303f07f238af57faf82c9402">More...</a><br/></td></tr>
-<tr class="separator:a1d04b371303f07f238af57faf82c9402"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85c4601f644bed4d5972eaef52c68fdc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a85c4601f644bed4d5972eaef52c68fdc">deleteSkeleton</a> ()</td></tr>
-<tr class="memdesc:a85c4601f644bed4d5972eaef52c68fdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deallocates all skeletal objects that are managed by this triangulation, and empties all corresponding internal lists.  <a href="#a85c4601f644bed4d5972eaef52c68fdc">More...</a><br/></td></tr>
-<tr class="separator:a85c4601f644bed4d5972eaef52c68fdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52f576abab05ff2c05927463a6ce8c42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a52f576abab05ff2c05927463a6ce8c42">calculateSkeleton</a> ()</td></tr>
+<tr class="memdesc:a52f576abab05ff2c05927463a6ce8c42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates all skeletal objects for this triangulation.  <a href="#a52f576abab05ff2c05927463a6ce8c42">More...</a><br/></td></tr>
+<tr class="separator:a52f576abab05ff2c05927463a6ce8c42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a104a20d744b0b646783b60d819f43d22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a104a20d744b0b646783b60d819f43d22">clearBaseProperties</a> ()</td></tr>
+<tr class="memdesc:a104a20d744b0b646783b60d819f43d22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears all properties that are managed by this base class.  <a href="#a104a20d744b0b646783b60d819f43d22">More...</a><br/></td></tr>
+<tr class="separator:a104a20d744b0b646783b60d819f43d22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed565fd71935ebdc8f9d6af6bd46d666"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#aed565fd71935ebdc8f9d6af6bd46d666">swapBaseProperties</a> (<a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">TriangulationBase</a>&lt; dim &gt; &amp;other)</td></tr>
+<tr class="memdesc:aed565fd71935ebdc8f9d6af6bd46d666"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swaps all properties that are managed by this base class, including skeletal data, with the given triangulation.  <a href="#aed565fd71935ebdc8f9d6af6bd46d666">More...</a><br/></td></tr>
+<tr class="separator:aed565fd71935ebdc8f9d6af6bd46d666"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89c51de87cc69b8c7fc2385d26382385"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a89c51de87cc69b8c7fc2385d26382385">writeXMLBaseProperties</a> (std::ostream &amp;out) const </td></tr>
+<tr class="memdesc:a89c51de87cc69b8c7fc2385d26382385"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a chunk of XML containing properties of this triangulation.  <a href="#a89c51de87cc69b8c7fc2385d26382385">More...</a><br/></td></tr>
+<tr class="separator:a89c51de87cc69b8c7fc2385d26382385"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45b34020172394d10592dd4251468bcc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1FaceListSuite.html#a45b34020172394d10592dd4251468bcc">deleteFaces</a> ()</td></tr>
 <tr class="memdesc:a45b34020172394d10592dd4251468bcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes all faces of dimension <em>subdim</em> and below.  <a href="#a45b34020172394d10592dd4251468bcc">More...</a><br/></td></tr>
 <tr class="separator:a45b34020172394d10592dd4251468bcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a013abf7fffeba839fb47a2dcfaee19f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1FaceListSuite.html#a013abf7fffeba839fb47a2dcfaee19f5">swapFaces</a> (<a class="el" href="classregina_1_1detail_1_1FaceListSuite.html">FaceListSuite</a>&lt; dim, subdim &gt; &amp;other)</td></tr>
+<tr class="memdesc:a013abf7fffeba839fb47a2dcfaee19f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swaps all faces of dimension <em>subdim</em> and below with those of the given triangulation.  <a href="#a013abf7fffeba839fb47a2dcfaee19f5">More...</a><br/></td></tr>
+<tr class="separator:a013abf7fffeba839fb47a2dcfaee19f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8adeb83255137b4ba522408f77fbe58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1FaceListSuite.html#aa8adeb83255137b4ba522408f77fbe58">fillFVector</a> (std::vector&lt; size_t &gt; &amp;result) const</td></tr>
 <tr class="memdesc:aa8adeb83255137b4ba522408f77fbe58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the given vector with the first (<em>subdim</em> + 1) elements of the f-vector.  <a href="#aa8adeb83255137b4ba522408f77fbe58">More...</a><br/></td></tr>
 <tr class="separator:aa8adeb83255137b4ba522408f77fbe58"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -342,12 +355,19 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:ga1cd29e5cef4315d5b40c37ab997645b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__generic.html#ga1cd29e5cef4315d5b40c37ab997645b8">destroy</a> ()</td></tr>
 <tr class="memdesc:ga1cd29e5cef4315d5b40c37ab997645b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys all faces in this list, and clears the list itself.  <a href="group__generic.html#ga1cd29e5cef4315d5b40c37ab997645b8">More...</a><br/></td></tr>
 <tr class="separator:ga1cd29e5cef4315d5b40c37ab997645b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga425fc00273288a36288fc08452ad4bf3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__generic.html#ga425fc00273288a36288fc08452ad4bf3">swap</a> (<a class="el" href="classregina_1_1FaceList.html">FaceList</a>&lt; dim, subdim &gt; &amp;other)</td></tr>
+<tr class="memdesc:ga425fc00273288a36288fc08452ad4bf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swaps all faces in this list with those in the given list.  <a href="group__generic.html#ga425fc00273288a36288fc08452ad4bf3">More...</a><br/></td></tr>
+<tr class="separator:ga425fc00273288a36288fc08452ad4bf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a356963e7a7661a0abcc9024a890652ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1NMarkedVector.html">NMarkedVector</a>&lt; <a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt; dim &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a356963e7a7661a0abcc9024a890652ba">simplices_</a></td></tr>
-<tr class="memdesc:a356963e7a7661a0abcc9024a890652ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">The top-dimensional simplices that form the triangulation.  <a href="#a356963e7a7661a0abcc9024a890652ba">More...</a><br/></td></tr>
-<tr class="separator:a356963e7a7661a0abcc9024a890652ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fba432b4a7a57ee4e21a9523151c660"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1MarkedVector.html">MarkedVector</a>&lt; <a class="el" href="group__generic.html#gad4bfc8e4b6a2b1452937e33f56ab9eb3">Simplex</a>&lt; dim &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a3fba432b4a7a57ee4e21a9523151c660">simplices_</a></td></tr>
+<tr class="memdesc:a3fba432b4a7a57ee4e21a9523151c660"><td class="mdescLeft">&#160;</td><td class="mdescRight">The top-dimensional simplices that form the triangulation.  <a href="#a3fba432b4a7a57ee4e21a9523151c660">More...</a><br/></td></tr>
+<tr class="separator:a3fba432b4a7a57ee4e21a9523151c660"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac280128dabd3208670cb0fdc010dffb8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1MarkedVector.html">MarkedVector</a><br class="typebreak"/>
+&lt; <a class="el" href="classregina_1_1BoundaryComponent.html">BoundaryComponent</a>&lt; dim &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#ac280128dabd3208670cb0fdc010dffb8">boundaryComponents_</a></td></tr>
+<tr class="memdesc:ac280128dabd3208670cb0fdc010dffb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The components that form the boundary of the triangulation.  <a href="#ac280128dabd3208670cb0fdc010dffb8">More...</a><br/></td></tr>
+<tr class="separator:ac280128dabd3208670cb0fdc010dffb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a327ad9e8143772575b5701a3c4ad6007"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a327ad9e8143772575b5701a3c4ad6007">valid_</a></td></tr>
 <tr class="memdesc:a327ad9e8143772575b5701a3c4ad6007"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is this triangulation valid? See <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a4602a09cb4e9babf8d9bfd33031c6dc5" title="Determines if this triangulation is valid.">isValid()</a> for details on what this means.  <a href="#a327ad9e8143772575b5701a3c4ad6007">More...</a><br/></td></tr>
 <tr class="separator:a327ad9e8143772575b5701a3c4ad6007"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -358,6 +378,17 @@ Friends</h2></td></tr>
 template&lt;int , int , int &gt; </td></tr>
 <tr class="memitem:ab021b95f9d18668036598107ce238c91"><td class="memTemplItemLeft" align="right" valign="top">struct&#160;</td><td class="memTemplItemRight" valign="bottom"><b>FaceCalculator</b></td></tr>
 <tr class="separator:ab021b95f9d18668036598107ce238c91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6435846e3ce3cf6cd9a6e30cc75c8aa"><td class="memTemplParams" colspan="2"><a class="anchor" id="ae6435846e3ce3cf6cd9a6e30cc75c8aa"></a>
+template&lt;int , int &gt; </td></tr>
+<tr class="memitem:ae6435846e3ce3cf6cd9a6e30cc75c8aa"><td class="memTemplItemLeft" align="right" valign="top">struct&#160;</td><td class="memTemplItemRight" valign="bottom"><b>BoundaryComponentCalculator</b></td></tr>
+<tr class="separator:ae6435846e3ce3cf6cd9a6e30cc75c8aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37eb06ce1f7f56644a2a8a6e8d6d6498"><td class="memTemplParams" colspan="2"><a class="anchor" id="a37eb06ce1f7f56644a2a8a6e8d6d6498"></a>
+template&lt;int , int &gt; </td></tr>
+<tr class="memitem:a37eb06ce1f7f56644a2a8a6e8d6d6498"><td class="memTemplItemLeft" align="right" valign="top">class&#160;</td><td class="memTemplItemRight" valign="bottom"><b>WeakFaceList</b></td></tr>
+<tr class="separator:a37eb06ce1f7f56644a2a8a6e8d6d6498"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97e81e1477448bd234992c2991afb05e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a97e81e1477448bd234992c2991afb05e"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>regina::detail::XMLTriangulationReaderBase&lt; dim &gt;</b></td></tr>
+<tr class="separator:a97e81e1477448bd234992c2991afb05e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;int&gt;<br/>
@@ -366,9 +397,9 @@ class regina::detail::TriangulationBase&lt; int &gt;</h3>
 <p>Provides core functionality for <em>dim</em>-dimensional triangulations. </p>
 <p>Such a triangulation is represented by the class <a class="el" href="classregina_1_1Triangulation.html">Triangulation&lt;dim&gt;</a>, which uses this as a base class. End users should not need to refer to <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html" title="Provides core functionality for dim-dimensional triangulations.">TriangulationBase</a> directly.</p>
 <p>See the <a class="el" href="classregina_1_1Triangulation.html" title="A dim-dimensional triangulation, built by gluing together dim-dimensional simplices along their (dim-...">Triangulation</a> class notes for further information.</p>
-<p>Note that this class does not derive from <a class="el" href="structregina_1_1Output.html" title="A common base class for objects that write human-readable text output.">Output</a>. This is to avoid clashes with the output code inherited from <a class="el" href="classregina_1_1NPacket.html" title="Represents a packet of information that may be individually edited or operated upon.">NPacket</a>. Specifically:</p>
+<p>Note that this class does not derive from <a class="el" href="structregina_1_1Output.html" title="A common base class for objects that write human-readable text output.">Output</a>. This is to avoid clashes with the output code inherited from <a class="el" href="classregina_1_1Packet.html" title="Represents a packet of information that may be individually edited or operated upon.">Packet</a>. Specifically:</p>
 <ul>
-<li>for those dimensions where <a class="el" href="classregina_1_1Triangulation.html">Triangulation&lt;dim&gt;</a> derives from <a class="el" href="classregina_1_1NPacket.html" title="Represents a packet of information that may be individually edited or operated upon.">NPacket</a>, the output routines are inherited from <a class="el" href="classregina_1_1NPacket.html" title="Represents a packet of information that may be individually edited or operated upon.">NPacket</a> (which derives from <a class="el" href="structregina_1_1Output.html" title="A common base class for objects that write human-readable text output.">Output</a>).</li>
+<li>for those dimensions where <a class="el" href="classregina_1_1Triangulation.html">Triangulation&lt;dim&gt;</a> derives from <a class="el" href="classregina_1_1Packet.html" title="Represents a packet of information that may be individually edited or operated upon.">Packet</a>, the output routines are inherited from <a class="el" href="classregina_1_1Packet.html" title="Represents a packet of information that may be individually edited or operated upon.">Packet</a> (which derives from <a class="el" href="structregina_1_1Output.html" title="A common base class for objects that write human-readable text output.">Output</a>).</li>
 </ul>
 <ul>
 <li>for other dimensions, <a class="el" href="classregina_1_1Triangulation.html">Triangulation&lt;dim&gt;</a> derives from <a class="el" href="structregina_1_1Output.html" title="A common base class for objects that write human-readable text output.">Output</a> directly.</li>
@@ -381,6 +412,22 @@ class regina::detail::TriangulationBase&lt; int &gt;</h3>
   </dd>
 </dl>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a class="anchor" id="afaff07ebf1a7c7d92dc100c1fdc343ba"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::vector&lt;<a class="el" href="classregina_1_1BoundaryComponent.html">BoundaryComponent</a>&lt;dim&gt;*&gt;::const_iterator <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; int &gt;::<a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#afaff07ebf1a7c7d92dc100c1fdc343ba">BoundaryComponentIterator</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Used to iterate through boundary components. </p>
+
+</div>
+</div>
 <a class="anchor" id="acb85b172fe187672d3495a557aa394bf"></a>
 <div class="memitem">
 <div class="memproto">
@@ -404,7 +451,7 @@ template&lt;int &gt; </div>
 template&lt;int &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">typedef std::vector&lt;<a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt;dim&gt;*&gt;::const_iterator <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; int &gt;::<a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a9f3023c0479b8cc8aeec3dffa6fa62eb">SimplexIterator</a></td>
+          <td class="memname">typedef std::vector&lt;<a class="el" href="group__generic.html#gad4bfc8e4b6a2b1452937e33f56ab9eb3">Simplex</a>&lt;dim&gt;*&gt;::const_iterator <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; int &gt;::<a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a9f3023c0479b8cc8aeec3dffa6fa62eb">SimplexIterator</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -447,6 +494,9 @@ template&lt;int dim&gt; </div>
 <div class="memproto">
 <div class="memtemplate">
 template&lt;int dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; dim &gt;::<a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">TriangulationBase</a> </td>
@@ -456,12 +506,55 @@ template&lt;int dim&gt; </div>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Creates a new copy of the given triangulation. </p>
+<p>This will clone any computed properties (such as homology, fundamental group, and so on) of the given triangulation also. If you want a "clean" copy that resets all properties to unknown, you can use the two-argument copy constructor instead.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">copy</td><td>the triangulation to copy. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa664ef0a04f31b2df1594f2a8dbb1322"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int dim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; dim &gt;::<a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">TriangulationBase</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">TriangulationBase</a>&lt; dim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>copy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>cloneProps</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a new copy of the given triangulation, with the option of whether or not to clone its computed properties also. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">copy</td><td>the triangulation to copy. </td></tr>
+    <tr><td class="paramname">cloneProps</td><td><code>true</code> if this should also clone any computed properties of the given triangulation (such as homology, fundamental group, and so on), or <code>false</code> if the new triangulation should have all properties marked as unknown. </td></tr>
   </table>
   </dd>
 </dl>
@@ -497,6 +590,113 @@ template&lt;int dim&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a13345c67f4c82d9976863c8c5372db5b"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int dim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; dim &gt;::barycentricSubdivision </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Does a barycentric subdivision of the triangulation. </p>
+<p>This is done in-place, i.e., the triangulation will be modified directly.</p>
+<p>Each top-dimensional simplex <em>s</em> is divided into (<em>dim</em> + 1) factorial sub-simplices by placing an extra vertex at the centroid of every face of every dimension. Each of these sub-simplices <em>t</em> is described by a permutation <em>p</em> of (0, ..., <em>dim</em>). The vertices of such a sub-simplex <em>t</em> are:</p>
+<ul>
+<li>vertex <em>p</em>[0] of <em>s</em>;</li>
+<li>the centre of edge (<em>p</em>[0], <em>p</em>[1]) of <em>s</em>;</li>
+<li>the centroid of triangle (<em>p</em>[0], <em>p</em>[1], <em>p</em>[2]) of <em>s</em>;</li>
+<li>...</li>
+<li>the centroid of face (<em>p</em>[0], <em>p</em>[1], <em>p</em>[2], <em>p</em>[<em>dim</em>]) of <em>s</em>, which is the entire simplex <em>s</em> itself.</li>
+</ul>
+<p>The sub-simplices have their vertices numbered in a way that mirrors the original simplex <em>s:</em> </p>
+<ul>
+<li>vertex <em>p</em>[0] of <em>s</em> will be labelled <em>p</em>[0] in <em>t</em>;</li>
+<li>the centre of edge (<em>p</em>[0], <em>p</em>[1]) of <em>s</em> will be labelled <em>p</em>[1] in <em>t</em>;</li>
+<li>the centroid of triangle (<em>p</em>[0], <em>p</em>[1], <em>p</em>[2]) of <em>s</em> will be labelled <em>p</em>[2] in <em>t</em>;</li>
+<li>...</li>
+<li>the centroid of <em>s</em> itself will be labelled <em>p</em>[<em>dim</em>] in <em>t</em>.</li>
+</ul>
+<p>If simplex <em>s</em> has index <em>i</em> in the original triangulation, then its sub-simplex corresponding to permutation <em>p</em> will have index <code>((dim + 1)! * i + p.index())</code> in the resulting triangulation. In other words: sub-simplices are ordered first according to the original simplex that contains them, and then according to the lexicographical ordering of the corresponding permutations <em>p</em>.</p>
+<dl class="section pre"><dt>Precondition</dt><dd><em>dim</em> is one of Regina's standard dimensions. This precondition is a safety net, since in higher dimensions the triangulation would explode too quickly in size (and for the highest dimensions, possibly beyond the limits of <code>size_t</code>).</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>In dimensions 3 and 4, both the labelling and ordering of sub-simplices in the subdivided triangulation has changed as of Regina 5.1. (Earlier versions of Regina made no guarantee about the labelling and ordering; these guarantees are also new to Regina 5.1). </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a085d2ef5acff06731f06d2e78a80bc3a"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classregina_1_1BoundaryComponent.html">BoundaryComponent</a>&lt; dim &gt; * <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; dim &gt;::boundaryComponent </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the requested boundary component of this triangulation. </p>
+<p>Note that each time the triangulation changes, all boundary components will be deleted and replaced with new ones. Therefore this object should be considered temporary only.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>the index of the desired boundary component; this must be between 0 and <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#af0dad220753e25845aa715b3a8747179" title="Returns the number of boundary components in this triangulation.">countBoundaryComponents()</a>-1 inclusive. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the requested boundary component. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aeea09cab6930d8333a969f7a3ef5eec6"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt; <a class="el" href="classregina_1_1BoundaryComponent.html">BoundaryComponent</a>&lt; dim &gt; * &gt; &amp; <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; dim &gt;::boundaryComponents </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> all boundary components of this triangulation. </p>
+<p>Note that, in Regina's <a class="el" href="stddim.html">standard dimensions</a>, each ideal vertex forms its own boundary component, and some invalid vertices do also. See the <a class="el" href="classregina_1_1BoundaryComponent.html" title="A component of the boundary of a dim-manifold triangulation.">BoundaryComponent</a> class notes for full details on what constitutes a boundary component in standard and non-standard dimensions.</p>
+<p>Bear in mind that each time the triangulation changes, all boundary component objects will be deleted and replaced with new ones. Therefore these boundary component objects should be considered temporary only.</p>
+<p>In contrast, this reference to the <em>list</em> of <a class="el" href="classregina_1_1BoundaryComponent.html" title="A component of the boundary of a dim-manifold triangulation.">BoundaryComponent</a> objects will remain valid and up-to-date for as long as the triangulation exists.</p>
+<dl class="section user"><dt>Python:</dt><dd>This routine returns a python list.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the list of all boundary components. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a4cf5ad2a8b5eb264f015405a4a89bb1d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -526,17 +726,17 @@ template&lt;int dim&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a1d04b371303f07f238af57faf82c9402"></a>
+<a class="anchor" id="a52f576abab05ff2c05927463a6ce8c42"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;int dim&gt; </div>
+template&lt;int &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; dim &gt;::calculateSkeleton </td>
+          <td class="memname">void <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; int &gt;::calculateSkeleton </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -550,10 +750,39 @@ template&lt;int dim&gt; </div>
 </div><div class="memdoc">
 
 <p>Calculates all skeletal objects for this triangulation. </p>
-<p>For this parent class, <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a1d04b371303f07f238af57faf82c9402" title="Calculates all skeletal objects for this triangulation.">calculateSkeleton()</a> computes properties such as connected components, orientability, and lower-dimensional faces. Some <a class="el" href="classregina_1_1Triangulation.html">Triangulation&lt;dim&gt;</a> subclasses may track additional skeletal data, in which case they should reimplement this function. Their reimplementations <em>must</em> call this parent implementation.</p>
+<p>For this parent class, <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a52f576abab05ff2c05927463a6ce8c42" title="Calculates all skeletal objects for this triangulation.">calculateSkeleton()</a> computes properties such as connected components, orientability, and lower-dimensional faces. Some <a class="el" href="classregina_1_1Triangulation.html">Triangulation&lt;dim&gt;</a> subclasses may track additional skeletal data, in which case they should reimplement this function. Their reimplementations <em>must</em> call this parent implementation.</p>
 <p>You should never call this function directly; instead call <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#ac385cd2115fc4eaabaf591ba58046cad" title="Ensures that all &quot;on demand&quot; skeletal objects have been calculated.">ensureSkeleton()</a> instead.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>No skeletal objects have been computed, and the corresponding internal lists are all empty.</dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>Any call to <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a1d04b371303f07f238af57faf82c9402" title="Calculates all skeletal objects for this triangulation.">calculateSkeleton()</a> must first cast down to <a class="el" href="classregina_1_1Triangulation.html">Triangulation&lt;dim&gt;</a>. You should never directly call this parent implementation (unless of course you are reimplementing <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a1d04b371303f07f238af57faf82c9402" title="Calculates all skeletal objects for this triangulation.">calculateSkeleton()</a> in a <a class="el" href="classregina_1_1Triangulation.html">Triangulation&lt;dim&gt;</a> subclass). </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Any call to <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a52f576abab05ff2c05927463a6ce8c42" title="Calculates all skeletal objects for this triangulation.">calculateSkeleton()</a> must first cast down to <a class="el" href="classregina_1_1Triangulation.html">Triangulation&lt;dim&gt;</a>. You should never directly call this parent implementation (unless of course you are reimplementing <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a52f576abab05ff2c05927463a6ce8c42" title="Calculates all skeletal objects for this triangulation.">calculateSkeleton()</a> in a <a class="el" href="classregina_1_1Triangulation.html">Triangulation&lt;dim&gt;</a> subclass). </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a104a20d744b0b646783b60d819f43d22"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; int &gt;::clearBaseProperties </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Clears all properties that are managed by this base class. </p>
+<p>This includes deleting all skeletal objects and emptying the corresponding internal lists, as well as clearing other cached properties and deallocating the corresponding memory where required.</p>
+<p>Note that <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html" title="Provides core functionality for dim-dimensional triangulations.">TriangulationBase</a> never calls this routine itself. Typically <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a104a20d744b0b646783b60d819f43d22" title="Clears all properties that are managed by this base class.">clearBaseProperties()</a> is only ever called by Triangulation&lt;dim&gt;::clearAllProperties(), which in turn is called by "atomic" routines that change the triangluation (before firing packet change events), as well as the <a class="el" href="classregina_1_1Triangulation.html">Triangulation&lt;dim&gt;</a> destructor. </p>
 
 </div>
 </div>
@@ -593,43 +822,6 @@ template&lt;int dim&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a6f19e3f339c50f0b40dfa28c02d31878"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;int dim&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">size_t <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; dim &gt;::componentIndex </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classregina_1_1Component.html">Component</a>&lt; dim &gt; *&#160;</td>
-          <td class="paramname"><em>component</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Deprecated routine that returns the index of the given connected component in this triangulation. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000223">Deprecated:</a></b></dt><dd>This routine is deprecated, and will be removed in some future release of Regina. Just call component-&gt;index() instead.</dd></dl>
-<dl class="section pre"><dt>Precondition</dt><dd>The given component belongs to this triangulation.</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">component</td><td>specifies which component to find in the triangulation. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>the index of the specified component; this will be an integer between 0 and <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a2ea7f4ec2de2b34dbe345bf2ac71274d" title="Returns the number of connected components in this triangulation.">countComponents()</a>-1 inclusive. </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="af52f03e39a1ac74ad4572d6dc3cb6081"></a>
 <div class="memitem">
 <div class="memproto">
@@ -658,6 +850,35 @@ template&lt;int dim&gt; </div>
 <p>In contrast, this reference to the <em>list</em> of all components will remain valid and up-to-date for as long as the triangulation exists.</p>
 <dl class="section user"><dt>Python:</dt><dd>This routine returns a python list.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the list of all components. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af0dad220753e25845aa715b3a8747179"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; dim &gt;::countBoundaryComponents </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the number of boundary components in this triangulation. </p>
+<p>Note that, in Regina's <a class="el" href="stddim.html">standard dimensions</a>, each ideal vertex forms its own boundary component, and some invalid vertices do also. See the <a class="el" href="classregina_1_1BoundaryComponent.html" title="A component of the boundary of a dim-manifold triangulation.">BoundaryComponent</a> class notes for full details on what constitutes a boundary component in standard and non-standard dimensions.</p>
+<dl class="section return"><dt>Returns</dt><dd>the number of boundary components. </dd></dl>
 
 </div>
 </div>
@@ -776,37 +997,6 @@ template&lt;int subdim&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a85c4601f644bed4d5972eaef52c68fdc"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;int dim&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; dim &gt;::deleteSkeleton </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Deallocates all skeletal objects that are managed by this triangulation, and empties all corresponding internal lists. </p>
-<p>The next time a user queries some skeletal property, the skeleton will be recalculated.</p>
-<p><a class="el" href="classregina_1_1Triangulation.html">Triangulation&lt;dim&gt;</a> subclasses should reimplement this if they track additional skeletal data, but they <em>must</em> call this parent implementation.</p>
-<p>Note that <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html" title="Provides core functionality for dim-dimensional triangulations.">TriangulationBase</a> never calls this routine itself. Typically <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a85c4601f644bed4d5972eaef52c68fdc" title="Deallocates all skeletal objects that are managed by this triangulation, and empties all correspondin...">deleteSkeleton()</a> is only ever called by Triangulation&lt;dim&gt;::clearAllProperties, which in turn is called by the <a class="el" href="classregina_1_1Triangulation.html">Triangulation&lt;dim&gt;</a> destructor.</p>
-<dl class="section warning"><dt>Warning</dt><dd>Any call to <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a85c4601f644bed4d5972eaef52c68fdc" title="Deallocates all skeletal objects that are managed by this triangulation, and empties all correspondin...">deleteSkeleton()</a> must first cast down to <a class="el" href="classregina_1_1Triangulation.html">Triangulation&lt;dim&gt;</a>. You should never directly call this parent implementation (unless of course you are reimplementing <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a85c4601f644bed4d5972eaef52c68fdc" title="Deallocates all skeletal objects that are managed by this triangulation, and empties all correspondin...">deleteSkeleton()</a> in a <a class="el" href="classregina_1_1Triangulation.html">Triangulation&lt;dim&gt;</a> subclass). </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="a5df13959cbb5b7cc2510eb30b503c166"></a>
 <div class="memitem">
 <div class="memproto">
@@ -858,6 +1048,37 @@ template&lt;int dim&gt; </div>
 </div><div class="memdoc">
 
 <p>Ensures that all "on demand" skeletal objects have been calculated. </p>
+
+</div>
+</div>
+<a class="anchor" id="aeb338fc35c6ab52d7568896e4e4d4371"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; dim &gt;::eulerCharTri </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the Euler characteristic of this triangulation. </p>
+<p>This will be evaluated strictly as the alternating sum of the number of <em>i</em>-faces (that is, <code>countVertices() - countEdges() + countTriangles() - ...</code>).</p>
+<p>Note that this routine handles ideal triangulations in a non-standard way. Since it computes the Euler characteristic of the triangulation (and not the underlying manifold), this routine will treat each ideal boundary component as a single vertex, and <em>not</em> as an entire (<em>dim</em>-1)-dimensional boundary component.</p>
+<p>In Regina's <a class="el" href="stddim.html">standard dimensions</a>, for a routine that handles ideal boundary components properly (by treating them as (<em>dim</em>-1)-dimensional boundary components when computing Euler characteristic), you can use the routine eulerCharManifold() instead.</p>
+<dl class="section return"><dt>Returns</dt><dd>the Euler characteristic of this triangulation. </dd></dl>
 
 </div>
 </div>
@@ -1140,6 +1361,39 @@ template&lt;int &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a21ba3093cb762d6dd200243170f29090"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int dim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classregina_1_1GroupPresentation.html">GroupPresentation</a> &amp; <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; dim &gt;::fundamentalGroup </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the fundamental group of this triangulation. </p>
+<p>The fundamental group is computed in the dual 2-skeleton. This means:</p>
+<ul>
+<li>If the triangulation contains any ideal vertices, the fundamental group will be calculated as if each such vertex had been truncated.</li>
+</ul>
+<ul>
+<li>Likewise, if the triangulation contains any invalid faces of dimension 0,1,...,(<em>dim</em>-3), these will effectively be truncated also.</li>
+</ul>
+<ul>
+<li>In contrast, if the triangulation contains any invalid (<em>dim</em>-2)-faces (i.e., codimension-2-faces that are identified with themselves under a non-trivial map), the fundamental group will be computed <em>without</em> truncating the centroid of the face. For instance, if a 3-manifold triangulation has an edge identified with itself in reverse, then the fundamental group will be computed without truncating the resulting projective plane cusp. This means that, if a barycentric subdivision is performed on a such a triangulation, the result of <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a21ba3093cb762d6dd200243170f29090" title="Returns the fundamental group of this triangulation.">fundamentalGroup()</a> might change.</li>
+</ul>
+<p>Bear in mind that each time the triangulation changes, the fundamental group will be deleted. Thus the reference that is returned from this routine should not be kept for later use. Instead, <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a21ba3093cb762d6dd200243170f29090" title="Returns the fundamental group of this triangulation.">fundamentalGroup()</a> should be called again; this will be instantaneous if the group has already been calculated.</p>
+<dl class="section pre"><dt>Precondition</dt><dd>This triangulation has at most one component.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>In dimension 3, if you are calling this from the subclass <a class="el" href="classregina_1_1SnapPeaTriangulation.html" title="Offers direct access to the SnapPea kernel from within Regina.">SnapPeaTriangulation</a> then <b>any fillings on the cusps will be ignored</b>. (This is the same as for every routine implemented by Regina's <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html" title="Represents a 3-dimensional triangulation, typically of a 3-manifold.">Triangulation&lt;3&gt;</a> class.) If you wish to compute the fundamental group with fillings, call <a class="el" href="classregina_1_1SnapPeaTriangulation.html#a9cc95f4896ea0c195b35a666cc36cec3" title="Returns the fundamental group of the manifold with respect to the current Dehn filling (if any)...">SnapPeaTriangulation::fundamentalGroupFilled()</a> instead.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the fundamental group. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a0ff2a6ce37f4021f6d93309ec29a2232"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1170,235 +1424,6 @@ template&lt;int dim&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a855675725502f984ea24db34e6b2a9d8"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;int dim&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classregina_1_1Component.html">Component</a>&lt; dim &gt; * <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; dim &gt;::getComponent </td>
-          <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>index</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Deprecated routine that returns the requested connected component of this triangulation. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000222">Deprecated:</a></b></dt><dd>Simply call <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#aa5ee1eaa26fe337535ca3945ef063972" title="Returns the requested connected component of this triangulation.">component()</a> instead.</dd></dl>
-<p>See <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#aa5ee1eaa26fe337535ca3945ef063972" title="Returns the requested connected component of this triangulation.">component()</a> for further details. </p>
-
-</div>
-</div>
-<a class="anchor" id="a063f51a8c5f88e26ee430064d980a193"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;int dim&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::vector&lt; <a class="el" href="classregina_1_1Component.html">Component</a>&lt; dim &gt; * &gt; &amp; <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; dim &gt;::getComponents </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Deprecated routine that returns all connected components of this triangulation. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000221">Deprecated:</a></b></dt><dd>Simply call <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#af52f03e39a1ac74ad4572d6dc3cb6081" title="Returns all connected components of this triangulation.">components()</a> instead.</dd></dl>
-<p>See <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#af52f03e39a1ac74ad4572d6dc3cb6081" title="Returns all connected components of this triangulation.">components()</a> for further details. </p>
-
-</div>
-</div>
-<a class="anchor" id="a07b66283609320290206e1ca4004c614"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;int dim&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">size_t <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; dim &gt;::getNumberOfComponents </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Deprecated routine that returns the number of connected components in this triangulation. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000219">Deprecated:</a></b></dt><dd>Simply call <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a2ea7f4ec2de2b34dbe345bf2ac71274d" title="Returns the number of connected components in this triangulation.">countComponents()</a> instead.</dd></dl>
-<p>See <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a2ea7f4ec2de2b34dbe345bf2ac71274d" title="Returns the number of connected components in this triangulation.">countComponents()</a> for further details. </p>
-
-</div>
-</div>
-<a class="anchor" id="abe3f5cc17fb2daff24640b30287bddaf"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;int &gt; </div>
-<div class="memtemplate">
-template&lt;int subdim&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> size_t <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; int &gt;::getNumberOfFaces </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Deprecated routine that returns the number of <em>subdim</em>-faces in this triangulation. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000220">Deprecated:</a></b></dt><dd>Simply call <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#ac42b62f7033765a5e146cdaa855e62c1" title="Returns the number of subdim-faces in this triangulation.">countFaces()</a> instead.</dd></dl>
-<p>See <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#ac42b62f7033765a5e146cdaa855e62c1" title="Returns the number of subdim-faces in this triangulation.">countFaces()</a> for further details. </p>
-
-</div>
-</div>
-<a class="anchor" id="af520138d14508124ffba56446cc91aa5"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;int dim&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">size_t <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; dim &gt;::getNumberOfSimplices </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Deprecated routine that returns the number of top-dimensional simplices in the triangulation. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000214">Deprecated:</a></b></dt><dd>Simply call <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a6ca55a972a8c21f7e87960431d9ef64c" title="Returns the number of top-dimensional simplices in the triangulation.">size()</a> instead.</dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>the number of top-dimensional simplices. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a34ab68add2b36aa759661a3dba52f58c"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;int dim&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt; dim &gt; * <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; dim &gt;::getSimplex </td>
-          <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>index</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Deprecated routine that returns the top-dimensional simplex at the given index in the triangulation. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000216">Deprecated:</a></b></dt><dd>Simply call <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#ae2e269a7332e80aeec3603881fd175d3" title="Returns the top-dimensional simplex at the given index in the triangulation.">simplex()</a> instead.</dd></dl>
-<p>See <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#ae2e269a7332e80aeec3603881fd175d3" title="Returns the top-dimensional simplex at the given index in the triangulation.">simplex()</a> for further details. </p>
-
-</div>
-</div>
-<a class="anchor" id="a81b7a336d5871fab5779f75a88a032eb"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;int dim&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt; dim &gt; * <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; dim &gt;::getSimplex </td>
-          <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>index</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Deprecated routine that returns the top-dimensional simplex at the given index in the triangulation. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000217">Deprecated:</a></b></dt><dd>Simply call <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#ae2e269a7332e80aeec3603881fd175d3" title="Returns the top-dimensional simplex at the given index in the triangulation.">simplex()</a> instead.</dd></dl>
-<p>See <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#ae2e269a7332e80aeec3603881fd175d3" title="Returns the top-dimensional simplex at the given index in the triangulation.">simplex()</a> for further details. </p>
-
-</div>
-</div>
-<a class="anchor" id="a53ba54e03f1a777d6efbb079227c2a4b"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;int dim&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::vector&lt; <a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt; dim &gt; * &gt; &amp; <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; dim &gt;::getSimplices </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Deprecated routine that returns all of the top-dimensional simplices in the triangulation. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000215">Deprecated:</a></b></dt><dd>Simply call <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a721e084ec08bb631e35e14ff1c844f63" title="Returns all top-dimensional simplices in the triangulation.">simplices()</a> instead.</dd></dl>
-<p>See <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a721e084ec08bb631e35e14ff1c844f63" title="Returns all top-dimensional simplices in the triangulation.">simplices()</a> for further details. </p>
-
-</div>
-</div>
 <a class="anchor" id="a517c0fd1ec5190115785b91cca9e61b4"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1425,6 +1450,68 @@ template&lt;int dim&gt; </div>
 <p>Determines if this triangulation has any boundary facets. </p>
 <p>This routine returns <code>true</code> if and only if the triangulation contains some top-dimension simplex with at least one facet that is not glued to an adjacent simplex.</p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if and only if there are boundary facets. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="abe5cba1c19ba697c73c7ee7d2d0bca20"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int dim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classregina_1_1AbelianGroup.html">AbelianGroup</a> &amp; <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; dim &gt;::homology </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the first homology group for this triangulation. </p>
+<p>The homology is computed in the dual 2-skeleton. This means:</p>
+<ul>
+<li>If the triangulation contains any ideal vertices, the homology will be calculated as if each such vertex had been truncated.</li>
+</ul>
+<ul>
+<li>Likewise, if the triangulation contains any invalid faces of dimension 0,1,...,(<em>dim</em>-3), these will effectively be truncated also.</li>
+</ul>
+<ul>
+<li>In contrast, if the triangulation contains any invalid (<em>dim</em>-2)-faces (i.e., codimension-2-faces that are identified with themselves under a non-trivial map), the homology will be computed <em>without</em> truncating the centroid of the face. For instance, if a 3-manifold triangulation has an edge identified with itself in reverse, then the homology will be computed without truncating the resulting projective plane cusp. This means that, if a barycentric subdivision is performed on a such a triangulation, the result of <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#abe5cba1c19ba697c73c7ee7d2d0bca20" title="Returns the first homology group for this triangulation.">homology()</a> might change.</li>
+</ul>
+<p>This routine can also be accessed via the alias <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#ada9c5cfbc3e88b51ce9bb9a1974c9396" title="Returns the first homology group for this triangulation.">homologyH1()</a> (a name that is more specific, but a little longer to type).</p>
+<p>Bear in mind that each time the triangulation changes, the homology groups will be deleted. Thus the reference that is returned from this routine should not be kept for later use. Instead, <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#abe5cba1c19ba697c73c7ee7d2d0bca20" title="Returns the first homology group for this triangulation.">homology()</a> should be called again; this will be instantaneous if the group has already been calculated.</p>
+<dl class="section warning"><dt>Warning</dt><dd>In dimension 3, if you are calling this from the subclass <a class="el" href="classregina_1_1SnapPeaTriangulation.html" title="Offers direct access to the SnapPea kernel from within Regina.">SnapPeaTriangulation</a> then <b>any fillings on the cusps will be ignored</b>. (This is the same as for every routine implemented by Regina's <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html" title="Represents a 3-dimensional triangulation, typically of a 3-manifold.">Triangulation&lt;3&gt;</a> class.) If you wish to compute homology with fillings, call <a class="el" href="classregina_1_1SnapPeaTriangulation.html#a954697d054412f232dfc95d526ad54fb" title="Returns the first homology group of the manifold with respect to the current Dehn filling (if any)...">SnapPeaTriangulation::homologyFilled()</a> instead.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the first homology group. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ada9c5cfbc3e88b51ce9bb9a1974c9396"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classregina_1_1AbelianGroup.html">AbelianGroup</a> &amp; <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; dim &gt;::homologyH1 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the first homology group for this triangulation. </p>
+<p>This is identical to calling <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#abe5cba1c19ba697c73c7ee7d2d0bca20" title="Returns the first homology group for this triangulation.">homology()</a>. See the <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#abe5cba1c19ba697c73c7ee7d2d0bca20" title="Returns the first homology group for this triangulation.">homology()</a> documentation for further details.</p>
+<dl class="section return"><dt>Returns</dt><dd>the first homology group. </dd></dl>
 
 </div>
 </div>
@@ -1461,7 +1548,7 @@ template&lt;int dim&gt; </div>
 </div><div class="memdoc">
 
 <p>Inserts a given triangulation into this triangulation, where the given triangulation is described by a pair of integer arrays. </p>
-<p>The main purpose of this routine is to allow users to hard-code triangulations into C++ source files. In particular, all of the simplex gluings can be hard-coded into a pair of integer arrays at the beginning of the source file, avoiding an otherwise tedious sequence of many calls to <a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a3a6f3e8808a02cd3c2cb30b6859d307c" title="Joins the given facet of this simplex to some facet of another simplex.">Simplex&lt;dim&gt;::join()</a>. If you have a particular triangulation that you would like to hard-code in this way, you can call <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a5df13959cbb5b7cc2510eb30b503c166" title="Returns C++ code that can be used with insertConstruction() to reconstruct this triangulation.">dumpConstruction()</a> to generate the corresponding integer arrays as C++ source code.</p>
+<p>The main purpose of this routine is to allow users to hard-code triangulations into C++ source files. In particular, all of the simplex gluings can be hard-coded into a pair of integer arrays at the beginning of the source file, avoiding an otherwise tedious sequence of many calls to <a class="el" href="classregina_1_1detail_1_1SimplexBase.html#ad1f0a3046ec46f13f270bbc82193c5cc" title="Joins the given facet of this simplex to some facet of another simplex.">Simplex&lt;dim&gt;::join()</a>. If you have a particular triangulation that you would like to hard-code in this way, you can call <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a5df13959cbb5b7cc2510eb30b503c166" title="Returns C++ code that can be used with insertConstruction() to reconstruct this triangulation.">dumpConstruction()</a> to generate the corresponding integer arrays as C++ source code.</p>
 <p>This routine will insert an additional <em>nSimplices</em> top-dimensional simplices into this triangulation. We number these simplices 0,1,...,<em>nSimplices</em>-1. The gluings between these new simplices should be stored in the two arrays as follows.</p>
 <p>The <em>adjacencies</em> array describes which simplices are joined to which others. Specifically, <code>adjacencies[s][f]</code> indicates which of the new simplices is joined to facet <em>f</em> of simplex <em>s</em>. This should be between 0 and <em>nSimplices</em>-1 inclusive, or -1 if facet <em>f</em> of simplex <em>s</em> is to be left as a boundary facet.</p>
 <p>The <em>gluings</em> array describes the particular gluing permutations used to join these simplices together. Specifically, <code>gluings[s][f][0..<em>dim</em>]</code> should describe the permutation used to join facet <em>f</em> of simplex <em>s</em> to its adjacent simplex. These <em>dim</em>+1 integers should be 0,1,...,<em>dim</em> in some order, so that <code>gluings[s][f][i]</code> contains the image of <em>i</em> under this permutation. If facet <em>f</em> of simplex <em>s</em> is to be left as a boundary facet, then <code>gluings[s][f][0..<em>dim</em>]</code> may contain anything (and will be duly ignored).</p>
@@ -1668,7 +1755,7 @@ template&lt;int dim&gt; </div>
 <p>There may be many such isomorphisms between the two triangulations. If you need to find <em>all</em> such isomorphisms, you may call <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a5de089bc182f4e43410ea8b262d47cac" title="Finds all ways in which this triangulation is combinatorially isomorphic to the given triangulation...">findAllIsomorphisms()</a> instead.</p>
 <p>If you need to ensure that top-dimensional simplices are labelled the same in both triangulations (i.e., that the triangulations are related by the <em>identity</em> isomorphism), you should call the stricter test <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a00301fd26f1eaaa4df55b94b8369a054" title="Determines if this triangulation is combinatorially identical to the given triangulation.">isIdenticalTo()</a> instead.</p>
 <dl class="section warning"><dt>Warning</dt><dd>For large dimensions, this routine can become extremely slow: its running time includes a factor of (<em>dim</em>+1)!.</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000018">Todo:</a></b></dt><dd><em>Optimise:</em> Improve the complexity by choosing a simplex mapping from each component and following gluings to determine the others.</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000047">Todo:</a></b></dt><dd><em>Optimise:</em> Improve the complexity by choosing a simplex mapping from each component and following gluings to determine the others.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">other</td><td>the triangulation to compare with this one. </td></tr>
@@ -1911,7 +1998,7 @@ template&lt;int dim&gt; </div>
 <p>Moves the contents of this triangulation into the given destination triangulation, without destroying any pre-existing contents. </p>
 <p>All top-dimensional simplices that currently belong to <em>dest</em> will remain there (and will keep the same indices in <em>dest</em>). All top-dimensional simplices that belong to this triangulation will be moved into <em>dest</em> also (but in general their indices will change).</p>
 <p>This triangulation will become empty as a result.</p>
-<p>Any pointers or references to <a class="el" href="classregina_1_1Simplex.html">Simplex&lt;dim&gt;</a> objects will remain valid.</p>
+<p>Any pointers or references to Simplex&lt;dim&gt; objects will remain valid.</p>
 <dl class="section pre"><dt>Precondition</dt><dd><em>dest</em> is not this triangulation.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1929,7 +2016,7 @@ template&lt;int dim&gt; </div>
 template&lt;int dim&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt; dim &gt; * <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; dim &gt;::newSimplex </td>
+          <td class="memname"><a class="el" href="group__generic.html#gad4bfc8e4b6a2b1452937e33f56ab9eb3">Simplex</a>&lt; dim &gt; * <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; dim &gt;::newSimplex </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1951,7 +2038,7 @@ template&lt;int dim&gt; </div>
 template&lt;int dim&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt; dim &gt; * <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; dim &gt;::newSimplex </td>
+          <td class="memname"><a class="el" href="group__generic.html#gad4bfc8e4b6a2b1452937e33f56ab9eb3">Simplex</a>&lt; dim &gt; * <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; dim &gt;::newSimplex </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>desc</em></td><td>)</td>
@@ -2036,7 +2123,7 @@ template&lt;int dim&gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; dim &gt;::removeSimplex </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt; dim &gt; *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__generic.html#gad4bfc8e4b6a2b1452937e33f56ab9eb3">Simplex</a>&lt; dim &gt; *&#160;</td>
           <td class="paramname"><em>simplex</em></td><td>)</td>
           <td></td>
         </tr>
@@ -2174,7 +2261,7 @@ template&lt;int dim&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt; dim &gt; * <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; dim &gt;::simplex </td>
+          <td class="memname"><a class="el" href="group__generic.html#gad4bfc8e4b6a2b1452937e33f56ab9eb3">Simplex</a>&lt; dim &gt; * <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; dim &gt;::simplex </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
@@ -2210,7 +2297,7 @@ template&lt;int dim&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt; dim &gt; * <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; dim &gt;::simplex </td>
+          <td class="memname">const <a class="el" href="group__generic.html#gad4bfc8e4b6a2b1452937e33f56ab9eb3">Simplex</a>&lt; dim &gt; * <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; dim &gt;::simplex </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
@@ -2236,45 +2323,6 @@ template&lt;int dim&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a2ce68133679df7667c7347499133f240"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;int dim&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">size_t <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; dim &gt;::simplexIndex </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt; dim &gt; *&#160;</td>
-          <td class="paramname"><em>simplex</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Deprecated routine that returns the index of the given top-dimensional simplex in the triangulation. </p>
-<p>Note that indexing may change when a simplex is added to or removed from the triangulation.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000218">Deprecated:</a></b></dt><dd>This routine is deprecated, and will be removed in some future release of Regina. Just call simplex-&gt;index() instead.</dd></dl>
-<dl class="section pre"><dt>Precondition</dt><dd>The given simplex is contained in this triangulation.</dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>Passing a null pointer to this routine will probably crash your program. If you are passing the result of some other routine that <em>might</em> return null (such as <a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a4e7dc80caae081bbf7d99b40eb488e51" title="Returns the adjacent simplex that is glued to the given facet of this simplex.">Simplex&lt;dim&gt;::adjacentSimplex</a>), you should explicitly test for null beforehand.</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">simplex</td><td>specifies which simplex to find in the triangulation. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>the index of the specified simplex; this will be an integer between 0 and <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a6ca55a972a8c21f7e87960431d9ef64c" title="Returns the number of top-dimensional simplices in the triangulation.">size()</a>-1 inclusive. </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="a721e084ec08bb631e35e14ff1c844f63"></a>
 <div class="memitem">
 <div class="memproto">
@@ -2285,7 +2333,7 @@ template&lt;int dim&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::vector&lt; <a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt; dim &gt; * &gt; &amp; <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; dim &gt;::simplices </td>
+          <td class="memname">const std::vector&lt; <a class="el" href="group__generic.html#gad4bfc8e4b6a2b1452937e33f56ab9eb3">Simplex</a>&lt; dim &gt; * &gt; &amp; <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; dim &gt;::simplices </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -2302,6 +2350,45 @@ template&lt;int dim&gt; </div>
 <p>The reference that is returned will remain valid for as long as the triangulation exists: even as simplices are added and/or removed, it will always reflect the simplices that are currently in the triangulation.</p>
 <dl class="section user"><dt>Python:</dt><dd>This routine returns a python list.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the list of all top-dimensional simplices. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af74cde5c3b790195df3e10e2e53e390b"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; dim &gt;::simplifiedFundamentalGroup </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classregina_1_1GroupPresentation.html">GroupPresentation</a> *&#160;</td>
+          <td class="paramname"><em>newGroup</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Notifies the triangulation that you have simplified the presentation of its fundamental group. </p>
+<p>The old group presentation will be destroyed, and this triangulation will take ownership of the new (hopefully simpler) group that is passed.</p>
+<p>This routine is useful for situations in which some external body (such as GAP) has simplified the group presentation better than Regina can.</p>
+<p>Regina does <em>not</em> verify that the new group presentation is equivalent to the old, since this is - well, hard.</p>
+<p>If the fundamental group has not yet been calculated for this triangulation, this routine will nevertheless take ownership of the new group, under the assumption that you have worked out the group through some other clever means without ever having needed to call <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a21ba3093cb762d6dd200243170f29090" title="Returns the fundamental group of this triangulation.">fundamentalGroup()</a> at all.</p>
+<p>Note that this routine will not fire a packet change event.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newGroup</td><td>a new (and hopefully simpler) presentation of the fundamental group of this triangulation. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -2333,7 +2420,7 @@ template&lt;int dim&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a85435d4303792273aad5e662a7d67426"></a>
+<a class="anchor" id="a269bd2c09cea50d26a2a6bb125d55652"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -2342,7 +2429,7 @@ template&lt;int dim&gt; </div>
         <tr>
           <td class="memname">size_t <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; dim &gt;::splitIntoComponents </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classregina_1_1NPacket.html">NPacket</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="classregina_1_1Packet.html">Packet</a> *&#160;</td>
           <td class="paramname"><em>componentParent</em> = <code>0</code>, </td>
         </tr>
         <tr>
@@ -2374,6 +2461,41 @@ template&lt;int dim&gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="aed565fd71935ebdc8f9d6af6bd46d666"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; int &gt;::swapBaseProperties </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">TriangulationBase</a>&lt; dim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Swaps all properties that are managed by this base class, including skeletal data, with the given triangulation. </p>
+<p>Note that <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html" title="Provides core functionality for dim-dimensional triangulations.">TriangulationBase</a> never calls this routine itself. Typically <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#aed565fd71935ebdc8f9d6af6bd46d666" title="Swaps all properties that are managed by this base class, including skeletal data, with the given triangulation.">swapBaseProperties()</a> is only ever called by Triangulation&lt;dim&gt;::swapAllProperties(), which in turn is called by <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#ad43e7587b785f281f5f5c553f263484e" title="Swaps the contents of this and the given triangulation.">swapContents()</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>the triangulation whose properties should be swapped with this. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="ad43e7587b785f281f5f5c553f263484e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -2391,8 +2513,9 @@ template&lt;int dim&gt; </div>
 </div><div class="memdoc">
 
 <p>Swaps the contents of this and the given triangulation. </p>
-<p>All top-dimensional simplices that belong to this triangulation will be moved to <em>other</em>, and all top-dimensional simplices that belong to <em>other</em> will be moved to this triangulation.</p>
-<p>Any pointers or references to <a class="el" href="classregina_1_1Simplex.html">Simplex&lt;dim&gt;</a> objects will remain valid.</p>
+<p>All top-dimensional simplices that belong to this triangulation will be moved to <em>other</em>, and all top-dimensional simplices that belong to <em>other</em> will be moved to this triangulation. Likewise, all skeletal objects (such as lower-dimensional faces, components, and boundary components) and all cached properties (such as homology and fundamental group) will be swapped.</p>
+<p>In particular, any pointers or references to Simplex&lt;dim&gt; and/or <a class="el" href="classregina_1_1Face.html">Face&lt;dim, subdim&gt;</a> objects will remain valid.</p>
+<p>This routine will behave correctly if <em>other</em> is in fact this triangulation.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">other</td><td>the triangulation whose contents should be swapped with this. </td></tr>
@@ -2402,8 +2525,76 @@ template&lt;int dim&gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a013abf7fffeba839fb47a2dcfaee19f5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classregina_1_1detail_1_1FaceListSuite.html">regina::detail::FaceListSuite</a>&lt; dim, subdim &gt;::swapFaces </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classregina_1_1detail_1_1FaceListSuite.html">FaceListSuite</a>&lt; dim, subdim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Swaps all faces of dimension <em>subdim</em> and below with those of the given triangulation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>the face storage for the triangulation whose faces are to be swapped with this. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a89c51de87cc69b8c7fc2385d26382385"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; dim &gt;::writeXMLBaseProperties </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes a chunk of XML containing properties of this triangulation. </p>
+<p>This routine covers those properties that are managed by this base class <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html" title="Provides core functionality for dim-dimensional triangulations.">TriangulationBase</a> and that have already been computed for this triangulation.</p>
+<p>This routine is typically called from within <a class="el" href="classregina_1_1Triangulation.html#ae48e72fa92a91625c93e3e452b5d7b5b" title="Writes a chunk of XML containing the data for this packet only.">Triangulation&lt;dim&gt;::writeXMLPacketData()</a>. The XML elements that it writes are child elements of the <code>packet</code> element.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>the output stream to which the XML should be written. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a356963e7a7661a0abcc9024a890652ba"></a>
+<a class="anchor" id="ac280128dabd3208670cb0fdc010dffb8"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -2413,7 +2604,55 @@ template&lt;int &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classregina_1_1NMarkedVector.html">NMarkedVector</a>&lt;<a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt;dim&gt; &gt; <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; int &gt;::simplices_</td>
+          <td class="memname"><a class="el" href="classregina_1_1MarkedVector.html">MarkedVector</a>&lt;<a class="el" href="classregina_1_1BoundaryComponent.html">BoundaryComponent</a>&lt;dim&gt; &gt; <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; int &gt;::boundaryComponents_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The components that form the boundary of the triangulation. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3ef8ae8c6af5b7757dddc44327ea3133"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; int &gt;::dimension = dim</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A compile-time constant that gives the dimension of the triangulation. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3fba432b4a7a57ee4e21a9523151c660"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classregina_1_1MarkedVector.html">MarkedVector</a>&lt;<a class="el" href="group__generic.html#gad4bfc8e4b6a2b1452937e33f56ab9eb3">Simplex</a>&lt;dim&gt; &gt; <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html">regina::detail::TriangulationBase</a>&lt; int &gt;::simplices_</td>
         </tr>
       </table>
   </td>
@@ -2452,8 +2691,8 @@ template&lt;int &gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>generic/detail/<a class="el" href="detail_2component_8h.html">component.h</a></li>
-<li>generic/detail/<a class="el" href="detail_2triangulation_8h.html">triangulation.h</a></li>
+<li>triangulation/detail/<a class="el" href="triangulation_2detail_2boundarycomponent_8h.html">boundarycomponent.h</a></li>
+<li>triangulation/detail/<a class="el" href="triangulation_2detail_2triangulation_8h.html">triangulation.h</a></li>
 </ul>
 </div><!-- contents -->
 <hr>

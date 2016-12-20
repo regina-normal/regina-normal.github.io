@@ -62,7 +62,7 @@
 <p>A subclass of <a class="el" href="classregina_1_1LPConstraintBase.html" title="A base class for additional linear constraints that we can add to the tableaux of normal surface or a...">LPConstraintBase</a> used for constraints defined entirely by homogeneous linear equations.  
  <a href="classregina_1_1LPConstraintSubspace.html#details">More...</a></p>
 
-<p><code>#include &lt;enumerate/ntreeconstraint.h&gt;</code></p>
+<p><code>#include &lt;enumerate/treeconstraint.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for regina::LPConstraintSubspace:</div>
 <div class="dyncontent">
@@ -83,19 +83,19 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:gaa567307d99e7b5d9c3e19baebc64a8c8"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__enumerate.html#gaa567307d99e7b5d9c3e19baebc64a8c8">addRows</a> (<a class="el" href="classregina_1_1LPCol.html">LPCol</a>&lt; <a class="el" href="classregina_1_1LPConstraintBase.html">LPConstraintBase</a> &gt; *col, const int *columnPerm, const <a class="el" href="group__hypersurface.html#gaa504c0ed97bb88a50712083a7af647ab">NTriangulation</a> *tri)</td></tr>
-<tr class="memdesc:gaa567307d99e7b5d9c3e19baebc64a8c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicitly constructs equations for the linear function(s) constrained by this class.  <a href="group__enumerate.html#gaa567307d99e7b5d9c3e19baebc64a8c8">More...</a><br/></td></tr>
-<tr class="separator:gaa567307d99e7b5d9c3e19baebc64a8c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga494037a475263e7786da15676e3efef5"><td class="memTemplParams" colspan="2">template&lt;typename Integer &gt; </td></tr>
-<tr class="memitem:ga494037a475263e7786da15676e3efef5"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__enumerate.html#ga494037a475263e7786da15676e3efef5">constrain</a> (<a class="el" href="classregina_1_1LPData.html">LPData</a>&lt; <a class="el" href="classregina_1_1LPConstraintNone.html">LPConstraintNone</a>, Integer &gt; &amp;lp, unsigned numCols)</td></tr>
-<tr class="memdesc:ga494037a475263e7786da15676e3efef5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicitly constraints each of these linear functions to an equality or inequality in the underlying tableaux.  <a href="group__enumerate.html#ga494037a475263e7786da15676e3efef5">More...</a><br/></td></tr>
-<tr class="separator:ga494037a475263e7786da15676e3efef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga15ffef1424b81b573b726f566959c4f8"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__enumerate.html#ga15ffef1424b81b573b726f566959c4f8">verify</a> (const <a class="el" href="classregina_1_1NNormalSurface.html">NNormalSurface</a> *s)</td></tr>
-<tr class="memdesc:ga15ffef1424b81b573b726f566959c4f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensures that the given normal surface satisfies the extra constraints described by this class.  <a href="group__enumerate.html#ga15ffef1424b81b573b726f566959c4f8">More...</a><br/></td></tr>
-<tr class="separator:ga15ffef1424b81b573b726f566959c4f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga025e9e7ba57f0c5ed9eb91a4b375d079"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__enumerate.html#ga025e9e7ba57f0c5ed9eb91a4b375d079">verify</a> (const <a class="el" href="classregina_1_1NAngleStructure.html">NAngleStructure</a> *s)</td></tr>
-<tr class="memdesc:ga025e9e7ba57f0c5ed9eb91a4b375d079"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensures that the given angle structure satisfies the extra constraints described by this class.  <a href="group__enumerate.html#ga025e9e7ba57f0c5ed9eb91a4b375d079">More...</a><br/></td></tr>
-<tr class="separator:ga025e9e7ba57f0c5ed9eb91a4b375d079"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac663caf3a27a7f814eec98e42cce10cf"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__enumerate.html#gac663caf3a27a7f814eec98e42cce10cf">addRows</a> (<a class="el" href="classregina_1_1LPCol.html">LPCol</a>&lt; <a class="el" href="classregina_1_1LPConstraintBase.html">LPConstraintBase</a> &gt; *col, const int *columnPerm, const <a class="el" href="classregina_1_1Triangulation.html">Triangulation</a>&lt; 3 &gt; *tri)</td></tr>
+<tr class="memdesc:gac663caf3a27a7f814eec98e42cce10cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicitly constructs equations for the linear function(s) constrained by this class.  <a href="group__enumerate.html#gac663caf3a27a7f814eec98e42cce10cf">More...</a><br/></td></tr>
+<tr class="separator:gac663caf3a27a7f814eec98e42cce10cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6d90776df2cdaa5cf7fbf55b9762e1e2"><td class="memTemplParams" colspan="2">template&lt;typename IntType &gt; </td></tr>
+<tr class="memitem:ga6d90776df2cdaa5cf7fbf55b9762e1e2"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__enumerate.html#ga6d90776df2cdaa5cf7fbf55b9762e1e2">constrain</a> (<a class="el" href="classregina_1_1LPData.html">LPData</a>&lt; <a class="el" href="classregina_1_1LPConstraintNone.html">LPConstraintNone</a>, IntType &gt; &amp;lp, unsigned numCols)</td></tr>
+<tr class="memdesc:ga6d90776df2cdaa5cf7fbf55b9762e1e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicitly constraints each of these linear functions to an equality or inequality in the underlying tableaux.  <a href="group__enumerate.html#ga6d90776df2cdaa5cf7fbf55b9762e1e2">More...</a><br/></td></tr>
+<tr class="separator:ga6d90776df2cdaa5cf7fbf55b9762e1e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad3473818bf1e24235d4b9705cdfccfbf"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__enumerate.html#gad3473818bf1e24235d4b9705cdfccfbf">verify</a> (const <a class="el" href="classregina_1_1NormalSurface.html">NormalSurface</a> *s)</td></tr>
+<tr class="memdesc:gad3473818bf1e24235d4b9705cdfccfbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensures that the given normal surface satisfies the extra constraints described by this class.  <a href="group__enumerate.html#gad3473818bf1e24235d4b9705cdfccfbf">More...</a><br/></td></tr>
+<tr class="separator:gad3473818bf1e24235d4b9705cdfccfbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2bfeab411c86ea6b91eb7cf1afb655c1"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__enumerate.html#ga2bfeab411c86ea6b91eb7cf1afb655c1">verify</a> (const <a class="el" href="classregina_1_1AngleStructure.html">AngleStructure</a> *s)</td></tr>
+<tr class="memdesc:ga2bfeab411c86ea6b91eb7cf1afb655c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensures that the given angle structure satisfies the extra constraints described by this class.  <a href="group__enumerate.html#ga2bfeab411c86ea6b91eb7cf1afb655c1">More...</a><br/></td></tr>
+<tr class="separator:ga2bfeab411c86ea6b91eb7cf1afb655c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9ba753d9c3432becdfcb3a7e08b7762e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__enumerate.html#ga9ba753d9c3432becdfcb3a7e08b7762e">supported</a> (<a class="el" href="group__surfaces.html#ga9817fc7125c53daea4e3f3cbfe987a47">NormalCoords</a> coords)</td></tr>
 <tr class="memdesc:ga9ba753d9c3432becdfcb3a7e08b7762e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the given coordinate system is supported by this constraint class.  <a href="group__enumerate.html#ga9ba753d9c3432becdfcb3a7e08b7762e">More...</a><br/></td></tr>
 <tr class="separator:ga9ba753d9c3432becdfcb3a7e08b7762e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -107,7 +107,7 @@ Static Public Member Functions</h2></td></tr>
 <dl class="section warning"><dt>Warning</dt><dd>The API for this class has not yet been finalised. This means that the class interface may change in new versions of Regina, without maintaining backward compatibility. If you use this class directly in your own code, please watch the detailed changelogs upon new releases to see if you need to make changes to your code.</dd></dl>
 <dl class="section user"><dt>Python:</dt><dd>Not present. </dd></dl>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
-<li>enumerate/<a class="el" href="ntreeconstraint_8h.html">ntreeconstraint.h</a></li>
+<li>enumerate/<a class="el" href="treeconstraint_8h.html">treeconstraint.h</a></li>
 </ul>
 </div><!-- contents -->
 <hr>

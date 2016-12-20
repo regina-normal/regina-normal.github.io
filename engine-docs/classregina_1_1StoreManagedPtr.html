@@ -61,10 +61,10 @@
 </div><!--header-->
 <div class="contents">
 
-<p>An <a class="el" href="classregina_1_1NProperty.html" title="Stores a calculable property of an object.">NProperty</a> storage policy indicating that the property should be held by pointer and that the property wrapper will also take responsibility for memory management.  
+<p>A <a class="el" href="classregina_1_1Property.html" title="Stores a calculable property of an object.">Property</a> storage policy indicating that the property should be held by pointer and that the property wrapper will also take responsibility for memory management.  
  <a href="classregina_1_1StoreManagedPtr.html#details">More...</a></p>
 
-<p><code>#include &lt;utilities/nproperty.h&gt;</code></p>
+<p><code>#include &lt;utilities/property.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -89,6 +89,9 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a2a4d1def8bd3e965dc227475025c4671"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1StoreManagedPtr.html#a2a4d1def8bd3e965dc227475025c4671">~StoreManagedPtr</a> ()</td></tr>
 <tr class="memdesc:a2a4d1def8bd3e965dc227475025c4671"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the currently held value if one exists.  <a href="#a2a4d1def8bd3e965dc227475025c4671">More...</a><br/></td></tr>
 <tr class="separator:a2a4d1def8bd3e965dc227475025c4671"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a001c1dfb31cef29d2642cdba7ff358"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1StoreManagedPtr.html#a8a001c1dfb31cef29d2642cdba7ff358">swap</a> (<a class="el" href="classregina_1_1StoreManagedPtr.html">StoreManagedPtr</a>&lt; T &gt; &amp;other)</td></tr>
+<tr class="memdesc:a8a001c1dfb31cef29d2642cdba7ff358"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swaps this with the given value.  <a href="#a8a001c1dfb31cef29d2642cdba7ff358">More...</a><br/></td></tr>
+<tr class="separator:a8a001c1dfb31cef29d2642cdba7ff358"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -100,9 +103,9 @@ Protected Attributes</h2></td></tr>
 <div class="textblock"><h3>template&lt;typename T&gt;<br/>
 class regina::StoreManagedPtr&lt; T &gt;</h3>
 
-<p>An <a class="el" href="classregina_1_1NProperty.html" title="Stores a calculable property of an object.">NProperty</a> storage policy indicating that the property should be held by pointer and that the property wrapper will also take responsibility for memory management. </p>
-<p>The property assignment and query routines will also use pointers; in particular the query routines will return a constant pointer. When the held value is changed or the <a class="el" href="classregina_1_1NProperty.html" title="Stores a calculable property of an object.">NProperty</a> wrapper is destroyed, any currently held value will be destroyed automatically.</p>
-<p>See the <a class="el" href="classregina_1_1NProperty.html" title="Stores a calculable property of an object.">NProperty</a> class notes for details.</p>
+<p>A <a class="el" href="classregina_1_1Property.html" title="Stores a calculable property of an object.">Property</a> storage policy indicating that the property should be held by pointer and that the property wrapper will also take responsibility for memory management. </p>
+<p>The property assignment and query routines will also use pointers; in particular the query routines will return a constant pointer. When the held value is changed or the <a class="el" href="classregina_1_1Property.html" title="Stores a calculable property of an object.">Property</a> wrapper is destroyed, any currently held value will be destroyed automatically.</p>
+<p>See the <a class="el" href="classregina_1_1Property.html" title="Stores a calculable property of an object.">Property</a> class notes for details.</p>
 <dl class="section user"><dt>Python:</dt><dd>Not present. </dd></dl>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a class="anchor" id="af6fa06368747d8c9860bc759c74bb982"></a>
@@ -221,6 +224,40 @@ template&lt;typename T&gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a8a001c1dfb31cef29d2642cdba7ff358"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classregina_1_1StoreManagedPtr.html">regina::StoreManagedPtr</a>&lt; T &gt;::swap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classregina_1_1StoreManagedPtr.html">StoreManagedPtr</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Swaps this with the given value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>the value to swap with this. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a class="anchor" id="a400e17c8cd860a90dfb0c5c9c2721edf"></a>
 <div class="memitem">
@@ -247,7 +284,7 @@ template&lt;typename T&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>utilities/<a class="el" href="nproperty_8h.html">nproperty.h</a></li>
+<li>utilities/<a class="el" href="property_8h.html">property.h</a></li>
 </ul>
 </div><!-- contents -->
 <hr>

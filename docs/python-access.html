@@ -1,9 +1,9 @@
-<html><head><title>Accessing Regina from Python</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina Handbook"><link rel="up" href="python.html" title="Chapter 8. Python Scripting"><link rel="prev" href="python.html" title="Chapter 8. Python Scripting"><link rel="next" href="python-caveats.html" title="Caveats and Traps"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina.sourceforge.net/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Accessing <span class="application">Regina</span> from <span class="application">Python</span></h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="python.html">Prev</a></td><td align="center" class="navCenter" width="34%"><span class="application">Python</span> Scripting</td><td align="right" class="navRight" width="33%"> 
+<html><head><title>Accessing Regina from Python</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina Handbook"><link rel="up" href="python.html" title="Chapter 8. Python Scripting"><link rel="prev" href="python.html" title="Chapter 8. Python Scripting"><link rel="next" href="python-caveats.html" title="Caveats and Traps"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Accessing <span class="application">Regina</span> from <span class="application">Python</span></h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="python.html">Prev</a></td><td align="center" class="navCenter" width="34%"><span class="application">Python</span> Scripting</td><td align="right" class="navRight" width="33%"> 
 		      <a accesskey="n" href="python-caveats.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="python-access"></a>Accessing <span class="application">Regina</span> from <span class="application">Python</span></h2></div></div></div><p>
    All of <span class="application">Regina</span>'s objects, classes and methods belong to the
    module called <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="parameter"><em class="parameter"><code>regina</code></em></span>.
    For instance, the main 3-manifold triangulation class is
-   <code class="literal">regina.NTriangulation</code>, and the main routine to
+   <code class="literal">regina.Triangulation3</code>, and the main routine to
    read a data file is <code class="literal">regina.open</code>.
   </p><p>
    Whenever <span class="application">Regina</span> gives you access to <span class="application">Python</span> (either through a
@@ -17,13 +17,13 @@
    (i.e., “<code class="literal">from regina import *</code>”).
   </p><p>
    This means, for instance, that you create a new triangulation by just
-   calling <code class="literal">NTriangulation()</code>, and you can read a data file
+   calling <code class="literal">Triangulation3()</code>, and you can read a data file
    by calling <code class="literal">open(filename)</code>.
    For command-line sessions, if you wish to avoid the heavy-handed
    “<code class="literal">from regina import *</code>”, you can pass
    the option <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--noautoimport</code></span> (in which case you will need to
    use fully qualified names such as
-   <code class="literal">regina.NTriangulation()</code> and
+   <code class="literal">regina.Triangulation3()</code> and
    <code class="literal">regina.open(filename)</code>).
   </p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="python-docs"></a>Documentation</h3></div></div></div><p>
     <span class="application">Regina</span> includes a complete <span class="acronym">API</span> reference for its calculation engine,
@@ -32,5 +32,5 @@
     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Help</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Python <span class="acronym">API</span> Reference</span></span>
     from the menu.  The <span class="acronym">API</span> reference should open in your web browser
     (where you can bookmark it if you like).
-    You can also read it online at <a href="http://regina.sourceforge.net/engine-docs/" target="_top">regina.sourceforge.net</a>.
+    You can also read it online at <a href="http://regina-normal.github.io/engine-docs/" target="_top">regina-normal.github.io</a>.
    </p></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="python.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="python-caveats.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft"><span class="application">Python</span> Scripting </td><td width="34%" align="center" class="navCenter"><a href="python.html">Up</a></td><td width="33%" align="right" class="navRight"> Caveats and Traps</td></tr></table></div></body></html>

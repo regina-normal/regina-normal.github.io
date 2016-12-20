@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>Regina Calculation Engine: regina::LPData&lt; LPConstraint, Integer &gt; Class Template Reference</title>
+<title>Regina Calculation Engine: regina::LPData&lt; LPConstraint, IntType &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -54,66 +54,67 @@
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classregina_1_1LPData-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">regina::LPData&lt; LPConstraint, Integer &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__enumerate.html">Vertex Enumeration</a></div></div>  </div>
+<div class="title">regina::LPData&lt; LPConstraint, IntType &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__enumerate.html">Vertex Enumeration</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
 <p>Stores an intermediate tableaux for the dual simplex method, and contains all of the core machinery for using the dual simplex method.  
  <a href="classregina_1_1LPData.html#details">More...</a></p>
 
-<p><code>#include &lt;enumerate/ntreelp.h&gt;</code></p>
+<p><code>#include &lt;enumerate/treelp.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5157ce41a1fefa87b2b57a89976d0279"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPData.html#a5157ce41a1fefa87b2b57a89976d0279">LPData</a> ()</td></tr>
-<tr class="memdesc:a5157ce41a1fefa87b2b57a89976d0279"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new tableaux.  <a href="#a5157ce41a1fefa87b2b57a89976d0279">More...</a><br/></td></tr>
-<tr class="separator:a5157ce41a1fefa87b2b57a89976d0279"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e28b6c48c7df4009648e16d98e37c8b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPData.html#a0e28b6c48c7df4009648e16d98e37c8b">~LPData</a> ()</td></tr>
-<tr class="memdesc:a0e28b6c48c7df4009648e16d98e37c8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys this tableaux.  <a href="#a0e28b6c48c7df4009648e16d98e37c8b">More...</a><br/></td></tr>
-<tr class="separator:a0e28b6c48c7df4009648e16d98e37c8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7fd7b13997e64254e97006c6ce35ff97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPData.html#a7fd7b13997e64254e97006c6ce35ff97">reserve</a> (const <a class="el" href="classregina_1_1LPInitialTableaux.html">LPInitialTableaux</a>&lt; LPConstraint &gt; *origTableaux)</td></tr>
-<tr class="memdesc:a7fd7b13997e64254e97006c6ce35ff97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserves enough memory for this tableaux to work with.  <a href="#a7fd7b13997e64254e97006c6ce35ff97">More...</a><br/></td></tr>
-<tr class="separator:a7fd7b13997e64254e97006c6ce35ff97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae96d1fc074598a010307a73127c4e8b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPData.html#ae96d1fc074598a010307a73127c4e8b4">initStart</a> ()</td></tr>
-<tr class="memdesc:ae96d1fc074598a010307a73127c4e8b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises this tableaux by beginning at the original starting tableaux and working our way to any feasible basis.  <a href="#ae96d1fc074598a010307a73127c4e8b4">More...</a><br/></td></tr>
-<tr class="separator:ae96d1fc074598a010307a73127c4e8b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17e0c799e4c5d678f325fd4f246a490d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPData.html#a17e0c799e4c5d678f325fd4f246a490d">initClone</a> (const <a class="el" href="classregina_1_1LPData.html">LPData</a> &amp;parent)</td></tr>
-<tr class="memdesc:a17e0c799e4c5d678f325fd4f246a490d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises this tableaux to be a clone of the given tableaux.  <a href="#a17e0c799e4c5d678f325fd4f246a490d">More...</a><br/></td></tr>
-<tr class="separator:a17e0c799e4c5d678f325fd4f246a490d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4008f03e567911477c518eb14872734b"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPData.html#a4008f03e567911477c518eb14872734b">columns</a> () const </td></tr>
-<tr class="memdesc:a4008f03e567911477c518eb14872734b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the number of columns in this tableaux.  <a href="#a4008f03e567911477c518eb14872734b">More...</a><br/></td></tr>
-<tr class="separator:a4008f03e567911477c518eb14872734b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2836a3c43ac66d6b2a20bf08bf91dbc"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPData.html#ad2836a3c43ac66d6b2a20bf08bf91dbc">coordinateColumns</a> () const </td></tr>
-<tr class="memdesc:ad2836a3c43ac66d6b2a20bf08bf91dbc"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the number of columns in this tableaux that correspond to normal coordinates or angle structure coordinates.  <a href="#ad2836a3c43ac66d6b2a20bf08bf91dbc">More...</a><br/></td></tr>
-<tr class="separator:ad2836a3c43ac66d6b2a20bf08bf91dbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a367c7cc40dd8967a32f32107303d84d0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPData.html#a367c7cc40dd8967a32f32107303d84d0">isFeasible</a> () const </td></tr>
-<tr class="memdesc:a367c7cc40dd8967a32f32107303d84d0"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> whether or not this system is feasible.  <a href="#a367c7cc40dd8967a32f32107303d84d0">More...</a><br/></td></tr>
-<tr class="separator:a367c7cc40dd8967a32f32107303d84d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ddc121a76d8bc1d0060010ccf701433"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPData.html#a3ddc121a76d8bc1d0060010ccf701433">isActive</a> (unsigned pos) const </td></tr>
-<tr class="memdesc:a3ddc121a76d8bc1d0060010ccf701433"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the given variable is currently active.  <a href="#a3ddc121a76d8bc1d0060010ccf701433">More...</a><br/></td></tr>
-<tr class="separator:a3ddc121a76d8bc1d0060010ccf701433"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c2e94f7cd3db993b25cabb2fe41ce35"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPData.html#a0c2e94f7cd3db993b25cabb2fe41ce35">sign</a> (unsigned pos) const </td></tr>
-<tr class="memdesc:a0c2e94f7cd3db993b25cabb2fe41ce35"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the sign of the given variable under the current basis.  <a href="#a0c2e94f7cd3db993b25cabb2fe41ce35">More...</a><br/></td></tr>
-<tr class="separator:a0c2e94f7cd3db993b25cabb2fe41ce35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af97fe24f1c8ae1c7d00993033d739437"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPData.html#af97fe24f1c8ae1c7d00993033d739437">constrainZero</a> (unsigned pos)</td></tr>
-<tr class="memdesc:af97fe24f1c8ae1c7d00993033d739437"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constrains this system further by setting the given variable to zero and deactivating it.  <a href="#af97fe24f1c8ae1c7d00993033d739437">More...</a><br/></td></tr>
-<tr class="separator:af97fe24f1c8ae1c7d00993033d739437"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e4d3e6e06d968bbe4e61f193d7c361c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPData.html#a9e4d3e6e06d968bbe4e61f193d7c361c">constrainPositive</a> (unsigned pos)</td></tr>
-<tr class="memdesc:a9e4d3e6e06d968bbe4e61f193d7c361c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constrains this system further by constraining the given variable to be strictly positive.  <a href="#a9e4d3e6e06d968bbe4e61f193d7c361c">More...</a><br/></td></tr>
-<tr class="separator:a9e4d3e6e06d968bbe4e61f193d7c361c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7203e2d4e09a03f7b8bcd6eb8b6d91b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPData.html#a7203e2d4e09a03f7b8bcd6eb8b6d91b8">constrainOct</a> (unsigned quad1, unsigned quad2)</td></tr>
-<tr class="memdesc:a7203e2d4e09a03f7b8bcd6eb8b6d91b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declares that two quadrilateral coordinates within a tetrahedron are to be combined into a single octagon coordinate, for use with almost normal surfaces, and constrains the system accordingly.  <a href="#a7203e2d4e09a03f7b8bcd6eb8b6d91b8">More...</a><br/></td></tr>
-<tr class="separator:a7203e2d4e09a03f7b8bcd6eb8b6d91b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f314db9519e459728469a1727d29528"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPData.html#a1f314db9519e459728469a1727d29528">dump</a> (std::ostream &amp;out) const </td></tr>
-<tr class="memdesc:a1f314db9519e459728469a1727d29528"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes details of this tableaux to the given output stream.  <a href="#a1f314db9519e459728469a1727d29528">More...</a><br/></td></tr>
-<tr class="separator:a1f314db9519e459728469a1727d29528"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c6b73efc0c3b993515bb36e98b228c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPData.html#a8c6b73efc0c3b993515bb36e98b228c8">extractSolution</a> (<a class="el" href="classregina_1_1NRay.html">NRay</a> &amp;v, const char *type) const </td></tr>
-<tr class="memdesc:a8c6b73efc0c3b993515bb36e98b228c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts the values of the individual variables from the current basis, with some modifications (as described below).  <a href="#a8c6b73efc0c3b993515bb36e98b228c8">More...</a><br/></td></tr>
-<tr class="separator:a8c6b73efc0c3b993515bb36e98b228c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac45a4647f5f984621209b6b0b3f68c4b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPData.html#ac45a4647f5f984621209b6b0b3f68c4b">LPData</a> ()</td></tr>
+<tr class="memdesc:ac45a4647f5f984621209b6b0b3f68c4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new tableaux.  <a href="#ac45a4647f5f984621209b6b0b3f68c4b">More...</a><br/></td></tr>
+<tr class="separator:ac45a4647f5f984621209b6b0b3f68c4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a294602a33df9186b5ccf57afdeb6c879"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPData.html#a294602a33df9186b5ccf57afdeb6c879">~LPData</a> ()</td></tr>
+<tr class="memdesc:a294602a33df9186b5ccf57afdeb6c879"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys this tableaux.  <a href="#a294602a33df9186b5ccf57afdeb6c879">More...</a><br/></td></tr>
+<tr class="separator:a294602a33df9186b5ccf57afdeb6c879"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5120903a7dd47e0e09ce98efd3885bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPData.html#ab5120903a7dd47e0e09ce98efd3885bb">reserve</a> (const <a class="el" href="classregina_1_1LPInitialTableaux.html">LPInitialTableaux</a>&lt; LPConstraint &gt; *origTableaux)</td></tr>
+<tr class="memdesc:ab5120903a7dd47e0e09ce98efd3885bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserves enough memory for this tableaux to work with.  <a href="#ab5120903a7dd47e0e09ce98efd3885bb">More...</a><br/></td></tr>
+<tr class="separator:ab5120903a7dd47e0e09ce98efd3885bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac48f34d3d8d79b3823f95bc2f64cf7a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPData.html#ac48f34d3d8d79b3823f95bc2f64cf7a3">initStart</a> ()</td></tr>
+<tr class="memdesc:ac48f34d3d8d79b3823f95bc2f64cf7a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises this tableaux by beginning at the original starting tableaux and working our way to any feasible basis.  <a href="#ac48f34d3d8d79b3823f95bc2f64cf7a3">More...</a><br/></td></tr>
+<tr class="separator:ac48f34d3d8d79b3823f95bc2f64cf7a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfb498c421ccd15a2853821057078ff2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPData.html#adfb498c421ccd15a2853821057078ff2">initClone</a> (const <a class="el" href="classregina_1_1LPData.html">LPData</a> &amp;parent)</td></tr>
+<tr class="memdesc:adfb498c421ccd15a2853821057078ff2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises this tableaux to be a clone of the given tableaux.  <a href="#adfb498c421ccd15a2853821057078ff2">More...</a><br/></td></tr>
+<tr class="separator:adfb498c421ccd15a2853821057078ff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a7168ef9cafb534f0fefc865477f5b9"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPData.html#a5a7168ef9cafb534f0fefc865477f5b9">columns</a> () const </td></tr>
+<tr class="memdesc:a5a7168ef9cafb534f0fefc865477f5b9"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the number of columns in this tableaux.  <a href="#a5a7168ef9cafb534f0fefc865477f5b9">More...</a><br/></td></tr>
+<tr class="separator:a5a7168ef9cafb534f0fefc865477f5b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18cfeb1cf2d253d7d7f1137443890045"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPData.html#a18cfeb1cf2d253d7d7f1137443890045">coordinateColumns</a> () const </td></tr>
+<tr class="memdesc:a18cfeb1cf2d253d7d7f1137443890045"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the number of columns in this tableaux that correspond to normal coordinates or angle structure coordinates.  <a href="#a18cfeb1cf2d253d7d7f1137443890045">More...</a><br/></td></tr>
+<tr class="separator:a18cfeb1cf2d253d7d7f1137443890045"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f9ce8e4a2f5c1f1435eb053a3448ad0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPData.html#a7f9ce8e4a2f5c1f1435eb053a3448ad0">isFeasible</a> () const </td></tr>
+<tr class="memdesc:a7f9ce8e4a2f5c1f1435eb053a3448ad0"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> whether or not this system is feasible.  <a href="#a7f9ce8e4a2f5c1f1435eb053a3448ad0">More...</a><br/></td></tr>
+<tr class="separator:a7f9ce8e4a2f5c1f1435eb053a3448ad0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55ff9d8eaa48446a0bdc7fff4c18fc58"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPData.html#a55ff9d8eaa48446a0bdc7fff4c18fc58">isActive</a> (unsigned pos) const </td></tr>
+<tr class="memdesc:a55ff9d8eaa48446a0bdc7fff4c18fc58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the given variable is currently active.  <a href="#a55ff9d8eaa48446a0bdc7fff4c18fc58">More...</a><br/></td></tr>
+<tr class="separator:a55ff9d8eaa48446a0bdc7fff4c18fc58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a404de33b7b083c53666f2f28ea67bbb3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPData.html#a404de33b7b083c53666f2f28ea67bbb3">sign</a> (unsigned pos) const </td></tr>
+<tr class="memdesc:a404de33b7b083c53666f2f28ea67bbb3"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the sign of the given variable under the current basis.  <a href="#a404de33b7b083c53666f2f28ea67bbb3">More...</a><br/></td></tr>
+<tr class="separator:a404de33b7b083c53666f2f28ea67bbb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac05d6e693c09fadde2c43d62951effe6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPData.html#ac05d6e693c09fadde2c43d62951effe6">constrainZero</a> (unsigned pos)</td></tr>
+<tr class="memdesc:ac05d6e693c09fadde2c43d62951effe6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constrains this system further by setting the given variable to zero and deactivating it.  <a href="#ac05d6e693c09fadde2c43d62951effe6">More...</a><br/></td></tr>
+<tr class="separator:ac05d6e693c09fadde2c43d62951effe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad13df31bf31dabdeba22a4d0e7e77197"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPData.html#ad13df31bf31dabdeba22a4d0e7e77197">constrainPositive</a> (unsigned pos)</td></tr>
+<tr class="memdesc:ad13df31bf31dabdeba22a4d0e7e77197"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constrains this system further by constraining the given variable to be strictly positive.  <a href="#ad13df31bf31dabdeba22a4d0e7e77197">More...</a><br/></td></tr>
+<tr class="separator:ad13df31bf31dabdeba22a4d0e7e77197"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3de34d05aa11d2f75f7d63b0d56f9ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPData.html#ae3de34d05aa11d2f75f7d63b0d56f9ae">constrainOct</a> (unsigned quad1, unsigned quad2)</td></tr>
+<tr class="memdesc:ae3de34d05aa11d2f75f7d63b0d56f9ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declares that two quadrilateral coordinates within a tetrahedron are to be combined into a single octagon coordinate, for use with almost normal surfaces, and constrains the system accordingly.  <a href="#ae3de34d05aa11d2f75f7d63b0d56f9ae">More...</a><br/></td></tr>
+<tr class="separator:ae3de34d05aa11d2f75f7d63b0d56f9ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93c28129c2cea81c37ea45e0bf3c178c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPData.html#a93c28129c2cea81c37ea45e0bf3c178c">dump</a> (std::ostream &amp;out) const </td></tr>
+<tr class="memdesc:a93c28129c2cea81c37ea45e0bf3c178c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes details of this tableaux to the given output stream.  <a href="#a93c28129c2cea81c37ea45e0bf3c178c">More...</a><br/></td></tr>
+<tr class="separator:a93c28129c2cea81c37ea45e0bf3c178c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33f320e96d8e90aa35d22b42e308e60b"><td class="memTemplParams" colspan="2">template&lt;class RayClass &gt; </td></tr>
+<tr class="memitem:a33f320e96d8e90aa35d22b42e308e60b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classregina_1_1LPData.html#a33f320e96d8e90aa35d22b42e308e60b">extractSolution</a> (RayClass &amp;v, const char *type) const </td></tr>
+<tr class="memdesc:a33f320e96d8e90aa35d22b42e308e60b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts the values of the individual variables from the current basis, with some modifications (as described below).  <a href="#a33f320e96d8e90aa35d22b42e308e60b">More...</a><br/></td></tr>
+<tr class="separator:a33f320e96d8e90aa35d22b42e308e60b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;class LPConstraint, typename Integer&gt;<br/>
-class regina::LPData&lt; LPConstraint, Integer &gt;</h3>
+<div class="textblock"><h3>template&lt;class LPConstraint, typename IntType&gt;<br/>
+class regina::LPData&lt; LPConstraint, IntType &gt;</h3>
 
 <p>Stores an intermediate tableaux for the dual simplex method, and contains all of the core machinery for using the dual simplex method. </p>
 <p>This class forms part of the tree traversal algorithms for enumerating and locating normal surfaces, as described in "A tree traversal algorithm
@@ -127,43 +128,43 @@ experimental polynomial-time behaviour", Burton and Ozlen, arXiv:1211.1079. It i
 <li>Some variables have been constrained to be positive; as described in Burton and Ozlen, it is safe to do this using the non-strict inequality x_i &gt;= 1 (instead of the strict inequality x_i &gt; 0, which is more difficult to enforce). We enforce this constraing using a change of variable: we replace the variable x_i with (x_i - 1), which is then constrained to be non-negative as usual. The new variable (x_i - 1) uses the same column in the tableaux (we perform the actual change of variable by editing the tableaux itself using column operations). Be warned: as a result, when we arrive at a final solution and collect the values of the variables, we must remember to <em>increment</em> the values of any such variables by one.</li>
 </ul>
 <p>We do not store the full tableaux (which is dense and slow to work with). Instead we store the matrix of row operations that were applied to the original starting tableaux (in the notation of Burton and Ozlen, we store the matrix M_beta^{-1}, where M is the original matrix stored in the class <a class="el" href="classregina_1_1LPInitialTableaux.html" title="Stores an adjusted matrix of homogeneous linear matching equations based on a given triangulation...">LPInitialTableaux</a>, and beta is the current basis).</p>
-<p>If the system is infeasible (because the constraints on variables as described above are too severe), then the contents of the internal data members are undefined (other than the data member <em>feasible_</em>, which is guaranteed to be <code>false</code>). This is because the code is optimised to abort any operation as soon as infeasibility is detected, which may leave the data members in a broken state. If you are not sure, you should always call <a class="el" href="classregina_1_1LPData.html#a367c7cc40dd8967a32f32107303d84d0" title="Returns whether or not this system is feasible.">isFeasible()</a> before performing any other query or operation on this tableaux.</p>
+<p>If the system is infeasible (because the constraints on variables as described above are too severe), then the contents of the internal data members are undefined (other than the data member <em>feasible_</em>, which is guaranteed to be <code>false</code>). This is because the code is optimised to abort any operation as soon as infeasibility is detected, which may leave the data members in a broken state. If you are not sure, you should always call <a class="el" href="classregina_1_1LPData.html#a7f9ce8e4a2f5c1f1435eb053a3448ad0" title="Returns whether or not this system is feasible.">isFeasible()</a> before performing any other query or operation on this tableaux.</p>
 <p>This class is designed to be used in a backtracking search, which means the API is cumbersome but we can quickly rewrite and copy data. The rules are as follows:</p>
 <ul>
-<li>Before using an <a class="el" href="classregina_1_1LPData.html" title="Stores an intermediate tableaux for the dual simplex method, and contains all of the core machinery f...">LPData</a> object, you must reserve the necessary memory by calling <a class="el" href="classregina_1_1LPData.html#a7fd7b13997e64254e97006c6ce35ff97" title="Reserves enough memory for this tableaux to work with.">reserve()</a> and passing the original starting tableaux.</li>
+<li>Before using an <a class="el" href="classregina_1_1LPData.html" title="Stores an intermediate tableaux for the dual simplex method, and contains all of the core machinery f...">LPData</a> object, you must reserve the necessary memory by calling <a class="el" href="classregina_1_1LPData.html#ab5120903a7dd47e0e09ce98efd3885bb" title="Reserves enough memory for this tableaux to work with.">reserve()</a> and passing the original starting tableaux.</li>
 </ul>
 <ul>
-<li>After this, you can reset the data by calling one of the initialisation routines <a class="el" href="classregina_1_1LPData.html#ae96d1fc074598a010307a73127c4e8b4" title="Initialises this tableaux by beginning at the original starting tableaux and working our way to any f...">initStart()</a> or <a class="el" href="classregina_1_1LPData.html#a17e0c799e4c5d678f325fd4f246a490d" title="Initialises this tableaux to be a clone of the given tableaux.">initClone()</a>, and you can call these initialisation routines as often as you like.</li>
+<li>After this, you can reset the data by calling one of the initialisation routines <a class="el" href="classregina_1_1LPData.html#ac48f34d3d8d79b3823f95bc2f64cf7a3" title="Initialises this tableaux by beginning at the original starting tableaux and working our way to any f...">initStart()</a> or <a class="el" href="classregina_1_1LPData.html#adfb498c421ccd15a2853821057078ff2" title="Initialises this tableaux to be a clone of the given tableaux.">initClone()</a>, and you can call these initialisation routines as often as you like.</li>
 </ul>
 <p>Like <a class="el" href="classregina_1_1LPInitialTableaux.html" title="Stores an adjusted matrix of homogeneous linear matching equations based on a given triangulation...">LPInitialTableaux</a>, this class can enforce additional linear constraints (such as positive Euler characteristic) through the template parameter LPConstraint. If there are no such constraints, simply use the template parameter <a class="el" href="classregina_1_1LPConstraintNone.html" title="A do-nothing class that imposes no additional linear constraints on the tableaux of normal surface or...">LPConstraintNone</a>.</p>
 <p>In the context of normal surfaces (not angle structures): Although the underlying coordinate system is based on quadrilaterals and (optionally) triangles, this class has elementary support for octagons also, as seen in <em>almost</em> normal surface theory. For the purposes of this class, an octagon is represented as a pair of quadrilaterals of different types in the same tetrahedron: these meet the boundary of the tetrahedron in the same arcs as a single octagon, and therefore interact with the matching equations in the same way.</p>
 <p>To declare that you will be using octagons in some tetrahedron, you must call constrainOct(quad1, quad2), where <em>quad1</em> and <em>quad2</em> are the two corresponding quadrilateral columns. This will have the following effects, all of which may alter the tableaux:</p>
 <ul>
-<li>There will be some changes of variable. One of the two variables x_i will be replaced with (x_i - 1), forcing the number of octagons to be positive. The other variable x_j will be replaced with (x_j - x_i), which will be set to zero and deactivated. There is no guarantee as to which of the two variables <em>quad1</em> and <em>quad2</em> will be kept and which will be deactivated: this will depend on the layout of the tableaux when <a class="el" href="classregina_1_1LPData.html#a7203e2d4e09a03f7b8bcd6eb8b6d91b8" title="Declares that two quadrilateral coordinates within a tetrahedron are to be combined into a single oct...">constrainOct()</a> is called.</li>
+<li>There will be some changes of variable. One of the two variables x_i will be replaced with (x_i - 1), forcing the number of octagons to be positive. The other variable x_j will be replaced with (x_j - x_i), which will be set to zero and deactivated. There is no guarantee as to which of the two variables <em>quad1</em> and <em>quad2</em> will be kept and which will be deactivated: this will depend on the layout of the tableaux when <a class="el" href="classregina_1_1LPData.html#ae3de34d05aa11d2f75f7d63b0d56f9ae" title="Declares that two quadrilateral coordinates within a tetrahedron are to be combined into a single oct...">constrainOct()</a> is called.</li>
 </ul>
 <ul>
 <li>If you are imposing additional constraints through the <em>LPConstraint</em> template parameter, the corresponding linear constraint functions may change their values (since the coefficients they use for octagon types need not be related to the coefficients for the two corresponding quadrilateral columns). Any such changes are managed through the function LPConstraint::Coefficients::innerProductOct.</li>
 </ul>
 <p>This class has been optimised to ensure that you only have one octagon type declared at any given time (which is consistent with the constraints of almost normal surface theory).</p>
-<p>All tableaux elements are of the integer class <em>Integer</em>, which is supplied as a template argument. This same integer class will be used as a template argument for <em>LPConstraint</em>.</p>
+<p>All tableaux elements are of the integer class <em>IntType</em>, which is supplied as a template argument. This same integer class will be used as a template argument for <em>LPConstraint</em>.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>The template parameter LPConstraint must be one of the subclasses of <a class="el" href="classregina_1_1LPConstraintBase.html" title="A base class for additional linear constraints that we can add to the tableaux of normal surface or a...">LPConstraintBase</a>. See the <a class="el" href="classregina_1_1LPConstraintBase.html" title="A base class for additional linear constraints that we can add to the tableaux of normal surface or a...">LPConstraintBase</a> class notes for further details.</dd>
 <dd>
-The default constructor for the template class Integer must intialise each new integer to zero. The classes NInteger and <a class="el" href="classregina_1_1NNativeInteger.html" title="A wrapper class for a native, fixed-precision integer type of the given size.">NNativeInteger</a>, for instance, have this property.</dd></dl>
-<dl class="section user"><dt>Headers:</dt><dd>Parts of this template class are implemented in a separate header (ntreelp-impl.h), which is not included automatically by this file. Most end users should not need this extra header, since Regina's calculation engine already includes explicit instantiations for common combinations of template arguments.</dd></dl>
+The default constructor for the template class IntType must intialise each new integer to zero. The classes Integer and <a class="el" href="classregina_1_1NativeInteger.html" title="A wrapper class for a native, fixed-precision integer type of the given size.">NativeInteger</a>, for instance, have this property.</dd></dl>
+<dl class="section user"><dt>Headers:</dt><dd>Parts of this template class are implemented in a separate header (treelp-impl.h), which is not included automatically by this file. Most end users should not need this extra header, since Regina's calculation engine already includes explicit instantiations for common combinations of template arguments.</dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>The API for this class has not yet been finalised. This means that the class interface may change in new versions of Regina, without maintaining backward compatibility. If you use this class directly in your own code, please watch the detailed changelogs upon new releases to see if you need to make changes to your code.</dd></dl>
 <dl class="section user"><dt>Python:</dt><dd>Not present. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a5157ce41a1fefa87b2b57a89976d0279"></a>
+<a class="anchor" id="ac45a4647f5f984621209b6b0b3f68c4b"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class LPConstraint , typename Integer &gt; </div>
+template&lt;class LPConstraint , typename IntType &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classregina_1_1LPData.html">regina::LPData</a>&lt; LPConstraint, Integer &gt;::<a class="el" href="classregina_1_1LPData.html">LPData</a> </td>
+          <td class="memname"><a class="el" href="classregina_1_1LPData.html">regina::LPData</a>&lt; LPConstraint, IntType &gt;::<a class="el" href="classregina_1_1LPData.html">LPData</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -177,21 +178,21 @@ template&lt;class LPConstraint , typename Integer &gt; </div>
 </div><div class="memdoc">
 
 <p>Constructs a new tableaux. </p>
-<p>You <em>must</em> call <a class="el" href="classregina_1_1LPData.html#a7fd7b13997e64254e97006c6ce35ff97" title="Reserves enough memory for this tableaux to work with.">reserve()</a> before doing anything else with this tableaux. </p>
+<p>You <em>must</em> call <a class="el" href="classregina_1_1LPData.html#ab5120903a7dd47e0e09ce98efd3885bb" title="Reserves enough memory for this tableaux to work with.">reserve()</a> before doing anything else with this tableaux. </p>
 
 </div>
 </div>
-<a class="anchor" id="a0e28b6c48c7df4009648e16d98e37c8b"></a>
+<a class="anchor" id="a294602a33df9186b5ccf57afdeb6c879"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class LPConstraint , typename Integer &gt; </div>
+template&lt;class LPConstraint , typename IntType &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classregina_1_1LPData.html">regina::LPData</a>&lt; LPConstraint, Integer &gt;::~<a class="el" href="classregina_1_1LPData.html">LPData</a> </td>
+          <td class="memname"><a class="el" href="classregina_1_1LPData.html">regina::LPData</a>&lt; LPConstraint, IntType &gt;::~<a class="el" href="classregina_1_1LPData.html">LPData</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -205,22 +206,22 @@ template&lt;class LPConstraint , typename Integer &gt; </div>
 </div><div class="memdoc">
 
 <p>Destroys this tableaux. </p>
-<p>This is safe even if <a class="el" href="classregina_1_1LPData.html#a7fd7b13997e64254e97006c6ce35ff97" title="Reserves enough memory for this tableaux to work with.">reserve()</a> was never called. </p>
+<p>This is safe even if <a class="el" href="classregina_1_1LPData.html#ab5120903a7dd47e0e09ce98efd3885bb" title="Reserves enough memory for this tableaux to work with.">reserve()</a> was never called. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a4008f03e567911477c518eb14872734b"></a>
+<a class="anchor" id="a5a7168ef9cafb534f0fefc865477f5b9"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class LPConstraint , typename Integer &gt; </div>
+template&lt;class LPConstraint , typename IntType &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned <a class="el" href="classregina_1_1LPData.html">regina::LPData</a>&lt; LPConstraint, Integer &gt;::columns </td>
+          <td class="memname">unsigned <a class="el" href="classregina_1_1LPData.html">regina::LPData</a>&lt; LPConstraint, IntType &gt;::columns </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -239,14 +240,14 @@ template&lt;class LPConstraint , typename Integer &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a7203e2d4e09a03f7b8bcd6eb8b6d91b8"></a>
+<a class="anchor" id="ae3de34d05aa11d2f75f7d63b0d56f9ae"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class LPConstraint , typename Integer &gt; </div>
+template&lt;class LPConstraint , typename IntType &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classregina_1_1LPData.html">regina::LPData</a>&lt; LPConstraint, Integer &gt;::constrainOct </td>
+          <td class="memname">void <a class="el" href="classregina_1_1LPData.html">regina::LPData</a>&lt; LPConstraint, IntType &gt;::constrainOct </td>
           <td>(</td>
           <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>quad1</em>, </td>
@@ -269,10 +270,10 @@ template&lt;class LPConstraint , typename Integer &gt; </div>
 <p>This constrains the system in several ways, as discussed in detail in the <a class="el" href="classregina_1_1LPData.html" title="Stores an intermediate tableaux for the dual simplex method, and contains all of the core machinery f...">LPData</a> class notes. In theory, we set the two quadrilateral coordinates to be equal, and also insist that the number of octagons be strictly positive. In practice, we do this through several changes of variable; see the <a class="el" href="classregina_1_1LPData.html" title="Stores an intermediate tableaux for the dual simplex method, and contains all of the core machinery f...">LPData</a> class notes for a detailed discussion of precisely how the variables and tableaux will change.</p>
 <p>This routine will work even if one of the given quadrilateral variables has already been deactivated, but in this case the routine will immediately set the system to infeasible and return.</p>
 <p>This routine is not used with angle structure coordinates.</p>
-<dl class="section pre"><dt>Precondition</dt><dd>This is the first time <a class="el" href="classregina_1_1LPData.html#a7203e2d4e09a03f7b8bcd6eb8b6d91b8" title="Declares that two quadrilateral coordinates within a tetrahedron are to be combined into a single oct...">constrainOct()</a> has been called on this tableaux. This is because this class can only handle one octagon type in the entire system.</dd>
+<dl class="section pre"><dt>Precondition</dt><dd>This is the first time <a class="el" href="classregina_1_1LPData.html#ae3de34d05aa11d2f75f7d63b0d56f9ae" title="Declares that two quadrilateral coordinates within a tetrahedron are to be combined into a single oct...">constrainOct()</a> has been called on this tableaux. This is because this class can only handle one octagon type in the entire system.</dd>
 <dd>
 Variables <em>quad1</em> and <em>quad2</em> represent different quadrilateral coordinates in the same tetrahedron of the underlying triangulation.</dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>If you have previously called <a class="el" href="classregina_1_1LPData.html#a9e4d3e6e06d968bbe4e61f193d7c361c" title="Constrains this system further by constraining the given variable to be strictly positive.">constrainPositive()</a> or <a class="el" href="classregina_1_1LPData.html#a7203e2d4e09a03f7b8bcd6eb8b6d91b8" title="Declares that two quadrilateral coordinates within a tetrahedron are to be combined into a single oct...">constrainOct()</a> on one of the given variables, then these prior routines will have performed a change of variable. Any new call to <a class="el" href="classregina_1_1LPData.html#a7203e2d4e09a03f7b8bcd6eb8b6d91b8" title="Declares that two quadrilateral coordinates within a tetrahedron are to be combined into a single oct...">constrainOct()</a> involving this same variable will constrain the <em>new</em> variable, not the original, and so might not have the intended effect.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>If you have previously called <a class="el" href="classregina_1_1LPData.html#ad13df31bf31dabdeba22a4d0e7e77197" title="Constrains this system further by constraining the given variable to be strictly positive.">constrainPositive()</a> or <a class="el" href="classregina_1_1LPData.html#ae3de34d05aa11d2f75f7d63b0d56f9ae" title="Declares that two quadrilateral coordinates within a tetrahedron are to be combined into a single oct...">constrainOct()</a> on one of the given variables, then these prior routines will have performed a change of variable. Any new call to <a class="el" href="classregina_1_1LPData.html#ae3de34d05aa11d2f75f7d63b0d56f9ae" title="Declares that two quadrilateral coordinates within a tetrahedron are to be combined into a single oct...">constrainOct()</a> involving this same variable will constrain the <em>new</em> variable, not the original, and so might not have the intended effect.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">quad1</td><td>one of the two quadrilateral types that we combine to form the new octagon type. </td></tr>
@@ -283,14 +284,14 @@ Variables <em>quad1</em> and <em>quad2</em> represent different quadrilateral co
 
 </div>
 </div>
-<a class="anchor" id="a9e4d3e6e06d968bbe4e61f193d7c361c"></a>
+<a class="anchor" id="ad13df31bf31dabdeba22a4d0e7e77197"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class LPConstraint , typename Integer &gt; </div>
+template&lt;class LPConstraint , typename IntType &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classregina_1_1LPData.html">regina::LPData</a>&lt; LPConstraint, Integer &gt;::constrainPositive </td>
+          <td class="memname">void <a class="el" href="classregina_1_1LPData.html">regina::LPData</a>&lt; LPConstraint, IntType &gt;::constrainPositive </td>
           <td>(</td>
           <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>pos</em></td><td>)</td>
@@ -302,24 +303,24 @@ template&lt;class LPConstraint , typename Integer &gt; </div>
 <p>Constrains this system further by constraining the given variable to be strictly positive. </p>
 <p>We do this using a change of variable that effectively replaces x_pos with the new variable x'_pos = x_pos - 1 (which we simply constrain to be non-negative as usual). See the <a class="el" href="classregina_1_1LPData.html" title="Stores an intermediate tableaux for the dual simplex method, and contains all of the core machinery f...">LPData</a> class notes for details.</p>
 <p>This routine will work even if the given variable has already been deactivated, but in this case the routine will immediately set the system to infeasible and return.</p>
-<dl class="section warning"><dt>Warning</dt><dd>If you have previously called <a class="el" href="classregina_1_1LPData.html#a9e4d3e6e06d968bbe4e61f193d7c361c" title="Constrains this system further by constraining the given variable to be strictly positive.">constrainPositive()</a> or <a class="el" href="classregina_1_1LPData.html#a7203e2d4e09a03f7b8bcd6eb8b6d91b8" title="Declares that two quadrilateral coordinates within a tetrahedron are to be combined into a single oct...">constrainOct()</a> on this variable, then these prior routines will have performed a change of variable. Any new call to <a class="el" href="classregina_1_1LPData.html#a9e4d3e6e06d968bbe4e61f193d7c361c" title="Constrains this system further by constraining the given variable to be strictly positive.">constrainPositive()</a> on this same variable will constrain the <em>new</em> variable, not the original, and so might not have the intended effect.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>If you have previously called <a class="el" href="classregina_1_1LPData.html#ad13df31bf31dabdeba22a4d0e7e77197" title="Constrains this system further by constraining the given variable to be strictly positive.">constrainPositive()</a> or <a class="el" href="classregina_1_1LPData.html#ae3de34d05aa11d2f75f7d63b0d56f9ae" title="Declares that two quadrilateral coordinates within a tetrahedron are to be combined into a single oct...">constrainOct()</a> on this variable, then these prior routines will have performed a change of variable. Any new call to <a class="el" href="classregina_1_1LPData.html#ad13df31bf31dabdeba22a4d0e7e77197" title="Constrains this system further by constraining the given variable to be strictly positive.">constrainPositive()</a> on this same variable will constrain the <em>new</em> variable, not the original, and so might not have the intended effect.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pos</td><td>the index of the variable that is to be constrained as positive. This must be between 0 and origTableaux_-&gt;<a class="el" href="classregina_1_1LPData.html#a4008f03e567911477c518eb14872734b" title="Returns the number of columns in this tableaux.">columns()</a>-1 inclusive. </td></tr>
+    <tr><td class="paramname">pos</td><td>the index of the variable that is to be constrained as positive. This must be between 0 and origTableaux_-&gt;<a class="el" href="classregina_1_1LPData.html#a5a7168ef9cafb534f0fefc865477f5b9" title="Returns the number of columns in this tableaux.">columns()</a>-1 inclusive. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="af97fe24f1c8ae1c7d00993033d739437"></a>
+<a class="anchor" id="ac05d6e693c09fadde2c43d62951effe6"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class LPConstraint , typename Integer &gt; </div>
+template&lt;class LPConstraint , typename IntType &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classregina_1_1LPData.html">regina::LPData</a>&lt; LPConstraint, Integer &gt;::constrainZero </td>
+          <td class="memname">void <a class="el" href="classregina_1_1LPData.html">regina::LPData</a>&lt; LPConstraint, IntType &gt;::constrainZero </td>
           <td>(</td>
           <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>pos</em></td><td>)</td>
@@ -331,27 +332,27 @@ template&lt;class LPConstraint , typename Integer &gt; </div>
 <p>Constrains this system further by setting the given variable to zero and deactivating it. </p>
 <p>See the <a class="el" href="classregina_1_1LPData.html" title="Stores an intermediate tableaux for the dual simplex method, and contains all of the core machinery f...">LPData</a> class notes for details.</p>
 <p>This routine will work even if the given variable has already been deactivated (and it will do nothing in this case).</p>
-<dl class="section warning"><dt>Warning</dt><dd>If you have previously called <a class="el" href="classregina_1_1LPData.html#a9e4d3e6e06d968bbe4e61f193d7c361c" title="Constrains this system further by constraining the given variable to be strictly positive.">constrainPositive()</a> or <a class="el" href="classregina_1_1LPData.html#a7203e2d4e09a03f7b8bcd6eb8b6d91b8" title="Declares that two quadrilateral coordinates within a tetrahedron are to be combined into a single oct...">constrainOct()</a> on this variable, then these prior routines will have performed a change of variable. Any new call to constraintZero() on this same variable will constraint the <em>new</em> variable, not the original, and so might not have the intended effect.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>If you have previously called <a class="el" href="classregina_1_1LPData.html#ad13df31bf31dabdeba22a4d0e7e77197" title="Constrains this system further by constraining the given variable to be strictly positive.">constrainPositive()</a> or <a class="el" href="classregina_1_1LPData.html#ae3de34d05aa11d2f75f7d63b0d56f9ae" title="Declares that two quadrilateral coordinates within a tetrahedron are to be combined into a single oct...">constrainOct()</a> on this variable, then these prior routines will have performed a change of variable. Any new call to constraintZero() on this same variable will constraint the <em>new</em> variable, not the original, and so might not have the intended effect.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pos</td><td>the index of the variable that is to be set to zero. This must be between 0 and origTableaux_-&gt;<a class="el" href="classregina_1_1LPData.html#a4008f03e567911477c518eb14872734b" title="Returns the number of columns in this tableaux.">columns()</a>-1 inclusive. </td></tr>
+    <tr><td class="paramname">pos</td><td>the index of the variable that is to be set to zero. This must be between 0 and origTableaux_-&gt;<a class="el" href="classregina_1_1LPData.html#a5a7168ef9cafb534f0fefc865477f5b9" title="Returns the number of columns in this tableaux.">columns()</a>-1 inclusive. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="ad2836a3c43ac66d6b2a20bf08bf91dbc"></a>
+<a class="anchor" id="a18cfeb1cf2d253d7d7f1137443890045"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class LPConstraint , typename Integer &gt; </div>
+template&lt;class LPConstraint , typename IntType &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned <a class="el" href="classregina_1_1LPData.html">regina::LPData</a>&lt; LPConstraint, Integer &gt;::coordinateColumns </td>
+          <td class="memname">unsigned <a class="el" href="classregina_1_1LPData.html">regina::LPData</a>&lt; LPConstraint, IntType &gt;::coordinateColumns </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -370,14 +371,14 @@ template&lt;class LPConstraint , typename Integer &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a1f314db9519e459728469a1727d29528"></a>
+<a class="anchor" id="a93c28129c2cea81c37ea45e0bf3c178c"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class LPConstraint , typename Integer &gt; </div>
+template&lt;class LPConstraint , typename IntType &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classregina_1_1LPData.html">regina::LPData</a>&lt; LPConstraint, Integer &gt;::dump </td>
+          <td class="memname">void <a class="el" href="classregina_1_1LPData.html">regina::LPData</a>&lt; LPConstraint, IntType &gt;::dump </td>
           <td>(</td>
           <td class="paramtype">std::ostream &amp;&#160;</td>
           <td class="paramname"><em>out</em></td><td>)</td>
@@ -398,16 +399,18 @@ template&lt;class LPConstraint , typename Integer &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a8c6b73efc0c3b993515bb36e98b228c8"></a>
+<a class="anchor" id="a33f320e96d8e90aa35d22b42e308e60b"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class LPConstraint , typename Integer &gt; </div>
+template&lt;class LPConstraint , typename IntType &gt; </div>
+<div class="memtemplate">
+template&lt;class RayClass &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classregina_1_1LPData.html">regina::LPData</a>&lt; LPConstraint, Integer &gt;::extractSolution </td>
+          <td class="memname">template void <a class="el" href="classregina_1_1LPData.html">regina::LPData</a>&lt; LPConstraint, IntType &gt;::extractSolution&lt; <a class="el" href="classregina_1_1NormalSurfaceVector.html">NormalSurfaceVector</a> &gt; </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classregina_1_1NRay.html">NRay</a> &amp;&#160;</td>
+          <td class="paramtype">RayClass &amp;&#160;</td>
           <td class="paramname"><em>v</em>, </td>
         </tr>
         <tr>
@@ -428,35 +431,41 @@ template&lt;class LPConstraint , typename Integer &gt; </div>
 <p>The values of the variables are store in the given vector <em>v</em>.</p>
 <p>The modifications are as follows:</p>
 <ul>
-<li>We extract variables that correspond to the original matching equations obtained from the underlying triangulation, <em>not</em> the current tableaux and <em>not</em> even the original starting tableaux stored in origTableaux_. In other words, when we fill the vector <em>v</em> we undo the column permutation described by <a class="el" href="classregina_1_1LPInitialTableaux.html#a67f58060dd54c4a4da5fa9aeb36bc449" title="Returns the permutation that describes how the columns of the matching equation matrix were reordered...">LPInitialTableaux::columnPerm()</a>, and we undo any changes of variable that were caused by calls to <a class="el" href="classregina_1_1LPData.html#a9e4d3e6e06d968bbe4e61f193d7c361c" title="Constrains this system further by constraining the given variable to be strictly positive.">constrainPositive()</a> and/or <a class="el" href="classregina_1_1LPData.html#a7203e2d4e09a03f7b8bcd6eb8b6d91b8" title="Declares that two quadrilateral coordinates within a tetrahedron are to be combined into a single oct...">constrainOct()</a>.</li>
+<li>We extract variables that correspond to the original matching equations obtained from the underlying triangulation, <em>not</em> the current tableaux and <em>not</em> even the original starting tableaux stored in origTableaux_. In other words, when we fill the vector <em>v</em> we undo the column permutation described by <a class="el" href="classregina_1_1LPInitialTableaux.html#a67f58060dd54c4a4da5fa9aeb36bc449" title="Returns the permutation that describes how the columns of the matching equation matrix were reordered...">LPInitialTableaux::columnPerm()</a>, and we undo any changes of variable that were caused by calls to <a class="el" href="classregina_1_1LPData.html#ad13df31bf31dabdeba22a4d0e7e77197" title="Constrains this system further by constraining the given variable to be strictly positive.">constrainPositive()</a> and/or <a class="el" href="classregina_1_1LPData.html#ae3de34d05aa11d2f75f7d63b0d56f9ae" title="Declares that two quadrilateral coordinates within a tetrahedron are to be combined into a single oct...">constrainOct()</a>.</li>
 </ul>
 <ul>
-<li>To ensure that the variables are all integers, we scale the final vector by the smallest positive rational multiple for which all elements of the vector are integers. (This is why the output class is <a class="el" href="classregina_1_1NRay.html" title="A fast class for storing a ray rooted at the origin whose coordinates are rational.">NRay</a> and not <a class="el" href="classregina_1_1NVector.html" title="An optimised vector class of elements from a given ring T.">NVector</a>.)</li>
+<li>To ensure that the variables are all integers, we scale the final vector by the smallest positive rational multiple for which all elements of the vector are integers. (This is why the output class is <a class="el" href="classregina_1_1Ray.html" title="A fast class for storing a ray rooted at the origin whose coordinates are rational.">Ray</a> and not <a class="el" href="classregina_1_1Vector.html" title="An optimised vector class of elements from a given ring T.">Vector</a>.)</li>
 </ul>
 <p>This routine is not used as an internal part of the tree traversal algorithm; instead it is offered as a helper routine for reconstructing the normal surfaces or angle structures that result.</p>
-<dl class="section pre"><dt>Precondition</dt><dd>The given vector <em>v</em> has been initialised to the zero vector of length origTableaux_-&gt;<a class="el" href="classregina_1_1LPData.html#a4008f03e567911477c518eb14872734b" title="Returns the number of columns in this tableaux.">columns()</a>. Note that the <a class="el" href="classregina_1_1NRay.html" title="A fast class for storing a ray rooted at the origin whose coordinates are rational.">NRay</a> constructor will automatically initialise all elements to zero as required.</dd>
+<dl class="section pre"><dt>Precondition</dt><dd>The given vector <em>v</em> has been initialised to the zero vector of length origTableaux_-&gt;<a class="el" href="classregina_1_1LPData.html#a5a7168ef9cafb534f0fefc865477f5b9" title="Returns the number of columns in this tableaux.">columns()</a>. Note that the <a class="el" href="classregina_1_1Ray.html" title="A fast class for storing a ray rooted at the origin whose coordinates are rational.">Ray</a> constructor will automatically initialise all elements to zero as required.</dd>
 <dd>
-No individual coordinate column has had more than one call to either of <a class="el" href="classregina_1_1LPData.html#a9e4d3e6e06d968bbe4e61f193d7c361c" title="Constrains this system further by constraining the given variable to be strictly positive.">constrainPositive()</a> or <a class="el" href="classregina_1_1LPData.html#a7203e2d4e09a03f7b8bcd6eb8b6d91b8" title="Declares that two quadrilateral coordinates within a tetrahedron are to be combined into a single oct...">constrainOct()</a> (otherwise the coordinate will not be correctly reconstructed). Any additional columns arising from LPConstraint are exempt from this requirement.</dd></dl>
+No individual coordinate column has had more than one call to either of <a class="el" href="classregina_1_1LPData.html#ad13df31bf31dabdeba22a4d0e7e77197" title="Constrains this system further by constraining the given variable to be strictly positive.">constrainPositive()</a> or <a class="el" href="classregina_1_1LPData.html#ae3de34d05aa11d2f75f7d63b0d56f9ae" title="Declares that two quadrilateral coordinates within a tetrahedron are to be combined into a single oct...">constrainOct()</a> (otherwise the coordinate will not be correctly reconstructed). Any additional columns arising from LPConstraint are exempt from this requirement.</dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">RayClass</td><td>the class used to hold the output vector <em>v</em>. This should either be <a class="el" href="classregina_1_1Ray.html" title="A fast class for storing a ray rooted at the origin whose coordinates are rational.">Ray</a>, or some other class that provides analogous functions size(), setElement() and scaleDown().</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">v</td><td>the vector into which the values of the variables will be placed. </td></tr>
-    <tr><td class="paramname">type</td><td>the type vector corresponding to the current state of this tableaux, indicating which variables were previously fixed as positive via calls to <a class="el" href="classregina_1_1LPData.html#a9e4d3e6e06d968bbe4e61f193d7c361c" title="Constrains this system further by constraining the given variable to be strictly positive.">constrainPositive()</a>. This is necessary because <a class="el" href="classregina_1_1LPData.html" title="Stores an intermediate tableaux for the dual simplex method, and contains all of the core machinery f...">LPData</a> does not keep such historical data on its own. As a special case, when extracting a strict angle structure one may pass <em>type</em> = 0, in which case this routine will assume that <em>every</em> coordinate was constrained as positive. </td></tr>
+    <tr><td class="paramname">type</td><td>the type vector corresponding to the current state of this tableaux, indicating which variables were previously fixed as positive via calls to <a class="el" href="classregina_1_1LPData.html#ad13df31bf31dabdeba22a4d0e7e77197" title="Constrains this system further by constraining the given variable to be strictly positive.">constrainPositive()</a>. This is necessary because <a class="el" href="classregina_1_1LPData.html" title="Stores an intermediate tableaux for the dual simplex method, and contains all of the core machinery f...">LPData</a> does not keep such historical data on its own. As a special case, when extracting a strict angle structure one may pass <em>type</em> = 0, in which case this routine will assume that <em>every</em> coordinate was constrained as positive. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="a17e0c799e4c5d678f325fd4f246a490d"></a>
+<a class="anchor" id="adfb498c421ccd15a2853821057078ff2"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class LPConstraint , typename Integer &gt; </div>
+template&lt;class LPConstraint , typename IntType &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classregina_1_1LPData.html">regina::LPData</a>&lt; LPConstraint, Integer &gt;::initClone </td>
+          <td class="memname">void <a class="el" href="classregina_1_1LPData.html">regina::LPData</a>&lt; LPConstraint, IntType &gt;::initClone </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classregina_1_1LPData.html">LPData</a>&lt; LPConstraint, Integer &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classregina_1_1LPData.html">LPData</a>&lt; LPConstraint, IntType &gt; &amp;&#160;</td>
           <td class="paramname"><em>parent</em></td><td>)</td>
           <td></td>
         </tr>
@@ -465,7 +474,7 @@ template&lt;class LPConstraint , typename Integer &gt; </div>
 
 <p>Initialises this tableaux to be a clone of the given tableaux. </p>
 <p>This is used in the tree traversal algorithm as we work our way down the search tree, and child nodes "inherit" tableaux from their parent nodes.</p>
-<dl class="section pre"><dt>Precondition</dt><dd><a class="el" href="classregina_1_1LPData.html#a7fd7b13997e64254e97006c6ce35ff97" title="Reserves enough memory for this tableaux to work with.">reserve()</a> has already been called.</dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd><a class="el" href="classregina_1_1LPData.html#ab5120903a7dd47e0e09ce98efd3885bb" title="Reserves enough memory for this tableaux to work with.">reserve()</a> has already been called.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">parent</td><td>the tableaux to clone. </td></tr>
@@ -475,14 +484,14 @@ template&lt;class LPConstraint , typename Integer &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ae96d1fc074598a010307a73127c4e8b4"></a>
+<a class="anchor" id="ac48f34d3d8d79b3823f95bc2f64cf7a3"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class LPConstraint , typename Integer &gt; </div>
+template&lt;class LPConstraint , typename IntType &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classregina_1_1LPData.html">regina::LPData</a>&lt; LPConstraint, Integer &gt;::initStart </td>
+          <td class="memname">void <a class="el" href="classregina_1_1LPData.html">regina::LPData</a>&lt; LPConstraint, IntType &gt;::initStart </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -492,22 +501,22 @@ template&lt;class LPConstraint , typename Integer &gt; </div>
 
 <p>Initialises this tableaux by beginning at the original starting tableaux and working our way to any feasible basis. </p>
 <p>This routine also explicitly enforces the additional constraints from the template parameter LPConstraint (i.e., this routine is responsible for forcing the corresponding linear function(s) to be zero or strictly positive as appropriate).</p>
-<p>It is possible that a feasible basis cannot be found; you should test <a class="el" href="classregina_1_1LPData.html#a367c7cc40dd8967a32f32107303d84d0" title="Returns whether or not this system is feasible.">isFeasible()</a> after running this routine to see whether this is the case.</p>
-<dl class="section pre"><dt>Precondition</dt><dd><a class="el" href="classregina_1_1LPData.html#a7fd7b13997e64254e97006c6ce35ff97" title="Reserves enough memory for this tableaux to work with.">reserve()</a> has already been called. </dd></dl>
+<p>It is possible that a feasible basis cannot be found; you should test <a class="el" href="classregina_1_1LPData.html#a7f9ce8e4a2f5c1f1435eb053a3448ad0" title="Returns whether or not this system is feasible.">isFeasible()</a> after running this routine to see whether this is the case.</p>
+<dl class="section pre"><dt>Precondition</dt><dd><a class="el" href="classregina_1_1LPData.html#ab5120903a7dd47e0e09ce98efd3885bb" title="Reserves enough memory for this tableaux to work with.">reserve()</a> has already been called. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a3ddc121a76d8bc1d0060010ccf701433"></a>
+<a class="anchor" id="a55ff9d8eaa48446a0bdc7fff4c18fc58"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class LPConstraint , typename Integer &gt; </div>
+template&lt;class LPConstraint , typename IntType &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classregina_1_1LPData.html">regina::LPData</a>&lt; LPConstraint, Integer &gt;::isActive </td>
+          <td class="memname">bool <a class="el" href="classregina_1_1LPData.html">regina::LPData</a>&lt; LPConstraint, IntType &gt;::isActive </td>
           <td>(</td>
           <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>pos</em></td><td>)</td>
@@ -525,24 +534,24 @@ template&lt;class LPConstraint , typename Integer &gt; </div>
 <p>See the <a class="el" href="classregina_1_1LPData.html" title="Stores an intermediate tableaux for the dual simplex method, and contains all of the core machinery f...">LPData</a> class notes for details.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pos</td><td>the index of the variable to query. This must be between 0 and origTableaux_-&gt;<a class="el" href="classregina_1_1LPData.html#a4008f03e567911477c518eb14872734b" title="Returns the number of columns in this tableaux.">columns()</a>-1 inclusive. </td></tr>
+    <tr><td class="paramname">pos</td><td>the index of the variable to query. This must be between 0 and origTableaux_-&gt;<a class="el" href="classregina_1_1LPData.html#a5a7168ef9cafb534f0fefc865477f5b9" title="Returns the number of columns in this tableaux.">columns()</a>-1 inclusive. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="a367c7cc40dd8967a32f32107303d84d0"></a>
+<a class="anchor" id="a7f9ce8e4a2f5c1f1435eb053a3448ad0"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class LPConstraint , typename Integer &gt; </div>
+template&lt;class LPConstraint , typename IntType &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classregina_1_1LPData.html">regina::LPData</a>&lt; LPConstraint, Integer &gt;::isFeasible </td>
+          <td class="memname">bool <a class="el" href="classregina_1_1LPData.html">regina::LPData</a>&lt; LPConstraint, IntType &gt;::isFeasible </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -557,22 +566,22 @@ template&lt;class LPConstraint , typename Integer &gt; </div>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> whether or not this system is feasible. </p>
 <p>A system may become infeasible when we add too many extra constraints on the variables (such as forcing them to be positive, or setting them to zero); see the <a class="el" href="classregina_1_1LPData.html" title="Stores an intermediate tableaux for the dual simplex method, and contains all of the core machinery f...">LPData</a> class notes for details on these constraints.</p>
-<dl class="section warning"><dt>Warning</dt><dd>As explained in the class notes, if this system is infeasible then any queries or operations (other than calling <a class="el" href="classregina_1_1LPData.html#a367c7cc40dd8967a32f32107303d84d0" title="Returns whether or not this system is feasible.">isFeasible()</a> itself) are undefined.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>As explained in the class notes, if this system is infeasible then any queries or operations (other than calling <a class="el" href="classregina_1_1LPData.html#a7f9ce8e4a2f5c1f1435eb053a3448ad0" title="Returns whether or not this system is feasible.">isFeasible()</a> itself) are undefined.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if this system is feasible, or <code>false</code> if it is infeasible. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a7fd7b13997e64254e97006c6ce35ff97"></a>
+<a class="anchor" id="ab5120903a7dd47e0e09ce98efd3885bb"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class LPConstraint , typename Integer &gt; </div>
+template&lt;class LPConstraint , typename IntType &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classregina_1_1LPData.html">regina::LPData</a>&lt; LPConstraint, Integer &gt;::reserve </td>
+          <td class="memname">void <a class="el" href="classregina_1_1LPData.html">regina::LPData</a>&lt; LPConstraint, IntType &gt;::reserve </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classregina_1_1LPInitialTableaux.html">LPInitialTableaux</a>&lt; LPConstraint &gt; *&#160;</td>
           <td class="paramname"><em>origTableaux</em></td><td>)</td>
@@ -588,7 +597,7 @@ template&lt;class LPConstraint , typename Integer &gt; </div>
 
 <p>Reserves enough memory for this tableaux to work with. </p>
 <p>You <em>must</em> call this routine before doing anything else with this tableaux.</p>
-<p>The data in this tableaux will not be initialised, and the contents and behaviour of this tableaux will remain undefined until you call one of the initialisation routines <a class="el" href="classregina_1_1LPData.html#ae96d1fc074598a010307a73127c4e8b4" title="Initialises this tableaux by beginning at the original starting tableaux and working our way to any f...">initStart()</a> or <a class="el" href="classregina_1_1LPData.html#a17e0c799e4c5d678f325fd4f246a490d" title="Initialises this tableaux to be a clone of the given tableaux.">initClone()</a>.</p>
+<p>The data in this tableaux will not be initialised, and the contents and behaviour of this tableaux will remain undefined until you call one of the initialisation routines <a class="el" href="classregina_1_1LPData.html#ac48f34d3d8d79b3823f95bc2f64cf7a3" title="Initialises this tableaux by beginning at the original starting tableaux and working our way to any f...">initStart()</a> or <a class="el" href="classregina_1_1LPData.html#adfb498c421ccd15a2853821057078ff2" title="Initialises this tableaux to be a clone of the given tableaux.">initClone()</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">origTableaux</td><td>the original starting tableaux that holds the adjusted matrix of matching equations, before the tree traversal algorithm began. </td></tr>
@@ -598,17 +607,17 @@ template&lt;class LPConstraint , typename Integer &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a0c2e94f7cd3db993b25cabb2fe41ce35"></a>
+<a class="anchor" id="a404de33b7b083c53666f2f28ea67bbb3"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class LPConstraint , typename Integer &gt; </div>
+template&lt;class LPConstraint , typename IntType &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="classregina_1_1LPData.html">regina::LPData</a>&lt; LPConstraint, Integer &gt;::sign </td>
+          <td class="memname">int <a class="el" href="classregina_1_1LPData.html">regina::LPData</a>&lt; LPConstraint, IntType &gt;::sign </td>
           <td>(</td>
           <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>pos</em></td><td>)</td>
@@ -623,11 +632,11 @@ template&lt;class LPConstraint , typename Integer &gt; </div>
 </div><div class="memdoc">
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the sign of the given variable under the current basis. </p>
-<p>This does <em>not</em> attempt to "undo" any changes of variable caused by prior calls to <a class="el" href="classregina_1_1LPData.html#a9e4d3e6e06d968bbe4e61f193d7c361c" title="Constrains this system further by constraining the given variable to be strictly positive.">constrainPositive()</a> or <a class="el" href="classregina_1_1LPData.html#a7203e2d4e09a03f7b8bcd6eb8b6d91b8" title="Declares that two quadrilateral coordinates within a tetrahedron are to be combined into a single oct...">constrainOct()</a>; it simply tests the sign of the variable in the given column of the tableaux in its current form.</p>
+<p>This does <em>not</em> attempt to "undo" any changes of variable caused by prior calls to <a class="el" href="classregina_1_1LPData.html#ad13df31bf31dabdeba22a4d0e7e77197" title="Constrains this system further by constraining the given variable to be strictly positive.">constrainPositive()</a> or <a class="el" href="classregina_1_1LPData.html#ae3de34d05aa11d2f75f7d63b0d56f9ae" title="Declares that two quadrilateral coordinates within a tetrahedron are to be combined into a single oct...">constrainOct()</a>; it simply tests the sign of the variable in the given column of the tableaux in its current form.</p>
 <p>Specifically: if the given variable is inactive or non-basic, this routine returns zero. If the given variable is in the basis, this routine returns the sign of the corresponding integer on the right-hand side of the tableaux.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pos</td><td>the index of the variable to query. This must be between 0 and origTableaux_-&gt;<a class="el" href="classregina_1_1LPData.html#a4008f03e567911477c518eb14872734b" title="Returns the number of columns in this tableaux.">columns()</a>-1 inclusive. </td></tr>
+    <tr><td class="paramname">pos</td><td>the index of the variable to query. This must be between 0 and origTableaux_-&gt;<a class="el" href="classregina_1_1LPData.html#a5a7168ef9cafb534f0fefc865477f5b9" title="Returns the number of columns in this tableaux.">columns()</a>-1 inclusive. </td></tr>
   </table>
   </dd>
 </dl>
@@ -636,8 +645,8 @@ template&lt;class LPConstraint , typename Integer &gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>enumerate/<a class="el" href="ntreeconstraint_8h.html">ntreeconstraint.h</a></li>
-<li>enumerate/<a class="el" href="ntreelp_8h.html">ntreelp.h</a></li>
+<li>enumerate/<a class="el" href="treeconstraint_8h.html">treeconstraint.h</a></li>
+<li>enumerate/<a class="el" href="treelp_8h.html">treelp.h</a></li>
 </ul>
 </div><!-- contents -->
 <hr>

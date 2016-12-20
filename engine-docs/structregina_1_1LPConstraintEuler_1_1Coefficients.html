@@ -62,22 +62,22 @@
 <p>Stores the extra coefficients in the tableaux associated with this constraint class (in this case, one extra integer per column).  
  <a href="structregina_1_1LPConstraintEuler_1_1Coefficients.html#details">More...</a></p>
 
-<p><code>#include &lt;enumerate/ntreeconstraint.h&gt;</code></p>
+<p><code>#include &lt;enumerate/treeconstraint.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ga97437139cb1dcdf687af8e3d72c81c20"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga97437139cb1dcdf687af8e3d72c81c20"></a>
-template&lt;typename Integer &gt; </td></tr>
-<tr class="memitem:ga97437139cb1dcdf687af8e3d72c81c20"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>fillFinalRows</b> (<a class="el" href="classregina_1_1LPMatrix.html">LPMatrix</a>&lt; Integer &gt; &amp;m, unsigned col) const </td></tr>
-<tr class="separator:ga97437139cb1dcdf687af8e3d72c81c20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa4a70d3d28507572ca720ef03a0aea29"><td class="memTemplParams" colspan="2"><a class="anchor" id="gaa4a70d3d28507572ca720ef03a0aea29"></a>
-template&lt;typename Integer &gt; </td></tr>
-<tr class="memitem:gaa4a70d3d28507572ca720ef03a0aea29"><td class="memTemplItemLeft" align="right" valign="top">Integer&#160;</td><td class="memTemplItemRight" valign="bottom"><b>innerProduct</b> (const <a class="el" href="classregina_1_1LPMatrix.html">LPMatrix</a>&lt; Integer &gt; &amp;m, unsigned mRow) const </td></tr>
-<tr class="separator:gaa4a70d3d28507572ca720ef03a0aea29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9a8c910612abfce54e5ea07717b5d148"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga9a8c910612abfce54e5ea07717b5d148"></a>
-template&lt;typename Integer &gt; </td></tr>
-<tr class="memitem:ga9a8c910612abfce54e5ea07717b5d148"><td class="memTemplItemLeft" align="right" valign="top">Integer&#160;</td><td class="memTemplItemRight" valign="bottom"><b>innerProductOct</b> (const <a class="el" href="classregina_1_1LPMatrix.html">LPMatrix</a>&lt; Integer &gt; &amp;m, unsigned mRow) const </td></tr>
-<tr class="separator:ga9a8c910612abfce54e5ea07717b5d148"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0c58b078d5dc34f8955105a3d99b71ca"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga0c58b078d5dc34f8955105a3d99b71ca"></a>
+template&lt;typename IntType &gt; </td></tr>
+<tr class="memitem:ga0c58b078d5dc34f8955105a3d99b71ca"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>fillFinalRows</b> (<a class="el" href="classregina_1_1LPMatrix.html">LPMatrix</a>&lt; IntType &gt; &amp;m, unsigned col) const </td></tr>
+<tr class="separator:ga0c58b078d5dc34f8955105a3d99b71ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga506f49d833fdd21bebaca33d8ef74115"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga506f49d833fdd21bebaca33d8ef74115"></a>
+template&lt;typename IntType &gt; </td></tr>
+<tr class="memitem:ga506f49d833fdd21bebaca33d8ef74115"><td class="memTemplItemLeft" align="right" valign="top">IntType&#160;</td><td class="memTemplItemRight" valign="bottom"><b>innerProduct</b> (const <a class="el" href="classregina_1_1LPMatrix.html">LPMatrix</a>&lt; IntType &gt; &amp;m, unsigned mRow) const </td></tr>
+<tr class="separator:ga506f49d833fdd21bebaca33d8ef74115"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga132665cb0a456daa73832b2cb0a2161c"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga132665cb0a456daa73832b2cb0a2161c"></a>
+template&lt;typename IntType &gt; </td></tr>
+<tr class="memitem:ga132665cb0a456daa73832b2cb0a2161c"><td class="memTemplItemLeft" align="right" valign="top">IntType&#160;</td><td class="memTemplItemRight" valign="bottom"><b>innerProductOct</b> (const <a class="el" href="classregina_1_1LPMatrix.html">LPMatrix</a>&lt; IntType &gt; &amp;m, unsigned mRow) const </td></tr>
+<tr class="separator:ga132665cb0a456daa73832b2cb0a2161c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -89,7 +89,7 @@ Public Attributes</h2></td></tr>
 <div class="textblock"><p>Stores the extra coefficients in the tableaux associated with this constraint class (in this case, one extra integer per column). </p>
 <p>See the <a class="el" href="structregina_1_1LPConstraintBase_1_1Coefficients.html" title="Stores the extra coefficients in a single column for the nConstraints additional rows that we add to ...">LPConstraintBase::Coefficients</a> notes for further details. </p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>enumerate/<a class="el" href="ntreeconstraint_8h.html">ntreeconstraint.h</a></li>
+<li>enumerate/<a class="el" href="treeconstraint_8h.html">treeconstraint.h</a></li>
 </ul>
 </div><!-- contents -->
 <hr>

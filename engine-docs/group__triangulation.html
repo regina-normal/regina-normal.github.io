@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>Regina Calculation Engine: 3-Manifold Triangulations</title>
+<title>Regina Calculation Engine: Triangulations</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -39,148 +39,223 @@
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a> &#124;
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">3-Manifold Triangulations</div>  </div>
+<div class="title">Triangulations</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Triangulations of 3-manifolds.  
+<p>Triangulations of manifolds in all supported dimensions.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespaceregina_1_1detail"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceregina_1_1detail.html">regina::detail</a></td></tr>
-<tr class="memdesc:namespaceregina_1_1detail"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains implementation details and common functionality for Regina's dimension-agnostic classes. <br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Dim2ExampleTriangulation.html">regina::Dim2ExampleTriangulation</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class offers routines for constructing sample 2-manifold triangulations of various types.  <a href="classregina_1_1Dim2ExampleTriangulation.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Example.html">regina::Example&lt; dim &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class offers static routines for constructing a variety of sample <em>dim</em>-dimensional triangulations.  <a href="classregina_1_1Example.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NBoundaryComponent.html">regina::NBoundaryComponent</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a component of the boundary of a triangulation.  <a href="classregina_1_1NBoundaryComponent.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Example_3_012_01_4.html">regina::Example&lt; 2 &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offers routines for constructing a variety of sample 2-dimensional triangulations.  <a href="classregina_1_1Example_3_012_01_4.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Component_3_013_01_4.html">regina::Component&lt; 3 &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a connected component of a 3-manifold triangulation.  <a href="classregina_1_1Component_3_013_01_4.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Example_3_013_01_4.html">regina::Example&lt; 3 &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offers routines for constructing a variety of sample 3-dimensional triangulations.  <a href="classregina_1_1Example_3_013_01_4.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Face_3_013_00_011_01_4.html">regina::Face&lt; 3, 1 &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents an edge in the skeleton of a 3-manifold triangulation.  <a href="classregina_1_1Face_3_013_00_011_01_4.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Example_3_014_01_4.html">regina::Example&lt; 4 &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offers routines for constructing a variety of sample 4-dimensional triangulations.  <a href="classregina_1_1Example_3_014_01_4.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NExampleTriangulation.html">regina::NExampleTriangulation</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class offers routines for constructing sample 3-manifold triangulations of various types.  <a href="classregina_1_1NExampleTriangulation.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1FaceNumbering.html">regina::FaceNumbering&lt; dim, subdim &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies how <em>subdim</em>-faces are numbered within a <em>dim</em>-dimensional simplex.  <a href="classregina_1_1FaceNumbering.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NFacePair.html">regina::NFacePair</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a pair of tetrahedron face numbers.  <a href="classregina_1_1NFacePair.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1FacePair.html">regina::FacePair</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a pair of tetrahedron face numbers.  <a href="classregina_1_1FacePair.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1FacetPairing_3_013_01_4.html">regina::FacetPairing&lt; 3 &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the dual graph of a 3-manifold triangulation.  <a href="classregina_1_1FacetPairing_3_013_01_4.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Isomorphism_3_013_01_4.html">regina::Isomorphism&lt; 3 &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a combinatorial isomorphism from one 3-manifold triangulation into another.  <a href="classregina_1_1Isomorphism_3_013_01_4.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structregina_1_1FacetSpec.html">regina::FacetSpec&lt; dim &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A lightweight class used to refer to a particular facet of a particular top-dimensional simplex in a <em>dim</em>-dimensional triangulation.  <a href="structregina_1_1FacetSpec.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NPermItS4.html">regina::NPermItS4</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An iterator class that runs through all 24 permutations of four elements.  <a href="classregina_1_1NPermItS4.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1BoundaryComponent.html">regina::BoundaryComponent&lt; int &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A component of the boundary of a <em>dim</em>-manifold triangulation.  <a href="classregina_1_1BoundaryComponent.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Simplex_3_013_01_4.html">regina::Simplex&lt; 3 &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a tetrahedron within a 3-manifold triangulation.  <a href="classregina_1_1Simplex_3_013_01_4.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Component.html">regina::Component&lt; int &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A connected component of a <em>dim</em>-manifold triangulation.  <a href="classregina_1_1Component.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Face_3_013_00_012_01_4.html">regina::Face&lt; 3, 2 &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a triangle in the skeleton of a 3-manifold triangulation.  <a href="classregina_1_1Face_3_013_00_012_01_4.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Face.html">regina::Face&lt; int, int &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a <em>subdim</em>-face in the skeleton of a <em>dim</em>-dimensional triangulation.  <a href="classregina_1_1Face.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Triangulation_3_013_01_4.html">regina::Triangulation&lt; 3 &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a 3-dimensional triangulation, typically of a 3-manifold.  <a href="classregina_1_1Triangulation_3_013_01_4.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1FaceEmbedding.html">regina::FaceEmbedding&lt; int, int &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Details how a <em>subdim</em>-face of a <em>dim</em>-dimensional triangulation appears within each top-dimensional simplex.  <a href="classregina_1_1FaceEmbedding.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Face_3_013_00_010_01_4.html">regina::Face&lt; 3, 0 &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a vertex in the skeleton of a 3-manifold triangulation.  <a href="classregina_1_1Face_3_013_00_010_01_4.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1FacetPairing.html">regina::FacetPairing&lt; int &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the dual graph of a <em>dim</em>-manifold triangulation; that is, the pairwise matching of facets of <em>dim</em>-dimensional simplices.  <a href="classregina_1_1FacetPairing.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Isomorphism.html">regina::Isomorphism&lt; int &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a combinatorial isomorphism from one <em>dim</em>-manifold triangulation into another.  <a href="classregina_1_1Isomorphism.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Triangulation.html">regina::Triangulation&lt; int &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <em>dim</em>-dimensional triangulation, built by gluing together <em>dim</em>-dimensional simplices along their (<em>dim</em>-1)-dimensional facets.  <a href="classregina_1_1Triangulation.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1HomologicalData.html">regina::HomologicalData</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data type that deals with all the detailed homological information in a manifold.  <a href="classregina_1_1HomologicalData.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1XMLTriangulationReader.html">regina::XMLTriangulationReader&lt; int &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An XML packet reader that reads a single <em>dim</em>-dimensional triangulation.  <a href="classregina_1_1XMLTriangulationReader.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1XMLTriangulationReader_3_012_01_4.html">regina::XMLTriangulationReader&lt; 2 &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An XML packet reader that reads a single 2-dimensional triangulation.  <a href="classregina_1_1XMLTriangulationReader_3_012_01_4.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1XMLTriangulationReader_3_013_01_4.html">regina::XMLTriangulationReader&lt; 3 &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An XML packet reader that reads a single 3-dimensional triangulation.  <a href="classregina_1_1XMLTriangulationReader_3_013_01_4.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1XMLTriangulationReader_3_014_01_4.html">regina::XMLTriangulationReader&lt; 4 &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An XML packet reader that reads a single 4-dimensional triangulation.  <a href="classregina_1_1XMLTriangulationReader_3_014_01_4.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ga72d44fe0a3baef48563fd679d063a217"><td class="memItemLeft" align="right" valign="top">typedef Component&lt; 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__triangulation.html#ga72d44fe0a3baef48563fd679d063a217">regina::NComponent</a></td></tr>
-<tr class="memdesc:ga72d44fe0a3baef48563fd679d063a217"><td class="mdescLeft">&#160;</td><td class="mdescRight">A convenience typedef for <a class="el" href="classregina_1_1Component_3_013_01_4.html" title="Represents a connected component of a 3-manifold triangulation.">Component&lt;3&gt;</a>.  <a href="#ga72d44fe0a3baef48563fd679d063a217">More...</a><br/></td></tr>
-<tr class="separator:ga72d44fe0a3baef48563fd679d063a217"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaec69256bc1b8d097dfceddbfc7ba7fb0"><td class="memItemLeft" align="right" valign="top">typedef FaceEmbedding&lt; 3, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__triangulation.html#gaec69256bc1b8d097dfceddbfc7ba7fb0">regina::NEdgeEmbedding</a></td></tr>
-<tr class="memdesc:gaec69256bc1b8d097dfceddbfc7ba7fb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">A convenience typedef for FaceEmbedding&lt;3, 1&gt;.  <a href="#gaec69256bc1b8d097dfceddbfc7ba7fb0">More...</a><br/></td></tr>
-<tr class="separator:gaec69256bc1b8d097dfceddbfc7ba7fb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3442b4173f21eb1890a4c64743152328"><td class="memItemLeft" align="right" valign="top">typedef Example&lt; 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__triangulation.html#ga3442b4173f21eb1890a4c64743152328">regina::Dim2ExampleTriangulation</a></td></tr>
+<tr class="memdesc:ga3442b4173f21eb1890a4c64743152328"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated typedef for backward compatibility.  <a href="#ga3442b4173f21eb1890a4c64743152328">More...</a><br/></td></tr>
+<tr class="separator:ga3442b4173f21eb1890a4c64743152328"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6096eca562a01858ade2f9fe950a8dd3"><td class="memItemLeft" align="right" valign="top">typedef Example&lt; 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__triangulation.html#ga6096eca562a01858ade2f9fe950a8dd3">regina::NExampleTriangulation</a></td></tr>
+<tr class="memdesc:ga6096eca562a01858ade2f9fe950a8dd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated typedef for backward compatibility.  <a href="#ga6096eca562a01858ade2f9fe950a8dd3">More...</a><br/></td></tr>
+<tr class="separator:ga6096eca562a01858ade2f9fe950a8dd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac48fdc344134a7fa32045a9ffe7f55be"><td class="memItemLeft" align="right" valign="top">typedef Example&lt; 4 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__triangulation.html#gac48fdc344134a7fa32045a9ffe7f55be">regina::Dim4ExampleTriangulation</a></td></tr>
+<tr class="memdesc:gac48fdc344134a7fa32045a9ffe7f55be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated typedef for backward compatibility.  <a href="#gac48fdc344134a7fa32045a9ffe7f55be">More...</a><br/></td></tr>
+<tr class="separator:gac48fdc344134a7fa32045a9ffe7f55be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga79926fe93b2994dc75769c5c564de4c0"><td class="memItemLeft" align="right" valign="top">typedef FacePair&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__triangulation.html#ga79926fe93b2994dc75769c5c564de4c0">regina::NFacePair</a></td></tr>
+<tr class="memdesc:ga79926fe93b2994dc75769c5c564de4c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated typedef for backward compatibility.  <a href="#ga79926fe93b2994dc75769c5c564de4c0">More...</a><br/></td></tr>
+<tr class="separator:ga79926fe93b2994dc75769c5c564de4c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8f7856ba44367811dafd267d9f9e8f1f"><td class="memItemLeft" align="right" valign="top">typedef FacetPairing&lt; 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__triangulation.html#ga8f7856ba44367811dafd267d9f9e8f1f">regina::NFacePairing</a></td></tr>
-<tr class="memdesc:ga8f7856ba44367811dafd267d9f9e8f1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A convenience typedef for <a class="el" href="classregina_1_1FacetPairing_3_013_01_4.html" title="Represents the dual graph of a 3-manifold triangulation.">FacetPairing&lt;3&gt;</a>.  <a href="#ga8f7856ba44367811dafd267d9f9e8f1f">More...</a><br/></td></tr>
+<tr class="memdesc:ga8f7856ba44367811dafd267d9f9e8f1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated typedef for backward compatibility.  <a href="#ga8f7856ba44367811dafd267d9f9e8f1f">More...</a><br/></td></tr>
 <tr class="separator:ga8f7856ba44367811dafd267d9f9e8f1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab61041f95f4c31c416b5731ed63c47a1"><td class="memItemLeft" align="right" valign="top">typedef Isomorphism&lt; 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__triangulation.html#gab61041f95f4c31c416b5731ed63c47a1">regina::NIsomorphism</a></td></tr>
-<tr class="memdesc:gab61041f95f4c31c416b5731ed63c47a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">A convenience typedef for <a class="el" href="classregina_1_1Isomorphism_3_013_01_4.html" title="Represents a combinatorial isomorphism from one 3-manifold triangulation into another.">Isomorphism&lt;3&gt;</a>.  <a href="#gab61041f95f4c31c416b5731ed63c47a1">More...</a><br/></td></tr>
-<tr class="separator:gab61041f95f4c31c416b5731ed63c47a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf2e0276b88d8f978f7d318e27b933ff9"><td class="memItemLeft" align="right" valign="top">typedef Simplex&lt; 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__triangulation.html#gaf2e0276b88d8f978f7d318e27b933ff9">regina::NTetrahedron</a></td></tr>
-<tr class="memdesc:gaf2e0276b88d8f978f7d318e27b933ff9"><td class="mdescLeft">&#160;</td><td class="mdescRight">A convenience typedef for <a class="el" href="classregina_1_1Simplex_3_013_01_4.html" title="Represents a tetrahedron within a 3-manifold triangulation.">Simplex&lt;3&gt;</a>.  <a href="#gaf2e0276b88d8f978f7d318e27b933ff9">More...</a><br/></td></tr>
-<tr class="separator:gaf2e0276b88d8f978f7d318e27b933ff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacbe4c3553ac238df7a0a0d3bacd754b6"><td class="memItemLeft" align="right" valign="top">typedef FaceEmbedding&lt; 3, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__triangulation.html#gacbe4c3553ac238df7a0a0d3bacd754b6">regina::NTriangleEmbedding</a></td></tr>
-<tr class="memdesc:gacbe4c3553ac238df7a0a0d3bacd754b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">A convenience typedef for FaceEmbedding&lt;3, 2&gt;.  <a href="#gacbe4c3553ac238df7a0a0d3bacd754b6">More...</a><br/></td></tr>
-<tr class="separator:gacbe4c3553ac238df7a0a0d3bacd754b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa253a7128dfee2a38499d3bb8a41debe"><td class="memItemLeft" align="right" valign="top">typedef Face&lt; 3, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__triangulation.html#gaa253a7128dfee2a38499d3bb8a41debe">regina::NTriangle</a></td></tr>
-<tr class="memdesc:gaa253a7128dfee2a38499d3bb8a41debe"><td class="mdescLeft">&#160;</td><td class="mdescRight">A convenience typedef for <a class="el" href="classregina_1_1Face_3_013_00_012_01_4.html" title="Represents a triangle in the skeleton of a 3-manifold triangulation.">Face&lt;3, 2&gt;</a>.  <a href="#gaa253a7128dfee2a38499d3bb8a41debe">More...</a><br/></td></tr>
-<tr class="separator:gaa253a7128dfee2a38499d3bb8a41debe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga793f31b50b818ee88993c83b57a07f8f"><td class="memItemLeft" align="right" valign="top">typedef FaceEmbedding&lt; 3, 0 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__triangulation.html#ga793f31b50b818ee88993c83b57a07f8f">regina::NVertexEmbedding</a></td></tr>
-<tr class="memdesc:ga793f31b50b818ee88993c83b57a07f8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A convenience typedef for FaceEmbedding&lt;3, 0&gt;.  <a href="#ga793f31b50b818ee88993c83b57a07f8f">More...</a><br/></td></tr>
-<tr class="separator:ga793f31b50b818ee88993c83b57a07f8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4324bb803ffb203d971d4410b570f679"><td class="memItemLeft" align="right" valign="top">typedef XMLTriangulationReader&lt; 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__triangulation.html#ga4324bb803ffb203d971d4410b570f679">regina::NXMLTriangulationReader</a></td></tr>
-<tr class="memdesc:ga4324bb803ffb203d971d4410b570f679"><td class="mdescLeft">&#160;</td><td class="mdescRight">A convenience typedef for <a class="el" href="classregina_1_1XMLTriangulationReader_3_013_01_4.html" title="An XML packet reader that reads a single 3-dimensional triangulation.">XMLTriangulationReader&lt;3&gt;</a>.  <a href="#ga4324bb803ffb203d971d4410b570f679">More...</a><br/></td></tr>
-<tr class="separator:ga4324bb803ffb203d971d4410b570f679"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaac38299d09566ac14cd2d4fbca24ae70"><td class="memItemLeft" align="right" valign="top">typedef FacetSpec&lt; 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__triangulation.html#gaac38299d09566ac14cd2d4fbca24ae70">regina::Dim2TriangleEdge</a></td></tr>
+<tr class="memdesc:gaac38299d09566ac14cd2d4fbca24ae70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated typedef for backward compatibility.  <a href="#gaac38299d09566ac14cd2d4fbca24ae70">More...</a><br/></td></tr>
+<tr class="separator:gaac38299d09566ac14cd2d4fbca24ae70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5d7efda7dff99a8a422a75e1bc2ca5d6"><td class="memItemLeft" align="right" valign="top">typedef FacetSpec&lt; 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__triangulation.html#ga5d7efda7dff99a8a422a75e1bc2ca5d6">regina::NTetFace</a></td></tr>
+<tr class="memdesc:ga5d7efda7dff99a8a422a75e1bc2ca5d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated typedef for backward compatibility.  <a href="#ga5d7efda7dff99a8a422a75e1bc2ca5d6">More...</a><br/></td></tr>
+<tr class="separator:ga5d7efda7dff99a8a422a75e1bc2ca5d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga696c1ecd18858c1f507967c4394e6dd0"><td class="memItemLeft" align="right" valign="top">typedef FacetSpec&lt; 4 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__triangulation.html#ga696c1ecd18858c1f507967c4394e6dd0">regina::Dim4PentFacet</a></td></tr>
+<tr class="memdesc:ga696c1ecd18858c1f507967c4394e6dd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated typedef for backward compatibility.  <a href="#ga696c1ecd18858c1f507967c4394e6dd0">More...</a><br/></td></tr>
+<tr class="separator:ga696c1ecd18858c1f507967c4394e6dd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafe03acab5f3950baadc9e7ecd494bedb"><td class="memItemLeft" align="right" valign="top">typedef HomologicalData&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__triangulation.html#gafe03acab5f3950baadc9e7ecd494bedb">regina::NHomologicalData</a></td></tr>
+<tr class="memdesc:gafe03acab5f3950baadc9e7ecd494bedb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated typedef for backward compatibility.  <a href="#gafe03acab5f3950baadc9e7ecd494bedb">More...</a><br/></td></tr>
+<tr class="separator:gafe03acab5f3950baadc9e7ecd494bedb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:ga883a00e8a10fc56f1a3ce0c4a11d83f7"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__triangulation.html#ga883a00e8a10fc56f1a3ce0c4a11d83f7">regina::TuraevViroAlg</a> { <a class="el" href="group__triangulation.html#gga883a00e8a10fc56f1a3ce0c4a11d83f7a7cc14c2e6a16d0b03250148faaf637fc">regina::TV_DEFAULT</a> = 0, 
-<a class="el" href="group__triangulation.html#gga883a00e8a10fc56f1a3ce0c4a11d83f7a3ac526cec9e01b03d22be66d4a41c54d">regina::TV_BACKTRACK</a> = 1, 
-<a class="el" href="group__triangulation.html#gga883a00e8a10fc56f1a3ce0c4a11d83f7a1b109760af960cc841814be65ffe6905">regina::TV_TREEWIDTH</a> = 2, 
-<a class="el" href="group__triangulation.html#gga883a00e8a10fc56f1a3ce0c4a11d83f7a0b7511e92537a975442baff155178fbc">regina::TV_NAIVE</a> = 3
- }</td></tr>
-<tr class="memdesc:ga883a00e8a10fc56f1a3ce0c4a11d83f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the various algorithms available for computing Turaev-Viro invariants.  <a href="group__triangulation.html#ga883a00e8a10fc56f1a3ce0c4a11d83f7">More...</a><br/></td></tr>
-<tr class="separator:ga883a00e8a10fc56f1a3ce0c4a11d83f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gac905231b3928f6d1b9191a38f18befaf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__triangulation.html#gac905231b3928f6d1b9191a38f18befaf">regina::binomSmall</a> (int n, int k)</td></tr>
+<tr class="memdesc:gac905231b3928f6d1b9191a38f18befaf"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the binomial coefficient <br/>
+ choose <em>k</em> for small arguments <em>n</em> and <em>k</em>.  <a href="#gac905231b3928f6d1b9191a38f18befaf">More...</a><br/></td></tr>
+<tr class="separator:gac905231b3928f6d1b9191a38f18befaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6889651af52cb3675599b58a3aa224d1"><td class="memTemplParams" colspan="2">template&lt;int dim&gt; </td></tr>
+<tr class="memitem:ga6889651af52cb3675599b58a3aa224d1"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__triangulation.html#ga6889651af52cb3675599b58a3aa224d1">regina::faceOppositeEdge</a> (int i, int j)</td></tr>
+<tr class="memdesc:ga6889651af52cb3675599b58a3aa224d1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the (<em>dim</em>-2)-face number that is opposite the edge joining vertices <em>i</em> and <em>j</em> in a <em>dim</em>-dimensional simplex.  <a href="#ga6889651af52cb3675599b58a3aa224d1">More...</a><br/></td></tr>
+<tr class="separator:ga6889651af52cb3675599b58a3aa224d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:ga3a21c955caff6df98cc24a663934c3f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__engine.html#ga40f523e616a7b654de9ee1d254b1f614">REGINA_DEPRECATED</a> typedef <br class="typebreak"/>
-std::list&lt; NIsomorphism * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__triangulation.html#ga3a21c955caff6df98cc24a663934c3f8">regina::NFacePairingIsoList</a></td></tr>
-<tr class="memdesc:ga3a21c955caff6df98cc24a663934c3f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">A deprecated typedef provided for backward compatibility only.  <a href="#ga3a21c955caff6df98cc24a663934c3f8">More...</a><br/></td></tr>
-<tr class="separator:ga3a21c955caff6df98cc24a663934c3f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga88105588db86f48e352c96035ea81fcd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__engine.html#ga40f523e616a7b654de9ee1d254b1f614">REGINA_DEPRECATED</a> typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__triangulation.html#ga88105588db86f48e352c96035ea81fcd">regina::UseFacePairing</a> )(const FacetPairing&lt; 3 &gt; *, const NFacePairingIsoList *, void *)</td></tr>
-<tr class="memdesc:ga88105588db86f48e352c96035ea81fcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">A deprecated typedef provided for backward compatibility only.  <a href="#ga88105588db86f48e352c96035ea81fcd">More...</a><br/></td></tr>
-<tr class="separator:ga88105588db86f48e352c96035ea81fcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Closed Triangulations</h2></td></tr>
+<tr class="memitem:gad61f654a7890f50a33d852358b8c5351"><td class="memItemLeft" align="right" valign="top">static Triangulation&lt; 3 &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__triangulation.html#gad61f654a7890f50a33d852358b8c5351">regina::Example&lt; 3 &gt;::s2xs1</a> ()</td></tr>
+<tr class="memdesc:gad61f654a7890f50a33d852358b8c5351"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a two-tetrahedron triangulation of the product space <code>S^2 x S^1</code>.  <a href="#gad61f654a7890f50a33d852358b8c5351">More...</a><br/></td></tr>
+<tr class="separator:gad61f654a7890f50a33d852358b8c5351"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Triangulations of 3-manifolds. </p>
+<p>Triangulations of manifolds in all supported dimensions. </p>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a class="anchor" id="ga72d44fe0a3baef48563fd679d063a217"></a>
+<a class="anchor" id="ga3442b4173f21eb1890a4c64743152328"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef Component&lt; 3 &gt; <a class="el" href="group__triangulation.html#ga72d44fe0a3baef48563fd679d063a217">regina::NComponent</a></td>
+          <td class="memname">typedef Example&lt;2&gt; <a class="el" href="group__triangulation.html#ga3442b4173f21eb1890a4c64743152328">regina::Dim2ExampleTriangulation</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>A convenience typedef for <a class="el" href="classregina_1_1Component_3_013_01_4.html" title="Represents a connected component of a 3-manifold triangulation.">Component&lt;3&gt;</a>. </p>
+<p>Deprecated typedef for backward compatibility. </p>
+<p>This typedef will be removed in a future release of Regina.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000199">Deprecated:</a></b></dt><dd>Instead of the old typedef Dim2ExampleTriangulation, you should use the full class name <a class="el" href="classregina_1_1Example_3_012_01_4.html" title="Offers routines for constructing a variety of sample 2-dimensional triangulations.">Example&lt;2&gt;</a>. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gaec69256bc1b8d097dfceddbfc7ba7fb0"></a>
+<a class="anchor" id="gaac38299d09566ac14cd2d4fbca24ae70"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef FaceEmbedding&lt;3, 1&gt; <a class="el" href="group__triangulation.html#gaec69256bc1b8d097dfceddbfc7ba7fb0">regina::NEdgeEmbedding</a></td>
+          <td class="memname">typedef FacetSpec&lt;2&gt; <a class="el" href="group__triangulation.html#gaac38299d09566ac14cd2d4fbca24ae70">regina::Dim2TriangleEdge</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>A convenience typedef for FaceEmbedding&lt;3, 1&gt;. </p>
+<p>Deprecated typedef for backward compatibility. </p>
+<p>This typedef will be removed in a future release of Regina.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000206">Deprecated:</a></b></dt><dd>Instead of the old typedef Dim2TriangleEdge, you should use the real class name <a class="el" href="structregina_1_1FacetSpec.html">FacetSpec&lt;2&gt;</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gac48fdc344134a7fa32045a9ffe7f55be"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Example&lt;4&gt; <a class="el" href="group__triangulation.html#gac48fdc344134a7fa32045a9ffe7f55be">regina::Dim4ExampleTriangulation</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Deprecated typedef for backward compatibility. </p>
+<p>This typedef will be removed in a future release of Regina.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000201">Deprecated:</a></b></dt><dd>Instead of the old typedef Dim4ExampleTriangulation, you should use the full class name <a class="el" href="classregina_1_1Example_3_014_01_4.html" title="Offers routines for constructing a variety of sample 4-dimensional triangulations.">Example&lt;4&gt;</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga696c1ecd18858c1f507967c4394e6dd0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef FacetSpec&lt;4&gt; <a class="el" href="group__triangulation.html#ga696c1ecd18858c1f507967c4394e6dd0">regina::Dim4PentFacet</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Deprecated typedef for backward compatibility. </p>
+<p>This typedef will be removed in a future release of Regina.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000208">Deprecated:</a></b></dt><dd>Instead of the old typedef Dim4PentFacet, you should use the real class name <a class="el" href="structregina_1_1FacetSpec.html">FacetSpec&lt;4&gt;</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga6096eca562a01858ade2f9fe950a8dd3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Example&lt;3&gt; <a class="el" href="group__triangulation.html#ga6096eca562a01858ade2f9fe950a8dd3">regina::NExampleTriangulation</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Deprecated typedef for backward compatibility. </p>
+<p>This typedef will be removed in a future release of Regina.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000200">Deprecated:</a></b></dt><dd>Instead of the old typedef NExampleTriangulation, you should use the full class name <a class="el" href="classregina_1_1Example_3_013_01_4.html" title="Offers routines for constructing a variety of sample 3-dimensional triangulations.">Example&lt;3&gt;</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga79926fe93b2994dc75769c5c564de4c0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef FacePair <a class="el" href="group__triangulation.html#ga79926fe93b2994dc75769c5c564de4c0">regina::NFacePair</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Deprecated typedef for backward compatibility. </p>
+<p>This typedef will be removed in a future release of Regina.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000202">Deprecated:</a></b></dt><dd>The class NFacePair has now been renamed to <a class="el" href="classregina_1_1FacePair.html" title="Represents a pair of tetrahedron face numbers.">FacePair</a>. </dd></dl>
 
 </div>
 </div>
@@ -194,156 +269,165 @@ std::list&lt; NIsomorphism * &gt;&#160;</td><td class="memItemRight" valign="bot
       </table>
 </div><div class="memdoc">
 
-<p>A convenience typedef for <a class="el" href="classregina_1_1FacetPairing_3_013_01_4.html" title="Represents the dual graph of a 3-manifold triangulation.">FacetPairing&lt;3&gt;</a>. </p>
+<p>Deprecated typedef for backward compatibility. </p>
+<p>This typedef will be removed in a future release of Regina.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000205">Deprecated:</a></b></dt><dd>Instead of the old typedef NFacePairing, you should use the full class name <a class="el" href="classregina_1_1FacetPairing_3_013_01_4.html" title="Represents the dual graph of a 3-manifold triangulation.">FacetPairing&lt;3&gt;</a>. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gab61041f95f4c31c416b5731ed63c47a1"></a>
+<a class="anchor" id="gafe03acab5f3950baadc9e7ecd494bedb"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef Isomorphism&lt; 3 &gt; <a class="el" href="group__triangulation.html#gab61041f95f4c31c416b5731ed63c47a1">regina::NIsomorphism</a></td>
+          <td class="memname">typedef HomologicalData <a class="el" href="group__triangulation.html#gafe03acab5f3950baadc9e7ecd494bedb">regina::NHomologicalData</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>A convenience typedef for <a class="el" href="classregina_1_1Isomorphism_3_013_01_4.html" title="Represents a combinatorial isomorphism from one 3-manifold triangulation into another.">Isomorphism&lt;3&gt;</a>. </p>
+<p>Deprecated typedef for backward compatibility. </p>
+<p>This typedef will be removed in a future release of Regina.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000209">Deprecated:</a></b></dt><dd>The class NHomologicalData has now been renamed to <a class="el" href="classregina_1_1HomologicalData.html" title="Data type that deals with all the detailed homological information in a manifold.">HomologicalData</a>. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gaf2e0276b88d8f978f7d318e27b933ff9"></a>
+<a class="anchor" id="ga5d7efda7dff99a8a422a75e1bc2ca5d6"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef Simplex&lt; 3 &gt; <a class="el" href="group__triangulation.html#gaf2e0276b88d8f978f7d318e27b933ff9">regina::NTetrahedron</a></td>
+          <td class="memname">typedef FacetSpec&lt;3&gt; <a class="el" href="group__triangulation.html#ga5d7efda7dff99a8a422a75e1bc2ca5d6">regina::NTetFace</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>A convenience typedef for <a class="el" href="classregina_1_1Simplex_3_013_01_4.html" title="Represents a tetrahedron within a 3-manifold triangulation.">Simplex&lt;3&gt;</a>. </p>
+<p>Deprecated typedef for backward compatibility. </p>
+<p>This typedef will be removed in a future release of Regina.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000207">Deprecated:</a></b></dt><dd>Instead of the old typedef NTetFace, you should use the real class name <a class="el" href="structregina_1_1FacetSpec.html">FacetSpec&lt;3&gt;</a>. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gaa253a7128dfee2a38499d3bb8a41debe"></a>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="gac905231b3928f6d1b9191a38f18befaf"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">typedef Face&lt; 3, 2 &gt; <a class="el" href="group__triangulation.html#gaa253a7128dfee2a38499d3bb8a41debe">regina::NTriangle</a></td>
+          <td class="memname">int regina::binomSmall </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>A convenience typedef for <a class="el" href="classregina_1_1Face_3_013_00_012_01_4.html" title="Represents a triangle in the skeleton of a 3-manifold triangulation.">Face&lt;3, 2&gt;</a>. </p>
-
-</div>
-</div>
-<a class="anchor" id="gacbe4c3553ac238df7a0a0d3bacd754b6"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">typedef FaceEmbedding&lt;3, 2&gt; <a class="el" href="group__triangulation.html#gacbe4c3553ac238df7a0a0d3bacd754b6">regina::NTriangleEmbedding</a></td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em>&#160;</td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>A convenience typedef for FaceEmbedding&lt;3, 2&gt;. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga793f31b50b818ee88993c83b57a07f8f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">typedef FaceEmbedding&lt;3, 0&gt; <a class="el" href="group__triangulation.html#ga793f31b50b818ee88993c83b57a07f8f">regina::NVertexEmbedding</a></td>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
-</div><div class="memdoc">
-
-<p>A convenience typedef for FaceEmbedding&lt;3, 0&gt;. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga4324bb803ffb203d971d4410b570f679"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef XMLTriangulationReader&lt;3&gt; <a class="el" href="group__triangulation.html#ga4324bb803ffb203d971d4410b570f679">regina::NXMLTriangulationReader</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>A convenience typedef for <a class="el" href="classregina_1_1XMLTriangulationReader_3_013_01_4.html" title="An XML packet reader that reads a single 3-dimensional triangulation.">XMLTriangulationReader&lt;3&gt;</a>. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
-<a class="anchor" id="ga883a00e8a10fc56f1a3ce0c4a11d83f7"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="group__triangulation.html#ga883a00e8a10fc56f1a3ce0c4a11d83f7">regina::TuraevViroAlg</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Represents the various algorithms available for computing Turaev-Viro invariants. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="gga883a00e8a10fc56f1a3ce0c4a11d83f7a7cc14c2e6a16d0b03250148faaf637fc"></a>TV_DEFAULT</em>&nbsp;</td><td class="fielddoc">
-<p>The default algorithm. </p>
-<p>Here Regina will choose whichever algorithm it thinks (rightly or wrongly) is most appropriate. </p>
-</td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="gga883a00e8a10fc56f1a3ce0c4a11d83f7a3ac526cec9e01b03d22be66d4a41c54d"></a>TV_BACKTRACK</em>&nbsp;</td><td class="fielddoc">
-<p>An optimised backtracking algorithm. </p>
-<p>This enumerates edge colourings and sums their corresponding weights. This can be slow in general (since there could be exponentially many edge colourings), but it has very small memory usage. </p>
-</td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="gga883a00e8a10fc56f1a3ce0c4a11d83f7a1b109760af960cc841814be65ffe6905"></a>TV_TREEWIDTH</em>&nbsp;</td><td class="fielddoc">
-<p>A treewidth-based algorithm. </p>
-<p>This uses dynamic programming over a tree decomposition of the face pairing graph. This can be fast for triangulations whose face pairing graphs have small treewidth, but it may require extremely large amounts of memory. </p>
-</td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="gga883a00e8a10fc56f1a3ce0c4a11d83f7a0b7511e92537a975442baff155178fbc"></a>TV_NAIVE</em>&nbsp;</td><td class="fielddoc">
-<p>An unoptimised backtracking algorithm. </p>
-<p>Like TV_BACKTRACK, this enumerates edge colourings and sums weights. However, the implementation is more naive.</p>
-<dl class="section warning"><dt>Warning</dt><dd>This algorithm should only be used for comparison and experimentation. Due to its slow performance, it is not suitable for "real" applications. </dd></dl>
-</td></tr>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
 </table>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a class="anchor" id="ga3a21c955caff6df98cc24a663934c3f8"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__engine.html#ga40f523e616a7b654de9ee1d254b1f614">REGINA_DEPRECATED</a> typedef std::list&lt;NIsomorphism*&gt; regina::NFacePairingIsoList</td>
-        </tr>
-      </table>
 </div><div class="memdoc">
 
-<p>A deprecated typedef provided for backward compatibility only. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000435">Deprecated:</a></b></dt><dd>As of Regina 4.94, this typedef is now available as <a class="el" href="classregina_1_1detail_1_1FacetPairingBase.html#a29c1d0f565e50aa76cfca68714347533" title="A list of isomorphisms on facet pairings.">NFacePairing::IsoList</a>. The old typedef NFacePairingIsoList is provided for backward compatibility, but will be removed in some future version of Regina. </dd></dl>
+<p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the binomial coefficient <br/>
+ choose <em>k</em> for small arguments <em>n</em> and <em>k</em>. </p>
+<p>This routine is very fast, since it uses a constant-time lookup. The trade-off is that it can only be used for <em>n</em> &le; 16.</p>
+<p>If you need a compile-time constant, you should use the constant <a class="el" href="classregina_1_1FaceNumbering.html" title="Specifies how subdim-faces are numbered within a dim-dimensional simplex.">FaceNumbering</a>&lt;n-1, k-1&gt;::nFaces instead. This function is provided for situations where <em>n</em> and/or <em>k</em> are not known until runtime.</p>
+<dl class="section note"><dt>Note</dt><dd>The constraint <em>n</em> &le; 16 is large enough for working with triangulations in Regina, since Regina restricts its triangulations to dimension &le; 15 (where each simplex has 16 vertices).</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>the parameter <em>n</em> in (<em>n</em> choose <em>k</em>); this must be between 0 and 16 inclusive. </td></tr>
+    <tr><td class="paramname">k</td><td>the parameter <em>k</em> in (<em>n</em> choose <em>k</em>); this must be between 0 and <em>n</em> inclusive. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the binomial coefficient <em>n</em> choose <em>k</em>. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga88105588db86f48e352c96035ea81fcd"></a>
+<a class="anchor" id="ga6889651af52cb3675599b58a3aa224d1"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;int dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__engine.html#ga40f523e616a7b654de9ee1d254b1f614">REGINA_DEPRECATED</a> typedef void(* regina::UseFacePairing)(const FacetPairing&lt; 3 &gt; *, const NFacePairingIsoList *, void *)</td>
+          <td class="memname">int regina::faceOppositeEdge </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>A deprecated typedef provided for backward compatibility only. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000436">Deprecated:</a></b></dt><dd>As of Regina 4.94, this typedef is now available as <a class="el" href="classregina_1_1detail_1_1FacetPairingBase.html#a509cb0fc50dd293792e8e13f155b241e" title="A routine that can do arbitrary processing upon a facet pairing and its automorphisms.">NFacePairing::Use</a>. The old typedef UseFacePairing is provided for backward compatibility, but will be removed in some future version of Regina. </dd></dl>
+<p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the (<em>dim</em>-2)-face number that is opposite the edge joining vertices <em>i</em> and <em>j</em> in a <em>dim</em>-dimensional simplex. </p>
+<p>This function is offered because its implementation is faster than working through the <a class="el" href="classregina_1_1FaceNumbering.html" title="Specifies how subdim-faces are numbered within a dim-dimensional simplex.">FaceNumbering</a> class.</p>
+<p>The arguments <em>i</em> and <em>j</em> do not need to appear in ascending order.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>the first vertex of an edge in a <em>dim</em>-dimensional simplex. This must be between 0 and <em>dim</em> inclusive. </td></tr>
+    <tr><td class="paramname">j</td><td>the second vertex of an edge in a <em>dim</em>-dimensional simplex. This must be between 0 and <em>dim</em> inclusive, and must be different from <em>i</em>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the number of the (<em>dim</em>-2)-face opposite the given edge. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gad61f654a7890f50a33d852358b8c5351"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Triangulation&lt; 3 &gt; * <a class="el" href="classregina_1_1Example.html">regina::Example</a>&lt; 3 &gt;::s2xs1 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a two-tetrahedron triangulation of the product space <code>S^2 x S^1</code>. </p>
+<p>This is identical to calling the generic routine <a class="el" href="classregina_1_1detail_1_1ExampleBase.html#ac808405b4900c8fdff2153d1e404f1bb" title="Returns a two-simplex triangulation of the product space S^(dim-1) x S^1.">sphereBundle()</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>a newly constructed triangulation, which must be destroyed by the caller of this routine. </dd></dl>
 
 </div>
 </div>

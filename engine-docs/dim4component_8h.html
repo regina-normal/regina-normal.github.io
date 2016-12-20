@@ -48,59 +48,16 @@
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">dim4component.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Deals with connected components of a 4-manifold triangulation.  
+<p>Deprecated header.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="regina-core_8h.html">regina-core.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="component_8h.html">generic/component.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="alias_2face_8h.html">generic/alias/face.h</a>&quot;</code><br/>
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Simplex.html">regina::Simplex&lt; int &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a top-dimensional simplex in a <em>dim</em>-manifold triangulation.  <a href="classregina_1_1Simplex.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Triangulation.html">regina::Triangulation&lt; int &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <em>dim</em>-dimensional triangulation, built by gluing together <em>dim</em>-dimensional simplices along their (<em>dim</em>-1)-dimensional facets.  <a href="classregina_1_1Triangulation.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Face.html">regina::Face&lt; int, int &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a <em>subdim</em>-face in the skeleton of a <em>dim</em>-dimensional triangulation.  <a href="classregina_1_1Face.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structregina_1_1detail_1_1FaceListHolder_3_01Component_3_014_01_4_00_01subdim_01_4.html">regina::detail::FaceListHolder&lt; Component&lt; 4 &gt;, subdim &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper class that indicates what data type is used by a connected component of a triangulation to store a list of <em>subdim</em>-faces.  <a href="structregina_1_1detail_1_1FaceListHolder_3_01Component_3_014_01_4_00_01subdim_01_4.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Component_3_014_01_4.html">regina::Component&lt; 4 &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a connected component of a 4-manifold triangulation.  <a href="classregina_1_1Component_3_014_01_4.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespaceregina"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceregina.html">regina</a></td></tr>
-<tr class="memdesc:namespaceregina"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the entire Regina calculation engine. <br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespaceregina_1_1detail"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceregina_1_1detail.html">regina::detail</a></td></tr>
-<tr class="memdesc:namespaceregina_1_1detail"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains implementation details and common functionality for Regina's dimension-agnostic classes. <br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:ga70b01d68f40e90e867c5ad833972fe2e"><td class="memItemLeft" align="right" valign="top">typedef Simplex&lt; 4 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dim4.html#ga70b01d68f40e90e867c5ad833972fe2e">regina::Dim4Pentachoron</a></td></tr>
-<tr class="memdesc:ga70b01d68f40e90e867c5ad833972fe2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A convenience typedef for <a class="el" href="classregina_1_1Simplex_3_014_01_4.html" title="Represents a pentachoron (a 4-dimensional simplex) within a 4-manifold triangulation.">Simplex&lt;4&gt;</a>.  <a href="group__dim4.html#ga70b01d68f40e90e867c5ad833972fe2e">More...</a><br/></td></tr>
-<tr class="separator:ga70b01d68f40e90e867c5ad833972fe2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa331d3dccc409c63af6aeffef9032bc7"><td class="memItemLeft" align="right" valign="top">typedef Triangulation&lt; 4 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dim4.html#gaa331d3dccc409c63af6aeffef9032bc7">regina::Dim4Triangulation</a></td></tr>
-<tr class="memdesc:gaa331d3dccc409c63af6aeffef9032bc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">A convenience typedef for <a class="el" href="classregina_1_1Triangulation_3_014_01_4.html" title="Represents a 4-dimensional triangulation, typically of a 4-manifold.">Triangulation&lt;4&gt;</a>.  <a href="group__dim4.html#gaa331d3dccc409c63af6aeffef9032bc7">More...</a><br/></td></tr>
-<tr class="separator:gaa331d3dccc409c63af6aeffef9032bc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Deals with connected components of a 4-manifold triangulation. </p>
+<div class="textblock"><code>#include &quot;<a class="el" href="dim4_8h.html">triangulation/dim4.h</a>&quot;</code><br/>
+</div><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Deprecated header. </p>
 </div></div><!-- contents -->
 <hr>
 Copyright &copy; 1999-2016, The Regina development team

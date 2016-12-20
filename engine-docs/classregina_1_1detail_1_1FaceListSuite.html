@@ -62,7 +62,7 @@
 <p>Internal class that helps a triangulation store its lists of faces.  
  <a href="classregina_1_1detail_1_1FaceListSuite.html#details">More...</a></p>
 
-<p><code>#include &lt;generic/detail/triangulation.h&gt;</code></p>
+<p><code>#include &lt;triangulation/detail/triangulation.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for regina::detail::FaceListSuite&lt; dim, subdim &gt;:</div>
 <div class="dyncontent">
@@ -85,6 +85,9 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a45b34020172394d10592dd4251468bcc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1FaceListSuite.html#a45b34020172394d10592dd4251468bcc">deleteFaces</a> ()</td></tr>
 <tr class="memdesc:a45b34020172394d10592dd4251468bcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes all faces of dimension <em>subdim</em> and below.  <a href="#a45b34020172394d10592dd4251468bcc">More...</a><br/></td></tr>
 <tr class="separator:a45b34020172394d10592dd4251468bcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a013abf7fffeba839fb47a2dcfaee19f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1FaceListSuite.html#a013abf7fffeba839fb47a2dcfaee19f5">swapFaces</a> (<a class="el" href="classregina_1_1detail_1_1FaceListSuite.html">FaceListSuite</a>&lt; dim, subdim &gt; &amp;other)</td></tr>
+<tr class="memdesc:a013abf7fffeba839fb47a2dcfaee19f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swaps all faces of dimension <em>subdim</em> and below with those of the given triangulation.  <a href="#a013abf7fffeba839fb47a2dcfaee19f5">More...</a><br/></td></tr>
+<tr class="separator:a013abf7fffeba839fb47a2dcfaee19f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8adeb83255137b4ba522408f77fbe58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1FaceListSuite.html#aa8adeb83255137b4ba522408f77fbe58">fillFVector</a> (std::vector&lt; size_t &gt; &amp;result) const </td></tr>
 <tr class="memdesc:aa8adeb83255137b4ba522408f77fbe58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the given vector with the first (<em>subdim</em> + 1) elements of the f-vector.  <a href="#aa8adeb83255137b4ba522408f77fbe58">More...</a><br/></td></tr>
 <tr class="separator:aa8adeb83255137b4ba522408f77fbe58"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -112,9 +115,16 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:ga1cd29e5cef4315d5b40c37ab997645b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__generic.html#ga1cd29e5cef4315d5b40c37ab997645b8">destroy</a> ()</td></tr>
 <tr class="memdesc:ga1cd29e5cef4315d5b40c37ab997645b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys all faces in this list, and clears the list itself.  <a href="group__generic.html#ga1cd29e5cef4315d5b40c37ab997645b8">More...</a><br/></td></tr>
 <tr class="separator:ga1cd29e5cef4315d5b40c37ab997645b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga425fc00273288a36288fc08452ad4bf3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__generic.html#ga425fc00273288a36288fc08452ad4bf3">swap</a> (<a class="el" href="classregina_1_1FaceList.html">FaceList</a>&lt; dim, subdim &gt; &amp;other)</td></tr>
+<tr class="memdesc:ga425fc00273288a36288fc08452ad4bf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swaps all faces in this list with those in the given list.  <a href="group__generic.html#ga425fc00273288a36288fc08452ad4bf3">More...</a><br/></td></tr>
+<tr class="separator:ga425fc00273288a36288fc08452ad4bf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5605932cdf6dacacdfb2d90151bac356"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__generic.html#ga5605932cdf6dacacdfb2d90151bac356">sameDegrees</a> (const <a class="el" href="classregina_1_1FaceList.html">FaceList</a>&lt; dim, subdim &gt; &amp;other) const </td></tr>
 <tr class="memdesc:ga5605932cdf6dacacdfb2d90151bac356"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests whether this and the given triangulation have the same <em>subdim</em>-face degree sequences.  <a href="group__generic.html#ga5605932cdf6dacacdfb2d90151bac356">More...</a><br/></td></tr>
 <tr class="separator:ga5605932cdf6dacacdfb2d90151bac356"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga10db154ee1ec1418518b738abe8b5ead"><td class="memTemplParams" colspan="2">template&lt;typename Iterator &gt; </td></tr>
+<tr class="memitem:ga10db154ee1ec1418518b738abe8b5ead"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic.html#ga10db154ee1ec1418518b738abe8b5ead">reorderFaces</a> (<a class="el" href="group__generic.html#ga0be8028a8f015b7fff2e37769a17dfac">Iterator</a> <a class="el" href="group__generic.html#ga1671ff7a32ea81850ebbc402b04bfddb">begin</a>, <a class="el" href="group__generic.html#ga0be8028a8f015b7fff2e37769a17dfac">Iterator</a> <a class="el" href="group__generic.html#ga45bd2d30911e68b272b26de716f35ad1">end</a>)</td></tr>
+<tr class="memdesc:ga10db154ee1ec1418518b738abe8b5ead"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reorders this list of faces.  <a href="group__generic.html#ga10db154ee1ec1418518b738abe8b5ead">More...</a><br/></td></tr>
+<tr class="separator:ga10db154ee1ec1418518b738abe8b5ead"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;int dim, int subdim&gt;<br/>
@@ -258,8 +268,42 @@ template&lt;int dim, int subdim&gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a013abf7fffeba839fb47a2dcfaee19f5"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int dim, int subdim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classregina_1_1detail_1_1FaceListSuite.html">regina::detail::FaceListSuite</a>&lt; dim &gt;::swapFaces </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classregina_1_1detail_1_1FaceListSuite.html">FaceListSuite</a>&lt; dim, subdim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Swaps all faces of dimension <em>subdim</em> and below with those of the given triangulation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>the face storage for the triangulation whose faces are to be swapped with this. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>generic/detail/<a class="el" href="detail_2triangulation_8h.html">triangulation.h</a></li>
+<li>triangulation/detail/<a class="el" href="triangulation_2detail_2triangulation_8h.html">triangulation.h</a></li>
 </ul>
 </div><!-- contents -->
 <hr>

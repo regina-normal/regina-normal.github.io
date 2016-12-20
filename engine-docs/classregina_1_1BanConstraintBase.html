@@ -63,7 +63,7 @@
 <p>A base class for additional banning and marking constraints that we can place on tree traversal algorithms.  
  <a href="classregina_1_1BanConstraintBase.html#details">More...</a></p>
 
-<p><code>#include &lt;enumerate/ntreeconstraint.h&gt;</code></p>
+<p><code>#include &lt;enumerate/treeconstraint.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for regina::BanConstraintBase:</div>
 <div class="dyncontent">
@@ -78,16 +78,16 @@ Inheritance diagram for regina::BanConstraintBase:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:ga1d20e8592ae6291b6592faeca37bfd6a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__enumerate.html#ga1d20e8592ae6291b6592faeca37bfd6a">BanConstraintBase</a> (const <a class="el" href="group__hypersurface.html#gaa504c0ed97bb88a50712083a7af647ab">NTriangulation</a> *tri, int coords)</td></tr>
-<tr class="memdesc:ga1d20e8592ae6291b6592faeca37bfd6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs and initialises the <em>banned_</em> and <em>marked_</em> arrays to be entirely <code>false</code>.  <a href="group__enumerate.html#ga1d20e8592ae6291b6592faeca37bfd6a">More...</a><br/></td></tr>
-<tr class="separator:ga1d20e8592ae6291b6592faeca37bfd6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae8d836c495ce55d65cda27ef4e022391"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__enumerate.html#gae8d836c495ce55d65cda27ef4e022391">BanConstraintBase</a> (const <a class="el" href="classregina_1_1Triangulation.html">Triangulation</a>&lt; 3 &gt; *tri, int coords)</td></tr>
+<tr class="memdesc:gae8d836c495ce55d65cda27ef4e022391"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs and initialises the <em>banned_</em> and <em>marked_</em> arrays to be entirely <code>false</code>.  <a href="group__enumerate.html#gae8d836c495ce55d65cda27ef4e022391">More...</a><br/></td></tr>
+<tr class="separator:gae8d836c495ce55d65cda27ef4e022391"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga63e53c6bd1b2feebdee47ce63fb4ab21"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__enumerate.html#ga63e53c6bd1b2feebdee47ce63fb4ab21">~BanConstraintBase</a> ()</td></tr>
 <tr class="memdesc:ga63e53c6bd1b2feebdee47ce63fb4ab21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys this object and all associated data.  <a href="group__enumerate.html#ga63e53c6bd1b2feebdee47ce63fb4ab21">More...</a><br/></td></tr>
 <tr class="separator:ga63e53c6bd1b2feebdee47ce63fb4ab21"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga39a9ddda3dac309df4f4751d41fd5367"><td class="memTemplParams" colspan="2">template&lt;class LPConstraint , typename Integer &gt; </td></tr>
-<tr class="memitem:ga39a9ddda3dac309df4f4751d41fd5367"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__enumerate.html#ga39a9ddda3dac309df4f4751d41fd5367">enforceBans</a> (<a class="el" href="classregina_1_1LPData.html">LPData</a>&lt; LPConstraint, Integer &gt; &amp;lp) const </td></tr>
-<tr class="memdesc:ga39a9ddda3dac309df4f4751d41fd5367"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enforces all bans described by this class in the given tableaux.  <a href="group__enumerate.html#ga39a9ddda3dac309df4f4751d41fd5367">More...</a><br/></td></tr>
-<tr class="separator:ga39a9ddda3dac309df4f4751d41fd5367"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaffa87946a1247ec9ba1adc3192892db9"><td class="memTemplParams" colspan="2">template&lt;class LPConstraint , typename IntType &gt; </td></tr>
+<tr class="memitem:gaffa87946a1247ec9ba1adc3192892db9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__enumerate.html#gaffa87946a1247ec9ba1adc3192892db9">enforceBans</a> (<a class="el" href="classregina_1_1LPData.html">LPData</a>&lt; LPConstraint, IntType &gt; &amp;lp) const </td></tr>
+<tr class="memdesc:gaffa87946a1247ec9ba1adc3192892db9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enforces all bans described by this class in the given tableaux.  <a href="group__enumerate.html#gaffa87946a1247ec9ba1adc3192892db9">More...</a><br/></td></tr>
+<tr class="separator:gaffa87946a1247ec9ba1adc3192892db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9e5d0e821aa954ed8f76ec6d62c03f67"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__enumerate.html#ga9e5d0e821aa954ed8f76ec6d62c03f67">init</a> (const int *columnPerm)</td></tr>
 <tr class="memdesc:ga9e5d0e821aa954ed8f76ec6d62c03f67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifies which coordinates to ban and mark, and records the corresponding tableaux columns in the <em>banned_</em> and <em>marked_</em> arrays respectively.  <a href="group__enumerate.html#ga9e5d0e821aa954ed8f76ec6d62c03f67">More...</a><br/></td></tr>
 <tr class="separator:ga9e5d0e821aa954ed8f76ec6d62c03f67"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -100,9 +100,9 @@ Static Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:ga0f71cf8b04ad6e73f539d848d7b55d96"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__hypersurface.html#gaa504c0ed97bb88a50712083a7af647ab">NTriangulation</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__enumerate.html#ga0f71cf8b04ad6e73f539d848d7b55d96">tri_</a></td></tr>
-<tr class="memdesc:ga0f71cf8b04ad6e73f539d848d7b55d96"><td class="mdescLeft">&#160;</td><td class="mdescRight">The triangulation with which we are working.  <a href="group__enumerate.html#ga0f71cf8b04ad6e73f539d848d7b55d96">More...</a><br/></td></tr>
-<tr class="separator:ga0f71cf8b04ad6e73f539d848d7b55d96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad00f1953eebfb29c9398be3be9b20811"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classregina_1_1Triangulation.html">Triangulation</a>&lt; 3 &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__enumerate.html#gad00f1953eebfb29c9398be3be9b20811">tri_</a></td></tr>
+<tr class="memdesc:gad00f1953eebfb29c9398be3be9b20811"><td class="mdescLeft">&#160;</td><td class="mdescRight">The triangulation with which we are working.  <a href="group__enumerate.html#gad00f1953eebfb29c9398be3be9b20811">More...</a><br/></td></tr>
+<tr class="separator:gad00f1953eebfb29c9398be3be9b20811"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae6a6acd436e0c868617def15827b0dd1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__enumerate.html#gae6a6acd436e0c868617def15827b0dd1">coords_</a></td></tr>
 <tr class="memdesc:gae6a6acd436e0c868617def15827b0dd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The normal or almost normal coordinate system in which we are working.  <a href="group__enumerate.html#gae6a6acd436e0c868617def15827b0dd1">More...</a><br/></td></tr>
 <tr class="separator:gae6a6acd436e0c868617def15827b0dd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -115,7 +115,7 @@ Protected Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A base class for additional banning and marking constraints that we can place on tree traversal algorithms. </p>
-<p>This is used with <a class="el" href="classregina_1_1NTreeEnumeration.html" title="The main entry point for the tree traversal algorithm to enumerate all vertex normal or almost normal...">NTreeEnumeration</a>, <a class="el" href="classregina_1_1NTreeSingleSoln.html" title="The main entry point for the tree traversal / branching algorithm to locate a single non-trivial norm...">NTreeSingleSoln</a> and related algorithms for enumerating and locating normal surfaces and angle structures in a 3-manifold triangulation.</p>
+<p>This is used with <a class="el" href="classregina_1_1TreeEnumeration.html" title="The main entry point for the tree traversal algorithm to enumerate all vertex normal or almost normal...">TreeEnumeration</a>, <a class="el" href="classregina_1_1TreeSingleSoln.html" title="The main entry point for the tree traversal / branching algorithm to locate a single non-trivial norm...">TreeSingleSoln</a> and related algorithms for enumerating and locating normal surfaces and angle structures in a 3-manifold triangulation.</p>
 <p>This class adds constraints of two types:</p>
 <ul>
 <li><em>Banning</em> constraints, which ensure that certain coordinates are set to zero;</li>
@@ -126,10 +126,10 @@ Protected Attributes</h2></td></tr>
 <p>All of these constraints operate only on normal or angle structure coordinates in the underlying tableaux (and in particular not the additional variables introduced by additional linear constraints, as described by <a class="el" href="classregina_1_1LPConstraintBase.html" title="A base class for additional linear constraints that we can add to the tableaux of normal surface or a...">LPConstraintBase</a> and its subclasses).</p>
 <p>Currently marking is used in the following ways:</p>
 <ul>
-<li>The <a class="el" href="classregina_1_1NTreeEnumeration.html" title="The main entry point for the tree traversal algorithm to enumerate all vertex normal or almost normal...">NTreeEnumeration</a> and <a class="el" href="classregina_1_1NTautEnumeration.html" title="The main entry point for the tree traversal algorithm to enumerate all taut angle structures in a 3-m...">NTautEnumeration</a> algorithms do not use marking at all.</li>
+<li>The <a class="el" href="classregina_1_1TreeEnumeration.html" title="The main entry point for the tree traversal algorithm to enumerate all vertex normal or almost normal...">TreeEnumeration</a> and <a class="el" href="classregina_1_1TautEnumeration.html" title="The main entry point for the tree traversal algorithm to enumerate all taut angle structures in a 3-m...">TautEnumeration</a> algorithms do not use marking at all.</li>
 </ul>
 <ul>
-<li>In the <a class="el" href="classregina_1_1NTreeSingleSoln.html" title="The main entry point for the tree traversal / branching algorithm to locate a single non-trivial norm...">NTreeSingleSoln</a> algorithm, marking affects what is considered a non-trivial normal surface. Normally, a non-trivial surface is defined to be one in which some triangle coordinate is zero. With marking, a non-trivial surface is redefined to be one in which some <em>unmarked</em> triangle coordinate is zero. In other words, marked triangle types are effectively ignored when determining whether a surface is non-trivial or not.</li>
+<li>In the <a class="el" href="classregina_1_1TreeSingleSoln.html" title="The main entry point for the tree traversal / branching algorithm to locate a single non-trivial norm...">TreeSingleSoln</a> algorithm, marking affects what is considered a non-trivial normal surface. Normally, a non-trivial surface is defined to be one in which some triangle coordinate is zero. With marking, a non-trivial surface is redefined to be one in which some <em>unmarked</em> triangle coordinate is zero. In other words, marked triangle types are effectively ignored when determining whether a surface is non-trivial or not.</li>
 </ul>
 <p>At present, marking is not used at all for quadrilateral coordinates or angle structures. However, marking is a very new feature, and this concept may be expanded in future versions of Regina.</p>
 <p>This class does not record disc types in the order of their normal or angle structure coordinates; instead it records them in the order of their columns in a tableaux for linear programming (as used in <a class="el" href="classregina_1_1LPInitialTableaux.html" title="Stores an adjusted matrix of homogeneous linear matching equations based on a given triangulation...">LPInitialTableaux</a>). This means that there is a little more work required in setting up the initial lists of banned and marked columns, but then these lists are easy to use on the fly during tree traversal algorithms.</p>
@@ -137,7 +137,7 @@ Protected Attributes</h2></td></tr>
 <dl class="section warning"><dt>Warning</dt><dd>The API for this class has not yet been finalised. This means that the class interface may change in new versions of Regina, without maintaining backward compatibility. If you use this class directly in your own code, please watch the detailed changelogs upon new releases to see if you need to make changes to your code.</dd></dl>
 <dl class="section user"><dt>Python:</dt><dd>Not present. </dd></dl>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
-<li>enumerate/<a class="el" href="ntreeconstraint_8h.html">ntreeconstraint.h</a></li>
+<li>enumerate/<a class="el" href="treeconstraint_8h.html">treeconstraint.h</a></li>
 </ul>
 </div><!-- contents -->
 <hr>

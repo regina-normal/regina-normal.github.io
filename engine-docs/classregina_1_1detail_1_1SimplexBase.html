@@ -65,66 +65,58 @@
 <p>Helper class that provides core functionality for a top-dimensional simplex in a <em>dim</em>-manifold triangulation.  
  <a href="classregina_1_1detail_1_1SimplexBase.html#details">More...</a></p>
 
-<p><code>#include &lt;generic/detail/simplex.h&gt;</code></p>
+<p><code>#include &lt;triangulation/detail/simplex.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for regina::detail::SimplexBase&lt; dim &gt;:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="classregina_1_1detail_1_1SimplexBase.png" usemap="#regina::detail::SimplexBase&lt; dim &gt;_map" alt=""/>
   <map id="regina::detail::SimplexBase&lt; dim &gt;_map" name="regina::detail::SimplexBase&lt; dim &gt;_map">
-<area href="classregina_1_1NMarkedElement.html" title="A base class for elements of NMarkedVector." alt="regina::NMarkedElement" shape="rect" coords="0,56,338,80"/>
+<area href="classregina_1_1MarkedElement.html" title="A base class for elements of MarkedVector." alt="regina::MarkedElement" shape="rect" coords="0,56,338,80"/>
 <area href="structregina_1_1Output.html" alt="regina::Output&lt; SimplexBase&lt; dim &gt; &gt;" shape="rect" coords="348,56,686,80"/>
 <area href="classregina_1_1detail_1_1SimplexFacesSuite.html" alt="regina::detail::SimplexFacesSuite&lt; dim, dim-1 &gt;" shape="rect" coords="696,56,1034,80"/>
 <area href="classregina_1_1alias_1_1FaceOfSimplex.html" alt="regina::alias::FaceOfSimplex&lt; SimplexBase&lt; dim &gt;, dim &gt;" shape="rect" coords="1044,56,1382,80"/>
 <area href="classregina_1_1detail_1_1SimplexFaces.html" title="Helper class for storing which subdim-faces of a dim-dimensional triangulation appear within each top..." alt="regina::detail::SimplexFaces&lt; dim, subdim &gt;" shape="rect" coords="696,0,1034,24"/>
-<area href="classregina_1_1Simplex.html" title="Represents a top-dimensional simplex in a dim-manifold triangulation." alt="regina::Simplex&lt; int &gt;" shape="rect" coords="174,168,512,192"/>
-<area href="classregina_1_1Simplex_3_013_01_4.html" title="Represents a tetrahedron within a 3-manifold triangulation." alt="regina::Simplex&lt; 3 &gt;" shape="rect" coords="522,168,860,192"/>
-<area href="classregina_1_1Simplex_3_014_01_4.html" title="Represents a pentachoron (a 4-dimensional simplex) within a 4-manifold triangulation." alt="regina::Simplex&lt; 4 &gt;" shape="rect" coords="870,168,1208,192"/>
-<area href="classregina_1_1Simplex.html" alt="regina::Simplex&lt; dim &gt;" shape="rect" coords="1218,168,1556,192"/>
+<area href="classregina_1_1Face_3_012_00_012_01_4.html" title="Represents a tetrahedron within a 2-manifold triangulation." alt="regina::Face&lt; 2, 2 &gt;" shape="rect" coords="348,168,686,192"/>
+<area href="classregina_1_1Face_3_014_00_014_01_4.html" title="Represents a pentachoron (a 4-dimensional simplex) within a 4-manifold triangulation." alt="regina::Face&lt; 4, 4 &gt;" shape="rect" coords="696,168,1034,192"/>
+<area href="classregina_1_1Face_3_01dim_00_01dim_01_4.html" title="Represents a top-dimensional simplex in a dim-manifold triangulation." alt="regina::Face&lt; dim, dim &gt;" shape="rect" coords="1044,168,1382,192"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:ae15e51c4abacab4955451a3cd5b531a6"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structregina_1_1IntOfMinSize.html">IntOfMinSize</a>&lt;(dim+1)/8 &gt;<br class="typebreak"/>
-::utype&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexBase.html#ae15e51c4abacab4955451a3cd5b531a6">FacetMask</a></td></tr>
-<tr class="memdesc:ae15e51c4abacab4955451a3cd5b531a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">An unsigned integer type with at least <em>dim</em>+1 bits.  <a href="#ae15e51c4abacab4955451a3cd5b531a6">More...</a><br/></td></tr>
-<tr class="separator:ae15e51c4abacab4955451a3cd5b531a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b7e6840cf1d720009ce05f57e837b8c"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structregina_1_1IntOfMinSize.html">IntOfMinSize</a>&lt;(dim/8)+1 &gt;<br class="typebreak"/>
+::utype&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a0b7e6840cf1d720009ce05f57e837b8c">FacetMask</a></td></tr>
+<tr class="memdesc:a0b7e6840cf1d720009ce05f57e837b8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">An unsigned integer type with at least <em>dim</em>+1 bits.  <a href="#a0b7e6840cf1d720009ce05f57e837b8c">More...</a><br/></td></tr>
+<tr class="separator:a0b7e6840cf1d720009ce05f57e837b8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5a2fc4cc7eaa9cff459acd055c3684eb"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a5a2fc4cc7eaa9cff459acd055c3684eb">description</a> () const </td></tr>
 <tr class="memdesc:a5a2fc4cc7eaa9cff459acd055c3684eb"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the description associated with this simplex.  <a href="#a5a2fc4cc7eaa9cff459acd055c3684eb">More...</a><br/></td></tr>
 <tr class="separator:a5a2fc4cc7eaa9cff459acd055c3684eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a930ceaf2c80c66396d185b808b072b2a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> const <br class="typebreak"/>
-std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a930ceaf2c80c66396d185b808b072b2a">getDescription</a> () const </td></tr>
-<tr class="memdesc:a930ceaf2c80c66396d185b808b072b2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated routine that returns the description associated with this simplex.  <a href="#a930ceaf2c80c66396d185b808b072b2a">More...</a><br/></td></tr>
-<tr class="separator:a930ceaf2c80c66396d185b808b072b2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d949a6ec9b90b7c9fce5c9da6dc52d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a6d949a6ec9b90b7c9fce5c9da6dc52d6">setDescription</a> (const std::string &amp;desc)</td></tr>
 <tr class="memdesc:a6d949a6ec9b90b7c9fce5c9da6dc52d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the description associated with this simplex.  <a href="#a6d949a6ec9b90b7c9fce5c9da6dc52d6">More...</a><br/></td></tr>
 <tr class="separator:a6d949a6ec9b90b7c9fce5c9da6dc52d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9718e598eb103caafcef30996c9666ba"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a9718e598eb103caafcef30996c9666ba">index</a> () const </td></tr>
 <tr class="memdesc:a9718e598eb103caafcef30996c9666ba"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the index of this simplex in the underlying triangulation.  <a href="#a9718e598eb103caafcef30996c9666ba">More...</a><br/></td></tr>
 <tr class="separator:a9718e598eb103caafcef30996c9666ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e7dc80caae081bbf7d99b40eb488e51"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt; dim &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a4e7dc80caae081bbf7d99b40eb488e51">adjacentSimplex</a> (int facet) const </td></tr>
+<tr class="memitem:a4e7dc80caae081bbf7d99b40eb488e51"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__generic.html#gad4bfc8e4b6a2b1452937e33f56ab9eb3">Simplex</a>&lt; dim &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a4e7dc80caae081bbf7d99b40eb488e51">adjacentSimplex</a> (int facet) const </td></tr>
 <tr class="memdesc:a4e7dc80caae081bbf7d99b40eb488e51"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the adjacent simplex that is glued to the given facet of this simplex.  <a href="#a4e7dc80caae081bbf7d99b40eb488e51">More...</a><br/></td></tr>
 <tr class="separator:a4e7dc80caae081bbf7d99b40eb488e51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e3a01f58046b38b12478174e022e0da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1NPerm.html">NPerm</a>&lt; dim+1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a1e3a01f58046b38b12478174e022e0da">adjacentGluing</a> (int facet) const </td></tr>
-<tr class="memdesc:a1e3a01f58046b38b12478174e022e0da"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a permutation that indicates precisely how this simplex is glued to the adjacent simplex across the given facet.  <a href="#a1e3a01f58046b38b12478174e022e0da">More...</a><br/></td></tr>
-<tr class="separator:a1e3a01f58046b38b12478174e022e0da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94011a912f21f381fb96f8f4e5be1ddc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1Perm.html">Perm</a>&lt; dim+1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a94011a912f21f381fb96f8f4e5be1ddc">adjacentGluing</a> (int facet) const </td></tr>
+<tr class="memdesc:a94011a912f21f381fb96f8f4e5be1ddc"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a permutation that indicates precisely how this simplex is glued to the adjacent simplex across the given facet.  <a href="#a94011a912f21f381fb96f8f4e5be1ddc">More...</a><br/></td></tr>
+<tr class="separator:a94011a912f21f381fb96f8f4e5be1ddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea0d049cfd76813b57d98c8650f4f678"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexBase.html#aea0d049cfd76813b57d98c8650f4f678">adjacentFacet</a> (int facet) const </td></tr>
 <tr class="memdesc:aea0d049cfd76813b57d98c8650f4f678"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the given facet of this simplex is glued to facet <em>f</em> of some adjacent simplex, then this routine returns the adjacent facet number <em>f</em>.  <a href="#aea0d049cfd76813b57d98c8650f4f678">More...</a><br/></td></tr>
 <tr class="separator:aea0d049cfd76813b57d98c8650f4f678"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a083b38e2d0aa28d9e7a6b3ca7954f792"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a083b38e2d0aa28d9e7a6b3ca7954f792">hasBoundary</a> () const </td></tr>
 <tr class="memdesc:a083b38e2d0aa28d9e7a6b3ca7954f792"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if this simplex has any facets that lie on the triangulation boundary.  <a href="#a083b38e2d0aa28d9e7a6b3ca7954f792">More...</a><br/></td></tr>
 <tr class="separator:a083b38e2d0aa28d9e7a6b3ca7954f792"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a6f3e8808a02cd3c2cb30b6859d307c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a3a6f3e8808a02cd3c2cb30b6859d307c">join</a> (int myFacet, <a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt; dim &gt; *you, <a class="el" href="classregina_1_1NPerm.html">NPerm</a>&lt; dim+1 &gt; gluing)</td></tr>
-<tr class="memdesc:a3a6f3e8808a02cd3c2cb30b6859d307c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Joins the given facet of this simplex to some facet of another simplex.  <a href="#a3a6f3e8808a02cd3c2cb30b6859d307c">More...</a><br/></td></tr>
-<tr class="separator:a3a6f3e8808a02cd3c2cb30b6859d307c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a521944ed2344f60aea48f4ef1ada4d92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a521944ed2344f60aea48f4ef1ada4d92">joinTo</a> (int myFacet, <a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt; dim &gt; *you, <a class="el" href="classregina_1_1NPerm.html">NPerm</a>&lt; dim+1 &gt; gluing)</td></tr>
-<tr class="memdesc:a521944ed2344f60aea48f4ef1ada4d92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated alias for <a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a3a6f3e8808a02cd3c2cb30b6859d307c" title="Joins the given facet of this simplex to some facet of another simplex.">join()</a>, which joins the given facet of this simplex to some facet of another simplex.  <a href="#a521944ed2344f60aea48f4ef1ada4d92">More...</a><br/></td></tr>
-<tr class="separator:a521944ed2344f60aea48f4ef1ada4d92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d139902e93c8ddd7c17cd6f67729b22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt; dim &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a4d139902e93c8ddd7c17cd6f67729b22">unjoin</a> (int myFacet)</td></tr>
+<tr class="memitem:ad1f0a3046ec46f13f270bbc82193c5cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexBase.html#ad1f0a3046ec46f13f270bbc82193c5cc">join</a> (int myFacet, <a class="el" href="group__generic.html#gad4bfc8e4b6a2b1452937e33f56ab9eb3">Simplex</a>&lt; dim &gt; *you, <a class="el" href="classregina_1_1Perm.html">Perm</a>&lt; dim+1 &gt; gluing)</td></tr>
+<tr class="memdesc:ad1f0a3046ec46f13f270bbc82193c5cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Joins the given facet of this simplex to some facet of another simplex.  <a href="#ad1f0a3046ec46f13f270bbc82193c5cc">More...</a><br/></td></tr>
+<tr class="separator:ad1f0a3046ec46f13f270bbc82193c5cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d139902e93c8ddd7c17cd6f67729b22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__generic.html#gad4bfc8e4b6a2b1452937e33f56ab9eb3">Simplex</a>&lt; dim &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a4d139902e93c8ddd7c17cd6f67729b22">unjoin</a> (int myFacet)</td></tr>
 <tr class="memdesc:a4d139902e93c8ddd7c17cd6f67729b22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unglues the given facet of this simplex from whatever it is joined to.  <a href="#a4d139902e93c8ddd7c17cd6f67729b22">More...</a><br/></td></tr>
 <tr class="separator:a4d139902e93c8ddd7c17cd6f67729b22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0df524a7bf262cb0c43ec9d7c39b7687"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a0df524a7bf262cb0c43ec9d7c39b7687">isolate</a> ()</td></tr>
@@ -133,25 +125,17 @@ std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="e
 <tr class="memitem:a5f309fc1ec73e6c449f632ae3cc9a95c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1Triangulation.html">Triangulation</a>&lt; dim &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a5f309fc1ec73e6c449f632ae3cc9a95c">triangulation</a> () const </td></tr>
 <tr class="memdesc:a5f309fc1ec73e6c449f632ae3cc9a95c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the triangulation to which this simplex belongs.  <a href="#a5f309fc1ec73e6c449f632ae3cc9a95c">More...</a><br/></td></tr>
 <tr class="separator:a5f309fc1ec73e6c449f632ae3cc9a95c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1204156fb11ae3a39772befe01cca8b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> <br class="typebreak"/>
-<a class="el" href="classregina_1_1Triangulation.html">Triangulation</a>&lt; dim &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a1204156fb11ae3a39772befe01cca8b7">getTriangulation</a> () const </td></tr>
-<tr class="memdesc:a1204156fb11ae3a39772befe01cca8b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated alias for <a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a5f309fc1ec73e6c449f632ae3cc9a95c" title="Returns the triangulation to which this simplex belongs.">triangulation()</a>, which returns the triangulation to which this simplex belongs.  <a href="#a1204156fb11ae3a39772befe01cca8b7">More...</a><br/></td></tr>
-<tr class="separator:a1204156fb11ae3a39772befe01cca8b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a963d9864143f7433e3e1236cf22e7a11"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1Component.html">Component</a>&lt; dim &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a963d9864143f7433e3e1236cf22e7a11">component</a> () const </td></tr>
 <tr class="memdesc:a963d9864143f7433e3e1236cf22e7a11"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the connected component of the triangulation to which this simplex belongs.  <a href="#a963d9864143f7433e3e1236cf22e7a11">More...</a><br/></td></tr>
 <tr class="separator:a963d9864143f7433e3e1236cf22e7a11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addadbdf04942bd14e9c3a738b9301f86"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> <a class="el" href="classregina_1_1Component.html">Component</a><br class="typebreak"/>
-&lt; dim &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexBase.html#addadbdf04942bd14e9c3a738b9301f86">getComponent</a> () const </td></tr>
-<tr class="memdesc:addadbdf04942bd14e9c3a738b9301f86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated alias for <a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a963d9864143f7433e3e1236cf22e7a11" title="Returns the connected component of the triangulation to which this simplex belongs.">component()</a>, which returns the connected component of the triangulation to which this simplex belongs.  <a href="#addadbdf04942bd14e9c3a738b9301f86">More...</a><br/></td></tr>
-<tr class="separator:addadbdf04942bd14e9c3a738b9301f86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f7eb61ebfc5f82ec43ece3ed7e0e66a"><td class="memTemplParams" colspan="2">template&lt;int subdim&gt; </td></tr>
 <tr class="memitem:a3f7eb61ebfc5f82ec43ece3ed7e0e66a"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1Face.html">Face</a>&lt; dim, subdim &gt; *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a3f7eb61ebfc5f82ec43ece3ed7e0e66a">face</a> (int face) const </td></tr>
 <tr class="memdesc:a3f7eb61ebfc5f82ec43ece3ed7e0e66a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the <em>subdim</em>-face of the underlying triangulation that appears as the given <em>subdim</em>-face of this simplex.  <a href="#a3f7eb61ebfc5f82ec43ece3ed7e0e66a">More...</a><br/></td></tr>
 <tr class="separator:a3f7eb61ebfc5f82ec43ece3ed7e0e66a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4b9c94d4454281ea02d4b26e6868fe9"><td class="memTemplParams" colspan="2">template&lt;int subdim&gt; </td></tr>
-<tr class="memitem:ac4b9c94d4454281ea02d4b26e6868fe9"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1NPerm.html">NPerm</a>&lt; dim+1 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexBase.html#ac4b9c94d4454281ea02d4b26e6868fe9">faceMapping</a> (int <a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a3f7eb61ebfc5f82ec43ece3ed7e0e66a">face</a>) const </td></tr>
-<tr class="memdesc:ac4b9c94d4454281ea02d4b26e6868fe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Examines the given <em>subdim</em>-face of this simplex, and returns the mapping between the underlying <em>subdim</em>-face of the triangulation and the individual vertices of this simplex.  <a href="#ac4b9c94d4454281ea02d4b26e6868fe9">More...</a><br/></td></tr>
-<tr class="separator:ac4b9c94d4454281ea02d4b26e6868fe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ecd95af567be0a55620f39855f01734"><td class="memTemplParams" colspan="2">template&lt;int subdim&gt; </td></tr>
+<tr class="memitem:a1ecd95af567be0a55620f39855f01734"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1Perm.html">Perm</a>&lt; dim+1 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a1ecd95af567be0a55620f39855f01734">faceMapping</a> (int <a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a3f7eb61ebfc5f82ec43ece3ed7e0e66a">face</a>) const </td></tr>
+<tr class="memdesc:a1ecd95af567be0a55620f39855f01734"><td class="mdescLeft">&#160;</td><td class="mdescRight">Examines the given <em>subdim</em>-face of this simplex, and returns the mapping between the underlying <em>subdim</em>-face of the triangulation and the individual vertices of this simplex.  <a href="#a1ecd95af567be0a55620f39855f01734">More...</a><br/></td></tr>
+<tr class="separator:a1ecd95af567be0a55620f39855f01734"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad68d08cc893f75e330831f8983560510"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexBase.html#ad68d08cc893f75e330831f8983560510">orientation</a> () const </td></tr>
 <tr class="memdesc:ad68d08cc893f75e330831f8983560510"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the orientation of this simplex in the <em>dim</em>-dimensional triangulation.  <a href="#ad68d08cc893f75e330831f8983560510">More...</a><br/></td></tr>
 <tr class="separator:ad68d08cc893f75e330831f8983560510"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -164,9 +148,9 @@ std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="e
 <tr class="memitem:a5db31fa11b45bb6a7126bf10e29e0fb8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a5db31fa11b45bb6a7126bf10e29e0fb8">writeTextLong</a> (std::ostream &amp;out) const </td></tr>
 <tr class="memdesc:a5db31fa11b45bb6a7126bf10e29e0fb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a detailed text representation of this object to the given output stream.  <a href="#a5db31fa11b45bb6a7126bf10e29e0fb8">More...</a><br/></td></tr>
 <tr class="separator:a5db31fa11b45bb6a7126bf10e29e0fb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1146e93dc85e06321b9664c6576428d9"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NMarkedElement.html#a1146e93dc85e06321b9664c6576428d9">markedIndex</a> () const </td></tr>
-<tr class="memdesc:a1146e93dc85e06321b9664c6576428d9"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the index at which this object is stored in an <a class="el" href="classregina_1_1NMarkedVector.html" title="A vector of objects with fast, space-efficient reverse lookup of array indices.">NMarkedVector</a>.  <a href="#a1146e93dc85e06321b9664c6576428d9">More...</a><br/></td></tr>
-<tr class="separator:a1146e93dc85e06321b9664c6576428d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf29dbd59ab567de78a4cf083988a0e8"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1MarkedElement.html#abf29dbd59ab567de78a4cf083988a0e8">markedIndex</a> () const </td></tr>
+<tr class="memdesc:abf29dbd59ab567de78a4cf083988a0e8"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the index at which this object is stored in an <a class="el" href="classregina_1_1MarkedVector.html" title="A vector of objects with fast, space-efficient reverse lookup of array indices.">MarkedVector</a>.  <a href="#abf29dbd59ab567de78a4cf083988a0e8">More...</a><br/></td></tr>
+<tr class="separator:abf29dbd59ab567de78a4cf083988a0e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f21792173936ce3a8da9c7e90ebcd49"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structregina_1_1Output.html#a6f21792173936ce3a8da9c7e90ebcd49">str</a> () const</td></tr>
 <tr class="memdesc:a6f21792173936ce3a8da9c7e90ebcd49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a short text representation of this object.  <a href="#a6f21792173936ce3a8da9c7e90ebcd49">More...</a><br/></td></tr>
 <tr class="separator:a6f21792173936ce3a8da9c7e90ebcd49"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -176,12 +160,6 @@ std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="e
 <tr class="memitem:a32299f4324901625192bff989009f8ad"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structregina_1_1Output.html#a32299f4324901625192bff989009f8ad">detail</a> () const</td></tr>
 <tr class="memdesc:a32299f4324901625192bff989009f8ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a detailed text representation of this object.  <a href="#a32299f4324901625192bff989009f8ad">More...</a><br/></td></tr>
 <tr class="separator:a32299f4324901625192bff989009f8ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea0ab182c97fe654b8929d1fe41dc564"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structregina_1_1Output.html#aea0ab182c97fe654b8929d1fe41dc564">toString</a> () const</td></tr>
-<tr class="memdesc:aea0ab182c97fe654b8929d1fe41dc564"><td class="mdescLeft">&#160;</td><td class="mdescRight">A deprecated alias for str().  <a href="#aea0ab182c97fe654b8929d1fe41dc564">More...</a><br/></td></tr>
-<tr class="separator:aea0ab182c97fe654b8929d1fe41dc564"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af32f5abced4d1365c34980741b564765"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structregina_1_1Output.html#af32f5abced4d1365c34980741b564765">toStringLong</a> () const</td></tr>
-<tr class="memdesc:af32f5abced4d1365c34980741b564765"><td class="mdescLeft">&#160;</td><td class="mdescRight">A deprecated alias for detail().  <a href="#af32f5abced4d1365c34980741b564765">More...</a><br/></td></tr>
-<tr class="separator:af32f5abced4d1365c34980741b564765"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -191,12 +169,12 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a62524114f62901a475255bda387be265"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a62524114f62901a475255bda387be265">SimplexBase</a> (const std::string &amp;desc, <a class="el" href="classregina_1_1Triangulation.html">Triangulation</a>&lt; dim &gt; *tri)</td></tr>
 <tr class="memdesc:a62524114f62901a475255bda387be265"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new simplex with the given description and no facets joined to anything.  <a href="#a62524114f62901a475255bda387be265">More...</a><br/></td></tr>
 <tr class="separator:a62524114f62901a475255bda387be265"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae499135c545049196d6256d5f4d7385c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexFacesSuite.html#ae499135c545049196d6256d5f4d7385c">sameDegrees</a> (const <a class="el" href="classregina_1_1detail_1_1SimplexFacesSuite.html">SimplexFacesSuite</a>&lt; dim, subdim &gt; &amp;other, <a class="el" href="classregina_1_1NPerm.html">NPerm</a>&lt; dim+1 &gt; p) const</td></tr>
-<tr class="memdesc:ae499135c545049196d6256d5f4d7385c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests whether the <em>k</em>-face degrees of this and the given simplex are identical, under the given relabelling, for all faces of all dimensions <em>k</em> &le; <em>subdim</em>.  <a href="#ae499135c545049196d6256d5f4d7385c">More...</a><br/></td></tr>
-<tr class="separator:ae499135c545049196d6256d5f4d7385c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03b91ca83d43a30d9a8c7fd80f0642a9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexFaces.html#a03b91ca83d43a30d9a8c7fd80f0642a9">sameDegrees</a> (const <a class="el" href="classregina_1_1detail_1_1SimplexFaces.html">SimplexFaces</a>&lt; dim, subdim &gt; &amp;other, <a class="el" href="classregina_1_1NPerm.html">NPerm</a>&lt; dim+1 &gt; p) const </td></tr>
-<tr class="memdesc:a03b91ca83d43a30d9a8c7fd80f0642a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests whether the <em>subdim</em>-face degrees of this and the given simplex are identical, under the given relabelling.  <a href="#a03b91ca83d43a30d9a8c7fd80f0642a9">More...</a><br/></td></tr>
-<tr class="separator:a03b91ca83d43a30d9a8c7fd80f0642a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afffc8780be81be2ea9247a0fca6d53c3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexFacesSuite.html#afffc8780be81be2ea9247a0fca6d53c3">sameDegrees</a> (const <a class="el" href="classregina_1_1detail_1_1SimplexFacesSuite.html">SimplexFacesSuite</a>&lt; dim, subdim &gt; &amp;other, <a class="el" href="classregina_1_1Perm.html">Perm</a>&lt; dim+1 &gt; p) const</td></tr>
+<tr class="memdesc:afffc8780be81be2ea9247a0fca6d53c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests whether the <em>k</em>-face degrees of this and the given simplex are identical, under the given relabelling, for all faces of all dimensions <em>k</em> &le; <em>subdim</em>.  <a href="#afffc8780be81be2ea9247a0fca6d53c3">More...</a><br/></td></tr>
+<tr class="separator:afffc8780be81be2ea9247a0fca6d53c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a457d972cc00c12a4b4a3fbe64c4388c7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexFaces.html#a457d972cc00c12a4b4a3fbe64c4388c7">sameDegrees</a> (const <a class="el" href="classregina_1_1detail_1_1SimplexFaces.html">SimplexFaces</a>&lt; dim, subdim &gt; &amp;other, <a class="el" href="classregina_1_1Perm.html">Perm</a>&lt; dim+1 &gt; p) const </td></tr>
+<tr class="memdesc:a457d972cc00c12a4b4a3fbe64c4388c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests whether the <em>subdim</em>-face degrees of this and the given simplex are identical, under the given relabelling.  <a href="#a457d972cc00c12a4b4a3fbe64c4388c7">More...</a><br/></td></tr>
+<tr class="separator:a457d972cc00c12a4b4a3fbe64c4388c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adedf21e482ff437b437980568da0b852"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexFaces.html#adedf21e482ff437b437980568da0b852">clear</a> ()</td></tr>
 <tr class="memdesc:adedf21e482ff437b437980568da0b852"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets all face pointers to null.  <a href="#adedf21e482ff437b437980568da0b852">More...</a><br/></td></tr>
 <tr class="separator:adedf21e482ff437b437980568da0b852"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -206,9 +184,9 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:ab1f62c40c2775c7d2d03412925c5a2bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1Face.html">Face</a>&lt; dim, subdim &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexFaces.html#ab1f62c40c2775c7d2d03412925c5a2bf">face_</a> [<a class="el" href="classregina_1_1FaceNumbering.html">FaceNumbering</a>&lt; dim, subdim &gt;::nFaces]</td></tr>
 <tr class="memdesc:ab1f62c40c2775c7d2d03412925c5a2bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">The faces of the underlying triangulation that form the individual <em>subdim</em>-faces of this simplex.  <a href="#ab1f62c40c2775c7d2d03412925c5a2bf">More...</a><br/></td></tr>
 <tr class="separator:ab1f62c40c2775c7d2d03412925c5a2bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45eed06f9d91819f5529a7095dd073b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1NPerm.html">NPerm</a>&lt; dim+1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexFaces.html#a45eed06f9d91819f5529a7095dd073b8">mapping_</a> [<a class="el" href="classregina_1_1FaceNumbering.html">FaceNumbering</a>&lt; dim, subdim &gt;::nFaces]</td></tr>
-<tr class="memdesc:a45eed06f9d91819f5529a7095dd073b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">For each <em>subdim</em>-face of this simplex, maps vertices (0,1,...,<em>subdim</em>) of the underlying <em>subdim</em>-face of the triangulation to the corresponding vertices of this simplex, as described by faceMapping().  <a href="#a45eed06f9d91819f5529a7095dd073b8">More...</a><br/></td></tr>
-<tr class="separator:a45eed06f9d91819f5529a7095dd073b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0b08af7c20829b137cd1840cc4f2022"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1Perm.html">Perm</a>&lt; dim+1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexFaces.html#ad0b08af7c20829b137cd1840cc4f2022">mapping_</a> [<a class="el" href="classregina_1_1FaceNumbering.html">FaceNumbering</a>&lt; dim, subdim &gt;::nFaces]</td></tr>
+<tr class="memdesc:ad0b08af7c20829b137cd1840cc4f2022"><td class="mdescLeft">&#160;</td><td class="mdescRight">For each <em>subdim</em>-face of this simplex, maps vertices (0,1,...,<em>subdim</em>) of the underlying <em>subdim</em>-face of the triangulation to the corresponding vertices of this simplex, as described by faceMapping().  <a href="#ad0b08af7c20829b137cd1840cc4f2022">More...</a><br/></td></tr>
+<tr class="separator:ad0b08af7c20829b137cd1840cc4f2022"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -224,9 +202,9 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Triangulation&lt; di
 class regina::detail::SimplexBase&lt; dim &gt;</h3>
 
 <p>Helper class that provides core functionality for a top-dimensional simplex in a <em>dim</em>-manifold triangulation. </p>
-<p>Each top-dimensional simplex is represented by the class <a class="el" href="classregina_1_1Simplex.html">Simplex&lt;dim&gt;</a>, which uses this as a base class. End users should not need to refer to <a class="el" href="classregina_1_1detail_1_1SimplexBase.html" title="Helper class that provides core functionality for a top-dimensional simplex in a dim-manifold triangu...">SimplexBase</a> directly.</p>
-<p>See the <a class="el" href="classregina_1_1Simplex.html" title="Represents a top-dimensional simplex in a dim-manifold triangulation.">Simplex</a> template class notes for further information, including details of how the vertices and facets of each simplex are numbered.</p>
-<dl class="section user"><dt>Python:</dt><dd>This base class is not present, but the "end user" class <a class="el" href="classregina_1_1Simplex.html">Simplex&lt;dim&gt;</a> is.</dd></dl>
+<p>Each top-dimensional simplex is represented by the class Simplex&lt;dim&gt;, which uses this as a base class. End users should not need to refer to <a class="el" href="classregina_1_1detail_1_1SimplexBase.html" title="Helper class that provides core functionality for a top-dimensional simplex in a dim-manifold triangu...">SimplexBase</a> directly.</p>
+<p>See the Simplex template class notes for further information, including details of how the vertices and facets of each simplex are numbered.</p>
+<dl class="section user"><dt>Python:</dt><dd>This base class is not present, but the "end user" class Simplex&lt;dim&gt; is.</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">dim</td><td>the dimension of the underlying triangulation. This must be between 2 and 15 inclusive. </td></tr>
@@ -234,14 +212,14 @@ class regina::detail::SimplexBase&lt; dim &gt;</h3>
   </dd>
 </dl>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a class="anchor" id="ae15e51c4abacab4955451a3cd5b531a6"></a>
+<a class="anchor" id="a0b7e6840cf1d720009ce05f57e837b8c"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;int dim&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="structregina_1_1IntOfMinSize.html">IntOfMinSize</a>&lt;(dim + 1) / 8&gt;::utype <a class="el" href="classregina_1_1detail_1_1SimplexBase.html">regina::detail::SimplexBase</a>&lt; dim &gt;::<a class="el" href="classregina_1_1detail_1_1SimplexBase.html#ae15e51c4abacab4955451a3cd5b531a6">FacetMask</a></td>
+          <td class="memname">typedef <a class="el" href="structregina_1_1IntOfMinSize.html">IntOfMinSize</a>&lt;(dim / 8) + 1&gt;::utype <a class="el" href="classregina_1_1detail_1_1SimplexBase.html">regina::detail::SimplexBase</a>&lt; dim &gt;::<a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a0b7e6840cf1d720009ce05f57e837b8c">FacetMask</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -369,7 +347,7 @@ template&lt;int dim&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a1e3a01f58046b38b12478174e022e0da"></a>
+<a class="anchor" id="a94011a912f21f381fb96f8f4e5be1ddc"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -379,7 +357,7 @@ template&lt;int dim&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classregina_1_1NPerm.html">NPerm</a>&lt; dim+1 &gt; <a class="el" href="classregina_1_1detail_1_1SimplexBase.html">regina::detail::SimplexBase</a>&lt; dim &gt;::adjacentGluing </td>
+          <td class="memname"><a class="el" href="classregina_1_1Perm.html">Perm</a>&lt; dim+1 &gt; <a class="el" href="classregina_1_1detail_1_1SimplexBase.html">regina::detail::SimplexBase</a>&lt; dim &gt;::adjacentGluing </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>facet</em></td><td>)</td>
@@ -422,7 +400,7 @@ template&lt;int dim&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt; dim &gt; * <a class="el" href="classregina_1_1detail_1_1SimplexBase.html">regina::detail::SimplexBase</a>&lt; dim &gt;::adjacentSimplex </td>
+          <td class="memname"><a class="el" href="group__generic.html#gad4bfc8e4b6a2b1452937e33f56ab9eb3">Simplex</a>&lt; dim &gt; * <a class="el" href="classregina_1_1detail_1_1SimplexBase.html">regina::detail::SimplexBase</a>&lt; dim &gt;::adjacentSimplex </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>facet</em></td><td>)</td>
@@ -598,7 +576,7 @@ template&lt;int subdim&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ac4b9c94d4454281ea02d4b26e6868fe9"></a>
+<a class="anchor" id="a1ecd95af567be0a55620f39855f01734"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -610,7 +588,7 @@ template&lt;int subdim&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classregina_1_1NPerm.html">NPerm</a>&lt; dim+1 &gt; <a class="el" href="classregina_1_1detail_1_1SimplexBase.html">regina::detail::SimplexBase</a>&lt; dim &gt;::faceMapping </td>
+          <td class="memname"><a class="el" href="classregina_1_1Perm.html">Perm</a>&lt; dim+1 &gt; <a class="el" href="classregina_1_1detail_1_1SimplexBase.html">regina::detail::SimplexBase</a>&lt; dim &gt;::faceMapping </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>face</em></td><td>)</td>
@@ -633,7 +611,7 @@ template&lt;int subdim&gt; </div>
 <li>Now let <em>F</em> denote the <em>subdim</em>-face of the triangulation that corresponds to <em>subdim</em>-face number <em>face</em> of this simplex. Then this routine returns a map from vertices (0, ..., <em>subdim</em>) of <em>F</em> to the corresponding vertex numbers of this simplex.</li>
 </ul>
 <ul>
-<li>In particular, if this routine returns the permutation <em>p</em>, then the images <em>p</em>[0,...,<em>subdim</em>] will be some permutation of the vertices <a class="el" href="group__detail.html#ga5eea7a2ffbccd1271f4fdfa80fa02556" title="Given a subdim-face number within a dim-dimensional simplex, returns the corresponding canonical orde...">Face&lt;dim, subdim&gt;::ordering</a>[0,...,<em>subdim</em>].</li>
+<li>In particular, if this routine returns the permutation <em>p</em>, then the images <em>p</em>[0,...,<em>subdim</em>] will be some permutation of the vertices <a class="el" href="group__detail.html#ga317bc3a01d0543daddb4c00ab4d27d5b" title="Given a subdim-face number within a dim-dimensional simplex, returns the corresponding canonical orde...">Face&lt;dim, subdim&gt;::ordering</a>[0,...,<em>subdim</em>].</li>
 </ul>
 <ul>
 <li>If <em>F</em> also appears as face number <em>k</em> in some other simplex <em>s</em>, then for each <em>i</em> in the range 0 &le; <em>i</em> &le; <em>subdim</em>, vertex <code>p[i]</code> of this simplex will be identified with vertex <em>s</em>.faceMapping(<em>k</em>)[<em>i</em>] of simplex <em>s</em>.</li>
@@ -643,10 +621,10 @@ template&lt;int subdim&gt; </div>
 <li>The images of (<em>subdim</em>+1, ..., <em>dim</em>) under this permutation imply an orientation for the (<em>dim</em> - <em>subdim</em> - 1)-face opposite <em>F</em> in this simplex. These orientations will be consistent for all simplices containing <em>F</em>.</li>
 </ul>
 <ul>
-<li>For faces of codimension one (e.g., edges in a 3-manifold triangulation), this orientation condition is even stronger. Here the link of the face <em>F</em> must be a path (for a boundary face) or a cycle (for an internal face). In each simplex we can form a directed edge from the image of <em>dim</em>-1 to the image of <em>dim</em> under this permutation, and together these directed edges form a directed path or cycle that follows the link of the face <em>F</em>. Moreover, an iteration through the corresponding FaceEmbedding&lt;dim, subdim&gt; objects in order from <code>F.begin()</code> to <code>F.end()</code>, will follow this directed path in order from start to end. (In the case where the link of <em>F</em> is a cycle, the start point in the list of <a class="el" href="classregina_1_1FaceEmbedding.html" title="Details how a subdim-face of a dim-dimensional triangulation appears within each top-dimensional simp...">FaceEmbedding</a> objects will be arbitrary.)</li>
+<li>For faces of codimension two (e.g., edges in a 3-manifold triangulation), this orientation condition is even stronger. Here the link of the face <em>F</em> must be a path (for a boundary face) or a cycle (for an internal face). In each simplex we can form a directed edge from the image of <em>dim</em>-1 to the image of <em>dim</em> under this permutation, and together these directed edges form a directed path or cycle that follows the link of the face <em>F</em>. Moreover, an iteration through the corresponding FaceEmbedding&lt;dim, subdim&gt; objects in order from <code>F.begin()</code> to <code>F.end()</code>, will follow this directed path in order from start to end. (In the case where the link of <em>F</em> is a cycle, the start point in the list of <a class="el" href="classregina_1_1FaceEmbedding.html" title="Details how a subdim-face of a dim-dimensional triangulation appears within each top-dimensional simp...">FaceEmbedding</a> objects will be arbitrary.)</li>
 </ul>
 <p>Note that, even if the link is orientable, there are still arbitrary decisions to be made for the images of (<em>subdim</em>+1, ..., <em>dim</em>), since there will always be (<em>dim</em>-<em>subdim</em>)!/2 possible mappings that yield the correct orientation.</p>
-<dl class="section note"><dt>Note</dt><dd>This routine returns the same permutation as <a class="el" href="classregina_1_1detail_1_1FaceEmbeddingBase.html#ab327ceae0d04abc66915367a0578e70d" title="Maps vertices (0,...,subdim) of the underlying subdim-face of the triangulation to the corresponding ...">FaceEmbedding&lt;dim, subdim&gt;::vertices()</a>, in the context of the FaceEmbedding&lt;dim, subdim&gt; object that refers to <em>subdim</em>-face number <em>face</em> of this simplex.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This routine returns the same permutation as <a class="el" href="classregina_1_1detail_1_1FaceEmbeddingBase.html#a8bf25d339bfd69d17c8e9a8025103a70" title="Maps vertices (0,...,subdim) of the underlying subdim-face of the triangulation to the corresponding ...">FaceEmbedding&lt;dim, subdim&gt;::vertices()</a>, in the context of the FaceEmbedding&lt;dim, subdim&gt; object that refers to <em>subdim</em>-face number <em>face</em> of this simplex.</dd></dl>
 <dl class="section user"><dt>Python:</dt><dd>Python does not support templates. Instead, Python users should call this function in the form <code>faceMapping(subdim, face)</code>; that is, the template parameter <em>subdim</em> becomes the first argument of the function.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -685,7 +663,7 @@ template&lt;int dim&gt; </div>
 <p>Determines whether the given facet of this simplex belongs to the maximal forest that has been chosen for the dual 1-skeleton of the underlying triangulation. </p>
 <p>When the skeletal structure of a triangulation is first computed, a maximal forest in the dual 1-skeleton of the triangulation is also constructed. Each dual edge in this maximal forest represents a (<em>dim</em>-1)-face of the (primal) triangulation.</p>
 <p>This maximal forest will remain fixed until the triangulation changes, at which point it will be recomputed (as will all other skeletal objects, such as connected components and so on). There is no guarantee that, when it is recomputed, the maximal forest will use the same dual edges as before.</p>
-<p>This routine identifies which (<em>dim</em>-1)-faces of the triangulation belong to the dual forest. Because it lives in the <a class="el" href="classregina_1_1Simplex.html" title="Represents a top-dimensional simplex in a dim-manifold triangulation.">Simplex</a> class, this routine can even be used for those dimensions that do not have explicit classes for (<em>dim</em>-1)-faces of the triangulation.</p>
+<p>This routine identifies which (<em>dim</em>-1)-faces of the triangulation belong to the dual forest. Because it lives in the Simplex class, this routine can even be used for those dimensions that do not have explicit classes for (<em>dim</em>-1)-faces of the triangulation.</p>
 <p>If the skeleton has already been computed, then this routine is very fast (since it just returns a precomputed answer).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -694,92 +672,6 @@ template&lt;int dim&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if and only if the given facet of this simplex corresponds to a dual edge in the maximal forest chosen for the dual 1-skeleton. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="addadbdf04942bd14e9c3a738b9301f86"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;int dim&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classregina_1_1Component.html">Component</a>&lt; dim &gt; * <a class="el" href="classregina_1_1detail_1_1SimplexBase.html">regina::detail::SimplexBase</a>&lt; dim &gt;::getComponent </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Deprecated alias for <a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a963d9864143f7433e3e1236cf22e7a11" title="Returns the connected component of the triangulation to which this simplex belongs.">component()</a>, which returns the connected component of the triangulation to which this simplex belongs. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000213">Deprecated:</a></b></dt><dd>Simply call <a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a963d9864143f7433e3e1236cf22e7a11" title="Returns the connected component of the triangulation to which this simplex belongs.">component()</a> instead.</dd></dl>
-<p>See <a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a963d9864143f7433e3e1236cf22e7a11" title="Returns the connected component of the triangulation to which this simplex belongs.">component()</a> for further details. </p>
-
-</div>
-</div>
-<a class="anchor" id="a930ceaf2c80c66396d185b808b072b2a"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;int dim&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::string &amp; <a class="el" href="classregina_1_1detail_1_1SimplexBase.html">regina::detail::SimplexBase</a>&lt; dim &gt;::getDescription </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Deprecated routine that returns the description associated with this simplex. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000210">Deprecated:</a></b></dt><dd>This routine has been renamed to <a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a5a2fc4cc7eaa9cff459acd055c3684eb" title="Returns the description associated with this simplex.">description()</a>. See the <a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a5a2fc4cc7eaa9cff459acd055c3684eb" title="Returns the description associated with this simplex.">description()</a> documentation for further details. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a1204156fb11ae3a39772befe01cca8b7"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;int dim&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classregina_1_1Triangulation.html">Triangulation</a>&lt; dim &gt; * <a class="el" href="classregina_1_1detail_1_1SimplexBase.html">regina::detail::SimplexBase</a>&lt; dim &gt;::getTriangulation </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Deprecated alias for <a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a5f309fc1ec73e6c449f632ae3cc9a95c" title="Returns the triangulation to which this simplex belongs.">triangulation()</a>, which returns the triangulation to which this simplex belongs. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000212">Deprecated:</a></b></dt><dd>Simply call <a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a5f309fc1ec73e6c449f632ae3cc9a95c" title="Returns the triangulation to which this simplex belongs.">triangulation()</a> instead.</dd></dl>
-<p>See <a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a5f309fc1ec73e6c449f632ae3cc9a95c" title="Returns the triangulation to which this simplex belongs.">triangulation()</a> for further details. </p>
 
 </div>
 </div>
@@ -828,7 +720,6 @@ template&lt;int dim&gt; </div>
 </div><div class="memdoc">
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the index of this simplex in the underlying triangulation. </p>
-<p>This is identical to calling <code><a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a5f309fc1ec73e6c449f632ae3cc9a95c" title="Returns the triangulation to which this simplex belongs.">triangulation()</a>-&gt;simplexIndex(this)</code>.</p>
 <p>The index will be an integer between 0 and <code><a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a5f309fc1ec73e6c449f632ae3cc9a95c" title="Returns the triangulation to which this simplex belongs.">triangulation()</a>-&gt;size()-1</code> inclusive.</p>
 <p>Note that indexing may change when a simplex is added to or removed from the underlying triangulation.</p>
 <dl class="section return"><dt>Returns</dt><dd>the index of this simplex. </dd></dl>
@@ -857,7 +748,7 @@ template&lt;int dim&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a3a6f3e8808a02cd3c2cb30b6859d307c"></a>
+<a class="anchor" id="ad1f0a3046ec46f13f270bbc82193c5cc"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -872,13 +763,13 @@ template&lt;int dim&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt; dim &gt; *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__generic.html#gad4bfc8e4b6a2b1452937e33f56ab9eb3">Simplex</a>&lt; dim &gt; *&#160;</td>
           <td class="paramname"><em>you</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classregina_1_1NPerm.html">NPerm</a>&lt; dim+1 &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classregina_1_1Perm.html">Perm</a>&lt; dim+1 &gt;&#160;</td>
           <td class="paramname"><em>gluing</em>&#160;</td>
         </tr>
         <tr>
@@ -890,7 +781,7 @@ template&lt;int dim&gt; </div>
 </div><div class="memdoc">
 
 <p>Joins the given facet of this simplex to some facet of another simplex. </p>
-<p>The other simplex will be updated automatically (i.e., you only need to call <a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a3a6f3e8808a02cd3c2cb30b6859d307c" title="Joins the given facet of this simplex to some facet of another simplex.">join()</a> from one side of the gluing).</p>
+<p>The other simplex will be updated automatically (i.e., you only need to call <a class="el" href="classregina_1_1detail_1_1SimplexBase.html#ad1f0a3046ec46f13f270bbc82193c5cc" title="Joins the given facet of this simplex to some facet of another simplex.">join()</a> from one side of the gluing).</p>
 <p>You may join a facet of this simplex to some different facet of the same simplex (i.e., you may pass <em>you</em> == <code>this</code>), though you cannot join a facet to itself.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>This and the given simplex belong to the same triangulation. </dd>
 <dd>
@@ -903,60 +794,14 @@ We are not attempting to glue a facet to itself (i.e., we do not have both <em>y
   <table class="params">
     <tr><td class="paramname">myFacet</td><td>the facet of this simplex that will be glued to the given simplex <em>you</em>. This facet number must be between 0 and <em>dim</em> inclusive. </td></tr>
     <tr><td class="paramname">you</td><td>the other simplex that will be glued to the given facet of this simplex. </td></tr>
-    <tr><td class="paramname">gluing</td><td>a permutation that describes how the vertices of this simplex will map to the vertices of <em>you</em> across the new gluing. This permutation should be in the form described by <a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a1e3a01f58046b38b12478174e022e0da" title="Returns a permutation that indicates precisely how this simplex is glued to the adjacent simplex acro...">adjacentGluing()</a>. </td></tr>
+    <tr><td class="paramname">gluing</td><td>a permutation that describes how the vertices of this simplex will map to the vertices of <em>you</em> across the new gluing. This permutation should be in the form described by <a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a94011a912f21f381fb96f8f4e5be1ddc" title="Returns a permutation that indicates precisely how this simplex is glued to the adjacent simplex acro...">adjacentGluing()</a>. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="a521944ed2344f60aea48f4ef1ada4d92"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;int dim&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classregina_1_1detail_1_1SimplexBase.html">regina::detail::SimplexBase</a>&lt; dim &gt;::joinTo </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>myFacet</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt; dim &gt; *&#160;</td>
-          <td class="paramname"><em>you</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classregina_1_1NPerm.html">NPerm</a>&lt; dim+1 &gt;&#160;</td>
-          <td class="paramname"><em>gluing</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Deprecated alias for <a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a3a6f3e8808a02cd3c2cb30b6859d307c" title="Joins the given facet of this simplex to some facet of another simplex.">join()</a>, which joins the given facet of this simplex to some facet of another simplex. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000211">Deprecated:</a></b></dt><dd>Simply call <a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a3a6f3e8808a02cd3c2cb30b6859d307c" title="Joins the given facet of this simplex to some facet of another simplex.">join()</a> instead.</dd></dl>
-<p>See <a class="el" href="classregina_1_1detail_1_1SimplexBase.html#a3a6f3e8808a02cd3c2cb30b6859d307c" title="Joins the given facet of this simplex to some facet of another simplex.">join()</a> for further details. </p>
-
-</div>
-</div>
-<a class="anchor" id="a1146e93dc85e06321b9664c6576428d9"></a>
+<a class="anchor" id="abf29dbd59ab567de78a4cf083988a0e8"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -964,7 +809,7 @@ template&lt;int dim&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">size_t regina::NMarkedElement::markedIndex </td>
+          <td class="memname">size_t regina::MarkedElement::markedIndex </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -977,8 +822,8 @@ template&lt;int dim&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the index at which this object is stored in an <a class="el" href="classregina_1_1NMarkedVector.html" title="A vector of objects with fast, space-efficient reverse lookup of array indices.">NMarkedVector</a>. </p>
-<p>If this object does not belong to an <a class="el" href="classregina_1_1NMarkedVector.html" title="A vector of objects with fast, space-efficient reverse lookup of array indices.">NMarkedVector</a>, the return value is undefined.</p>
+<p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the index at which this object is stored in an <a class="el" href="classregina_1_1MarkedVector.html" title="A vector of objects with fast, space-efficient reverse lookup of array indices.">MarkedVector</a>. </p>
+<p>If this object does not belong to an <a class="el" href="classregina_1_1MarkedVector.html" title="A vector of objects with fast, space-efficient reverse lookup of array indices.">MarkedVector</a>, the return value is undefined.</p>
 <dl class="section return"><dt>Returns</dt><dd>the index at which this object is stored. </dd></dl>
 
 </div>
@@ -1012,7 +857,7 @@ template&lt;int dim&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a03b91ca83d43a30d9a8c7fd80f0642a9"></a>
+<a class="anchor" id="a457d972cc00c12a4b4a3fbe64c4388c7"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -1030,7 +875,7 @@ template&lt;int dim, int subdim&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classregina_1_1NPerm.html">NPerm</a>&lt; dim+1 &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classregina_1_1Perm.html">Perm</a>&lt; dim+1 &gt;&#160;</td>
           <td class="paramname"><em>p</em>&#160;</td>
         </tr>
         <tr>
@@ -1058,7 +903,7 @@ template&lt;int dim, int subdim&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ae499135c545049196d6256d5f4d7385c"></a>
+<a class="anchor" id="afffc8780be81be2ea9247a0fca6d53c3"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1074,7 +919,7 @@ template&lt;int dim, int subdim&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classregina_1_1NPerm.html">NPerm</a>&lt; dim+1 &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classregina_1_1Perm.html">Perm</a>&lt; dim+1 &gt;&#160;</td>
           <td class="paramname"><em>p</em>&#160;</td>
         </tr>
         <tr>
@@ -1166,60 +1011,6 @@ template&lt;int dim&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="aea0ab182c97fe654b8929d1fe41dc564"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> std::string <a class="el" href="structregina_1_1Output.html">regina::Output</a>&lt; <a class="el" href="classregina_1_1detail_1_1SimplexBase.html">SimplexBase</a>&lt; dim &gt; , false  &gt;::toString </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>A deprecated alias for str(). </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000253">Deprecated:</a></b></dt><dd>This routine has (at long last) been deprecated; use the simpler-to-type str() instead.</dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>a short text representation of this object. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="af32f5abced4d1365c34980741b564765"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> std::string <a class="el" href="structregina_1_1Output.html">regina::Output</a>&lt; <a class="el" href="classregina_1_1detail_1_1SimplexBase.html">SimplexBase</a>&lt; dim &gt; , false  &gt;::toStringLong </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>A deprecated alias for detail(). </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000254">Deprecated:</a></b></dt><dd>This routine has (at long last) been deprecated; use the simpler-to-type detail() instead.</dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>a long text representation of this object. </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="a5f309fc1ec73e6c449f632ae3cc9a95c"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1255,7 +1046,7 @@ template&lt;int dim&gt; </div>
 template&lt;int dim&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classregina_1_1Simplex.html">Simplex</a>&lt; dim &gt; * <a class="el" href="classregina_1_1detail_1_1SimplexBase.html">regina::detail::SimplexBase</a>&lt; dim &gt;::unjoin </td>
+          <td class="memname"><a class="el" href="group__generic.html#gad4bfc8e4b6a2b1452937e33f56ab9eb3">Simplex</a>&lt; dim &gt; * <a class="el" href="classregina_1_1detail_1_1SimplexBase.html">regina::detail::SimplexBase</a>&lt; dim &gt;::unjoin </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>myFacet</em></td><td>)</td>
@@ -1392,7 +1183,7 @@ template&lt;int dim, int subdim&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a45eed06f9d91819f5529a7095dd073b8"></a>
+<a class="anchor" id="ad0b08af7c20829b137cd1840cc4f2022"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -1402,7 +1193,7 @@ template&lt;int dim, int subdim&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classregina_1_1NPerm.html">NPerm</a>&lt;dim+1&gt; <a class="el" href="classregina_1_1detail_1_1SimplexFaces.html">regina::detail::SimplexFaces</a>&lt; dim, subdim &gt;::mapping_[<a class="el" href="classregina_1_1FaceNumbering.html">FaceNumbering</a>&lt; dim, subdim &gt;::nFaces]</td>
+          <td class="memname"><a class="el" href="classregina_1_1Perm.html">Perm</a>&lt;dim+1&gt; <a class="el" href="classregina_1_1detail_1_1SimplexFaces.html">regina::detail::SimplexFaces</a>&lt; dim, subdim &gt;::mapping_[<a class="el" href="classregina_1_1FaceNumbering.html">FaceNumbering</a>&lt; dim, subdim &gt;::nFaces]</td>
         </tr>
       </table>
   </td>
@@ -1417,7 +1208,7 @@ template&lt;int dim, int subdim&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>generic/detail/<a class="el" href="detail_2simplex_8h.html">simplex.h</a></li>
+<li>triangulation/detail/<a class="el" href="triangulation_2detail_2simplex_8h.html">simplex.h</a></li>
 </ul>
 </div><!-- contents -->
 <hr>

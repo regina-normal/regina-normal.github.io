@@ -60,10 +60,10 @@
 </div><!--header-->
 <div class="contents">
 
-<p>An <a class="el" href="classregina_1_1NProperty.html" title="Stores a calculable property of an object.">NProperty</a> storage policy indicating that the property should be held by constant pointer.  
+<p>A <a class="el" href="classregina_1_1Property.html" title="Stores a calculable property of an object.">Property</a> storage policy indicating that the property should be held by constant pointer.  
  <a href="classregina_1_1StoreConstPtr.html#details">More...</a></p>
 
-<p><code>#include &lt;utilities/nproperty.h&gt;</code></p>
+<p><code>#include &lt;utilities/property.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -82,6 +82,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab2fb21f29f18bac25d577ea11e835e95"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1StoreConstPtr.html#ab2fb21f29f18bac25d577ea11e835e95">clear</a> ()</td></tr>
 <tr class="memdesc:ab2fb21f29f18bac25d577ea11e835e95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cleans up any currently held value before the property value is changed or cleared.  <a href="#ab2fb21f29f18bac25d577ea11e835e95">More...</a><br/></td></tr>
 <tr class="separator:ab2fb21f29f18bac25d577ea11e835e95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a834582f8a4b313cf25b6638ec316392c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1StoreConstPtr.html#a834582f8a4b313cf25b6638ec316392c">swap</a> (<a class="el" href="classregina_1_1StoreConstPtr.html">StoreConstPtr</a>&lt; T &gt; &amp;other)</td></tr>
+<tr class="memdesc:a834582f8a4b313cf25b6638ec316392c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swaps this with the given value.  <a href="#a834582f8a4b313cf25b6638ec316392c">More...</a><br/></td></tr>
+<tr class="separator:a834582f8a4b313cf25b6638ec316392c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -93,9 +96,9 @@ Protected Attributes</h2></td></tr>
 <div class="textblock"><h3>template&lt;typename T&gt;<br/>
 class regina::StoreConstPtr&lt; T &gt;</h3>
 
-<p>An <a class="el" href="classregina_1_1NProperty.html" title="Stores a calculable property of an object.">NProperty</a> storage policy indicating that the property should be held by constant pointer. </p>
-<p>The property assignment and query routines will also use constant pointers, and the <a class="el" href="classregina_1_1NProperty.html" title="Stores a calculable property of an object.">NProperty</a> wrapper takes no responsibility for memory management of the held value.</p>
-<p>See the <a class="el" href="classregina_1_1NProperty.html" title="Stores a calculable property of an object.">NProperty</a> class notes for details.</p>
+<p>A <a class="el" href="classregina_1_1Property.html" title="Stores a calculable property of an object.">Property</a> storage policy indicating that the property should be held by constant pointer. </p>
+<p>The property assignment and query routines will also use constant pointers, and the <a class="el" href="classregina_1_1Property.html" title="Stores a calculable property of an object.">Property</a> wrapper takes no responsibility for memory management of the held value.</p>
+<p>See the <a class="el" href="classregina_1_1Property.html" title="Stores a calculable property of an object.">Property</a> class notes for details.</p>
 <dl class="section user"><dt>Python:</dt><dd>Not present. </dd></dl>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a class="anchor" id="ab04c3e6e45f55dd362dd3f12d1d6d437"></a>
@@ -187,6 +190,40 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a834582f8a4b313cf25b6638ec316392c"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classregina_1_1StoreConstPtr.html">regina::StoreConstPtr</a>&lt; T &gt;::swap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classregina_1_1StoreConstPtr.html">StoreConstPtr</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Swaps this with the given value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>the value to swap with this. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a class="anchor" id="ae1976534fd988695c6b6f6a4df726bf8"></a>
 <div class="memitem">
@@ -213,7 +250,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>utilities/<a class="el" href="nproperty_8h.html">nproperty.h</a></li>
+<li>utilities/<a class="el" href="property_8h.html">property.h</a></li>
 </ul>
 </div><!-- contents -->
 <hr>

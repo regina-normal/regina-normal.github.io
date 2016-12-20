@@ -49,13 +49,13 @@
 <li>Standard C++ types become native Python types. For example, the C++ type <code>std::string</code> becomes the native Python string type.</li>
 </ul>
 <ul>
-<li>Everything within the C++ namespace <em>regina</em> becomes part of the Python module <em>regina</em>. For example, the C++ class <a class="el" href="group__hypersurface.html#gaa504c0ed97bb88a50712083a7af647ab" title="A convenience typedef for Triangulation&lt;3&gt;.">regina::NTriangulation</a> becomes the Python class <a class="el" href="group__hypersurface.html#gaa504c0ed97bb88a50712083a7af647ab" title="A convenience typedef for Triangulation&lt;3&gt;.">regina.NTriangulation</a>.</li>
+<li>Everything within the C++ namespace <em>regina</em> becomes part of the Python module <em>regina</em>. For example, the C++ class <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html" title="Represents a 3-dimensional triangulation, typically of a 3-manifold.">regina::Triangulation&lt;3&gt;</a> becomes the Python class regina.Triangulation3.</li>
 </ul>
 <ul>
-<li>Regina's most important C++ classes and functions are wrapped in Python. However, not all classes and functions are wrapped. If a class or function is not available in Python then you will see a bold <b>Python:</b> note indicating this. See for instance the class <a class="el" href="classregina_1_1NBitmask.html" title="A bitmask that can store arbitrarily many true-or-false bits.">NBitmask</a>, or the function <a class="el" href="group__utilities.html#gac0458a035bc263e30fb2cbcab1d75f06" title="Creates a new C string that is a duplicate of the given C++ string.">duplicate()</a>.</li>
+<li>Regina's most important C++ classes and functions are wrapped in Python. However, not all classes and functions are wrapped. If a class or function is not available in Python then you will see a bold <b>Python:</b> note indicating this. See for instance the class <a class="el" href="classregina_1_1Bitmask.html" title="A bitmask that can store arbitrarily many true-or-false bits.">Bitmask</a>, or the function <a class="el" href="group__utilities.html#ga69b2411865af18bf506a1afb7d2bc2ca" title="Creates a new C string that is a duplicate of the given C++ string.">duplicate()</a>.</li>
 </ul>
 <ul>
-<li>Most of Regina's classes and functions have the same interface in both C++ and Python, but occasionally there are differences. Again, you will see a bold <b>Python:</b> note indicating this. See for instance the method NTriangulation::tetrahedra(), or the global function <a class="el" href="namespaceregina.html#a4be625b9765b791b8732d4c744f9f66f" title="Writes time and memory usage for the current process to the given output stream.">writeResUsage()</a>.</li>
+<li>Most of Regina's classes and functions have the same interface in both C++ and Python, but occasionally there are differences. Again, you will see a bold <b>Python:</b> note indicating this. See for instance the method Triangulation&lt;3&gt;::tetrahedra(), or the global function <a class="el" href="namespaceregina.html#a52c8776c5329496a0b34c914706031e4" title="Writes time and memory usage for the current process to the given output stream.">writeResUsage()</a>.</li>
 </ul>
 <h3>Testing equality</h3>
 <p>It is important to understand how Python's equality tests <code>x == y</code> and <code>x is y</code> operate under Python.</p>
@@ -63,20 +63,20 @@
 <p>This means that the Python test <code>x is y</code> is unreliable. If <code>x is y</code> returns <code>True</code> then certainly <em>x</em> and <em>y</em> refer to the same C++ object; however, if <code>x is y</code> returns <code>False</code> then it is still possible that they refer to the same C++ object.</p>
 <p>The solution is to always use the test <code>x == y</code>. Regina offers three types of classes, and these behave differently under Python:</p>
 <ul>
-<li><p class="startli">Some classes use <em>comparison by value</em>. Here <code>x == y</code> tests whether the contents of <em>x</em> and <em>y</em> are mathematically equivalent. Examples of such classes are <a class="el" href="classregina_1_1NIntegerBase.html">NInteger</a>, <a class="el" href="classregina_1_1NRational.html" title="Represents an arbitrary precision rational number.">NRational</a>, and <a class="el" href="classregina_1_1NAbelianGroup.html" title="Represents a finitely generated abelian group.">NAbelianGroup</a>.</p>
+<li><p class="startli">Some classes use <em>comparison by value</em>. Here <code>x == y</code> tests whether the contents of <em>x</em> and <em>y</em> are mathematically equivalent. Examples of such classes are <a class="el" href="classregina_1_1IntegerBase.html">Integer</a>, <a class="el" href="classregina_1_1Rational.html" title="Represents an arbitrary precision rational number.">Rational</a>, and <a class="el" href="classregina_1_1AbelianGroup.html" title="Represents a finitely generated abelian group.">AbelianGroup</a>.</p>
 <p class="startli">These classes all provide C++ comparison operators == and !=. You can read the documentation for these operators to understand exactly what mathematical condition(s) are being tested.</p>
 </li>
 </ul>
 <ul>
-<li><p class="startli">Some classes use <em>comparison by reference</em>. Here <code>x == y</code> tests whether <em>x</em> and <em>y</em> refer to the same underlying C++ object. This is similar to how the test <code>x is y</code> would behave in a native Python application. Examples of such classes are NTriangulation and NTetrahedron.</p>
+<li><p class="startli">Some classes use <em>comparison by reference</em>. Here <code>x == y</code> tests whether <em>x</em> and <em>y</em> refer to the same underlying C++ object. This is similar to how the test <code>x is y</code> would behave in a native Python application. Examples of such classes are <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html" title="Represents a 3-dimensional triangulation, typically of a 3-manifold.">Triangulation&lt;3&gt;</a> and Tetrahedron&lt;3&gt;.</p>
 <p class="startli">These classes do not provide C++ comparison operators == or !=.</p>
 </li>
 </ul>
 <ul>
-<li>Some classes are never instantiated, and so can never be compared at all. These classes typically contain only static methods. Examples of such classes are <a class="el" href="classregina_1_1NExampleTriangulation.html" title="This class offers routines for constructing sample 3-manifold triangulations of various types...">NExampleTriangulation</a> and <a class="el" href="classregina_1_1i18n_1_1Locale.html">Locale</a>.</li>
+<li>Some classes are never instantiated, and so can never be compared at all. These classes typically contain only static methods. Examples of such classes are Example&lt;dim&gt; and <a class="el" href="classregina_1_1i18n_1_1Locale.html">Locale</a>.</li>
 </ul>
 <p>If you wish to find out how a particular class <em>C</em> behaves, you can examine the attribute <code>C.equalityType</code>. This will return one of the values <code>BY_VALUE</code>, <code>BY_REFERENCE</code> or <code>NEVER_INSTANTIATED</code> respectively:</p>
-<div class="fragment"><div class="line">&gt;&gt;&gt; print <a class="code" href="group__hypersurface.html#gaa504c0ed97bb88a50712083a7af647ab" title="A convenience typedef for Triangulation&lt;3&gt;.">NTriangulation</a>.equalityType</div>
+<div class="fragment"><div class="line">&gt;&gt;&gt; print Triangulation3.equalityType</div>
 <div class="line">BY_REFERENCE</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 <hr>

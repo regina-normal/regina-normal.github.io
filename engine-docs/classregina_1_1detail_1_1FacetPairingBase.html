@@ -65,18 +65,19 @@
 <p>Provides core functionality for facet pairings (that is, dual graphs) of <em>dim</em>-dimensional triangulations.  
  <a href="classregina_1_1detail_1_1FacetPairingBase.html#details">More...</a></p>
 
-<p><code>#include &lt;generic/detail/facetpairing.h&gt;</code></p>
+<p><code>#include &lt;triangulation/detail/facetpairing.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for regina::detail::FacetPairingBase&lt; dim &gt;:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="classregina_1_1detail_1_1FacetPairingBase.png" usemap="#regina::detail::FacetPairingBase&lt; dim &gt;_map" alt=""/>
   <map id="regina::detail::FacetPairingBase&lt; dim &gt;_map" name="regina::detail::FacetPairingBase&lt; dim &gt;_map">
-<area href="structregina_1_1ShortOutput.html" alt="regina::ShortOutput&lt; FacetPairingBase&lt; dim &gt; &gt;" shape="rect" coords="152,56,446,80"/>
-<area href="structregina_1_1Output.html" alt="regina::Output&lt; FacetPairingBase&lt; dim &gt;, false &gt;" shape="rect" coords="152,0,446,24"/>
-<area href="classregina_1_1FacetPairing.html" alt="regina::FacetPairing&lt; dim &gt;" shape="rect" coords="0,168,294,192"/>
-<area href="classregina_1_1FacetPairing.html" title="Represents the dual graph of a dim-manifold triangulation; that is, the pairwise matching of facets o..." alt="regina::FacetPairing&lt; int &gt;" shape="rect" coords="304,168,598,192"/>
-<area href="classregina_1_1FacetPairing_3_013_01_4.html" title="Represents the dual graph of a 3-manifold triangulation." alt="regina::FacetPairing&lt; 3 &gt;" shape="rect" coords="608,168,902,192"/>
+<area href="structregina_1_1ShortOutput.html" alt="regina::ShortOutput&lt; FacetPairingBase&lt; dim &gt; &gt;" shape="rect" coords="304,56,598,80"/>
+<area href="structregina_1_1Output.html" alt="regina::Output&lt; FacetPairingBase&lt; dim &gt;, false &gt;" shape="rect" coords="304,0,598,24"/>
+<area href="classregina_1_1FacetPairing.html" alt="regina::FacetPairing&lt; 2 &gt;" shape="rect" coords="0,168,294,192"/>
+<area href="classregina_1_1FacetPairing.html" alt="regina::FacetPairing&lt; 4 &gt;" shape="rect" coords="304,168,598,192"/>
+<area href="classregina_1_1FacetPairing.html" alt="regina::FacetPairing&lt; dim &gt;" shape="rect" coords="608,168,902,192"/>
+<area href="classregina_1_1FacetPairing.html" title="Represents the dual graph of a dim-manifold triangulation; that is, the pairwise matching of facets o..." alt="regina::FacetPairing&lt; int &gt;" shape="rect" coords="912,168,1206,192"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -104,12 +105,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a32299f4324901625192bff989009f8ad"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structregina_1_1Output.html#a32299f4324901625192bff989009f8ad">detail</a> () const</td></tr>
 <tr class="memdesc:a32299f4324901625192bff989009f8ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a detailed text representation of this object.  <a href="#a32299f4324901625192bff989009f8ad">More...</a><br/></td></tr>
 <tr class="separator:a32299f4324901625192bff989009f8ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea0ab182c97fe654b8929d1fe41dc564"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structregina_1_1Output.html#aea0ab182c97fe654b8929d1fe41dc564">toString</a> () const</td></tr>
-<tr class="memdesc:aea0ab182c97fe654b8929d1fe41dc564"><td class="mdescLeft">&#160;</td><td class="mdescRight">A deprecated alias for str().  <a href="#aea0ab182c97fe654b8929d1fe41dc564">More...</a><br/></td></tr>
-<tr class="separator:aea0ab182c97fe654b8929d1fe41dc564"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af32f5abced4d1365c34980741b564765"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structregina_1_1Output.html#af32f5abced4d1365c34980741b564765">toStringLong</a> () const</td></tr>
-<tr class="memdesc:af32f5abced4d1365c34980741b564765"><td class="mdescLeft">&#160;</td><td class="mdescRight">A deprecated alias for detail().  <a href="#af32f5abced4d1365c34980741b564765">More...</a><br/></td></tr>
-<tr class="separator:af32f5abced4d1365c34980741b564765"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Constructors and Destructors</div></td></tr>
 <tr class="memitem:a03ab9eda74347bfa8ad909e9d6ecf0bd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1FacetPairingBase.html#a03ab9eda74347bfa8ad909e9d6ecf0bd">FacetPairingBase</a> (const <a class="el" href="classregina_1_1detail_1_1FacetPairingBase.html">FacetPairingBase</a> &amp;cloneMe)</td></tr>
 <tr class="memdesc:a03ab9eda74347bfa8ad909e9d6ecf0bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new facet pairing that is a clone of the given facet pairing.  <a href="#a03ab9eda74347bfa8ad909e9d6ecf0bd">More...</a><br/></td></tr>
@@ -174,9 +169,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:adf1e9a32a2820fc0215afd89a6566c32"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1FacetPairingBase.html#adf1e9a32a2820fc0215afd89a6566c32">dotHeader</a> (const char *graphName=0)</td></tr>
 <tr class="memdesc:adf1e9a32a2820fc0215afd89a6566c32"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> header information for a Graphviz DOT file that will describe the graphs for one or more facet pairings.  <a href="#adf1e9a32a2820fc0215afd89a6566c32">More...</a><br/></td></tr>
 <tr class="separator:adf1e9a32a2820fc0215afd89a6566c32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a772451072af1e4e27c39115688d79ced"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1FacetPairingBase.html#a772451072af1e4e27c39115688d79ced">findAllPairings</a> (size_t nSimplices, <a class="el" href="classregina_1_1NBoolSet.html">NBoolSet</a> boundary, int nBdryFacets, <a class="el" href="classregina_1_1detail_1_1FacetPairingBase.html#a509cb0fc50dd293792e8e13f155b241e">Use</a> use, void *useArgs=0)</td></tr>
-<tr class="memdesc:a772451072af1e4e27c39115688d79ced"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates all possible facet pairings satisfying the given constraints.  <a href="#a772451072af1e4e27c39115688d79ced">More...</a><br/></td></tr>
-<tr class="separator:a772451072af1e4e27c39115688d79ced"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af37845787a6a80399160c535b9344d08"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1FacetPairingBase.html#af37845787a6a80399160c535b9344d08">findAllPairings</a> (size_t nSimplices, <a class="el" href="classregina_1_1BoolSet.html">BoolSet</a> boundary, int nBdryFacets, <a class="el" href="classregina_1_1detail_1_1FacetPairingBase.html#a509cb0fc50dd293792e8e13f155b241e">Use</a> use, void *useArgs=0)</td></tr>
+<tr class="memdesc:af37845787a6a80399160c535b9344d08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates all possible facet pairings satisfying the given constraints.  <a href="#af37845787a6a80399160c535b9344d08">More...</a><br/></td></tr>
+<tr class="separator:af37845787a6a80399160c535b9344d08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -257,9 +252,8 @@ template&lt;int dim&gt; </div>
 </div><div class="memdoc">
 
 <p>A routine that can do arbitrary processing upon a facet pairing and its automorphisms. </p>
-<p>Such routines are used to process pairings that are found when running <a class="el" href="classregina_1_1detail_1_1FacetPairingBase.html#a772451072af1e4e27c39115688d79ced" title="Generates all possible facet pairings satisfying the given constraints.">findAllPairings()</a>.</p>
-<p>The first parameter passed should be a facet pairing (this should not be deallocated by this routine). The second parameter should be a list of all automorphisms of this pairing (this should not be deallocated either). The third parameter may contain arbitrary data as passed to <a class="el" href="classregina_1_1detail_1_1FacetPairingBase.html#a772451072af1e4e27c39115688d79ced" title="Generates all possible facet pairings satisfying the given constraints.">findAllPairings()</a>.</p>
-<p>It may be assumed that the pairing is of the appropriate dimension-specific subclass (such as NFacePairing for dimension three, or Dim2EdgePairing for dimension two).</p>
+<p>Such routines are used to process pairings that are found when running <a class="el" href="classregina_1_1detail_1_1FacetPairingBase.html#af37845787a6a80399160c535b9344d08" title="Generates all possible facet pairings satisfying the given constraints.">findAllPairings()</a>.</p>
+<p>The first parameter passed should be a facet pairing (this should not be deallocated by this routine). The second parameter should be a list of all automorphisms of this pairing (this should not be deallocated either). The third parameter may contain arbitrary data as passed to <a class="el" href="classregina_1_1detail_1_1FacetPairingBase.html#af37845787a6a80399160c535b9344d08" title="Generates all possible facet pairings satisfying the given constraints.">findAllPairings()</a>.</p>
 <p>Note that the first two parameters passed might be <code>null</code> to signal that facet pairing generation has finished. </p>
 
 </div>
@@ -648,7 +642,7 @@ template&lt;int dim&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a772451072af1e4e27c39115688d79ced"></a>
+<a class="anchor" id="af37845787a6a80399160c535b9344d08"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -666,7 +660,7 @@ template&lt;int dim&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classregina_1_1NBoolSet.html">NBoolSet</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classregina_1_1BoolSet.html">BoolSet</a>&#160;</td>
           <td class="paramname"><em>boundary</em>, </td>
         </tr>
         <tr>
@@ -703,10 +697,10 @@ template&lt;int dim&gt; </div>
 <p>Generates all possible facet pairings satisfying the given constraints. </p>
 <p>Only connected facet pairings (pairings in which each simplex can be reached from each other via a series of individual matched facets) will be produced.</p>
 <p>Each facet pairing will be produced precisely once up to isomorphism. Facet pairings are considered isomorphic if they are related by a relabelling of the simplices and/or a renumbering of the (<em>dim</em> + 1) facets of each simplex. Each facet pairing that is generated will be a lexicographically minimal representative of its isomorphism class, i.e., will be in canonical form as described by <a class="el" href="classregina_1_1detail_1_1FacetPairingBase.html#a49fd05547a2a2d5424ec6a02416cb525" title="Determines whether this facet pairing is in canonical form, i.e., is a lexicographically minimal repr...">isCanonical()</a>.</p>
-<p>For each facet pairing that is generated, routine <em>use</em> (as passed to this function) will be called with that pairing and its automorphisms as arguments. Each pairing will be of the appropriate dimension-specific subclass (for instance, NFacePairing for dimension three, or Dim2EdgePairing for dimension two).</p>
+<p>For each facet pairing that is generated, routine <em>use</em> (as passed to this function) will be called with that pairing and its automorphisms as arguments.</p>
 <p>Once the generation of facet pairings has finished, routine <em>use</em> will be called once more, this time with <code>null</code> as its first two arguments (for the facet pairing and its automorphisms).</p>
 <p>Because this class cannot represent an empty facet pairing, if the argument <em>nSimplices</em> is zero then no facet pairings will be generated at all.</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000017">Todo:</a></b></dt><dd><p class="startdd"><em>Optimise (long-term):</em> When generating facet pairings, do some checking to eliminate cases in which simplex (<em>k</em> &gt; 0) can be swapped with simplex 0 to produce a smaller representation of the same pairing. </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000046">Todo:</a></b></dt><dd><p class="startdd"><em>Optimise (long-term):</em> When generating facet pairings, do some checking to eliminate cases in which simplex (<em>k</em> &gt; 0) can be swapped with simplex 0 to produce a smaller representation of the same pairing. </p>
 <p class="enddd"><em>Feature:</em> Allow cancellation of facet pairing generation.</p>
 </dd></dl>
 <dl class="section user"><dt>Python:</dt><dd>Not present, even in the dimension-specific subclasses.</dd></dl>
@@ -1188,60 +1182,6 @@ template&lt;int dim&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="aea0ab182c97fe654b8929d1fe41dc564"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> std::string <a class="el" href="structregina_1_1Output.html">regina::Output</a>&lt; <a class="el" href="classregina_1_1detail_1_1FacetPairingBase.html">FacetPairingBase</a>&lt; dim &gt; , supportsUtf8 &gt;::toString </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>A deprecated alias for str(). </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000253">Deprecated:</a></b></dt><dd>This routine has (at long last) been deprecated; use the simpler-to-type str() instead.</dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>a short text representation of this object. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="af32f5abced4d1365c34980741b564765"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> std::string <a class="el" href="structregina_1_1Output.html">regina::Output</a>&lt; <a class="el" href="classregina_1_1detail_1_1FacetPairingBase.html">FacetPairingBase</a>&lt; dim &gt; , supportsUtf8 &gt;::toStringLong </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>A deprecated alias for detail(). </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000254">Deprecated:</a></b></dt><dd>This routine has (at long last) been deprecated; use the simpler-to-type detail() instead.</dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>a long text representation of this object. </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="a7e973ce73b7f5079d3a29cfee45c38b6"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1516,7 +1456,7 @@ template&lt;int dim&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>generic/detail/<a class="el" href="detail_2facetpairing_8h.html">facetpairing.h</a></li>
+<li>triangulation/detail/<a class="el" href="triangulation_2detail_2facetpairing_8h.html">facetpairing.h</a></li>
 </ul>
 </div><!-- contents -->
 <hr>

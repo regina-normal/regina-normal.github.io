@@ -55,14 +55,14 @@
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structregina_1_1FacetSpec-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">regina::FacetSpec&lt; dim &gt; Struct Template Reference<div class="ingroups"><a class="el" href="group__generic.html">Generic code</a></div></div>  </div>
+<div class="title">regina::FacetSpec&lt; dim &gt; Struct Template Reference<div class="ingroups"><a class="el" href="group__triangulation.html">Triangulations</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
 <p>A lightweight class used to refer to a particular facet of a particular top-dimensional simplex in a <em>dim</em>-dimensional triangulation.  
  <a href="structregina_1_1FacetSpec.html#details">More...</a></p>
 
-<p><code>#include &lt;generic/facetspec.h&gt;</code></p>
+<p><code>#include &lt;triangulation/facetspec.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -142,7 +142,7 @@ struct regina::FacetSpec&lt; dim &gt;</h3>
 <p>Facilities are provided for iterating through simplex facets. With this in mind, it is also possible to represent the overall boundary, a past-the-end value and a before-the-start value.</p>
 <p>When iterating through the simplex facets, the facets will be ordered first by simplex index and then by facet number. The overall boundary appears after all other simplex facets.</p>
 <p>If there are <em>n</em> simplices, the simplices will be numbered from 0 to <em>n</em>-1 inclusive. The boundary will be represented as simplex <em>n</em>, facet 0. The past-the-end value will be represented as simplex <em>n</em>, facet 1, and the before-the-start value will be represented as simplex -1, facet <em>dim</em>.</p>
-<dl class="section user"><dt>Python:</dt><dd>Python does not support templates. Instead this class can be used by appending the dimension as a suffix (e.g., FacetSpec2 and FacetSpec3 for dimensions 2 and 3). The typedefs Dim2TriangleEdge, NTetFace and Dim4PentFacet can also be used in Regina's <a class="el" href="stddim.html">standard dimensions</a>.</dd></dl>
+<dl class="section user"><dt>Python:</dt><dd>Python does not support templates. Instead this class can be used by appending the dimension as a suffix (e.g., FacetSpec2 and FacetSpec3 for dimensions 2 and 3).</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">dim</td><td>the dimension of the underlying triangulation. This must be between 2 and 15 inclusive. </td></tr>
@@ -826,12 +826,12 @@ template&lt;int dim&gt; </div>
 </div><div class="memdoc">
 
 <p>The simplex referred to. </p>
-<p><a class="el" href="classregina_1_1Simplex.html" title="Represents a top-dimensional simplex in a dim-manifold triangulation.">Simplex</a> numbering begins at 0. </p>
+<p>Simplex numbering begins at 0. </p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>generic/<a class="el" href="facetspec_8h.html">facetspec.h</a></li>
+<li>triangulation/<a class="el" href="triangulation_2facetspec_8h.html">facetspec.h</a></li>
 </ul>
 </div><!-- contents -->
 <hr>

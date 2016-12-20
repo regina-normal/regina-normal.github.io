@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>Regina Calculation Engine: regina::LPMatrix&lt; Integer &gt; Class Template Reference</title>
+<title>Regina Calculation Engine: regina::LPMatrix&lt; IntType &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -54,66 +54,66 @@
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classregina_1_1LPMatrix-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">regina::LPMatrix&lt; Integer &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__enumerate.html">Vertex Enumeration</a></div></div>  </div>
+<div class="title">regina::LPMatrix&lt; IntType &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__enumerate.html">Vertex Enumeration</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
 <p>A matrix class for use with linear programming.  
  <a href="classregina_1_1LPMatrix.html#details">More...</a></p>
 
-<p><code>#include &lt;enumerate/ntreelp.h&gt;</code></p>
+<p><code>#include &lt;enumerate/treelp.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aba03c00655c64bebc1ae8937dc9537ec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPMatrix.html#aba03c00655c64bebc1ae8937dc9537ec">LPMatrix</a> ()</td></tr>
-<tr class="memdesc:aba03c00655c64bebc1ae8937dc9537ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an uninitialised matrix with no memory storage.  <a href="#aba03c00655c64bebc1ae8937dc9537ec">More...</a><br/></td></tr>
-<tr class="separator:aba03c00655c64bebc1ae8937dc9537ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7bcff355353b833a1a4efd367d6abf67"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPMatrix.html#a7bcff355353b833a1a4efd367d6abf67">LPMatrix</a> (unsigned <a class="el" href="classregina_1_1LPMatrix.html#acd7a9578c0eef0f56da70934af07b150">rows</a>, unsigned cols)</td></tr>
-<tr class="memdesc:a7bcff355353b833a1a4efd367d6abf67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a fully initialised <em>rows</em> by <em>cols</em> matrix with all elements set to zero.  <a href="#a7bcff355353b833a1a4efd367d6abf67">More...</a><br/></td></tr>
-<tr class="separator:a7bcff355353b833a1a4efd367d6abf67"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52478cdada0d0c8eff59ff271f80e5bd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPMatrix.html#a52478cdada0d0c8eff59ff271f80e5bd">~LPMatrix</a> ()</td></tr>
-<tr class="memdesc:a52478cdada0d0c8eff59ff271f80e5bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys this matrix and all of the data it contains.  <a href="#a52478cdada0d0c8eff59ff271f80e5bd">More...</a><br/></td></tr>
-<tr class="separator:a52478cdada0d0c8eff59ff271f80e5bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1f02ccf74fbee3b911dfa5163d87c84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPMatrix.html#af1f02ccf74fbee3b911dfa5163d87c84">reserve</a> (unsigned maxRows, unsigned maxCols)</td></tr>
-<tr class="memdesc:af1f02ccf74fbee3b911dfa5163d87c84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserves enough space to store the elements of a <em>maxRows</em> by <em>maxCols</em> matrix.  <a href="#af1f02ccf74fbee3b911dfa5163d87c84">More...</a><br/></td></tr>
-<tr class="separator:af1f02ccf74fbee3b911dfa5163d87c84"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad70b701f86e3abbc6eba098cad8af961"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPMatrix.html#ad70b701f86e3abbc6eba098cad8af961">initClone</a> (const <a class="el" href="classregina_1_1LPMatrix.html">LPMatrix</a> &amp;clone)</td></tr>
-<tr class="memdesc:ad70b701f86e3abbc6eba098cad8af961"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises this matrix to a copy of the given matrix.  <a href="#ad70b701f86e3abbc6eba098cad8af961">More...</a><br/></td></tr>
-<tr class="separator:ad70b701f86e3abbc6eba098cad8af961"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a334363e30727cac7532d48c0d05669"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPMatrix.html#a6a334363e30727cac7532d48c0d05669">initIdentity</a> (unsigned size)</td></tr>
-<tr class="memdesc:a6a334363e30727cac7532d48c0d05669"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises this matrix to the identity matrix of the given size.  <a href="#a6a334363e30727cac7532d48c0d05669">More...</a><br/></td></tr>
-<tr class="separator:a6a334363e30727cac7532d48c0d05669"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad90a66cd20b7c286417f776d9de52c28"><td class="memItemLeft" align="right" valign="top">Integer &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPMatrix.html#ad90a66cd20b7c286417f776d9de52c28">entry</a> (unsigned row, unsigned col)</td></tr>
-<tr class="memdesc:ad90a66cd20b7c286417f776d9de52c28"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a read-write reference to the given element of this matrix.  <a href="#ad90a66cd20b7c286417f776d9de52c28">More...</a><br/></td></tr>
-<tr class="separator:ad90a66cd20b7c286417f776d9de52c28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa029ce1662ef72298b76e5c9af36d6da"><td class="memItemLeft" align="right" valign="top">const Integer &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPMatrix.html#aa029ce1662ef72298b76e5c9af36d6da">entry</a> (unsigned row, unsigned col) const </td></tr>
-<tr class="memdesc:aa029ce1662ef72298b76e5c9af36d6da"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a read-only reference to the given element of this matrix.  <a href="#aa029ce1662ef72298b76e5c9af36d6da">More...</a><br/></td></tr>
-<tr class="separator:aa029ce1662ef72298b76e5c9af36d6da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd7a9578c0eef0f56da70934af07b150"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPMatrix.html#acd7a9578c0eef0f56da70934af07b150">rows</a> () const </td></tr>
-<tr class="memdesc:acd7a9578c0eef0f56da70934af07b150"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the number of rows in this matrix.  <a href="#acd7a9578c0eef0f56da70934af07b150">More...</a><br/></td></tr>
-<tr class="separator:acd7a9578c0eef0f56da70934af07b150"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a710407fbce64f4b891aaab6fb5283c69"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPMatrix.html#a710407fbce64f4b891aaab6fb5283c69">columns</a> () const </td></tr>
-<tr class="memdesc:a710407fbce64f4b891aaab6fb5283c69"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the number of columns in this matrix.  <a href="#a710407fbce64f4b891aaab6fb5283c69">More...</a><br/></td></tr>
-<tr class="separator:a710407fbce64f4b891aaab6fb5283c69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a860afdebf19ab1f4ce382448787d7bb5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPMatrix.html#a860afdebf19ab1f4ce382448787d7bb5">swapRows</a> (unsigned r1, unsigned r2)</td></tr>
-<tr class="memdesc:a860afdebf19ab1f4ce382448787d7bb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swaps the two given rows of this matrix.  <a href="#a860afdebf19ab1f4ce382448787d7bb5">More...</a><br/></td></tr>
-<tr class="separator:a860afdebf19ab1f4ce382448787d7bb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addd9a5fca3701092cf12bfe3e1c8631d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPMatrix.html#addd9a5fca3701092cf12bfe3e1c8631d">combRow</a> (const Integer &amp;destCoeff, unsigned dest, const Integer &amp;srcCoeff, unsigned src, const Integer &amp;div)</td></tr>
-<tr class="memdesc:addd9a5fca3701092cf12bfe3e1c8631d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a particular row operation to this matrix.  <a href="#addd9a5fca3701092cf12bfe3e1c8631d">More...</a><br/></td></tr>
-<tr class="separator:addd9a5fca3701092cf12bfe3e1c8631d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc220b38be89d752cce1d74640c767e2"><td class="memItemLeft" align="right" valign="top">Integer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPMatrix.html#afc220b38be89d752cce1d74640c767e2">combRowAndNorm</a> (const Integer &amp;destCoeff, unsigned dest, const Integer &amp;srcCoeff, unsigned src)</td></tr>
-<tr class="memdesc:afc220b38be89d752cce1d74640c767e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a particular row operation to this matrix, and then normalises.  <a href="#afc220b38be89d752cce1d74640c767e2">More...</a><br/></td></tr>
-<tr class="separator:afc220b38be89d752cce1d74640c767e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d338d4e3ccb2d80dc0fda890d8c706d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPMatrix.html#a1d338d4e3ccb2d80dc0fda890d8c706d">negateRow</a> (unsigned row)</td></tr>
-<tr class="memdesc:a1d338d4e3ccb2d80dc0fda890d8c706d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Negates all elements in the given row of this matrix.  <a href="#a1d338d4e3ccb2d80dc0fda890d8c706d">More...</a><br/></td></tr>
-<tr class="separator:a1d338d4e3ccb2d80dc0fda890d8c706d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af741d99a6a02b11ec99104212f80380b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPMatrix.html#af741d99a6a02b11ec99104212f80380b">dump</a> (std::ostream &amp;out) const </td></tr>
-<tr class="memdesc:af741d99a6a02b11ec99104212f80380b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes this matrix to the given output stream.  <a href="#af741d99a6a02b11ec99104212f80380b">More...</a><br/></td></tr>
-<tr class="separator:af741d99a6a02b11ec99104212f80380b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc147112c87842fa3f81f983b1a74fae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPMatrix.html#abc147112c87842fa3f81f983b1a74fae">LPMatrix</a> ()</td></tr>
+<tr class="memdesc:abc147112c87842fa3f81f983b1a74fae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an uninitialised matrix with no memory storage.  <a href="#abc147112c87842fa3f81f983b1a74fae">More...</a><br/></td></tr>
+<tr class="separator:abc147112c87842fa3f81f983b1a74fae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd286b6b0f9ea3176934d00b8c1cc0c8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPMatrix.html#acd286b6b0f9ea3176934d00b8c1cc0c8">LPMatrix</a> (unsigned <a class="el" href="classregina_1_1LPMatrix.html#ae20b8e06d4669521b9df90085707b276">rows</a>, unsigned cols)</td></tr>
+<tr class="memdesc:acd286b6b0f9ea3176934d00b8c1cc0c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a fully initialised <em>rows</em> by <em>cols</em> matrix with all elements set to zero.  <a href="#acd286b6b0f9ea3176934d00b8c1cc0c8">More...</a><br/></td></tr>
+<tr class="separator:acd286b6b0f9ea3176934d00b8c1cc0c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ac4b64820129111953fb8fd76ccbed2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPMatrix.html#a7ac4b64820129111953fb8fd76ccbed2">~LPMatrix</a> ()</td></tr>
+<tr class="memdesc:a7ac4b64820129111953fb8fd76ccbed2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys this matrix and all of the data it contains.  <a href="#a7ac4b64820129111953fb8fd76ccbed2">More...</a><br/></td></tr>
+<tr class="separator:a7ac4b64820129111953fb8fd76ccbed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87e8f80901ea9c05b3fc97db4a365c94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPMatrix.html#a87e8f80901ea9c05b3fc97db4a365c94">reserve</a> (unsigned maxRows, unsigned maxCols)</td></tr>
+<tr class="memdesc:a87e8f80901ea9c05b3fc97db4a365c94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserves enough space to store the elements of a <em>maxRows</em> by <em>maxCols</em> matrix.  <a href="#a87e8f80901ea9c05b3fc97db4a365c94">More...</a><br/></td></tr>
+<tr class="separator:a87e8f80901ea9c05b3fc97db4a365c94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6806f38ae07678edd93b44219943a70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPMatrix.html#ad6806f38ae07678edd93b44219943a70">initClone</a> (const <a class="el" href="classregina_1_1LPMatrix.html">LPMatrix</a> &amp;clone)</td></tr>
+<tr class="memdesc:ad6806f38ae07678edd93b44219943a70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises this matrix to a copy of the given matrix.  <a href="#ad6806f38ae07678edd93b44219943a70">More...</a><br/></td></tr>
+<tr class="separator:ad6806f38ae07678edd93b44219943a70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a756eaa237b40e6b640655622d4fc57a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPMatrix.html#a756eaa237b40e6b640655622d4fc57a6">initIdentity</a> (unsigned size)</td></tr>
+<tr class="memdesc:a756eaa237b40e6b640655622d4fc57a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises this matrix to the identity matrix of the given size.  <a href="#a756eaa237b40e6b640655622d4fc57a6">More...</a><br/></td></tr>
+<tr class="separator:a756eaa237b40e6b640655622d4fc57a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66e1ff5aebfd645cf4c9cac1b5a149d6"><td class="memItemLeft" align="right" valign="top">IntType &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPMatrix.html#a66e1ff5aebfd645cf4c9cac1b5a149d6">entry</a> (unsigned row, unsigned col)</td></tr>
+<tr class="memdesc:a66e1ff5aebfd645cf4c9cac1b5a149d6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a read-write reference to the given element of this matrix.  <a href="#a66e1ff5aebfd645cf4c9cac1b5a149d6">More...</a><br/></td></tr>
+<tr class="separator:a66e1ff5aebfd645cf4c9cac1b5a149d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f9b37816141dcda21b0b98e4fd529c0"><td class="memItemLeft" align="right" valign="top">const IntType &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPMatrix.html#a6f9b37816141dcda21b0b98e4fd529c0">entry</a> (unsigned row, unsigned col) const </td></tr>
+<tr class="memdesc:a6f9b37816141dcda21b0b98e4fd529c0"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a read-only reference to the given element of this matrix.  <a href="#a6f9b37816141dcda21b0b98e4fd529c0">More...</a><br/></td></tr>
+<tr class="separator:a6f9b37816141dcda21b0b98e4fd529c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae20b8e06d4669521b9df90085707b276"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPMatrix.html#ae20b8e06d4669521b9df90085707b276">rows</a> () const </td></tr>
+<tr class="memdesc:ae20b8e06d4669521b9df90085707b276"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the number of rows in this matrix.  <a href="#ae20b8e06d4669521b9df90085707b276">More...</a><br/></td></tr>
+<tr class="separator:ae20b8e06d4669521b9df90085707b276"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebdbd7b4735bf2c3c94796f1f69a0fc3"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPMatrix.html#aebdbd7b4735bf2c3c94796f1f69a0fc3">columns</a> () const </td></tr>
+<tr class="memdesc:aebdbd7b4735bf2c3c94796f1f69a0fc3"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the number of columns in this matrix.  <a href="#aebdbd7b4735bf2c3c94796f1f69a0fc3">More...</a><br/></td></tr>
+<tr class="separator:aebdbd7b4735bf2c3c94796f1f69a0fc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ee81a1df448f26c82f389cdbafcb52c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPMatrix.html#a0ee81a1df448f26c82f389cdbafcb52c">swapRows</a> (unsigned r1, unsigned r2)</td></tr>
+<tr class="memdesc:a0ee81a1df448f26c82f389cdbafcb52c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swaps the two given rows of this matrix.  <a href="#a0ee81a1df448f26c82f389cdbafcb52c">More...</a><br/></td></tr>
+<tr class="separator:a0ee81a1df448f26c82f389cdbafcb52c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad77b3d164a3c52cb5908069c99c37da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPMatrix.html#aad77b3d164a3c52cb5908069c99c37da">combRow</a> (const IntType &amp;destCoeff, unsigned dest, const IntType &amp;srcCoeff, unsigned src, const IntType &amp;div)</td></tr>
+<tr class="memdesc:aad77b3d164a3c52cb5908069c99c37da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a particular row operation to this matrix.  <a href="#aad77b3d164a3c52cb5908069c99c37da">More...</a><br/></td></tr>
+<tr class="separator:aad77b3d164a3c52cb5908069c99c37da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0dcf7e72e994c8b0c1ec953db3ad18e"><td class="memItemLeft" align="right" valign="top">IntType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPMatrix.html#af0dcf7e72e994c8b0c1ec953db3ad18e">combRowAndNorm</a> (const IntType &amp;destCoeff, unsigned dest, const IntType &amp;srcCoeff, unsigned src)</td></tr>
+<tr class="memdesc:af0dcf7e72e994c8b0c1ec953db3ad18e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a particular row operation to this matrix, and then normalises.  <a href="#af0dcf7e72e994c8b0c1ec953db3ad18e">More...</a><br/></td></tr>
+<tr class="separator:af0dcf7e72e994c8b0c1ec953db3ad18e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a948a2c32521ba570aa0693cfce49953c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPMatrix.html#a948a2c32521ba570aa0693cfce49953c">negateRow</a> (unsigned row)</td></tr>
+<tr class="memdesc:a948a2c32521ba570aa0693cfce49953c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Negates all elements in the given row of this matrix.  <a href="#a948a2c32521ba570aa0693cfce49953c">More...</a><br/></td></tr>
+<tr class="separator:a948a2c32521ba570aa0693cfce49953c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b33217804e706a4263d8d3e86b8e066"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LPMatrix.html#a0b33217804e706a4263d8d3e86b8e066">dump</a> (std::ostream &amp;out) const </td></tr>
+<tr class="memdesc:a0b33217804e706a4263d8d3e86b8e066"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes this matrix to the given output stream.  <a href="#a0b33217804e706a4263d8d3e86b8e066">More...</a><br/></td></tr>
+<tr class="separator:a0b33217804e706a4263d8d3e86b8e066"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename Integer&gt;<br/>
-class regina::LPMatrix&lt; Integer &gt;</h3>
+<div class="textblock"><h3>template&lt;typename IntType&gt;<br/>
+class regina::LPMatrix&lt; IntType &gt;</h3>
 
 <p>A matrix class for use with linear programming. </p>
 <p>This class is used in the tree traversal algorithms for enumerating and locating vertex normal surfaces, as described in "A tree traversal
@@ -125,26 +125,26 @@ experimental polynomial-time behaviour", Burton and Ozlen, arXiv:1211.1079. It i
 <li>by using the (<em>rows</em>, <em>columns</em>) constructor, which does everything for you;</li>
 </ul>
 <ul>
-<li>by using the default (no-arguments) constructor, then calling <a class="el" href="classregina_1_1LPMatrix.html#af1f02ccf74fbee3b911dfa5163d87c84" title="Reserves enough space to store the elements of a maxRows by maxCols matrix.">reserve()</a>, and then calling one of the initialisation routines <a class="el" href="classregina_1_1LPMatrix.html#ad70b701f86e3abbc6eba098cad8af961" title="Initialises this matrix to a copy of the given matrix.">initClone()</a> or <a class="el" href="classregina_1_1LPMatrix.html#a6a334363e30727cac7532d48c0d05669" title="Initialises this matrix to the identity matrix of the given size.">initIdentity()</a>.</li>
+<li>by using the default (no-arguments) constructor, then calling <a class="el" href="classregina_1_1LPMatrix.html#a87e8f80901ea9c05b3fc97db4a365c94" title="Reserves enough space to store the elements of a maxRows by maxCols matrix.">reserve()</a>, and then calling one of the initialisation routines <a class="el" href="classregina_1_1LPMatrix.html#ad6806f38ae07678edd93b44219943a70" title="Initialises this matrix to a copy of the given matrix.">initClone()</a> or <a class="el" href="classregina_1_1LPMatrix.html#a756eaa237b40e6b640655622d4fc57a6" title="Initialises this matrix to the identity matrix of the given size.">initIdentity()</a>.</li>
 </ul>
-<p>You may call the initialisation <a class="el" href="classregina_1_1LPMatrix.html#ad70b701f86e3abbc6eba098cad8af961" title="Initialises this matrix to a copy of the given matrix.">initClone()</a> and <a class="el" href="classregina_1_1LPMatrix.html#a6a334363e30727cac7532d48c0d05669" title="Initialises this matrix to the identity matrix of the given size.">initIdentity()</a> routines more than once (e.g., during a backtracking search), and you may use different matrix sizes each time. However, you may never use more elements than you originally reserved space for.</p>
-<p>This matrix is stored in dense form. All elements are of the integer class <em>Integer</em>, which is supplied as a template argument.</p>
-<dl class="section pre"><dt>Precondition</dt><dd>The default constructor for the template class Integer must intialise each new integer to zero. The classes NInteger and <a class="el" href="classregina_1_1NNativeInteger.html" title="A wrapper class for a native, fixed-precision integer type of the given size.">NNativeInteger</a>, for instance, have this property.</dd></dl>
-<dl class="section user"><dt>Headers:</dt><dd>Parts of this template class are implemented in a separate header (ntreelp-impl.h), which is not included automatically by this file. Most end users should not need this extra header, since Regina's calculation engine already includes explicit instantiations for common combinations of template arguments.</dd></dl>
+<p>You may call the initialisation <a class="el" href="classregina_1_1LPMatrix.html#ad6806f38ae07678edd93b44219943a70" title="Initialises this matrix to a copy of the given matrix.">initClone()</a> and <a class="el" href="classregina_1_1LPMatrix.html#a756eaa237b40e6b640655622d4fc57a6" title="Initialises this matrix to the identity matrix of the given size.">initIdentity()</a> routines more than once (e.g., during a backtracking search), and you may use different matrix sizes each time. However, you may never use more elements than you originally reserved space for.</p>
+<p>This matrix is stored in dense form. All elements are of the integer class <em>IntType</em>, which is supplied as a template argument.</p>
+<dl class="section pre"><dt>Precondition</dt><dd>The default constructor for the template class IntType must intialise each new integer to zero. The classes Integer and <a class="el" href="classregina_1_1NativeInteger.html" title="A wrapper class for a native, fixed-precision integer type of the given size.">NativeInteger</a>, for instance, have this property.</dd></dl>
+<dl class="section user"><dt>Headers:</dt><dd>Parts of this template class are implemented in a separate header (treelp-impl.h), which is not included automatically by this file. Most end users should not need this extra header, since Regina's calculation engine already includes explicit instantiations for common combinations of template arguments.</dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>The API for this class has not yet been finalised. This means that the class interface may change in new versions of Regina, without maintaining backward compatibility. If you use this class directly in your own code, please watch the detailed changelogs upon new releases to see if you need to make changes to your code.</dd></dl>
 <dl class="section user"><dt>Python:</dt><dd>Not present. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="aba03c00655c64bebc1ae8937dc9537ec"></a>
+<a class="anchor" id="abc147112c87842fa3f81f983b1a74fae"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Integer &gt; </div>
+template&lt;typename IntType &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classregina_1_1LPMatrix.html">regina::LPMatrix</a>&lt; Integer &gt;::<a class="el" href="classregina_1_1LPMatrix.html">LPMatrix</a> </td>
+          <td class="memname"><a class="el" href="classregina_1_1LPMatrix.html">regina::LPMatrix</a>&lt; IntType &gt;::<a class="el" href="classregina_1_1LPMatrix.html">LPMatrix</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -158,21 +158,21 @@ template&lt;typename Integer &gt; </div>
 </div><div class="memdoc">
 
 <p>Creates an uninitialised matrix with no memory storage. </p>
-<p>You <em>must</em> call <a class="el" href="classregina_1_1LPMatrix.html#af1f02ccf74fbee3b911dfa5163d87c84" title="Reserves enough space to store the elements of a maxRows by maxCols matrix.">reserve()</a> and then either <a class="el" href="classregina_1_1LPMatrix.html#ad70b701f86e3abbc6eba098cad8af961" title="Initialises this matrix to a copy of the given matrix.">initClone()</a> or <a class="el" href="classregina_1_1LPMatrix.html#a6a334363e30727cac7532d48c0d05669" title="Initialises this matrix to the identity matrix of the given size.">initIdentity()</a> before this matrix will become initialised. </p>
+<p>You <em>must</em> call <a class="el" href="classregina_1_1LPMatrix.html#a87e8f80901ea9c05b3fc97db4a365c94" title="Reserves enough space to store the elements of a maxRows by maxCols matrix.">reserve()</a> and then either <a class="el" href="classregina_1_1LPMatrix.html#ad6806f38ae07678edd93b44219943a70" title="Initialises this matrix to a copy of the given matrix.">initClone()</a> or <a class="el" href="classregina_1_1LPMatrix.html#a756eaa237b40e6b640655622d4fc57a6" title="Initialises this matrix to the identity matrix of the given size.">initIdentity()</a> before this matrix will become initialised. </p>
 
 </div>
 </div>
-<a class="anchor" id="a7bcff355353b833a1a4efd367d6abf67"></a>
+<a class="anchor" id="acd286b6b0f9ea3176934d00b8c1cc0c8"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Integer &gt; </div>
+template&lt;typename IntType &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classregina_1_1LPMatrix.html">regina::LPMatrix</a>&lt; Integer &gt;::<a class="el" href="classregina_1_1LPMatrix.html">LPMatrix</a> </td>
+          <td class="memname"><a class="el" href="classregina_1_1LPMatrix.html">regina::LPMatrix</a>&lt; IntType &gt;::<a class="el" href="classregina_1_1LPMatrix.html">LPMatrix</a> </td>
           <td>(</td>
           <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>rows</em>, </td>
@@ -208,17 +208,17 @@ template&lt;typename Integer &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a52478cdada0d0c8eff59ff271f80e5bd"></a>
+<a class="anchor" id="a7ac4b64820129111953fb8fd76ccbed2"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Integer &gt; </div>
+template&lt;typename IntType &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classregina_1_1LPMatrix.html">regina::LPMatrix</a>&lt; Integer &gt;::~<a class="el" href="classregina_1_1LPMatrix.html">LPMatrix</a> </td>
+          <td class="memname"><a class="el" href="classregina_1_1LPMatrix.html">regina::LPMatrix</a>&lt; IntType &gt;::~<a class="el" href="classregina_1_1LPMatrix.html">LPMatrix</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -237,17 +237,17 @@ template&lt;typename Integer &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a710407fbce64f4b891aaab6fb5283c69"></a>
+<a class="anchor" id="aebdbd7b4735bf2c3c94796f1f69a0fc3"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Integer &gt; </div>
+template&lt;typename IntType &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned <a class="el" href="classregina_1_1LPMatrix.html">regina::LPMatrix</a>&lt; Integer &gt;::columns </td>
+          <td class="memname">unsigned <a class="el" href="classregina_1_1LPMatrix.html">regina::LPMatrix</a>&lt; IntType &gt;::columns </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -266,19 +266,19 @@ template&lt;typename Integer &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="addd9a5fca3701092cf12bfe3e1c8631d"></a>
+<a class="anchor" id="aad77b3d164a3c52cb5908069c99c37da"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Integer &gt; </div>
+template&lt;typename IntType &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classregina_1_1LPMatrix.html">regina::LPMatrix</a>&lt; Integer &gt;::combRow </td>
+          <td class="memname">void <a class="el" href="classregina_1_1LPMatrix.html">regina::LPMatrix</a>&lt; IntType &gt;::combRow </td>
           <td>(</td>
-          <td class="paramtype">const Integer &amp;&#160;</td>
+          <td class="paramtype">const IntType &amp;&#160;</td>
           <td class="paramname"><em>destCoeff</em>, </td>
         </tr>
         <tr>
@@ -290,7 +290,7 @@ template&lt;typename Integer &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Integer &amp;&#160;</td>
+          <td class="paramtype">const IntType &amp;&#160;</td>
           <td class="paramname"><em>srcCoeff</em>, </td>
         </tr>
         <tr>
@@ -302,7 +302,7 @@ template&lt;typename Integer &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Integer &amp;&#160;</td>
+          <td class="paramtype">const IntType &amp;&#160;</td>
           <td class="paramname"><em>div</em>&#160;</td>
         </tr>
         <tr>
@@ -326,9 +326,9 @@ It is known in advance that every integer in (<em>destCoeff</em> * row <em>dest<
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">destCoeff</td><td>the coefficient applied to row <em>dest</em> in the linear combination. </td></tr>
-    <tr><td class="paramname">dest</td><td>the index of the row to replace. This must be between 0 and <a class="el" href="classregina_1_1LPMatrix.html#acd7a9578c0eef0f56da70934af07b150" title="Returns the number of rows in this matrix.">rows()</a>-1 inclusive. </td></tr>
+    <tr><td class="paramname">dest</td><td>the index of the row to replace. This must be between 0 and <a class="el" href="classregina_1_1LPMatrix.html#ae20b8e06d4669521b9df90085707b276" title="Returns the number of rows in this matrix.">rows()</a>-1 inclusive. </td></tr>
     <tr><td class="paramname">srcCoeff</td><td>the coefficient applied to row <em>src</em> in the linear combination. </td></tr>
-    <tr><td class="paramname">src</td><td>the index of the other row used in this linear combination. This must be between 0 and <a class="el" href="classregina_1_1LPMatrix.html#acd7a9578c0eef0f56da70934af07b150" title="Returns the number of rows in this matrix.">rows()</a>-1 inclusive. </td></tr>
+    <tr><td class="paramname">src</td><td>the index of the other row used in this linear combination. This must be between 0 and <a class="el" href="classregina_1_1LPMatrix.html#ae20b8e06d4669521b9df90085707b276" title="Returns the number of rows in this matrix.">rows()</a>-1 inclusive. </td></tr>
     <tr><td class="paramname">div</td><td>the integer to divide the final row by. This must be non-zero. </td></tr>
   </table>
   </dd>
@@ -336,19 +336,19 @@ It is known in advance that every integer in (<em>destCoeff</em> * row <em>dest<
 
 </div>
 </div>
-<a class="anchor" id="afc220b38be89d752cce1d74640c767e2"></a>
+<a class="anchor" id="af0dcf7e72e994c8b0c1ec953db3ad18e"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Integer &gt; </div>
+template&lt;typename IntType &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Integer <a class="el" href="classregina_1_1LPMatrix.html">regina::LPMatrix</a>&lt; Integer &gt;::combRowAndNorm </td>
+          <td class="memname">IntType <a class="el" href="classregina_1_1LPMatrix.html">regina::LPMatrix</a>&lt; IntType &gt;::combRowAndNorm </td>
           <td>(</td>
-          <td class="paramtype">const Integer &amp;&#160;</td>
+          <td class="paramtype">const IntType &amp;&#160;</td>
           <td class="paramname"><em>destCoeff</em>, </td>
         </tr>
         <tr>
@@ -360,7 +360,7 @@ template&lt;typename Integer &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Integer &amp;&#160;</td>
+          <td class="paramtype">const IntType &amp;&#160;</td>
           <td class="paramname"><em>srcCoeff</em>, </td>
         </tr>
         <tr>
@@ -388,9 +388,9 @@ template&lt;typename Integer &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">destCoeff</td><td>the coefficient applied to row <em>dest</em> in the linear combination. </td></tr>
-    <tr><td class="paramname">dest</td><td>the index of the row to replace. This must be between 0 and <a class="el" href="classregina_1_1LPMatrix.html#acd7a9578c0eef0f56da70934af07b150" title="Returns the number of rows in this matrix.">rows()</a>-1 inclusive. </td></tr>
+    <tr><td class="paramname">dest</td><td>the index of the row to replace. This must be between 0 and <a class="el" href="classregina_1_1LPMatrix.html#ae20b8e06d4669521b9df90085707b276" title="Returns the number of rows in this matrix.">rows()</a>-1 inclusive. </td></tr>
     <tr><td class="paramname">srcCoeff</td><td>the coefficient applied to row <em>src</em> in the linear combination. </td></tr>
-    <tr><td class="paramname">src</td><td>the index of the other row used in this linear combination. This must be between 0 and <a class="el" href="classregina_1_1LPMatrix.html#acd7a9578c0eef0f56da70934af07b150" title="Returns the number of rows in this matrix.">rows()</a>-1 inclusive. </td></tr>
+    <tr><td class="paramname">src</td><td>the index of the other row used in this linear combination. This must be between 0 and <a class="el" href="classregina_1_1LPMatrix.html#ae20b8e06d4669521b9df90085707b276" title="Returns the number of rows in this matrix.">rows()</a>-1 inclusive. </td></tr>
   </table>
   </dd>
 </dl>
@@ -398,14 +398,14 @@ template&lt;typename Integer &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="af741d99a6a02b11ec99104212f80380b"></a>
+<a class="anchor" id="a0b33217804e706a4263d8d3e86b8e066"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Integer &gt; </div>
+template&lt;typename IntType &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classregina_1_1LPMatrix.html">regina::LPMatrix</a>&lt; Integer &gt;::dump </td>
+          <td class="memname">void <a class="el" href="classregina_1_1LPMatrix.html">regina::LPMatrix</a>&lt; IntType &gt;::dump </td>
           <td>(</td>
           <td class="paramtype">std::ostream &amp;&#160;</td>
           <td class="paramname"><em>out</em></td><td>)</td>
@@ -425,17 +425,17 @@ template&lt;typename Integer &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ad90a66cd20b7c286417f776d9de52c28"></a>
+<a class="anchor" id="a66e1ff5aebfd645cf4c9cac1b5a149d6"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Integer &gt; </div>
+template&lt;typename IntType &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Integer &amp; <a class="el" href="classregina_1_1LPMatrix.html">regina::LPMatrix</a>&lt; Integer &gt;::entry </td>
+          <td class="memname">IntType &amp; <a class="el" href="classregina_1_1LPMatrix.html">regina::LPMatrix</a>&lt; IntType &gt;::entry </td>
           <td>(</td>
           <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>row</em>, </td>
@@ -462,25 +462,25 @@ template&lt;typename Integer &gt; </div>
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a read-write reference to the given element of this matrix. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">row</td><td>the row of the requested element. This must be between 0 and <a class="el" href="classregina_1_1LPMatrix.html#acd7a9578c0eef0f56da70934af07b150" title="Returns the number of rows in this matrix.">rows()</a>-1 inclusive. </td></tr>
-    <tr><td class="paramname">col</td><td>the column of the requested element. This must be between 0 and <a class="el" href="classregina_1_1LPMatrix.html#a710407fbce64f4b891aaab6fb5283c69" title="Returns the number of columns in this matrix.">columns()</a>-1 inclusive. </td></tr>
+    <tr><td class="paramname">row</td><td>the row of the requested element. This must be between 0 and <a class="el" href="classregina_1_1LPMatrix.html#ae20b8e06d4669521b9df90085707b276" title="Returns the number of rows in this matrix.">rows()</a>-1 inclusive. </td></tr>
+    <tr><td class="paramname">col</td><td>the column of the requested element. This must be between 0 and <a class="el" href="classregina_1_1LPMatrix.html#aebdbd7b4735bf2c3c94796f1f69a0fc3" title="Returns the number of columns in this matrix.">columns()</a>-1 inclusive. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="aa029ce1662ef72298b76e5c9af36d6da"></a>
+<a class="anchor" id="a6f9b37816141dcda21b0b98e4fd529c0"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Integer &gt; </div>
+template&lt;typename IntType &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const Integer &amp; <a class="el" href="classregina_1_1LPMatrix.html">regina::LPMatrix</a>&lt; Integer &gt;::entry </td>
+          <td class="memname">const IntType &amp; <a class="el" href="classregina_1_1LPMatrix.html">regina::LPMatrix</a>&lt; IntType &gt;::entry </td>
           <td>(</td>
           <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>row</em>, </td>
@@ -507,27 +507,27 @@ template&lt;typename Integer &gt; </div>
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a read-only reference to the given element of this matrix. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">row</td><td>the row of the requested element. This must be between 0 and <a class="el" href="classregina_1_1LPMatrix.html#acd7a9578c0eef0f56da70934af07b150" title="Returns the number of rows in this matrix.">rows()</a>-1 inclusive. </td></tr>
-    <tr><td class="paramname">col</td><td>the column of the requested element. This must be between 0 and <a class="el" href="classregina_1_1LPMatrix.html#a710407fbce64f4b891aaab6fb5283c69" title="Returns the number of columns in this matrix.">columns()</a>-1 inclusive. </td></tr>
+    <tr><td class="paramname">row</td><td>the row of the requested element. This must be between 0 and <a class="el" href="classregina_1_1LPMatrix.html#ae20b8e06d4669521b9df90085707b276" title="Returns the number of rows in this matrix.">rows()</a>-1 inclusive. </td></tr>
+    <tr><td class="paramname">col</td><td>the column of the requested element. This must be between 0 and <a class="el" href="classregina_1_1LPMatrix.html#aebdbd7b4735bf2c3c94796f1f69a0fc3" title="Returns the number of columns in this matrix.">columns()</a>-1 inclusive. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="ad70b701f86e3abbc6eba098cad8af961"></a>
+<a class="anchor" id="ad6806f38ae07678edd93b44219943a70"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Integer &gt; </div>
+template&lt;typename IntType &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classregina_1_1LPMatrix.html">regina::LPMatrix</a>&lt; Integer &gt;::initClone </td>
+          <td class="memname">void <a class="el" href="classregina_1_1LPMatrix.html">regina::LPMatrix</a>&lt; IntType &gt;::initClone </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classregina_1_1LPMatrix.html">LPMatrix</a>&lt; Integer &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classregina_1_1LPMatrix.html">LPMatrix</a>&lt; IntType &gt; &amp;&#160;</td>
           <td class="paramname"><em>clone</em></td><td>)</td>
           <td></td>
         </tr>
@@ -542,7 +542,7 @@ template&lt;typename Integer &gt; </div>
 <p>Initialises this matrix to a copy of the given matrix. </p>
 <p>This matrix does not yet need to be initialised, but it does need to have enough space reserved.</p>
 <p>You may call this routine on an already-initialised matrix, and you may use this routine to assign it a different size (as long as enough space was originally reserved).</p>
-<dl class="section pre"><dt>Precondition</dt><dd>If this matrix has not been initialised before, then <a class="el" href="classregina_1_1LPMatrix.html#af1f02ccf74fbee3b911dfa5163d87c84" title="Reserves enough space to store the elements of a maxRows by maxCols matrix.">reserve()</a> must have already been called.</dd>
+<dl class="section pre"><dt>Precondition</dt><dd>If this matrix has not been initialised before, then <a class="el" href="classregina_1_1LPMatrix.html#a87e8f80901ea9c05b3fc97db4a365c94" title="Reserves enough space to store the elements of a maxRows by maxCols matrix.">reserve()</a> must have already been called.</dd>
 <dd>
 This matrix has enough space reserved for at least clone.rows() * clone.columns() elements.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -554,17 +554,17 @@ This matrix has enough space reserved for at least clone.rows() * clone.columns(
 
 </div>
 </div>
-<a class="anchor" id="a6a334363e30727cac7532d48c0d05669"></a>
+<a class="anchor" id="a756eaa237b40e6b640655622d4fc57a6"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Integer &gt; </div>
+template&lt;typename IntType &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classregina_1_1LPMatrix.html">regina::LPMatrix</a>&lt; Integer &gt;::initIdentity </td>
+          <td class="memname">void <a class="el" href="classregina_1_1LPMatrix.html">regina::LPMatrix</a>&lt; IntType &gt;::initIdentity </td>
           <td>(</td>
           <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>size</em></td><td>)</td>
@@ -581,7 +581,7 @@ template&lt;typename Integer &gt; </div>
 <p>Initialises this matrix to the identity matrix of the given size. </p>
 <p>This matrix does not yet need to be initialised, but it does need to have enough space reserved.</p>
 <p>You may call this routine on an already-initialised matrix, and you may use this routine to assign it a different size (as long as enough space was originally reserved).</p>
-<dl class="section pre"><dt>Precondition</dt><dd>If this matrix has not been initialised before, then <a class="el" href="classregina_1_1LPMatrix.html#af1f02ccf74fbee3b911dfa5163d87c84" title="Reserves enough space to store the elements of a maxRows by maxCols matrix.">reserve()</a> must have already been called.</dd>
+<dl class="section pre"><dt>Precondition</dt><dd>If this matrix has not been initialised before, then <a class="el" href="classregina_1_1LPMatrix.html#a87e8f80901ea9c05b3fc97db4a365c94" title="Reserves enough space to store the elements of a maxRows by maxCols matrix.">reserve()</a> must have already been called.</dd>
 <dd>
 This matrix has enough space reserved for at least <em>size</em> * <em>size</em> elements.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -593,17 +593,17 @@ This matrix has enough space reserved for at least <em>size</em> * <em>size</em>
 
 </div>
 </div>
-<a class="anchor" id="a1d338d4e3ccb2d80dc0fda890d8c706d"></a>
+<a class="anchor" id="a948a2c32521ba570aa0693cfce49953c"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Integer &gt; </div>
+template&lt;typename IntType &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classregina_1_1LPMatrix.html">regina::LPMatrix</a>&lt; Integer &gt;::negateRow </td>
+          <td class="memname">void <a class="el" href="classregina_1_1LPMatrix.html">regina::LPMatrix</a>&lt; IntType &gt;::negateRow </td>
           <td>(</td>
           <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>row</em></td><td>)</td>
@@ -620,24 +620,24 @@ template&lt;typename Integer &gt; </div>
 <p>Negates all elements in the given row of this matrix. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">row</td><td>the row whose elements should be negated. This must be between 0 and <a class="el" href="classregina_1_1LPMatrix.html#acd7a9578c0eef0f56da70934af07b150" title="Returns the number of rows in this matrix.">rows()</a>-1 inclusive. </td></tr>
+    <tr><td class="paramname">row</td><td>the row whose elements should be negated. This must be between 0 and <a class="el" href="classregina_1_1LPMatrix.html#ae20b8e06d4669521b9df90085707b276" title="Returns the number of rows in this matrix.">rows()</a>-1 inclusive. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="af1f02ccf74fbee3b911dfa5163d87c84"></a>
+<a class="anchor" id="a87e8f80901ea9c05b3fc97db4a365c94"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Integer &gt; </div>
+template&lt;typename IntType &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classregina_1_1LPMatrix.html">regina::LPMatrix</a>&lt; Integer &gt;::reserve </td>
+          <td class="memname">void <a class="el" href="classregina_1_1LPMatrix.html">regina::LPMatrix</a>&lt; IntType &gt;::reserve </td>
           <td>(</td>
           <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>maxRows</em>, </td>
@@ -663,9 +663,9 @@ template&lt;typename Integer &gt; </div>
 
 <p>Reserves enough space to store the elements of a <em>maxRows</em> by <em>maxCols</em> matrix. </p>
 <p>This is just an upper bound: your matrix may end up using fewer elements than this, but it cannot use more.</p>
-<p>This matrix will still not be initialised until you call either <a class="el" href="classregina_1_1LPMatrix.html#ad70b701f86e3abbc6eba098cad8af961" title="Initialises this matrix to a copy of the given matrix.">initClone()</a> or <a class="el" href="classregina_1_1LPMatrix.html#a6a334363e30727cac7532d48c0d05669" title="Initialises this matrix to the identity matrix of the given size.">initIdentity()</a>. See the class notes for details.</p>
+<p>This matrix will still not be initialised until you call either <a class="el" href="classregina_1_1LPMatrix.html#ad6806f38ae07678edd93b44219943a70" title="Initialises this matrix to a copy of the given matrix.">initClone()</a> or <a class="el" href="classregina_1_1LPMatrix.html#a756eaa237b40e6b640655622d4fc57a6" title="Initialises this matrix to the identity matrix of the given size.">initIdentity()</a>. See the class notes for details.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>This matrix was created using the default (no-argument) constructor, and you have not called any other routines on this matrix since.</dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>To elaborate on the precondition above: you can only call <a class="el" href="classregina_1_1LPMatrix.html#af1f02ccf74fbee3b911dfa5163d87c84" title="Reserves enough space to store the elements of a maxRows by maxCols matrix.">reserve()</a> once, and if you did not use the default <a class="el" href="classregina_1_1LPMatrix.html" title="A matrix class for use with linear programming.">LPMatrix</a> constructor then you cannot call it at all. Any additional calls to <a class="el" href="classregina_1_1LPMatrix.html#af1f02ccf74fbee3b911dfa5163d87c84" title="Reserves enough space to store the elements of a maxRows by maxCols matrix.">reserve()</a> will result in a memory leak.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>To elaborate on the precondition above: you can only call <a class="el" href="classregina_1_1LPMatrix.html#a87e8f80901ea9c05b3fc97db4a365c94" title="Reserves enough space to store the elements of a maxRows by maxCols matrix.">reserve()</a> once, and if you did not use the default <a class="el" href="classregina_1_1LPMatrix.html" title="A matrix class for use with linear programming.">LPMatrix</a> constructor then you cannot call it at all. Any additional calls to <a class="el" href="classregina_1_1LPMatrix.html#a87e8f80901ea9c05b3fc97db4a365c94" title="Reserves enough space to store the elements of a maxRows by maxCols matrix.">reserve()</a> will result in a memory leak.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">maxRows</td><td>an upper bound on the number of rows that you will need for this matrix. This must be strictly positive. </td></tr>
@@ -676,17 +676,17 @@ template&lt;typename Integer &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="acd7a9578c0eef0f56da70934af07b150"></a>
+<a class="anchor" id="ae20b8e06d4669521b9df90085707b276"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Integer &gt; </div>
+template&lt;typename IntType &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned <a class="el" href="classregina_1_1LPMatrix.html">regina::LPMatrix</a>&lt; Integer &gt;::rows </td>
+          <td class="memname">unsigned <a class="el" href="classregina_1_1LPMatrix.html">regina::LPMatrix</a>&lt; IntType &gt;::rows </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -705,17 +705,17 @@ template&lt;typename Integer &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a860afdebf19ab1f4ce382448787d7bb5"></a>
+<a class="anchor" id="a0ee81a1df448f26c82f389cdbafcb52c"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Integer &gt; </div>
+template&lt;typename IntType &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classregina_1_1LPMatrix.html">regina::LPMatrix</a>&lt; Integer &gt;::swapRows </td>
+          <td class="memname">void <a class="el" href="classregina_1_1LPMatrix.html">regina::LPMatrix</a>&lt; IntType &gt;::swapRows </td>
           <td>(</td>
           <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>r1</em>, </td>
@@ -743,8 +743,8 @@ template&lt;typename Integer &gt; </div>
 <p>The two arguments <em>r1</em> and <em>r2</em> may be equal (in which case the matrix will be left unchanged).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">r1</td><td>the index of the first row to swap. This must be between 0 and <a class="el" href="classregina_1_1LPMatrix.html#acd7a9578c0eef0f56da70934af07b150" title="Returns the number of rows in this matrix.">rows()</a>-1 inclusive. </td></tr>
-    <tr><td class="paramname">r2</td><td>the index of the second row to swap. This must be between 0 and <a class="el" href="classregina_1_1LPMatrix.html#acd7a9578c0eef0f56da70934af07b150" title="Returns the number of rows in this matrix.">rows()</a>-1 inclusive. </td></tr>
+    <tr><td class="paramname">r1</td><td>the index of the first row to swap. This must be between 0 and <a class="el" href="classregina_1_1LPMatrix.html#ae20b8e06d4669521b9df90085707b276" title="Returns the number of rows in this matrix.">rows()</a>-1 inclusive. </td></tr>
+    <tr><td class="paramname">r2</td><td>the index of the second row to swap. This must be between 0 and <a class="el" href="classregina_1_1LPMatrix.html#ae20b8e06d4669521b9df90085707b276" title="Returns the number of rows in this matrix.">rows()</a>-1 inclusive. </td></tr>
   </table>
   </dd>
 </dl>
@@ -752,8 +752,8 @@ template&lt;typename Integer &gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>enumerate/<a class="el" href="ntreeconstraint_8h.html">ntreeconstraint.h</a></li>
-<li>enumerate/<a class="el" href="ntreelp_8h.html">ntreelp.h</a></li>
+<li>enumerate/<a class="el" href="treeconstraint_8h.html">treeconstraint.h</a></li>
+<li>enumerate/<a class="el" href="treelp_8h.html">treelp.h</a></li>
 </ul>
 </div><!-- contents -->
 <hr>

@@ -48,53 +48,16 @@
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
-<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">nsigcensus.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Deals with forming a census of splitting surface signatures.  
+<p>Deprecated header.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;list&gt;</code><br/>
-<code>#include &quot;<a class="el" href="regina-core_8h.html">regina-core.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="nsignature_8h.html">split/nsignature.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="nsigisomorphism_8h.html">split/nsigisomorphism.h</a>&quot;</code><br/>
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NSigCensus.html">regina::NSigCensus</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A utility class used by <a class="el" href="classregina_1_1NSigCensus.html#a9dba8a8373e5da703afea43fcc631261" title="Forms a census of all splitting surface signatures of the given order.">formSigCensus()</a>.  <a href="classregina_1_1NSigCensus.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespaceregina"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceregina.html">regina</a></td></tr>
-<tr class="memdesc:namespaceregina"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the entire Regina calculation engine. <br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:ga8611d3a422327d3bc09a2b5dc239e4c5"><td class="memItemLeft" align="right" valign="top">typedef std::list<br class="typebreak"/>
-&lt; NSigPartialIsomorphism * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__split.html#ga8611d3a422327d3bc09a2b5dc239e4c5">regina::NSigIsoList</a></td></tr>
-<tr class="memdesc:ga8611d3a422327d3bc09a2b5dc239e4c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of partial isomorphisms on splitting surface signatures.  <a href="group__split.html#ga8611d3a422327d3bc09a2b5dc239e4c5">More...</a><br/></td></tr>
-<tr class="separator:ga8611d3a422327d3bc09a2b5dc239e4c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacac2aff8277cc09510d0fbc9474776e4"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__split.html#gacac2aff8277cc09510d0fbc9474776e4">regina::UseSignature</a> )(const NSignature &amp;, const NSigIsoList &amp;, void *)</td></tr>
-<tr class="memdesc:gacac2aff8277cc09510d0fbc9474776e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">A routine used to do arbitrary processing upon a splitting surface signature and its automorphisms.  <a href="group__split.html#gacac2aff8277cc09510d0fbc9474776e4">More...</a><br/></td></tr>
-<tr class="separator:gacac2aff8277cc09510d0fbc9474776e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:gac65a7484adb517c2ab545503d72856f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__engine.html#ga74a5f137da12842a64dce0a7c78fb3f9">REGINA_API</a> unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__split.html#gac65a7484adb517c2ab545503d72856f8">regina::formSigCensus</a> (unsigned order, UseSignature use, void *useArgs=0)</td></tr>
-<tr class="memdesc:gac65a7484adb517c2ab545503d72856f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forms a census of all splitting surface signatures of the given order.  <a href="group__split.html#gac65a7484adb517c2ab545503d72856f8">More...</a><br/></td></tr>
-<tr class="separator:gac65a7484adb517c2ab545503d72856f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Deals with forming a census of splitting surface signatures. </p>
+<div class="textblock"><code>#include &quot;<a class="el" href="sigcensus_8h.html">split/sigcensus.h</a>&quot;</code><br/>
+</div><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Deprecated header. </p>
 </div></div><!-- contents -->
 <hr>
 Copyright &copy; 1999-2016, The Regina development team

@@ -58,7 +58,7 @@
 <p>A template that stores information about a particular type of normal surface filter.  
  <a href="structregina_1_1SurfaceFilterInfo.html#details">More...</a></p>
 
-<p><code>#include &lt;surfaces/nsurfacefilter.h&gt;</code></p>
+<p><code>#include &lt;surfaces/surfacefilter.h&gt;</code></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;SurfaceFilterType filterType&gt;<br/>
 struct regina::SurfaceFilterInfo&lt; filterType &gt;</h3>
@@ -68,7 +68,7 @@ struct regina::SurfaceFilterInfo&lt; filterType &gt;</h3>
 <p>To iterate through cases for a given value of <a class="el" href="structregina_1_1SurfaceFilterInfo.html" title="A template that stores information about a particular type of normal surface filter.">SurfaceFilterInfo</a> that is not known until runtime, see the various <a class="el" href="group__surfaces.html#ga07288bf625eb5d9b8d0be1fb730f8a01" title="Allows the user to call a template function whose template parameter matches a given value of Surface...">forFilter()</a> routines defined in <a class="el" href="filterregistry_8h.html" title="Provides access to a registry of all normal surface filter classes that can be used to filter lists o...">filterregistry.h</a>.</p>
 <p>At a bare minimum, each specialisation of this template must provide:</p>
 <ul>
-<li>a typedef <em>Class</em> that represents the corresponding <a class="el" href="classregina_1_1NSurfaceFilter.html" title="A packet that accepts or rejects normal surfaces.">NSurfaceFilter</a> descendant class;</li>
+<li>a typedef <em>Class</em> that represents the corresponding <a class="el" href="classregina_1_1SurfaceFilter.html" title="A packet that accepts or rejects normal surfaces.">SurfaceFilter</a> descendant class;</li>
 <li>a static function name() that returns a C-style string giving the human-readable name of the filter type.</li>
 </ul>
 <dl class="section user"><dt>Python:</dt><dd>Not present.</dd></dl>
@@ -79,7 +79,7 @@ struct regina::SurfaceFilterInfo&lt; filterType &gt;</h3>
   </dd>
 </dl>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>surfaces/<a class="el" href="nsurfacefilter_8h.html">nsurfacefilter.h</a></li>
+<li>surfaces/<a class="el" href="surfacefilter_8h.html">surfacefilter.h</a></li>
 </ul>
 </div><!-- contents -->
 <hr>

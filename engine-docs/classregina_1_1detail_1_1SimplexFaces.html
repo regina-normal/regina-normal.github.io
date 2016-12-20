@@ -63,7 +63,7 @@
 <p>Helper class for storing which <em>subdim</em>-faces of a <em>dim</em>-dimensional triangulation appear within each top-dimensional simplex.  
  <a href="classregina_1_1detail_1_1SimplexFaces.html#details">More...</a></p>
 
-<p><code>#include &lt;generic/detail/simplex.h&gt;</code></p>
+<p><code>#include &lt;triangulation/detail/simplex.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for regina::detail::SimplexFaces&lt; dim, subdim &gt;:</div>
 <div class="dyncontent">
@@ -71,16 +71,15 @@ Inheritance diagram for regina::detail::SimplexFaces&lt; dim, subdim &gt;:</div>
   <img src="classregina_1_1detail_1_1SimplexFaces.png" usemap="#regina::detail::SimplexFaces&lt; dim, subdim &gt;_map" alt=""/>
   <map id="regina::detail::SimplexFaces&lt; dim, subdim &gt;_map" name="regina::detail::SimplexFaces&lt; dim, subdim &gt;_map">
 <area href="classregina_1_1detail_1_1SimplexFacesSuite.html" title="Internal class that helps a simplex store the details of its lower-dimensional faces." alt="regina::detail::SimplexFacesSuite&lt; dim, subdim &gt;" shape="rect" coords="0,56,287,80"/>
-<area href="classregina_1_1detail_1_1SimplexFacesSuite.html" alt="regina::detail::SimplexFacesSuite&lt; dim, dim-1 &gt;" shape="rect" coords="1336,56,1623,80"/>
-<area href="classregina_1_1detail_1_1SimplexBase.html" title="Helper class that provides core functionality for a top-dimensional simplex in a dim-manifold triangu..." alt="regina::detail::SimplexBase&lt; dim &gt;" shape="rect" coords="445,112,732,136"/>
-<area href="classregina_1_1detail_1_1SimplexBase.html" alt="regina::detail::SimplexBase&lt; 2 &gt;" shape="rect" coords="1188,112,1475,136"/>
-<area href="classregina_1_1detail_1_1SimplexBase.html" alt="regina::detail::SimplexBase&lt; 3 &gt;" shape="rect" coords="1485,112,1772,136"/>
-<area href="classregina_1_1detail_1_1SimplexBase.html" alt="regina::detail::SimplexBase&lt; 4 &gt;" shape="rect" coords="1782,112,2069,136"/>
-<area href="classregina_1_1Simplex.html" title="Represents a top-dimensional simplex in a dim-manifold triangulation." alt="regina::Simplex&lt; int &gt;" shape="rect" coords="0,168,287,192"/>
-<area href="classregina_1_1Simplex_3_013_01_4.html" title="Represents a tetrahedron within a 3-manifold triangulation." alt="regina::Simplex&lt; 3 &gt;" shape="rect" coords="297,168,584,192"/>
-<area href="classregina_1_1Simplex_3_014_01_4.html" title="Represents a pentachoron (a 4-dimensional simplex) within a 4-manifold triangulation." alt="regina::Simplex&lt; 4 &gt;" shape="rect" coords="594,168,881,192"/>
-<area href="classregina_1_1Simplex.html" alt="regina::Simplex&lt; dim &gt;" shape="rect" coords="891,168,1178,192"/>
-<area href="classregina_1_1Simplex_3_012_01_4.html" title="Represents a triangle within a 2-manifold triangulation." alt="regina::Simplex&lt; 2 &gt;" shape="rect" coords="1188,168,1475,192"/>
+<area href="classregina_1_1detail_1_1SimplexFacesSuite.html" alt="regina::detail::SimplexFacesSuite&lt; dim, dim-1 &gt;" shape="rect" coords="742,56,1029,80"/>
+<area href="classregina_1_1detail_1_1SimplexBase.html" title="Helper class that provides core functionality for a top-dimensional simplex in a dim-manifold triangu..." alt="regina::detail::SimplexBase&lt; dim &gt;" shape="rect" coords="297,112,584,136"/>
+<area href="classregina_1_1detail_1_1SimplexBase.html" alt="regina::detail::SimplexBase&lt; 2 &gt;" shape="rect" coords="594,112,881,136"/>
+<area href="classregina_1_1detail_1_1SimplexBase.html" alt="regina::detail::SimplexBase&lt; 3 &gt;" shape="rect" coords="891,112,1178,136"/>
+<area href="classregina_1_1detail_1_1SimplexBase.html" alt="regina::detail::SimplexBase&lt; 4 &gt;" shape="rect" coords="1188,112,1475,136"/>
+<area href="classregina_1_1Face_3_012_00_012_01_4.html" title="Represents a tetrahedron within a 2-manifold triangulation." alt="regina::Face&lt; 2, 2 &gt;" shape="rect" coords="0,168,287,192"/>
+<area href="classregina_1_1Face_3_014_00_014_01_4.html" title="Represents a pentachoron (a 4-dimensional simplex) within a 4-manifold triangulation." alt="regina::Face&lt; 4, 4 &gt;" shape="rect" coords="297,168,584,192"/>
+<area href="classregina_1_1Face_3_01dim_00_01dim_01_4.html" title="Represents a top-dimensional simplex in a dim-manifold triangulation." alt="regina::Face&lt; dim, dim &gt;" shape="rect" coords="594,168,881,192"/>
+<area href="classregina_1_1Face_3_013_00_013_01_4.html" title="Represents a tetrahedron within a 3-manifold triangulation." alt="regina::Face&lt; 3, 3 &gt;" shape="rect" coords="891,168,1178,192"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -98,18 +97,18 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:adedf21e482ff437b437980568da0b852"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexFaces.html#adedf21e482ff437b437980568da0b852">clear</a> ()</td></tr>
 <tr class="memdesc:adedf21e482ff437b437980568da0b852"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets all face pointers to null.  <a href="#adedf21e482ff437b437980568da0b852">More...</a><br/></td></tr>
 <tr class="separator:adedf21e482ff437b437980568da0b852"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03b91ca83d43a30d9a8c7fd80f0642a9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexFaces.html#a03b91ca83d43a30d9a8c7fd80f0642a9">sameDegrees</a> (const <a class="el" href="classregina_1_1detail_1_1SimplexFaces.html">SimplexFaces</a>&lt; dim, subdim &gt; &amp;other, <a class="el" href="classregina_1_1NPerm.html">NPerm</a>&lt; dim+1 &gt; p) const </td></tr>
-<tr class="memdesc:a03b91ca83d43a30d9a8c7fd80f0642a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests whether the <em>subdim</em>-face degrees of this and the given simplex are identical, under the given relabelling.  <a href="#a03b91ca83d43a30d9a8c7fd80f0642a9">More...</a><br/></td></tr>
-<tr class="separator:a03b91ca83d43a30d9a8c7fd80f0642a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a457d972cc00c12a4b4a3fbe64c4388c7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexFaces.html#a457d972cc00c12a4b4a3fbe64c4388c7">sameDegrees</a> (const <a class="el" href="classregina_1_1detail_1_1SimplexFaces.html">SimplexFaces</a>&lt; dim, subdim &gt; &amp;other, <a class="el" href="classregina_1_1Perm.html">Perm</a>&lt; dim+1 &gt; p) const </td></tr>
+<tr class="memdesc:a457d972cc00c12a4b4a3fbe64c4388c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests whether the <em>subdim</em>-face degrees of this and the given simplex are identical, under the given relabelling.  <a href="#a457d972cc00c12a4b4a3fbe64c4388c7">More...</a><br/></td></tr>
+<tr class="separator:a457d972cc00c12a4b4a3fbe64c4388c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:ab1f62c40c2775c7d2d03412925c5a2bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1Face.html">Face</a>&lt; dim, subdim &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexFaces.html#ab1f62c40c2775c7d2d03412925c5a2bf">face_</a> [<a class="el" href="classregina_1_1FaceNumbering.html">FaceNumbering</a>&lt; dim, subdim &gt;::nFaces]</td></tr>
 <tr class="memdesc:ab1f62c40c2775c7d2d03412925c5a2bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">The faces of the underlying triangulation that form the individual <em>subdim</em>-faces of this simplex.  <a href="#ab1f62c40c2775c7d2d03412925c5a2bf">More...</a><br/></td></tr>
 <tr class="separator:ab1f62c40c2775c7d2d03412925c5a2bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45eed06f9d91819f5529a7095dd073b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1NPerm.html">NPerm</a>&lt; dim+1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexFaces.html#a45eed06f9d91819f5529a7095dd073b8">mapping_</a> [<a class="el" href="classregina_1_1FaceNumbering.html">FaceNumbering</a>&lt; dim, subdim &gt;::nFaces]</td></tr>
-<tr class="memdesc:a45eed06f9d91819f5529a7095dd073b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">For each <em>subdim</em>-face of this simplex, maps vertices (0,1,...,<em>subdim</em>) of the underlying <em>subdim</em>-face of the triangulation to the corresponding vertices of this simplex, as described by faceMapping().  <a href="#a45eed06f9d91819f5529a7095dd073b8">More...</a><br/></td></tr>
-<tr class="separator:a45eed06f9d91819f5529a7095dd073b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0b08af7c20829b137cd1840cc4f2022"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1Perm.html">Perm</a>&lt; dim+1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1SimplexFaces.html#ad0b08af7c20829b137cd1840cc4f2022">mapping_</a> [<a class="el" href="classregina_1_1FaceNumbering.html">FaceNumbering</a>&lt; dim, subdim &gt;::nFaces]</td></tr>
+<tr class="memdesc:ad0b08af7c20829b137cd1840cc4f2022"><td class="mdescLeft">&#160;</td><td class="mdescRight">For each <em>subdim</em>-face of this simplex, maps vertices (0,1,...,<em>subdim</em>) of the underlying <em>subdim</em>-face of the triangulation to the corresponding vertices of this simplex, as described by faceMapping().  <a href="#ad0b08af7c20829b137cd1840cc4f2022">More...</a><br/></td></tr>
+<tr class="separator:ad0b08af7c20829b137cd1840cc4f2022"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;int dim, int subdim&gt;<br/>
@@ -203,7 +202,7 @@ template&lt;int dim, int subdim&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a03b91ca83d43a30d9a8c7fd80f0642a9"></a>
+<a class="anchor" id="a457d972cc00c12a4b4a3fbe64c4388c7"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -221,7 +220,7 @@ template&lt;int dim, int subdim&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classregina_1_1NPerm.html">NPerm</a>&lt; dim+1 &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classregina_1_1Perm.html">Perm</a>&lt; dim+1 &gt;&#160;</td>
           <td class="paramname"><em>p</em>&#160;</td>
         </tr>
         <tr>
@@ -274,7 +273,7 @@ template&lt;int dim, int subdim&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a45eed06f9d91819f5529a7095dd073b8"></a>
+<a class="anchor" id="ad0b08af7c20829b137cd1840cc4f2022"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -284,7 +283,7 @@ template&lt;int dim, int subdim&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classregina_1_1NPerm.html">NPerm</a>&lt;dim+1&gt; <a class="el" href="classregina_1_1detail_1_1SimplexFaces.html">regina::detail::SimplexFaces</a>&lt; dim, subdim &gt;::mapping_[<a class="el" href="classregina_1_1FaceNumbering.html">FaceNumbering</a>&lt; dim, subdim &gt;::nFaces]</td>
+          <td class="memname"><a class="el" href="classregina_1_1Perm.html">Perm</a>&lt;dim+1&gt; <a class="el" href="classregina_1_1detail_1_1SimplexFaces.html">regina::detail::SimplexFaces</a>&lt; dim, subdim &gt;::mapping_[<a class="el" href="classregina_1_1FaceNumbering.html">FaceNumbering</a>&lt; dim, subdim &gt;::nFaces]</td>
         </tr>
       </table>
   </td>
@@ -299,7 +298,7 @@ template&lt;int dim, int subdim&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>generic/detail/<a class="el" href="detail_2simplex_8h.html">simplex.h</a></li>
+<li>triangulation/detail/<a class="el" href="triangulation_2detail_2simplex_8h.html">simplex.h</a></li>
 </ul>
 </div><!-- contents -->
 <hr>

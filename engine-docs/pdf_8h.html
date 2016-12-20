@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>Regina Calculation Engine: foreign/pdf.h File Reference</title>
+<title>Regina Calculation Engine: packet/pdf.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,40 +44,46 @@
   </div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_25c550b5cdbb429de029a6cfdacb403a.html">foreign</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_fd351413749bf07ef385fba4161b803a.html">packet</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">pdf.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Deprecated header that allows reading and writing PDF documents.  
+<p>A packet that contains a PDF document.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="regina-core_8h.html">regina-core.h</a>&quot;</code><br/>
+<div class="textblock"><code>#include &lt;cstdlib&gt;</code><br/>
+<code>#include &lt;cstring&gt;</code><br/>
+<code>#include &quot;<a class="el" href="regina-core_8h.html">regina-core.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="packet_8h.html">packet/packet.h</a>&quot;</code><br/>
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1PDF.html">regina::PDF</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A packet that can hold a <a class="el" href="classregina_1_1PDF.html" title="A packet that can hold a PDF document.">PDF</a> document.  <a href="classregina_1_1PDF.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceregina"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceregina.html">regina</a></td></tr>
 <tr class="memdesc:namespaceregina"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the entire Regina calculation engine. <br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:gad4e28c907c8d47315d90190ae7487eae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__engine.html#ga40f523e616a7b654de9ee1d254b1f614">REGINA_DEPRECATED</a> <a class="el" href="group__engine.html#ga74a5f137da12842a64dce0a7c78fb3f9">REGINA_API</a> NPDF *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__foreign.html#gad4e28c907c8d47315d90190ae7487eae">regina::readPDF</a> (const char *filename)</td></tr>
-<tr class="memdesc:gad4e28c907c8d47315d90190ae7487eae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated function that reads a PDF document from the given file.  <a href="group__foreign.html#gad4e28c907c8d47315d90190ae7487eae">More...</a><br/></td></tr>
-<tr class="separator:gad4e28c907c8d47315d90190ae7487eae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga23f08a5eaa20cf32dcf74ffbc33442fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__engine.html#ga40f523e616a7b654de9ee1d254b1f614">REGINA_DEPRECATED</a> <a class="el" href="group__engine.html#ga74a5f137da12842a64dce0a7c78fb3f9">REGINA_API</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__foreign.html#ga23f08a5eaa20cf32dcf74ffbc33442fe">regina::writePDF</a> (const char *filename, const NPDF &amp;pdf)</td></tr>
-<tr class="memdesc:ga23f08a5eaa20cf32dcf74ffbc33442fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated function that writes the given PDF document to the given file.  <a href="group__foreign.html#ga23f08a5eaa20cf32dcf74ffbc33442fe">More...</a><br/></td></tr>
-<tr class="separator:ga23f08a5eaa20cf32dcf74ffbc33442fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:gad4467bfb4bc172da71964a4b9967a04d"><td class="memItemLeft" align="right" valign="top">typedef PDF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__packet.html#gad4467bfb4bc172da71964a4b9967a04d">regina::NPDF</a></td></tr>
+<tr class="memdesc:gad4467bfb4bc172da71964a4b9967a04d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated typedef for backward compatibility.  <a href="group__packet.html#gad4467bfb4bc172da71964a4b9967a04d">More...</a><br/></td></tr>
+<tr class="separator:gad4467bfb4bc172da71964a4b9967a04d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Deprecated header that allows reading and writing PDF documents. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000136">Deprecated:</a></b></dt><dd>All global functions that were once declared in this file have now been renamed to member functions of NPDF. </dd></dl>
+<div class="textblock"><p>A packet that contains a PDF document. </p>
 </div></div><!-- contents -->
 <hr>
 Copyright &copy; 1999-2016, The Regina development team

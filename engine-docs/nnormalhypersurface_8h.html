@@ -48,60 +48,16 @@
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a>  </div>
   <div class="headertitle">
 <div class="title">nnormalhypersurface.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Deals with an individual normal hypersurface in a 4-manifold triangulation.  
+<p>Deprecated header.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;utility&gt;</code><br/>
-<code>#include &quot;<a class="el" href="regina-core_8h.html">regina-core.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="output_8h.html">output.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="nabeliangroup_8h.html">algebra/nabeliangroup.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="hypercoords_8h.html">hypersurface/hypercoords.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="nperm5_8h.html">maths/nperm5.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="nray_8h.html">maths/nray.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="nbooleans_8h.html">utilities/nbooleans.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="nproperty_8h.html">utilities/nproperty.h</a>&quot;</code><br/>
-<code>#include &lt;boost/noncopyable.hpp&gt;</code><br/>
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Triangulation.html">regina::Triangulation&lt; int &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <em>dim</em>-dimensional triangulation, built by gluing together <em>dim</em>-dimensional simplices along their (<em>dim</em>-1)-dimensional facets.  <a href="classregina_1_1Triangulation.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Face.html">regina::Face&lt; int, int &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a <em>subdim</em>-face in the skeleton of a <em>dim</em>-dimensional triangulation.  <a href="classregina_1_1Face.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structregina_1_1HyperInfo.html">regina::HyperInfo&lt; coordType &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A template that stores information about a particular normal hypersurface coordinate system.  <a href="structregina_1_1HyperInfo.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NNormalHypersurfaceVector.html">regina::NNormalHypersurfaceVector</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the vector of a single normal hypersurface in a 4-manifold triangulation.  <a href="classregina_1_1NNormalHypersurfaceVector.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NNormalHypersurface.html">regina::NNormalHypersurface</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a single normal hypersurface in a 4-manifold triangulation.  <a href="classregina_1_1NNormalHypersurface.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespaceregina"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceregina.html">regina</a></td></tr>
-<tr class="memdesc:namespaceregina"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the entire Regina calculation engine. <br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:gaabca5f8e8a51debb14cce56253580293"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__hypersurface.html#gaabca5f8e8a51debb14cce56253580293">REGINA_NORMAL_HYPERSURFACE_FLAVOUR</a>(class_, id)</td></tr>
-<tr class="memdesc:gaabca5f8e8a51debb14cce56253580293"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines various constants, types and virtual functions for a subclass of NNormalHypersurfaceVector.  <a href="group__hypersurface.html#gaabca5f8e8a51debb14cce56253580293">More...</a><br/></td></tr>
-<tr class="separator:gaabca5f8e8a51debb14cce56253580293"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Deals with an individual normal hypersurface in a 4-manifold triangulation. </p>
+<div class="textblock"><code>#include &quot;<a class="el" href="normalhypersurface_8h.html">hypersurface/normalhypersurface.h</a>&quot;</code><br/>
+</div><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Deprecated header. </p>
 </div></div><!-- contents -->
 <hr>
 Copyright &copy; 1999-2016, The Regina development team

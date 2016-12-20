@@ -72,6 +72,9 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:af33b066afbad6a25be00878c7cf3a7e6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1SafePtr.html#af33b066afbad6a25be00878c7cf3a7e6">SafePtr</a> ()</td></tr>
+<tr class="memdesc:af33b066afbad6a25be00878c7cf3a7e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new null pointer.  <a href="#af33b066afbad6a25be00878c7cf3a7e6">More...</a><br/></td></tr>
+<tr class="separator:af33b066afbad6a25be00878c7cf3a7e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75651d857fbb4f708f91c06a4cc178dd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1SafePtr.html#a75651d857fbb4f708f91c06a4cc178dd">SafePtr</a> (T *object)</td></tr>
 <tr class="memdesc:a75651d857fbb4f708f91c06a4cc178dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new safe pointer that points to the given object.  <a href="#a75651d857fbb4f708f91c06a4cc178dd">More...</a><br/></td></tr>
 <tr class="separator:a75651d857fbb4f708f91c06a4cc178dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -82,6 +85,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad9ee5a0adabffcbcadebff057b148de1"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1SafePtr.html#ad9ee5a0adabffcbcadebff057b148de1">get</a> () const </td></tr>
 <tr class="memdesc:ad9ee5a0adabffcbcadebff057b148de1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a raw pointer to the pointee, or <code>null</code> if the pointee has already been destroyed.  <a href="#ad9ee5a0adabffcbcadebff057b148de1">More...</a><br/></td></tr>
 <tr class="separator:ad9ee5a0adabffcbcadebff057b148de1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7c3f2cf67078befa32f744e1c099923"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1SafePtr.html#ac7c3f2cf67078befa32f744e1c099923">operator bool</a> () const </td></tr>
+<tr class="memdesc:ac7c3f2cf67078befa32f744e1c099923"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> <code>true</code> if the pointee is non-null and has not yet been destroyed.  <a href="#ac7c3f2cf67078befa32f744e1c099923">More...</a><br/></td></tr>
+<tr class="separator:ac7c3f2cf67078befa32f744e1c099923"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3b1c8c2c9f04d0081c85264012c2b4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1SafePtr.html#ad3b1c8c2c9f04d0081c85264012c2b4c">reset</a> (T *object=0)</td></tr>
+<tr class="memdesc:ad3b1c8c2c9f04d0081c85264012c2b4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets this to point to the given object.  <a href="#ad3b1c8c2c9f04d0081c85264012c2b4c">More...</a><br/></td></tr>
+<tr class="separator:ad3b1c8c2c9f04d0081c85264012c2b4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30127ffda526093d6451ff8a5642994b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1SafePtr.html">SafePtr</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1SafePtr.html#a30127ffda526093d6451ff8a5642994b">operator=</a> (const <a class="el" href="classregina_1_1SafePtr.html">SafePtr</a>&lt; T &gt; &amp;)=delete</td></tr>
+<tr class="memdesc:a30127ffda526093d6451ff8a5642994b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable the default assignment operator.  <a href="#a30127ffda526093d6451ff8a5642994b">More...</a><br/></td></tr>
+<tr class="separator:a30127ffda526093d6451ff8a5642994b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;class T&gt;<br/>
@@ -125,6 +137,33 @@ template&lt;class T &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="af33b066afbad6a25be00878c7cf3a7e6"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classregina_1_1SafePtr.html">regina::SafePtr</a>&lt; T &gt;::<a class="el" href="classregina_1_1SafePtr.html">SafePtr</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs a new null pointer. </p>
+
+</div>
+</div>
 <a class="anchor" id="a75651d857fbb4f708f91c06a4cc178dd"></a>
 <div class="memitem">
 <div class="memproto">
@@ -223,6 +262,98 @@ template&lt;class T &gt; </div>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a raw pointer to the pointee, or <code>null</code> if the pointee has already been destroyed. </p>
 <dl class="section return"><dt>Returns</dt><dd>the pointee. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac7c3f2cf67078befa32f744e1c099923"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classregina_1_1SafePtr.html">regina::SafePtr</a>&lt; T &gt;::operator bool </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> <code>true</code> if the pointee is non-null and has not yet been destroyed. </p>
+<p>This is equivalent to testing whether <a class="el" href="classregina_1_1SafePtr.html#ad9ee5a0adabffcbcadebff057b148de1" title="Returns a raw pointer to the pointee, or null if the pointee has already been destroyed.">get()</a> is not <code>null</code>.</p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if and only if the pointee is non-null and has not yet been destroyed. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a30127ffda526093d6451ff8a5642994b"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classregina_1_1SafePtr.html">SafePtr</a>&lt;T&gt;&amp; <a class="el" href="classregina_1_1SafePtr.html">regina::SafePtr</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classregina_1_1SafePtr.html">SafePtr</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Disable the default assignment operator. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad3b1c8c2c9f04d0081c85264012c2b4c"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classregina_1_1SafePtr.html">regina::SafePtr</a>&lt; T &gt;::reset </td>
+          <td>(</td>
+          <td class="paramtype">T *&#160;</td>
+          <td class="paramname"><em>object</em> = <code>0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Resets this to point to the given object. </p>
+<p>This behaves in a similar manner to destroying the old safe pointer and constructing a new one: in particular, the old pointee may be destroyed if it meets the conditions outlined in the class notes above.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">object</td><td>the new pointee. This may be <code>null</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

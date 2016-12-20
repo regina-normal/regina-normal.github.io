@@ -56,22 +56,23 @@
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classregina_1_1Isomorphism-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">regina::Isomorphism&lt; int &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__generic.html">Generic code</a></div></div>  </div>
+<div class="title">regina::Isomorphism&lt; int &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__triangulation.html">Triangulations</a> &#124; <a class="el" href="group__generic.html">Generic triangulations</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
 <p>Represents a combinatorial isomorphism from one <em>dim</em>-manifold triangulation into another.  
  <a href="classregina_1_1Isomorphism.html#details">More...</a></p>
 
-<p><code>#include &lt;generic/isomorphism.h&gt;</code></p>
+<p><code>#include &lt;triangulation/generic.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for regina::Isomorphism&lt; int &gt;:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="classregina_1_1Isomorphism.png" usemap="#regina::Isomorphism&lt; int &gt;_map" alt=""/>
   <map id="regina::Isomorphism&lt; int &gt;_map" name="regina::Isomorphism&lt; int &gt;_map">
-<area href="classregina_1_1detail_1_1IsomorphismBase.html" title="Provides core functionality for combinatorial isomorphisms between dim-manifold triangulations." alt="regina::detail::IsomorphismBase&lt; dim &gt;" shape="rect" coords="132,56,387,80"/>
-<area href="structregina_1_1Output.html" alt="regina::Output&lt; IsomorphismBase&lt; dim &gt; &gt;" shape="rect" coords="0,0,255,24"/>
+<area href="classregina_1_1detail_1_1IsomorphismBase.html" title="Provides core functionality for combinatorial isomorphisms between dim-manifold triangulations." alt="regina::detail::IsomorphismBase&lt; dim &gt;" shape="rect" coords="390,56,770,80"/>
+<area href="structregina_1_1Output.html" alt="regina::Output&lt; IsomorphismBase&lt; dim &gt; &gt;" shape="rect" coords="0,0,380,24"/>
+<area href="classregina_1_1alias_1_1IsomorphismImage.html" alt="regina::alias::IsomorphismImage&lt; IsomorphismBase&lt; dim &gt;, dim &gt;" shape="rect" coords="390,0,770,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -86,21 +87,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a285b817b1c2d0ed509e67b88dad70d32"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html#a285b817b1c2d0ed509e67b88dad70d32">size</a> () const </td></tr>
 <tr class="memdesc:a285b817b1c2d0ed509e67b88dad70d32"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the number of simplices in the source triangulation associated with this isomorphism.  <a href="#a285b817b1c2d0ed509e67b88dad70d32">More...</a><br/></td></tr>
 <tr class="separator:a285b817b1c2d0ed509e67b88dad70d32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad258e923adcb146dd9d0ff34eccd4779"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html#ad258e923adcb146dd9d0ff34eccd4779">getSourceSimplices</a> () const </td></tr>
-<tr class="memdesc:ad258e923adcb146dd9d0ff34eccd4779"><td class="mdescLeft">&#160;</td><td class="mdescRight">A deprecated alias for <a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html#a285b817b1c2d0ed509e67b88dad70d32" title="Returns the number of simplices in the source triangulation associated with this isomorphism.">size()</a>, which returns the number of simplices in the source triangulation associated with this isomorphism.  <a href="#ad258e923adcb146dd9d0ff34eccd4779">More...</a><br/></td></tr>
-<tr class="separator:ad258e923adcb146dd9d0ff34eccd4779"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc12157b7e664b84894574e149ee1023"><td class="memItemLeft" align="right" valign="top">int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html#acc12157b7e664b84894574e149ee1023">simpImage</a> (unsigned sourceSimp)</td></tr>
 <tr class="memdesc:acc12157b7e664b84894574e149ee1023"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the image of the given source simplex under this isomorphism.  <a href="#acc12157b7e664b84894574e149ee1023">More...</a><br/></td></tr>
 <tr class="separator:acc12157b7e664b84894574e149ee1023"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c5bd2e79115ed802da303800cc5d2cb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html#a8c5bd2e79115ed802da303800cc5d2cb">simpImage</a> (unsigned sourceSimp) const </td></tr>
 <tr class="memdesc:a8c5bd2e79115ed802da303800cc5d2cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the image of the given source simplex under this isomorphism.  <a href="#a8c5bd2e79115ed802da303800cc5d2cb">More...</a><br/></td></tr>
 <tr class="separator:a8c5bd2e79115ed802da303800cc5d2cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a524ff195edfc501de6373d1548da226a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1NPerm.html">NPerm</a>&lt; dim+1 &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html#a524ff195edfc501de6373d1548da226a">facetPerm</a> (unsigned sourceSimp)</td></tr>
-<tr class="memdesc:a524ff195edfc501de6373d1548da226a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a read-write reference to the permutation that is applied to the (<em>dim</em> + 1) facets of the given source simplex under this isomorphism.  <a href="#a524ff195edfc501de6373d1548da226a">More...</a><br/></td></tr>
-<tr class="separator:a524ff195edfc501de6373d1548da226a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83d4003746f4416894592f5ea6162e5d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1NPerm.html">NPerm</a>&lt; dim+1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html#a83d4003746f4416894592f5ea6162e5d">facetPerm</a> (unsigned sourceSimp) const </td></tr>
-<tr class="memdesc:a83d4003746f4416894592f5ea6162e5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the permutation that is applied to the (<em>dim</em> + 1) facets of the given source simplex under this isomorphism.  <a href="#a83d4003746f4416894592f5ea6162e5d">More...</a><br/></td></tr>
-<tr class="separator:a83d4003746f4416894592f5ea6162e5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb0ad0ed6aad84455848858b1df4c682"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1Perm.html">Perm</a>&lt; dim+1 &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html#aeb0ad0ed6aad84455848858b1df4c682">facetPerm</a> (unsigned sourceSimp)</td></tr>
+<tr class="memdesc:aeb0ad0ed6aad84455848858b1df4c682"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a read-write reference to the permutation that is applied to the (<em>dim</em> + 1) facets of the given source simplex under this isomorphism.  <a href="#aeb0ad0ed6aad84455848858b1df4c682">More...</a><br/></td></tr>
+<tr class="separator:aeb0ad0ed6aad84455848858b1df4c682"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5821657e6f181b16d458ac0bb3fb874f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1Perm.html">Perm</a>&lt; dim+1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html#a5821657e6f181b16d458ac0bb3fb874f">facetPerm</a> (unsigned sourceSimp) const </td></tr>
+<tr class="memdesc:a5821657e6f181b16d458ac0bb3fb874f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the permutation that is applied to the (<em>dim</em> + 1) facets of the given source simplex under this isomorphism.  <a href="#a5821657e6f181b16d458ac0bb3fb874f">More...</a><br/></td></tr>
+<tr class="separator:a5821657e6f181b16d458ac0bb3fb874f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86010303fab7a98ef431764b7883f3ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structregina_1_1FacetSpec.html">FacetSpec</a>&lt; dim &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html#a86010303fab7a98ef431764b7883f3ce">operator[]</a> (const <a class="el" href="structregina_1_1FacetSpec.html">FacetSpec</a>&lt; dim &gt; &amp;source) const </td></tr>
 <tr class="memdesc:a86010303fab7a98ef431764b7883f3ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the image of the given source simplex facet under this isomorphism.  <a href="#a86010303fab7a98ef431764b7883f3ce">More...</a><br/></td></tr>
 <tr class="separator:a86010303fab7a98ef431764b7883f3ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -128,12 +126,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a32299f4324901625192bff989009f8ad"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structregina_1_1Output.html#a32299f4324901625192bff989009f8ad">detail</a> () const</td></tr>
 <tr class="memdesc:a32299f4324901625192bff989009f8ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a detailed text representation of this object.  <a href="#a32299f4324901625192bff989009f8ad">More...</a><br/></td></tr>
 <tr class="separator:a32299f4324901625192bff989009f8ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea0ab182c97fe654b8929d1fe41dc564"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structregina_1_1Output.html#aea0ab182c97fe654b8929d1fe41dc564">toString</a> () const</td></tr>
-<tr class="memdesc:aea0ab182c97fe654b8929d1fe41dc564"><td class="mdescLeft">&#160;</td><td class="mdescRight">A deprecated alias for str().  <a href="#aea0ab182c97fe654b8929d1fe41dc564">More...</a><br/></td></tr>
-<tr class="separator:aea0ab182c97fe654b8929d1fe41dc564"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af32f5abced4d1365c34980741b564765"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structregina_1_1Output.html#af32f5abced4d1365c34980741b564765">toStringLong</a> () const</td></tr>
-<tr class="memdesc:af32f5abced4d1365c34980741b564765"><td class="mdescLeft">&#160;</td><td class="mdescRight">A deprecated alias for detail().  <a href="#af32f5abced4d1365c34980741b564765">More...</a><br/></td></tr>
-<tr class="separator:af32f5abced4d1365c34980741b564765"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -152,9 +144,9 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:aec8b9b5acd02cbd669cdfdd5d3bb0631"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html#aec8b9b5acd02cbd669cdfdd5d3bb0631">simpImage_</a></td></tr>
 <tr class="memdesc:aec8b9b5acd02cbd669cdfdd5d3bb0631"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the simplex of the destination triangulation that each simplex of the source triangulation maps to.  <a href="#aec8b9b5acd02cbd669cdfdd5d3bb0631">More...</a><br/></td></tr>
 <tr class="separator:aec8b9b5acd02cbd669cdfdd5d3bb0631"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2be71158b0c2c36f7786599b10711147"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1NPerm.html">NPerm</a>&lt; dim+1 &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html#a2be71158b0c2c36f7786599b10711147">facetPerm_</a></td></tr>
-<tr class="memdesc:a2be71158b0c2c36f7786599b10711147"><td class="mdescLeft">&#160;</td><td class="mdescRight">The permutation applied to the facets of each source simplex.  <a href="#a2be71158b0c2c36f7786599b10711147">More...</a><br/></td></tr>
-<tr class="separator:a2be71158b0c2c36f7786599b10711147"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f897c95d4c464b5c56ed5a370b1fd5f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1Perm.html">Perm</a>&lt; dim+1 &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html#a6f897c95d4c464b5c56ed5a370b1fd5f">facetPerm_</a></td></tr>
+<tr class="memdesc:a6f897c95d4c464b5c56ed5a370b1fd5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The permutation applied to the facets of each source simplex.  <a href="#a6f897c95d4c464b5c56ed5a370b1fd5f">More...</a><br/></td></tr>
+<tr class="separator:a6f897c95d4c464b5c56ed5a370b1fd5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;int&gt;<br/>
@@ -172,8 +164,7 @@ class regina::Isomorphism&lt; int &gt;</h3>
 </ul>
 <p>A boundary complete isomorphism thus indicates that a copy of triangulation <em>T</em> is present as an entire component (or components) of <em>U</em>, whereas a boundary incomplete isomorphism represents an embedding of a copy of triangulation <em>T</em> as a subcomplex of some possibly larger component (or components) of <em>U</em>.</p>
 <p>Note that for all types of isomorphism, triangulation <em>U</em> is allowed to contain more simplices than triangulation <em>T</em>.</p>
-<p>For Regina's <a class="el" href="stddim.html">standard dimensions</a>, this template is specialised and offers some extra functionality. In order to use these specialised classes, you will need to include the corresponding headers (e.g., <a class="el" href="dim2isomorphism_8h.html" title="Deals with combinatorial isomorphisms of 2-manifold triangulations.">dim2/dim2isomorphism.h</a> for <em>dim</em> = 2, or <a class="el" href="nisomorphism_8h.html" title="Deals with combinatorial isomorphisms of 3-manifold triangulations.">triangulation/nisomorphism.h</a> for <em>dim</em> = 3). For convenience, there are typedefs available for these specialised classes (such as Dim2Isomorphism and NIsomorphism respectively).</p>
-<dl class="section user"><dt>Python:</dt><dd>Python does not support templates. Instead this class can be used by appending the dimension as a suffix (e.g., Isomorphism2 and Isomorphism3 for dimensions 2 and 3). The typedefs mentioned above for standard dimensions (e.g., Dim2Isomorphism and NIsomorphism) are also available.</dd></dl>
+<dl class="section user"><dt>Python:</dt><dd>Python does not support templates. Instead this class can be used by appending the dimension as a suffix (e.g., Isomorphism2 and Isomorphism3 for dimensions 2 and 3).</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">dim</td><td>The dimension of the underlying triangulation. This must be between 2 and 15 inclusive. </td></tr>
@@ -206,7 +197,7 @@ template&lt;int dim&gt; </div>
 </div><div class="memdoc">
 
 <p>Creates a new isomorphism with no initialisation. </p>
-<p>The images of the simplices and their vertices must be explicitly set using <a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html#acc12157b7e664b84894574e149ee1023" title="Determines the image of the given source simplex under this isomorphism.">simpImage()</a> and <a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html#a524ff195edfc501de6373d1548da226a" title="Returns a read-write reference to the permutation that is applied to the (dim + 1) facets of the give...">facetPerm()</a>.</p>
+<p>The images of the simplices and their vertices must be explicitly set using <a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html#acc12157b7e664b84894574e149ee1023" title="Determines the image of the given source simplex under this isomorphism.">simpImage()</a> and <a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html#aeb0ad0ed6aad84455848858b1df4c682" title="Returns a read-write reference to the permutation that is applied to the (dim + 1) facets of the give...">facetPerm()</a>.</p>
 <dl class="section user"><dt>Python:</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -361,7 +352,7 @@ The simplex images are precisely 0,1,...,<a class="el" href="classregina_1_1deta
 
 </div>
 </div>
-<a class="anchor" id="a524ff195edfc501de6373d1548da226a"></a>
+<a class="anchor" id="aeb0ad0ed6aad84455848858b1df4c682"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -371,7 +362,7 @@ template&lt;int dim&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classregina_1_1NPerm.html">NPerm</a>&lt; dim+1 &gt; &amp; <a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html">regina::detail::IsomorphismBase</a>&lt; dim &gt;::facetPerm </td>
+          <td class="memname"><a class="el" href="classregina_1_1Perm.html">Perm</a>&lt; dim+1 &gt; &amp; <a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html">regina::detail::IsomorphismBase</a>&lt; dim &gt;::facetPerm </td>
           <td>(</td>
           <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>sourceSimp</em></td><td>)</td>
@@ -398,7 +389,7 @@ template&lt;int dim&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a83d4003746f4416894592f5ea6162e5d"></a>
+<a class="anchor" id="a5821657e6f181b16d458ac0bb3fb874f"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -408,7 +399,7 @@ template&lt;int dim&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classregina_1_1NPerm.html">NPerm</a>&lt; dim+1 &gt; <a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html">regina::detail::IsomorphismBase</a>&lt; dim &gt;::facetPerm </td>
+          <td class="memname"><a class="el" href="classregina_1_1Perm.html">Perm</a>&lt; dim+1 &gt; <a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html">regina::detail::IsomorphismBase</a>&lt; dim &gt;::facetPerm </td>
           <td>(</td>
           <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>sourceSimp</em></td><td>)</td>
@@ -431,35 +422,6 @@ template&lt;int dim&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the permutation applied to the facets of the source simplex. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ad258e923adcb146dd9d0ff34eccd4779"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;int dim&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned <a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html">regina::detail::IsomorphismBase</a>&lt; dim &gt;::getSourceSimplices </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>A deprecated alias for <a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html#a285b817b1c2d0ed509e67b88dad70d32" title="Returns the number of simplices in the source triangulation associated with this isomorphism.">size()</a>, which returns the number of simplices in the source triangulation associated with this isomorphism. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000209">Deprecated:</a></b></dt><dd>Simply call <a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html#a285b817b1c2d0ed509e67b88dad70d32" title="Returns the number of simplices in the source triangulation associated with this isomorphism.">size()</a> instead.</dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>the number of simplices in the source triangulation. </dd></dl>
 
 </div>
 </div>
@@ -731,60 +693,6 @@ template&lt;int dim&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="aea0ab182c97fe654b8929d1fe41dc564"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> std::string <a class="el" href="structregina_1_1Output.html">regina::Output</a>&lt; <a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html#a5ea3d56e931eb3175f3929bd8d463dec">IsomorphismBase</a>&lt; dim &gt; , false  &gt;::toString </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>A deprecated alias for str(). </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000253">Deprecated:</a></b></dt><dd>This routine has (at long last) been deprecated; use the simpler-to-type str() instead.</dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>a short text representation of this object. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="af32f5abced4d1365c34980741b564765"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structregina_1_1FacetSpec.html">REGINA_DEPRECATED</a> std::string <a class="el" href="structregina_1_1Output.html">regina::Output</a>&lt; <a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html#a5ea3d56e931eb3175f3929bd8d463dec">IsomorphismBase</a>&lt; dim &gt; , false  &gt;::toStringLong </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>A deprecated alias for detail(). </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000254">Deprecated:</a></b></dt><dd>This routine has (at long last) been deprecated; use the simpler-to-type detail() instead.</dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>a long text representation of this object. </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="ae2c47d0d1d510c3b5aa5384ae31e2258"></a>
 <div class="memitem">
 <div class="memproto">
@@ -883,7 +791,7 @@ template&lt;int dim&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a2be71158b0c2c36f7786599b10711147"></a>
+<a class="anchor" id="a6f897c95d4c464b5c56ed5a370b1fd5f"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -893,7 +801,7 @@ template&lt;int dim&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classregina_1_1NPerm.html">NPerm</a>&lt;dim+1&gt;* <a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html">regina::detail::IsomorphismBase</a>&lt; dim &gt;::facetPerm_</td>
+          <td class="memname"><a class="el" href="classregina_1_1Perm.html">Perm</a>&lt;dim+1&gt;* <a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html">regina::detail::IsomorphismBase</a>&lt; dim &gt;::facetPerm_</td>
         </tr>
       </table>
   </td>
@@ -958,8 +866,8 @@ template&lt;int dim&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>dim2/<a class="el" href="dim2triangulation_8h.html">dim2triangulation.h</a></li>
-<li>generic/<a class="el" href="isomorphism_8h.html">isomorphism.h</a></li>
+<li>triangulation/<a class="el" href="forward_8h.html">forward.h</a></li>
+<li>triangulation/generic/<a class="el" href="triangulation_2generic_2isomorphism_8h.html">isomorphism.h</a></li>
 </ul>
 </div><!-- contents -->
 <hr>

@@ -48,63 +48,16 @@
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle">
 <div class="title">ntreedecomposition.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Deals with treewidth and tree decompositions, in particular for facet pairing graphs.  
+<p>Deprecated header.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="regina-core_8h.html">regina-core.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="output_8h.html">output.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="facetpairing_8h.html">generic/facetpairing.h</a>&quot;</code><br/>
-<code>#include &lt;boost/noncopyable.hpp&gt;</code><br/>
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NTreeBag.html">regina::NTreeBag</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a single bag in a tree decomposition.  <a href="classregina_1_1NTreeBag.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NTreeDecomposition.html">regina::NTreeDecomposition</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a tree decomposition of a graph.  <a href="classregina_1_1NTreeDecomposition.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structregina_1_1NTreeDecomposition_1_1Graph.html">regina::NTreeDecomposition::Graph</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a graph, which may be directed or undirected.  <a href="structregina_1_1NTreeDecomposition_1_1Graph.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespaceregina"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceregina.html">regina</a></td></tr>
-<tr class="memdesc:namespaceregina"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the entire Regina calculation engine. <br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:gaf0dd75ca695140e2bf801cbc355f036f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__treewidth.html#gaf0dd75ca695140e2bf801cbc355f036f">regina::TreeDecompositionAlg</a> { <a class="el" href="group__treewidth.html#ggaf0dd75ca695140e2bf801cbc355f036fadf511af69b24e20d81a9ca350622ab21">regina::TD_UPPER</a> = 0x0001, 
-<a class="el" href="group__treewidth.html#ggaf0dd75ca695140e2bf801cbc355f036fa04cee26abfb715aa4a16017e323e573a">regina::TD_UPPER_GREEDY_FILL_IN</a> = 0x0001
- }</td></tr>
-<tr class="memdesc:gaf0dd75ca695140e2bf801cbc355f036f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates which algorithm should be used to compute a tree decomposition of a graph.  <a href="group__treewidth.html#gaf0dd75ca695140e2bf801cbc355f036f">More...</a><br/></td></tr>
-<tr class="separator:gaf0dd75ca695140e2bf801cbc355f036f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafe2b2e10a78a855612c2f1322923a974"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__treewidth.html#gafe2b2e10a78a855612c2f1322923a974">regina::BagComparison</a> { <a class="el" href="group__treewidth.html#ggafe2b2e10a78a855612c2f1322923a974aaae6e6eeabe1420eb0312722700f59bf">regina::BAG_EQUAL</a> = 0, 
-<a class="el" href="group__treewidth.html#ggafe2b2e10a78a855612c2f1322923a974af039ad38888c18d408c61431297cd350">regina::BAG_SUBSET</a> = -1, 
-<a class="el" href="group__treewidth.html#ggafe2b2e10a78a855612c2f1322923a974a845759db3c4eda02b6e6ee80435ad826">regina::BAG_SUPERSET</a> = 1, 
-<a class="el" href="group__treewidth.html#ggafe2b2e10a78a855612c2f1322923a974ae7a7377de039a974440109caba6e08e0">regina::BAG_UNRELATED</a> = 2
- }</td></tr>
-<tr class="memdesc:gafe2b2e10a78a855612c2f1322923a974"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the relationship between two bags in a tree decomposition.  <a href="group__treewidth.html#gafe2b2e10a78a855612c2f1322923a974">More...</a><br/></td></tr>
-<tr class="separator:gafe2b2e10a78a855612c2f1322923a974"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3daf523dd0128906f943bcf49bce128f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__treewidth.html#ga3daf523dd0128906f943bcf49bce128f">regina::NiceType</a> { <a class="el" href="group__treewidth.html#gga3daf523dd0128906f943bcf49bce128fa877af37a377169a824081ca26f295b22">regina::NICE_INTRODUCE</a> = 1, 
-<a class="el" href="group__treewidth.html#gga3daf523dd0128906f943bcf49bce128fa9adebb3162ce3e14672020dfd878c54a">regina::NICE_FORGET</a> = 2, 
-<a class="el" href="group__treewidth.html#gga3daf523dd0128906f943bcf49bce128fad9d47d694bf02539399787a8fb05ceb5">regina::NICE_JOIN</a> = 3
- }</td></tr>
-<tr class="memdesc:ga3daf523dd0128906f943bcf49bce128f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to indicate the type of each bag in a <em>nice</em> tree decomposition.  <a href="group__treewidth.html#ga3daf523dd0128906f943bcf49bce128f">More...</a><br/></td></tr>
-<tr class="separator:ga3daf523dd0128906f943bcf49bce128f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Deals with treewidth and tree decompositions, in particular for facet pairing graphs. </p>
+<div class="textblock"><code>#include &quot;<a class="el" href="treedecomposition_8h.html">treewidth/treedecomposition.h</a>&quot;</code><br/>
+</div><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Deprecated header. </p>
 </div></div><!-- contents -->
 <hr>
 Copyright &copy; 1999-2016, The Regina development team

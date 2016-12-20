@@ -48,58 +48,16 @@
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
 <div class="title">dim2triangulation.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Deals with 2-dimensional triangulations.  
+<p>Deprecated header.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;memory&gt;</code><br/>
-<code>#include &lt;vector&gt;</code><br/>
-<code>#include &quot;<a class="el" href="regina-core_8h.html">regina-core.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="triangulation_8h.html">generic/triangulation.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="npacket_8h.html">packet/npacket.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="nmarkedvector_8h.html">utilities/nmarkedvector.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="nproperty_8h.html">utilities/nproperty.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="dim2isomorphism_8h.html">dim2/dim2isomorphism.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="dim2triangle_8h.html">dim2/dim2triangle.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="dim2edge_8h.html">dim2/dim2edge.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="dim2vertex_8h.html">dim2/dim2vertex.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="dim2component_8h.html">dim2/dim2component.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="dim2boundarycomponent_8h.html">dim2/dim2boundarycomponent.h</a>&quot;</code><br/>
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Component.html">regina::Component&lt; int &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A connected component of a <em>dim</em>-manifold triangulation.  <a href="classregina_1_1Component.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Isomorphism.html">regina::Isomorphism&lt; int &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a combinatorial isomorphism from one <em>dim</em>-manifold triangulation into another.  <a href="classregina_1_1Isomorphism.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1SimplexBase.html">regina::SimplexBase&lt; int &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Simplex.html">regina::Simplex&lt; int &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a top-dimensional simplex in a <em>dim</em>-manifold triangulation.  <a href="classregina_1_1Simplex.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Face.html">regina::Face&lt; int, int &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a <em>subdim</em>-face in the skeleton of a <em>dim</em>-dimensional triangulation.  <a href="classregina_1_1Face.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Triangulation_3_012_01_4.html">regina::Triangulation&lt; 2 &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a 2-manifold triangulation.  <a href="classregina_1_1Triangulation_3_012_01_4.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespaceregina"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceregina.html">regina</a></td></tr>
-<tr class="memdesc:namespaceregina"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the entire Regina calculation engine. <br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Deals with 2-dimensional triangulations. </p>
+<div class="textblock"><code>#include &quot;<a class="el" href="dim2_8h.html">triangulation/dim2.h</a>&quot;</code><br/>
+</div><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Deprecated header. </p>
 </div></div><!-- contents -->
 <hr>
 Copyright &copy; 1999-2016, The Regina development team

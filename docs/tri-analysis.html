@@ -1,4 +1,4 @@
-<html><head><title>Analysis</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina Handbook"><link rel="up" href="triangulations.html" title="Chapter 3. Triangulations"><link rel="prev" href="triangulations.html" title="Chapter 3. Triangulations"><link rel="next" href="tri-modification.html" title="Modification"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina.sourceforge.net/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Analysis</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="triangulations.html">Prev</a></td><td align="center" class="navCenter" width="34%">Triangulations</td><td align="right" class="navRight" width="33%"> 
+<html><head><title>Analysis</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina Handbook"><link rel="up" href="triangulations.html" title="Chapter 3. Triangulations"><link rel="prev" href="triangulations.html" title="Chapter 3. Triangulations"><link rel="next" href="tri-modification.html" title="Modification"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Analysis</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="triangulations.html">Prev</a></td><td align="center" class="navCenter" width="34%">Triangulations</td><td align="right" class="navRight" width="33%"> 
 		      <a accesskey="n" href="tri-modification.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="tri-analysis"></a>Analysis</h2></div></div></div><p>
    <span class="application">Regina</span> offers a wealth of information about
    triangulations, spread across the many different tabs in the
@@ -11,7 +11,7 @@
     will display the exact 2-manifold at the top of the triangulation
     viewer, as illustrated below.
    </p><p>
-    <span class="inlinemediaobject"><img src="dim2-id.png"></span>
+    <span class="inlinemediaobject"><img src="tri-id.png"></span>
    </p><p>
     For orientable 2-manifolds, the <em class="firstterm">genus</em>
     refers to the number of handles (e.g., the torus has orientable
@@ -645,7 +645,12 @@
      <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Calculate</span></span>.
     </p><p>
      <span class="inlinemediaobject"><img src="tri-tv-entry.png"></span>
-    </p><p>
+    </p><div class="caution" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Caution</h3><p>
+     The time required to calculate the invariant grows exponentially with
+     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>r</code></em></span>, and so it is highly recommended that you
+     start with small values of <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>r</code></em></span> and work
+     upwards from there.
+    </p></div><p>
      <span class="application">Regina</span> will compute the corresponding invariant(s) as requested,
      and display them in the table below as elements of the corresponding
      cyclotomic field.
@@ -653,11 +658,13 @@
      ζ denotes the primitive root of unity <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>q</code></em></span><sub>0</sub> from the initial data.
     </p><p>
      <span class="inlinemediaobject"><img src="tri-tv-results.png"></span>
-    </p><div class="caution" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Caution</h3><p>
-     Only small values of <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>r</code></em></span>
-     should be used, since the time required to calculate the
-     invariant grows exponentially with <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>r</code></em></span>.
-    </p></div></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="tri-algebra-cellular"></a>Cellular Information (3-D)</h4></div></div></div><p>
+    </p><p>
+     <span class="application">Regina</span> will show the (estimated) percentage progress of each calculation
+     as it runs, and will offer a <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guibutton">Cancel</span></span> button that
+     you can press if a calculation appears to be running too slowly.
+    </p><p>
+     <span class="inlinemediaobject"><img src="tri-tv-progress.png"></span>
+    </p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="tri-algebra-cellular"></a>Cellular Information (3-D)</h4></div></div></div><p>
      For 3-manifold triangulations, the
      <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Algebra</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Cellular Info</span></span> tab
      contains further information on the standard and dual CW-decompositions,
@@ -797,8 +804,96 @@
     For 3-manifold triangulations, the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Composition</span></span> tab
     offers more detailed information about the combinatorial
     structure of the triangulation.
-   </p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="tri-composition-isomorphism"></a>Isomorphism / Subcomplex Testing</h4></div></div></div><p>
-     The upper portion of the composition tab is for testing
+   </p><p>
+    Here <span class="application">Regina</span> will search for well-structured features within the
+    triangulation, and deduce from them what it can.
+    Sometimes it can recognise the construction and completely identify
+    both the triangulation and the underlying 3-manifold; other times
+    it yields little or no useful information.
+   </p><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>
+    If your aim is just to determine the underlying 3-manifold by any means
+    possible, see the
+    <a href="tri-analysis.html#tri-recognition" title="High-Level Recognition Routines (3-D)">recognition tab</a> instead.
+    The recognition tab combines the results of this combinatorial
+    recognition with slower but stronger routines, including
+    3-sphere, 3-ball and solid torus recognition, census lookup,
+    and more.
+   </p></div><p>
+    <span class="inlinemediaobject"><img src="tri-composition.png"></span>
+   </p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="tri-composition-name"></a>Recognising Families of Triangulations</h4></div></div></div><p>
+     At the very top of the composition tab is a line labelled
+     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Triangulation</span></span>.
+     This is where <span class="application">Regina</span> attempts to recognise the entire triangulation
+     from its combinatorial structure.
+    </p><p>
+     Specifically: <span class="application">Regina</span> knows about many infinite families of
+     triangulations, and if your triangulation belongs to one of these
+     families then <span class="application">Regina</span> will detect this and report the results here.
+     <span class="application">Regina</span> is particularly good at recognising
+     well-structured triangulations of Seifert fibred spaces and graph manifolds.
+    </p><p>
+     If it does recognise your triangulation, <span class="application">Regina</span> will display a name
+     for the triangulation that identifies its combinatorial structure
+     precisely.  See
+     [<a href="bibliography.html#bib-burton-phd" title="[Bur03]"><span class="abbrev">Bur03</span></a>] and [<a href="bibliography.html#bib-burton-nor7" title="[Bur07c]"><span class="abbrev">Bur07c</span></a>]
+     for details on the various families of triangulations and what their names
+     and parameters mean.
+    </p><p>
+     <span class="inlinemediaobject"><img src="tri-composition-name.png"></span>
+    </p><p>
+     In most cases, if <span class="application">Regina</span> recognises the triangulation then it
+     will (as a result) be able to identify the underlying 3-manifold.
+     This 3-manifold will be reported separately on the
+     <a href="tri-analysis.html#tri-recognition" title="High-Level Recognition Routines (3-D)">recognition tab</a>.
+    </p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="tri-composition-isosig"></a>Isomorphism Signature</h4></div></div></div><p>
+     Immediately below the name of the triangulation,
+     <span class="application">Regina</span> displays the triangulation's isomorphism signature.
+     An <em class="firstterm">isomorphism signature</em> is a compact sequence
+     of letters, digits and/or punctuation that identifies a
+     triangulation uniquely up to combinatorial isomorphism.
+    </p><p>
+     <span class="inlinemediaobject"><img src="tri-composition-isosig.png"></span>
+    </p><p>
+     Every triangulation has an isomorphism signature (even
+     disconnected triangulations or triangulations with boundary).
+     The main features of isomorphism signatures are that they are fast
+     to compute, and that two triangulations have the same signature
+     <span class="emphasis"><em>if and only if</em></span> they are isomorphic.
+     See [<a href="bibliography.html#bib-burton-simps3" title="[Bur11b]"><span class="abbrev">Bur11b</span></a>] and
+     [<a href="bibliography.html#bib-burton-pachner-orprime" title="[Bur11c]"><span class="abbrev">Bur11c</span></a>] for details.
+    </p><p>
+     To convert an isomorphism signature back into a triangulation,
+     you can either <a href="triangulations.html#tri-new-isosig" title="Isomorphism Signature">create a new
+     triangulation</a> from a signature, or
+     <a href="foreign.html#import-isosiglist" title="Isomorphism Signature Lists">import a list of
+     isomorphism signatures</a>.  Be aware that the resulting
+     triangulation might not use the same tetrahedron and vertex
+     labels as the original.
+    </p><p>
+     Isomorphism signatures are case-sensitive (i.e., upper-case and
+     lower-case matters).
+     To copy the isomorphism signature to the clipboard, simply select
+     the line in the box and choose
+     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Edit</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Copy</span></span>.
+    </p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="tri-composition-blocks"></a>Combinatorial Building Blocks</h4></div></div></div><p>
+     In the centre of the composition tab is a large box
+     that describes combinatorial
+     building blocks within the triangulation.
+     <span class="application">Regina</span> knows about several families of building blocks
+     (such as <a href="triangulations.html#tri-new-layered" title="Layered Solid Torus (3-manifolds only)">layered
+     solid tori</a>), and it will search for these within the
+     triangulation.
+     If it finds any building blocks that it
+     recognises then it will give the details here, including any parameters
+     for the blocks and where they occur within the triangulation.
+    </p><p>
+     <span class="inlinemediaobject"><img src="tri-composition-blocks.png"></span>
+    </p><p>
+     See [<a href="bibliography.html#bib-burton-phd" title="[Bur03]"><span class="abbrev">Bur03</span></a>]
+     and [<a href="bibliography.html#bib-burton-nor7" title="[Bur07c]"><span class="abbrev">Bur07c</span></a>] for details on the various
+     families of building blocks that <span class="application">Regina</span> understands.
+    </p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="tri-composition-isomorphism"></a>Isomorphism / Subcomplex Testing</h4></div></div></div><p>
+     At the bottom of the composition tab, there is a section for testing
      combinatorial isomorphism, or testing whether one triangulation is a
      subcomplex of another.  Simply select some other
      triangulation <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>T</code></em></span> from the drop-down box
@@ -830,113 +925,7 @@
      you can click on the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guibutton">Details</span></span> button for
      the precise relabelling (i.e., the mapping between tetrahedron
      labels and between vertices in each tetrahedron).
-    </p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="tri-composition-composition"></a>Combinatorial Recognition, Building Blocks,
-     Isomorphism Signatures and Dehydrations</h4></div></div></div><p>
-     In the lower portion of the composition tab is a large box
-     containing details on the combinatorial composition of the triangulation.
-     Here <span class="application">Regina</span> will search for well-structured features within the
-     triangulation, and deduce from them what it can.
-     Sometimes it can recognise the construction and completely identify
-     both the triangulation and the underlying 3-manifold; other times
-     it yields little or no useful information.
-    </p><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>
-      If your aim is just to determine the underlying 3-manifold by any means
-      possible, see the
-      <a href="tri-analysis.html#tri-recognition" title="High-Level Recognition Routines (3-D)">recognition tab</a> instead.
-      The recognition tab combines the results of this combinatorial
-      recognition with slower but stronger routines, including
-      3-sphere, 3-ball and solid torus recognition, census lookup,
-      and more.
-     </p></div><p>
-     <span class="inlinemediaobject"><img src="tri-composition.png"></span>
-    </p><p>
-     In this composition box you will find the following information:
-    </p><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="tri-composition-name"></a>Recognising Families of Triangulations and 3-Manifolds</h5></div></div></div><p>
-      <span class="application">Regina</span> knows about many infinite families of triangulations.
-      If your triangulation belongs to one of these families then
-      <span class="application">Regina</span> will detect this and report the results here.
-      <span class="application">Regina</span> is particularly good at recognising
-      well-structured triangulations of Seifert fibred spaces and graph manifolds.
-     </p><p>
-      <span class="inlinemediaobject"><img src="tri-composition-name.png"></span>
-     </p><p>
-      If it does recognise your triangulation, <span class="application">Regina</span> will name the
-      3-manifold and also the triangulation itself.  See
-      [<a href="bibliography.html#bib-burton-phd" title="[Bur03]"><span class="abbrev">Bur03</span></a>] and [<a href="bibliography.html#bib-burton-nor7" title="[Bur07c]"><span class="abbrev">Bur07c</span></a>]
-      for details on the various families of triangulations and what their names
-      and parameters mean.
-     </p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="tri-composition-isosig"></a>Isomorphism Signature</h5></div></div></div><p>
-      An <em class="firstterm">isomorphism signature</em> is a compact sequence
-      of letters, digits and/or punctuation that identifies a
-      triangulation uniquely up to combinatorial isomorphism.
-      <span class="application">Regina</span> will report the isomorphism signature for your
-      triangulation here.
-     </p><p>
-      <span class="inlinemediaobject"><img src="tri-composition-isosig.png"></span>
-     </p><p>
-      Every triangulation has an isomorphism signature (even
-      disconnected triangulations or triangulations with boundary).
-      The main features of isomorphism signatures are that they are fast
-      to compute, and that two triangulations have the same signature
-      <span class="emphasis"><em>if and only if</em></span> they are isomorphic.
-      See [<a href="bibliography.html#bib-burton-simps3" title="[Bur11b]"><span class="abbrev">Bur11b</span></a>] and
-      [<a href="bibliography.html#bib-burton-pachner-orprime" title="[Bur11c]"><span class="abbrev">Bur11c</span></a>] for details.
-     </p><p>
-      To convert an isomorphism signature back into a triangulation,
-      you can either <a href="triangulations.html#tri-new-isosig" title="Isomorphism Signature">create a new
-      triangulation</a> from a signature, or
-      <a href="foreign.html#import-isosiglist" title="Isomorphism Signature Lists">import a list of
-      isomorphism signatures</a>.  Be aware that the resulting
-      triangulation might not use the same tetrahedron and vertex
-      labels as the original.
-     </p><p>
-      Isomorphism signatures are case-sensitive (i.e., upper-case and
-      lower-case matters).
-      To copy the isomorphism signature to the clipboard, simply select
-      the line in the box and choose
-      <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Edit</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Copy</span></span>.
-     </p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="tri-composition-dehydration"></a>Dehydration</h5></div></div></div><p>
-      Like isomorphism signatures, a <span class="emphasis"><em>dehydration string</em></span>
-      is a short sequence of letters from which you can reconstruct
-      your triangulation.  Only some triangulations have dehydration
-      strings (they must be connected with no boundary triangles and
-      ≤ 25 tetrahedra), and they are not unique up to isomorphism
-      (so relabelling tetrahedra might change the dehydration string).
-      If it exists, the dehydration string will be reported here.
-     </p><p>
-      <span class="inlinemediaobject"><img src="tri-composition-dehydration.png"></span>
-     </p><p>
-      Dehydration strings first appeared in early censuses of hyperbolic
-      3-manifolds.  See [<a href="bibliography.html#bib-cuspedcensus" title="[CHW99]"><span class="abbrev">CHW99</span></a>] for details.
-     </p><p>
-      To convert a dehydration string back into a triangulation,
-      you can either <a href="triangulations.html#tri-new-dehydration" title="Dehydration (3-manifolds only)">create a new
-      triangulation</a> from its dehydration, or
-      <a href="foreign.html#import-dehydrationlist" title="Dehydrated Triangulation Lists">import a list of
-      dehydration strings</a>.  Be aware that the resulting triangulation
-      might not use the same tetrahedron and vertex labels as the
-      original.
-     </p><p>
-      As with isomorphism signatures, you can copy a dehydration string
-      to the clipboard by selecting the line in the box and choosing
-      <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Edit</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Copy</span></span>.
-     </p></div><div class="sect4" lang="en"><div class="titlepage"><div><div><h5 class="title"><a name="tri-composition-blocks"></a>Building Blocks</h5></div></div></div><p>
-      The remainder of the composition box describes combinatorial
-      building blocks within the triangulation.
-      <span class="application">Regina</span> knows about several families of building blocks
-      (such as <a href="triangulations.html#tri-new-layered" title="Layered Solid Torus (3-manifolds only)">layered
-      solid tori</a>), and it will search for these within the
-      triangulation.
-      If it finds any building blocks that it
-      recognises then it will give details here, including any parameters
-      for the blocks and where they occur within the triangulation.
-     </p><p>
-      <span class="inlinemediaobject"><img src="tri-composition-blocks.png"></span>
-     </p><p>
-      See [<a href="bibliography.html#bib-burton-phd" title="[Bur03]"><span class="abbrev">Bur03</span></a>]
-      and [<a href="bibliography.html#bib-burton-nor7" title="[Bur07c]"><span class="abbrev">Bur07c</span></a>] for details on the various
-      families of building blocks that <span class="application">Regina</span> understands.
-     </p></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="tri-recognition"></a>High-Level Recognition Routines (3-D)</h3></div></div></div><p>
+    </p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="tri-recognition"></a>High-Level Recognition Routines (3-D)</h3></div></div></div><p>
     For 3-manifold triangulations, the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Recognition</span></span> tab
     attempts to identify the underlying manifold through a variety of
     techniques,
@@ -1010,7 +999,7 @@
        See [<a href="bibliography.html#bib-0-efficiency" title="[JR03]"><span class="abbrev">JR03</span></a>] for details on 0-efficiency.
       </p><p>
        This property is only shown for
-       <span class="application">Regina</span>'s native <a href="packet-types.html#packet-triangulation" title="3-Manifold Triangulations">triangulation
+       <span class="application">Regina</span>'s native <a href="packet-types.html#packet-triangulation3" title="3-Manifold Triangulations">triangulation
        packets</a>, not its hybrid
        <a href="packet-types.html#packet-snappea" title="SnapPea Triangulations"><span class="application">SnapPea</span> triangulation packets</a>.
       </p></dd><dt><a name="tri-propsplitting"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Splitting surface</span></span></dt><dd><p>
@@ -1021,7 +1010,7 @@
        See [<a href="bibliography.html#bib-burton-phd" title="[Bur03]"><span class="abbrev">Bur03</span></a>] for details.
       </p><p>
        This property is only shown for
-       <span class="application">Regina</span>'s native <a href="packet-types.html#packet-triangulation" title="3-Manifold Triangulations">triangulation
+       <span class="application">Regina</span>'s native <a href="packet-types.html#packet-triangulation3" title="3-Manifold Triangulations">triangulation
        packets</a>, not its hybrid
        <a href="packet-types.html#packet-snappea" title="SnapPea Triangulations"><span class="application">SnapPea</span> triangulation packets</a>.
       </p></dd><dt><a name="tri-irreducible"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Irreducible</span></span></dt><dd><p>
@@ -1068,7 +1057,7 @@
         This field, which is always shown at the bottom of the panel,
         combines the exact algorithms above with the
         combinatorial recognition routines from the
-        <a href="tri-analysis.html#tri-composition-name" title="Recognising Families of Triangulations and 3-Manifolds">composition tab</a>,
+        <a href="tri-analysis.html#tri-composition-name" title="Recognising Families of Triangulations">composition tab</a>,
         in a multi-pronged attempt
         to conclusively identify the underlying 3-manifold.
         If the 3-manifold can be determined by any of these methods,
@@ -1128,7 +1117,7 @@
     There are two ways in which you can use <span class="application">SnapPea</span> within <span class="application">Regina</span>:
     </p><div class="itemizedlist"><ul type="disc"><li><p>
       If you are working with one of <span class="application">Regina</span>'s native
-      <a href="packet-types.html#packet-triangulation" title="3-Manifold Triangulations">3-manifold triangulation packets</a>,
+      <a href="packet-types.html#packet-triangulation3" title="3-Manifold Triangulations">3-manifold triangulation packets</a>,
       you can view some basic information (the solution type and the
       hyperbolic volume) through the triangulation
       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel"><span class="application">SnapPea</span></span></span> tab, as described below.

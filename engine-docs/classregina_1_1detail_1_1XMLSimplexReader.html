@@ -61,14 +61,14 @@
 <p>Helper class that reads the XML element for a single top-dimensional simplex in a <em>dim</em>-dimensional triangulation.  
  <a href="classregina_1_1detail_1_1XMLSimplexReader.html#details">More...</a></p>
 
-<p><code>#include &lt;generic/detail/xmltrireader.h&gt;</code></p>
+<p><code>#include &lt;triangulation/detail/xmltrireader.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for regina::detail::XMLSimplexReader&lt; dim &gt;:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="classregina_1_1detail_1_1XMLSimplexReader.png" usemap="#regina::detail::XMLSimplexReader&lt; dim &gt;_map" alt=""/>
   <map id="regina::detail::XMLSimplexReader&lt; dim &gt;_map" name="regina::detail::XMLSimplexReader&lt; dim &gt;_map">
-<area href="classregina_1_1NXMLElementReader.html" title="Used to read the contents of a single XML element." alt="regina::NXMLElementReader" shape="rect" coords="0,0,244,24"/>
+<area href="classregina_1_1XMLElementReader.html" title="Used to read the contents of a single XML element." alt="regina::XMLElementReader" shape="rect" coords="0,0,244,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -77,27 +77,27 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad90e2cc364bcba8f0aecb268523a708e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1XMLSimplexReader.html#ad90e2cc364bcba8f0aecb268523a708e">XMLSimplexReader</a> (<a class="el" href="classregina_1_1Triangulation.html">Triangulation</a>&lt; dim &gt; *tri, size_t whichSimplex)</td></tr>
 <tr class="memdesc:ad90e2cc364bcba8f0aecb268523a708e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new simplex element reader.  <a href="#ad90e2cc364bcba8f0aecb268523a708e">More...</a><br/></td></tr>
 <tr class="separator:ad90e2cc364bcba8f0aecb268523a708e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab787aab8c579598d4db92535204ae9ad"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1XMLSimplexReader.html#ab787aab8c579598d4db92535204ae9ad">startElement</a> (const std::string &amp;, const <a class="el" href="classregina_1_1xml_1_1XMLPropertyDict.html">regina::xml::XMLPropertyDict</a> &amp;props, <a class="el" href="classregina_1_1NXMLElementReader.html">NXMLElementReader</a> *)</td></tr>
-<tr class="memdesc:ab787aab8c579598d4db92535204ae9ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signifies that parsing of this XML element is beginning.  <a href="#ab787aab8c579598d4db92535204ae9ad">More...</a><br/></td></tr>
-<tr class="separator:ab787aab8c579598d4db92535204ae9ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38a5f5ed508d272812b9773c1ddc18f6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1XMLSimplexReader.html#a38a5f5ed508d272812b9773c1ddc18f6">startElement</a> (const std::string &amp;, const <a class="el" href="classregina_1_1xml_1_1XMLPropertyDict.html">regina::xml::XMLPropertyDict</a> &amp;props, <a class="el" href="classregina_1_1XMLElementReader.html">XMLElementReader</a> *)</td></tr>
+<tr class="memdesc:a38a5f5ed508d272812b9773c1ddc18f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signifies that parsing of this XML element is beginning.  <a href="#a38a5f5ed508d272812b9773c1ddc18f6">More...</a><br/></td></tr>
+<tr class="separator:a38a5f5ed508d272812b9773c1ddc18f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab11ca76a56fe3a55bd6c321707a8a190"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1XMLSimplexReader.html#ab11ca76a56fe3a55bd6c321707a8a190">initialChars</a> (const std::string &amp;chars)</td></tr>
 <tr class="memdesc:ab11ca76a56fe3a55bd6c321707a8a190"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signifies that the initial text belonging to this XML element has been read.  <a href="#ab11ca76a56fe3a55bd6c321707a8a190">More...</a><br/></td></tr>
 <tr class="separator:ab11ca76a56fe3a55bd6c321707a8a190"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8fafb02b6ce393f6aac9ce8de8651070"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classregina_1_1NXMLElementReader.html">NXMLElementReader</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NXMLElementReader.html#a8fafb02b6ce393f6aac9ce8de8651070">startSubElement</a> (const std::string &amp;subTagName, const <a class="el" href="classregina_1_1xml_1_1XMLPropertyDict.html">regina::xml::XMLPropertyDict</a> &amp;subTagProps)</td></tr>
-<tr class="memdesc:a8fafb02b6ce393f6aac9ce8de8651070"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signifies that a subelement of this XML element is about to be parsed.  <a href="#a8fafb02b6ce393f6aac9ce8de8651070">More...</a><br/></td></tr>
-<tr class="separator:a8fafb02b6ce393f6aac9ce8de8651070"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f882fef563d5269f718572bec870d7f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NXMLElementReader.html#a3f882fef563d5269f718572bec870d7f">endSubElement</a> (const std::string &amp;subTagName, <a class="el" href="classregina_1_1NXMLElementReader.html">NXMLElementReader</a> *subReader)</td></tr>
-<tr class="memdesc:a3f882fef563d5269f718572bec870d7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signifies that parsing has finished for a subelement of this XML element.  <a href="#a3f882fef563d5269f718572bec870d7f">More...</a><br/></td></tr>
-<tr class="separator:a3f882fef563d5269f718572bec870d7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af910a4cacb00c1693bf29750fa772ed9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NXMLElementReader.html#af910a4cacb00c1693bf29750fa772ed9">endElement</a> ()</td></tr>
-<tr class="memdesc:af910a4cacb00c1693bf29750fa772ed9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signifies that parsing of this XML element is finished.  <a href="#af910a4cacb00c1693bf29750fa772ed9">More...</a><br/></td></tr>
-<tr class="separator:af910a4cacb00c1693bf29750fa772ed9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4353bc01bb7a79db1b5f09834b246ec"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NXMLElementReader.html#ab4353bc01bb7a79db1b5f09834b246ec">usingParser</a> (<a class="el" href="classregina_1_1xml_1_1XMLParser.html">regina::xml::XMLParser</a> *parser)</td></tr>
-<tr class="memdesc:ab4353bc01bb7a79db1b5f09834b246ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called for the top-level element in an XML file when parsing begins.  <a href="#ab4353bc01bb7a79db1b5f09834b246ec">More...</a><br/></td></tr>
-<tr class="separator:ab4353bc01bb7a79db1b5f09834b246ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2f2c18303c54234a26af5cfda2ee1fd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NXMLElementReader.html#ae2f2c18303c54234a26af5cfda2ee1fd">abort</a> (<a class="el" href="classregina_1_1NXMLElementReader.html">NXMLElementReader</a> *subReader)</td></tr>
-<tr class="memdesc:ae2f2c18303c54234a26af5cfda2ee1fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signifies that XML parsing has been aborted.  <a href="#ae2f2c18303c54234a26af5cfda2ee1fd">More...</a><br/></td></tr>
-<tr class="separator:ae2f2c18303c54234a26af5cfda2ee1fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16a3e05cc93447ee75489bad822feeb9"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classregina_1_1XMLElementReader.html">XMLElementReader</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1XMLElementReader.html#a16a3e05cc93447ee75489bad822feeb9">startSubElement</a> (const std::string &amp;subTagName, const <a class="el" href="classregina_1_1xml_1_1XMLPropertyDict.html">regina::xml::XMLPropertyDict</a> &amp;subTagProps)</td></tr>
+<tr class="memdesc:a16a3e05cc93447ee75489bad822feeb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signifies that a subelement of this XML element is about to be parsed.  <a href="#a16a3e05cc93447ee75489bad822feeb9">More...</a><br/></td></tr>
+<tr class="separator:a16a3e05cc93447ee75489bad822feeb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6957484c2540429d42866348285f0cf7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1XMLElementReader.html#a6957484c2540429d42866348285f0cf7">endSubElement</a> (const std::string &amp;subTagName, <a class="el" href="classregina_1_1XMLElementReader.html">XMLElementReader</a> *subReader)</td></tr>
+<tr class="memdesc:a6957484c2540429d42866348285f0cf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signifies that parsing has finished for a subelement of this XML element.  <a href="#a6957484c2540429d42866348285f0cf7">More...</a><br/></td></tr>
+<tr class="separator:a6957484c2540429d42866348285f0cf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55033a0561bb5b38ec08a1cdb9af8bd1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1XMLElementReader.html#a55033a0561bb5b38ec08a1cdb9af8bd1">endElement</a> ()</td></tr>
+<tr class="memdesc:a55033a0561bb5b38ec08a1cdb9af8bd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signifies that parsing of this XML element is finished.  <a href="#a55033a0561bb5b38ec08a1cdb9af8bd1">More...</a><br/></td></tr>
+<tr class="separator:a55033a0561bb5b38ec08a1cdb9af8bd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91516b7576ee94159763c2aeae2e0458"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1XMLElementReader.html#a91516b7576ee94159763c2aeae2e0458">usingParser</a> (<a class="el" href="classregina_1_1xml_1_1XMLParser.html">regina::xml::XMLParser</a> *parser)</td></tr>
+<tr class="memdesc:a91516b7576ee94159763c2aeae2e0458"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called for the top-level element in an XML file when parsing begins.  <a href="#a91516b7576ee94159763c2aeae2e0458">More...</a><br/></td></tr>
+<tr class="separator:a91516b7576ee94159763c2aeae2e0458"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a999849c75bd67f6cc2e97c50f89cedf1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1XMLElementReader.html#a999849c75bd67f6cc2e97c50f89cedf1">abort</a> (<a class="el" href="classregina_1_1XMLElementReader.html">XMLElementReader</a> *subReader)</td></tr>
+<tr class="memdesc:a999849c75bd67f6cc2e97c50f89cedf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signifies that XML parsing has been aborted.  <a href="#a999849c75bd67f6cc2e97c50f89cedf1">More...</a><br/></td></tr>
+<tr class="separator:a999849c75bd67f6cc2e97c50f89cedf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;int dim&gt;<br/>
@@ -161,7 +161,7 @@ template&lt;int dim&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ae2f2c18303c54234a26af5cfda2ee1fd"></a>
+<a class="anchor" id="a999849c75bd67f6cc2e97c50f89cedf1"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -169,9 +169,9 @@ template&lt;int dim&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void regina::NXMLElementReader::abort </td>
+          <td class="memname">void regina::XMLElementReader::abort </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classregina_1_1NXMLElementReader.html">NXMLElementReader</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="classregina_1_1XMLElementReader.html">XMLElementReader</a> *&#160;</td>
           <td class="paramname"><em>subReader</em></td><td>)</td>
           <td></td>
         </tr>
@@ -188,16 +188,16 @@ template&lt;int dim&gt; </div>
 <p>The default implementation does nothing.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">subReader</td><td>the corresponding child reader if a subelement is currently being parsed, or 0 otherwise. If this parameter is non-zero, it is guaranteed that <a class="el" href="classregina_1_1NXMLElementReader.html#ae2f2c18303c54234a26af5cfda2ee1fd" title="Signifies that XML parsing has been aborted.">abort()</a> has already been called upon the child reader and that the child reader has not yet been destroyed. </td></tr>
+    <tr><td class="paramname">subReader</td><td>the corresponding child reader if a subelement is currently being parsed, or 0 otherwise. If this parameter is non-zero, it is guaranteed that <a class="el" href="classregina_1_1XMLElementReader.html#a999849c75bd67f6cc2e97c50f89cedf1" title="Signifies that XML parsing has been aborted.">abort()</a> has already been called upon the child reader and that the child reader has not yet been destroyed. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classregina_1_1NXMLPacketReader.html#a4ed1fdefc5cfa632809fdb5f314ebeaa">regina::NXMLPacketReader</a>.</p>
+<p>Reimplemented in <a class="el" href="classregina_1_1XMLPacketReader.html#ace6272d65da314ad47bf2684c056e2ec">regina::XMLPacketReader</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="af910a4cacb00c1693bf29750fa772ed9"></a>
+<a class="anchor" id="a55033a0561bb5b38ec08a1cdb9af8bd1"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -205,7 +205,7 @@ template&lt;int dim&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void regina::NXMLElementReader::endElement </td>
+          <td class="memname">void regina::XMLElementReader::endElement </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -219,12 +219,12 @@ template&lt;int dim&gt; </div>
 </div><div class="memdoc">
 
 <p>Signifies that parsing of this XML element is finished. </p>
-<p>It is guaranteed that <a class="el" href="classregina_1_1NXMLElementReader.html#a3f882fef563d5269f718572bec870d7f" title="Signifies that parsing has finished for a subelement of this XML element.">endSubElement()</a> has not yet been called upon the parent reader (if one exists).</p>
+<p>It is guaranteed that <a class="el" href="classregina_1_1XMLElementReader.html#a6957484c2540429d42866348285f0cf7" title="Signifies that parsing has finished for a subelement of this XML element.">endSubElement()</a> has not yet been called upon the parent reader (if one exists).</p>
 <p>The default implementation does nothing. </p>
 
 </div>
 </div>
-<a class="anchor" id="a3f882fef563d5269f718572bec870d7f"></a>
+<a class="anchor" id="a6957484c2540429d42866348285f0cf7"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -232,7 +232,7 @@ template&lt;int dim&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void regina::NXMLElementReader::endSubElement </td>
+          <td class="memname">void regina::XMLElementReader::endSubElement </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>subTagName</em>, </td>
@@ -240,7 +240,7 @@ template&lt;int dim&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classregina_1_1NXMLElementReader.html">NXMLElementReader</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="classregina_1_1XMLElementReader.html">XMLElementReader</a> *&#160;</td>
           <td class="paramname"><em>subReader</em>&#160;</td>
         </tr>
         <tr>
@@ -261,12 +261,12 @@ template&lt;int dim&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">subTagName</td><td>the name of the subelement closing tag. </td></tr>
-    <tr><td class="paramname">subReader</td><td>the child reader that was used to parse the subelement (this is the reader that was returned by the corresponding <a class="el" href="classregina_1_1NXMLElementReader.html#a8fafb02b6ce393f6aac9ce8de8651070" title="Signifies that a subelement of this XML element is about to be parsed.">startSubElement()</a> call). It is guaranteed that <a class="el" href="classregina_1_1NXMLElementReader.html#af910a4cacb00c1693bf29750fa772ed9" title="Signifies that parsing of this XML element is finished.">endElement()</a> has already been called upon this child reader and that the child reader has not yet been destroyed. </td></tr>
+    <tr><td class="paramname">subReader</td><td>the child reader that was used to parse the subelement (this is the reader that was returned by the corresponding <a class="el" href="classregina_1_1XMLElementReader.html#a16a3e05cc93447ee75489bad822feeb9" title="Signifies that a subelement of this XML element is about to be parsed.">startSubElement()</a> call). It is guaranteed that <a class="el" href="classregina_1_1XMLElementReader.html#a55033a0561bb5b38ec08a1cdb9af8bd1" title="Signifies that parsing of this XML element is finished.">endElement()</a> has already been called upon this child reader and that the child reader has not yet been destroyed. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classregina_1_1NXMLPacketReader.html#acdf3908fee62546d9c68aea8b9785929">regina::NXMLPacketReader</a>, and <a class="el" href="classregina_1_1NXMLGroupPresentationReader.html#a9b836c64d22cb689a3fe6e65438778ba">regina::NXMLGroupPresentationReader</a>.</p>
+<p>Reimplemented in <a class="el" href="classregina_1_1detail_1_1XMLTriangulationReaderBase_1_1GroupPresentationPropertyReader.html#a68207e11fb8531e981a15f82c9853412">regina::detail::XMLTriangulationReaderBase&lt; dim &gt;::GroupPresentationPropertyReader</a>, <a class="el" href="classregina_1_1detail_1_1XMLTriangulationReaderBase_1_1AbelianGroupPropertyReader.html#ae041fe7d9a3ac40192fc744f4561edb9">regina::detail::XMLTriangulationReaderBase&lt; dim &gt;::AbelianGroupPropertyReader</a>, <a class="el" href="classregina_1_1XMLPacketReader.html#a3c484199163b4ffe8e6378abcc3e0de6">regina::XMLPacketReader</a>, and <a class="el" href="classregina_1_1XMLGroupPresentationReader.html#a624810d712a37ee68b83b8f9bff3f645">regina::XMLGroupPresentationReader</a>.</p>
 
 </div>
 </div>
@@ -304,11 +304,11 @@ template&lt;int dim&gt; </div>
   </dd>
 </dl>
 
-<p>Reimplemented from <a class="el" href="classregina_1_1NXMLElementReader.html#aec20a32b65f8adb510adc7231265c524">regina::NXMLElementReader</a>.</p>
+<p>Reimplemented from <a class="el" href="classregina_1_1XMLElementReader.html#a2a8cff0d68cb41e64fd931d0e3f6bf4c">regina::XMLElementReader</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ab787aab8c579598d4db92535204ae9ad"></a>
+<a class="anchor" id="a38a5f5ed508d272812b9773c1ddc18f6"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -332,7 +332,7 @@ template&lt;int dim&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classregina_1_1NXMLElementReader.html">NXMLElementReader</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="classregina_1_1XMLElementReader.html">XMLElementReader</a> *&#160;</td>
           <td class="paramname"><em>parentReader</em>&#160;</td>
         </tr>
         <tr>
@@ -354,16 +354,16 @@ template&lt;int dim&gt; </div>
   <table class="params">
     <tr><td class="paramname">tagName</td><td>the name of the opening tag for this element. </td></tr>
     <tr><td class="paramname">tagProps</td><td>the properties associated with the opening tag. </td></tr>
-    <tr><td class="paramname">parentReader</td><td>the reader currently parsing the parent XML element, or 0 if this is the top-level element. If this paraneter is non-zero, it is guaranteed that <a class="el" href="classregina_1_1NXMLElementReader.html#a8fafb02b6ce393f6aac9ce8de8651070" title="Signifies that a subelement of this XML element is about to be parsed.">startSubElement()</a> has already been called upon the parent reader. </td></tr>
+    <tr><td class="paramname">parentReader</td><td>the reader currently parsing the parent XML element, or 0 if this is the top-level element. If this paraneter is non-zero, it is guaranteed that <a class="el" href="classregina_1_1XMLElementReader.html#a16a3e05cc93447ee75489bad822feeb9" title="Signifies that a subelement of this XML element is about to be parsed.">startSubElement()</a> has already been called upon the parent reader. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Reimplemented from <a class="el" href="classregina_1_1NXMLElementReader.html#a537bccc80d85cdc932225d795f0fd39d">regina::NXMLElementReader</a>.</p>
+<p>Reimplemented from <a class="el" href="classregina_1_1XMLElementReader.html#a9bb765e35393c8ddf12e2348210c4e4e">regina::XMLElementReader</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a8fafb02b6ce393f6aac9ce8de8651070"></a>
+<a class="anchor" id="a16a3e05cc93447ee75489bad822feeb9"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -371,7 +371,7 @@ template&lt;int dim&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classregina_1_1NXMLElementReader.html">NXMLElementReader</a> * regina::NXMLElementReader::startSubElement </td>
+          <td class="memname"><a class="el" href="classregina_1_1XMLElementReader.html">XMLElementReader</a> * regina::XMLElementReader::startSubElement </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>subTagName</em>, </td>
@@ -396,7 +396,7 @@ template&lt;int dim&gt; </div>
 </div><div class="memdoc">
 
 <p>Signifies that a subelement of this XML element is about to be parsed. </p>
-<p>The default implementation returns a new <a class="el" href="classregina_1_1NXMLElementReader.html" title="Used to read the contents of a single XML element.">NXMLElementReader</a> which can be used to ignore the subelement completely.</p>
+<p>The default implementation returns a new <a class="el" href="classregina_1_1XMLElementReader.html" title="Used to read the contents of a single XML element.">XMLElementReader</a> which can be used to ignore the subelement completely.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">subTagName</td><td>the name of the subelement opening tag. </td></tr>
@@ -406,11 +406,11 @@ template&lt;int dim&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a newly created element reader that will be used to parse the subelement. This class should <em>not</em> take care of the new reader's destruction; that will be done by the parser. </dd></dl>
 
-<p>Reimplemented in <a class="el" href="classregina_1_1NXMLPacketReader.html#a05f2bfa4b2fa653b564527f613a63b1f">regina::NXMLPacketReader</a>, <a class="el" href="classregina_1_1detail_1_1XMLSimplicesReader.html#a47b82b45295084fd2f27d0898209f267">regina::detail::XMLSimplicesReader&lt; dim &gt;</a>, <a class="el" href="classregina_1_1NXMLGroupPresentationReader.html#af76c8618d33b5c167d0b79750dd78fd3">regina::NXMLGroupPresentationReader</a>, <a class="el" href="classregina_1_1NXMLNormalHypersurfaceReader.html#aea8a8cdffb6e5727990a79c6ea0770dd">regina::NXMLNormalHypersurfaceReader</a>, <a class="el" href="classregina_1_1NXMLNormalSurfaceReader.html#afe53511a767e42e4164886944f4ba0e6">regina::NXMLNormalSurfaceReader</a>, and <a class="el" href="classregina_1_1NXMLAngleStructureReader.html#a481011fcd7600294488fa8b29d4a04f6">regina::NXMLAngleStructureReader</a>.</p>
+<p>Reimplemented in <a class="el" href="classregina_1_1detail_1_1XMLTriangulationReaderBase_1_1GroupPresentationPropertyReader.html#a0c0099b966b195e555554153efcde07c">regina::detail::XMLTriangulationReaderBase&lt; dim &gt;::GroupPresentationPropertyReader</a>, <a class="el" href="classregina_1_1detail_1_1XMLTriangulationReaderBase_1_1AbelianGroupPropertyReader.html#a97aa792c6c4408ae0c5ce3081f8ca5d1">regina::detail::XMLTriangulationReaderBase&lt; dim &gt;::AbelianGroupPropertyReader</a>, <a class="el" href="classregina_1_1XMLPacketReader.html#ade430d5ea6ba525ab15e617b10b39ff2">regina::XMLPacketReader</a>, <a class="el" href="classregina_1_1detail_1_1XMLSimplicesReader.html#ac745e06a55044033ebcab9f4b37d614b">regina::detail::XMLSimplicesReader&lt; dim &gt;</a>, <a class="el" href="classregina_1_1XMLGroupPresentationReader.html#a6977b158ca72971745b197788c195b4b">regina::XMLGroupPresentationReader</a>, <a class="el" href="classregina_1_1XMLNormalHypersurfaceReader.html#a53bd61e7f5fc892b52aa0781e6629027">regina::XMLNormalHypersurfaceReader</a>, <a class="el" href="classregina_1_1XMLNormalSurfaceReader.html#a05e120dbc3c41bca4eb89f8dbf8649e9">regina::XMLNormalSurfaceReader</a>, and <a class="el" href="classregina_1_1XMLAngleStructureReader.html#a57b393a6027d9bd1e92ef50179418534">regina::XMLAngleStructureReader</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ab4353bc01bb7a79db1b5f09834b246ec"></a>
+<a class="anchor" id="a91516b7576ee94159763c2aeae2e0458"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -418,7 +418,7 @@ template&lt;int dim&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void regina::NXMLElementReader::usingParser </td>
+          <td class="memname">void regina::XMLElementReader::usingParser </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classregina_1_1xml_1_1XMLParser.html">regina::xml::XMLParser</a> *&#160;</td>
           <td class="paramname"><em>parser</em></td><td>)</td>
@@ -445,7 +445,7 @@ template&lt;int dim&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>generic/detail/<a class="el" href="detail_2xmltrireader_8h.html">xmltrireader.h</a></li>
+<li>triangulation/detail/<a class="el" href="triangulation_2detail_2xmltrireader_8h.html">xmltrireader.h</a></li>
 </ul>
 </div><!-- contents -->
 <hr>

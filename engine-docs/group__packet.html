@@ -41,6 +41,7 @@
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
@@ -48,62 +49,83 @@
 </div><!--header-->
 <div class="contents">
 
-<p>Packet administration and some basic packet types.  
+<p><a class="el" href="classregina_1_1Packet.html" title="Represents a packet of information that may be individually edited or operated upon.">Packet</a> administration and some basic packet types.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NContainer.html">regina::NContainer</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A packet that simply contains other packets.  <a href="classregina_1_1NContainer.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Container.html">regina::Container</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A packet that simply contains other packets.  <a href="classregina_1_1Container.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structregina_1_1PacketInfo.html">regina::PacketInfo&lt; packetType &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A template that stores information about a particular type of packet.  <a href="structregina_1_1PacketInfo.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NPacket.html">regina::NPacket</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a packet of information that may be individually edited or operated upon.  <a href="classregina_1_1NPacket.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Packet.html">regina::Packet</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a packet of information that may be individually edited or operated upon.  <a href="classregina_1_1Packet.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NPacketListener.html">regina::NPacketListener</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An object that can be registered to listen for packet events.  <a href="classregina_1_1NPacketListener.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1PacketListener.html">regina::PacketListener</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An object that can be registered to listen for packet events.  <a href="classregina_1_1PacketListener.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NPDF.html">regina::NPDF</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A packet that can hold a PDF document.  <a href="classregina_1_1NPDF.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1PDF.html">regina::PDF</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A packet that can hold a <a class="el" href="classregina_1_1PDF.html" title="A packet that can hold a PDF document.">PDF</a> document.  <a href="classregina_1_1PDF.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NScript.html">regina::NScript</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A packet representing a Python script that can be run.  <a href="classregina_1_1NScript.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Script.html">regina::Script</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A packet representing a Python script that can be run.  <a href="classregina_1_1Script.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NText.html">regina::NText</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A packet representing a text string.  <a href="classregina_1_1NText.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Text.html">regina::Text</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A packet representing a text string.  <a href="classregina_1_1Text.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NXMLPacketReader.html">regina::NXMLPacketReader</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An XML element reader that reads the data for an individual packet.  <a href="classregina_1_1NXMLPacketReader.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1XMLPacketReader.html">regina::XMLPacketReader</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An XML element reader that reads the data for an individual packet.  <a href="classregina_1_1XMLPacketReader.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NXMLContainerReader.html">regina::NXMLContainerReader</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An XML packet reader that reads a single container.  <a href="classregina_1_1NXMLContainerReader.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1XMLContainerReader.html">regina::XMLContainerReader</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An XML packet reader that reads a single container.  <a href="classregina_1_1XMLContainerReader.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NXMLPDFReader.html">regina::NXMLPDFReader</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An XML packet reader that reads a single PDF packet.  <a href="classregina_1_1NXMLPDFReader.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1XMLPDFReader.html">regina::XMLPDFReader</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An XML packet reader that reads a single <a class="el" href="classregina_1_1PDF.html" title="A packet that can hold a PDF document.">PDF</a> packet.  <a href="classregina_1_1XMLPDFReader.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NXMLScriptReader.html">regina::NXMLScriptReader</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An XML packet reader that reads a single script.  <a href="classregina_1_1NXMLScriptReader.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1XMLScriptReader.html">regina::XMLScriptReader</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An XML packet reader that reads a single script.  <a href="classregina_1_1XMLScriptReader.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NXMLTextReader.html">regina::NXMLTextReader</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An XML packet reader that reads a single text packet.  <a href="classregina_1_1NXMLTextReader.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1XMLTextReader.html">regina::XMLTextReader</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An XML packet reader that reads a single text packet.  <a href="classregina_1_1XMLTextReader.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NXMLTreeResolutionTask.html">regina::NXMLTreeResolutionTask</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An individual task for resolving dangling packet references after an XML data file has been read.  <a href="classregina_1_1NXMLTreeResolutionTask.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1XMLTreeResolutionTask.html">regina::XMLTreeResolutionTask</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An individual task for resolving dangling packet references after an XML data file has been read.  <a href="classregina_1_1XMLTreeResolutionTask.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1NXMLTreeResolver.html">regina::NXMLTreeResolver</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a mechanism to resolve dangling packet references after a complete packet tree has been read from an XML data file.  <a href="classregina_1_1NXMLTreeResolver.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1XMLTreeResolver.html">regina::XMLTreeResolver</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a mechanism to resolve dangling packet references after a complete packet tree has been read from an XML data file.  <a href="classregina_1_1XMLTreeResolver.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:gaad9d413dab5c36f4a57d9ca811d24188"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__packet.html#gaad9d413dab5c36f4a57d9ca811d24188">REGINA_PACKET</a>(class_, id)</td></tr>
-<tr class="memdesc:gaad9d413dab5c36f4a57d9ca811d24188"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines various constants, types and virtual functions for a subclass of NPacket.  <a href="#gaad9d413dab5c36f4a57d9ca811d24188">More...</a><br/></td></tr>
+<tr class="memdesc:gaad9d413dab5c36f4a57d9ca811d24188"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines various constants, types and virtual functions for a subclass of Packet.  <a href="#gaad9d413dab5c36f4a57d9ca811d24188">More...</a><br/></td></tr>
 <tr class="separator:gaad9d413dab5c36f4a57d9ca811d24188"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad7b8ff3226c3356a8b73c5e46f64c268"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__packet.html#gad7b8ff3226c3356a8b73c5e46f64c268">REGINA_PACKET_FROM</a>(class_, helper)</td></tr>
 <tr class="memdesc:gad7b8ff3226c3356a8b73c5e46f64c268"><td class="mdescLeft">&#160;</td><td class="mdescRight">An alternative to REGINA_PACKET, for scenarios where the relevant PacketInfo specialisation is not visible.  <a href="#gad7b8ff3226c3356a8b73c5e46f64c268">More...</a><br/></td></tr>
 <tr class="separator:gad7b8ff3226c3356a8b73c5e46f64c268"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga4dc907cfee17707d1409b1b4e499247c"><td class="memItemLeft" align="right" valign="top">typedef Container&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__packet.html#ga4dc907cfee17707d1409b1b4e499247c">regina::NContainer</a></td></tr>
+<tr class="memdesc:ga4dc907cfee17707d1409b1b4e499247c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated typedef for backward compatibility.  <a href="#ga4dc907cfee17707d1409b1b4e499247c">More...</a><br/></td></tr>
+<tr class="separator:ga4dc907cfee17707d1409b1b4e499247c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4f47ede3cd04a3b515ae8e375497a987"><td class="memItemLeft" align="right" valign="top">typedef Packet&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__packet.html#ga4f47ede3cd04a3b515ae8e375497a987">regina::NPacket</a></td></tr>
+<tr class="memdesc:ga4f47ede3cd04a3b515ae8e375497a987"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated typedef for backward compatibility.  <a href="#ga4f47ede3cd04a3b515ae8e375497a987">More...</a><br/></td></tr>
+<tr class="separator:ga4f47ede3cd04a3b515ae8e375497a987"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga58067e865d029237d3a1e0e8c39cf29f"><td class="memItemLeft" align="right" valign="top">typedef PacketListener&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__packet.html#ga58067e865d029237d3a1e0e8c39cf29f">regina::NPacketListener</a></td></tr>
+<tr class="memdesc:ga58067e865d029237d3a1e0e8c39cf29f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated typedef for backward compatibility.  <a href="#ga58067e865d029237d3a1e0e8c39cf29f">More...</a><br/></td></tr>
+<tr class="separator:ga58067e865d029237d3a1e0e8c39cf29f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad4467bfb4bc172da71964a4b9967a04d"><td class="memItemLeft" align="right" valign="top">typedef PDF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__packet.html#gad4467bfb4bc172da71964a4b9967a04d">regina::NPDF</a></td></tr>
+<tr class="memdesc:gad4467bfb4bc172da71964a4b9967a04d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated typedef for backward compatibility.  <a href="#gad4467bfb4bc172da71964a4b9967a04d">More...</a><br/></td></tr>
+<tr class="separator:gad4467bfb4bc172da71964a4b9967a04d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga80158507a6960da75b1f1c2c35d90148"><td class="memItemLeft" align="right" valign="top">typedef Script&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__packet.html#ga80158507a6960da75b1f1c2c35d90148">regina::NScript</a></td></tr>
+<tr class="memdesc:ga80158507a6960da75b1f1c2c35d90148"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated typedef for backward compatibility.  <a href="#ga80158507a6960da75b1f1c2c35d90148">More...</a><br/></td></tr>
+<tr class="separator:ga80158507a6960da75b1f1c2c35d90148"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9581a76573ed62ddcd1623ae4963b72d"><td class="memItemLeft" align="right" valign="top">typedef Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__packet.html#ga9581a76573ed62ddcd1623ae4963b72d">regina::NText</a></td></tr>
+<tr class="memdesc:ga9581a76573ed62ddcd1623ae4963b72d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated typedef for backward compatibility.  <a href="#ga9581a76573ed62ddcd1623ae4963b72d">More...</a><br/></td></tr>
+<tr class="separator:ga9581a76573ed62ddcd1623ae4963b72d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -111,35 +133,39 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefabc7680a0895a0d0540123f9e0596b38e">regina::PACKET_CONTAINER</a> = 1, 
 <a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefa54ede7ca089949c83b103489c1c3ad57">regina::PACKET_TEXT</a> = 2, 
 <a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefa78e22e4de98fa37feba6d75c4ca1213f">regina::PACKET_TRIANGULATION</a> = 3, 
-<a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefad270155c733092aa140615ff0c2712a4">regina::PACKET_NORMALSURFACELIST</a> = 6, 
+<a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefa99315edbd085157bfad36adda33eeffc">regina::PACKET_NORMALSURFACES</a> = 6, 
 <br/>
-&#160;&#160;<a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefa44f343e9e3b4baf3b53f8943a4503f6e">regina::PACKET_SCRIPT</a> = 7, 
+&#160;&#160;<a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefad270155c733092aa140615ff0c2712a4">regina::PACKET_NORMALSURFACELIST</a> = 6, 
+<a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefa44f343e9e3b4baf3b53f8943a4503f6e">regina::PACKET_SCRIPT</a> = 7, 
 <a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefa958e5099e4f7506590d6b351a9a889cf">regina::PACKET_SURFACEFILTER</a> = 8, 
-<a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefaf646b4a24f1e3ee1d54e782e48c4af9a">regina::PACKET_ANGLESTRUCTURELIST</a> = 9, 
-<a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefa346e59a436dacb0d10922334f9e002e1">regina::PACKET_PDF</a> = 10, 
+<a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefa3d118073db391a7c5d74791bdcbddfa9">regina::PACKET_ANGLESTRUCTURES</a> = 9, 
 <br/>
-&#160;&#160;<a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefab444df98cec9d0e76eeccb966c8fc91a">regina::PACKET_DIM4TRIANGULATION</a> = 11, 
-<a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefa31bef3640812922be452e35e84d49cab">regina::PACKET_NORMALHYPERSURFACELIST</a> = 13, 
+&#160;&#160;<a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefaf646b4a24f1e3ee1d54e782e48c4af9a">regina::PACKET_ANGLESTRUCTURELIST</a> = 9, 
+<a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefa346e59a436dacb0d10922334f9e002e1">regina::PACKET_PDF</a> = 10, 
+<a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefab444df98cec9d0e76eeccb966c8fc91a">regina::PACKET_DIM4TRIANGULATION</a> = 11, 
+<a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefa69a30e6df7c39d51337e474b49cec47e">regina::PACKET_NORMALHYPERSURFACES</a> = 13, 
+<br/>
+&#160;&#160;<a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefa31bef3640812922be452e35e84d49cab">regina::PACKET_NORMALHYPERSURFACELIST</a> = 13, 
 <a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefa88a506c979fc154ed5ba34a245211cb7">regina::PACKET_DIM2TRIANGULATION</a> = 15, 
 <a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefac0835064733eb9d41e9db904afde7240">regina::PACKET_SNAPPEATRIANGULATION</a> = 16, 
+<a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefa5f0b8f982543a100097916c828cc3815">regina::PACKET_TRIANGULATION2</a> = 15, 
 <br/>
-&#160;&#160;<a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefa5f0b8f982543a100097916c828cc3815">regina::PACKET_TRIANGULATION2</a> = 15, 
-<a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefac4ccce0feddec583050b2dfe802b0e64">regina::PACKET_TRIANGULATION3</a> = 3, 
+&#160;&#160;<a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefac4ccce0feddec583050b2dfe802b0e64">regina::PACKET_TRIANGULATION3</a> = 3, 
 <a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefa511a7e4a0e8e77e4ebd9ca9ef7efedff">regina::PACKET_TRIANGULATION4</a> = 11, 
 <a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefad6af6b9c7e211662703204551c8f0a6c">regina::PACKET_TRIANGULATION5</a> = 105, 
+<a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefac241be6e856f68161d4e217b49260596">regina::PACKET_TRIANGULATION6</a> = 106, 
 <br/>
-&#160;&#160;<a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefac241be6e856f68161d4e217b49260596">regina::PACKET_TRIANGULATION6</a> = 106, 
-<a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefae75828b18b7041a6602a41f61e900c4b">regina::PACKET_TRIANGULATION7</a> = 107, 
+&#160;&#160;<a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefae75828b18b7041a6602a41f61e900c4b">regina::PACKET_TRIANGULATION7</a> = 107, 
 <a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefadac8b650c87a395064f35d8dd7139174">regina::PACKET_TRIANGULATION8</a> = 108, 
 <a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefaae3f65ac7e3e3b14c06e866e4732f04f">regina::PACKET_TRIANGULATION9</a> = 109, 
+<a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefa2e49b81db0006562994ba409db5fdbb2">regina::PACKET_TRIANGULATION10</a> = 110, 
 <br/>
-&#160;&#160;<a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefa2e49b81db0006562994ba409db5fdbb2">regina::PACKET_TRIANGULATION10</a> = 110, 
-<a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefa8239b1c5322caeb818c5dd8f3fb78ae3">regina::PACKET_TRIANGULATION11</a> = 111, 
+&#160;&#160;<a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefa8239b1c5322caeb818c5dd8f3fb78ae3">regina::PACKET_TRIANGULATION11</a> = 111, 
 <a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefa9abc4fbf3b98a845481d2d6a651c730f">regina::PACKET_TRIANGULATION12</a> = 112, 
 <a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefa2a134929dda394ce55b128b661f68a9a">regina::PACKET_TRIANGULATION13</a> = 113, 
+<a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefa7984ac7306b6a4301565b5d154daddb0">regina::PACKET_TRIANGULATION14</a> = 114, 
 <br/>
-&#160;&#160;<a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefa7984ac7306b6a4301565b5d154daddb0">regina::PACKET_TRIANGULATION14</a> = 114, 
-<a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefa0e5a2698ebebf778b6bc6209778cc3a3">regina::PACKET_TRIANGULATION15</a> = 115
+&#160;&#160;<a class="el" href="group__packet.html#gga982f45957b093a38120119066dc4cfefa0e5a2698ebebf778b6bc6209778cc3a3">regina::PACKET_TRIANGULATION15</a> = 115
 <br/>
  }</td></tr>
 <tr class="memdesc:ga982f45957b093a38120119066dc4cfef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the different types of packet that are available in Regina.  <a href="group__packet.html#ga982f45957b093a38120119066dc4cfef">More...</a><br/></td></tr>
@@ -147,12 +173,12 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga2d6a902db1b126c9ac973f971de947d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__engine.html#ga74a5f137da12842a64dce0a7c78fb3f9">REGINA_API</a> NPacket *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__packet.html#ga2d6a902db1b126c9ac973f971de947d2">regina::open</a> (const char *filename)</td></tr>
-<tr class="memdesc:ga2d6a902db1b126c9ac973f971de947d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a Regina data file, and returns the corresponding packet tree.  <a href="#ga2d6a902db1b126c9ac973f971de947d2">More...</a><br/></td></tr>
-<tr class="separator:ga2d6a902db1b126c9ac973f971de947d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabbd62ba08bb4b7f7ac90890531b22aec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__engine.html#ga74a5f137da12842a64dce0a7c78fb3f9">REGINA_API</a> NPacket *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__packet.html#gabbd62ba08bb4b7f7ac90890531b22aec">regina::open</a> (std::istream &amp;s)</td></tr>
-<tr class="memdesc:gabbd62ba08bb4b7f7ac90890531b22aec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a Regina data file from the given input stream, and returns the corresponding packet tree.  <a href="#gabbd62ba08bb4b7f7ac90890531b22aec">More...</a><br/></td></tr>
-<tr class="separator:gabbd62ba08bb4b7f7ac90890531b22aec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga964a605603a33a84e5004e9ebb0ac5ec"><td class="memItemLeft" align="right" valign="top">Packet *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__packet.html#ga964a605603a33a84e5004e9ebb0ac5ec">regina::open</a> (const char *filename)</td></tr>
+<tr class="memdesc:ga964a605603a33a84e5004e9ebb0ac5ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a Regina data file, and returns the corresponding packet tree.  <a href="#ga964a605603a33a84e5004e9ebb0ac5ec">More...</a><br/></td></tr>
+<tr class="separator:ga964a605603a33a84e5004e9ebb0ac5ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae53c0b54eaa7f029e0b0a13bb3c02675"><td class="memItemLeft" align="right" valign="top">Packet *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__packet.html#gae53c0b54eaa7f029e0b0a13bb3c02675">regina::open</a> (std::istream &amp;in)</td></tr>
+<tr class="memdesc:gae53c0b54eaa7f029e0b0a13bb3c02675"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a Regina data file from the given input stream, and returns the corresponding packet tree.  <a href="#gae53c0b54eaa7f029e0b0a13bb3c02675">More...</a><br/></td></tr>
+<tr class="separator:gae53c0b54eaa7f029e0b0a13bb3c02675"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad31b2cdd885ea449cc4abea375c5b49d"><td class="memTemplParams" colspan="2">template&lt;typename FunctionObject , typename... Args&gt; </td></tr>
 <tr class="memitem:gad31b2cdd885ea449cc4abea375c5b49d"><td class="memTemplItemLeft" align="right" valign="top">ReturnsTraits&lt; FunctionObject &gt;<br class="typebreak"/>
 ::ReturnType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__packet.html#gad31b2cdd885ea449cc4abea375c5b49d">regina::forPacket</a> (PacketType packetType, FunctionObject &amp;&amp;func, typename ReturnsTraits&lt; FunctionObject &gt;::ReturnType defaultReturn, Args &amp;&amp;...args)</td></tr>
@@ -165,7 +191,7 @@ Functions</h2></td></tr>
 <tr class="separator:gaa00c1ec75e4aa3668647264a012edd82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Packet administration and some basic packet types. </p>
+<p><a class="el" href="classregina_1_1Packet.html" title="Represents a packet of information that may be individually edited or operated upon.">Packet</a> administration and some basic packet types. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="gaad9d413dab5c36f4a57d9ca811d24188"></a>
 <div class="memitem">
@@ -192,7 +218,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keyword">public</span>: \</div>
 <div class="line">        static constexpr <span class="keyword">const</span> <a class="code" href="group__packet.html#ga982f45957b093a38120119066dc4cfef" title="Represents the different types of packet that are available in Regina.">PacketType</a> typeID = id; \</div>
-<div class="line">        REGINA_DEPRECATED <span class="keyword">static</span> constexpr <span class="keyword">const</span> <a class="code" href="group__packet.html#ga982f45957b093a38120119066dc4cfef" title="Represents the different types of packet that are available in Regina.">PacketType</a> packetType = id; \</div>
 <div class="line">        inline <span class="keyword">virtual</span> <a class="code" href="group__packet.html#ga982f45957b093a38120119066dc4cfef" title="Represents the different types of packet that are available in Regina.">PacketType</a> type()<span class="keyword"> const </span>{ \</div>
 <div class="line">            return id; \</div>
 <div class="line">        } \</div>
@@ -200,17 +225,17 @@ Functions</h2></td></tr>
 <div class="line">            return PacketInfo&lt;id&gt;::name(); \</div>
 <div class="line">        }</div>
 </div><!-- fragment -->
-<p>Defines various constants, types and virtual functions for a subclass of NPacket. </p>
-<p>Every subclass of NPacket <em>must</em> include REGINA_PACKET at the beginning of the class definition.</p>
+<p>Defines various constants, types and virtual functions for a subclass of Packet. </p>
+<p>Every subclass of Packet <em>must</em> include REGINA_PACKET at the beginning of the class definition.</p>
 <p>This macro provides the class with:</p>
 <ul>
-<li>a compile-time constant <em>typeID</em> and a deprecated compile-time constant <em>packetType</em>, both equal to the corresponding PacketType constant;</li>
-<li>declarations and implementations of the virtual functions NPacket::type() and NPacket::typeName().</li>
+<li>a compile-time constant <em>typeID</em> that is equal to the corresponding PacketType constant;</li>
+<li>declarations and implementations of the virtual functions Packet::type() and Packet::typeName().</li>
 </ul>
 <p>The implementation of this macro relies on the helper class PacketInfo&lt;id&gt;. If the relevant specialisation of PacketInfo is not visible (as is the case, for instance, with templated packet classes such as <a class="el" href="classregina_1_1Triangulation.html">Triangulation&lt;dim&gt;</a>), then you may replace REGINA_PACKET with the macro REGINA_PACKET_FROM, which allows you to provide an alternative implementation.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">class_</td><td>the name of this descendant class of NPacket. </td></tr>
+    <tr><td class="paramname">class_</td><td>the name of this descendant class of Packet. </td></tr>
     <tr><td class="paramname">id</td><td>the corresponding PacketType constant. </td></tr>
   </table>
   </dd>
@@ -243,7 +268,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keyword">public</span>: \</div>
 <div class="line">        static constexpr <span class="keyword">const</span> <a class="code" href="group__packet.html#ga982f45957b093a38120119066dc4cfef" title="Represents the different types of packet that are available in Regina.">PacketType</a> typeID = helper::typeID; \</div>
-<div class="line">        static constexpr <span class="keyword">const</span> <a class="code" href="group__packet.html#ga982f45957b093a38120119066dc4cfef" title="Represents the different types of packet that are available in Regina.">PacketType</a> packetType = helper::typeID; \</div>
 <div class="line">        inline <span class="keyword">virtual</span> <a class="code" href="group__packet.html#ga982f45957b093a38120119066dc4cfef" title="Represents the different types of packet that are available in Regina.">PacketType</a> type()<span class="keyword"> const </span>{ \</div>
 <div class="line">            return helper::typeID; \</div>
 <div class="line">        } \</div>
@@ -253,18 +277,115 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 <p>An alternative to REGINA_PACKET, for scenarios where the relevant PacketInfo specialisation is not visible. </p>
 <p>This is intended for use with template classes such as <a class="el" href="classregina_1_1Triangulation.html">Triangulation&lt;dim&gt;</a>, where the corresponding PacketInfo specialisations are defined in a separate header to avoid triggering unwanted instantiations of every possible Triangulation class.</p>
-<p>Like REGINA_PACKET, this macro should be placed in the definition of the relevant subclass of NPacket, and in return it provides the same constants, types and virtual functions that REGINA_PACKET does. However, unlike REGINA_PACKET, it does not rely on PacketInfo for its implementation. Instead it calls upon the given class <em>helper</em>, which must provide:</p>
+<p>Like REGINA_PACKET, this macro should be placed in the definition of the relevant subclass of Packet, and in return it provides the same constants, types and virtual functions that REGINA_PACKET does. However, unlike REGINA_PACKET, it does not rely on PacketInfo for its implementation. Instead it calls upon the given class <em>helper</em>, which must provide:</p>
 <ul>
 <li>a compile-time constant <em>typeID</em> which is equal to the PacketType constant corresponding to this packet class;</li>
 <li>a static function name() that returns a string giving the human-readable name of this packet type.</li>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">class_</td><td>the name of this descendant class of NPacket. </td></tr>
+    <tr><td class="paramname">class_</td><td>the name of this descendant class of Packet. </td></tr>
     <tr><td class="paramname">helper</td><td>the helper class that provides the implementation details, as described above. </td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="ga4dc907cfee17707d1409b1b4e499247c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Container <a class="el" href="group__packet.html#ga4dc907cfee17707d1409b1b4e499247c">regina::NContainer</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Deprecated typedef for backward compatibility. </p>
+<p>This typedef will be removed in a future release of Regina.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000083">Deprecated:</a></b></dt><dd>The class NContainer has now been renamed to <a class="el" href="classregina_1_1Container.html" title="A packet that simply contains other packets.">Container</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga4f47ede3cd04a3b515ae8e375497a987"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Packet <a class="el" href="group__packet.html#ga4f47ede3cd04a3b515ae8e375497a987">regina::NPacket</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Deprecated typedef for backward compatibility. </p>
+<p>This typedef will be removed in a future release of Regina.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000084">Deprecated:</a></b></dt><dd>The class NPacket has now been renamed to <a class="el" href="classregina_1_1Packet.html" title="Represents a packet of information that may be individually edited or operated upon.">Packet</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga58067e865d029237d3a1e0e8c39cf29f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef PacketListener <a class="el" href="group__packet.html#ga58067e865d029237d3a1e0e8c39cf29f">regina::NPacketListener</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Deprecated typedef for backward compatibility. </p>
+<p>This typedef will be removed in a future release of Regina.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000085">Deprecated:</a></b></dt><dd>The class NPacketListener has now been renamed to <a class="el" href="classregina_1_1PacketListener.html" title="An object that can be registered to listen for packet events.">PacketListener</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gad4467bfb4bc172da71964a4b9967a04d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef PDF <a class="el" href="group__packet.html#gad4467bfb4bc172da71964a4b9967a04d">regina::NPDF</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Deprecated typedef for backward compatibility. </p>
+<p>This typedef will be removed in a future release of Regina.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000092">Deprecated:</a></b></dt><dd>The class NPDF has now been renamed to <a class="el" href="classregina_1_1PDF.html" title="A packet that can hold a PDF document.">PDF</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga80158507a6960da75b1f1c2c35d90148"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Script <a class="el" href="group__packet.html#ga80158507a6960da75b1f1c2c35d90148">regina::NScript</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Deprecated typedef for backward compatibility. </p>
+<p>This typedef will be removed in a future release of Regina.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000093">Deprecated:</a></b></dt><dd>The class NScript has now been renamed to <a class="el" href="classregina_1_1Script.html" title="A packet representing a Python script that can be run.">Script</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga9581a76573ed62ddcd1623ae4963b72d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Text <a class="el" href="group__packet.html#ga9581a76573ed62ddcd1623ae4963b72d">regina::NText</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Deprecated typedef for backward compatibility. </p>
+<p>This typedef will be removed in a future release of Regina.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000094">Deprecated:</a></b></dt><dd>The class NText has now been renamed to <a class="el" href="classregina_1_1Text.html" title="A packet representing a text string.">Text</a>. </dd></dl>
 
 </div>
 </div>
@@ -283,55 +404,64 @@ Functions</h2></td></tr>
 <p>IDs 0-9999 are reserved for future use by Regina. If you are extending Regina to include your own packet type, you should choose an ID &gt;= 10000. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="gga982f45957b093a38120119066dc4cfefabc7680a0895a0d0540123f9e0596b38e"></a>PACKET_CONTAINER</em>&nbsp;</td><td class="fielddoc">
-<p>Represents a container packet, of class <a class="el" href="classregina_1_1NContainer.html" title="A packet that simply contains other packets.">NContainer</a>. </p>
+<p>Represents a container packet, of class <a class="el" href="classregina_1_1Container.html" title="A packet that simply contains other packets.">Container</a>. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga982f45957b093a38120119066dc4cfefa54ede7ca089949c83b103489c1c3ad57"></a>PACKET_TEXT</em>&nbsp;</td><td class="fielddoc">
-<p>Represents a text packet, of class <a class="el" href="classregina_1_1NText.html" title="A packet representing a text string.">NText</a>. </p>
+<p>Represents a text packet, of class <a class="el" href="classregina_1_1Text.html" title="A packet representing a text string.">Text</a>. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga982f45957b093a38120119066dc4cfefa78e22e4de98fa37feba6d75c4ca1213f"></a>PACKET_TRIANGULATION</em>&nbsp;</td><td class="fielddoc">
-<p>Represents a 3-dimensional triangulation, of class <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html" title="Represents a 3-dimensional triangulation, typically of a 3-manifold.">Triangulation&lt;3&gt;</a> (or equivalently, NTriangulation). </p>
-<p>This is identical to the constant PACKET_TRIANGULATION3. </p>
+<p>Deprecated alias for PACKET_TRIANGULATION3. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000086">Deprecated:</a></b></dt><dd>This constant has been renamed to PACKET_TRIANGULATION3. </dd></dl>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="gga982f45957b093a38120119066dc4cfefa99315edbd085157bfad36adda33eeffc"></a>PACKET_NORMALSURFACES</em>&nbsp;</td><td class="fielddoc">
+<p>Represents a normal surface list, of class <a class="el" href="classregina_1_1NormalSurfaces.html" title="A packet representing a collection of normal surfaces in a 3-manifold.">NormalSurfaces</a>. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga982f45957b093a38120119066dc4cfefad270155c733092aa140615ff0c2712a4"></a>PACKET_NORMALSURFACELIST</em>&nbsp;</td><td class="fielddoc">
-<p>Represents a normal surface list, of class <a class="el" href="classregina_1_1NNormalSurfaceList.html" title="A packet representing a collection of normal surfaces in a 3-manifold.">NNormalSurfaceList</a>. </p>
+<p>Deprecated alias for PACKET_NORMALSURFACES. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000087">Deprecated:</a></b></dt><dd>This constant has been renamed to PACKET_NORMALSURFACES. </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga982f45957b093a38120119066dc4cfefa44f343e9e3b4baf3b53f8943a4503f6e"></a>PACKET_SCRIPT</em>&nbsp;</td><td class="fielddoc">
-<p>Represents a script packet, of class <a class="el" href="classregina_1_1NScript.html" title="A packet representing a Python script that can be run.">NScript</a>. </p>
+<p>Represents a script packet, of class <a class="el" href="classregina_1_1Script.html" title="A packet representing a Python script that can be run.">Script</a>. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga982f45957b093a38120119066dc4cfefa958e5099e4f7506590d6b351a9a889cf"></a>PACKET_SURFACEFILTER</em>&nbsp;</td><td class="fielddoc">
-<p>Represents a normal surface filter, of class <a class="el" href="classregina_1_1NSurfaceFilter.html" title="A packet that accepts or rejects normal surfaces.">NSurfaceFilter</a> or one of its descendant classes. </p>
+<p>Represents a normal surface filter, of class <a class="el" href="classregina_1_1SurfaceFilter.html" title="A packet that accepts or rejects normal surfaces.">SurfaceFilter</a> or one of its descendant classes. </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="gga982f45957b093a38120119066dc4cfefa3d118073db391a7c5d74791bdcbddfa9"></a>PACKET_ANGLESTRUCTURES</em>&nbsp;</td><td class="fielddoc">
+<p>Represents an angle structure list, of class <a class="el" href="classregina_1_1AngleStructures.html" title="A packet representing a collection of angle structures on a triangulation.">AngleStructures</a>. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga982f45957b093a38120119066dc4cfefaf646b4a24f1e3ee1d54e782e48c4af9a"></a>PACKET_ANGLESTRUCTURELIST</em>&nbsp;</td><td class="fielddoc">
-<p>Represents an angle structure list, of class <a class="el" href="classregina_1_1NAngleStructureList.html" title="A packet representing a collection of angle structures on a triangulation.">NAngleStructureList</a>. </p>
+<p>Deprecated alias for PACKET_ANGLESTRUCTURES. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000088">Deprecated:</a></b></dt><dd>This constant has been renamed to PACKET_ANGLESTRUCTURES. </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga982f45957b093a38120119066dc4cfefa346e59a436dacb0d10922334f9e002e1"></a>PACKET_PDF</em>&nbsp;</td><td class="fielddoc">
-<p>Represents a PDF document, of class <a class="el" href="classregina_1_1NPDF.html" title="A packet that can hold a PDF document.">NPDF</a>. </p>
+<p>Represents a <a class="el" href="classregina_1_1PDF.html" title="A packet that can hold a PDF document.">PDF</a> document, of class <a class="el" href="classregina_1_1PDF.html" title="A packet that can hold a PDF document.">PDF</a>. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga982f45957b093a38120119066dc4cfefab444df98cec9d0e76eeccb966c8fc91a"></a>PACKET_DIM4TRIANGULATION</em>&nbsp;</td><td class="fielddoc">
-<p>Represents a 4-dimensional triangulation, of class <a class="el" href="classregina_1_1Triangulation_3_014_01_4.html" title="Represents a 4-dimensional triangulation, typically of a 4-manifold.">Triangulation&lt;4&gt;</a> (or equivalently, Dim4Triangulation). </p>
-<p>This is identical to the constant PACKET_TRIANGULATION4. </p>
+<p>Deprecated alias for PACKET_TRIANGULATION4. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000089">Deprecated:</a></b></dt><dd>This constant has been renamed to PACKET_TRIANGULATION4. </dd></dl>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="gga982f45957b093a38120119066dc4cfefa69a30e6df7c39d51337e474b49cec47e"></a>PACKET_NORMALHYPERSURFACES</em>&nbsp;</td><td class="fielddoc">
+<p>Represents a normal hypersurface list, of class <a class="el" href="classregina_1_1NormalHypersurfaces.html" title="A packet representing a collection of normal hypersurfaces in a 4-manifold triangulation.">NormalHypersurfaces</a>. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga982f45957b093a38120119066dc4cfefa31bef3640812922be452e35e84d49cab"></a>PACKET_NORMALHYPERSURFACELIST</em>&nbsp;</td><td class="fielddoc">
-<p>Represents a normal hypersurface list, of class <a class="el" href="classregina_1_1NNormalHypersurfaceList.html" title="A packet representing a collection of normal hypersurfaces in a 4-manifold triangulation.">NNormalHypersurfaceList</a>. </p>
+<p>Deprecated alias for PACKET_NORMALHYPERSURFACES. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000090">Deprecated:</a></b></dt><dd>This constant has been renamed to PACKET_NORMALHYPERSURFACES. </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga982f45957b093a38120119066dc4cfefa88a506c979fc154ed5ba34a245211cb7"></a>PACKET_DIM2TRIANGULATION</em>&nbsp;</td><td class="fielddoc">
-<p>Represents a 2-dimensional triangulation, of class <a class="el" href="classregina_1_1Triangulation_3_012_01_4.html" title="Represents a 2-manifold triangulation.">Triangulation&lt;2&gt;</a> (or equivalently, Dim2Triangulation). </p>
-<p>This is identical to the constant PACKET_TRIANGULATION2. </p>
+<p>Deprecated alias for PACKET_TRIANGULATION2. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000091">Deprecated:</a></b></dt><dd>This constant has been renamed to PACKET_TRIANGULATION2. </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga982f45957b093a38120119066dc4cfefac0835064733eb9d41e9db904afde7240"></a>PACKET_SNAPPEATRIANGULATION</em>&nbsp;</td><td class="fielddoc">
-<p>Represents a triangulation in the embedded SnapPea kernel, of class <a class="el" href="classregina_1_1NSnapPeaTriangulation.html" title="Offers direct access to the SnapPea kernel from within Regina.">NSnapPeaTriangulation</a>. </p>
+<p>Represents a triangulation in the embedded SnapPea kernel, of class <a class="el" href="classregina_1_1SnapPeaTriangulation.html" title="Offers direct access to the SnapPea kernel from within Regina.">SnapPeaTriangulation</a>. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga982f45957b093a38120119066dc4cfefa5f0b8f982543a100097916c828cc3815"></a>PACKET_TRIANGULATION2</em>&nbsp;</td><td class="fielddoc">
-<p>Represents a 2-dimensional triangulation, of class <a class="el" href="classregina_1_1Triangulation_3_012_01_4.html" title="Represents a 2-manifold triangulation.">Triangulation&lt;2&gt;</a> (or equivalently, Dim2Triangulation). </p>
-<p>This is identical to the constant PACKET_DIM2TRIANGULATION. </p>
+<p>Represents a 2-dimensional triangulation, of class <a class="el" href="classregina_1_1Triangulation_3_012_01_4.html" title="Represents a 2-manifold triangulation.">Triangulation&lt;2&gt;</a>. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga982f45957b093a38120119066dc4cfefac4ccce0feddec583050b2dfe802b0e64"></a>PACKET_TRIANGULATION3</em>&nbsp;</td><td class="fielddoc">
-<p>Represents a 3-dimensional triangulation, of class <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html" title="Represents a 3-dimensional triangulation, typically of a 3-manifold.">Triangulation&lt;3&gt;</a> (or equivalently, NTriangulation). </p>
-<p>This is identical to the constant PACKET_TRIANGULATION. </p>
+<p>Represents a 3-dimensional triangulation, of class <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html" title="Represents a 3-dimensional triangulation, typically of a 3-manifold.">Triangulation&lt;3&gt;</a>. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga982f45957b093a38120119066dc4cfefa511a7e4a0e8e77e4ebd9ca9ef7efedff"></a>PACKET_TRIANGULATION4</em>&nbsp;</td><td class="fielddoc">
-<p>Represents a 4-dimensional triangulation, of class <a class="el" href="classregina_1_1Triangulation_3_014_01_4.html" title="Represents a 4-dimensional triangulation, typically of a 4-manifold.">Triangulation&lt;4&gt;</a> (or equivalently, Dim4Triangulation). </p>
-<p>This is identical to the constant PACKET_DIM4TRIANGULATION. </p>
+<p>Represents a 4-dimensional triangulation, of class <a class="el" href="classregina_1_1Triangulation_3_014_01_4.html" title="Represents a 4-dimensional triangulation, typically of a 4-manifold.">Triangulation&lt;4&gt;</a>. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga982f45957b093a38120119066dc4cfefad6af6b9c7e211662703204551c8f0a6c"></a>PACKET_TRIANGULATION5</em>&nbsp;</td><td class="fielddoc">
 <p>Represents a 5-dimensional triangulation, of class Triangulation&lt;5&gt;. </p>
@@ -480,12 +610,12 @@ template&lt;typename FunctionObject , typename... Args&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ga2d6a902db1b126c9ac973f971de947d2"></a>
+<a class="anchor" id="ga964a605603a33a84e5004e9ebb0ac5ec"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__engine.html#ga74a5f137da12842a64dce0a7c78fb3f9">REGINA_API</a> NPacket* regina::open </td>
+          <td class="memname">Packet* regina::open </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>filename</em></td><td>)</td>
@@ -498,7 +628,7 @@ template&lt;typename FunctionObject , typename... Args&gt; </div>
 <p>This uses Regina's native XML file format; it does not matter whether the XML file is compressed or uncompressed.</p>
 <p>If the file could not be opened or the top-level packet in the tree could not be read, this routine will return 0. If some packet deeper within the tree could not be read then that particular packet (and its descendants, if any) will simply be ignored.</p>
 <dl class="section user"><dt>Internationalisation:</dt><dd>This routine makes no assumptions about the <a class="el" href="i18n.html">character encoding</a> used in the given file <em>name</em>, and simply passes it through unchanged to low-level C/C++ file I/O routines.</dd></dl>
-<dl class="section user"><dt>Python:</dt><dd>This function is not automatically imported into the global namespace when running regina-python or when opening a Python console in the graphical user interface. This is to avoid overriding Python's own built-in <a class="el" href="group__packet.html#ga2d6a902db1b126c9ac973f971de947d2" title="Reads a Regina data file, and returns the corresponding packet tree.">open()</a> function. You can access Regina's <a class="el" href="group__packet.html#ga2d6a902db1b126c9ac973f971de947d2" title="Reads a Regina data file, and returns the corresponding packet tree.">open()</a> function by calling <code><a class="el" href="group__packet.html#ga2d6a902db1b126c9ac973f971de947d2" title="Reads a Regina data file, and returns the corresponding packet tree.">regina.open()</a></code>.</dd></dl>
+<dl class="section user"><dt>Python:</dt><dd>This function is not automatically imported into the global namespace when running regina-python or when opening a Python console in the graphical user interface. This is to avoid overriding Python's own built-in <a class="el" href="group__packet.html#ga964a605603a33a84e5004e9ebb0ac5ec" title="Reads a Regina data file, and returns the corresponding packet tree.">open()</a> function. You can access Regina's <a class="el" href="group__packet.html#ga964a605603a33a84e5004e9ebb0ac5ec" title="Reads a Regina data file, and returns the corresponding packet tree.">open()</a> function by calling <code><a class="el" href="group__packet.html#ga964a605603a33a84e5004e9ebb0ac5ec" title="Reads a Regina data file, and returns the corresponding packet tree.">regina.open()</a></code>.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>the pathname of the file to read from. </td></tr>
@@ -509,15 +639,15 @@ template&lt;typename FunctionObject , typename... Args&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="gabbd62ba08bb4b7f7ac90890531b22aec"></a>
+<a class="anchor" id="gae53c0b54eaa7f029e0b0a13bb3c02675"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__engine.html#ga74a5f137da12842a64dce0a7c78fb3f9">REGINA_API</a> NPacket* regina::open </td>
+          <td class="memname">Packet* regina::open </td>
           <td>(</td>
           <td class="paramtype">std::istream &amp;&#160;</td>
-          <td class="paramname"><em>s</em></td><td>)</td>
+          <td class="paramname"><em>in</em></td><td>)</td>
           <td></td>
         </tr>
       </table>

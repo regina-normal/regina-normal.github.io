@@ -43,130 +43,126 @@
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><dl class="reflist">
-<dt><a class="anchor" id="_todo000029"></a>File <a class="el" href="matrixops_8h.html">matrixops.h</a>  </dt>
+<dt><a class="anchor" id="_todo000026"></a>File <a class="el" href="matrixops_8h.html">matrixops.h</a>  </dt>
 <dd><em>Feature (long-term):</em> Add a routine to find the rank of an integer matrix; use this to show the rank of the matching equations.  </dd>
 <dt><a class="anchor" id="_todo000016"></a>Namespace <a class="el" href="namespaceregina.html">regina</a>  </dt>
 <dd><p class="startdd"><em>Bug:</em> Derive from boost::noncopyable where appropriate. </p>
 <p class="enddd"><em>Feature (long-term):</em> Enhance the test suite for the calculation engine.  </p>
 </dd>
-<dt><a class="anchor" id="_todo000017"></a>Member <a class="el" href="classregina_1_1detail_1_1FacetPairingBase.html#a772451072af1e4e27c39115688d79ced">regina::detail::FacetPairingBase&lt; dim &gt;::findAllPairings</a>  (size_t nSimplices, NBoolSet boundary, int nBdryFacets, Use use, void *useArgs=0)</dt>
+<dt><a class="anchor" id="_todo000001"></a>Class <a class="el" href="classregina_1_1AbelianGroup.html">regina::AbelianGroup</a>  </dt>
+<dd><em>Optimise (long-term):</em> Look at using sparse matrices for storage of SNF and the like.  </dd>
+<dt><a class="anchor" id="_todo000051"></a>Class <a class="el" href="classregina_1_1Bitmask.html">regina::Bitmask</a>  </dt>
+<dd><em>Optimise:</em> Insist that sizeof(Piece) is a power of two, and replace expensive division/mod operations with cheap bit operations. </dd>
+<dt><a class="anchor" id="_todo000046"></a>Member <a class="el" href="classregina_1_1detail_1_1FacetPairingBase.html#af37845787a6a80399160c535b9344d08">regina::detail::FacetPairingBase&lt; dim &gt;::findAllPairings</a>  (size_t nSimplices, BoolSet boundary, int nBdryFacets, Use use, void *useArgs=0)</dt>
 <dd><p class="startdd"><em>Optimise (long-term):</em> When generating facet pairings, do some checking to eliminate cases in which simplex (<em>k</em> &gt; 0) can be swapped with simplex 0 to produce a smaller representation of the same pairing. </p>
 <p class="enddd"><em>Feature:</em> Allow cancellation of facet pairing generation. </p>
 </dd>
-<dt><a class="anchor" id="_todo000018"></a>Member <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a12f9aeb3cd023425abe5642deb8b8a27">regina::detail::TriangulationBase&lt; int &gt;::isIsomorphicTo</a>  (const <a class="el" href="classregina_1_1Triangulation.html">Triangulation&lt; dim &gt;</a> &amp;other) const </dt>
+<dt><a class="anchor" id="_todo000047"></a>Member <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a12f9aeb3cd023425abe5642deb8b8a27">regina::detail::TriangulationBase&lt; int &gt;::isIsomorphicTo</a>  (const <a class="el" href="classregina_1_1Triangulation.html">Triangulation&lt; dim &gt;</a> &amp;other) const </dt>
 <dd><em>Optimise:</em> Improve the complexity by choosing a simplex mapping from each component and following gluings to determine the others. </dd>
-<dt><a class="anchor" id="_todo000013"></a>Member <a class="el" href="classregina_1_1Dim2GluingPermSearcher.html#a1490cb1e22219f4943c79be34386d1f6">regina::Dim2GluingPermSearcher::runSearch</a>  (long maxDepth=-1)</dt>
-<dd><em>Feature:</em> Allow cancellation of permutation set generation. </dd>
-<dt><a class="anchor" id="_todo000014"></a>Member <a class="el" href="classregina_1_1Dim4GluingPermSearcher.html#a1876178ed3131a538bfeec096f2ff67e">regina::Dim4GluingPermSearcher::runSearch</a>  (long maxDepth=-1)</dt>
-<dd><em>Feature:</em> Allow cancellation of permutation set generation. </dd>
-<dt><a class="anchor" id="_todo000034"></a>Member <a class="el" href="group__split.html#gac65a7484adb517c2ab545503d72856f8">regina::formSigCensus</a>  (unsigned order, UseSignature use, void *useArgs=0)</dt>
+<dt><a class="anchor" id="_todo000033"></a>Class <a class="el" href="classregina_1_1DiscSetTet.html">regina::DiscSetTet</a>  </dt>
+<dd><em>Bug (long-term):</em> Have some error flag so we can barf politely if the number of normal discs of a given type does not fit into an <code>unsigned long</code>. See how this affects DiscSetTetData also.  </dd>
+<dt><a class="anchor" id="_todo000031"></a>Member <a class="el" href="group__split.html#ga0cca690bab3b21dc7430fd89ffff3494">regina::formSigCensus</a>  (unsigned order, UseSignature use, void *useArgs=0)</dt>
 <dd><em>Feature:</em> Add support for symbols of differing case. </dd>
-<dt><a class="anchor" id="_todo000001"></a>Class <a class="el" href="classregina_1_1NAbelianGroup.html">regina::NAbelianGroup</a>  </dt>
-<dd><em>Optimise (long-term):</em> Look at using sparse matrices for storage of SNF and the like.  </dd>
-<dt><a class="anchor" id="_todo000053"></a>Class <a class="el" href="classregina_1_1NBitmask.html">regina::NBitmask</a>  </dt>
-<dd><em>Optimise:</em> Insist that sizeof(Piece) is a power of two, and replace expensive division/mod operations with cheap bit operations. </dd>
-<dt><a class="anchor" id="_todo000036"></a>Class <a class="el" href="classregina_1_1NDiscSetTet.html">regina::NDiscSetTet</a>  </dt>
-<dd><em>Bug (long-term):</em> Have some error flag so we can barf politely if the number of normal discs of a given type does not fit into an <code>unsigned long</code>. See how this affects NDiscSetTetData also.  </dd>
-<dt><a class="anchor" id="_todo000015"></a>Member <a class="el" href="classregina_1_1NGluingPermSearcher.html#ac2a4a386a1eb0c1bed660297d9eaa94f">regina::NGluingPermSearcher::runSearch</a>  (long maxDepth=-1)</dt>
+<dt><a class="anchor" id="_todo000013"></a>Member <a class="el" href="classregina_1_1GluingPermSearcher_3_012_01_4.html#a8b8e405571d84d85002ffe55a40726db">regina::GluingPermSearcher&lt; 2 &gt;::runSearch</a>  (long maxDepth=-1)</dt>
 <dd><em>Feature:</em> Allow cancellation of permutation set generation. </dd>
-<dt><a class="anchor" id="_todo000024"></a>Class <a class="el" href="classregina_1_1NGraphLoop.html">regina::NGraphLoop</a>  </dt>
+<dt><a class="anchor" id="_todo000014"></a>Member <a class="el" href="classregina_1_1GluingPermSearcher_3_013_01_4.html#a5e4d7126bf7096e21c92134b59698aea">regina::GluingPermSearcher&lt; 3 &gt;::runSearch</a>  (long maxDepth=-1)</dt>
+<dd><em>Feature:</em> Allow cancellation of permutation set generation. </dd>
+<dt><a class="anchor" id="_todo000015"></a>Member <a class="el" href="classregina_1_1GluingPermSearcher_3_014_01_4.html#a3a33270bfb8b3c36aecaa3cc65422b37">regina::GluingPermSearcher&lt; 4 &gt;::runSearch</a>  (long maxDepth=-1)</dt>
+<dd><em>Feature:</em> Allow cancellation of permutation set generation. </dd>
+<dt><a class="anchor" id="_todo000021"></a>Class <a class="el" href="classregina_1_1GraphLoop.html">regina::GraphLoop</a>  </dt>
 <dd><em>Optimise:</em> Speed up homology calculations involving orientable base spaces by adding rank afterwards, instead of adding generators for genus into the presentation matrix.  </dd>
-<dt><a class="anchor" id="_todo000025"></a>Class <a class="el" href="classregina_1_1NGraphPair.html">regina::NGraphPair</a>  </dt>
+<dt><a class="anchor" id="_todo000022"></a>Class <a class="el" href="classregina_1_1GraphPair.html">regina::GraphPair</a>  </dt>
 <dd><em>Optimise:</em> Speed up homology calculations involving orientable base spaces by adding rank afterwards, instead of adding generators for genus into the presentation matrix.  </dd>
-<dt><a class="anchor" id="_todo000026"></a>Class <a class="el" href="classregina_1_1NGraphTriple.html">regina::NGraphTriple</a>  </dt>
+<dt><a class="anchor" id="_todo000023"></a>Class <a class="el" href="classregina_1_1GraphTriple.html">regina::GraphTriple</a>  </dt>
 <dd><em>Optimise:</em> Speed up homology calculations involving orientable base spaces by adding rank afterwards, instead of adding generators for genus into the presentation matrix.  </dd>
-<dt><a class="anchor" id="_todo000003"></a>Member <a class="el" href="classregina_1_1NGroupExpression.html#ac9af77a433d9ea0fe9b1465d2cfee328">regina::NGroupExpression::relabellingsThisToOther</a>  (const NGroupExpression &amp;other, bool cyclic=false) const </dt>
+<dt><a class="anchor" id="_todo000003"></a>Member <a class="el" href="classregina_1_1GroupExpression.html#adb857be545baea7461d1fa85d66b1d7c">regina::GroupExpression::relabellingsThisToOther</a>  (const GroupExpression &amp;other, bool cyclic=false) const </dt>
 <dd>Change this to use less heavyweight types and less deep copying. </dd>
-<dt><a class="anchor" id="_todo000002"></a>Class <a class="el" href="classregina_1_1NGroupPresentation.html">regina::NGroupPresentation</a>  </dt>
-<dd>Let's make intelligent simplify a tad more intelligent, and the GUI call a bit more safe. Perhaps parallelize the GUI call, and give users parameters to ensure it won't crash the computer. Also look at the FPGroup package. We should also have a simple way of creating NGroupPresentation objects directly from text strings. We would like to have something like NGroupPresentation( numGens, "abAAB", "bccd" ) etc., with arbitrary numbers of relators. Maybe std::tuple. Or "variadic templates"?  </dd>
-<dt><a class="anchor" id="_todo000006"></a>Member <a class="el" href="classregina_1_1NGroupPresentation.html#af69ddfa96721b8eb15936143b5b48c78">regina::NGroupPresentation::prettyRewritingDetail</a>  ()</dt>
+<dt><a class="anchor" id="_todo000002"></a>Class <a class="el" href="classregina_1_1GroupPresentation.html">regina::GroupPresentation</a>  </dt>
+<dd>Let's make intelligent simplify a tad more intelligent, and the GUI call a bit more safe. Perhaps parallelize the GUI call, and give users parameters to ensure it won't crash the computer. Also look at the FPGroup package. We should also have a simple way of creating GroupPresentation objects directly from text strings. We would like to have something like GroupPresentation( numGens, "abAAB", "bccd" ) etc., with arbitrary numbers of relators. Maybe std::tuple. Or "variadic templates"?  </dd>
+<dt><a class="anchor" id="_todo000006"></a>Member <a class="el" href="classregina_1_1GroupPresentation.html#ab33c241cd3b0f6bd18e64217cbcd56ae">regina::GroupPresentation::prettyRewritingDetail</a>  ()</dt>
 <dd>As a final step, make elementary simplifications to aid in seeing standard relators like commutators. </dd>
-<dt><a class="anchor" id="_todo000005"></a>Member <a class="el" href="classregina_1_1NGroupPresentation.html#a8bd470a4000d01766581a865cf2bfcdf">regina::NGroupPresentation::recogniseGroup</a>  (bool moreUtf8=false) const </dt>
+<dt><a class="anchor" id="_todo000005"></a>Member <a class="el" href="classregina_1_1GroupPresentation.html#af14c42dd826af940fa32ba5f3878b942">regina::GroupPresentation::recogniseGroup</a>  (bool moreUtf8=false) const </dt>
 <dd><em>Feature (long-term):</em> Make this recognition more effective. </dd>
-<dt><a class="anchor" id="_todo000004"></a>Member <a class="el" href="classregina_1_1NGroupPresentation.html#aa05088ef75d599f680894cd1cbd67520">regina::NGroupPresentation::smallCancellationDetail</a>  ()</dt>
+<dt><a class="anchor" id="_todo000004"></a>Member <a class="el" href="classregina_1_1GroupPresentation.html#af5e18bdc3cc36fee22e8b3fd3a6d7572">regina::GroupPresentation::smallCancellationDetail</a>  ()</dt>
 <dd><em>Optimise (long-term):</em> This routine could use some small tweaks - recognition of utility of some score==0 moves, such as commutators, for example. </dd>
-<dt><a class="anchor" id="_todo000007"></a>Class <a class="el" href="classregina_1_1NHomGroupPresentation.html">regina::NHomGroupPresentation</a>  </dt>
+<dt><a class="anchor" id="_todo000007"></a>Class <a class="el" href="classregina_1_1HomGroupPresentation.html">regina::HomGroupPresentation</a>  </dt>
 <dd>Add a routine to attempt to verify validity of homomorphism.  </dd>
-<dt><a class="anchor" id="_todo000009"></a>Class <a class="el" href="classregina_1_1NHomMarkedAbelianGroup.html">regina::NHomMarkedAbelianGroup</a>  </dt>
+<dt><a class="anchor" id="_todo000009"></a>Class <a class="el" href="classregina_1_1HomMarkedAbelianGroup.html">regina::HomMarkedAbelianGroup</a>  </dt>
 <dd><p class="startdd"><em>Optimise (long-term):</em> preImageOf in CC and SNF coordinates. This routine would return a generating list of elements in the preimage, thought of as an affine subspace. Or maybe just one element together with the kernel inclusion. IMO smarter to be a list because that way there's a more pleasant way to make it empty. Or we could have a variety of routines among these themes. Store some minimal data for efficient computations of preImage, eventually replacing the internals of inverseHom() with a more flexible set of tools. Also add an isInImage() in various coordinates.</p>
 <p><em>Optimise (long-term):</em> writeTextShort() have completely different set of descriptors if an endomorphism domain = range (not so important at the moment though). New descriptors would include things like automorphism, projection, differential, finite order, etc.</p>
 <p class="enddd"><em>Optimise (long-term):</em> Add map factorization, so that every homomorphism can be split as a composite of a projection followed by an inclusion. Add kernelInclusion(), coKerMap(), etc. Add a liftMap() call, i.e., a procedure to find a lift of a map if one exists. </p>
 </dd>
-<dt><a class="anchor" id="_todo000008"></a>Class <a class="el" href="classregina_1_1NMarkedAbelianGroup.html">regina::NMarkedAbelianGroup</a>  </dt>
+<dt><a class="anchor" id="_todo000008"></a>Class <a class="el" href="classregina_1_1MarkedAbelianGroup.html">regina::MarkedAbelianGroup</a>  </dt>
 <dd><p class="startdd"><em>Optimise (long-term):</em> Look at using sparse matrices for storage of SNF and the like. </p>
 <p class="enddd">Testsuite additions: isBoundary(), boundaryMap(), writeAsBdry(), cycleGen().  </p>
 </dd>
-<dt><a class="anchor" id="_todo000022"></a>Member <a class="el" href="classregina_1_1NNormalHypersurface.html#a1ad822b9761c529697bdd05bc565ef45">regina::NNormalHypersurface::isThinEdgeLink</a>  () const </dt>
+<dt><a class="anchor" id="_todo000019"></a>Member <a class="el" href="classregina_1_1NormalHypersurface.html#a9c06c031fa186cf75bf11fa3bf6b6cd2">regina::NormalHypersurface::isThinEdgeLink</a>  () const </dt>
 <dd><em>Optimise:</em> Cache results. </dd>
-<dt><a class="anchor" id="_todo000021"></a>Member <a class="el" href="classregina_1_1NNormalHypersurface.html#af94f4ce07dabf468444f87c923a7a159">regina::NNormalHypersurface::isVertexLink</a>  () const </dt>
+<dt><a class="anchor" id="_todo000018"></a>Member <a class="el" href="classregina_1_1NormalHypersurface.html#a910fe74f39ed1f6c24d1eeff56b0baaf">regina::NormalHypersurface::isVertexLink</a>  () const </dt>
 <dd><em>Optimise:</em> Cache results. </dd>
-<dt><a class="anchor" id="_todo000020"></a>Member <a class="el" href="classregina_1_1NNormalHypersurface.html#afc6533620be7d69eec15a13df2e5ee89">regina::NNormalHypersurface::isVertexLinking</a>  () const </dt>
+<dt><a class="anchor" id="_todo000017"></a>Member <a class="el" href="classregina_1_1NormalHypersurface.html#af418723f8caf31cc2333363f8cced589">regina::NormalHypersurface::isVertexLinking</a>  () const </dt>
 <dd><em>Optimise:</em> Cache results. </dd>
-<dt><a class="anchor" id="_todo000023"></a>Member <a class="el" href="classregina_1_1NNormalHypersurface.html#ab8a584f105512010e6ff44cde6dd11cd">regina::NNormalHypersurface::triangulate</a>  () const </dt>
+<dt><a class="anchor" id="_todo000020"></a>Member <a class="el" href="classregina_1_1NormalHypersurface.html#a785bfc77ede71fb6248070abf8d3ba19">regina::NormalHypersurface::triangulate</a>  () const </dt>
 <dd><em>Bug:</em> Check for absurdly large numbers of pieces and return 0 accordingly. </dd>
-<dt><a class="anchor" id="_todo000019"></a>Class <a class="el" href="classregina_1_1NNormalHypersurfaceVectorMirrored.html">regina::NNormalHypersurfaceVectorMirrored</a>  </dt>
-<dd><em>Bug:</em> Allow modification of the vector by overwriting setValue(); this will require documentation changes in both this class and in NNormalHypersurfaceVector. </dd>
-<dt><a class="anchor" id="_todo000038"></a>Class <a class="el" href="classregina_1_1NNormalSurface.html">regina::NNormalSurface</a>  </dt>
+<dt><a class="anchor" id="_todo000035"></a>Class <a class="el" href="classregina_1_1NormalSurface.html">regina::NormalSurface</a>  </dt>
 <dd><p class="startdd"><em>Feature:</em> Calculation of Euler characteristic and orientability for non-compact surfaces. </p>
 <p class="enddd"><em>Feature (long-term):</em> Determine which faces in the solution space a normal surface belongs to.  </p>
 </dd>
-<dt><a class="anchor" id="_todo000043"></a>Member <a class="el" href="classregina_1_1NNormalSurface.html#acfe46498b2a858eb46e872908c77c58a">regina::NNormalSurface::isCentral</a>  () const </dt>
+<dt><a class="anchor" id="_todo000040"></a>Member <a class="el" href="classregina_1_1NormalSurface.html#a1004809052baaa3975a6ed052c73b746">regina::NormalSurface::isCentral</a>  () const </dt>
 <dd><em>Optimise:</em> Cache results. </dd>
-<dt><a class="anchor" id="_todo000044"></a>Member <a class="el" href="classregina_1_1NNormalSurface.html#acc90c27b4138882bb238b01daf910ac0">regina::NNormalSurface::isCompressingDisc</a>  (bool knownConnected=false) const </dt>
+<dt><a class="anchor" id="_todo000041"></a>Member <a class="el" href="classregina_1_1NormalSurface.html#a7c6044e0a5205fec091a1ef70e96113a">regina::NormalSurface::isCompressingDisc</a>  (bool knownConnected=false) const </dt>
 <dd><p class="startdd"><em>Optimise:</em> Reimplement this to avoid cutting along surfaces. </p>
 <p class="enddd"><em>Bug:</em> Check for absurdly large numbers of discs and bail accordingly. </p>
 </dd>
-<dt><a class="anchor" id="_todo000042"></a>Member <a class="el" href="classregina_1_1NNormalSurface.html#aa57adcc785aa80b9b888ff3a392bb291">regina::NNormalSurface::isSplitting</a>  () const </dt>
+<dt><a class="anchor" id="_todo000039"></a>Member <a class="el" href="classregina_1_1NormalSurface.html#ade2a2aa2a61c82e5cac1095e1e97145e">regina::NormalSurface::isSplitting</a>  () const </dt>
 <dd><em>Optimise:</em> Cache results. </dd>
-<dt><a class="anchor" id="_todo000041"></a>Member <a class="el" href="classregina_1_1NNormalSurface.html#af26fcd1816990604e6c437bcbb07244d">regina::NNormalSurface::isThinEdgeLink</a>  () const </dt>
+<dt><a class="anchor" id="_todo000038"></a>Member <a class="el" href="classregina_1_1NormalSurface.html#a930e8fce01833175015e8f77423ec8a9">regina::NormalSurface::isThinEdgeLink</a>  () const </dt>
 <dd><em>Optimise:</em> Cache results. </dd>
-<dt><a class="anchor" id="_todo000040"></a>Member <a class="el" href="classregina_1_1NNormalSurface.html#a5e004efb3013600e890355889f76e4c4">regina::NNormalSurface::isVertexLink</a>  () const </dt>
+<dt><a class="anchor" id="_todo000037"></a>Member <a class="el" href="classregina_1_1NormalSurface.html#ad43ced187df7b9a0ce35f7844aa5a6bf">regina::NormalSurface::isVertexLink</a>  () const </dt>
 <dd><em>Optimise:</em> Cache results. </dd>
-<dt><a class="anchor" id="_todo000039"></a>Member <a class="el" href="classregina_1_1NNormalSurface.html#a777be9f2e701c5561b005af4d0c743e8">regina::NNormalSurface::isVertexLinking</a>  () const </dt>
+<dt><a class="anchor" id="_todo000036"></a>Member <a class="el" href="classregina_1_1NormalSurface.html#aea7529a2d9b8bd7a8d3475d6573e6883">regina::NormalSurface::isVertexLinking</a>  () const </dt>
 <dd><em>Optimise:</em> Cache results. </dd>
-<dt><a class="anchor" id="_todo000045"></a>Class <a class="el" href="classregina_1_1NNormalSurfaceList.html">regina::NNormalSurfaceList</a>  </dt>
+<dt><a class="anchor" id="_todo000042"></a>Class <a class="el" href="classregina_1_1NormalSurfaces.html">regina::NormalSurfaces</a>  </dt>
 <dd><p class="startdd"><em>Feature:</em> Allow custom matching equations. </p>
 <p><em>Feature:</em> Allow enumeration with some coordinates explicitly set to zero. </p>
 <p><em>Feature:</em> Allow generating only closed surfaces. </p>
 <p class="enddd"><em>Feature:</em> Generate facets of the solution space representing embedded surfaces.  </p>
 </dd>
-<dt><a class="anchor" id="_todo000046"></a>Member <a class="el" href="classregina_1_1NNormalSurfaceList.html#af72a6f994ddb6975efcb97f433da2a42">regina::NNormalSurfaceList::filterForDisjointPairs</a>  () const </dt>
+<dt><a class="anchor" id="_todo000043"></a>Member <a class="el" href="classregina_1_1NormalSurfaces.html#a7c6196313e8e1d870a01a19de0d34443">regina::NormalSurfaces::filterForDisjointPairs</a>  () const </dt>
 <dd>Deal properly with surfaces that are too large to handle. </dd>
-<dt><a class="anchor" id="_todo000047"></a>Member <a class="el" href="classregina_1_1NNormalSurfaceList.html#a547204d21222a29eca5639f4d27d26b2">regina::NNormalSurfaceList::filterForPotentiallyIncompressible</a>  () const </dt>
+<dt><a class="anchor" id="_todo000044"></a>Member <a class="el" href="classregina_1_1NormalSurfaces.html#ab77f5fd16841e868a2b9c2050d5d8684">regina::NormalSurfaces::filterForPotentiallyIncompressible</a>  () const </dt>
 <dd>Add progress tracking. </dd>
-<dt><a class="anchor" id="_todo000037"></a>Class <a class="el" href="classregina_1_1NNormalSurfaceVector.html">regina::NNormalSurfaceVector</a>  </dt>
+<dt><a class="anchor" id="_todo000034"></a>Class <a class="el" href="classregina_1_1NormalSurfaceVector.html">regina::NormalSurfaceVector</a>  </dt>
 <dd><em>Optimise (long-term):</em> Investigate using sparse vectors for storage. </dd>
-<dt><a class="anchor" id="_todo000048"></a>Class <a class="el" href="classregina_1_1NNormalSurfaceVectorMirrored.html">regina::NNormalSurfaceVectorMirrored</a>  </dt>
-<dd><em>Bug:</em> Allow modification of the vector by overwriting setValue(); this will require documentation changes in both this class and in NNormalSurfaceVector. </dd>
-<dt><a class="anchor" id="_todo000033"></a>Class <a class="el" href="classregina_1_1NPacket.html">regina::NPacket</a>  </dt>
+<dt><a class="anchor" id="_todo000030"></a>Class <a class="el" href="classregina_1_1Packet.html">regina::Packet</a>  </dt>
 <dd><em>Feature:</em> Provide automatic name selection/specification upon child packet insertion.  </dd>
-<dt><a class="anchor" id="_todo000030"></a>Member <a class="el" href="classregina_1_1NPrimes.html#a1aa3320864d3e9b556888929087b1bdd">regina::NPrimes::primeDecomp</a>  (const NLargeInteger &amp;n)</dt>
+<dt><a class="anchor" id="_todo000027"></a>Member <a class="el" href="classregina_1_1Primes.html#a1111cae9b6ad1011023a7387e656bd29">regina::Primes::primeDecomp</a>  (const Integer &amp;n)</dt>
 <dd><em>Optimise:</em> Add a version that does not return the factors by value. </dd>
-<dt><a class="anchor" id="_todo000031"></a>Member <a class="el" href="classregina_1_1NPrimes.html#aaf769e70c23f1c25b1563a6d828fa802">regina::NPrimes::primePowerDecomp</a>  (const NLargeInteger &amp;n)</dt>
+<dt><a class="anchor" id="_todo000028"></a>Member <a class="el" href="classregina_1_1Primes.html#a3ed87b5c7e132010b772c40819f051ac">regina::Primes::primePowerDecomp</a>  (const Integer &amp;n)</dt>
 <dd><p class="startdd"><em>Optimise:</em> Implement this routine natively to avoid the overhead of the temporary primeDecomp() vector.</p>
 <p class="enddd"><em>Optimise:</em> Add a version that does not return the factors by value. </p>
 </dd>
-<dt><a class="anchor" id="_todo000035"></a>Class <a class="el" href="classregina_1_1NSatRegion.html">regina::NSatRegion</a>  </dt>
+<dt><a class="anchor" id="_todo000032"></a>Class <a class="el" href="classregina_1_1SatRegion.html">regina::SatRegion</a>  </dt>
 <dd><em>Feature:</em> Have this class track the boundary components properly, with annuli grouped and oriented according to the region boundaries (as opposed to individual block boundaries).  </dd>
-<dt><a class="anchor" id="_todo000027"></a>Class <a class="el" href="classregina_1_1NSFSpace.html">regina::NSFSpace</a>  </dt>
+<dt><a class="anchor" id="_todo000024"></a>Class <a class="el" href="classregina_1_1SFSpace.html">regina::SFSpace</a>  </dt>
 <dd><p class="startdd"><em>Feature (long-term):</em> Implement recognition of more common names. </p>
 <p class="enddd"><em>Feature (long-term):</em> Implement triangulation construction and homology calculation for more Seifert fibred spaces.  </p>
 </dd>
-<dt><a class="anchor" id="_todo000049"></a>Class <a class="el" href="classregina_1_1NSurfaceFilter.html">regina::NSurfaceFilter</a>  </dt>
+<dt><a class="anchor" id="_todo000045"></a>Class <a class="el" href="classregina_1_1SurfaceFilter.html">regina::SurfaceFilter</a>  </dt>
 <dd><em>Feature:</em> Implement property <em>lastAppliedTo</em>.  </dd>
-<dt><a class="anchor" id="_todo000028"></a>Class <a class="el" href="classregina_1_1NTorusBundle.html">regina::NTorusBundle</a>  </dt>
+<dt><a class="anchor" id="_todo000025"></a>Class <a class="el" href="classregina_1_1TorusBundle.html">regina::TorusBundle</a>  </dt>
 <dd><em>Feature:</em> Implement the == operator for finding conjugate and inverse matrices.  </dd>
-<dt><a class="anchor" id="_todo000050"></a>Class <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html">regina::Triangulation&lt; 3 &gt;</a>  </dt>
+<dt><a class="anchor" id="_todo000048"></a>Class <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html">regina::Triangulation&lt; 3 &gt;</a>  </dt>
 <dd><p class="startdd"><em>Feature:</em> Is the boundary incompressible? </p>
 <p><em>Feature (long-term):</em> Am I obviously a handlebody? (Simplify and see if there is nothing left). Am I obviously not a handlebody? (Compare homology with boundary homology). </p>
 <p><em>Feature (long-term):</em> Is the triangulation Haken? </p>
 <p><em>Feature (long-term):</em> What is the Heegaard genus? </p>
 <p><em>Feature (long-term):</em> Have a subcomplex as a child packet of a triangulation. Include routines to crush a subcomplex or to expand a subcomplex to a normal surface. </p>
-<p class="enddd"><em>Feature (long-term):</em> Implement writeTextLong() for skeletal objects.  </p>
+<p class="enddd"><em>Feature (long-term):</em> Implement writeTextLong() for skeletal objects. </p>
 </dd>
-<dt><a class="anchor" id="_todo000052"></a>Member <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#ac025b93b99f5b674fd448e6374c81142">regina::Triangulation&lt; 3 &gt;::idealToFinite</a>  ()</dt>
+<dt><a class="anchor" id="_todo000050"></a>Member <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#ac025b93b99f5b674fd448e6374c81142">regina::Triangulation&lt; 3 &gt;::idealToFinite</a>  ()</dt>
 <dd><em>Optimise (long-term):</em> Have this routine only use as many tetrahedra as are necessary, leaving finite vertices alone. </dd>
-<dt><a class="anchor" id="_todo000051"></a>Member <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#ad63140ff3ab1dd53acd661a6c8cde47e">regina::Triangulation&lt; 3 &gt;::intelligentSimplify</a>  ()</dt>
+<dt><a class="anchor" id="_todo000049"></a>Member <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#ad63140ff3ab1dd53acd661a6c8cde47e">regina::Triangulation&lt; 3 &gt;::intelligentSimplify</a>  ()</dt>
 <dd><em>Optimise:</em> Include random 2-3 moves to get out of wells.</dd>
 </dl>
 </div></div><!-- contents -->

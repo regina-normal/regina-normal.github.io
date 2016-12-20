@@ -64,7 +64,7 @@
 <p>A class that constraints the tableaux of normal surface matching equations to ensure that Euler characteristic is strictly positive.  
  <a href="classregina_1_1LPConstraintEuler.html#details">More...</a></p>
 
-<p><code>#include &lt;enumerate/ntreeconstraint.h&gt;</code></p>
+<p><code>#include &lt;enumerate/treeconstraint.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for regina::LPConstraintEuler:</div>
 <div class="dyncontent">
@@ -92,36 +92,36 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ga2de8ce7f48a7dded677dd999749ee44e"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga2de8ce7f48a7dded677dd999749ee44e"></a>
-template&lt;typename Integer &gt; </td></tr>
-<tr class="memitem:ga2de8ce7f48a7dded677dd999749ee44e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>constrain</b> (<a class="el" href="classregina_1_1LPData.html">LPData</a>&lt; <a class="el" href="classregina_1_1LPConstraintEuler.html">regina::LPConstraintEuler</a>, Integer &gt; &amp;lp, unsigned numCols)</td></tr>
-<tr class="separator:ga2de8ce7f48a7dded677dd999749ee44e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae4202fc4d0fa4217b711d8ac20246443"><td class="memTemplParams" colspan="2"><a class="anchor" id="gae4202fc4d0fa4217b711d8ac20246443"></a>
+template&lt;typename IntType &gt; </td></tr>
+<tr class="memitem:gae4202fc4d0fa4217b711d8ac20246443"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>constrain</b> (<a class="el" href="classregina_1_1LPData.html">LPData</a>&lt; <a class="el" href="classregina_1_1LPConstraintEuler.html">regina::LPConstraintEuler</a>, IntType &gt; &amp;lp, unsigned numCols)</td></tr>
+<tr class="separator:gae4202fc4d0fa4217b711d8ac20246443"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ga30eb9b857ff82d6e78f1b15c9f972e56"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga30eb9b857ff82d6e78f1b15c9f972e56"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>addRows</b> (<a class="el" href="classregina_1_1LPCol.html">LPCol</a>&lt; <a class="el" href="classregina_1_1LPConstraintEuler.html">regina::LPConstraintEuler</a> &gt; *col, const int *columnPerm, const <a class="el" href="group__hypersurface.html#gaa504c0ed97bb88a50712083a7af647ab">NTriangulation</a> *tri)</td></tr>
-<tr class="separator:ga30eb9b857ff82d6e78f1b15c9f972e56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2de8ce7f48a7dded677dd999749ee44e"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga2de8ce7f48a7dded677dd999749ee44e"></a>
-template&lt;typename Integer &gt; </td></tr>
-<tr class="memitem:ga2de8ce7f48a7dded677dd999749ee44e"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>constrain</b> (<a class="el" href="classregina_1_1LPData.html">LPData</a>&lt; <a class="el" href="classregina_1_1LPConstraintEuler.html">regina::LPConstraintEuler</a>, Integer &gt; &amp;lp, unsigned numCols)</td></tr>
-<tr class="separator:ga2de8ce7f48a7dded677dd999749ee44e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaac8f3c26cdcf6e88531f6b29eb62b793"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaac8f3c26cdcf6e88531f6b29eb62b793"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>verify</b> (const <a class="el" href="classregina_1_1NNormalSurface.html">NNormalSurface</a> *s)</td></tr>
-<tr class="separator:gaac8f3c26cdcf6e88531f6b29eb62b793"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae09c5bf92dd00a7f7bfd7f1f548c5da3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gae09c5bf92dd00a7f7bfd7f1f548c5da3"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>verify</b> (const <a class="el" href="classregina_1_1NAngleStructure.html">NAngleStructure</a> *)</td></tr>
-<tr class="separator:gae09c5bf92dd00a7f7bfd7f1f548c5da3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0eba1165d3b7b6cd791b42171636482d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga0eba1165d3b7b6cd791b42171636482d"></a>
+static bool&#160;</td><td class="memItemRight" valign="bottom"><b>addRows</b> (<a class="el" href="classregina_1_1LPCol.html">LPCol</a>&lt; <a class="el" href="classregina_1_1LPConstraintEuler.html">regina::LPConstraintEuler</a> &gt; *col, const int *columnPerm, const <a class="el" href="classregina_1_1Triangulation.html">Triangulation</a>&lt; 3 &gt; *tri)</td></tr>
+<tr class="separator:ga0eba1165d3b7b6cd791b42171636482d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae4202fc4d0fa4217b711d8ac20246443"><td class="memTemplParams" colspan="2"><a class="anchor" id="gae4202fc4d0fa4217b711d8ac20246443"></a>
+template&lt;typename IntType &gt; </td></tr>
+<tr class="memitem:gae4202fc4d0fa4217b711d8ac20246443"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>constrain</b> (<a class="el" href="classregina_1_1LPData.html">LPData</a>&lt; <a class="el" href="classregina_1_1LPConstraintEuler.html">regina::LPConstraintEuler</a>, IntType &gt; &amp;lp, unsigned numCols)</td></tr>
+<tr class="separator:gae4202fc4d0fa4217b711d8ac20246443"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac3baf9179af417f8a81bd82319d48bdf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gac3baf9179af417f8a81bd82319d48bdf"></a>
+static bool&#160;</td><td class="memItemRight" valign="bottom"><b>verify</b> (const <a class="el" href="classregina_1_1NormalSurface.html">NormalSurface</a> *s)</td></tr>
+<tr class="separator:gac3baf9179af417f8a81bd82319d48bdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga91566a6bb88a76270d5a8630dacafa8e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga91566a6bb88a76270d5a8630dacafa8e"></a>
+static bool&#160;</td><td class="memItemRight" valign="bottom"><b>verify</b> (const <a class="el" href="classregina_1_1AngleStructure.html">AngleStructure</a> *)</td></tr>
+<tr class="separator:ga91566a6bb88a76270d5a8630dacafa8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5c4d072e865c4bbb9c28a31c2b8c6006"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga5c4d072e865c4bbb9c28a31c2b8c6006"></a>
 static bool&#160;</td><td class="memItemRight" valign="bottom"><b>supported</b> (<a class="el" href="group__surfaces.html#ga9817fc7125c53daea4e3f3cbfe987a47">NormalCoords</a> coords)</td></tr>
 <tr class="separator:ga5c4d072e865c4bbb9c28a31c2b8c6006"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa567307d99e7b5d9c3e19baebc64a8c8"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__enumerate.html#gaa567307d99e7b5d9c3e19baebc64a8c8">addRows</a> (<a class="el" href="classregina_1_1LPCol.html">LPCol</a>&lt; <a class="el" href="classregina_1_1LPConstraintBase.html">LPConstraintBase</a> &gt; *col, const int *columnPerm, const <a class="el" href="group__hypersurface.html#gaa504c0ed97bb88a50712083a7af647ab">NTriangulation</a> *tri)</td></tr>
-<tr class="memdesc:gaa567307d99e7b5d9c3e19baebc64a8c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicitly constructs equations for the linear function(s) constrained by this class.  <a href="group__enumerate.html#gaa567307d99e7b5d9c3e19baebc64a8c8">More...</a><br/></td></tr>
-<tr class="separator:gaa567307d99e7b5d9c3e19baebc64a8c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga494037a475263e7786da15676e3efef5"><td class="memTemplParams" colspan="2">template&lt;typename Integer &gt; </td></tr>
-<tr class="memitem:ga494037a475263e7786da15676e3efef5"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__enumerate.html#ga494037a475263e7786da15676e3efef5">constrain</a> (<a class="el" href="classregina_1_1LPData.html">LPData</a>&lt; <a class="el" href="classregina_1_1LPConstraintNone.html">LPConstraintNone</a>, Integer &gt; &amp;lp, unsigned numCols)</td></tr>
-<tr class="memdesc:ga494037a475263e7786da15676e3efef5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicitly constraints each of these linear functions to an equality or inequality in the underlying tableaux.  <a href="group__enumerate.html#ga494037a475263e7786da15676e3efef5">More...</a><br/></td></tr>
-<tr class="separator:ga494037a475263e7786da15676e3efef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac663caf3a27a7f814eec98e42cce10cf"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__enumerate.html#gac663caf3a27a7f814eec98e42cce10cf">addRows</a> (<a class="el" href="classregina_1_1LPCol.html">LPCol</a>&lt; <a class="el" href="classregina_1_1LPConstraintBase.html">LPConstraintBase</a> &gt; *col, const int *columnPerm, const <a class="el" href="classregina_1_1Triangulation.html">Triangulation</a>&lt; 3 &gt; *tri)</td></tr>
+<tr class="memdesc:gac663caf3a27a7f814eec98e42cce10cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicitly constructs equations for the linear function(s) constrained by this class.  <a href="group__enumerate.html#gac663caf3a27a7f814eec98e42cce10cf">More...</a><br/></td></tr>
+<tr class="separator:gac663caf3a27a7f814eec98e42cce10cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6d90776df2cdaa5cf7fbf55b9762e1e2"><td class="memTemplParams" colspan="2">template&lt;typename IntType &gt; </td></tr>
+<tr class="memitem:ga6d90776df2cdaa5cf7fbf55b9762e1e2"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__enumerate.html#ga6d90776df2cdaa5cf7fbf55b9762e1e2">constrain</a> (<a class="el" href="classregina_1_1LPData.html">LPData</a>&lt; <a class="el" href="classregina_1_1LPConstraintNone.html">LPConstraintNone</a>, IntType &gt; &amp;lp, unsigned numCols)</td></tr>
+<tr class="memdesc:ga6d90776df2cdaa5cf7fbf55b9762e1e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicitly constraints each of these linear functions to an equality or inequality in the underlying tableaux.  <a href="group__enumerate.html#ga6d90776df2cdaa5cf7fbf55b9762e1e2">More...</a><br/></td></tr>
+<tr class="separator:ga6d90776df2cdaa5cf7fbf55b9762e1e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A class that constraints the tableaux of normal surface matching equations to ensure that Euler characteristic is strictly positive. </p>
@@ -132,7 +132,7 @@ static bool&#160;</td><td class="memItemRight" valign="bottom"><b>supported</b> 
 <dl class="section warning"><dt>Warning</dt><dd>The API for this class has not yet been finalised. This means that the class interface may change in new versions of Regina, without maintaining backward compatibility. If you use this class directly in your own code, please watch the detailed changelogs upon new releases to see if you need to make changes to your code.</dd></dl>
 <dl class="section user"><dt>Python:</dt><dd>Not present. </dd></dl>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
-<li>enumerate/<a class="el" href="ntreeconstraint_8h.html">ntreeconstraint.h</a></li>
+<li>enumerate/<a class="el" href="treeconstraint_8h.html">treeconstraint.h</a></li>
 </ul>
 </div><!-- contents -->
 <hr>

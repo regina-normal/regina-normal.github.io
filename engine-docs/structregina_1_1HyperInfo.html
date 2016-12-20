@@ -58,7 +58,7 @@
 <p>A template that stores information about a particular normal hypersurface coordinate system.  
  <a href="structregina_1_1HyperInfo.html#details">More...</a></p>
 
-<p><code>#include &lt;hypersurface/nnormalhypersurface.h&gt;</code></p>
+<p><code>#include &lt;hypersurface/normalhypersurface.h&gt;</code></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;HyperCoords coordType&gt;<br/>
 struct regina::HyperInfo&lt; coordType &gt;</h3>
@@ -69,7 +69,7 @@ struct regina::HyperInfo&lt; coordType &gt;</h3>
 <p>This <a class="el" href="structregina_1_1HyperInfo.html" title="A template that stores information about a particular normal hypersurface coordinate system...">HyperInfo</a> template should only be defined for <em>coordType</em> arguments that represent coordinate systems in which you can create and store normal hypersurfaces within 4-manifold triangulations.</p>
 <p>At a bare minimum, each specialisation of this template must provide:</p>
 <ul>
-<li>a typedef <em>Class</em> that represents the corresponding <a class="el" href="classregina_1_1NNormalHypersurfaceVector.html" title="Stores the vector of a single normal hypersurface in a 4-manifold triangulation.">NNormalHypersurfaceVector</a> subclass;</li>
+<li>a typedef <em>Class</em> that represents the corresponding <a class="el" href="classregina_1_1NormalHypersurfaceVector.html" title="Stores the vector of a single normal hypersurface in a 4-manifold triangulation.">NormalHypersurfaceVector</a> subclass;</li>
 <li>a static function name() that returns a C-style string giving the human-readable name of the coordinate system.</li>
 </ul>
 <dl class="section user"><dt>Python:</dt><dd>Not present.</dd></dl>
@@ -80,7 +80,7 @@ struct regina::HyperInfo&lt; coordType &gt;</h3>
   </dd>
 </dl>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>hypersurface/<a class="el" href="nnormalhypersurface_8h.html">nnormalhypersurface.h</a></li>
+<li>hypersurface/<a class="el" href="normalhypersurface_8h.html">normalhypersurface.h</a></li>
 </ul>
 </div><!-- contents -->
 <hr>

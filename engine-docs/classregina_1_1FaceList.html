@@ -56,14 +56,14 @@
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classregina_1_1FaceList-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">regina::FaceList&lt; dim, subdim &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__generic.html">Generic code</a></div></div>  </div>
+<div class="title">regina::FaceList&lt; dim, subdim &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__generic.html">Generic triangulations</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
 <p>Stores the list of all <em>subdim</em>-faces of a <em>dim</em>-dimensional triangulation.  
  <a href="classregina_1_1FaceList.html#details">More...</a></p>
 
-<p><code>#include &lt;generic/triangulation.h&gt;</code></p>
+<p><code>#include &lt;triangulation/generic.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for regina::FaceList&lt; dim, subdim &gt;:</div>
 <div class="dyncontent">
@@ -76,13 +76,14 @@ Inheritance diagram for regina::FaceList&lt; dim, subdim &gt;:</div>
 <area href="classregina_1_1detail_1_1TriangulationBase.html" alt="regina::detail::TriangulationBase&lt; 2 &gt;" shape="rect" coords="267,112,524,136"/>
 <area href="classregina_1_1detail_1_1TriangulationBase.html" alt="regina::detail::TriangulationBase&lt; 3 &gt;" shape="rect" coords="534,112,791,136"/>
 <area href="classregina_1_1detail_1_1TriangulationBase.html" alt="regina::detail::TriangulationBase&lt; 4 &gt;" shape="rect" coords="801,112,1058,136"/>
-<area href="classregina_1_1detail_1_1TriangulationBase.html" alt="regina::detail::TriangulationBase&lt; dim &gt;" shape="rect" coords="1068,112,1325,136"/>
-<area href="classregina_1_1Triangulation.html" alt="regina::Triangulation&lt; dim &gt;" shape="rect" coords="0,168,257,192"/>
+<area href="classregina_1_1detail_1_1TriangulationBase.html" alt="regina::detail::TriangulationBase&lt; dim &gt;" shape="rect" coords="1335,112,1592,136"/>
 <area href="classregina_1_1Triangulation_3_012_01_4.html" title="Represents a 2-manifold triangulation." alt="regina::Triangulation&lt; 2 &gt;" shape="rect" coords="267,168,524,192"/>
 <area href="classregina_1_1Triangulation_3_013_01_4.html" title="Represents a 3-dimensional triangulation, typically of a 3-manifold." alt="regina::Triangulation&lt; 3 &gt;" shape="rect" coords="534,168,791,192"/>
 <area href="classregina_1_1Triangulation_3_014_01_4.html" title="Represents a 4-dimensional triangulation, typically of a 4-manifold." alt="regina::Triangulation&lt; 4 &gt;" shape="rect" coords="801,168,1058,192"/>
 <area href="classregina_1_1Triangulation.html" title="A dim-dimensional triangulation, built by gluing together dim-dimensional simplices along their (dim-..." alt="regina::Triangulation&lt; int &gt;" shape="rect" coords="1068,168,1325,192"/>
-<area href="classregina_1_1NSnapPeaTriangulation.html" title="Offers direct access to the SnapPea kernel from within Regina." alt="regina::NSnapPeaTriangulation" shape="rect" coords="534,224,791,248"/>
+<area href="classregina_1_1Triangulation.html" alt="regina::Triangulation&lt; dim &gt;" shape="rect" coords="1335,168,1592,192"/>
+<area href="classregina_1_1Triangulation.html" alt="regina::Triangulation&lt; dim-1 &gt;" shape="rect" coords="1602,168,1859,192"/>
+<area href="classregina_1_1SnapPeaTriangulation.html" title="Offers direct access to the SnapPea kernel from within Regina." alt="regina::SnapPeaTriangulation" shape="rect" coords="534,224,791,248"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -125,9 +126,16 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:ga1cd29e5cef4315d5b40c37ab997645b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__generic.html#ga1cd29e5cef4315d5b40c37ab997645b8">destroy</a> ()</td></tr>
 <tr class="memdesc:ga1cd29e5cef4315d5b40c37ab997645b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys all faces in this list, and clears the list itself.  <a href="group__generic.html#ga1cd29e5cef4315d5b40c37ab997645b8">More...</a><br/></td></tr>
 <tr class="separator:ga1cd29e5cef4315d5b40c37ab997645b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga425fc00273288a36288fc08452ad4bf3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__generic.html#ga425fc00273288a36288fc08452ad4bf3">swap</a> (<a class="el" href="classregina_1_1FaceList.html">FaceList</a>&lt; dim, subdim &gt; &amp;other)</td></tr>
+<tr class="memdesc:ga425fc00273288a36288fc08452ad4bf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swaps all faces in this list with those in the given list.  <a href="group__generic.html#ga425fc00273288a36288fc08452ad4bf3">More...</a><br/></td></tr>
+<tr class="separator:ga425fc00273288a36288fc08452ad4bf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5605932cdf6dacacdfb2d90151bac356"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__generic.html#ga5605932cdf6dacacdfb2d90151bac356">sameDegrees</a> (const <a class="el" href="classregina_1_1FaceList.html">FaceList</a>&lt; dim, subdim &gt; &amp;other) const </td></tr>
 <tr class="memdesc:ga5605932cdf6dacacdfb2d90151bac356"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests whether this and the given triangulation have the same <em>subdim</em>-face degree sequences.  <a href="group__generic.html#ga5605932cdf6dacacdfb2d90151bac356">More...</a><br/></td></tr>
 <tr class="separator:ga5605932cdf6dacacdfb2d90151bac356"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga10db154ee1ec1418518b738abe8b5ead"><td class="memTemplParams" colspan="2">template&lt;typename Iterator &gt; </td></tr>
+<tr class="memitem:ga10db154ee1ec1418518b738abe8b5ead"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic.html#ga10db154ee1ec1418518b738abe8b5ead">reorderFaces</a> (<a class="el" href="group__generic.html#ga0be8028a8f015b7fff2e37769a17dfac">Iterator</a> <a class="el" href="group__generic.html#ga1671ff7a32ea81850ebbc402b04bfddb">begin</a>, <a class="el" href="group__generic.html#ga0be8028a8f015b7fff2e37769a17dfac">Iterator</a> <a class="el" href="group__generic.html#ga45bd2d30911e68b272b26de716f35ad1">end</a>)</td></tr>
+<tr class="memdesc:ga10db154ee1ec1418518b738abe8b5ead"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reorders this list of faces.  <a href="group__generic.html#ga10db154ee1ec1418518b738abe8b5ead">More...</a><br/></td></tr>
+<tr class="separator:ga10db154ee1ec1418518b738abe8b5ead"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;int dim, int subdim&gt;<br/>
@@ -136,6 +144,7 @@ class regina::FaceList&lt; dim, subdim &gt;</h3>
 <p>Stores the list of all <em>subdim</em>-faces of a <em>dim</em>-dimensional triangulation. </p>
 <p>This object provides basic container-like behaviour. It supports <a class="el" href="group__generic.html#ga1671ff7a32ea81850ebbc402b04bfddb" title="Returns an iterator pointing to the first subdim-face.">begin()</a>, <a class="el" href="group__generic.html#ga45bd2d30911e68b272b26de716f35ad1" title="Returns an iterator pointing beyond the last subdim-face.">end()</a>, <a class="el" href="group__generic.html#ga8f76277ce6578fe8a9a33504a201837c" title="Returns the number of subdim-faces in the triangulation.">size()</a>, and the random access operator <code>[]</code>. In particular, you can iterate through all <em>subdim</em>-faces using C++11 range-based <code>for</code> loops: <code>for (auto f : faceList) { ... }</code>.</p>
 <p>Strictly speaking, this list holds <em>pointers</em> to <a class="el" href="classregina_1_1Face.html">Face&lt;dim, subdim&gt;</a> objects. So, for example, dereferencing an iterator will return a pointer of type <code><a class="el" href="classregina_1_1Face.html">Face&lt;dim, subdim&gt;</a>*</code>. Likewise, the variable <em>f</em> in the range-based <code>for</code> loop above will be a pointer of type <code><a class="el" href="classregina_1_1Face.html">Face&lt;dim, subdim&gt;</a>*</code>.</p>
+<p>The routine <a class="el" href="classregina_1_1detail_1_1FaceBase.html#aaaa90ce5491297fb08634a2108fae4e3" title="Returns the index of this face within the underlying triangulation.">Face::index()</a> will always return the index of the corresponding face in this list.</p>
 <dl class="section warning"><dt>Warning</dt><dd><a class="el" href="classregina_1_1Face.html" title="Represents a subdim-face in the skeleton of a dim-dimensional triangulation.">Face</a> objects are highly temporary: whenever a triangulation changes, all its face objects will be deleted and new ones will be created in their place.</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
@@ -145,7 +154,7 @@ class regina::FaceList&lt; dim, subdim &gt;</h3>
   </dd>
 </dl>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
-<li>generic/<a class="el" href="triangulation_8h.html">triangulation.h</a></li>
+<li>triangulation/generic/<a class="el" href="triangulation_2generic_2triangulation_8h.html">triangulation.h</a></li>
 </ul>
 </div><!-- contents -->
 <hr>
