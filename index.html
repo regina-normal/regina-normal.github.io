@@ -11,7 +11,7 @@
   alt="Regina: Software for low-dimensional topology">
 </center>
 <center>
-<h4>Latest version: 5.1 (December 2016)<br>Updated packages: 19 December 2016</h4>
+<h4>Latest version: 5.1 (December 2016)<br>Updated packages: 21 December 2016</h4>
 <table class="contentswrapper" cellspacing=0>
 <tbody>
 <tr><th><a name="contents">Contents</a></th><th>Python / C++</th></tr>
@@ -39,7 +39,7 @@
     <table class="contents" cellspacing=0><tbody>
     <tr><td><a href="data.html">Census data and related articles</a></td></tr>
     <tr><td><a href="source.html">Building from source</a></td></tr>
-    <tr><td><a href="https://github.com/regina-normal/regina">Git repository</a></td></tr>
+    <tr><td><a href="https://github.com/regina-normal/regina">GitHub repository</a></td></tr>
     <tr><td><a href="bugs.html">Past important bugs</a></td></tr>
     <tr><td><a href="docs/troubleshooting.html">Troubleshooting and FAQ</a></td></tr>
     </tbody></table>
@@ -51,7 +51,7 @@
 <h2><a name="news">News</a></h2>
 
 <p class="header">
-<b>19 December 2016:</b>
+<b>21 December 2016:</b>
 Regina 5.1 is out!
 This comes with a major overhaul for Python and C++ users.
 This follows version&nbsp;5.0 from September, which added
@@ -124,14 +124,23 @@ Click on each thumbnail below for a full-sized version of the screenshot.
 <i><a href="#contents">(Back to contents...)</a></i>
 
 <h2><a name="download">Download</a></h2>
-
 <p>
-Regina is available for
-<a href="#macos">Mac</a>,
-<a href="#windows">Windows</a>,
-<a href="#linux">GNU/Linux</a>,
-<a href="#ios">iPad</a>, and
-<a href="#sage">Sage</a>.
+The following downloads are available:
+<p>
+<table class="contentswrapper" cellspacing=0>
+<tbody>
+<tr><td valign="top">
+    <table class="contents" cellspacing=0><tbody>
+    <tr><td><a href="#macos">Mac</a></td></tr>
+    <tr><td><a href="#windows">Windows</a></td></tr>
+    <tr><td><a href="#linux">GNU/Linux</a></td></tr>
+    <tr><td><a href="#ios">iPad</a></td></tr>
+    <tr><td><a href="#sage">Sage</a></td></tr>
+    <tr><td><a href="#source">Source code</a></td></tr>
+    </tbody></table>
+</td></tr>
+</tbody>
+</table>
 <p>
 If you encounter any problems when you run Regina, you can check the
 <a href="docs/troubleshooting.html">troubleshooting page</a> to
@@ -199,7 +208,7 @@ Regina on Windows uses a standard point-and-click installer.
 <p>
 Notes for Windows:
 <ul>
-<li><i>Windows&nbsp;8</i> users might not be able to run
+<li><i>Windows&nbsp;8&nbsp;/&nbsp;10</i> users might not be able to run
 the installer (<i>&ldquo;Windows SmartScreen prevented an unrecognized
 app from starting ...&rdquo;</i>).
 This is because Microsoft has not yet added Regina to its database of
@@ -243,14 +252,14 @@ and he can build you an MPI-enabled package.
     </tr>
 <tr><td rowspan=2 class="altfirstjoin">Fedora</td>
     <td rowspan=2 class="alt"><img src="osicons/os_fedora.png" border=0 hspace=5></td>
+    <td class="alt">25</td>
+    <td class="alt" align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-5.1/regina-normal-5.1-1.fedora25.i686.rpm">Download</a></td>
+    <td class="alt" align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-5.1/regina-normal-5.1-1.fedora25.x86_64.rpm">Download</a></td>
+    </tr>
+<tr>
     <td class="alt">24</td>
     <td class="alt" align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-5.1/regina-normal-5.1-1.fedora24.i686.rpm">Download</a></td>
     <td class="alt" align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-5.1/regina-normal-5.1-1.fedora24.x86_64.rpm">Download</a></td>
-    </tr>
-<tr>
-    <td class="alt">23</td>
-    <td class="alt" align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-5.1/regina-normal-5.1-1.fedora23.i686.rpm">Download</a></td>
-    <td class="alt" align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-5.1/regina-normal-5.1-1.fedora23.x86_64.rpm">Download</a></td>
     </tr>
 <tr><td rowspan=1 class="firstjoin">Mageia</td>
     <td rowspan=1><img src="osicons/os_mandriva.png" border=0 hspace=5></td>
@@ -258,8 +267,8 @@ and he can build you an MPI-enabled package.
     <td align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-5.1/regina-normal-5.1-1.mga5.i586.rpm">Download</a></td>
     <td align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-5.1/regina-normal-5.1-1.mga5.x86_64.rpm">Download</a></td>
     </tr>
-<tr><td rowspan=3 class="altfirstjoin">openSUSE</td>
-    <td rowspan=3 class="alt"><img src="osicons/os_opensuse.png" border=0 hspace=5></td>
+<tr><td rowspan=2 class="altfirstjoin">openSUSE</td>
+    <td rowspan=2 class="alt"><img src="osicons/os_opensuse.png" border=0 hspace=5></td>
     <td class="alt">Leap&nbsp;42.2</td>
     <td class="alt" align="center">n/a</td>
     <td class="alt" align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-5.1/regina-normal-5.1-1.suse42.2.x86_64.rpm">Download</a></td>
@@ -269,13 +278,8 @@ and he can build you an MPI-enabled package.
     <td class="alt" align="center">n/a</td>
     <td class="alt" align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-5.1/regina-normal-5.1-1.suse42.1.x86_64.rpm">Download</a></td>
     </tr>
-<tr>
-    <td class="alt">13.2</td>
-    <td class="alt" align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-5.1/regina-normal-5.1-1.suse13.2.i586.rpm">Download</a></td>
-    <td class="alt" align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-5.1/regina-normal-5.1-1.suse13.2.x86_64.rpm">Download</a></td>
-    </tr>
-<tr><td rowspan=3 class="firstjoin">Ubuntu</td>
-    <td rowspan=3><img src="osicons/os_ubuntu.png" border=0 hspace=5></td>
+<tr><td rowspan=2 class="firstjoin">Ubuntu</td>
+    <td rowspan=2><img src="osicons/os_ubuntu.png" border=0 hspace=5></td>
     <td>16.10 (yakkety)</td>
     <td align="center"><a href="install/ubuntu-yakkety.html">Install</a></td>
     <td align="center"><a href="install/ubuntu-yakkety.html">Install</a></td>
@@ -285,18 +289,13 @@ and he can build you an MPI-enabled package.
     <td align="center"><a href="install/ubuntu-xenial.html">Install</a></td>
     <td align="center"><a href="install/ubuntu-xenial.html">Install</a></td>
     </tr>
-<tr>
-    <td>14.04 LTS (trusty)</td>
-    <td align="center"><a href="install/ubuntu-trusty.html">Install</a></td>
-    <td align="center"><a href="install/ubuntu-trusty.html">Install</a></td>
-    </tr>
 </tbody></table></blockquote>
 
 <p class="header">
 <b>For older versions of GNU/Linux:</b>
 <ul><li>
 If your distribution is in the table above but your version is
-too old, then your version of GNU/Linux has probably passed its end-of-life.
+too old, then your version of GNU/Linux may have passed its end-of-life.
 This is a <b>security risk</b>, since most distributions do not
 provide security updates for old (end-of-life) versions.
 You should seriously consider <b>upgrading your machine</b>.
@@ -315,17 +314,13 @@ Otherwise you can always build from source (see below).
 <b>For other GNU/Linux distributions:</b>
 <ul><li>
 If you are using some other distribution (e.g., RedHat, Slackware, &hellip;),
-then you will need to build Regina from source.
-You can <a href="https://github.com/regina-normal/regina/releases/download/regina-5.1/regina-5.1.tar.gz">download the source code here</a>.
-Please see the <a href="source.html">separate page on building Regina</a>
-for instructions on how to build Regina and
-what libraries and tools you will need to have installed.
+then you will need to <a href="#source">build Regina from source</a>.
 </li></ul>
 
 <a name="ios"><h4 class="divide">iPad</h4></a>
 
-The iPad app offers most of Regina's functionality (now including
-Python scripting), but not all.  For
+The iPad app offers most of Regina's functionality (<b>now including
+Python scripting!</b>), but not all.  For
 example, the iPad version does not support some of the more exotic
 import/export formats, and some mathematical functions are only
 accessible through Python (such as isomorphism testing, or manifolds of
@@ -361,6 +356,18 @@ listed above.
 Of course, whilst the packages are written to work with any modern version
 of Sage, your experiences might vary (particular with an older Sage and/or
 operating system).  Follow the instructions link above for details.
+
+<a name="source"><h4 class="divide">Source code</h4></a>
+
+<p>
+For other systems not listed above, you will need to build Regina
+from its source code.
+<p>
+You can <a href="https://github.com/regina-normal/regina/releases/download/regina-5.1/regina-5.1.tar.gz">download the source code here</a>.
+<p>
+Please see the <a href="source.html">separate page on building Regina</a>
+for instructions on how to build Regina and
+what libraries and tools you will need to have installed.
 <p>
 <i><a href="#contents">(Back to contents...)</a></i>
 
