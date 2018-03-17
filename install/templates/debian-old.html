@@ -1,0 +1,100 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../regina.css">
+    <title>Regina for Debian:  Jessie (Debian 8.x)</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000"
+    link="#0000EE" vlink="#551A8B" alink="#FF0000">
+
+<h1><a name="contents">Regina for Debian:  Jessie (Debian 8.x)</a></h1>
+
+<p>
+Debian 8.x (Jessie) already comes with Regina, but this is
+an <b>old version</b> (4.96).
+</p>
+<p>
+To install the <b>newest version</b> of Regina, follow these instructions.
+</p>
+<p>
+<b>You only need to follow these steps the first time you install Regina.</b>
+After this, Debian's package manager will handle upgrades for you,
+just like for any other Debian package.
+</p>
+<ol>
+<li><p>
+Make Regina's repository a trusted source.  This helps keep your machine
+secure, and avoids messages like &ldquo;these packages cannot be
+authenticated&rdquo;.
+To do this,
+<a href="https://people.debian.org/~bab/regina-keys.txt">download
+ Regina's cryptographic signing keys here</a>.
+Then, at a command prompt type:
+</p>
+<div class="example"><p>
+<tt>sudo apt-key add ~/Downloads/regina-keys.txt</tt>
+</p></div>
+<p>
+Here you should replace <tt>~/Downloads/regina-keys.txt</tt> with location of
+the file you just downloaded.  You can now delete regina-keys.txt if you like.
+</p>
+</li>
+<li><p>
+Add Regina's location to your list of repositories.  To do this, open
+<tt>/etc/apt/sources.list</tt> and add the following line:
+</p>
+<div class="example"><p>
+<tt>deb https://people.debian.org/~bab/regina jessie/</tt>
+</p></div>
+</li>
+<li>
+<p>
+Update the list of available packages.  At a command prompt, type:
+</p>
+<div class="example"><p>
+<tt>sudo apt-get update</tt>
+</p></div>
+<p>
+If you see an error like <i>&ldquo;The method driver
+/usr/lib/apt/methods/https could not be found&rdquo;</i>,
+it is because your system does not yet know how to handle HTTPS repositories.
+Install the package <tt>apt-transport-https</tt> and try again.
+</p>
+</li>
+<li>
+<p>
+Install or upgrade Regina like you would any other package.  Type:
+</p>
+<div class="example"><p>
+<tt>sudo apt-get install regina-normal</tt>
+</p></div>
+<p>
+</ol>
+<p>
+The procedure above only installs the main packages
+<tt>regina-normal</tt> and <tt>regina-normal-doc</tt>, which is all that
+most people will need.
+</p>
+<ul>
+<li>
+<p>
+If you are a C++ programmer and you wish to build Regina into your own
+projects, you should also install the package <tt>regina-normal-dev</tt>.
+</p>
+</li>
+<li>
+<p>
+If you want the MPI-enabled utilities for use on high-performance clusters,
+you should install the package <tt>regina-normal-mpi</tt>.
+</p>
+</li>
+</ul>
+
+<p class="return">
+<a href="../index.html#download"><img src="../regina.svg"
+    alt="Back to main page ..."
+    border="0" width="32" height="32" align="middle"></a>
+<a href="../index.html#download">Back to main page ...</a></p>
+
+</body>
+</html>
+
