@@ -29,18 +29,232 @@ support for knots and links.  To accompany this, you can download the
 tables of all 352,152,252 prime non-trivial knots with up to
 19&nbsp;crossings.
 <p>
-The tables will appear here over the coming days (once I can find an
+<i>29&nbsp;May&nbsp;2018:</i>
+<b>The tables will appear here over the coming days</b> (once I can find an
 appropriate place to host 10+&nbsp;GB of data)&mdash;please keep an eye
 on this website.
-The tables include Regina's native knot signatures, alphabetical
-Dowker-Thistlethwaite codes, and also structural descriptions for the
-torus and satellite knots.
+<p>
+The tables are plain text CSV (comma-separated value) files which you can
+load into a spreadsheet and/or process with a text editor, and have been
+compressed with <tt>bzip2</tt>.  The fields include:
+<p>
+<ul>
+<li><p><b>name:</b> The name of the knot, using a naming scheme
+specific to these tables.
+An example name is <tt>12nh_137</tt>.
+In general the name is of the form <i>c[an][tsh]_k</i>, where:
+<ul><li><i>c</i> is the number of crossings;</li>
+<li><i>[an]</i> indicates whether the knot is alternating or
+non-alternating;</li>
+<li><i>[tsh]</i> indicates whether the knot is
+a torus, satellite knot or hyperbolic;</li>
+<li><i>k</i> is a positive integer that sorts the knots
+within each of these classes.</li></ul>
+<p>
+The torus and satellite knots are sorted according to their
+structure.  The hyperbolic knots are sorted <i>roughly</i> by
+volume, but take care&mdash;although the distinctness and hyperbolicity
+of the knots are proven using exact computation, the final sorting order
+is based on approximate volume computation only.
+</li>
+<li><p><b>knot_sig:</b> The knot diagram, expressed as a native Regina
+knot signature.  An example signature (for the knot <tt>7ah_5</tt>)
+is <tt>habcadebcfgedgfvvb-Za</tt>.
+<i>Knot signatures</i> uniquely identify a diagram on
+the 2-sphere up to relabelling and/or reflection.  In Regina&nbsp;5.2 or
+later you can reconstruct a knot from a signature through the GUI, or by
+calling <tt>Link.fromKnotSig()</tt> in python.
+<li><p><b>dt_code:</b> The knot diagram, expressed as an alphabetical
+Dowker-Thistlethwaite (DT) code  An example DT code (again for the knot
+<tt>7ah_5</tt>) is <tt>fdgeacb</tt>.
+<li><p><b>structure:</b> Gives the full structure of a torus or
+satellite knot (this field does not appear in the hyperbolic tables).
+An example is <tt>Trefoil[-3/2]</tt>, indicating a
+satellite formed by inserting the rational tangle -3/2 into the double
+of the right-hand trefoil.  See the paper below for a full explanation
+of what the various structure descriptions mean.
+</ul>
+<p>
+Over time, I hope to include an extra field for &le;&nbsp;16 crossings
+that identifies where each knot appears in the older
+Hoste-Thistlethwaite-Weeks tables (e.g., as used by Knotscape).
 <p>
 If you wish to cite this data, please reference
 Benjamin&nbsp;A.&nbsp;Burton, <i>&ldquo;The next 350&nbsp;million
-knots&rdquo;</i>, which should be appearing on the arXiv in June&nbsp;2018.
+knots&rdquo;</i>, which should appear on the arXiv in June&nbsp;2018.
 <p>
-&mdash;&nbsp;Ben Burton, 29&nbsp;May&nbsp;2018.
+<table cellspacing=0 border=0 class="data"><tbody>
+<tr>
+    <th class="first" colspan=2>Crossings</th>
+    <th>Torus</th>
+    <th>Satellite</th>
+    <th colspan=2>Hyperbolic</th>
+</tr>
+<tr>
+    <td class="knotcross">3</td><td>alternating</td>
+    <td class="knotcountsmall"><a href="3a-torus.csv.bz2">1 knot</a></td>
+    <td class="knotcountsmall">&mdash;</td>
+    <td class="knotcount">&mdash;</td><td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="knotcross">4</td><td>alternating</td>
+    <td class="knotcountsmall">&mdash;</td>
+    <td class="knotcountsmall">&mdash;</td>
+    <td class="knotcount"><a href="4a-hyp.csv.bz2">1 knot</a></td><td class="knotsize">&nbsp;</td>
+</tr>
+<tr>
+    <td class="knotcross">5</td><td>alternating</td>
+    <td class="knotcountsmall"><a href="5a-torus.csv.bz2">1 knot</a></td>
+    <td class="knotcountsmall">&mdash;</td>
+    <td class="knotcount"><a href="5a-hyp.csv.bz2">1 knot</a></td><td class="knotsize">&nbsp;</td>
+</tr>
+<tr>
+    <td class="knotcross">6</td><td>alternating</td>
+    <td class="knotcountsmall">&mdash;</td>
+    <td class="knotcountsmall">&mdash;</td>
+    <td class="knotcount"><a href="6a-hyp.csv.bz2">3 knots</a></td><td class="knotsize">&nbsp;</td>
+</tr>
+<tr>
+    <td class="knotcross">7</td><td>alternating</td>
+    <td class="knotcountsmall"><a href="7a-torus.csv.bz2">1 knot</a></td>
+    <td class="knotcountsmall">&mdash;</td>
+    <td class="knotcount"><a href="7a-hyp.csv.bz2">6 knots</a></td><td class="knotsize">&nbsp;</td>
+</tr>
+<tr>
+    <td class="knotcross" rowspan=2>8</td><td class="knotalt">alternating</td>
+    <td class="knotcountuppersmall">&mdash;</td>
+    <td class="knotcountuppersmall">&mdash;</td>
+    <td class="knotcountupper"><a href="8a-hyp.csv.bz2">18 knots</a></td><td class="knotsizeupper">&nbsp;</td>
+    </tr><tr>
+    <td>non-alternating</td>
+    <td class="knotcountsmall"><a href="8n-torus.csv.bz2">1 knot</a></td>
+    <td class="knotcountsmall">&mdash;</td>
+    <td class="knotcount"><a href="8n-hyp.csv.bz2">2 knots</a></td><td class="knotsize">&nbsp;</td>
+</tr>
+<tr>
+    <td class="knotcross" rowspan=2>9</td><td class="knotalt">alternating</td>
+    <td class="knotcountuppersmall"><a href="9a-torus.csv.bz2">1 knot</a></td>
+    <td class="knotcountuppersmall">&mdash;</td>
+    <td class="knotcountupper"><a href="9a-hyp.csv.bz2">40 knots</a></td><td class="knotsizeupper">&nbsp;</td>
+    </tr><tr>
+    <td>non-alternating</td>
+    <td class="knotcountsmall">&mdash;</td>
+    <td class="knotcountsmall">&mdash;</td>
+    <td class="knotcount"><a href="9n-hyp.csv.bz2">8 knots</a></td><td class="knotsize">&nbsp;</td>
+</tr>
+<tr>
+    <td class="knotcross" rowspan=2>10</td><td class="knotalt">alternating</td>
+    <td class="knotcountuppersmall">&mdash;</td>
+    <td class="knotcountuppersmall">&mdash;</td>
+    <td class="knotcountupper"><a href="10a-hyp.csv.bz2">123 knots</a></td><td class="knotsizeupper">&nbsp;</td>
+    </tr><tr>
+    <td>non-alternating</td>
+    <td class="knotcountsmall"><a href="10n-torus.csv.bz2">1 knot</a></td>
+    <td class="knotcountsmall">&mdash;</td>
+    <td class="knotcount"><a href="10n-hyp.csv.bz2">41 knots</a></td><td class="knotsize">&nbsp;</td>
+</tr>
+<tr>
+    <td class="knotcross" rowspan=2>11</td><td class="knotalt">alternating</td>
+    <td class="knotcountuppersmall"><a href="11a-torus.csv.bz2">1 knot</a></td>
+    <td class="knotcountuppersmall">&mdash;</td>
+    <td class="knotcountupper"><a href="11a-hyp.csv.bz2">366 knots</a></td><td class="knotsizeupper">&nbsp;</td>
+    </tr><tr>
+    <td>non-alternating</td>
+    <td class="knotcountsmall">&mdash;</td>
+    <td class="knotcountsmall">&mdash;</td>
+    <td class="knotcount"><a href="11n-hyp.csv.bz2">185 knots</a></td><td class="knotsize">&nbsp;</td>
+</tr>
+<tr>
+    <td class="knotcross" rowspan=2>12</td><td class="knotalt">alternating</td>
+    <td class="knotcountuppersmall">&mdash;</td>
+    <td class="knotcountuppersmall">&mdash;</td>
+    <td class="knotcountupper"><a href="12a-hyp.csv.bz2">1,288 knots</a></td><td class="knotsizeupper">&nbsp;</td>
+    </tr><tr>
+    <td>non-alternating</td>
+    <td class="knotcountsmall">&mdash;</td>
+    <td class="knotcountsmall">&mdash;</td>
+    <td class="knotcount"><a href="12n-hyp.csv.bz2">888 knots</a></td><td class="knotsize">&nbsp;</td>
+</tr>
+<tr>
+    <td class="knotcross" rowspan=2>13</td><td class="knotalt">alternating</td>
+    <td class="knotcountuppersmall"><a href="13a-torus.csv.bz2">1 knot</a></td>
+    <td class="knotcountuppersmall">&mdash;</td>
+    <td class="knotcountupper"><a href="13a-hyp.csv.bz2">4,877 knots</a></td><td class="knotsizeupper">&nbsp;</td>
+    </tr><tr>
+    <td>non-alternating</td>
+    <td class="knotcountsmall">&mdash;</td>
+    <td class="knotcountsmall"><a href="13n-satellite.csv.bz2">2 knots</a></td>
+    <td class="knotcount"><a href="13n-hyp.csv.bz2">5,108 knots</a></td><td class="knotsize">&nbsp;</td>
+</tr>
+<tr>
+    <td class="knotcross" rowspan=2>14</td><td class="knotalt">alternating</td>
+    <td class="knotcountuppersmall">&mdash;</td>
+    <td class="knotcountuppersmall">&mdash;</td>
+    <td class="knotcountupper"><a href="14a-hyp.csv.bz2">19,536 knots</a></td><td class="knotsizeupper">&nbsp;</td>
+    </tr><tr>
+    <td>non-alternating</td>
+    <td class="knotcountsmall"><a href="14n-torus.csv.bz2">1 knot</a></td>
+    <td class="knotcountsmall"><a href="14n-satellite.csv.bz2">2 knots</a></td>
+    <td class="knotcount"><a href="14n-hyp.csv.bz2">27,433 knots</a></td><td class="knotsize">&nbsp;</td>
+</tr>
+<tr>
+    <td class="knotcross" rowspan=2>15</td><td class="knotalt">alternating</td>
+    <td class="knotcountuppersmall"><a href="15a-torus.csv.bz2">1 knot</a></td>
+    <td class="knotcountuppersmall">&mdash;</td>
+    <td class="knotcountupper"><a href="15a-hyp.csv.bz2">85,262 knots</a></td><td class="knotsizeupper">(1.6&nbsp;MB)</td>
+    </tr><tr>
+    <td>non-alternating</td>
+    <td class="knotcountsmall"><a href="15n-torus.csv.bz2">1 knot</a></td>
+    <td class="knotcountsmall"><a href="15n-satellite.csv.bz2">6 knots</a></td>
+    <td class="knotcount"><a href="15n-hyp.csv.bz2">168,023 knots</a></td><td class="knotsize">(4.0&nbsp;MB)</td>
+</tr>
+<tr>
+    <td class="knotcross" rowspan=2>16</td><td class="knotalt">alternating</td>
+    <td class="knotcountuppersmall">&mdash;</td>
+    <td class="knotcountuppersmall">&mdash;</td>
+    <td class="knotcountupper"><a href="16a-hyp.csv.bz2">379,799 knots</a></td><td class="knotsizeupper">(7.9&nbsp;MB)</td>
+    </tr><tr>
+    <td>non-alternating</td>
+    <td class="knotcountsmall"><a href="16n-torus.csv.bz2">1 knot</a></td>
+    <td class="knotcountsmall"><a href="16n-satellite.csv.bz2">10 knots</a></td>
+    <td class="knotcount"><a href="16n-hyp.csv.bz2">1,008,895 knots</a></td><td class="knotsize">(27&nbsp;MB)</td>
+</tr>
+<tr>
+    <td class="knotcross" rowspan=2>17</td><td class="knotalt">alternating</td>
+    <td class="knotcountuppersmall"><a href="17a-torus.csv.bz2">1 knot</a></td>
+    <td class="knotcountuppersmall">&mdash;</td>
+    <td class="knotcountupper"><a href="17a-hyp.csv.bz2">1,769,978 knots</a></td><td class="knotsizeupper">(41&nbsp;MB)</td>
+    </tr><tr>
+    <td>non-alternating</td>
+    <td class="knotcountsmall">&mdash;</td>
+    <td class="knotcountsmall"><a href="17n-satellite.csv.bz2">29 knots</a></td>
+    <td class="knotcount"><a href="17n-hyp.csv.bz2">6,283,385 knots</a></td><td class="knotsize">(184&nbsp;MB)</td>
+</tr>
+<tr>
+    <td class="knotcross" rowspan=2>18</td><td class="knotalt">alternating</td>
+    <td class="knotcountuppersmall">&mdash;</td>
+    <td class="knotcountuppersmall">&mdash;</td>
+    <td class="knotcountupper"><a href="18a-hyp.csv.bz2">8,400,285 knots</a></td><td class="knotsizeupper">(215&nbsp;MB)</td>
+    </tr><tr>
+    <td>non-alternating</td>
+    <td class="knotcountsmall">&mdash;</td>
+    <td class="knotcountsmall"><a href="18n-satellite.csv.bz2">86 knots</a></td>
+    <td class="knotcount"><a href="18n-hyp.csv.bz2">39,866,095 knots</a></td><td class="knotsize">(1.3&nbsp;GB)</td>
+</tr>
+<tr>
+    <td class="knotcross" rowspan=2>19</td><td class="knotalt">alternating</td>
+    <td class="knotcountuppersmall"><a href="19a-torus.csv.bz2">1 knot</a></td>
+    <td class="knotcountuppersmall">&mdash;</td>
+    <td class="knotcountupper"><a href="19a-hyp.csv.bz2">40,619,384 knots</a></td><td class="knotsizeupper">(1.1&nbsp;GB)</td>
+    </tr><tr>
+    <td>non-alternating</td>
+    <td class="knotcountsmall">&mdash;</td>
+    <td class="knotcountsmall"><a href="19n-satellite.csv.bz2">245 knots</a></td>
+    <td class="knotcount"><a href="19n-hyp.csv.bz2">253,510,828 knots</a></td><td class="knotsize">(TODO&nbsp;GB)</td>
+</tr>
+</table>
+<p>
+<i><a href="#contents">(Back to top...)</a></i>
 
 <h2><a name="census">3-manifold census Data</a></h2>
 

@@ -111,6 +111,39 @@ table.data td.top {
   border-width: 2px 2px 2px 0px;
 }
 
+table.data td.knotcross {
+  border-width: 0px 0px 2px 2px;
+  padding: 2px 2ex 2px 1ex;
+}
+
+table.data td.knotcount {
+  border-width: 0px 0px 2px 0px;
+}
+
+table.data td.knotcountupper {
+  border-width: 0px 0px 0px 0px;
+}
+
+table.data td.knotalt, table.data td.knotcountuppersmall {
+  border-width: 0px 2px 0px 0px;
+}
+
+table.data td.knotcross, table.data td.knotcount, table.data td.knotcountupper, table.data td.knotcountsmall, table.data td.knotcountuppersmall, table.data td.knotsize, table.data td.knotsizeupper {
+  text-align: right;
+}
+
+table.data td.knotcount, table.data td.knotcountupper, table.data td.knotcountuppersmall, table.data td.knotcountsmall {
+  padding: 2px 1ex 2px 1ex;
+}
+
+table.data td.knotsize, table.data td.knotsizeupper {
+  padding: 2px 1ex 2px 2px;
+}
+
+table.data td.knotsizeupper {
+  border-width: 0px 2px 0px 0px;
+}
+
 table.data td.subheading, td.topsubheading {
   font-weight: bold;
   color: #3D3F53;
