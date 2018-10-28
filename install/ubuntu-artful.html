@@ -9,81 +9,38 @@
 <h1><a name="contents">Regina for Ubuntu:  Artful (Ubuntu 17.10)</a></h1>
 
 <p>
-Ubuntu 17.10 (Artful Aardvark) already comes with Regina, but this will
-be forever fixed at version 5.1.
+Ubuntu 17.10 (Artful Aardvark) already comes with Regina&nbsp;5.1.
 </p>
 <p>
-To keep up-to-date with the <b>newest version</b> of Regina,
-follow these instructions.
+Since Ubuntu 17.10 has <b>now passed its end-of-life</b>, newer versions of
+Regina will not be packaged for it.  It is highly recommended that you
+upgrade to a <b>newer version of Ubuntu</b>.
 </p>
 <p>
-<b>You only need to follow these steps the first time you install Regina.</b>
-After this, Ubuntu's Software Updater will handle upgrades for you,
-just like for any other Ubuntu package.
+If you wish to install Regina 5.1 on Ubuntu 17.10:
 </p>
 <ol>
-<li>
-<p>
-Add Regina's location to your list of repositories.
-To do this,
-open the Ubuntu Software application and select
+<li><p>
+Open the Ubuntu Software application and select
 <i>Software &amp; Updates</i> from the main menu.
-</p>
-<ul>
-<li><p>
-Under <i>Authentication</i>, import Regina's cryptographic signing keys.
-This helps keep your machine secure, and Ubuntu may refuse to install
-Regina without them.  You can
-<a href="https://people.debian.org/~bab/regina-keys.txt">download
- Regina's cryptographic signing keys here</a>.
-</p>
-<p align="center"><img src="xenial/ubuntu-importkey.png"></p>
-<p>
-When you import this key file, you should see new keys in the list of
-trusted software providers, under the names <i>Ben Burton</i>
-and <i>Benjamin Burton</i>.
-After the import, you can delete <tt>regina-keys.txt</tt> if you like.
-</p>
-<p align="center"><img src="artful/ubuntu-withkey.png"></p>
-</li>
-<li><p>
-Under <i>Ubuntu Software</i>, enable the community-maintained free and
-open-source software (universe) if this has not been done before.
+Under <i>Ubuntu Software</i>, make sure that you have enabled the
+community-maintained free and open-source software (universe).
 </p>
 <p align="center"><img src="xenial/ubuntu-universe.png"></p>
 </li>
 <li><p>
-Under <i>Other Software</i>, click the <i>Add...</i> button.  When Ubuntu
-asks you for an APT line, type:
-</p>
-<div class="example"><p>
-<tt>deb https://people.debian.org/~bab/regina artful/</tt>
-</p></div>
-<p align="center"><img src="artful/ubuntu-aptline.png"></p>
-</li>
-<li>
-<p>
 Now close the Software &amp; Updates box.
 Ubuntu should offer to reload the information about available software.
 Press <i>Reload</i>, so that Ubuntu can see the new packages for Regina.
 </p>
 <p align="center"><img src="xenial/ubuntu-update.png"></p>
 </li>
-</ul>
-</li>
 <li><p>
-Now search for Regina in the Ubuntu Software Centre.
+Search for Regina in the Ubuntu Software Centre.
 </p>
 <p align="center"><img src="artful/ubuntu-search.png"></p>
 <p>
-Click on the package name (or icon, or description), and you will see
-more information.  You should ensure that the version is correct
-(i.e., you are getting the latest version of Regina from this site,
-not the older version that is already bundled into Ubuntu).
-</p>
-<p>
-Once you are satisfied that Ubuntu has found the right version,
-press <i>Install</i> and you are finished!
+Press <i>Install</i> and you are finished!
 </p>
 <p align="center"><img src="xenial/ubuntu-install.png"></p>
 </li>
