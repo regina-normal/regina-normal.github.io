@@ -1,21 +1,21 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="../regina.css">
-    <title>Regina for Ubuntu:  Bionic (Ubuntu 18.04 LTS)</title>
+    <title>Regina for Ubuntu:  Groovy (Ubuntu 20.10)</title>
 </head>
 <body bgcolor="#FFFFFF" text="#000000"
     link="#0000EE" vlink="#551A8B" alink="#FF0000">
 
-<h1><a name="contents">Regina for Ubuntu:  Bionic (Ubuntu 18.04 LTS)</a></h1>
+<h1><a name="contents">Regina for Ubuntu:  Groovy (Ubuntu 20.10)</a></h1>
 
 <p>
-Ubuntu 18.04 LTS (Bionic Beaver) comes with Regina&nbsp;5.1, but
-<b>Ubuntu's own package is broken</b> (Regina will not start).
+Ubuntu 20.10 (Groovy Gorilla) already comes with Regina, but this will
+be forever fixed at version 6.0~alpha1 (an unofficial release from
+Ubuntu which is actually older than the official Regina&nbsp;5.96).
 </p>
 <p>
-To get a <b>working version of Regina</b> for Ubuntu&nbsp;18.04, and to
-get <b>newer versions</b> of Regina when they are released,
-you should follow these instructions.
+To keep up-to-date with the <b>newest version</b> of Regina,
+follow these instructions.
 </p>
 <p>
 <b>You only need to follow these steps the first time you install Regina.</b>
@@ -27,55 +27,58 @@ just like for any other Ubuntu package.
 <p>
 Add Regina's location to your list of repositories.
 To do this,
-open the Ubuntu Software application and select
-<i>Software &amp; Updates</i> from the main menu.
+open the <i>Software &amp; Updates</i> application.
 </p>
 <ul>
 <li><p>
-Under <i>Authentication</i>, import Regina's cryptographic signing keys.
+Under <i>Authentication</i>, import Regina's cryptographic signing key.
 This helps keep your machine secure, and Ubuntu may refuse to install
 Regina without them.  You can
-<a href="https://people.debian.org/~bab/regina-keys.txt">download
- Regina's cryptographic signing keys here</a>.
+<a href="https://people.debian.org/~bab/regina-key.txt">download
+ Regina's cryptographic signing key here</a>.
 </p>
-<p align="center"><img src="xenial/ubuntu-importkey.png"></p>
+<p align="center"><img src="focal/ubuntu-importkey.png"></p>
 <p>
 When you import this key file, you should see new keys in the list of
-trusted software providers, under the names <i>Ben Burton</i>
-and <i>Benjamin Burton</i>.
-After the import, you can delete <tt>regina-keys.txt</tt> if you like.
+trusted software providers, under the name <i>Benjamin Burton</i>.
+After the import, you can delete <tt>regina-key.txt</tt> if you like.
 </p>
-<p align="center"><img src="artful/ubuntu-withkey.png"></p>
+<p align="center"><img src="focal/ubuntu-withkey.png"></p>
+<p>
+<b>Note: Ubuntu 20.10 seems to have a bug where the list of keys appears
+empty even after the import.  Just continue, because this seems to be a
+visual problem only&mdash;despite what you see, the keys are still
+being imported.</b>
 </li>
 <li><p>
 Under <i>Ubuntu Software</i>, enable the community-maintained free and
 open-source software (universe) if this has not been done before.
 </p>
-<p align="center"><img src="xenial/ubuntu-universe.png"></p>
+<p align="center"><img src="groovy/ubuntu-universe.png"></p>
 </li>
 <li><p>
 Under <i>Other Software</i>, click the <i>Add...</i> button.  When Ubuntu
 asks you for an APT line, type:
 </p>
 <div class="example"><p>
-<tt>deb https://people.debian.org/~bab/regina bionic/</tt>
+<tt>deb https://people.debian.org/~bab/regina groovy/</tt>
 </p></div>
-<p align="center"><img src="bionic/ubuntu-aptline.png"></p>
+<p align="center"><img src="groovy/ubuntu-aptline.png"></p>
 </li>
 <li>
 <p>
-Now close the Software &amp; Updates box.
+Now close the Software &amp; Updates application.
 Ubuntu should offer to reload the information about available software.
 Press <i>Reload</i>, so that Ubuntu can see the new packages for Regina.
 </p>
-<p align="center"><img src="xenial/ubuntu-update.png"></p>
+<p align="center"><img src="groovy/ubuntu-update.png"></p>
 </li>
 </ul>
 </li>
 <li><p>
-Now search for Regina in the Ubuntu Software Centre.
+Next, open the Ubuntu Software application and search for Regina.
 </p>
-<p align="center"><img src="artful/ubuntu-search.png"></p>
+<p align="center"><img src="groovy/ubuntu-search.png"></p>
 <p>
 Click on the package name (or icon, or description), and you will see
 more information.  You should ensure that the version is correct
@@ -86,7 +89,7 @@ not the older version that is already bundled into Ubuntu).
 Once you are satisfied that Ubuntu has found the right version,
 press <i>Install</i> and you are finished!
 </p>
-<p align="center"><img src="bionic/ubuntu-install.png"></p>
+<p align="center"><img src="groovy/ubuntu-install.png"></p>
 </li>
 </ol>
 <p>
@@ -94,20 +97,10 @@ The procedure above only installs the main packages
 <tt>regina-normal</tt> and <tt>regina-normal-doc</tt>, which is all that
 most people will need.
 </p>
-<ul>
-<li>
 <p>
 If you are a C++ programmer and you wish to build Regina into your own
 projects, you should also install the package <tt>regina-normal-dev</tt>.
 </p>
-</li>
-<li>
-<p>
-If you want the MPI-enabled utilities for use on high-performance clusters,
-you should install the package <tt>regina-normal-mpi</tt>.
-</p>
-</li>
-</ul>
 <p class="return">
 <a href="../index.html#linux"><img src="../regina.svg"
     alt="Back to main page ..."

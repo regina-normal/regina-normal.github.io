@@ -27,16 +27,16 @@ Make Regina's repository a trusted source.  This helps keep your machine
 secure, and avoids messages like &ldquo;these packages cannot be
 authenticated&rdquo;.
 To do this,
-<a href="https://people.debian.org/~bab/regina-keys.txt">download
- Regina's cryptographic signing keys here</a>.
+<a href="https://people.debian.org/~bab/regina-key.txt">download
+ Regina's cryptographic signing key here</a>.
 Then, at a command prompt type:
 </p>
 <div class="example"><p>
-<tt>sudo apt-key add ~/Downloads/regina-keys.txt</tt>
+<tt>sudo apt-key add ~/Downloads/regina-key.txt</tt>
 </p></div>
 <p>
-Here you should replace <tt>~/Downloads/regina-keys.txt</tt> with location of
-the file you just downloaded.  You can now delete regina-keys.txt if you like.
+Here you should replace <tt>~/Downloads/regina-key.txt</tt> with location of
+the file you just downloaded.  You can now delete regina-key.txt if you like.
 </p>
 </li>
 <li><p>
@@ -75,20 +75,10 @@ The procedure above only installs the main packages
 <tt>regina-normal</tt> and <tt>regina-normal-doc</tt>, which is all that
 most people will need.
 </p>
-<ul>
-<li>
 <p>
 If you are a C++ programmer and you wish to build Regina into your own
 projects, you should also install the package <tt>regina-normal-dev</tt>.
 </p>
-</li>
-<li>
-<p>
-If you want the MPI-enabled utilities for use on high-performance clusters,
-you should install the package <tt>regina-normal-mpi</tt>.
-</p>
-</li>
-</ul>
 
 <p class="return">
 <a href="../index.html#linux"><img src="../regina.svg"

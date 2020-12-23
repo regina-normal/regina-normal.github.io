@@ -1,15 +1,15 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="../regina.css">
-    <title>Regina for Ubuntu:  Disco (Ubuntu 19.04)</title>
+    <title>Regina for Ubuntu:  Focal (Ubuntu 20.04 LTS)</title>
 </head>
 <body bgcolor="#FFFFFF" text="#000000"
     link="#0000EE" vlink="#551A8B" alink="#FF0000">
 
-<h1><a name="contents">Regina for Ubuntu:  Disco (Ubuntu 19.04)</a></h1>
+<h1><a name="contents">Regina for Ubuntu:  Focal (Ubuntu 20.04 LTS)</a></h1>
 
 <p>
-Ubuntu 19.04 (Disco Dingo) already comes with Regina, but this will
+Ubuntu 20.04 LTS (Focal Fossa) already comes with Regina, but this will
 be forever fixed at version 5.1.
 </p>
 <p>
@@ -30,35 +30,34 @@ open the <i>Software &amp; Updates</i> application.
 </p>
 <ul>
 <li><p>
-Under <i>Authentication</i>, import Regina's cryptographic signing keys.
+Under <i>Authentication</i>, import Regina's cryptographic signing key.
 This helps keep your machine secure, and Ubuntu may refuse to install
 Regina without them.  You can
-<a href="https://people.debian.org/~bab/regina-keys.txt">download
- Regina's cryptographic signing keys here</a>.
+<a href="https://people.debian.org/~bab/regina-key.txt">download
+ Regina's cryptographic signing key here</a>.
 </p>
-<p align="center"><img src="disco/ubuntu-importkey.png"></p>
+<p align="center"><img src="focal/ubuntu-importkey.png"></p>
 <p>
 When you import this key file, you should see new keys in the list of
-trusted software providers, under the names <i>Ben Burton</i>
-and <i>Benjamin Burton</i>.
-After the import, you can delete <tt>regina-keys.txt</tt> if you like.
+trusted software providers, under the name <i>Benjamin Burton</i>.
+After the import, you can delete <tt>regina-key.txt</tt> if you like.
 </p>
-<p align="center"><img src="disco/ubuntu-withkey.png"></p>
+<p align="center"><img src="focal/ubuntu-withkey.png"></p>
 </li>
 <li><p>
 Under <i>Ubuntu Software</i>, enable the community-maintained free and
 open-source software (universe) if this has not been done before.
 </p>
-<p align="center"><img src="disco/ubuntu-universe.png"></p>
+<p align="center"><img src="focal/ubuntu-universe.png"></p>
 </li>
 <li><p>
 Under <i>Other Software</i>, click the <i>Add...</i> button.  When Ubuntu
 asks you for an APT line, type:
 </p>
 <div class="example"><p>
-<tt>deb https://people.debian.org/~bab/regina disco/</tt>
+<tt>deb https://people.debian.org/~bab/regina focal/</tt>
 </p></div>
-<p align="center"><img src="disco/ubuntu-aptline.png"></p>
+<p align="center"><img src="focal/ubuntu-aptline.png"></p>
 </li>
 <li>
 <p>
@@ -66,14 +65,14 @@ Now close the Software &amp; Updates application.
 Ubuntu should offer to reload the information about available software.
 Press <i>Reload</i>, so that Ubuntu can see the new packages for Regina.
 </p>
-<p align="center"><img src="disco/ubuntu-update.png"></p>
+<p align="center"><img src="groovy/ubuntu-update.png"></p>
 </li>
 </ul>
 </li>
 <li><p>
 Next, open the Ubuntu Software application and search for Regina.
 </p>
-<p align="center"><img src="disco/ubuntu-search.png"></p>
+<p align="center"><img src="groovy/ubuntu-search.png"></p>
 <p>
 Click on the package name (or icon, or description), and you will see
 more information.  You should ensure that the version is correct
@@ -84,7 +83,7 @@ not the older version that is already bundled into Ubuntu).
 Once you are satisfied that Ubuntu has found the right version,
 press <i>Install</i> and you are finished!
 </p>
-<p align="center"><img src="disco/ubuntu-install.png"></p>
+<p align="center"><img src="groovy/ubuntu-install.png"></p>
 </li>
 </ol>
 <p>
@@ -92,20 +91,10 @@ The procedure above only installs the main packages
 <tt>regina-normal</tt> and <tt>regina-normal-doc</tt>, which is all that
 most people will need.
 </p>
-<ul>
-<li>
 <p>
 If you are a C++ programmer and you wish to build Regina into your own
 projects, you should also install the package <tt>regina-normal-dev</tt>.
 </p>
-</li>
-<li>
-<p>
-If you want the MPI-enabled utilities for use on high-performance clusters,
-you should install the package <tt>regina-normal-mpi</tt>.
-</p>
-</li>
-</ul>
 <p class="return">
 <a href="../index.html#linux"><img src="../regina.svg"
     alt="Back to main page ..."
