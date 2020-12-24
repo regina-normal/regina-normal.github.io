@@ -53,10 +53,10 @@ December 2020<br>Updated data: 31 May 2018--></h4>
 
 <p class="header">
 <b>24 December 2020:</b>
-Regina 5.96 is out!
+Regina 5.96 is out! At least something good has come of 2020.
 This is the first prerelease for what will become Regina&nbsp;6.0,
-and it is a major overhaul that includes native knot/link support,
-rewritten Python bindings, and more.
+and it is a major overhaul that includes native knot/link support
+amongst many other new features and improvements.
 Packages are available for MacOS, Windows and GNU/Linux.
 You can <a href="#new">read more about what's new</a>,
 or go ahead and <a href="#download">download the new version</a>.
@@ -143,11 +143,8 @@ to <a href="#contact">contact us</a> for help.
 
 <a name="macos"><h4 class="divide">Mac</h4></a>
 
-The new Regina&nbsp;5.96 is not yet available on the Mac App Store,
-since the review process with Apple is still ongoing.
-<p>
-In the meantime, you can download Regina for macOS here from this
-website.
+Regina comes with a universal app that runs natively
+on both Intel and Apple Silicon machines:
 <p>
 <blockquote><table cellspacing=0 border=0 align=center class="data"><tbody>
 <tr><th class="first" colspan=2>macOS Version</th><th>Universal app<br>
@@ -158,12 +155,16 @@ website.
     High Sierra (10.13)
     </td>
     <td><img src="osicons/os_macosx.png" border=0 hspace=5></td>
-    <td align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-5.96/Regina-5.96.dmg">Download from the<br>
-        Regina website</a></td>
+    <td align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-5.96/Regina-5.96.dmg">Download</a></td>
     </tr>
 </tbody></table>
 </blockquote>
-<!--You have two options for Mac: either download direct from this website,
+<p>
+The intention is to also offer a sandboxed version through the Mac App Store
+(free of course).  The review process with Apple is ongoing;
+please watch this page for updates.
+<!--p>
+<You have two options for Mac: either download direct from this website,
 or from the Mac App Store.
 If you're not sure, then try using the Mac App Store.
 <p>
@@ -214,9 +215,15 @@ Regina on Windows uses a standard point-and-click installer.
 <p>
 Regina now offers separate 64-bit and 32-bit versions.
 Almost all modern machines are 64-bit, and this is probably the version
-you want. If you are not sure, go to
+you want. If you are not sure:
+<ul>
+<li>On Windows&nbsp;10, go to
 <i>Settings</i>&nbsp;&rarr;&nbsp;<i>System</i>&nbsp;&rarr;&nbsp;<i>About</i>
-and look for whether you are a 64-bit or 32-bit operating system.
+and look for whether you have a 64-bit or 32-bit operating system.</li>
+<li>On Windows&nbsp;8.1, go to
+<i>PC Settings</i>&nbsp;&rarr;&nbsp;<i>PC and devices</i>&nbsp;&rarr;&nbsp;<i>PC info</i>
+and look for whether you have a 64-bit or 32-bit operating system.</li>
+</ul>
 <p>
 <blockquote><table cellspacing=0 border=0 align=center class="data"><tbody>
 <tr><th class="first" colspan=2>Windows Version</th>
@@ -230,15 +237,12 @@ and look for whether you are a 64-bit or 32-bit operating system.
 </tbody></table>
 </blockquote>
 <p>
-Notes for Windows:
-<ul>
-<li><i>Windows&nbsp;8.1&nbsp;/&nbsp;10</i> users might not be able to run
-the installer (<i>&ldquo;Microsoft Defender SmartScreen prevented an
+When running the installer, you may see a security warning
+(<i>&ldquo;Microsoft Defender SmartScreen prevented an
 unrecognized app from starting ...&rdquo;</i>).
 This is because Microsoft has not yet added Regina to its database of
 known applications.
 Click <i>More info</i> and you will be able to run the installer anyway.</li>
-</ul>
 
 <a name="linux"><h4 class="divide">GNU/Linux</h4></a>
 
@@ -247,12 +251,12 @@ All of these packages are named <b>regina-normal</b> (to avoid conflicting
 with the <a href="http://regina-rexx.sourceforge.net/">other Regina</a>).
 Please click on the <i>Download</i> link for your system in the table below.
 <p>
-All packages are <b>64-bit only</b>, which means you should be using the
-<i>x86_64</i> or <i>amd64</i> chipset (this covers almost any
-modern machine except for Apple Silicon).
+All packages are <b>64-bit Intel</b>, which means they will only work
+with an <i>x86_64</i> or <i>amd64</i> chipset (which covers almost any
+modern machine nowadays except for Apple Silicon).
 The exception is the Debian packages, which are built for more
 chipsets (see below).
-If you are not sure what architecture you have, open a terminal and run
+If you are not sure what chipset you have, open a terminal and run
 &ldquo;<tt>uname&nbsp;-m</tt>&rdquo;.
 <p>
 <blockquote><table cellspacing=0 border=0 align=center class="data"><tbody>
@@ -283,7 +287,8 @@ If you are not sure what architecture you have, open a terminal and run
 <tr><td rowspan=1 class="altfirstjoin">openSUSE</td>
     <td rowspan=1 class="alt"><img src="osicons/os_opensuse.png" border=0 hspace=5></td>
     <td class="alt">Leap&nbsp;15.2</td>
-    <td class="alt" align="center">Not yet available</td>
+    <td class="alt" align="center">Not yet available<br>
+    (Updates coming)</td>
     </tr>
 <!--tr><td rowspan=1 class="altfirstjoin">openSUSE</td>
     <td rowspan=1 class="alt"><img src="osicons/os_opensuse.png" border=0 hspace=5></td>
@@ -324,7 +329,8 @@ Otherwise you can always build from source (see below).
 <p class="header">
 <b>For other GNU/Linux distributions:</b>
 <ul><li>
-If you are using some other distribution (e.g., RedHat, Slackware, &hellip;),
+If you are using some other distribution (e.g., Arch, RedHat, Slackware,
+&hellip;),
 then you will need to <a href="#source">build Regina from source</a>.
 </li></ul>
 
@@ -416,15 +422,13 @@ You can also <a href="engine-docs/index.html">read it here online</a>.
 <i><a href="#contents">(Back to contents...)</a></i>
 
 <h2><a name="new">What's new in version 5.96?</a></h2>
-
-<h4>Overview</h4>
-<ul>
-<li>This is the first prerelease for Regina&nbsp;6.0.  The main material
-    still to be added is user documentation (i.e., the handbook),
-    which needs to be updated to talk through the many new features.</li>
-<li>Regina now uses the C++14 standard, and no longer links against
-    the boost libraries (it just uses the boost headers).
-</ul>
+<p>
+This is the first prerelease for Regina&nbsp;6.0.
+<p>
+The main material
+still to be added is user documentation (i.e., the handbook),
+which needs to be updated to talk through the many new features.</li>
+</p>
 <h4>Features</h4>
 <ul>
 <li>Regina now offers native support for knots and links!
@@ -435,6 +439,8 @@ You can also <a href="engine-docs/index.html">read it here online</a>.
 </ul>
 <h4>Python and C++</h4>
 <ul>
+<li>Regina now uses the C++14 standard, and no longer links against
+    the boost libraries (it just uses the boost headers).
 <li>Now supports Python&nbsp;3 as well as Python&nbsp;2.  Regina's ready-made
     packages will be built against the default python on your system.</li>
 <li>The Python bindings have been completely overhauled.</li>
