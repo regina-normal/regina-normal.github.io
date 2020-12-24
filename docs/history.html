@@ -1,4 +1,4 @@
-<html><head><title>Appendix C. Version History</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina Handbook"><link rel="up" href="index.html" title="The Regina Handbook"><link rel="prev" href="man-trisetcmp.html" title="trisetcmp"><link rel="next" href="credits.html" title="Appendix D. Authors and License"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Version History</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="man-trisetcmp.html">Prev</a></td><td align="center" class="navCenter" width="34%"> </td><td align="right" class="navRight" width="33%"> 
+<html><head><title>Appendix C. Version History</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina Handbook"><link rel="up" href="index.html" title="The Regina Handbook"><link rel="prev" href="man-trisetcmp.html" title="trisetcmp"><link rel="next" href="credits.html" title="Appendix D. Authors and License"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Version History</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="man-trisetcmp.html">Prev</a></td><td align="center" class="navCenter" width="34%"> </td><td align="right" class="navRight" width="33%"> 
 		      <a accesskey="n" href="credits.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="appendix" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="history"></a>Appendix C. Version History</h2></div></div></div><pre class="programlisting">
 Regina - A Normal Surface Theory Calculator
 
@@ -6,6 +6,31 @@ Regina - A Normal Surface Theory Calculator
 
     For a full list of changes, including all changes to the C++/Python API,
     see the file CHANGES.txt.
+
+Version 5.96  [ 24 December, 2020 ]
+
+    Overview:
+        - This is the first prerelease for Regina 6.0.  The main material
+          still to be added is user documentation (i.e., the handbook),
+          which needs to be updated to talk through the many new features.
+        - Regina now uses the C++14 standard, and no longer links against
+          the boost libraries (it just uses the boost headers).
+        - At least something good has come from the year 2020.
+    Features:
+        - Regina now offers native support for knots and links!
+          Take a look around the introductory examples file.
+        - New quad closed coordinates for normal surfaces.
+        - New command-line utility to retriangulate a given manifold.
+        - Many, many other additions: see the full changelog for details.
+    Python and C++:
+        - Now supports Python 3 as well as Python 2.  Regina's ready-made
+          packages will be built against the default python on your system.
+        - The Python bindings have been completely overhauled.
+        - Large mathematical objects (e.g., polynomials) now support C++11 move
+          assignment and move constructors, which allow for more natural syntax
+          in arithmetical expressions without the unwanted cost of deep copies.
+        - Several collection objects (e.g., packets and surface lists)
+          now allow iteration over members using C++11 range-based for loops.
 
 Version 5.1  [ 19 December, 2016 ]
 

@@ -1,4 +1,4 @@
-<html><head><title>What does Regina do?</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina Handbook"><link rel="up" href="about.html" title="Chapter 1. Introduction"><link rel="prev" href="about.html" title="Chapter 1. Introduction"><link rel="next" href="genealogy.html" title="Genealogy"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>What does Regina do?</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="about.html">Prev</a></td><td align="center" class="navCenter" width="34%">Introduction</td><td align="right" class="navRight" width="33%"> 
+<html><head><title>What does Regina do?</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina Handbook"><link rel="up" href="about.html" title="Chapter 1. Introduction"><link rel="prev" href="about.html" title="Chapter 1. Introduction"><link rel="next" href="genealogy.html" title="Genealogy"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>What does Regina do?</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="about.html">Prev</a></td><td align="center" class="navCenter" width="34%">Introduction</td><td align="right" class="navRight" width="33%"> 
 		      <a accesskey="n" href="genealogy.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="featureset"></a>What does Regina do?</h2></div></div></div><p>
   Some of <span class="application">Regina</span>'s more noteworthy features are listed below.
  </p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="features-tri"></a>3-Manifold Triangulations</h3></div></div></div><p>
@@ -127,8 +127,7 @@
       Dehn fillings for <span class="application">SnapPea</span> triangulations (via the <span class="application">SnapPea</span> kernel).
      </p></li></ul></div><p>
    </p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="features-dim4"></a>4-Manifold Triangulations</h3></div></div></div><p>
-   Since version 5.0, <span class="application">Regina</span> now offers rich support for
-   triangulated 4-manifolds.
+   <span class="application">Regina</span> also offers rich support for triangulated 4-manifolds.
   </p><p>
    You can create 4-manifold triangulations using similar methods to
    3-manifolds, including manual gluings of pentachora,
@@ -151,8 +150,8 @@
    support for triangulations of dimensions 5–15.
    This support is <span class="emphasis"><em>not</em></span> available through the <span class="acronym">GUI</span>:
    for this you will need to use either
-   <a href="python.html" title="Chapter 8. Python Scripting"><span class="application">Python</span></a> or
-   <a href="compiling.html" title="Chapter 10. Compiling Regina Into Your Projects"><span class="application">C++</span></a>.
+   <a href="python.html" title="Chapter 9. Python Scripting"><span class="application">Python</span></a> or
+   <a href="compiling.html" title="Chapter 11. Compiling Regina Into Your Projects"><span class="application">C++</span></a>.
   </p><p>
    Currently this support is limited to basic combinatorial tools,
    such analysis of the skeleton and face structure of the triangulation,
@@ -161,11 +160,28 @@
   </p><p>
    The level of support for higher-dimensional triangulations is
    expected to grow in future releases.
+  </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="features-links"></a>Knots and Links</h3></div></div></div><p>
+   Since version 5.96 (the first prerelease for version 6.0),
+   <span class="application">Regina</span> now offers native support for knots and links.
+  </p><p>
+   You can create knots and links from Gauss or Dowker-Thistlethwaite codes,
+   or by construction of ready-made examples.
+  </p><p>
+   <span class="application">Regina</span> computes several link invariants including the
+   Jones and HOMFLY-PT polynomials, allows you to build and study the
+   underlying 4-valent graph and its tree decompositions, offers tools
+   for isomorphism testing and isomorphism signatures, and allows you to
+   build the knot/link complement as a 3-manifold triangulation.
+  </p><p>
+   To manipulate knots and links, you can edit individual crossings,
+   perform Reidemeister moves, or run more sophisticated simplification
+   tools.
   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="features-census"></a>Census Creation and Lookup</h3></div></div></div><p>
    <span class="application">Regina</span> can be used to form censuses of all triangulations
    that satisfy various constraints, through the command-line tool
    <a href="man-tricensus.html" title="tricensus"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">tricensus</strong></span></span></a>.
-   Census enumeration is currently available in dimensions 2, 3 and 4.
+   Census enumeration is currently available for triangulations
+   in dimensions 2, 3 and 4.
   </p><p>
    The census algorithms are heavily optimised; see
    [<a href="bibliography.html#bib-burton-facegraphs" title="[Bur04]"><span class="abbrev">Bur04</span></a>],
@@ -192,7 +208,7 @@
    normal surfaces within a 3-manifold triangulation, or all
    vertex or fundamental normal hypersurfaces within a 4-manifold
    triangulation.  For 3-manifolds, almost normal
-   surfaces<sup>[<a name="idp140217048372736" href="#ftn.idp140217048372736">1</a>]</sup>
+   surfaces<sup>[<a name="idm2976895824" href="#ftn.idm2976895824">1</a>]</sup>
    are supported also.
   </p><p>
    These operations—enumerating vertex and fundamental normal
@@ -354,7 +370,7 @@
    Again, this <span class="acronym">XML</span> file format is extensively documented.
    For details, select
    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Help</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">File Format Reference</span></span>.
-  </p></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p><sup>[<a name="ftn.idp140217048372736" href="#idp140217048372736">1</a>] </sup>Almost normal surfaces are closely related
+  </p></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p><sup>[<a name="ftn.idm2976895824" href="#idm2976895824">1</a>] </sup>Almost normal surfaces are closely related
      to normal surfaces and are used by Rubinstein in his 3-sphere recognition
      algorithm [<a href="bibliography.html#bib-rubin-3sphere1" title="[Rub95]"><span class="abbrev">Rub95</span></a>],
      [<a href="bibliography.html#bib-rubin-3sphere2" title="[Rub97]"><span class="abbrev">Rub97</span></a>].  <span class="application">Regina</span> only considers octagonal

@@ -1,4 +1,4 @@
-<html><head><title>Analysis</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina Handbook"><link rel="up" href="surfaces.html" title="Chapter 5. Normal Surfaces and Hypersurfaces"><link rel="prev" href="surfaces.html" title="Chapter 5. Normal Surfaces and Hypersurfaces"><link rel="next" href="surfaces-filtering.html" title="Filtering Surfaces (3-D)"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Analysis</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="surfaces.html">Prev</a></td><td align="center" class="navCenter" width="34%">Normal Surfaces and Hypersurfaces</td><td align="right" class="navRight" width="33%"> 
+<html><head><title>Analysis</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina Handbook"><link rel="up" href="surfaces.html" title="Chapter 5. Normal Surfaces and Hypersurfaces"><link rel="prev" href="surfaces.html" title="Chapter 5. Normal Surfaces and Hypersurfaces"><link rel="next" href="surfaces-filtering.html" title="Filtering Surfaces (3-D)"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Analysis</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="surfaces.html">Prev</a></td><td align="center" class="navCenter" width="34%">Normal Surfaces and Hypersurfaces</td><td align="right" class="navRight" width="33%"> 
 		      <a accesskey="n" href="surfaces-filtering.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="surfaces-analysis"></a>Analysis</h2></div></div></div><p>
    Once you have <a href="surfaces.html#surfaces-creation" title="Enumerating Normal Surfaces and Hypersurfaces">built
    a list of surfaces or hypersurfaces</a>, you can study them
@@ -41,7 +41,7 @@
    As of version 4.94, <span class="application">Regina</span> also remembers details of the specific
    enumeration algorithm that was used.  This information is not shown
    in the user interface, but can be extracted using
-   <a href="python.html" title="Chapter 8. Python Scripting"><span class="application">Python</span> scripting</a>.
+   <a href="python.html" title="Chapter 9. Python Scripting"><span class="application">Python</span> scripting</a>.
   </p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="surfaces-summary"></a>Summary of (Hyper)surfaces</h3></div></div></div><p>
     The <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Summary</span></span> tab breaks down the
     total number of (hyper)surfaces
@@ -130,10 +130,26 @@
            Indicates a closed, compact (hyper)surface; that is,
            with no boundary at all and finitely many normal pieces.
           </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Real</span></span></dt><dd><p>
-           Indicates a compact (hyper)surface with boundary; that is,
-           with finitely many normal pieces, some of which meet the
-           boundary of the triangulation.
-          </p></dd><dt><a name="surfaces-spun"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Spun</span></span> (3-manifolds only)</dt><dd><p>
+            Indicates a compact (hyper)surface with boundary; that is,
+            with finitely many normal pieces, some of which meet the
+            boundary of the triangulation.
+           </p><p>
+            The word <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Real</span></span> (as opposed to a precise
+            number) indicates that <span class="application">Regina</span> does not know the exact number
+            of boundary components.  Currently <span class="application">Regina</span> does not count
+            boundary components for normal hypersurfaces in 4-manifolds,
+            or when enumerating immersed/singular normal surfaces in
+            3-manifolds.
+           </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">1, 2, 3, …</span></span></dt><dd><p>
+            As with <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Real</span></span>, this indicates a compact
+            (hyper)surface with boundary, but moreover it indicates the
+            precise number of boundary components.
+           </p><p>
+            Currently <span class="application">Regina</span> will only count boundary components if
+            you enumerate embedded normal surfaces in 3-manifold
+            triangulations, and only for those resulting surfaces that
+            are compact.
+           </p></dd><dt><a name="surfaces-spun"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Spun</span></span> (3-manifolds only)</dt><dd><p>
             Indicates a spun-normal surface; that is, a non-compact surface
             with infinitely many triangles.
             These only appear when the enumeration is done in
@@ -557,7 +573,7 @@
     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Calculate</span></span> button (indicated below).
    </p><p>
     <span class="inlinemediaobject"><img src="surfaces-compat-compute.png"></span>
-   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="idp140217051861232"></a>Crushing and Cutting</h3></div></div></div><p>
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="idm2973500368"></a>Crushing and Cutting</h3></div></div></div><p>
     Within a 3-manifold triangulation,
     you can cut along a normal surface, or crush it using the techniques
     of Jaco and Rubinstein [<a href="bibliography.html#bib-0-efficiency" title="[JR03]"><span class="abbrev">JR03</span></a>].

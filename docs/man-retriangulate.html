@@ -1,0 +1,157 @@
+<html><head><title>retriangulate</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina Handbook"><link rel="up" href="utils.html" title="Appendix B. Command Line: Specialised Utilities"><link rel="prev" href="man-regfiletype.html" title="regfiletype"><link rel="next" href="man-sigcensus.html" title="sigcensus"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>retriangulate</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="man-regfiletype.html">Prev</a></td><td align="center" class="navCenter" width="34%">Command Line: Specialised Utilities</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="man-sigcensus.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="man-retriangulate"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>retriangulate — Exhaustively retriangulate a given manifold</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">retriangulate</strong></span></span> [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-h, --height=</code></span><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>height</code></em></span>] [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-t, --threads=</code></span><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>threads</code></em></span>] [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-4, --dim4</code></span>] {<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>isosig</code></em></span>}</p></div><div class="cmdsynopsis"><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">retriangulate</strong></span></span> {<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--help</code></span>}</p></div></div><div class="refsect1" lang="en"><a name="idm2971474016"></a><h2>Description</h2><p>
+    Given a 3-manifold or 4-manifold triangulation,
+    this utility uses Pachner moves to exhaustively search
+    for other triangulations of the same manifold that are the
+    same size or smaller.
+   </p><p>
+    Specifically, suppose the input triangulation contains
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span> tetrahedra (for a 3-manifold)
+    or pentachora (for a 4-manifold).  Then this utility will
+    exhaustively retriangulate the manifold using repeated Pachner moves,
+    without ever exceeding
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span> + <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>height</code></em></span>
+    tetrahedra/pentachora in total.
+    Moreover, all such retriangulations are guaranteed to be found, each
+    once and only once.
+   </p><p>
+    For 3-manifold triangulations, this utility will only attempt 2-3
+    and 2-3 Pachner moves, never 1-4 or 4-1 moves.
+    For 4-manifold triangulations, all types of Pachner moves are used
+    (1-5, 2-4, 3-3, 4-2, and 5-1).
+   </p><p>
+    The program will output each triangulation that it finds of the same
+    size <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span> (including the original input
+    triangulation).  If it ever finds a
+    <span class="emphasis"><em>smaller</em></span> triangulation (thereby proving the
+    original to be non-minimal), it will output that smaller
+    triangulation and then stop immediately.  Otherwise it will continue
+    outputting triangulations of size <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span> until
+    no more can be found.  Although the program also finds larger
+    triangulations as part of its exhaustive search using Pachner moves,
+    these larger triangulations (of which there are typically many) will
+    not be output at all.
+   </p><p>
+    All triangulations, both input and output, are described using
+    <em class="firstterm">isomorphism signatures</em>.  These are short text
+    strings that identify a triangulation uniquely up to combinatorial
+    isomorphism (i.e., up to relabellings of the tetrahedra/pentachora
+    and their vertices).
+    The input triangulation will be interpreted as the isomorphism
+    signature of a 3-manifold unless you pass the option
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--dim4</code></span> (in which case it will be treated as a
+    4-manifold instead).
+   </p><p>
+    From <span class="application">Regina</span>'s graphical user interface,
+    you can view the isomorphism signature
+    of a triangulation by switching to the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Composition</span></span>
+    tab in the triangulation viewer.  From <span class="application">Python</span> you can fetch the
+    isomorphism signature of the triangulation <strong class="userinput"><code>x</code></strong>
+    by calling <strong class="userinput"><code>x.isoSig()</code></strong>.
+    For a full and precise specification of isomorphism signatures for
+    3-manifolds, see
+    <span class="emphasis"><em>Simplification paths in the Pachner graphs of closed
+    orientable 3-manifold triangulations</em></span>, Burton, 2011,
+    arXiv:1110.6080.
+   </p></div><div class="refsect1" lang="en"><a name="idm2971461648"></a><h2>Options</h2><div class="variablelist"><dl><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-h,
+      --height=</code></span><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>height</code></em></span></span></dt><dd><p>
+       Specifies the number of additional tetrahedra (for a 3-manifold)
+       or pentachora (for a 4-manifold) that we allow during intermediate
+       stages of retriangulation.  That is, if the input triangulation
+       has <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span> tetrahedra (or pentachora), then
+       this utility will exhaustively search through all triangulations
+       that it can reach via Pachner moves that do not exceed
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span> + <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>height</code></em></span>
+       tetrahedra (or pentachora) in total.
+      </p><p>
+       Note that these larger intermediate triangulations will not be
+       written to output; however, a larger height may allow the program
+       to access additional <span class="emphasis"><em>smaller</em></span> triangulations
+       that were otherwise inaccessible.
+      </p><p>
+       The given height must be positive, and for 4-manifolds it must
+       also be even.
+       If not specified, this option defaults to 1 for 3-manifolds
+       (if <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--dim4</code></span> is not passed), or 2 for 4-manifolds
+       (if <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--dim4</code></span> is passed).
+      </p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>
+        In general, the running time can grow
+        <span class="emphasis"><em>superexponentially</em></span> with
+        <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>height</code></em></span>.  It is strongly suggested
+        that you begin with <code class="literal">--height=1</code> (or 2 for
+        4-manifolds) and increase it one step at a time until the
+        performance becomes unacceptable.
+       </p></div></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-t,
+      --threads=</code></span><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>threads</code></em></span></span></dt><dd><p>
+       Specifies the degree to which this utility uses parallel processing.
+       Specifically, this program will use
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>threads</code></em></span> simultaneous threads of execution
+       as it works its way through the different retriangulations of the
+       input manifold.
+      </p><p>
+       This program is typically able to use parallelism effectively,
+       and so running with <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>k</code></em></span> threads should
+       approximately divide the running time by <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>k</code></em></span>.
+      </p><p>
+       If not specified, this option defaults to 1
+       (i.e., single-threaded processing, with no parallelism).
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-4, --dim4</code></span></span></dt><dd><p>
+       Indicates that the given isomorphism signature describes a
+       4-manifold triangulation.  If this argument is not given, then by
+       default the argument is assumed to describe a 3-manifold triangulation.
+      </p></dd></dl></div></div><div class="refsect1" lang="en"><a name="idm2971445440"></a><h2>Examples</h2><p>
+    The 3-manifold triangulation is non-minimal, but it requires a bit
+    of work to see this:
+   </p><pre class="screen">
+    <code class="prompt">example$</code> <strong class="userinput"><code>retriangulate -h2 hLLAAkbdceefggdonxdjxn</code></strong>
+    hLLAAkbdceefggdonxdjxn
+    hLALPkbcbefgfghxwnxark
+    Found 2 triangulation(s).
+    <code class="prompt">example$</code> <strong class="userinput"><code>retriangulate -h3 hLLAAkbdceefggdonxdjxn</code></strong>
+    hLLAAkbdceefggdonxdjxn
+    hLALPkbcbefgfghxwnxark
+    hLLMMkbcdfefgglcghtchj
+    gLLPQcdcefffqsjpunw
+    Triangulation is non-minimal!
+    Smaller triangulation: gLLPQcdcefffqsjpunw
+    <code class="prompt">example$</code>
+</pre><p>
+    Although the program stopped as soon as it found a smaller
+    triangulation, this can be simplified even further:
+   </p><pre class="screen">
+    <code class="prompt">example$</code> <strong class="userinput"><code>retriangulate gLLPQcdcefffqsjpunw</code></strong>
+    gLLPQcdcefffqsjpunw
+    fLAMcbbcdeedhwhxn
+    Triangulation is non-minimal!
+    Smaller triangulation: fLAMcbbcdeedhwhxn
+    <code class="prompt">example$</code>
+</pre><p>
+    A little more probing shows this to be the cusped hyperbolic
+    manifold <code class="literal">m112</code>:
+   </p><pre class="screen">
+    <code class="prompt">example$</code> <strong class="userinput"><code>censuslookup fLAMcbbcdeedhwhxn</code></strong>
+    fLAMcbbcdeedhwhxn: 1 hit
+        m112 : #2 -- Cusped hyperbolic census (orientable)
+    
+    <code class="prompt">example$</code>
+</pre></div><div class="refsect1" lang="en"><a name="idm2971432960"></a><h2><span class="application">MacOS</span> Users</h2><p>
+    If you downloaded a drag-and-drop app bundle, this utility is
+    shipped inside it.  If you dragged <span class="application">Regina</span> to the main
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Applications</span></span> folder, you can run it as
+    <code class="literal">/Applications/Regina.app/Contents/MacOS/retriangulate</code>.
+   </p></div><div class="refsect1" lang="en"><a name="idm2972564288"></a><h2><span class="application">Windows</span> Users</h2><p>
+    The command-line utilities are installed beneath the
+    <code class="filename">Program Files</code> directory; on some
+    machines this directory is called
+    <code class="filename">Program Files (x86)</code>.
+    You can start this utility by running
+    <code class="literal">c:\Program Files\Regina\Regina 5.96\bin\retriangulate.exe</code>.
+   </p></div><div class="refsect1" lang="en"><a name="idm2972560192"></a><h2>See Also</h2><p>
+    <a href="man-regina-gui.html" title="regina-gui">regina-gui</a>.
+   </p></div><div class="refsect1" lang="en"><a name="idm2972558272"></a><h2>Author</h2><p>
+    This utility was written by Benjamin Burton
+    <code class="email">&lt;<a href="mailto:bab@maths.uq.edu.au">bab@maths.uq.edu.au</a>&gt;</code>.
+    Many people have been involved in the development
+   of <span class="application">Regina</span>; see the <a href="credits.html#acknowledgements" title="Acknowledgements">acknowledgements
+   page</a> for a full list of credits.
+   </p></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="man-regfiletype.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="man-sigcensus.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">regfiletype </td><td width="34%" align="center" class="navCenter"><a href="utils.html">Up</a></td><td width="33%" align="right" class="navRight"> sigcensus</td></tr></table></div></body></html>

@@ -1,4 +1,4 @@
-<html><head><title>Analysis</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina Handbook"><link rel="up" href="triangulations.html" title="Chapter 3. Triangulations"><link rel="prev" href="triangulations.html" title="Chapter 3. Triangulations"><link rel="next" href="tri-modification.html" title="Modification"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Analysis</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="triangulations.html">Prev</a></td><td align="center" class="navCenter" width="34%">Triangulations</td><td align="right" class="navRight" width="33%"> 
+<html><head><title>Analysis</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina Handbook"><link rel="up" href="triangulations.html" title="Chapter 3. Triangulations"><link rel="prev" href="triangulations.html" title="Chapter 3. Triangulations"><link rel="next" href="tri-modification.html" title="Modification"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Analysis</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="triangulations.html">Prev</a></td><td align="center" class="navCenter" width="34%">Triangulations</td><td align="right" class="navRight" width="33%"> 
 		      <a accesskey="n" href="tri-modification.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="tri-analysis"></a>Analysis</h2></div></div></div><p>
    <span class="application">Regina</span> offers a wealth of information about
    triangulations, spread across the many different tabs in the
@@ -1248,33 +1248,38 @@
     4-manifold triangulation in the packet tree.
    </p><p>
     <span class="inlinemediaobject"><img src="tri-vertexlinksresult.png"></span>
-   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="tri-tribdry"></a>Triangulating Boundary Components (4-D)</h3></div></div></div><p>
-    Likewise, if you wish to study a boundary component of a 4-manifold
-    in detail, you can explicitly construct it by selecting
-    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">4-D Triangulation</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Boundary Components</span></span>.
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="tri-tribdry"></a>Triangulating Boundary Components (3-D and 4-D)</h3></div></div></div><p>
+    Likewise, if you wish to study a boundary component of a 3-manifold
+    or 4-manifold in detail, you can explicitly construct it by selecting
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Triangulation</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Boundary Components</span></span>.
+    from the menu.
     This will build the selected boundary component
-    as a new 3-manifold triangulation.
+    as a new 2-manifold or 3-manifold triangulation respectively.
    </p><p>
     <span class="inlinemediaobject"><img src="tri-tribdry.png"></span>
    </p><p>
     You will be asked which boundary component you wish to construct,
     as illustrated below.
     You can triangulate both real boundary components (formed from
-    boundary tetrahedra) and ideal boundary components (represented by
-    vertices whose links are closed 3-manifolds but not spheres).
+    boundary triangles or tetrahedra)
+    and ideal boundary components (represented by
+    vertices whose links are closed 2-manifolds or 3-manifolds
+    other than spheres).
    </p><p>
     In the drop-down list, boundary components will be listed
     using their boundary component numbers, as seen in the
     <a href="tri-analysis.html#tri-bdrycomponents" title="Viewing Boundary Components">skeleton viewer</a>.
     In addition, each real boundary component will include details
-    of its constituent boundary tetrahedra, and each ideal boundary
+    of its constituent boundary triangles or tetrahedra, and each ideal boundary
     component will include details of the ideal vertex whose
     link it represents.
    </p><p>
     <span class="inlinemediaobject"><img src="tri-tribdrybox.png"></span>
    </p><p>
-    Once the boundary component is constructed, the resulting 3-manifold
-    trianguation will appear beneath the original 4-manifold triangulation
+    Once the boundary component is constructed, the resulting 2-manifold
+    or 3-manifold
+    trianguation will appear beneath the original 3-manifold or
+    4-manifold triangulation
     in the packet tree.
    </p><p>
     <span class="inlinemediaobject"><img src="tri-tribdryresult.png"></span>
