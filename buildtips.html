@@ -78,19 +78,35 @@ directory names for 64-bit systems, and you should
 <h2><a name="macosx">MacOS X</a></h2>
 
 <p>
-Although you do not need Fink to <i>run</i> Regina on MacOS&nbsp;X,
-you will still need Fink to <i>build</i> Regina in order to satisfy
-the <a href="source.html#sysreq">many build dependencies</a>.
-You can install Fink from
-<a href="http://finkproject.org/">finkproject.org</a>.
-</p>
-<p>
-You will need to pass several arguments to cmake:
+The macOS build has been evolving to remove the need for
+<a href="http://finkproject.org/">fink</a> (and indeed,
+the macOS binaries here on the Regina website were built on a system
+without fink or any similar environment installed at all).
+The current situation is as follows:
 <ul>
+<li>To build a standalone app bundle (like the one here on the Regina
+website), you will need to build Regina in Xcode. Regina's git source
+tree includes a full Xcode project, but this is heavily tailored to the
+developer's personal setup and so it may need some work to build on your
+machine.
+<li>Alternatively, you can have a full unix-like installation (with programs
+in <tt>/usr/local/bin/</tt>, libraries in <tt>/usr/local/lib/</tt>
+data in <tt>/usr/local/share/regina/</tt> and so on).
+<b>This is the much simpler option</b>, and it is supported
+out-of-the-box; read on for details.
+</ul>
+<p>
+For a full unix-like installation, assuming you already have
+<a href="http://finkproject.org/">fink</a> installed,
+you will need to pass several arguments
+to cmake:
+<ul>
+<li>To tell Regina that you want a unix-like installation,
+you must set <tt>REGINA_INSTALL_TYPE</tt> to <tt>XDG</tt>.</li>
 <li>To ensure that cmake picks up the system python installation instead
-of Fink's, set <tt>PYTHON_EXECUTABLE</tt> to <tt>/usr/bin/python</tt>.</li>
-<li>You will probably want to change the installation prefix from the
-default <tt>/usr/local</tt> by setting <tt>CMAKE_INSTALL_PREFIX</tt>.
+of Fink's, set <tt>Python_EXECUTABLE</tt> to <tt>/usr/bin/python</tt>.</li>
+<li>If you want to change the installation prefix from the
+default <tt>/usr/local</tt>, set <tt>CMAKE_INSTALL_PREFIX</tt>.
 This controls where the application bundle will appear when you run
 <tt>make&nbsp;install</tt>.</li>
 <li>To tell Regina where to find Qt, set <tt>CMAKE_PREFIX_PATH</tt> to the
@@ -101,21 +117,16 @@ For a typical Qt installation, this looks something like
 relevant Boost directory containing <tt>include/</tt>, <tt>lib/</tt> and so on.
 For Fink's current Boost packages, this looks something like
 <tt>/sw/opt/boost-1_58</tt>.</li>
-<li>If you want a full, unix-like installation instead of just an
-application bundle (with programs in <tt>prefix/bin/</tt>,
-libraries in <tt>prefix/lib/</tt>
-data in <tt>prefix/share/regina/</tt> and so on),
-set <tt>REGINA_INSTALL_TYPE</tt> to <tt>XDG</tt>.</li>
 </ul>
 </p>
 <p>
-A complete example of a cmake line that builds an application bundle
-on the user's desktop:
+A complete example of a cmake line:
 </p>
 <div class="example">
 <p>
-<tt>example$ cmake -DPYTHON_EXECUTABLE=/usr/bin/python
--DCMAKE_INSTALL_PREFIX=/Users/bab/Desktop
+<tt>example$ cmake -DPython_EXECUTABLE=/usr/bin/python
+-DREGINA_INSTALL_TYPE=XDG
+-DCMAKE_INSTALL_PREFIX=/Users/bab/software
 -DCMAKE_PREFIX_PATH=/Users/bab/Qt5/5.7/clang_64
 -DBOOST_ROOT=/sw/opt/boost-1_58
 ..</tt>
@@ -132,6 +143,10 @@ you do this under GNU/Linux or MacOS&nbsp;X.
 <p>
 If you really need to get a Windows build running, please mail the
 authors for assistance.
+Alternatively, you can look in
+<a href="https://github.com/regina-normal/aux/tree/master/packaging/windows">Regina's packaging repository</a>
+to get some idea of what the Regina developer has been doing to build
+the Windows binaries that you see here on the Regina website.
 </p>
 
 <h2><a name="cluster">Cluster environments</a></h2>
