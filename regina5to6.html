@@ -93,6 +93,11 @@ Regina&nbsp;5.1.
 </tr>
 <tr><td class="deptype" colspan=4>Headers</td></tr>
 <tr>
+    <td class="first"><tt>engine.h</tt>,<br><tt>output.h</tt></td>
+    <td><tt>core/engine.h</tt>,<br><tt>core/output.h</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
     <td class="first"><tt>nbooleans.h</tt></td>
     <td><tt>boolset.h</tt></td>
     <td>&nbsp;</td>
@@ -113,6 +118,11 @@ Regina&nbsp;5.1.
     <tt>nperm4.h</tt>,
     <tt>nperm5.h</tt></td>
     <td><tt>perm.h</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>packetlistener.h</tt></td>
+    <td><tt>packet.h</tt></td>
     <td>&nbsp;</td>
 </tr>
 <tr>
@@ -150,6 +160,13 @@ Regina&nbsp;5.1.
     <td>&nbsp;</td>
 </tr>
 <tr>
+    <td class="first"><tt>MatrixIntDomain</tt>, <tt>MatrixRing</tt></td>
+    <td><tt>Matrix</tt></td>
+    <td>These have been merged into the main <tt>Matrix</tt> class,
+    and the extra functionality that they provided is now handled
+    using template arguments.</td>
+</tr>
+<tr>
     <td class="first"><tt>NExampleSnapPeaTriangulation</tt></td>
     <td><tt>ExampleSnapPea</tt></td>
     <td>&nbsp;</td>
@@ -174,6 +191,11 @@ Regina&nbsp;5.1.
 </tr>
 <tr><td class="deptype" colspan=4>Types</td></tr>
 <tr>
+    <td class="first"><tt>TuraevViroAlg</tt></td>
+    <td><tt>Algorithm</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
     <td class="first"><tt>UseDim2GluingPerms</tt>,<br>
         <tt>UseGluingPerms</tt>,<br>
         <tt>UseDim4GluingPerms</tt></td>
@@ -184,10 +206,49 @@ Regina&nbsp;5.1.
 </tr>
 <tr><td class="deptype" colspan=4>Member Routines</td></tr>
 <tr>
+    <td class="first"><tt>Matrix::multiplyAs()</tt></td>
+    <td><tt>operator *=</tt></td>
+    <td>Now that the <tt>Matrix</tt> class is unified, there is no
+    need for the type-specific <tt>multiplyAs()</tt>.</td>
+</tr>
+<tr>
     <td class="removed"><tt>NSVectorMirrored copy constructor</tt><br>
         Removed in Regina&nbsp;5.1</td>
     <td>&mdash;</td>
     <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Triangulation<2>::oneThreeMove()</tt>,<br>
+    <tt>Triangulation<2>::twoTwoMove()</tt>,<br>
+    <tt>Triangulation<2>::threeOneMove()</tt>
+    </td>
+    <td><tt>Triangulation<2>::pachner()</tt></td>
+    <td>&nbsp;</tt></td>
+</tr>
+<tr>
+    <td class="first"><tt>Triangulation<3>::drillEdge()</tt></td>
+    <td><tt>Triangulation<3>::pinchEdge()</tt></td>
+    <td>In all cases that matter, this performs the same topological
+    operation with vastly fewer tetrahedra.</tt></td>
+</tr>
+<tr>
+    <td class="first"><tt>Triangulation<3>::oneFourMove()</tt>,<br>
+    <tt>Triangulation<3>::twoThreeMove()</tt>,<br>
+    <tt>Triangulation<3>::threeTwoMove()</tt>,<br>
+    <tt>Triangulation<3>::fourOneMove()</tt>
+    </td>
+    <td><tt>Triangulation<3>::pachner()</tt></td>
+    <td>&nbsp;</tt></td>
+</tr>
+<tr>
+    <td class="first"><tt>Triangulation<4>::oneFiveMove()</tt>,<br>
+    <tt>Triangulation<4>::twoFourMove()</tt>,<br>
+    <tt>Triangulation<4>::threeThreeMove()</tt>,<br>
+    <tt>Triangulation<4>::fourTwoMove()</tt>,<br>
+    <tt>Triangulation<4>::fiveOneMove()</tt>
+    </td>
+    <td><tt>Triangulation<4>::pachner()</tt></td>
+    <td>&nbsp;</tt></td>
 </tr>
 <tr><td class="deptype" colspan=4>Global Routines</td></tr>
 <tr>
@@ -203,6 +264,11 @@ Regina&nbsp;5.1.
         and have been removed because they should not be used.</td>
 </tr>
 <tr><td class="deptype" colspan=4>Constants</td></tr>
+<tr>
+    <td class="first"><tt>Matrix::zero</tt>, <tt>Matrix::one</tt></td>
+    <td><tt>0</tt>, <tt>1</tt></td>
+    <td>&nbsp;</td>
+</tr>
 <tr>
     <td class="first"><tt>PACKET_DIM2TRIANGULATION</tt>,<br>
         <tt>PACKET_TRIANGULATION</tt>,<br>
@@ -221,9 +287,22 @@ Regina&nbsp;5.1.
         <tt>PACKET_ANGLESTRUCTURES</tt></td>
     <td>&nbsp;</td>
 </tr>
+<tr>
+    <td class="first"><tt>TV_DEFAULT</tt>,<br>
+        <tt>TV_BACKTRACK</tt>,<br>
+        <tt>TV_TREEWIDTH</tt>,<br>
+        <tt>TV_NAIVE</tt></td>
+    <td><tt>ALG_DEFAULT</tt>,<br>
+        <tt>ALG_BACKTRACK</tt>,<br>
+        <tt>ALG_TREEWIDTH</tt>,<br>
+        <tt>ALG_NAIVE</tt></td>
+    <td>The corresponding enum type has changed from
+    <tt>TuraevViroAlg</tt> to the more general <tt>Algorithm</tt>.</td>
+</tr>
 <tr><td class="deptype" colspan=4>Command-Line Utilities</td></tr>
 <tr>
-    <td class="first">All MPI utilities (e.g., <tt>tricensus-mpi</tt>)</td>
+    <td class="removed">All MPI utilities (e.g., <tt>tricensus-mpi</tt>)<br>
+        Removed in Regina&nbsp;5.96</td>
     <td>&mdash;</td>
     <td>These are being phased out in favour of other approaches to
     large-scale parallelisation.  See the <tt>tricensus-mpi</tt> manual
