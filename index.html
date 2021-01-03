@@ -151,9 +151,13 @@ to <a href="#contact">contact us</a> for help.
 Regina comes with a universal app that runs natively
 on <b>both Intel and Apple Silicon</b> machines.
 <p>
-Currently Regina offers two macOS builds: a Python&nbsp;2 build that
-uses the system <tt>/usr/bin/python</tt> on macOS, and a Python&nbsp;3 build
-that comes bundled with its own copy of Python.
+On macOS you have several options. Here on the website there is
+a Python&nbsp;2 build that uses the system <tt>/usr/bin/python</tt>,
+and a Python&nbsp;3 build that comes bundled with its own copy of Python.
+There is also a Python&nbsp;3 version on the App Store (free of course).
+<p>
+If you're not sure which version to get, then start with the App Store
+version.
 <p>
 <blockquote><table cellspacing=0 border=0 align=center class="data"><tbody>
 <tr><th class="first" colspan=2>macOS Version</th>
@@ -165,61 +169,34 @@ that comes bundled with its own copy of Python.
     High Sierra (10.13)
     </td>
     <td><img src="osicons/os_macosx.png" border=0 hspace=5></td>
-    <td align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-5.96/Regina-5.96.dmg">Download</a></td>
-    <td align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-5.96/Regina-5.96_py38.dmg">Download</a></td>
+    <td align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-5.96/Regina-5.96.dmg">Download here</a></td>
+    <td align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-5.96/Regina-5.96_py38.dmg">Download&nbsp;here</a><br>
+    &mdash;&nbsp;or&nbsp;&mdash;<br>
+    <a href="https://itunes.apple.com/us/app/regina-for-3-manifolds/id1160053348?mt=8"><img src="ios/Download_on_the_Mac_App_Store_Badge_US-UK_RGB_wht_092917.svg" alt="Download on the Mac App Store" border=0 hspace=10 vspace=10/></a></td>
+    </tr>
     </tr>
 </tbody></table>
 </blockquote>
 <p>
-The intention is to also offer a sandboxed version through the Mac App Store
-(free of course).  The review process with Apple is ongoing;
-please watch this page for updates.
-<!--p>
-<You have two options for Mac: either download direct from this website,
-or from the Mac App Store.
-If you're not sure, then try using the Mac App Store.
-<p>
-<blockquote><table cellspacing=0 border=0 align=center class="data"><tbody>
-<tr><th class="first" colspan=2>MacOS Version</th><th>Direct Download</th>
-    <th>Mac App Store</th></tr>
-<tr><td class="firstjoin">Mojave (10.14)<br>
-    High Sierra (10.13)<br>
-    Sierra (10.12)<br>
-    El Capitan (10.11)<br>
-    Yosemite (10.10)<br>
-    Mavericks (10.09)
-    </td>
-    <td><img src="osicons/os_macosx.png" border=0 hspace=5></td>
-    <td align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-5.1/Regina-5.1.dmg">Download from the<br>
-        Regina website</a></td>
-    <td align="center"><a href="https://itunes.apple.com/us/app/regina-for-3-manifolds/id1160053348?mt=8"><img src="ios/Download_on_the_Mac_App_Store_Badge_US-UK_165x40.svg" alt="Download on the Mac App Store" border=0 hspace=10 vspace=10/></a></td>
-    </tr>
-</tbody></table>
-</blockquote>
-<p>
-There are some minor differences between the two versions.
-The Mac App Store version:
+There are some minor differences between the website and App Store versions.
+The App Store version:
 <ul>
 <li>will notify you of upgrades automatically;</li>
 <li>may support iCloud in a future release
-(which is not possible for a direct download);</li>
-<li>is sandboxed, which limits file access through Python (see below).</li>
+(which is not possible for a website download);</li>
+<li>is sandboxed, which limits file access through Python and the
+command-line tools (see below).</li>
 </ul>
 <p>
-Sandboxing is a security measure that comes with the Mac App Store:
-it ensures that apps only access files
-that users themselves choose through the MacOS graphical file dialogs
-(<i>Open</i>, <i>Save</i>, etc.).
-For Regina, this means that when you open a Python console through the
-graphical user interface, you cannot access arbitrary files using
-Python commands.  If this causes you difficulties, then remember:
-<ul>
-<li>you will always have full access to your <tt>Downloads</tt> folder,
-even through Python;</li>
-<li>you can always use the command-line <tt>regina-python</tt>
-tool instead.</li>
-</ul-->
-
+Sandboxing is a security measure that comes with the App Store:
+it ensures that apps only access files that you explicitly choose
+through the graphical file dialogs (<i>Open</i>, <i>Save</i>, etc.).
+For Regina, this means that when you open a Python console or
+run command-line tools (<tt>regina-python</tt>, <tt>regfiledump</tt>, etc.),
+the <b>only personal files you can access are those in your
+<tt>Downloads</tt> folder</b>. You can still access world-readable files,
+such as those in your <tt>Applications</tt> folder.
+<p>
 <a name="windows"><h4 class="divide">Windows</h4></a>
 
 Regina on Windows uses a standard point-and-click installer.
