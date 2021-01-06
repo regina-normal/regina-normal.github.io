@@ -94,6 +94,12 @@ from the latest release.
 </tr>
 <tr><td class="deptype" colspan=4>Headers</td></tr>
 <tr>
+    <td class="first"><tt>approx.h</tt></td>
+    <td>&mdash;</td>
+    <td>These functions for managing round-off error are very coarse,
+        and will be removed because they should not be used.</td>
+</tr>
+<tr>
     <td class="first"><tt>engine.h</tt>,<br><tt>output.h</tt></td>
     <td><tt>core/engine.h</tt>,<br><tt>core/output.h</tt></td>
     <td>&nbsp;</td>
@@ -253,16 +259,15 @@ from the latest release.
 </tr>
 <tr><td class="deptype" colspan=4>Global Routines</td></tr>
 <tr>
-    <td class="removed"><tt>isZero()</tt>,
+    <td class="first"><tt>isZero()</tt>,
         <tt>isNonZero()</tt>,
         <tt>isPositive()</tt>,
         <tt>isNegative()</tt>,
         <tt>isNonPositive()</tt>,
-        <tt>isNonNegative()</tt></br>
-        Removed in Regina&nbsp;5.1</td>
+        <tt>isNonNegative()</tt></td>
     <td>&mdash;</td>
-    <td>These methods for managing round-off error were very coarse,
-        and have been removed because they should not be used.</td>
+    <td>These methods for managing round-off error are very coarse,
+        and will be removed because they should not be used.</td>
 </tr>
 <tr><td class="deptype" colspan=4>Constants</td></tr>
 <tr>
