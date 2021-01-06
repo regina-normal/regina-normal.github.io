@@ -23,9 +23,10 @@ Regina&nbsp;5.0 so that old scripts would still work.
 <b>All of this old code was removed in Regina&nbsp;5.1</b>.</li>
 <li>A second (much simpler) round of changes is now underway, mostly
 to simplify class names and C++ header locations.
-These changes were implemented in Regina&nbsp;5.1, though the old class
-names and headers will be kept around for backward compatibility
-until Regina&nbsp;6.0.</li>
+These changes were implemented in Regina&nbsp;5.1. Again the old class
+names and headers were kept for backward compatibility.
+<b>This old code will be removed in Regina&nbsp;6.1</b>
+(most likely in mid-2021).</li>
 </ol>
 <p><h4><span class="question">How do I fix my code?</span></h4></p>
 <p>
@@ -35,9 +36,9 @@ code to work with Regina&nbsp;5.1 and above.
 See the separate page on
 <a href="regina4to5.html">moving from Regina&nbsp;4.x to 5.x</a>
 for details.</li>
-<li><b>You can incorporate the second-round changes at your leisure</b>,
-since Regina will keep backward compatiblity for these changes
-until Regina&nbsp;6.0.  Details of these changes are described below.</li>
+<li><b>You must incorporate the second-round changes now</b> if you wish
+your code to work with Regina&nbsp;6.1 and above.
+Details of these changes are described below.</li>
 </ul>
 <p><h4><span class="question">Second-round changes (Regina&nbsp;5.x to 6.x)</span></h4></p>
 <p>
@@ -92,6 +93,12 @@ from the latest release.
     <th>Comments</th>
 </tr>
 <tr><td class="deptype" colspan=4>Headers</td></tr>
+<tr>
+    <td class="first"><tt>approx.h</tt></td>
+    <td>&mdash;</td>
+    <td>These functions for managing round-off error are very coarse,
+        and will be removed because they should not be used.</td>
+</tr>
 <tr>
     <td class="first"><tt>engine.h</tt>,<br><tt>output.h</tt></td>
     <td><tt>core/engine.h</tt>,<br><tt>core/output.h</tt></td>
@@ -258,16 +265,15 @@ from the latest release.
 </tr>
 <tr><td class="deptype" colspan=4>Global Routines</td></tr>
 <tr>
-    <td class="removed"><tt>isZero()</tt>,
+    <td class="first"><tt>isZero()</tt>,
         <tt>isNonZero()</tt>,
         <tt>isPositive()</tt>,
         <tt>isNegative()</tt>,
         <tt>isNonPositive()</tt>,
-        <tt>isNonNegative()</tt></br>
-        Removed in Regina&nbsp;5.1</td>
+        <tt>isNonNegative()</tt></td>
     <td>&mdash;</td>
-    <td>These methods for managing round-off error were very coarse,
-        and have been removed because they should not be used.</td>
+    <td>These methods for managing round-off error are very coarse,
+        and will be removed because they should not be used.</td>
 </tr>
 <tr><td class="deptype" colspan=4>Constants</td></tr>
 <tr>
