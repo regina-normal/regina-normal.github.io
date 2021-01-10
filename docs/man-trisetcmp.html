@@ -1,5 +1,5 @@
 <html><head><title>trisetcmp</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina Handbook"><link rel="up" href="utils.html" title="Appendix B. Command Line: Specialised Utilities"><link rel="prev" href="man-tricensus.html" title="tricensus"><link rel="next" href="history.html" title="Appendix C. Version History"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>trisetcmp</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="man-tricensus.html">Prev</a></td><td align="center" class="navCenter" width="34%">Command Line: Specialised Utilities</td><td align="right" class="navRight" width="33%"> 
-		      <a accesskey="n" href="history.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="man-trisetcmp"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>trisetcmp — Compare triangulations between two <span class="application">Regina</span> data files</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">trisetcmp</strong></span></span> [[<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-m</code></span>] |  [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-n</code></span>]] [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-s</code></span>] {<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>file1</code></em></span>} {<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>file2</code></em></span>}</p></div></div><div class="refsect1" lang="en"><a name="idm2972363952"></a><h2>Description</h2><p>
+		      <a accesskey="n" href="history.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="man-trisetcmp"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>trisetcmp — Compare triangulations between two <span class="application">Regina</span> data files</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">trisetcmp</strong></span></span> [[<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-m</code></span>] |  [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-n</code></span>]] [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-s</code></span>] {<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>file1</code></em></span>} {<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>file2</code></em></span>}</p></div></div><div class="refsect1" lang="en"><a name="idm3382931856"></a><h2>Description</h2><p>
     Compares all triangulations in the first file against
     all triangulations in the second file, looking for pairs of
     triangulations that are combinatorially isomorphic.
@@ -21,7 +21,7 @@
     However, it will only compare triangulations of the same
     dimension—it will not test whether some 3-manifold triangulation
     appears as a subcomplex of some other 4-manifold triangulation.
-   </p></div><div class="refsect1" lang="en"><a name="idm2970244592"></a><h2>Options</h2><div class="variablelist"><dl><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-m</code></span> (default)</span></dt><dd><p>
+   </p></div><div class="refsect1" lang="en"><a name="idm3382925952"></a><h2>Options</h2><div class="variablelist"><dl><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-m</code></span> (default)</span></dt><dd><p>
        Output matches only.  All isomorphic matches between
        triangulations in <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>file1</code></em></span>
        and triangulations in <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>file2</code></em></span>
@@ -46,7 +46,7 @@
        this program outputs all triangulations from
        <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>file1</code></em></span> that are not isomorphic to a
        subcomplex of any triangulation from <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>file2</code></em></span>.
-      </p></dd></dl></div></div><div class="refsect1" lang="en"><a name="idm2971547952"></a><h2>Internationalisation</h2><p>
+      </p></dd></dl></div></div><div class="refsect1" lang="en"><a name="idm3375287136"></a><h2>Internationalisation</h2><p>
   If any packets contain international characters,
   <span class="application">Regina</span> will attempt to convert these to your local character
   encoding as it writes them to the output.
@@ -67,22 +67,22 @@
   you install your <span class="application"><span class="acronym">GNU</span>/Linux</span> system, and <span class="application">Regina</span> will just use the
   right character set out of the box.  See your <span class="application"><span class="acronym">GNU</span>/Linux</span> system reference
   for further information on supporting different locales.
- </p></div><div class="refsect1" lang="en"><a name="idm2970220192"></a><h2><span class="application">MacOS</span> Users</h2><p>
+ </p></div><div class="refsect1" lang="en"><a name="idm3382901424"></a><h2><span class="application">MacOS</span> Users</h2><p>
     If you downloaded a drag-and-drop app bundle, this utility is
     shipped inside it.  If you dragged <span class="application">Regina</span> to the main
     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Applications</span></span> folder, you can run it as
     <code class="literal">/Applications/Regina.app/Contents/MacOS/trisetcmp</code>.
-   </p></div><div class="refsect1" lang="en"><a name="idm2970216352"></a><h2><span class="application">Windows</span> Users</h2><p>
+   </p></div><div class="refsect1" lang="en"><a name="idm3382897584"></a><h2><span class="application">Windows</span> Users</h2><p>
     The command-line utilities are installed beneath the
     <code class="filename">Program Files</code> directory; on some
     machines this directory is called
     <code class="filename">Program Files (x86)</code>.
     You can start this utility by running
-    <code class="literal">c:\Program Files\Regina\Regina 5.96\bin\trisetcmp.exe</code>.
-   </p></div><div class="refsect1" lang="en"><a name="idm2970212464"></a><h2>See Also</h2><p>
+    <code class="literal">c:\Program Files\Regina\Regina 6.0\bin\trisetcmp.exe</code>.
+   </p></div><div class="refsect1" lang="en"><a name="idm3382893888"></a><h2>See Also</h2><p>
     <a href="man-censuslookup.html" title="censuslookup">censuslookup</a>,
     <a href="man-regina-gui.html" title="regina-gui">regina-gui</a>.
-   </p></div><div class="refsect1" lang="en"><a name="idm2970209776"></a><h2>Author</h2><p>
+   </p></div><div class="refsect1" lang="en"><a name="idm3382891200"></a><h2>Author</h2><p>
     This utility was written by Benjamin Burton
     <code class="email">&lt;<a href="mailto:bab@maths.uq.edu.au">bab@maths.uq.edu.au</a>&gt;</code>.
     Many people have been involved in the development

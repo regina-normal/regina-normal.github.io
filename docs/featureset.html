@@ -67,7 +67,7 @@
      </p></li><li><p>
       a tree decomposition of the face pairing graph, for use with
       fixed-parameter tractable algorithms
-      [<a href="bibliography.html#bib-turaevviro-fpt" title="[Bur15]"><span class="abbrev">Bur15</span></a>];
+      [<a href="bibliography.html#bib-turaevviro-fpt" title="[BMS15]"><span class="abbrev">BMS15</span></a>];
      </p></li><li><p>
       text-based isomorphism signatures
       [<a href="bibliography.html#bib-burton-pachner-orprime" title="[Bur11c]"><span class="abbrev">Bur11c</span></a>],
@@ -161,10 +161,11 @@
    The level of support for higher-dimensional triangulations is
    expected to grow in future releases.
   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="features-links"></a>Knots and Links</h3></div></div></div><p>
-   Since version 5.96 (the first prerelease for version 6.0),
+   Since version 5.96,
    <span class="application">Regina</span> now offers native support for knots and links.
   </p><p>
    You can create knots and links from Gauss or Dowker-Thistlethwaite codes,
+   from parameterised families of knots and links,
    or by construction of ready-made examples.
   </p><p>
    <span class="application">Regina</span> computes several link invariants including the
@@ -174,8 +175,8 @@
    build the knot/link complement as a 3-manifold triangulation.
   </p><p>
    To manipulate knots and links, you can edit individual crossings,
-   perform Reidemeister moves, or run more sophisticated simplification
-   tools.
+   perform Reidemeister moves, take cablings, or run
+   sophisticated simplification tools.
   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="features-census"></a>Census Creation and Lookup</h3></div></div></div><p>
    <span class="application">Regina</span> can be used to form censuses of all triangulations
    that satisfy various constraints, through the command-line tool
@@ -187,17 +188,14 @@
    [<a href="bibliography.html#bib-burton-facegraphs" title="[Bur04]"><span class="abbrev">Bur04</span></a>],
    [<a href="bibliography.html#bib-burton-nor10" title="[Bur07a]"><span class="abbrev">Bur07a</span></a>] and
    [<a href="bibliography.html#bib-burton-genus" title="[Bur11a]"><span class="abbrev">Bur11a</span></a>] for details.
-   There is also an <span class="acronym">MPI</span> version that
-   can be distributed across a large number of machines for
-   use on high-performance clusters.
   </p><p>
-   <span class="application">Regina</span> ships with a several
+   <span class="application">Regina</span> ships with several
    census databases, including closed 3-manifold triangulations
    [<a href="bibliography.html#bib-burton-nor8" title="[Bur07b]"><span class="abbrev">Bur07b</span></a>], [<a href="bibliography.html#bib-burton-nor10" title="[Bur07a]"><span class="abbrev">Bur07a</span></a>],
    [<a href="bibliography.html#bib-burton-genus" title="[Bur11a]"><span class="abbrev">Bur11a</span></a>], hyperbolic 3-manifolds
    [<a href="bibliography.html#bib-burton-complete" title="[Bur14c]"><span class="abbrev">Bur14c</span></a>],
    [<a href="bibliography.html#bib-cuspedcensus" title="[CHW99]"><span class="abbrev">CHW99</span></a>], [<a href="bibliography.html#bib-closedhypcensus" title="[HW94]"><span class="abbrev">HW94</span></a>],
-   and knot and link complements (tabulated by Joe Christy).
+   and knots and links [<a href="bibliography.html#bib-burton-knots" title="[Bur20]"><span class="abbrev">Bur20</span></a>].
   </p><p>
    <span class="application">Regina</span> can also search for a given triangulation across these databases
    (and indeed across much larger extensions of these databases),
@@ -208,7 +206,7 @@
    normal surfaces within a 3-manifold triangulation, or all
    vertex or fundamental normal hypersurfaces within a 4-manifold
    triangulation.  For 3-manifolds, almost normal
-   surfaces<sup>[<a name="idm2976895824" href="#ftn.idm2976895824">1</a>]</sup>
+   surfaces<sup>[<a name="idm3381705984" href="#ftn.idm3381705984">1</a>]</sup>
    are supported also.
   </p><p>
    These operations—enumerating vertex and fundamental normal
@@ -332,6 +330,11 @@
    communicate with each other inside the same <span class="application">Python</span> session.
    See the <a href="python-snappy.html" title="Talking with SnapPy"><span class="application">Python</span> chapter</a>
    for details.
+  </p><p>
+   If you build <span class="application">Regina</span> from source, you have the option of
+   working with either <span class="application">Python</span> 2 or <span class="application">Python</span> 3.
+   (If you download a ready-made package, then the package maintainer
+   will have made this choice for you.)
   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="features-interfaces"></a>Interfaces</h3></div></div></div><p>
    The usual method of running <span class="application">Regina</span> is through a full
    point-and-click graphical user interface.
@@ -370,7 +373,7 @@
    Again, this <span class="acronym">XML</span> file format is extensively documented.
    For details, select
    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Help</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">File Format Reference</span></span>.
-  </p></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p><sup>[<a name="ftn.idm2976895824" href="#idm2976895824">1</a>] </sup>Almost normal surfaces are closely related
+  </p></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p><sup>[<a name="ftn.idm3381705984" href="#idm3381705984">1</a>] </sup>Almost normal surfaces are closely related
      to normal surfaces and are used by Rubinstein in his 3-sphere recognition
      algorithm [<a href="bibliography.html#bib-rubin-3sphere1" title="[Rub95]"><span class="abbrev">Rub95</span></a>],
      [<a href="bibliography.html#bib-rubin-3sphere2" title="[Rub97]"><span class="abbrev">Rub97</span></a>].  <span class="application">Regina</span> only considers octagonal

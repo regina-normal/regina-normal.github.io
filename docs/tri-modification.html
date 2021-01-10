@@ -62,7 +62,12 @@
     make the number of boundary triangles (in 3-D) or
     boundary tetrahedra (in 4-D) as small as it can, though again
     there is no guarantee of reaching a global minimum.
-   </p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="tri-simplify-exhaustive"></a>Exhaustive Simplification</h4></div></div></div><p>
+   </p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
+     If your triangulation is oriented, then the fast simplification process
+     described above will preserve the orientation of your triangulation.
+     This is <span class="emphasis"><em>not</em></span> true of the exhaustive process
+     described below.
+    </p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="tri-simplify-exhaustive"></a>Exhaustive Simplification</h4></div></div></div><p>
      If <span class="application">Regina</span> cannot
      simplify the triangulation immediately using its fast heuristics,
      then it will offer to perform a slower, more exhaustive search.  Press
@@ -102,7 +107,12 @@
      consumption grow at a super-exponential rate relative to the number
      of tetrahedra.  If you continue to press <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Keep trying</span></span>
      over and over, you may well run out of time or memory (or both).
-    </p></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="tri-elementarymove"></a>Manual Simplification: Elementary Moves (3-D and 4-D)</h3></div></div></div><p>
+    </p></div><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>
+      Unlike the fast simplification process when you first press the
+      <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Simplify</span></span> button, this exhaustive
+      simplification process does <span class="emphasis"><em>not</em></span> preserve the
+      orientation of an oriented triangulation.
+     </p></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="tri-elementarymove"></a>Manual Simplification: Elementary Moves (3-D and 4-D)</h3></div></div></div><p>
     Instead of using automatic simplification, you might wish to modify
     your triangulation manually one step at a time.  You can do this
     using <em class="firstterm">elementary moves</em>, which are small
@@ -129,7 +139,10 @@
     Select a move, and then press <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guibutton">Apply</span></span> to perform it.
     You may continue to apply one move after another.  When you are done,
     press <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guibutton">Close</span></span> to close the elementary move box.
-   </p><p>
+   </p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
+     If your triangulation is oriented, then every move that is offered
+     will preserve the orientation of your triangulation.
+    </p></div><p>
     We only give a brief summary of the various types of move here.
     The full details are in the <a href="python-access.html#python-docs" title="Documentation"><span class="acronym">API</span>
     documentation</a>, and for 3-manifolds you can also read about
@@ -327,6 +340,16 @@
    </p><p>
     <span class="inlinemediaobject"><img src="tri-orient.png"></span>
    </p><p>
+    You can reorder the vertices of each tetrahedron to have the
+    <span class="emphasis"><em>opposite</em></span> orientation by selecting
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Triangulation</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Reflect</span></span>
+    from the menu. Regardless of whether the triangulation is orientable
+    and/or oriented, every tetrahedron will have its orientation
+    reversed. This will change the vertex numbers in each tetrahedron,
+    but not the tetrahedron numbers themselves.
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-reflect.png"></span>
+   </p><p>
     To convert a non-orientable triangulation into its orientable double cover,
     select
     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Triangulation</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Double Cover</span></span>.
@@ -371,13 +394,18 @@
        If necessary, <span class="application">Regina</span> will create real boundary components
        (formed from unglued triangular faces of tetrahedra).
        This happens, for instance, when the edge runs between two
-       distinct internal vertices (so the drilling produces a sphere boundary),
-       or when the edge touches a pre-existing real boundary component.
+       distinct internal vertices (so the drilling produces a sphere boundary).
       </p></li><li><p>
        If drilling would have no topological effect at all, then
        <span class="application">Regina</span> will do nothing, and instead show a message explaining why.
        This happens, for example, if the chosen edge connects an
        internal vertex to a boundary component (either real or ideal).
+      </p></li><li><p>
+       If the edge runs between two boundary components where at least one
+       is real, then <span class="application">Regina</span> will refuse to drill (since this could produce
+       an enormous number of tetrahedra).  You could try converting your
+       triangulation to an ideal triangulation instead, since <span class="application">Regina</span> will
+       happily drill an edge between two ideal vertices.
       </p></li></ul></div><p>
    </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="tri-connsumwith"></a>Building Connected Sums (3-D)</h3></div></div></div><p>
     You can combine two 3-manifold triangulations by forming their connected
@@ -403,7 +431,7 @@
     since <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>Y</code></em></span> will not be modified.
    </p><p>
     To form this connected sum, first open the the triangulation
-    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>X</code></em></span> for viewing, and then select
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>X</code></em></span> for editing, and then select
     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">3-D Triangulation</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Connected Sum With</span></span>
     from the menu.
    </p><p>

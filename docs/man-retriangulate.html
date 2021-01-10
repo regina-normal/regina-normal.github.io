@@ -1,5 +1,5 @@
 <html><head><title>retriangulate</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina Handbook"><link rel="up" href="utils.html" title="Appendix B. Command Line: Specialised Utilities"><link rel="prev" href="man-regfiletype.html" title="regfiletype"><link rel="next" href="man-sigcensus.html" title="sigcensus"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>retriangulate</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="man-regfiletype.html">Prev</a></td><td align="center" class="navCenter" width="34%">Command Line: Specialised Utilities</td><td align="right" class="navRight" width="33%"> 
-		      <a accesskey="n" href="man-sigcensus.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="man-retriangulate"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>retriangulate — Exhaustively retriangulate a given manifold</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">retriangulate</strong></span></span> [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-h, --height=</code></span><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>height</code></em></span>] [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-t, --threads=</code></span><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>threads</code></em></span>] [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-4, --dim4</code></span>] {<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>isosig</code></em></span>}</p></div><div class="cmdsynopsis"><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">retriangulate</strong></span></span> {<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--help</code></span>}</p></div></div><div class="refsect1" lang="en"><a name="idm2971474016"></a><h2>Description</h2><p>
+		      <a accesskey="n" href="man-sigcensus.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="man-retriangulate"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>retriangulate — Exhaustively retriangulate a given manifold</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">retriangulate</strong></span></span> [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-h, --height=</code></span><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>height</code></em></span>] [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-t, --threads=</code></span><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>threads</code></em></span>] [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-4, --dim4</code></span>] {<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>isosig</code></em></span>}</p></div><div class="cmdsynopsis"><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">retriangulate</strong></span></span> {<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--help</code></span>}</p></div></div><div class="refsect1" lang="en"><a name="idm3375214592"></a><h2>Description</h2><p>
     Given a 3-manifold or 4-manifold triangulation,
     this utility uses Pachner moves to exhaustively search
     for other triangulations of the same manifold that are the
@@ -53,7 +53,7 @@
     <span class="emphasis"><em>Simplification paths in the Pachner graphs of closed
     orientable 3-manifold triangulations</em></span>, Burton, 2011,
     arXiv:1110.6080.
-   </p></div><div class="refsect1" lang="en"><a name="idm2971461648"></a><h2>Options</h2><div class="variablelist"><dl><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-h,
+   </p></div><div class="refsect1" lang="en"><a name="idm3375202224"></a><h2>Options</h2><div class="variablelist"><dl><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-h,
       --height=</code></span><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>height</code></em></span></span></dt><dd><p>
        Specifies the number of additional tetrahedra (for a 3-manifold)
        or pentachora (for a 4-manifold) that we allow during intermediate
@@ -99,7 +99,7 @@
        Indicates that the given isomorphism signature describes a
        4-manifold triangulation.  If this argument is not given, then by
        default the argument is assumed to describe a 3-manifold triangulation.
-      </p></dd></dl></div></div><div class="refsect1" lang="en"><a name="idm2971445440"></a><h2>Examples</h2><p>
+      </p></dd></dl></div></div><div class="refsect1" lang="en"><a name="idm3375186016"></a><h2>Examples</h2><p>
     The 3-manifold triangulation is non-minimal, but it requires a bit
     of work to see this:
    </p><pre class="screen">
@@ -134,21 +134,21 @@
         m112 : #2 -- Cusped hyperbolic census (orientable)
     
     <code class="prompt">example$</code>
-</pre></div><div class="refsect1" lang="en"><a name="idm2971432960"></a><h2><span class="application">MacOS</span> Users</h2><p>
+</pre></div><div class="refsect1" lang="en"><a name="idm3375173536"></a><h2><span class="application">MacOS</span> Users</h2><p>
     If you downloaded a drag-and-drop app bundle, this utility is
     shipped inside it.  If you dragged <span class="application">Regina</span> to the main
     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Applications</span></span> folder, you can run it as
     <code class="literal">/Applications/Regina.app/Contents/MacOS/retriangulate</code>.
-   </p></div><div class="refsect1" lang="en"><a name="idm2972564288"></a><h2><span class="application">Windows</span> Users</h2><p>
+   </p></div><div class="refsect1" lang="en"><a name="idm3383188224"></a><h2><span class="application">Windows</span> Users</h2><p>
     The command-line utilities are installed beneath the
     <code class="filename">Program Files</code> directory; on some
     machines this directory is called
     <code class="filename">Program Files (x86)</code>.
     You can start this utility by running
-    <code class="literal">c:\Program Files\Regina\Regina 5.96\bin\retriangulate.exe</code>.
-   </p></div><div class="refsect1" lang="en"><a name="idm2972560192"></a><h2>See Also</h2><p>
+    <code class="literal">c:\Program Files\Regina\Regina 6.0\bin\retriangulate.exe</code>.
+   </p></div><div class="refsect1" lang="en"><a name="idm3383128272"></a><h2>See Also</h2><p>
     <a href="man-regina-gui.html" title="regina-gui">regina-gui</a>.
-   </p></div><div class="refsect1" lang="en"><a name="idm2972558272"></a><h2>Author</h2><p>
+   </p></div><div class="refsect1" lang="en"><a name="idm3383126352"></a><h2>Author</h2><p>
     This utility was written by Benjamin Burton
     <code class="email">&lt;<a href="mailto:bab@maths.uq.edu.au">bab@maths.uq.edu.au</a>&gt;</code>.
     Many people have been involved in the development

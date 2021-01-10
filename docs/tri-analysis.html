@@ -475,7 +475,7 @@
          models the dual graph using a rooted tree.
          <span class="application">Regina</span> uses these tree decompositions in some of its
          fixed-parameter tractable algorithms
-         [<a href="bibliography.html#bib-turaevviro-fpt" title="[Bur15]"><span class="abbrev">Bur15</span></a>].
+         [<a href="bibliography.html#bib-turaevviro-fpt" title="[BMS15]"><span class="abbrev">BMS15</span></a>].
         </p><p>
          <span class="inlinemediaobject"><img src="tri-graphs-tree.png"></span>
         </p><p>
@@ -816,8 +816,8 @@
     <a href="tri-analysis.html#tri-recognition" title="High-Level Recognition Routines (3-D)">recognition tab</a> instead.
     The recognition tab combines the results of this combinatorial
     recognition with slower but stronger routines, including
-    3-sphere, 3-ball and solid torus recognition, census lookup,
-    and more.
+    3-sphere, 3-ball, solid torus and T × I recognition,
+    census lookup, and more.
    </p></div><p>
     <span class="inlinemediaobject"><img src="tri-composition.png"></span>
    </p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="tri-composition-name"></a>Recognising Families of Triangulations</h4></div></div></div><p>
@@ -931,7 +931,7 @@
     techniques,
     and also computes other high-level properties of the triangulation.
     It offers a combination of slow but exact procedures
-    (such as 3-sphere, 3-ball and solid torus recognition),
+    (such as 3-sphere, 3-ball, solid torus and T × I recognition),
     and fast "opportunistic" procedures such as combinatorial recognition
     and census lookup.
    </p><p>
@@ -988,6 +988,16 @@
        3-manifolds with real boundary triangles.
        For ideal triangulations, the ideal vertices will be treated as
        though they were truncated.
+      </p></dd><dt><a name="tri-proptxi"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">T × I</span></span></dt><dd><p>
+       Determines whether this is a triangulation of the product of the
+       torus with an interval.
+       Again this uses a complete, exact algorithm that guarantees to
+       terminate with the correct result; this is a modification of
+       an algorithm due to Haraway [<a href="bibliography.html#bib-txi" title="[Har20]"><span class="abbrev">Har20</span></a>].
+      </p><p>
+       This property is shown for ideal triangulations as well as
+       3-manifolds with real boundary triangles (or indeed any mix of the two).
+       Any ideal vertices will be treated as though they were truncated.
       </p></dd><dt><a name="tri-prop0eff"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Zero-efficient</span></span></dt><dd><p>
        Indicates whether the triangulation is 0-efficient.  A
        triangulation is <em class="firstterm">0-efficient</em> if its only

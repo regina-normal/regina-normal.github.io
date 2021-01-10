@@ -44,12 +44,18 @@
    through ready-made packages if at all possible: they are available
    in every major <span class="application"><span class="acronym">GNU</span>/Linux</span> distribution.  The extra libraries you will
    need are:
-   </p><div class="variablelist"><dl><dt><span class="term">zlib compression library
-      (<em class="firstterm">libz</em>)</span></dt><dd><p>
+   </p><div class="variablelist"><dl><dt><span class="term">Boost headers</span></dt><dd><p>
       Look for a package named
-      <code class="literal">zlib1g-dev</code>,
-      <code class="literal">zlib1-devel</code> or
-      <code class="literal">zlib-devel</code>.
+      <code class="literal">libboost-dev</code> or
+      <code class="literal">boost-devel</code>.
+      You only need the headers (there is no need for pre-built libraries
+      such as Boost.Regex or Boost.Python).
+     </p></dd><dt><span class="term"><span class="acronym">GNOME</span> <span class="acronym">XML</span> library
+      (<em class="firstterm">libxml2</em>)</span></dt><dd><p>
+      Look for a package named
+      <code class="literal">libxml2-dev</code>,
+      <code class="literal">lib64xml2-devel</code> or
+      <code class="literal">libxml2-devel</code>.
      </p></dd><dt><span class="term"><span class="acronym">GNU</span> multiprecision arithmetic libraries for <span class="application">C</span>/<span class="application">C++</span>
       (<em class="firstterm">libgmp</em> and <em class="firstterm">libgmpxx</em>)</span></dt><dd><p>
       Look for a package named
@@ -60,23 +66,23 @@
       Some distributions (such as <span class="application">Mandriva</span>)
       ship the <span class="application">C++</span> library separately in a package named
       <code class="literal">gmpxx-devel</code>.
-     </p></dd><dt><span class="term"><span class="acronym">GNOME</span> <span class="acronym">XML</span> library
-      (<em class="firstterm">libxml2</em>)</span></dt><dd><p>
-      Look for a package named
-      <code class="literal">libxml2-dev</code>,
-      <code class="literal">lib64xml2-devel</code> or
-      <code class="literal">libxml2-devel</code>.
-     </p></dd><dt><span class="term">Boost headers</span></dt><dd><p>
-      Look for a package named
-      <code class="literal">libboost-dev</code> or
-      <code class="literal">boost-devel</code>.
-      You only need the headers (there is no need for pre-built libraries
-      such as Boost.Regex or Boost.Python).
-     </p></dd><dt><span class="term">Tokyo Cabinet library
-      (<em class="firstterm">libtokyocabinet</em>)</span></dt><dd><p>
-      Look for a package named
-      <code class="literal">libtokyocabinet-dev</code>,
-      <code class="literal">libtokyocabinet-devel</code> or
-      <code class="literal">tokyocabinet-devel</code>.
      </p></dd></dl></div><p>
+  </p><p>
+   On some platforms you might also need development files for the
+   zlib compression library (<em class="firstterm">libz</em>), the
+   Jansson <span class="acronym">JSON</span> library (<em class="firstterm">libjansson</em>), and the
+   Tokyo Cabinet library (<em class="firstterm">libtokyocabinet</em>),
+   but this depends on how your linker works.
+   If you do need these, look for a package named
+   <code class="literal">zlib1g-dev</code>,
+   <code class="literal">zlib1-devel</code> or
+   <code class="literal">zlib-devel</code>,
+   a package named
+   <code class="literal">libjansson-dev</code>,
+   <code class="literal">libjansson-devel</code> or
+   <code class="literal">jansson-devel</code>,
+   and a package named
+   <code class="literal">libtokyocabinet-dev</code>,
+   <code class="literal">libtokyocabinet-devel</code> or
+   <code class="literal">tokyocabinet-devel</code>.
   </p></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="options-tools.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="compiling-flags.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">Tools Options </td><td width="34%" align="center" class="navCenter"><a href="index.html">Up</a></td><td width="33%" align="right" class="navRight"> Compiler and Linker Flags</td></tr></table></div></body></html>
