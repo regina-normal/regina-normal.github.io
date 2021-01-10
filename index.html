@@ -53,10 +53,11 @@ Updated data: 31 May 2018--></h4>
 <h2><a name="news">News</a></h2>
 
 <p class="header">
-<b>TODO January 2021:</b>
+<b>10 January 2021:</b>
 Regina 6.0 is out!
-This puts some final polish on last month's prerelease (v5.96).
-If you are upgrading from the much older Regina&nbsp;5.1, this is a
+This puts some final polish on last month's prerelease (v5.96),
+with a couple of new features also.
+If you are upgrading from the much older Regina&nbsp;5.1, then this is a
 major overhaul that includes native knot/link support,
 Python&nbsp;3, and many other new features and improvements.
 You can <a href="#new">read more about what's new</a>,
@@ -164,8 +165,8 @@ a Python&nbsp;2 build that uses the system <tt>/usr/bin/python</tt>,
 and a Python&nbsp;3 build that comes bundled with its own copy of Python.
 There is also a Python&nbsp;3 version on the App Store (free of course).
 <p>
-If you're not sure which version to get, then start with the App Store
-version.
+Not sure which version to get?  Start with the App Store
+version (but read below).
 <p>
 <blockquote><table cellspacing=0 border=0 align=center class="data"><tbody>
 <tr><th class="first" colspan=2>macOS Version</th>
@@ -189,14 +190,14 @@ version.
 There are some minor differences between the website and App Store versions.
 The App Store version:
 <ul>
-<li>will notify you of upgrades automatically;</li>
+<li>means that macOS will notify you of upgrades;</li>
 <li>may support iCloud in a future release
 (which is not possible for a website download);</li>
-<li>is sandboxed, which limits file access through Python and the
-command-line tools (see below).</li>
+<li>is sandboxed for extra security, which limits file access through
+Python and the command-line tools (see below).</li>
 </ul>
 <p>
-Sandboxing is a security measure that comes with the App Store:
+Sandboxing is a security measure that comes with all App Store downloads:
 it ensures that apps only access files that you explicitly choose
 through the graphical file dialogs (<i>Open</i>, <i>Save</i>, etc.).
 For Regina, this means that when you open a Python console or
@@ -241,7 +242,7 @@ SmartScreen Filter that
 This is because Microsoft has not added Regina to its database of
 known applications.
 Click <i>More info</i> or <i>More options</i>
-and you will be able to run the installer anyway.</li>
+and you should be able to run the installer anyway.</li>
 
 <a name="linux"><h4 class="divide">GNU/Linux</h4></a>
 
@@ -252,9 +253,9 @@ Please click on the <i>Download</i> link for your system in the table below.
 <p>
 All packages are <b>64-bit Intel</b>, which means they will only work
 with an <i>x86_64</i> or <i>amd64</i> chipset (which covers almost any
-modern machine nowadays except for Apple Silicon).
+typical desktop or laptop nowadays except for Apple Silicon).
 The exception is the Debian packages, which are built for more
-chipsets (see below).
+chipsets as listed in the table below.
 If you are not sure what chipset you have, open a terminal and run
 &ldquo;<tt>uname&nbsp;-m</tt>&rdquo;.
 <p>
@@ -354,9 +355,9 @@ desktop versions listed above.
 <a name="sage"><h4 class="divide">Sage</h4></a>
 
 Matthias Goerner has kindly prepared Sage packages for Regina.
-These offer a Python-only interface to Regina's mathematical engine&mdash;they
-do not include Regina's graphical user interface or command-line tools.
-If you need these features then please download one of the desktop versions
+These offer a Python-only interface to Regina's mathematical engine.
+They do not include Regina's graphical user interface or command-line tools,
+so if you need those features then please download one of the desktop versions
 listed above.
 <p>
 <blockquote><table cellspacing=0 border=0 align=center class="data"><tbody>
@@ -416,11 +417,19 @@ You can also <a href="engine-docs/index.html">read it here online</a>.
 
 <h2><a name="new">What's new in version 6.0?</a></h2>
 <p>
-This puts some final polish on the December&nbsp;2020 prerelease
-(v5.96).
-This is a major overhaul from the much older version&nbsp;5.1:
+This puts some final polish on the December&nbsp;2020 prerelease (v5.96):
+<ul>
+<li>The user handbook has now been brought up to date.</li>
+<li>The example files now include a census of prime knots.</li>
+<li>Added TxI recognition using Haraway's algorithm.</li>
+<li>Several additional smaller features and fixes;
+  see the full changelog for details.</li>
+</ul>
+<p>
+If you missed Regina&nbsp;5.96 (December&nbsp;2020), this was a major
+overhaul from the much older version&nbsp;5.1:
 </p>
-<h4>Features</h4>
+<!--h4>Features</h4-->
 <ul>
 <li>Regina now offers native support for knots and links!
     Take a look around the introductory examples file.</li>
@@ -428,7 +437,8 @@ This is a major overhaul from the much older version&nbsp;5.1:
 <li>New command-line utility to retriangulate a given manifold.</li>
 <li>Many, many other additions: see the full changelog for details.</li>
 </ul>
-<h4>Python and C++</h4>
+For Python and C++ programmers:
+<!--h4>Python and C++</h4-->
 <ul>
 <li>Regina now uses the C++14 standard, and no longer links against
     the boost libraries (it just uses the boost headers).
