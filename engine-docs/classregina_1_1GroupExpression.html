@@ -295,7 +295,7 @@ Public Member Functions</h2></td></tr>
 <p>The string may contain whitespace, which will simply be ignored.</p>
 <p>The argument <em>valid</em> may be <code>null</code>, but if it is non-null then the boolean it points to will be used for error reporting. This routine sets valid to <code>true</code> if the string was successfully interpreted, or <code>false</code> if the algorithm failed to interpret the string.</p>
 <p>Regardless of whether <em>valid</em> is <code>null</code>, if the string could not be interpreted then this expression will be initialised to the trivial word.</p>
-<dl class="section user"><dt>Python:\n The second argument <em>valid</em> is not present,</dt><dd>and will be assumed to be <code>null</code>.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>The second argument <em>valid</em> is not present, and will be assumed to be <code>null</code>.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">input</td><td>the input string that is to be interpreted. </td></tr>
@@ -1016,7 +1016,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section warning"><dt>Warning</dt><dd>The API for this class has not yet been finalised. This means that the class interface may change in new versions of Regina, without maintaining backward compatibility. If you use this class directly in your own code, please watch the detailed changelogs upon new releases to see if you need to make changes to your code.</dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd>Change this to use less heavyweight types and less deep copying.</dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>If <em>cyclic</em> is <code>true</code>, then both this word and <em>other</em> have been cyclically reduced.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">other</td><td>the word to compare against this. </td></tr>
@@ -1082,7 +1082,7 @@ Public Member Functions</h2></td></tr>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a short text representation of this object. </p>
 <p>This text should be human-readable, should fit on a single line, and should not end with a newline. Where possible, it should use plain ASCII characters.</p>
-<dl class="section user"><dt>Python:\n In addition to str(), this is also used as the</dt><dd>Python "stringification" function <code>__str__()</code>.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>In addition to <a class="el" href="structregina_1_1Output.html#a2212a7a96adf2538ea875d49a98d99ad" title="Returns a short text representation of this object.">str()</a>, this is also used as the Python "stringification" function <code>__str__()</code>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a short text representation of this object. </dd></dl>
 
 </div>
@@ -1181,7 +1181,7 @@ Public Member Functions</h2></td></tr>
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a constant reference to the term at the given index in this expression. </p>
 <p>Index 0 represents the first term, index 1 represents the second term and so on.</p>
 <dl class="section warning"><dt>Warning</dt><dd>This routine is <em>O(n)</em> where <em>n</em> is the number of terms in this expression.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present; only the non-const version of this</dt><dd>routine is available.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present; only the non-const version of this routine is available.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">index</td><td>the index of the term to return; this must be between 0 and <a class="el" href="classregina_1_1GroupExpression.html#a2aeebe99241025551efccdbc0640417f" title="Returns the number of terms in this expression.">countTerms()</a>-1 inclusive. </td></tr>
@@ -1218,7 +1218,7 @@ Public Member Functions</h2></td></tr>
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the list of terms in this expression. </p>
 <p>These are the actual terms stored internally; any modifications made to this list will show up in the expression itself.</p>
 <p>For instance, the expression <code>g1^2 g3^-1 g6</code> has list consisting of three terms <code>g1^2</code>, <code>g3^-1</code> and <code>g6^1</code> in that order.</p>
-<dl class="section user"><dt>Python:\n Not present; only the const version of this</dt><dd>routine is available.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present; only the const version of this routine is available.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the list of terms. </dd></dl>
 
 </div>
@@ -1248,7 +1248,7 @@ Public Member Functions</h2></td></tr>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a constant reference to the list of terms in this expression. </p>
 <p>For instance, the expression <code>g1^2 g3^-1 g6</code> has list consisting of three terms <code>g1^2</code>, <code>g3^-1</code> and <code>g6^1</code> in that order.</p>
-<dl class="section user"><dt>Python:\n This routine returns a python list of copied</dt><dd><a class="el" href="structregina_1_1GroupExpressionTerm.html" title="Represents a power of a generator in a group presentation.">GroupExpressionTerm</a> objects. In particular, modifying this list or the terms within it will not modify the group expression from which they came.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This routine returns a python list of copied <a class="el" href="structregina_1_1GroupExpressionTerm.html" title="Represents a power of a generator in a group presentation.">GroupExpressionTerm</a> objects. In particular, modifying this list or the terms within it will not modify the group expression from which they came.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the list of terms. </dd></dl>
 
 </div>
@@ -1352,7 +1352,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Writes a TeX represesentation of this expression to the given output stream. </p>
 <p>The text representation will be of the form <code>g_2^4 g_{13}^{-5} g_4</code>.</p>
-<dl class="section user"><dt>Python:\n The parameter <em>out</em> does not exist;</dt><dd>standard output will be used.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>The parameter <em>out</em> does not exist; standard output will be used.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1397,7 +1397,7 @@ Public Member Functions</h2></td></tr>
 <p>Writes a text representation of this expression to the given output stream, using either numbered generators or alphabetic generators. </p>
 <p>The text representation will be of the form <code>g2^4 g13^-5 g4</code>. If the <em>shortword</em> flag is <code>true</code>, it will assume your word is in an alphabet of no more than 26 letters, and will write the word using lower-case ASCII, i.e., <code>c^4 n^-5 e</code>. If the <em>utf8</em> flag is <code>true</code>, all exponents will be written using superscript characters encoded in UTF-8.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>If <em>shortword</em> is <code>true</code>, the number of generators in the corresponding group must be 26 or fewer.</dd></dl>
-<dl class="section user"><dt>Python:\n The parameter <em>out</em> does not exist;</dt><dd>standard output will be used.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>The parameter <em>out</em> does not exist; standard output will be used.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1435,7 +1435,7 @@ Public Member Functions</h2></td></tr>
 
 <p>A default implementation for detailed output. </p>
 <p>This routine simply calls <em>T::writeTextShort()</em> and appends a final newline.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1463,7 +1463,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Writes a short text representation of this object to the given output stream. </p>
 <p>The text representation will be of the form <code>g2^4 g13^-5 g4</code>.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1490,7 +1490,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Writes a chunk of XML containing this expression. </p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which the XML should be written. </td></tr>
@@ -1505,7 +1505,7 @@ Public Member Functions</h2></td></tr>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

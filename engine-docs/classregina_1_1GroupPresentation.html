@@ -296,7 +296,7 @@ Protected Attributes</h2></td></tr>
 <p>The first argument <em>nGens</em> is the number of generators one wants the group to have. The second argument <em>rels</em> is a vector of strings, where each string gives a single relator. See the <a class="el" href="classregina_1_1GroupExpression.html#adfbc34d75a9cb38218f25c8ed5582ccf" title="Attempts to interpret the given input string as a word in a group.">GroupExpression::GroupExpression(const std::string&amp;, bool*)</a> constructor notes for information on what format these strings can take.</p>
 <p>If any of the given strings could not be interpreted as words, this routine will insert the trivial (unit) word in its place.</p>
 <p>If you are compiling Regina against C++11, you can use the C++11 initializer_list construction to construct an <a class="el" href="classregina_1_1GroupPresentation.html" title="Represents a finite presentation of a group.">GroupPresentation</a> directly using syntax of the form <code><a class="el" href="classregina_1_1GroupPresentation.html" title="Represents a finite presentation of a group.">GroupPresentation</a>(nGens, { "rel1", "rel2", ... })</code>.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">nGens</td><td>the number of generators. </td></tr>
@@ -420,7 +420,7 @@ Protected Attributes</h2></td></tr>
 <p>The relation must be of the form <code>expression = 1</code>.</p>
 <p>This presentation will take ownership of the given expression, may change it and will be responsible for its deallocation.</p>
 <dl class="section warning"><dt>Warning</dt><dd>This routine does not check whether or not your relation is a word only in the generators of this group. In other words, it does not stop you from using generators beyond the <a class="el" href="classregina_1_1GroupPresentation.html#a610ea6821977d1a2f6709627316e7649" title="Returns the number of generators in this group presentation.">countGenerators()</a> bound.</dd></dl>
-<dl class="section user"><dt>Python:\n In Python, this routine clones its argument</dt><dd>instead of claiming ownership of it.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>In Python, this routine clones its argument instead of claiming ownership of it.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">rel</td><td>the expression that the relation sets to 1; for instance, if the relation is <code>g1^2 g2 = 1</code> then this parameter should be the expression <code>g1^2 g2</code>. </td></tr>
@@ -1114,8 +1114,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>A Sage-only routine that returns a copy of this group presentation in a format native to Sage. </p>
-<dl class="section user"><dt>C++:\n Not present.</dt><dd></dd></dl>
-<dl class="section user"><dt>Python:\n Only present when run within Sage.</dt><dd></dd></dl>
+<dl class="section user"><dt>C++</dt><dd>Not present. </dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Only present when run within Sage.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a copy of this group as a mathematical object native to Sage. </dd></dl>
 
 </div>
@@ -1218,7 +1218,7 @@ Protected Attributes</h2></td></tr>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a short text representation of this object. </p>
 <p>This text should be human-readable, should fit on a single line, and should not end with a newline. Where possible, it should use plain ASCII characters.</p>
-<dl class="section user"><dt>Python:\n In addition to str(), this is also used as the</dt><dd>Python "stringification" function <code>__str__()</code>.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>In addition to <a class="el" href="structregina_1_1Output.html#a2212a7a96adf2538ea875d49a98d99ad" title="Returns a short text representation of this object.">str()</a>, this is also used as the Python "stringification" function <code>__str__()</code>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a short text representation of this object. </dd></dl>
 
 </div>
@@ -1291,7 +1291,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Writes a TeX represesentation of this group presentation to the given output stream. </p>
 <p>The output will be of the form &lt; generators | relators &gt;. There will be no final newline.</p>
-<dl class="section user"><dt>Python:\n The parameter <em>out</em> does not exist;</dt><dd>standard output will be used.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>The parameter <em>out</em> does not exist; standard output will be used.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1319,7 +1319,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Writes a compact represesentation of this group to the given output stream. </p>
 <p>The output will be of the form &lt; generators | relators &gt;. The full relations will be included, and the entire output will be written on a single line. There will be no final newline.</p>
-<dl class="section user"><dt>Python:\n The parameter <em>out</em> does not exist;</dt><dd>standard output will be used.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>The parameter <em>out</em> does not exist; standard output will be used.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1346,7 +1346,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Writes a detailed text representation of this object to the given output stream. </p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1381,7 +1381,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Writes a short text representation of this object to the given output stream. </p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1408,7 +1408,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Writes a chunk of XML containing this group presentation. </p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which the XML should be written. </td></tr>
@@ -1472,7 +1472,7 @@ Protected Attributes</h2></td></tr>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

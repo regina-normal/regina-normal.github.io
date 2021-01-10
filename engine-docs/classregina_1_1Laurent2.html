@@ -201,7 +201,7 @@ class regina::Laurent2&lt; T &gt;</h3>
 <p>This class is designed to avoid deep copies wherever possible. In particular, it supports C++11 move constructors and move assignment. Functions that take or return objects by value are designed to be just as efficient as working with references or pointers, and long chains of operators such as <code>a = b * c + d</code> do not make unwanted deep copies.</p>
 <p>The underlying storage method for this class is sparse: only the non-zero coefficients are stored.</p>
 <p>See also the class <a class="el" href="classregina_1_1Laurent.html" title="Represents a single-variable Laurent polynomial with coefficients of type T.">Laurent</a>, which describes <a class="el" href="classregina_1_1Laurent.html" title="Represents a single-variable Laurent polynomial with coefficients of type T.">Laurent</a> polynomials in just one variable.</p>
-<dl class="section user"><dt>Python:\n In Python, the class Laurent2 refers to the specific</dt><dd>template class Laurent2&lt;Integer&gt;. </dd></dl>
+<dl class="section user"><dt>Python</dt><dd>In Python, the class <a class="el" href="classregina_1_1Laurent2.html" title="Represents a Laurent polynomial in the two variables x, y with coefficients of type T.">Laurent2</a> refers to the specific template class Laurent2&lt;Integer&gt;. </dd></dl>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a7182c8346ab7110e993b7dc09ff490ac"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7182c8346ab7110e993b7dc09ff490ac">&#9670;&nbsp;</a></span>Coefficient</h2>
@@ -491,10 +491,8 @@ template&lt;typename T&gt; </div>
 <p>This constructor takes a C++11 initialiser list, which should contain a collection of tuples of the form (<em>d</em>, <em>e</em>, <em>v</em>) each representing a term of the form <code>v x^d y^e</code>.</p>
 <p>The tuples may be given in any order. An empty sequence will be treated as the zero polynomial.</p>
 <p>In practice, this means you can create a hard-coded polynomial using syntax such as:</p>
-<dl class="section pre"><dt>Precondition</dt><dd>Laurent2&lt;Integer&gt; p = { { 0, 0, 3 }, { 1, -1, 2 } }; \endpre</dd>
-<dd>
-Each tuple has a non-zero value <em>v</em>, and no two tuples share the same pair of exponents (<em>d</em>, <em>e</em>).</dd></dl>
-<dl class="section user"><dt>Python:\n Not available.</dt><dd></dd></dl>
+<div class="fragment"><div class="line">Laurent2&lt;Integer&gt; p = { { 0, 0, 3 }, { 1, -1, 2 } };</div></div><!-- fragment --><dl class="section pre"><dt>Precondition</dt><dd>Each tuple has a non-zero value <em>v</em>, and no two tuples share the same pair of exponents (<em>d</em>, <em>e</em>).</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not available.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">coefficients</td><td>the set of all non-zero coefficients, as outlined above. </td></tr>
@@ -842,7 +840,7 @@ template&lt;typename T &gt; </div>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the given coefficient of this polynomial. </p>
 <p>There are no restrictions on the exponents <em>xExp</em> and <em>yExp</em>.</p>
-<dl class="section user"><dt>Python:\n In Python, this is the square bracket operator,</dt><dd>not the round bracket operator; that is, Python users can access coefficients through the syntax <code>poly[xExp, yExp]</code>. Moreover, this operator can also <em>set</em> cofficients; that is, you can write <code>poly[xExp, yExp] = value</code>. In contrast, C++ users must use the separate routine <a class="el" href="classregina_1_1Laurent2.html#a6e21fd6436363e5555380f69aef2b5ba" title="Changes the given coefficient of this polynomial.">set()</a>, due to the fact that in C++ this bracket operator is const.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>In Python, this is the square bracket operator, not the round bracket operator; that is, Python users can access coefficients through the syntax <code>poly[xExp, yExp]</code>. Moreover, this operator can also <em>set</em> cofficients; that is, you can write <code>poly[xExp, yExp] = value</code>. In contrast, C++ users must use the separate routine <a class="el" href="classregina_1_1Laurent2.html#a6e21fd6436363e5555380f69aef2b5ba" title="Changes the given coefficient of this polynomial.">set()</a>, due to the fact that in C++ this bracket operator is const.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">xExp</td><td>the exponent attached to <em>x</em>. </td></tr>
@@ -1110,7 +1108,7 @@ template&lt;typename T&gt; </div>
 <p>Changes the given coefficient of this polynomial. </p>
 <p>There are no restrictions on the exponents <em>xExp</em> and <em>yExp</em>, and the new coefficient <em>value</em> may be zero.</p>
 <p>Moreover, the underlying data structures ensure that this operation is cheap regardless of the exponents involved.</p>
-<dl class="section user"><dt>Python:\n This set() routine is available, but you can</dt><dd>also set coefficients directly using syntax of the form <code>p[xExp, yExp] = value</code>.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This <a class="el" href="classregina_1_1Laurent2.html#a6e21fd6436363e5555380f69aef2b5ba" title="Changes the given coefficient of this polynomial.">set()</a> routine is available, but you can also set coefficients directly using syntax of the form <code>p[xExp, yExp] = value</code>.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">xExp</td><td>the exponent attached to <em>x</em>. </td></tr>
@@ -1147,7 +1145,7 @@ template&lt;typename T&gt; </div>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a short text representation of this object. </p>
 <p>This text should be human-readable, should fit on a single line, and should not end with a newline. Where possible, it should use plain ASCII characters.</p>
-<dl class="section user"><dt>Python:\n In addition to str(), this is also used as the</dt><dd>Python "stringification" function <code>__str__()</code>.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>In addition to <a class="el" href="classregina_1_1Laurent2.html#a760f12b76398e549fa66a3a0e7ef3b79" title="Returns this polynomial as a human-readable string, using the given variable names instead of x and y...">str()</a>, this is also used as the Python "stringification" function <code>__str__()</code>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a short text representation of this object. </dd></dl>
 
 </div>
@@ -1345,7 +1343,7 @@ template&lt;typename T &gt; </div>
 
 <p>A default implementation for detailed output. </p>
 <p>This routine simply calls <em>T::writeTextShort()</em> and appends a final newline.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1397,7 +1395,7 @@ template&lt;typename T &gt; </div>
 
 <p>Writes this polynomial to the given output stream, using the given variable names instead of <code>x</code> and <code>y</code>. </p>
 <p>If <em>utf8</em> is passed as <code>true</code> then unicode superscript characters will be used for exponents and the minus sign; these will be encoded using UTF-8. This will make the output nicer, but will require more complex fonts to be available on the user's machine.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1417,7 +1415,7 @@ template&lt;typename T &gt; </div>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

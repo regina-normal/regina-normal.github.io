@@ -91,7 +91,7 @@ for decision problems in knot theory and 3-manifold topology", Burton and Ozlen,
 <p>We assume that all type vectors used in this trie have the same length. This is important, since we optimise the implementation by ignoring trailing zeroes, which means that this trie cannot distinguish between a vector <em>v</em> and the same vector with additional zeroes appended to its end.</p>
 <p>Internally, each node of the trie is represented by a separate <a class="el" href="classregina_1_1TypeTrie.html" title="A trie that stores a set of type vectors of a fixed length.">TypeTrie</a> object, each of which is responsible for managing the lifespan of its descendant nodes. Externally, a user only needs to create and manage a single <a class="el" href="classregina_1_1TypeTrie.html" title="A trie that stores a set of type vectors of a fixed length.">TypeTrie</a> object (which becomes the root of the trie).</p>
 <dl class="section pre"><dt>Precondition</dt><dd><em>nTypes</em> is at most 256. The typical value for <em>nTypes</em> for normal surface enumeration is <em>nTypes</em> = 4.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2faa804e5db1858dff9ab7a59c4d0725"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2faa804e5db1858dff9ab7a59c4d0725">&#9670;&nbsp;</a></span>TypeTrie()</h2>
@@ -267,7 +267,7 @@ template&lt;int nTypes&gt; </div>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

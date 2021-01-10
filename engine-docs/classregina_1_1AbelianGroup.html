@@ -120,6 +120,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a919a9f896922a25d7c9b6e32a877471f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1AbelianGroup.html#a919a9f896922a25d7c9b6e32a877471f">isZ</a> () const</td></tr>
 <tr class="memdesc:a919a9f896922a25d7c9b6e32a877471f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether this is the infinite cyclic group (Z).  <a href="#a919a9f896922a25d7c9b6e32a877471f">More...</a><br /></td></tr>
 <tr class="separator:a919a9f896922a25d7c9b6e32a877471f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dd8d4c1dd13f30df21855b26e4d1198"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1AbelianGroup.html#a1dd8d4c1dd13f30df21855b26e4d1198">isFree</a> (unsigned r) const</td></tr>
+<tr class="memdesc:a1dd8d4c1dd13f30df21855b26e4d1198"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether this is the free abelian group of the given rank.  <a href="#a1dd8d4c1dd13f30df21855b26e4d1198">More...</a><br /></td></tr>
+<tr class="separator:a1dd8d4c1dd13f30df21855b26e4d1198"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae75846527dae06863f9b924622ccfe8b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1AbelianGroup.html#ae75846527dae06863f9b924622ccfe8b">isZn</a> (unsigned long n) const</td></tr>
 <tr class="memdesc:ae75846527dae06863f9b924622ccfe8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether this is the non-trivial cyclic group on the given number of elements.  <a href="#ae75846527dae06863f9b924622ccfe8b">More...</a><br /></td></tr>
 <tr class="separator:ae75846527dae06863f9b924622ccfe8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -521,7 +524,7 @@ The product M*N = 0.</dd></dl>
 <p>Note that this routine might be slow since calculating the new invariant factors is not trivial.</p>
 <p>The torsion elements to add are described by a list of integers <em>k1</em>,...,<em>km</em>, where we are adding Z_<em>k1</em>,...,Z_<em>km</em>. Unlike invariant factors, the <em>ki</em> are not required to divide each other.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>Each integer in the given list is strictly greater than 1.</dd></dl>
-<dl class="section user"><dt>Python:\n This routine takes a python list as its argument.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This routine takes a python list as its argument.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">torsion</td><td>a list containing the torsion elements to add, as described above. </td></tr>
@@ -615,6 +618,41 @@ The product M*N = 0.</dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the requested invariant factor. </dd></dl>
+
+</div>
+</div>
+<a id="a1dd8d4c1dd13f30df21855b26e4d1198"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dd8d4c1dd13f30df21855b26e4d1198">&#9670;&nbsp;</a></span>isFree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool regina::AbelianGroup::isFree </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determines whether this is the free abelian group of the given rank. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>the rank of the free abelian group that we are testing for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if and only if this is the free abelian group of rank <em>r</em>. </dd></dl>
 
 </div>
 </div>
@@ -906,7 +944,7 @@ The product M*N = 0.</dd></dl>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a short text representation of this object. </p>
 <p>This text should be human-readable, should fit on a single line, and should not end with a newline. Where possible, it should use plain ASCII characters.</p>
-<dl class="section user"><dt>Python:\n In addition to str(), this is also used as the</dt><dd>Python "stringification" function <code>__str__()</code>.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>In addition to <a class="el" href="structregina_1_1Output.html#a2212a7a96adf2538ea875d49a98d99ad" title="Returns a short text representation of this object.">str()</a>, this is also used as the Python "stringification" function <code>__str__()</code>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a short text representation of this object. </dd></dl>
 
 </div>
@@ -1034,7 +1072,7 @@ The product M*N = 0.</dd></dl>
 
 <p>A default implementation for detailed output. </p>
 <p>This routine simply calls <em>T::writeTextShort()</em> and appends a final newline.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1072,7 +1110,7 @@ The product M*N = 0.</dd></dl>
 
 <p>Writes a short text representation of this object to the given output stream. </p>
 <p>The text representation will be of the form <code>3 Z + 4 Z_2 + Z_120</code>. The torsion elements will be written in terms of the invariant factors of the group, as described in the <a class="el" href="classregina_1_1AbelianGroup.html" title="Represents a finitely generated abelian group.">AbelianGroup</a> notes.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1100,7 +1138,7 @@ The product M*N = 0.</dd></dl>
 </div><div class="memdoc">
 
 <p>Writes a chunk of XML containing this abelian group. </p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which the XML should be written. </td></tr>
@@ -1164,7 +1202,7 @@ The product M*N = 0.</dd></dl>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

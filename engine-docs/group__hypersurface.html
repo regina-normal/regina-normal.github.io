@@ -239,7 +239,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>A combination of flags for types of normal surface lists. </p>
-<dl class="section user"><dt>Python:\n This is present, and all values in the HyperAlgFlags</dt><dd>enumeration type are treated as members of this HyperAlg class. </dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This is present, and all values in the HyperAlgFlags enumeration type are treated as members of this HyperAlg class. </dd></dl>
 
 </div>
 </div>
@@ -256,7 +256,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>A combination of flags for types of normal hypersurface lists. </p>
-<dl class="section user"><dt>Python:\n This is present, and all values in the HyperListFlags</dt><dd>enumeration type are treated as members of this HyperList class. </dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This is present, and all values in the HyperListFlags enumeration type are treated as members of this HyperList class. </dd></dl>
 
 </div>
 </div>
@@ -364,7 +364,7 @@ Functions</h2></td></tr>
 
 <p>Represents options and variants of algorithms for enumerating various types of normal hypersurfaces in 4-manifold triangulations. </p>
 <p>These options are typically combined in a bitwise fashion using the HyperAlg type, and then passed to enumeration routines such as <a class="el" href="classregina_1_1NormalHypersurfaces.html#a84e4d8fbac7f933401e084190c468190" title="A unified routine for enumerating various classes of normal hypersurfaces within a given triangulatio...">NormalHypersurfaces::enumerate()</a>.</p>
-<dl class="section user"><dt>Python:\n The values in this enumeration type are present, but</dt><dd>they are treated by Python as HyperList objects (and they can be combined and/or queried as such). The underlying enumeration type is not exposed to Python. </dd></dl>
+<dl class="section user"><dt>Python</dt><dd>The values in this enumeration type are present, but they are treated by Python as HyperList objects (and they can be combined and/or queried as such). The underlying enumeration type is not exposed to Python. </dd></dl>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggaaecd2a8d25ac496722f2d8d56ceced5da36197ace99a8d471fd85411e76238ec2"></a>HS_ALG_DEFAULT&#160;</td><td class="fielddoc"><p>An empty flag, indicating to an enumeration routine that it should use its default behaviour. </p>
 <p>The numeric value of this flag is zero (i.e., it has no effect when combined with other flags using bitwise OR). </p>
@@ -440,7 +440,7 @@ fundamental normal surfaces: Algorithms, experiments and invariants", ALENEX 201
 
 <p>Represents different lists of normal hypersurfaces that might be constructed for a given 4-manifold triangulation. </p>
 <p>The HyperList enumeration refers to the <em>contents</em> of the list, whereas the HyperAlgFlags enumeration refers to the <em>algorithm</em> used to build it.</p>
-<dl class="section user"><dt>Python:\n The values in this enumeration type are present, but</dt><dd>they are treated by Python as HyperList objects (and they can be combined and/or queried as such). The underlying enumeration type is not exposed to Python. </dd></dl>
+<dl class="section user"><dt>Python</dt><dd>The values in this enumeration type are present, but they are treated by Python as HyperList objects (and they can be combined and/or queried as such). The underlying enumeration type is not exposed to Python. </dd></dl>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga3504d968f57efcd4379122ce3e37404da643102f0d9b8754127659c0da6110e0c"></a>HS_LIST_DEFAULT&#160;</td><td class="fielddoc"><p>An empty flag, indicating to an enumeration routine that it should use its default behaviour. </p>
 <p>The numeric value of this flag is zero (i.e., it has no effect when combined with other flags using bitwise OR). </p>
@@ -517,7 +517,7 @@ template&lt;typename FunctionObject , typename... Args&gt; </div>
 <p>In detail: the function object <em>func</em> must define a templated bracket operator, so that <code>func.operator()&lt;HyperInfo&lt;c&gt;&gt;(...)</code> is defined for any valid HyperCoords enum value <em>c</em>. Then, when the user calls <code>forCoords(coords, func, defaultReturn, ...)</code>, this routine will call <code>func.operator()&lt;HyperInfo&lt;coords&gt;&gt;(...)</code> and pass back the corresponding return value. If <em>coords</em> does not denote a valid coordinate system as described above, then <a class="el" href="group__hypersurface.html#ga36de7c6e11fe8b3cf37d0ea7f6f90645" title="Allows the user to call a template function whose template parameter matches a given value of HyperCo...">forCoords()</a> will pass back <em>defaultReturn</em> instead.</p>
 <p>There is also a variant of <a class="el" href="group__hypersurface.html#ga36de7c6e11fe8b3cf37d0ea7f6f90645" title="Allows the user to call a template function whose template parameter matches a given value of HyperCo...">forCoords()</a> that works with void functions, and so does not take the extra <em>defaultReturn</em> argument.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>The function object must have a typedef <em>ReturnType</em> indicating the return type of the corresponding templated bracket operator. Inheriting from Returns&lt;...&gt; is a convenient way to ensure this.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">coords</td><td>the given normal hypersurface coordinate system. </td></tr>
@@ -572,7 +572,7 @@ template&lt;typename FunctionObject , typename... Args&gt; </div>
 <p>In detail: the function object <em>func</em> must define a templated bracket operator, so that <code>func.operator()&lt;HyperInfo&lt;c&gt;&gt;(...)</code> is defined for any valid HyperCoords enum value <em>c</em>. Then, when the user calls <code>forCoords(coords, func, ...)</code>, this routine will call <code>func.operator()&lt;HyperInfo&lt;coords&gt;&gt;(...)</code> in turn. If <em>coords</em> does not denote a valid coordinate system as described above, then <a class="el" href="group__hypersurface.html#ga36de7c6e11fe8b3cf37d0ea7f6f90645" title="Allows the user to call a template function whose template parameter matches a given value of HyperCo...">forCoords()</a> will do nothing.</p>
 <p>There is also a variant of <a class="el" href="group__hypersurface.html#ga36de7c6e11fe8b3cf37d0ea7f6f90645" title="Allows the user to call a template function whose template parameter matches a given value of HyperCo...">forCoords()</a> that works with functions with return values, and which takes an extra <em>defaultReturn</em> argument.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>There must not exist a type <em>FunctionObject::ReturnType</em>. (or, if <em>FunctionObject</em> is a reference to a class/struct <em>F</em>, there must likewise not exist a type <em>F::ReturnType</em>). The existence of a type <em>FunctionObject::ReturnType</em> will cause the non-void variant of <a class="el" href="group__hypersurface.html#ga36de7c6e11fe8b3cf37d0ea7f6f90645" title="Allows the user to call a template function whose template parameter matches a given value of HyperCo...">forCoords()</a> to be used instead.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">coords</td><td>the given normal hypersurface coordinate system. </td></tr>
@@ -613,7 +613,7 @@ template&lt;typename FunctionObject , typename... Args&gt; </div>
 
 <p>Creates a new set of validity constraints representing the condition that normal hypersurfaces be embedded. </p>
 <p>The validity constraints will be expressed relative to the given coordinate system.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">triangulation</td><td>the triangulation upon which these validity constraints will be based. </td></tr>
@@ -695,7 +695,7 @@ template&lt;typename FunctionObject , typename... Args&gt; </div>
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a new normal hypersurface vector of the appropriate length for the given triangulation and the given coordinate system. </p>
 <p>All elements of this vector will be initialised to zero.</p>
 <p>The new vector will be of the subclass of <a class="el" href="classregina_1_1NormalHypersurfaceVector.html" title="Stores the vector of a single normal hypersurface in a 4-manifold triangulation.">NormalHypersurfaceVector</a> corresponding to the given coordinate system. The caller of this routine is responsible for destroying the new vector.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">triangulation</td><td>the triangulation upon which the underlying coordinate system is based. </td></tr>
@@ -801,7 +801,7 @@ template&lt;typename FunctionObject , typename... Args&gt; </div>
 </div>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

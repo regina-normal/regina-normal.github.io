@@ -1068,7 +1068,7 @@ Packet Listener Interface</h2></td></tr>
 <div class="fragment"><div class="line"><a class="code" href="group__packet.html#ga8bdfa10b9c80b9f36c54097a64977d4c">Packet</a>* subtree = ...;</div><div class="line"><span class="keywordflow">for</span> (<a class="code" href="group__packet.html#ga8bdfa10b9c80b9f36c54097a64977d4c">Packet</a>* p : *subtree) { ... }</div></div><!-- fragment --><p>In Python, each packet can be treated as an iterable object, again iterating through the corresponding subtree:</p>
 <div class="fragment"><div class="line">subtree = ...</div><div class="line"><span class="keywordflow">for</span> p <span class="keywordflow">in</span> subtree:</div><div class="line">    ...</div></div><!-- fragment --><p>See also <a class="el" href="group__packet.html#ga4cf495d57c19d371358ba5e9955a6dc5" title="Returns a lightweight object for iterating through all strict descendants of this packet in the packe...">descendants()</a> for iterating through just the strict descendants in the subtree (i.e., excluding this packet itself), and <a class="el" href="group__packet.html#gaf17dd27f603463f226e64ccb65211060" title="Returns a lightweight object for iterating through the immediate children of this packet.">children()</a> for iterating just through the immediate children of this packet (not the full subtree).</p>
 <dl class="section note"><dt>Note</dt><dd>This routine is non-const because <em>dereferencing</em> a <a class="el" href="classregina_1_1SubtreeIterator.html" title="A forward iterator for iterating through the entire packet subtree rooted at a given packet.">SubtreeIterator</a> returns a non-const packet pointer.</dd></dl>
-<dl class="section user"><dt>Python:\n As well as treating each packet as an iterable</dt><dd>object, Regina supplies a member function <code>Packet.subtree()</code> which returns an iterable object. Iterating over a packet directly is exactly the same as iterating over <code>Packet.subtree()</code>; the latter is offered because it may be clearer for readers.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>As well as treating each packet as an iterable object, Regina supplies a member function <code>Packet.subtree()</code> which returns an iterable object. Iterating over a packet directly is exactly the same as iterating over <code>Packet.subtree()</code>; the latter is offered because it may be clearer for readers.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>an iterator at the beginning of this subtree. </dd></dl>
 
 </div>
@@ -1097,7 +1097,7 @@ Packet Listener Interface</h2></td></tr>
 </div><div class="memdoc">
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> an iterator at the beginning of the range of children. </p>
-<dl class="section user"><dt>Python:\n Not present; instead this class implements</dt><dd><code>__iter__()</code>, as described in the class notes.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present; instead this class implements <code>__iter__()</code>, as described in the class notes.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the beginning iterator. </dd></dl>
 
 </div>
@@ -1127,7 +1127,7 @@ Packet Listener Interface</h2></td></tr>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> an iterator at the beginning of the range of strict descendants. </p>
 <p>This will point to the first child packet (if one exists) of the packet whose descendants we are iterating over.</p>
-<dl class="section user"><dt>Python:\n Not present; instead this class implements</dt><dd><code>__iter__()</code>, as described in the class notes.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present; instead this class implements <code>__iter__()</code>, as described in the class notes.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the beginning iterator. </dd></dl>
 
 </div>
@@ -1191,7 +1191,7 @@ Packet Listener Interface</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Creates a past-the-end iterator. </p>
-<dl class="section user"><dt>Python:\n Not present. The only way to create a ChildIterator</dt><dd>is via <a class="el" href="group__packet.html#gaf17dd27f603463f226e64ccb65211060" title="Returns a lightweight object for iterating through the immediate children of this packet.">Packet::children()</a>. </dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. The only way to create a <a class="el" href="classregina_1_1ChildIterator.html" title="A forward iterator for iterating through all immediate children of a given packet.">ChildIterator</a> is via <a class="el" href="group__packet.html#gaf17dd27f603463f226e64ccb65211060" title="Returns a lightweight object for iterating through the immediate children of this packet.">Packet::children()</a>. </dd></dl>
 
 </div>
 </div>
@@ -1220,7 +1220,7 @@ Packet Listener Interface</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Default copy constructor. </p>
-<dl class="section user"><dt>Python:\n Not present. The only way to create a ChildIterator</dt><dd>is via <a class="el" href="group__packet.html#gaf17dd27f603463f226e64ccb65211060" title="Returns a lightweight object for iterating through the immediate children of this packet.">Packet::children()</a>. </dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. The only way to create a <a class="el" href="classregina_1_1ChildIterator.html" title="A forward iterator for iterating through all immediate children of a given packet.">ChildIterator</a> is via <a class="el" href="group__packet.html#gaf17dd27f603463f226e64ccb65211060" title="Returns a lightweight object for iterating through the immediate children of this packet.">Packet::children()</a>. </dd></dl>
 
 </div>
 </div>
@@ -1249,7 +1249,7 @@ Packet Listener Interface</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Creates a new iterator pointing to the given child packet. </p>
-<dl class="section user"><dt>Python:\n Not present. The only way to create a ChildIterator</dt><dd>is via <a class="el" href="group__packet.html#gaf17dd27f603463f226e64ccb65211060" title="Returns a lightweight object for iterating through the immediate children of this packet.">Packet::children()</a>.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. The only way to create a <a class="el" href="classregina_1_1ChildIterator.html" title="A forward iterator for iterating through all immediate children of a given packet.">ChildIterator</a> is via <a class="el" href="group__packet.html#gaf17dd27f603463f226e64ccb65211060" title="Returns a lightweight object for iterating through the immediate children of this packet.">Packet::children()</a>.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">current</td><td>the child packet that the new iterator should point to, or 0 if the new iterator should be past-the-end. </td></tr>
@@ -1837,7 +1837,7 @@ Packet Listener Interface</h2></td></tr>
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> an iterator beyond the end of the range of packets in the subtree rooted at this packet. </p>
 <p>In C++, the <a class="el" href="group__packet.html#gab7ab56cf7ba6ebdc6176b1b4bc2cb287" title="Returns an iterator at the beginning of the range of packets in the subtree rooted at this packet.">begin()</a> and <a class="el" href="group__packet.html#ga941baf3f572331538ec82154fd3dc997" title="Returns an iterator beyond the end of the range of packets in the subtree rooted at this packet.">end()</a> routines allow you to iterate through an entire packet subtree using C++11 range-based <code>for</code> loops. In Python, each packet can be treated as an iterable object.</p>
 <p>See the <a class="el" href="group__packet.html#gab7ab56cf7ba6ebdc6176b1b4bc2cb287" title="Returns an iterator at the beginning of the range of packets in the subtree rooted at this packet.">begin()</a> documentation for further details.</p>
-<dl class="section user"><dt>Python:\n Again, see the begin() documentation for the iterable</dt><dd>objects that Regina provides for Python users.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Again, see the <a class="el" href="group__packet.html#gab7ab56cf7ba6ebdc6176b1b4bc2cb287" title="Returns an iterator at the beginning of the range of packets in the subtree rooted at this packet.">begin()</a> documentation for the iterable objects that Regina provides for Python users.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>an iterator beyond the end of this subtree. </dd></dl>
 
 </div>
@@ -1866,7 +1866,7 @@ Packet Listener Interface</h2></td></tr>
 </div><div class="memdoc">
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> an iterator at the end of the range of children. </p>
-<dl class="section user"><dt>Python:\n Not present; instead this class implements</dt><dd><code>__iter__()</code>, as described in the class notes.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present; instead this class implements <code>__iter__()</code>, as described in the class notes.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the past-the-end iterator. </dd></dl>
 
 </div>
@@ -1895,7 +1895,7 @@ Packet Listener Interface</h2></td></tr>
 </div><div class="memdoc">
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> an iterator at the end of the range of strict descendants. </p>
-<dl class="section user"><dt>Python:\n Not present; instead this class implements</dt><dd><code>__iter__()</code>, as described in the class notes.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present; instead this class implements <code>__iter__()</code>, as described in the class notes.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the past-the-end iterator. </dd></dl>
 
 </div>
@@ -2089,7 +2089,7 @@ template&lt;typename FunctionObject , typename... Args&gt; </div>
 <p>In detail: the function object <em>func</em> must define a templated bracket operator, so that <code>func.operator()&lt;PacketInfo&lt;t&gt;&gt;(...)</code> is defined for any valid PacketType enum value <em>t</em>. Then, when the user calls <code>forPacket(packetType, func, defaultReturn, ...)</code>, this routine will call <code>func.operator()&lt;PacketInfo&lt;packetType&gt;&gt;(...)</code> and pass back the corresponding return value. If <em>packetType</em> does not denote a valid packet type, then <a class="el" href="group__packet.html#ga842932466a8cdb50c359c584dd8e93ca" title="Allows the user to call a template function whose template parameter matches a given value of PacketT...">forPacket()</a> will pass back <em>defaultReturn</em> instead.</p>
 <p>There is also a variant of <a class="el" href="group__packet.html#ga842932466a8cdb50c359c584dd8e93ca" title="Allows the user to call a template function whose template parameter matches a given value of PacketT...">forPacket()</a> that works with void functions, and so does not take the extra <em>defaultReturn</em> argument.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>The function object must have a typedef <em>ReturnType</em> indicating the return type of the corresponding templated bracket operator. Inheriting from Returns&lt;...&gt; is a convenient way to ensure this.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">packetType</td><td>the given packet type. </td></tr>
@@ -2143,7 +2143,7 @@ template&lt;typename FunctionObject , typename... Args&gt; </div>
 <p>In detail: the function object <em>func</em> must define a templated bracket operator, so that <code>func.operator()&lt;PacketInfo&lt;t&gt;&gt;(...)</code> is defined for any valid PacketType enum value <em>t</em>. Then, when the user calls <code>forPacket(packetType, func, ...)</code>, this routine will call <code>func.operator()&lt;PacketInfo&lt;packetType&gt;&gt;(...)</code> in turn. If <em>packetType</em> does not denote a valid packet type, then <a class="el" href="group__packet.html#ga842932466a8cdb50c359c584dd8e93ca" title="Allows the user to call a template function whose template parameter matches a given value of PacketT...">forPacket()</a> will do nothing.</p>
 <p>There is also a variant of <a class="el" href="group__packet.html#ga842932466a8cdb50c359c584dd8e93ca" title="Allows the user to call a template function whose template parameter matches a given value of PacketT...">forPacket()</a> that works with functions with return values, and which takes an extra <em>defaultReturn</em> argument.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>There must not exist a type <em>FunctionObject::ReturnType</em> (or, if <em>FunctionObject</em> is a reference to a class/struct <em>F</em>, there must likewise not exist a type <em>F::ReturnType</em>). The existence of a type <em>FunctionObject::ReturnType</em> will cause the non-void variant of <a class="el" href="group__packet.html#ga842932466a8cdb50c359c584dd8e93ca" title="Allows the user to call a template function whose template parameter matches a given value of PacketT...">forPacket()</a> to be used instead.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">packetType</td><td>the given packet type. </td></tr>
@@ -2431,7 +2431,7 @@ template&lt;typename FunctionObject , typename... Args&gt; </div>
 Parameter <em>prevChild</em> is already a child of this packet. </dd>
 <dd>
 This packet is not a descendant of <em>newChild</em>.</dd></dl>
-<dl class="section user"><dt>Python:\n Since this packet takes ownership of the given</dt><dd>child packet, the python object containing the given child packet becomes a null object and should no longer be used. See <a class="el" href="group__packet.html#ga219920e1523d3edf2982da0a3ba1a33d" title="Cuts this packet away from its parent in the tree structure, and inserts it as a child of the given p...">reparent()</a> for a way of avoiding these problems in some cases.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Since this packet takes ownership of the given child packet, the python object containing the given child packet becomes a null object and should no longer be used. See <a class="el" href="group__packet.html#ga219920e1523d3edf2982da0a3ba1a33d" title="Cuts this packet away from its parent in the tree structure, and inserts it as a child of the given p...">reparent()</a> for a way of avoiding these problems in some cases.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">newChild</td><td>the child to insert. </td></tr>
@@ -2463,7 +2463,7 @@ This packet is not a descendant of <em>newChild</em>.</dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>The given child has no parent packet. </dd>
 <dd>
 This packet is not a descendant of the given child.</dd></dl>
-<dl class="section user"><dt>Python:\n Since this packet takes ownership of the given</dt><dd>child packet, the python object containing the given child packet becomes a null object and should no longer be used. See <a class="el" href="group__packet.html#ga219920e1523d3edf2982da0a3ba1a33d" title="Cuts this packet away from its parent in the tree structure, and inserts it as a child of the given p...">reparent()</a> for a way of avoiding these problems in some cases.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Since this packet takes ownership of the given child packet, the python object containing the given child packet becomes a null object and should no longer be used. See <a class="el" href="group__packet.html#ga219920e1523d3edf2982da0a3ba1a33d" title="Cuts this packet away from its parent in the tree structure, and inserts it as a child of the given p...">reparent()</a> for a way of avoiding these problems in some cases.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">child</td><td>the child to insert. </td></tr>
@@ -2494,7 +2494,7 @@ This packet is not a descendant of the given child.</dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>The given child has no parent packet. </dd>
 <dd>
 This packet is not a descendant of the given child.</dd></dl>
-<dl class="section user"><dt>Python:\n Since this packet takes ownership of the given</dt><dd>child packet, the python object containing the given child packet becomes a null object and should no longer be used. See <a class="el" href="group__packet.html#ga219920e1523d3edf2982da0a3ba1a33d" title="Cuts this packet away from its parent in the tree structure, and inserts it as a child of the given p...">reparent()</a> for a way of avoiding these problems in some cases.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Since this packet takes ownership of the given child packet, the python object containing the given child packet becomes a null object and should no longer be used. See <a class="el" href="group__packet.html#ga219920e1523d3edf2982da0a3ba1a33d" title="Cuts this packet away from its parent in the tree structure, and inserts it as a child of the given p...">reparent()</a> for a way of avoiding these problems in some cases.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">child</td><td>the child to insert. </td></tr>
@@ -2884,7 +2884,7 @@ This packet is not a descendant of the given child.</dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>This packet has a parent. </dd>
 <dd>
 This packet does not depend on its parent; see <a class="el" href="group__packet.html#ga36260b904a2bf98d9484869267ddf7b5" title="Determines if this packet depends upon its parent.">dependsOnParent()</a> for details.</dd></dl>
-<dl class="section user"><dt>Python:\n After makeOrphan() is called, this packet will</dt><dd>become the root of a new packet tree that is owned by Python. In particular, if you call <a class="el" href="group__packet.html#gad9aa0488b40a1f3ec702838b2a2ceecc" title="Cuts this packet away from its parent in the tree structure and instead makes it matriarch of its own...">makeOrphan()</a> and then delete all Python references to this packet, the entire packet subtree will be automatically destroyed. </dd></dl>
+<dl class="section user"><dt>Python</dt><dd>After <a class="el" href="group__packet.html#gad9aa0488b40a1f3ec702838b2a2ceecc" title="Cuts this packet away from its parent in the tree structure and instead makes it matriarch of its own...">makeOrphan()</a> is called, this packet will become the root of a new packet tree that is owned by Python. In particular, if you call <a class="el" href="group__packet.html#gad9aa0488b40a1f3ec702838b2a2ceecc" title="Cuts this packet away from its parent in the tree structure and instead makes it matriarch of its own...">makeOrphan()</a> and then delete all Python references to this packet, the entire packet subtree will be automatically destroyed. </dd></dl>
 
 </div>
 </div>
@@ -3123,8 +3123,8 @@ This packet does not depend on its parent; see <a class="el" href="group__packet
 <p>Reads a Regina data file, and returns the corresponding packet tree. </p>
 <p>This uses Regina's native XML file format; it does not matter whether the XML file is compressed or uncompressed.</p>
 <p>If the file could not be opened or the top-level packet in the tree could not be read, this routine will return 0. If some packet deeper within the tree could not be read then that particular packet (and its descendants, if any) will simply be ignored.</p>
-<dl class="section user"><dt>Internationalisation:\n This routine makes no assumptions about the</dt><dd><a class="el" href="i18n.html">character encoding</a> used in the given file <em>name</em>, and simply passes it through unchanged to low-level C/C++ file I/O routines.</dd></dl>
-<dl class="section user"><dt>Python:\n This function is not automatically imported into the</dt><dd>global namespace when running regina-python, or when opening a Python console in the graphical user interface, or even when typing <code>from regina import *</code>. This is to avoid overriding Python's own built-in <a class="el" href="group__packet.html#ga964a605603a33a84e5004e9ebb0ac5ec" title="Reads a Regina data file, and returns the corresponding packet tree.">open()</a> function. You can access Regina's <a class="el" href="group__packet.html#ga964a605603a33a84e5004e9ebb0ac5ec" title="Reads a Regina data file, and returns the corresponding packet tree.">open()</a> function by calling <code><a class="el" href="group__packet.html#ga964a605603a33a84e5004e9ebb0ac5ec" title="Reads a Regina data file, and returns the corresponding packet tree.">regina.open()</a></code>.</dd></dl>
+<dl class="section user"><dt>Internationalisation</dt><dd>This routine makes no assumptions about the <a class="el" href="i18n.html">character encoding</a> used in the given file <em>name</em>, and simply passes it through unchanged to low-level C/C++ file I/O routines.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This function is not automatically imported into the global namespace when running regina-python, or when opening a Python console in the graphical user interface, or even when typing <code>from regina import *</code>. This is to avoid overriding Python's own built-in <a class="el" href="group__packet.html#ga964a605603a33a84e5004e9ebb0ac5ec" title="Reads a Regina data file, and returns the corresponding packet tree.">open()</a> function. You can access Regina's <a class="el" href="group__packet.html#ga964a605603a33a84e5004e9ebb0ac5ec" title="Reads a Regina data file, and returns the corresponding packet tree.">open()</a> function by calling <code><a class="el" href="group__packet.html#ga964a605603a33a84e5004e9ebb0ac5ec" title="Reads a Regina data file, and returns the corresponding packet tree.">regina.open()</a></code>.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>the pathname of the file to read from. </td></tr>
@@ -3155,7 +3155,7 @@ This packet does not depend on its parent; see <a class="el" href="group__packet
 <p>This uses Regina's native XML file format; it does not matter whether the XML file is compressed or uncompressed.</p>
 <p>If the stream could not be read or if the top-level packet in the tree could not be read, then this routine will return 0. If some packet deeper within the tree could not be read then that particular packet (and its descendants, if any) will simply be ignored.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>The given stream is open for reading.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">in</td><td>the input stream to read from. </td></tr>
@@ -3367,7 +3367,7 @@ This packet does not depend on its parent; see <a class="el" href="group__packet
 </div><div class="memdoc">
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the packet that this iterator is currently pointing to. </p>
-<dl class="section user"><dt>Python:\n Not present; instead this class implements</dt><dd><code>next()</code>, which either returns the current child packet and increments the iterator, or else throws a <code>StopIteration</code> exception if the iterator is past-the-end.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present; instead this class implements <code>next()</code>, which either returns the current child packet and increments the iterator, or else throws a <code>StopIteration</code> exception if the iterator is past-the-end.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the current packet. </dd></dl>
 
 </div>
@@ -3396,7 +3396,7 @@ This packet does not depend on its parent; see <a class="el" href="group__packet
 </div><div class="memdoc">
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the packet that this iterator is currently pointing to. </p>
-<dl class="section user"><dt>Python:\n Not present; instead this class implements</dt><dd><code>next()</code>, which either returns the current packet in the subtree and increments the iterator, or else throws a <code>StopIteration</code> exception if the iterator is past-the-end.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present; instead this class implements <code>next()</code>, which either returns the current packet in the subtree and increments the iterator, or else throws a <code>StopIteration</code> exception if the iterator is past-the-end.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the current packet. </dd></dl>
 
 </div>
@@ -3425,7 +3425,7 @@ This packet does not depend on its parent; see <a class="el" href="group__packet
 </div><div class="memdoc">
 
 <p>Preincrement operator. </p>
-<dl class="section user"><dt>Python:\n Not present; instead this class implements</dt><dd><code>next()</code>, which either returns the current child packet and increments the iterator, or else throws a <code>StopIteration</code> exception if the iterator is past-the-end.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present; instead this class implements <code>next()</code>, which either returns the current child packet and increments the iterator, or else throws a <code>StopIteration</code> exception if the iterator is past-the-end.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a reference to this iterator. </dd></dl>
 
 </div>
@@ -3455,7 +3455,7 @@ This packet does not depend on its parent; see <a class="el" href="group__packet
 </div><div class="memdoc">
 
 <p>Postincrement operator. </p>
-<dl class="section user"><dt>Python:\n Not present; instead this class implements</dt><dd><code>next()</code>, which either returns the current child packet and increments the iterator, or else throws a <code>StopIteration</code> exception if the iterator is past-the-end.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present; instead this class implements <code>next()</code>, which either returns the current child packet and increments the iterator, or else throws a <code>StopIteration</code> exception if the iterator is past-the-end.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a a copy of this iterator before it was incremented. </dd></dl>
 
 </div>
@@ -3484,7 +3484,7 @@ This packet does not depend on its parent; see <a class="el" href="group__packet
 </div><div class="memdoc">
 
 <p>Preincrement operator. </p>
-<dl class="section user"><dt>Python:\n Not present; instead this class implements</dt><dd><code>next()</code>, which either returns the current packet in the subtree and increments the iterator, or else throws a <code>StopIteration</code> exception if the iterator is past-the-end.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present; instead this class implements <code>next()</code>, which either returns the current packet in the subtree and increments the iterator, or else throws a <code>StopIteration</code> exception if the iterator is past-the-end.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a reference to this iterator. </dd></dl>
 
 </div>
@@ -3514,7 +3514,7 @@ This packet does not depend on its parent; see <a class="el" href="group__packet
 </div><div class="memdoc">
 
 <p>Postincrement operator. </p>
-<dl class="section user"><dt>Python:\n Not present; instead this class implements</dt><dd><code>next()</code>, which either returns the current packet in the subtree and increments the iterator, or else throws a <code>StopIteration</code> exception if the iterator is past-the-end.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present; instead this class implements <code>next()</code>, which either returns the current packet in the subtree and increments the iterator, or else throws a <code>StopIteration</code> exception if the iterator is past-the-end.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a copy of this iterator before it was incremented. </dd></dl>
 
 </div>
@@ -3600,7 +3600,7 @@ This packet does not depend on its parent; see <a class="el" href="group__packet
 </div><div class="memdoc">
 
 <p>Default copy assignment operator. </p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. </dd></dl>
 
 </div>
 </div>
@@ -3629,7 +3629,7 @@ This packet does not depend on its parent; see <a class="el" href="group__packet
 </div><div class="memdoc">
 
 <p>Default copy assignment operator. </p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. </dd></dl>
 
 </div>
 </div>
@@ -3872,7 +3872,7 @@ This packet does not depend on its parent; see <a class="el" href="group__packet
 <p>Constructor that inserts the new packet into the overall tree structure. </p>
 <p>The new packet will be inserted as the last child of the given parent, and will be initialised with no children of its own.</p>
 <p>Note that <a class="el" href="classregina_1_1Packet.html" title="Represents a packet of information that may be individually edited or operated upon.">Packet</a> is an abstract class and cannot be instantiated directly.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">parent</td><td>the parent beneath which to insert this packet, or 0 if this packet is to be the matriarch of a new tree. </td></tr>
@@ -3907,7 +3907,7 @@ This packet does not depend on its parent; see <a class="el" href="group__packet
 </div><div class="memdoc">
 
 <p>Default copy constructor. </p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. </dd></dl>
 
 </div>
 </div>
@@ -3936,7 +3936,7 @@ This packet does not depend on its parent; see <a class="el" href="group__packet
 </div><div class="memdoc">
 
 <p>Creates a new object for iterating through the immediate children of the given packet. </p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">parent</td><td>the packet whose children we will iterate through. </td></tr>
@@ -3971,7 +3971,7 @@ This packet does not depend on its parent; see <a class="el" href="group__packet
 </div><div class="memdoc">
 
 <p>Default copy constructor. </p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. </dd></dl>
 
 </div>
 </div>
@@ -4000,7 +4000,7 @@ This packet does not depend on its parent; see <a class="el" href="group__packet
 </div><div class="memdoc">
 
 <p>Creates a new object for iterating through the strict descendants of the given packet. </p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">subtree</td><td>the packet whose strict descendants we will iterate through. </td></tr>
@@ -4439,7 +4439,7 @@ This packet does not depend on its parent; see <a class="el" href="group__packet
 <dl class="section pre"><dt>Precondition</dt><dd>This packet does not depend on its parent; see <a class="el" href="group__packet.html#ga36260b904a2bf98d9484869267ddf7b5" title="Determines if this packet depends upon its parent.">dependsOnParent()</a> for details. </dd>
 <dd>
 The given parent is not a descendant of this packet.</dd></dl>
-<dl class="section user"><dt>Python:\n This routine is much simpler than combinations of</dt><dd><a class="el" href="group__packet.html#gad9aa0488b40a1f3ec702838b2a2ceecc" title="Cuts this packet away from its parent in the tree structure and instead makes it matriarch of its own...">makeOrphan()</a> and <a class="el" href="group__packet.html#gac389781f5c53a7d3aac3206d51ecfd91" title="Inserts the given packet as the first child of this packet.">insertChildFirst()</a> / <a class="el" href="group__packet.html#gad3d02be74192f03b372a4195c9e5bc1f" title="Inserts the given packet as the last child of this packet.">insertChildLast()</a>, since there are no unpleasant ownership issues to deal with. However, if this packet currently has no parent then the ownership issues are unavoidable; in this case <a class="el" href="group__packet.html#ga219920e1523d3edf2982da0a3ba1a33d" title="Cuts this packet away from its parent in the tree structure, and inserts it as a child of the given p...">reparent()</a> will do nothing, and one of the insertChild...() routines must be used instead.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This routine is much simpler than combinations of <a class="el" href="group__packet.html#gad9aa0488b40a1f3ec702838b2a2ceecc" title="Cuts this packet away from its parent in the tree structure and instead makes it matriarch of its own...">makeOrphan()</a> and <a class="el" href="group__packet.html#gac389781f5c53a7d3aac3206d51ecfd91" title="Inserts the given packet as the first child of this packet.">insertChildFirst()</a> / <a class="el" href="group__packet.html#gad3d02be74192f03b372a4195c9e5bc1f" title="Inserts the given packet as the last child of this packet.">insertChildLast()</a>, since there are no unpleasant ownership issues to deal with. However, if this packet currently has no parent then the ownership issues are unavoidable; in this case <a class="el" href="group__packet.html#ga219920e1523d3edf2982da0a3ba1a33d" title="Cuts this packet away from its parent in the tree structure, and inserts it as a child of the given p...">reparent()</a> will do nothing, and one of the insertChild...() routines must be used instead.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">newParent</td><td>the new parent of this packet, i.e., the packet beneath which this packet will be inserted. </td></tr>
@@ -4498,7 +4498,7 @@ The given parent is not a descendant of this packet.</dd></dl>
 <p>In this context, a "safe pointer" is either SafePtr&lt;Packet&gt; or a subclass; such pointers are (for instance) used to hold packets in regina's python bindings.</p>
 <p>If there are no safe pointers currently pointing to <em>p</em>, then this routine simply deletes <em>p</em>. If there are one or more safe pointers currently pointing to <em>p</em>, then this routine orphans <em>p</em> in the packet tree and does nothing more; the safe pointers are left to manage the lifespan of <em>p</em> from here onwards.</p>
 <p>C++ code should call <a class="el" href="group__packet.html#ga2fe7098f6a0b61e94e9e301e4c93a89e" title="Either destroys or orphans the given packet, according to whether it has safe pointers that currently...">safeDelete()</a> instead of <code>delete</code> when it wishes to delete a packet, but there is a possibility that some external body (such as a python interpreter) still holds a reference to <em>p</em> and might still try to access it.</p>
-<dl class="section user"><dt>Python:\n Not present, since when called from python there will</dt><dd>always be a safe pointer, and so this is equivalent to <a class="el" href="group__packet.html#gad9aa0488b40a1f3ec702838b2a2ceecc" title="Cuts this packet away from its parent in the tree structure and instead makes it matriarch of its own...">makeOrphan()</a>.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present, since when called from python there will always be a safe pointer, and so this is equivalent to <a class="el" href="group__packet.html#gad9aa0488b40a1f3ec702838b2a2ceecc" title="Cuts this packet away from its parent in the tree structure and instead makes it matriarch of its own...">makeOrphan()</a>.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">p</td><td>the packet to delete or orphan. It is safe to pass <code>null</code> (in which case this routine does nothing). </td></tr>
@@ -4538,7 +4538,7 @@ The given parent is not a descendant of this packet.</dd></dl>
 <p>The XML file may be optionally compressed (Regina can happily read both compressed and uncompressed XML).</p>
 <p>This is the preferred way of saving a Regina data file. Typically this will be called from the root of the packet tree, which will save the entire packet tree to file.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>The given packet does not depend on its parent.</dd></dl>
-<dl class="section user"><dt>Internationalisation:\n This routine makes no assumptions about the</dt><dd><a class="el" href="i18n.html">character encoding</a> used in the given file <em>name</em>, and simply passes it through unchanged to low-level C/C++ file I/O routines. The <em>contents</em> of the file will be written using UTF-8.</dd></dl>
+<dl class="section user"><dt>Internationalisation</dt><dd>This routine makes no assumptions about the <a class="el" href="i18n.html">character encoding</a> used in the given file <em>name</em>, and simply passes it through unchanged to low-level C/C++ file I/O routines. The <em>contents</em> of the file will be written using UTF-8.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>the pathname of the file to write to. </td></tr>
@@ -4582,7 +4582,7 @@ The given parent is not a descendant of this packet.</dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>The given stream is open for writing. </dd>
 <dd>
 The given packet does not depend on its parent.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">s</td><td>the output stream to which to write. </td></tr>
@@ -4665,7 +4665,7 @@ The given packet does not depend on its parent.</dd></dl>
 </div><div class="memdoc">
 
 <p>Creates a past-the-end iterator. </p>
-<dl class="section user"><dt>Python:\n Not present. The only way to create a SubtreeIterator</dt><dd>is via Packet::subtree() or <a class="el" href="group__packet.html#ga4cf495d57c19d371358ba5e9955a6dc5" title="Returns a lightweight object for iterating through all strict descendants of this packet in the packe...">Packet::descendants()</a>, or by iterating over a <a class="el" href="classregina_1_1Packet.html" title="Represents a packet of information that may be individually edited or operated upon.">Packet</a> itself. </dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. The only way to create a <a class="el" href="classregina_1_1SubtreeIterator.html" title="A forward iterator for iterating through the entire packet subtree rooted at a given packet.">SubtreeIterator</a> is via Packet::subtree() or <a class="el" href="group__packet.html#ga4cf495d57c19d371358ba5e9955a6dc5" title="Returns a lightweight object for iterating through all strict descendants of this packet in the packe...">Packet::descendants()</a>, or by iterating over a <a class="el" href="classregina_1_1Packet.html" title="Represents a packet of information that may be individually edited or operated upon.">Packet</a> itself. </dd></dl>
 
 </div>
 </div>
@@ -4694,7 +4694,7 @@ The given packet does not depend on its parent.</dd></dl>
 </div><div class="memdoc">
 
 <p>Default copy constructor. </p>
-<dl class="section user"><dt>Python:\n Not present. The only way to create a SubtreeIterator</dt><dd>is via Packet::subtree() or <a class="el" href="group__packet.html#ga4cf495d57c19d371358ba5e9955a6dc5" title="Returns a lightweight object for iterating through all strict descendants of this packet in the packe...">Packet::descendants()</a>, or by iterating over a <a class="el" href="classregina_1_1Packet.html" title="Represents a packet of information that may be individually edited or operated upon.">Packet</a> itself. </dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. The only way to create a <a class="el" href="classregina_1_1SubtreeIterator.html" title="A forward iterator for iterating through the entire packet subtree rooted at a given packet.">SubtreeIterator</a> is via Packet::subtree() or <a class="el" href="group__packet.html#ga4cf495d57c19d371358ba5e9955a6dc5" title="Returns a lightweight object for iterating through all strict descendants of this packet in the packe...">Packet::descendants()</a>, or by iterating over a <a class="el" href="classregina_1_1Packet.html" title="Represents a packet of information that may be individually edited or operated upon.">Packet</a> itself. </dd></dl>
 
 </div>
 </div>
@@ -4724,7 +4724,7 @@ The given packet does not depend on its parent.</dd></dl>
 
 <p>Creates a new iterator pointing to the first packet within the given subtree. </p>
 <p>Dereferencing this iterator will return <em>subtree</em> itself.</p>
-<dl class="section user"><dt>Python:\n Not present. The only way to create a SubtreeIterator</dt><dd>is via Packet::subtree() or <a class="el" href="group__packet.html#ga4cf495d57c19d371358ba5e9955a6dc5" title="Returns a lightweight object for iterating through all strict descendants of this packet in the packe...">Packet::descendants()</a>, or by iterating over a <a class="el" href="classregina_1_1Packet.html" title="Represents a packet of information that may be individually edited or operated upon.">Packet</a> itself.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. The only way to create a <a class="el" href="classregina_1_1SubtreeIterator.html" title="A forward iterator for iterating through the entire packet subtree rooted at a given packet.">SubtreeIterator</a> is via Packet::subtree() or <a class="el" href="group__packet.html#ga4cf495d57c19d371358ba5e9955a6dc5" title="Returns a lightweight object for iterating through all strict descendants of this packet in the packe...">Packet::descendants()</a>, or by iterating over a <a class="el" href="classregina_1_1Packet.html" title="Represents a packet of information that may be individually edited or operated upon.">Packet</a> itself.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">subtree</td><td>the packet subtree that we are iterating through. This does not need to be the root of the overall packet tree (i.e., <em>subtree</em> is allowed to have a non-null parent). </td></tr>
@@ -4769,7 +4769,7 @@ The given packet does not depend on its parent.</dd></dl>
 </div><div class="memdoc">
 
 <p>Creates a new iterator pointing to the given packet within the given subtree. </p>
-<dl class="section user"><dt>Python:\n Not present. The only way to create a SubtreeIterator</dt><dd>is via Packet::subtree() or <a class="el" href="group__packet.html#ga4cf495d57c19d371358ba5e9955a6dc5" title="Returns a lightweight object for iterating through all strict descendants of this packet in the packe...">Packet::descendants()</a>, or by iterating over a <a class="el" href="classregina_1_1Packet.html" title="Represents a packet of information that may be individually edited or operated upon.">Packet</a> itself.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. The only way to create a <a class="el" href="classregina_1_1SubtreeIterator.html" title="A forward iterator for iterating through the entire packet subtree rooted at a given packet.">SubtreeIterator</a> is via Packet::subtree() or <a class="el" href="group__packet.html#ga4cf495d57c19d371358ba5e9955a6dc5" title="Returns a lightweight object for iterating through all strict descendants of this packet in the packe...">Packet::descendants()</a>, or by iterating over a <a class="el" href="classregina_1_1Packet.html" title="Represents a packet of information that may be individually edited or operated upon.">Packet</a> itself.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">subtree</td><td>the packet subtree that we are iterating through. This does not need to be the root of the overall packet tree (i.e., <em>subtree</em> is allowed to have a non-null parent). </td></tr>
@@ -4828,7 +4828,7 @@ The given packet does not depend on its parent.</dd></dl>
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the set of all tags associated with this packet. </p>
 <p>Each packet can have an arbitrary set of string tags associated with it. The tags are not used by this calculation engine; the feature is provided for whatever use a developer or user chooses to make of it.</p>
 <p>Tags are case-sensitive. Tags associated with a single packet must be distinct, i.e., a particular tag cannot be associated more than once with the same packet.</p>
-<dl class="section user"><dt>Python:\n This routine returns a python set.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This routine returns a python set.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the set of all tags associated with this packet. </dd></dl>
 
 </div>
@@ -4859,7 +4859,7 @@ The given packet does not depend on its parent.</dd></dl>
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the set of all tags associated with this packet. </p>
 <p>See <a class="el" href="group__packet.html#ga06d41356ff086d078b04f34919aac26d" title="Returns the set of all tags associated with this packet.">Packet::tags()</a> for further details on packet tags.</p>
 <p>The reference that is returned should be only used as a temporary, since the underlying packet (and therefore the set that is referenced) is in the process of being destroyed.</p>
-<dl class="section user"><dt>Python:\n This routine returns a python set.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This routine returns a python set.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the set of all tags associated with this packet. </dd></dl>
 
 </div>
@@ -5047,7 +5047,7 @@ The given parent is not a descendant of this packet.</dd></dl>
 
 <p>Writes a detailed text representation of this object to the given output stream. </p>
 <p>This may be reimplemented by subclasses, but the parent <a class="el" href="classregina_1_1Packet.html" title="Represents a packet of information that may be individually edited or operated upon.">Packet</a> class offers a reasonable default implementation.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -5085,7 +5085,7 @@ The given parent is not a descendant of this packet.</dd></dl>
 
 <p>Writes a short text representation of this object to the given output stream. </p>
 <p>This must be reimplemented by subclasses.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -5119,7 +5119,7 @@ The given parent is not a descendant of this packet.</dd></dl>
 <p>Typically this will be called from the root of the packet tree, which will write the entire packet tree to the output stream.</p>
 <p>The output from this routine cannot be used as a piece of an XML file; it must be the entire XML file. For a piece of an XML file, see routine <a class="el" href="group__packet.html#ga690d1f04ae42ab3778726d37fbd0fe54" title="Writes a chunk of XML containing the subtree with this packet as matriarch.">writeXMLPacketTree()</a> instead.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>This packet does not depend upon its parent.</dd></dl>
-<dl class="section user"><dt>Python:\n The argument <em>out</em> is not present; instead the</dt><dd>XML data is written to standard output.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>The argument <em>out</em> is not present; instead the XML data is written to standard output.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which the XML data file should be written. </td></tr>
@@ -5242,7 +5242,7 @@ The given parent is not a descendant of this packet.</dd></dl>
 <p><em>parent</em> represents the packet which will become the new packet's parent in the tree structure, and may be assumed to have already been read from the file. This information is for reference only, and does not need to be used. The XML element reader can either insert or not insert the new packet beneath <em>parent</em> in the tree structure as it pleases. Note however that <em>parent</em> will be 0 if the new packet is to become a tree matriarch.</p>
 <p>If the new packet needs to store pointers to other packets that might not have been read yet (such as a script packet that needs pointers to its variables), then it should queue a new <a class="el" href="classregina_1_1XMLTreeResolutionTask.html" title="An individual task for resolving dangling packet references after an XML data file has been read.">XMLTreeResolutionTask</a> to the given <a class="el" href="classregina_1_1XMLTreeResolver.html" title="Provides a mechanism to resolve dangling packet references after a complete packet tree has been read...">XMLTreeResolver</a>. After the complete data file has been read, <a class="el" href="classregina_1_1XMLTreeResolver.html#a6deb2e7eb029a52c8c73af2dfdda9484" title="Calls XMLTreeResolutionTask::resolve() for all queued tasks.">XMLTreeResolver::resolve()</a> will run all of its queued tasks, at which point the new packet can resolve any dangling references.</p>
 <p>This routine is not actually provided for <a class="el" href="classregina_1_1Packet.html" title="Represents a packet of information that may be individually edited or operated upon.">Packet</a> itself, but must be declared and implemented for every packet subclass that will be instantiated.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">parent</td><td>the packet which will become the new packet's parent in the tree structure, or 0 if the new packet is to be tree matriarch. </td></tr>
@@ -5468,7 +5468,7 @@ The given parent is not a descendant of this packet.</dd></dl>
 </div>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

@@ -46,7 +46,7 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classregina_1_1XMLElementReader-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">regina::XMLElementReader Class Reference<div class="ingroups"><a class="el" href="group__file.html">File</a></div></div>  </div>
+<div class="title">regina::XMLElementReader Class Reference<div class="ingroups"><a class="el" href="group__file.html">File I/O</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -122,7 +122,7 @@ Public Member Functions</h2></td></tr>
 <p>If at any point parsing is aborted, routine <a class="el" href="classregina_1_1XMLElementReader.html#a999849c75bd67f6cc2e97c50f89cedf1" title="Signifies that XML parsing has been aborted.">abort()</a> will be called upon all active readers and all active readers will be destroyed.</p>
 <p>To parse an entire XML file using a variety of element readers (all of which may be of different subclasses of <a class="el" href="classregina_1_1XMLElementReader.html" title="Used to read the contents of a single XML element.">XMLElementReader</a>), create a new <a class="el" href="classregina_1_1xml_1_1XMLParser.html" title="Used to parse an entire XML file.">regina::xml::XMLParser</a> with an <a class="el" href="classregina_1_1XMLCallback.html" title="Provides the callbacks for an XMLParser required to parse an entire file using a series of XMLElement...">XMLCallback</a> as its corresponding callback object.</p>
 <p>When parsing begins on an entire XML file, an additional call is made: <a class="el" href="classregina_1_1XMLElementReader.html#a91516b7576ee94159763c2aeae2e0458" title="Called for the top-level element in an XML file when parsing begins.">usingParser()</a> will be called on the top-level element reader, so that it can gain direct access to the parser if required.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa7651a4a8638a064bafa470b3c46627a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa7651a4a8638a064bafa470b3c46627a">&#9670;&nbsp;</a></span>XMLElementReader()</h2>
@@ -384,7 +384,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classregina_1_1detail_1_1XMLSimplicesReader.html#a7fc09ae4b089c0e8e2642d11e4191aaf">regina::detail::XMLSimplicesReader&lt; dim &gt;</a>, <a class="el" href="classregina_1_1XMLLinkComponentsReader.html#a009e243aef258b3a6e8b37abd4274c8f">regina::XMLLinkComponentsReader</a>, <a class="el" href="classregina_1_1detail_1_1XMLSimplexReader.html#a2454f3da462ae0e806eefcdfbe75654f">regina::detail::XMLSimplexReader&lt; dim &gt;</a>, <a class="el" href="classregina_1_1XMLGroupPresentationReader.html#abcadcdfb766850fb41e1b5d03326e0b9">regina::XMLGroupPresentationReader</a>, <a class="el" href="classregina_1_1XMLLinkCrossingsReader.html#ad3c3fff79af8436854a3ffec13398f51">regina::XMLLinkCrossingsReader</a>, <a class="el" href="classregina_1_1XMLNormalHypersurfaceReader.html#a03e6d5d88264762b313339cf2860d63f">regina::XMLNormalHypersurfaceReader</a>, <a class="el" href="classregina_1_1XMLNormalSurfaceReader.html#a92daff1b64a5dfdd5fb4dc0b92170d6b">regina::XMLNormalSurfaceReader</a>, <a class="el" href="classregina_1_1XMLAngleStructureReader.html#a4a27ede8f53241386f1169e3394f9258">regina::XMLAngleStructureReader</a>, and <a class="el" href="classregina_1_1XMLAbelianGroupReader.html#a3e9dbf20d9a0d919388b0fe1d61b6c0f">regina::XMLAbelianGroupReader</a>.</p>
+<p>Reimplemented in <a class="el" href="classregina_1_1XMLLinkComponentsReader.html#a009e243aef258b3a6e8b37abd4274c8f">regina::XMLLinkComponentsReader</a>, <a class="el" href="classregina_1_1detail_1_1XMLSimplicesReader.html#a7fc09ae4b089c0e8e2642d11e4191aaf">regina::detail::XMLSimplicesReader&lt; dim &gt;</a>, <a class="el" href="classregina_1_1detail_1_1XMLSimplexReader.html#a2454f3da462ae0e806eefcdfbe75654f">regina::detail::XMLSimplexReader&lt; dim &gt;</a>, <a class="el" href="classregina_1_1XMLGroupPresentationReader.html#abcadcdfb766850fb41e1b5d03326e0b9">regina::XMLGroupPresentationReader</a>, <a class="el" href="classregina_1_1XMLLinkCrossingsReader.html#ad3c3fff79af8436854a3ffec13398f51">regina::XMLLinkCrossingsReader</a>, <a class="el" href="classregina_1_1XMLNormalHypersurfaceReader.html#a03e6d5d88264762b313339cf2860d63f">regina::XMLNormalHypersurfaceReader</a>, <a class="el" href="classregina_1_1XMLNormalSurfaceReader.html#a92daff1b64a5dfdd5fb4dc0b92170d6b">regina::XMLNormalSurfaceReader</a>, <a class="el" href="classregina_1_1XMLAngleStructureReader.html#a4a27ede8f53241386f1169e3394f9258">regina::XMLAngleStructureReader</a>, and <a class="el" href="classregina_1_1XMLAbelianGroupReader.html#a3e9dbf20d9a0d919388b0fe1d61b6c0f">regina::XMLAbelianGroupReader</a>.</p>
 
 </div>
 </div>
@@ -478,7 +478,7 @@ Public Member Functions</h2></td></tr>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

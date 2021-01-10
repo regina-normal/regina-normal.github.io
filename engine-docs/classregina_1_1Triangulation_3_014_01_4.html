@@ -570,7 +570,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a13bd275984bd2e6241fc220229f39490"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds all ways in which an isomorphic copy of this triangulation is contained within the given triangulation, possibly as a subcomplex of some larger component (or components).  <a href="#a13bd275984bd2e6241fc220229f39490">More...</a><br /></td></tr>
 <tr class="separator:a13bd275984bd2e6241fc220229f39490"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Building Triangulations</div></td></tr>
-<tr class="memitem:a2bf93dbca6715c1a455a2d47f66a6476"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a2bf93dbca6715c1a455a2d47f66a6476">insertTriangulation</a> (const <a class="el" href="classregina_1_1Triangulation.html">Triangulation</a>&lt; dim &gt; &amp;<a class="el" href="namespaceregina.html#aa80a53fba63b479f27268662ec97e248">source</a>)</td></tr>
+<tr class="memitem:a2bf93dbca6715c1a455a2d47f66a6476"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a2bf93dbca6715c1a455a2d47f66a6476">insertTriangulation</a> (const <a class="el" href="classregina_1_1Triangulation.html">Triangulation</a>&lt; dim &gt; &amp;<a class="el" href="namespaceregina.html#adcfb69a69d63e77fb947c071b0b65cb8">source</a>)</td></tr>
 <tr class="memdesc:a2bf93dbca6715c1a455a2d47f66a6476"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a copy of the given triangulation into this triangulation.  <a href="#a2bf93dbca6715c1a455a2d47f66a6476">More...</a><br /></td></tr>
 <tr class="separator:a2bf93dbca6715c1a455a2d47f66a6476"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1e8b7cf820ff452059f817d55536155"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#af1e8b7cf820ff452059f817d55536155">insertConstruction</a> (size_t nSimplices, const int adjacencies[][dim+1], const int gluings[][dim+1][dim+1])</td></tr>
@@ -1083,6 +1083,7 @@ class regina::Triangulation&lt; 4 &gt;</h3>
 <li>...</li>
 <li>the centroid of <em>s</em> itself will be labelled <em>p</em>[<em>dim</em>] in <em>t</em>.</li>
 </ul>
+<p>In particular, if this triangulation is currently oriented, then this barycentric subdivision will preserve the orientation.</p>
 <p>If simplex <em>s</em> has index <em>i</em> in the original triangulation, then its sub-simplex corresponding to permutation <em>p</em> will have index <code>((dim + 1)! * i + p.index())</code> in the resulting triangulation. In other words: sub-simplices are ordered first according to the original simplex that contains them, and then according to the lexicographical ordering of the corresponding permutations <em>p</em>.</p>
 <dl class="section pre"><dt>Precondition</dt><dd><em>dim</em> is one of Regina's standard dimensions. This precondition is a safety net, since in higher dimensions the triangulation would explode too quickly in size (and for the highest dimensions, possibly beyond the limits of <code>size_t</code>).</dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>In dimensions 3 and 4, both the labelling and ordering of sub-simplices in the subdivided triangulation has changed as of Regina 5.1. (Earlier versions of Regina made no guarantee about the labelling and ordering; these guarantees are also new to Regina 5.1).</dd></dl>
@@ -1153,7 +1154,7 @@ class regina::Triangulation&lt; 4 &gt;</h3>
 <p>Note that, in Regina's <a class="el" href="stddim.html">standard dimensions</a>, each ideal vertex forms its own boundary component, and some invalid vertices do also. See the <a class="el" href="classregina_1_1BoundaryComponent.html" title="A component of the boundary of a dim-manifold triangulation.">BoundaryComponent</a> class notes for full details on what constitutes a boundary component in standard and non-standard dimensions.</p>
 <p>Bear in mind that each time the triangulation changes, all boundary component objects will be deleted and replaced with new ones. Therefore these boundary component objects should be considered temporary only.</p>
 <p>In contrast, this reference to the <em>list</em> of <a class="el" href="classregina_1_1BoundaryComponent.html" title="A component of the boundary of a dim-manifold triangulation.">BoundaryComponent</a> objects will remain valid and up-to-date for as long as the triangulation exists.</p>
-<dl class="section user"><dt>Python:\n This routine returns a python list.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This routine returns a python list.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the list of all boundary components. </dd></dl>
 
 </div>
@@ -1329,7 +1330,7 @@ The given edge is an edge of this triangulation.</dd></dl>
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> all connected components of this triangulation. </p>
 <p>Note that each time the triangulation changes, all component objects will be deleted and replaced with new ones. Therefore these component objects should be considered temporary only.</p>
 <p>In contrast, this reference to the <em>list</em> of all components will remain valid and up-to-date for as long as the triangulation exists.</p>
-<dl class="section user"><dt>Python:\n This routine returns a python list.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This routine returns a python list.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the list of all components. </dd></dl>
 
 </div>
@@ -1445,7 +1446,7 @@ The given edge is an edge of this triangulation.</dd></dl>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the number of <em>subdim</em>-faces in this triangulation. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>The template argument <em>subdim</em> is between 0 and <em>dim</em>-1 inclusive.</dd></dl>
-<dl class="section user"><dt>Python:\n Python does not support templates. Instead,</dt><dd>Python users should call this function in the form <code>countFaces(subdim)</code>; that is, the template parameter <em>subdim</em> becomes the first argument of the function.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Python does not support templates. Instead, Python users should call this function in the form <code>countFaces(subdim)</code>; that is, the template parameter <em>subdim</em> becomes the first argument of the function.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the number of <em>subdim</em>-faces. </dd></dl>
 
 </div>
@@ -1682,7 +1683,7 @@ The given edge is an edge of this triangulation.</dd></dl>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the requested <em>subdim</em>-face of this triangulation. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>The template argument <em>subdim</em> is between 0 and <em>dim</em>-1 inclusive.</dd></dl>
-<dl class="section user"><dt>Python:\n Python does not support templates. Instead,</dt><dd>Python users should call this function in the form <code>face(subdim, index)</code>; that is, the template parameter <em>subdim</em> becomes the first argument of the function.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Python does not support templates. Instead, Python users should call this function in the form <code>face(subdim, index)</code>; that is, the template parameter <em>subdim</em> becomes the first argument of the function.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">index</td><td>the index of the desired face, ranging from 0 to <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a929d32300a09aa008d03099e4b84e873" title="Returns the number of subdim-faces in this triangulation.">countFaces&lt;subdim&gt;()</a>-1 inclusive. </td></tr>
@@ -1719,7 +1720,7 @@ The given edge is an edge of this triangulation.</dd></dl>
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> an object that allows iteration through and random access to all <em>subdim</em>-faces of this triangulation. </p>
 <p>Bear in mind that each time the triangulation changes, all face objects will be deleted and replaced with new ones. Therefore these face objects should be considered temporary only.</p>
 <p>In contrast, this reference to the <a class="el" href="classregina_1_1FaceList.html" title="Stores the list of all subdim-faces of a dim-dimensional triangulation.">FaceList</a> object itself will remain valid and up-to-date for as long as the triangulation exists.</p>
-<dl class="section user"><dt>Python:\n Python users should call this function in the</dt><dd>form <code>faces(subdim)</code>. It will then return a Python list containing all the <em>subdim</em>-faces of the triangulation. Be warned that, unlike in C++, this Python list will be a snapshot of the faces when this function is called, and will <em>not</em> be kept up-to-date as the triangulation changes.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Python users should call this function in the form <code>faces(subdim)</code>. It will then return a Python list containing all the <em>subdim</em>-faces of the triangulation. Be warned that, unlike in C++, this Python list will be a snapshot of the faces when this function is called, and will <em>not</em> be kept up-to-date as the triangulation changes.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>access to the list of all <em>subdim</em>-faces. </dd></dl>
 
 </div>
@@ -1798,7 +1799,7 @@ The given edge is an edge of this triangulation.</dd></dl>
 <p>See the <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#af68572c80fc27fc3a069ad01d9615952" title="Determines if this triangulation is combinatorially isomorphic to the given triangulation.">isIsomorphicTo()</a> notes for additional information.</p>
 <p>The isomorphisms that are found will be written to the given output iterator. This iterator must accept objects of type Isomorphism&lt;dim&gt;*. As an example, <em>output</em> might be a back_insert_iterator for a std::vector&lt;Isomorphism&lt;dim&gt;*&gt;.</p>
 <p>The isomorphisms that are written to the given output iterator will be newly created, and the caller of this routine is responsible for destroying them.</p>
-<dl class="section user"><dt>Python:\n The <em>output</em> argument is not present.</dt><dd>Instead, this routine returns a python list containing all of the isomorphisms that were found.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>The <em>output</em> argument is not present. Instead, this routine returns a python list containing all of the isomorphisms that were found.</dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>For large dimensions, this routine can become extremely slow: its running time includes a factor of (<em>dim</em>+1)!.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1851,7 +1852,7 @@ The given edge is an edge of this triangulation.</dd></dl>
 <p>The isomorphisms that are found will be written to the given output iterator. This iterator must accept objects of type Isomorphism&lt;dim&gt;*. As an example, <em>output</em> might be a back_insert_iterator for a std::vector&lt;Isomorphism&lt;dim&gt;*&gt;.</p>
 <p>The isomorphisms that are written to the given output iterator will be newly created, and the caller of this routine is responsible for destroying them.</p>
 <dl class="section warning"><dt>Warning</dt><dd>For large dimensions, this routine can become extremely slow: its running time includes a factor of (<em>dim</em>+1)!.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">other</td><td>the triangulation in which to search for isomorphic copies of this triangulation. </td></tr>
@@ -1942,7 +1943,7 @@ The given edge is an edge of this triangulation.</dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>If the move is being performed and no check is being run, it must be known in advance that the move is legal. </dd>
 <dd>
 The given vertex is a vertex of this triangulation.</dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000211">Deprecated:</a></b></dt><dd>You should use the identical routine <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a39dc5df8252f6e34ea45b19ca33c3964" title="Checks the eligibility of and/or performs a (dim + 1 - k)-(k + 1) Pachner move about the given k-face...">pachner()</a> instead.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000212">Deprecated:</a></b></dt><dd>You should use the identical routine <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a39dc5df8252f6e34ea45b19ca33c3964" title="Checks the eligibility of and/or performs a (dim + 1 - k)-(k + 1) Pachner move about the given k-face...">pachner()</a> instead.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">v</td><td>the vertex about which to perform the move. </td></tr>
@@ -2000,7 +2001,7 @@ The given vertex is a vertex of this triangulation.</dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>If the move is being performed and no check is being run, it must be known in advance that the move is legal. </dd>
 <dd>
 The given edge is an edge of this triangulation.</dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000212">Deprecated:</a></b></dt><dd>You should use the identical routine <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a39dc5df8252f6e34ea45b19ca33c3964" title="Checks the eligibility of and/or performs a (dim + 1 - k)-(k + 1) Pachner move about the given k-face...">pachner()</a> instead.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000213">Deprecated:</a></b></dt><dd>You should use the identical routine <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a39dc5df8252f6e34ea45b19ca33c3964" title="Checks the eligibility of and/or performs a (dim + 1 - k)-(k + 1) Pachner move about the given k-face...">pachner()</a> instead.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">e</td><td>the edge about which to perform the move. </td></tr>
@@ -2333,7 +2334,7 @@ The given edge is an edge of this triangulation.</dd></dl>
 <p>The <em>gluings</em> array describes the particular gluing permutations used to join these simplices together. Specifically, <code>gluings[s][f][0..<em>dim</em>]</code> should describe the permutation used to join facet <em>f</em> of simplex <em>s</em> to its adjacent simplex. These <em>dim</em>+1 integers should be 0,1,...,<em>dim</em> in some order, so that <code>gluings[s][f][i]</code> contains the image of <em>i</em> under this permutation. If facet <em>f</em> of simplex <em>s</em> is to be left as a boundary facet, then <code>gluings[s][f][0..<em>dim</em>]</code> may contain anything (and will be duly ignored).</p>
 <p>If this triangulation is empty before this routine is called, then the new simplices will be given indices 0,1,...,<em>nSimplices</em>-1 according to the numbering described above. Otherwise they will be inserted after any pre-existing simplices, and so they will be given larger indices instead. In the latter case, the <em>adjacencies</em> array should still refer to the new simplices as 0,1,...,<em>nSimplices</em>-1, and this routine will handle any renumbering automatically at runtime.</p>
 <p>It is the responsibility of the caller of this routine to ensure that the given arrays are correct and consistent. No error checking will be performed by this routine.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">nSimplices</td><td>the number of additional simplices to insert. </td></tr>
@@ -2400,6 +2401,7 @@ The given edge is an edge of this triangulation.</dd></dl>
 <p>Attempts to simplify the triangulation as intelligently as possible without further input. </p>
 <p>Specifically, this routine will attempt to reduce the number of pentachora in the triangulation.</p>
 <p>Currently this routine uses <a class="el" href="classregina_1_1Triangulation_3_014_01_4.html#aac2cee85d413b4bec25ce97a7feadd86" title="Uses all known simplification moves to reduce the triangulation monotonically to some local minimum n...">simplifyToLocalMinimum()</a> in combination with random 3-3 moves and book opening moves.</p>
+<p>If this triangulation is currently oriented, then this operation will preserve the orientation.</p>
 <dl class="section warning"><dt>Warning</dt><dd>The specific behaviour of this routine will almost certainly change between releases. At present, simplification for 4-manifold triangulations is extremely weak (as opposed to 3-manifolds, where a rich library of simplification techinques is available to call upon).</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if and only if the triangulation was changed. </dd></dl>
 
@@ -2498,6 +2500,7 @@ The given edge is an edge of this triangulation.</dd></dl>
 </div><div class="memdoc">
 
 <p>Determines if this triangulation is connected. </p>
+<p>This routine returns <code>false</code> only if there is more than one connected component. In particular, it returns <code>true</code> for the empty triangulation.</p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if and only if this triangulation is connected. </dd></dl>
 
 </div>
@@ -2775,7 +2778,7 @@ The given edge is an edge of this triangulation.</dd></dl>
 <p>The routine <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#ac7a5a9449f2de027e0cae40ff8a3ee38" title="Recovers a full triangulation from an isomorphism signature.">fromIsoSig()</a> can be used to recover a triangulation from an isomorphism signature. The triangulation recovered might not be identical to the original, but it will be combinatorially isomorphic.</p>
 <p>If <em>relabelling</em> is non-null (i.e., it points to some <a class="el" href="classregina_1_1Isomorphism.html" title="Represents a combinatorial isomorphism from one dim-manifold triangulation into another.">Isomorphism</a> pointer <em>p</em>), then it will be modified to point to a new isomorphism that describes the precise relationship between this triangulation and the reconstruction from <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#ac7a5a9449f2de027e0cae40ff8a3ee38" title="Recovers a full triangulation from an isomorphism signature.">fromIsoSig()</a>. Specifically, the triangulation that is reconstructed from <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#ac7a5a9449f2de027e0cae40ff8a3ee38" title="Recovers a full triangulation from an isomorphism signature.">fromIsoSig()</a> will be combinatorially identical to <code>relabelling.apply(this)</code>.</p>
 <p>For a full and precise description of the isomorphism signature format for 3-manifold triangulations, see <em>Simplification paths in the Pachner graphs of closed orientable 3-manifold triangulations</em>, Burton, 2011, <code>arXiv:1110.6080</code>. The format for other dimensions is essentially the same, but with minor dimension-specific adjustments.</p>
-<dl class="section user"><dt>Python:\n The isomorphism argument is not present.</dt><dd>Instead there are two routines: <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a4f5592a00cb4a895564e5b8169850879" title="Constructs the isomorphism signature for this triangulation.">isoSig()</a>, which returns a string only, and isoSigDetail(), which returns a pair (<em>signature</em>, <em>relabelling</em>).</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>The isomorphism argument is not present. Instead there are two routines: <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a4f5592a00cb4a895564e5b8169850879" title="Constructs the isomorphism signature for this triangulation.">isoSig()</a>, which returns a string only, and isoSigDetail(), which returns a pair (<em>signature</em>, <em>relabelling</em>).</dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>If <em>relabelling</em> is non-null, then this triangulation must be non-empty and connected. The facility to return a relabelling for disconnected triangulations may be added to Regina in a later release.</dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Do not mix isomorphism signatures between dimensions! It is possible that the same string could corresponding to both a <em>p-dimensional</em> triangulation and a <em>q-dimensional</em> triangulation for different dimensions <em>p</em> and <em>q</em>.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -3138,7 +3141,7 @@ The given edge is an edge of this triangulation.</dd></dl>
 <li><a class="el" href="classregina_1_1Triangulation_3_014_01_4.html#aceb4bc27f38ebe29c0b1c97b54198905" title="Deprecated function that checks the eligibility of and/or performs a 1-5 Pachner move upon the given ...">oneFiveMove()</a> will create the new vertex as <code><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a8322ef559fdee45b8905c8eef682ac77" title="Returns all top-dimensional simplices in the triangulation.">simplices()</a>.back()-&gt;vertex(4)</code>, for consistency with earlier versions of Regina.</li>
 </ul>
 <dl class="section pre"><dt>Precondition</dt><dd>The given pentachoron is a pentachoron of this triangulation.</dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000215">Deprecated:</a></b></dt><dd>You should use the new routine <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a39dc5df8252f6e34ea45b19ca33c3964" title="Checks the eligibility of and/or performs a (dim + 1 - k)-(k + 1) Pachner move about the given k-face...">pachner()</a> instead (though note that this changes the labelling of the new pentachora).</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000216">Deprecated:</a></b></dt><dd>You should use the new routine <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a39dc5df8252f6e34ea45b19ca33c3964" title="Checks the eligibility of and/or performs a (dim + 1 - k)-(k + 1) Pachner move about the given k-face...">pachner()</a> instead (though note that this changes the labelling of the new pentachora).</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">p</td><td>the pentachoron about which to perform the move. </td></tr>
@@ -3280,7 +3283,7 @@ The given tetrahedron is a tetrahedron of this triangulation.</dd></dl>
 </div><div class="memdoc">
 
 <p>Checks the eligibility of and/or performs a (<em>dim</em> + 1 - <em>k</em>)-(<em>k</em> + 1) Pachner move about the given <em>k</em>-face. </p>
-<p>This involves replacing the (<em>dim</em> + 1 - <em>k</em>) top-dimensional simplices meeting that <em>k</em>-face with (<em>k</em> + 1) new top-dimensional simplices joined along a new internal (<em>dim</em> - <em>k</em>)-face. This can be done iff (i) the given <em>k</em>-face is valid and non-boundary; (ii) the (<em>dim</em> + 1 - <em>k</em>) top-dimensional simplices that contain it are distinct; and (iii) these simplices are joined in such a way that the link of the given <em>k</em>-face is the standard triangulation of the (<em>dim</em> - 1 - <em>k</em>)-sphere as the boundary of a (<em>dim</em> - \k)-simplex.</p>
+<p>This involves replacing the (<em>dim</em> + 1 - <em>k</em>) top-dimensional simplices meeting that <em>k</em>-face with (<em>k</em> + 1) new top-dimensional simplices joined along a new internal (<em>dim</em> - <em>k</em>)-face. This can be done iff (i) the given <em>k</em>-face is valid and non-boundary; (ii) the (<em>dim</em> + 1 - <em>k</em>) top-dimensional simplices that contain it are distinct; and (iii) these simplices are joined in such a way that the link of the given <em>k</em>-face is the standard triangulation of the (<em>dim</em> - 1 - <em>k</em>)-sphere as the boundary of a (<em>dim</em> - <em>k</em>)-simplex.</p>
 <p>If the routine is asked to both check and perform, the move will only be performed if the check shows it is legal. In In the special case <em>k</em> = <em>dim</em>, the move is always legal and so the <em>check</em> argument will simply be ignored.</p>
 <p>Note that after performing this move, all skeletal objects (facets, components, etc.) will be reconstructed, which means any pointers to old skeletal objects (such as the argument <em>v</em>) can no longer be used.</p>
 <p>If this triangulation is currently oriented, then this Pachner move will label the new top-dimensional simplices in a way that preserves the orientation.</p>
@@ -3595,7 +3598,7 @@ template&lt;typename Action , typename... Args&gt; </div>
 <dl class="section warning"><dt>Warning</dt><dd>By default, the arguments <em>args</em> will be copied (or moved) when they are passed to <em>action</em>. If you need to pass some argument(s) by reference, you must wrap them in std::ref or std::cref.</dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>This triangulation is connected.</dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>The API for this class has not yet been finalised. This means that the class interface may change in new versions of Regina, without maintaining backward compatibility. If you use this class directly in your own code, please watch the detailed changelogs upon new releases to see if you need to make changes to your code.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">height</td><td>the maximum number of <em>additional</em> pentachora to allow beyond the number of pentachora originally present in the triangulation, or a negative number if this should not be bounded. </td></tr>
@@ -3838,7 +3841,7 @@ The given pentachoron is a pentachoron of this triangulation.</dd></dl>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> all top-dimensional simplices in the triangulation. </p>
 <p>The reference that is returned will remain valid for as long as the triangulation exists: even as simplices are added and/or removed, it will always reflect the simplices that are currently in the triangulation.</p>
-<dl class="section user"><dt>Python:\n This routine returns a python list.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This routine returns a python list.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the list of all top-dimensional simplices. </dd></dl>
 
 </div>
@@ -3958,6 +3961,7 @@ The given pentachoron is a pentachoron of this triangulation.</dd></dl>
 <p>End users will probably not want to call this routine. You should call <a class="el" href="classregina_1_1Triangulation_3_014_01_4.html#aaa321f1bfb037aac23161b1f40745337" title="Attempts to simplify the triangulation as intelligently as possible without further input.">intelligentSimplify()</a> if you want a fast method of simplifying a triangulation.</p>
 <p>The moves used by this routine include collapsing edges, 4-2 moves, and boundary shelling moves.</p>
 <p>Moves that do not reduce the number of pentachora (such as 3-3 moves or book opening moves) are not used in this routine. Such moves do however feature in <a class="el" href="classregina_1_1Triangulation_3_014_01_4.html#aaa321f1bfb037aac23161b1f40745337" title="Attempts to simplify the triangulation as intelligently as possible without further input.">intelligentSimplify()</a>.</p>
+<p>If this triangulation is currently oriented, then this operation will preserve the orientation.</p>
 <dl class="section warning"><dt>Warning</dt><dd>The specific behaviour of this routine will almost certainly change between releases. At present, simplification for 4-manifold triangulations is extremely weak (as opposed to 3-manifolds, where a rich library of simplification techinques is available to call upon).</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -4071,7 +4075,7 @@ The given pentachoron is a pentachoron of this triangulation.</dd></dl>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a short text representation of this object. </p>
 <p>This text should be human-readable, should fit on a single line, and should not end with a newline. Where possible, it should use plain ASCII characters.</p>
-<dl class="section user"><dt>Python:\n In addition to str(), this is also used as the</dt><dd>Python "stringification" function <code>__str__()</code>.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>In addition to <a class="el" href="structregina_1_1Output.html#a2212a7a96adf2538ea875d49a98d99ad" title="Returns a short text representation of this object.">str()</a>, this is also used as the Python "stringification" function <code>__str__()</code>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a short text representation of this object. </dd></dl>
 
 </div>
@@ -4227,7 +4231,7 @@ The given pentachoron is a pentachoron of this triangulation.</dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>If the move is being performed and no check is being run, it must be known in advance that the move is legal. </dd>
 <dd>
 The given triangle is a triangle of this triangulation.</dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000213">Deprecated:</a></b></dt><dd>You should use the identical routine <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a39dc5df8252f6e34ea45b19ca33c3964" title="Checks the eligibility of and/or performs a (dim + 1 - k)-(k + 1) Pachner move about the given k-face...">pachner()</a> instead.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000214">Deprecated:</a></b></dt><dd>You should use the identical routine <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a39dc5df8252f6e34ea45b19ca33c3964" title="Checks the eligibility of and/or performs a (dim + 1 - k)-(k + 1) Pachner move about the given k-face...">pachner()</a> instead.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">t</td><td>the triangle about which to perform the move. </td></tr>
@@ -4285,7 +4289,7 @@ The given triangle is a triangle of this triangulation.</dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>If the move is being performed and no check is being run, it must be known in advance that the move is legal. </dd>
 <dd>
 The given facet is a facet of this triangulation.</dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000214">Deprecated:</a></b></dt><dd>You should use the identical routine <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a39dc5df8252f6e34ea45b19ca33c3964" title="Checks the eligibility of and/or performs a (dim + 1 - k)-(k + 1) Pachner move about the given k-face...">pachner()</a> instead.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000215">Deprecated:</a></b></dt><dd>You should use the identical routine <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a39dc5df8252f6e34ea45b19ca33c3964" title="Checks the eligibility of and/or performs a (dim + 1 - k)-(k + 1) Pachner move about the given k-face...">pachner()</a> instead.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">f</td><td>the facet about which to perform the move. </td></tr>
@@ -4520,7 +4524,7 @@ The given vertex is a vertex of this triangulation.</dd></dl>
 
 <p>Writes a detailed text representation of this object to the given output stream. </p>
 <p>This may be reimplemented by subclasses, but the parent <a class="el" href="classregina_1_1Packet.html" title="Represents a packet of information that may be individually edited or operated upon.">Packet</a> class offers a reasonable default implementation.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -4558,7 +4562,7 @@ The given vertex is a vertex of this triangulation.</dd></dl>
 
 <p>Writes a short text representation of this object to the given output stream. </p>
 <p>This must be reimplemented by subclasses.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -4771,7 +4775,7 @@ The given vertex is a vertex of this triangulation.</dd></dl>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

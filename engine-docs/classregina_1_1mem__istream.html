@@ -80,7 +80,7 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><p>An input stream that reads an array of characters in memory. </p>
 <p>This input stream does not take any responsibility for managing the memory that is read, and the caller should ensure that this memory remains allocated for at least as long as this input stream.</p>
 <p>End users should not use this class, but should use <a class="el" href="classregina_1_1mem__istream.html" title="An input stream that reads an array of characters in memory.">mem_istream</a> instead. The API for this class is subject to change in future versions of Regina.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa212f4ae28e5a29ffd13d9324512497a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa212f4ae28e5a29ffd13d9324512497a">&#9670;&nbsp;</a></span>mem_istream()</h2>
@@ -117,7 +117,13 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initialies an input stream that reads from the given array of characters. </p>
-<p>@begin a pointer to the beginning of the array to read. @end a pointer past-the-end of the array to read. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">begin</td><td>a pointer to the beginning of the array to read. </td></tr>
+    <tr><td class="paramname">end</td><td>a pointer past-the-end of the array to read. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -154,7 +160,7 @@ Public Member Functions</h2></td></tr>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

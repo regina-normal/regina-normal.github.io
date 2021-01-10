@@ -533,7 +533,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Integer is a typedef for <a class="el" href="classregina_1_1IntegerBase.html">IntegerBase&lt;false&gt;</a>, which offers arbitrary precision integers without support for infinity. </p>
-<dl class="section user"><dt>Python:\n This typedef is available in Python.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This typedef is available in Python. </dd></dl>
 
 </div>
 </div>
@@ -550,7 +550,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>LargeInteger is a typedef for <a class="el" href="classregina_1_1IntegerBase.html">IntegerBase&lt;true&gt;</a>, which offers arbitrary precision integers with support for infinity. </p>
-<dl class="section user"><dt>Python:\n This typedef is available in Python.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This typedef is available in Python. </dd></dl>
 
 </div>
 </div>
@@ -740,7 +740,7 @@ template&lt;int bytes&gt; </div>
 </div><div class="memdoc">
 
 <p>NNativeLong is a typedef for the <a class="el" href="classregina_1_1NativeInteger.html" title="A wrapper class for a native, fixed-precision integer type of the given size.">NativeInteger</a> template class whose underlying integer type is a native long. </p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. </dd></dl>
 
 </div>
 </div>
@@ -1077,7 +1077,7 @@ rowList". Likewise, by "first non-zero entry" we mean "first row in
 \a rowList with a non-zero entry".</p>
 <p>In a pinch, you can also use this routine to compute the inverse of an invertible square matrix.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>Both <em>R</em> and <em>Ri</em> are square matrices with side length M.columns(), and these matrices are inverses of each other.</dd></dl>
-<dl class="section user"><dt>Python:\n The argument <em>rowList</em> should be supplied as a python list.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>The argument <em>rowList</em> should be supplied as a python list.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">M</td><td>the matrix to reduce. </td></tr>
@@ -1249,7 +1249,7 @@ rowList". Likewise, by "first non-zero entry" we mean "first row in
 <p>Note that the given integers need not be non-negative. However, the gcd returned is guaranteed to be non-negative. As a special case, gcd(0,0) is considered to be zero.</p>
 <p>If <em>d</em> is the gcd of <em>a</em> and <em>b</em>, the values placed in <em>u</em> and <em>v</em> will be those for which <code>u*a + v*b = d</code>, <code>-abs(a)/d &lt; v*sign(b) &lt;= 0</code> and <code>1 &lt;= u*sign(a) &lt;= abs(b)/d</code>.</p>
 <p>In the special case where one of the given integers is zero, the corresponding coefficient will also be zero and the other coefficient will be 1 or -1 so that <code>u*a + v*b = d</code> still holds. If both given integers are zero, both of the coefficients will be set to zero.</p>
-<dl class="section user"><dt>Python:\n The arguments <em>u</em> and <em>v</em> are not present. Instead,</dt><dd>this routine returns the tuple (<em>gcd</em>, <em>u</em>, <em>v</em>).</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>The arguments <em>u</em> and <em>v</em> are not present. Instead, this routine returns the tuple (<em>gcd</em>, <em>u</em>, <em>v</em>).</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">a</td><td>one of the integers to work with. </td></tr>
@@ -1293,7 +1293,7 @@ template&lt;class R &gt; </div>
 <p>Determines whether the given real number is strictly negative. Any number within <em><a class="el" href="group__maths.html#gaa4a64f14951f5d8a671d31c7b48c74b2" title="Deprecated constant for managing floating-point roundoff errors.">regina::epsilon</a></em> of zero is considered to be zero.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>R must be of a floating point real type.</dd></dl>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000062">Deprecated:</a></b></dt><dd>This method of using a hard-coded <em>epsilon</em> is very blunt. Currently Regina does not provide alternative methods for managing round-off error, though since Regina's computations are exact, this should not be necessary.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>the number to examine. </td></tr>
@@ -1334,7 +1334,7 @@ template&lt;class R &gt; </div>
 <p>Determines whether the given real number is non-negative. Any number within <em><a class="el" href="group__maths.html#gaa4a64f14951f5d8a671d31c7b48c74b2" title="Deprecated constant for managing floating-point roundoff errors.">regina::epsilon</a></em> of zero is considered to be zero.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>R must be of a floating point real type.</dd></dl>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000063">Deprecated:</a></b></dt><dd>This method of using a hard-coded <em>epsilon</em> is very blunt. Currently Regina does not provide alternative methods for managing round-off error, though since Regina's computations are exact, this should not be necessary.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>the number to examine. </td></tr>
@@ -1375,7 +1375,7 @@ template&lt;class R &gt; </div>
 <p>Determines whether the given real number is non-positive. Any number within <em><a class="el" href="group__maths.html#gaa4a64f14951f5d8a671d31c7b48c74b2" title="Deprecated constant for managing floating-point roundoff errors.">regina::epsilon</a></em> of zero is considered to be zero.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>R must be of a floating point real type.</dd></dl>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000064">Deprecated:</a></b></dt><dd>This method of using a hard-coded <em>epsilon</em> is very blunt. Currently Regina does not provide alternative methods for managing round-off error, though since Regina's computations are exact, this should not be necessary.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>the number to examine. </td></tr>
@@ -1416,7 +1416,7 @@ template&lt;class R &gt; </div>
 <p>Determines whether the given real number is non-zero. Any number within <em><a class="el" href="group__maths.html#gaa4a64f14951f5d8a671d31c7b48c74b2" title="Deprecated constant for managing floating-point roundoff errors.">regina::epsilon</a></em> of zero is considered to be zero.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>R must be of a floating point real type.</dd></dl>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000060">Deprecated:</a></b></dt><dd>This method of using a hard-coded <em>epsilon</em> is very blunt. Currently Regina does not provide alternative methods for managing round-off error, though since Regina's computations are exact, this should not be necessary.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>the number to examine. </td></tr>
@@ -1457,7 +1457,7 @@ template&lt;class R &gt; </div>
 <p>Determines whether the given real number is strictly positive. Any number within <em><a class="el" href="group__maths.html#gaa4a64f14951f5d8a671d31c7b48c74b2" title="Deprecated constant for managing floating-point roundoff errors.">regina::epsilon</a></em> of zero is considered to be zero.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>R must be of a floating point real type.</dd></dl>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000061">Deprecated:</a></b></dt><dd>This method of using a hard-coded <em>epsilon</em> is very blunt. Currently Regina does not provide alternative methods for managing round-off error, though since Regina's computations are exact, this should not be necessary.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>the number to examine. </td></tr>
@@ -1498,7 +1498,7 @@ template&lt;class R &gt; </div>
 <p>Determines whether the given real number is zero. Any number within <em><a class="el" href="group__maths.html#gaa4a64f14951f5d8a671d31c7b48c74b2" title="Deprecated constant for managing floating-point roundoff errors.">regina::epsilon</a></em> of zero is considered to be zero.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>R must be of a floating point real type.</dd></dl>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000059">Deprecated:</a></b></dt><dd>This method of using a hard-coded <em>epsilon</em> is very blunt. Currently Regina does not provide alternative methods for managing round-off error, though since Regina's computations are exact, this should not be necessary.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>the number to examine. </td></tr>
@@ -2256,7 +2256,7 @@ template&lt;bool supportInfinity&gt; </div>
 
 <p>Multiplies the given native integer with the given large integer. </p>
 <p>If the large integer is infinite, the result will also be infinity.</p>
-<dl class="section user"><dt>Python:\n Not available.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not available.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">lhs</td><td>the native integer to multiply. </td></tr>
@@ -3924,7 +3924,7 @@ template&lt;bool supportInfinity&gt; </div>
 
 <p>Adds the given native integer to the given large integer. </p>
 <p>If the large integer is infinite, the result will also be infinity.</p>
-<dl class="section user"><dt>Python:\n Not available.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not available.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">lhs</td><td>the native integer to add. </td></tr>
@@ -4270,7 +4270,7 @@ template&lt;class T &gt; </div>
 
 <p>Writes the given vector to the given output stream. </p>
 <p>The vector will be written on a single line with elements separated by a single space. No newline will be written.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -4494,7 +4494,7 @@ template&lt;int bytes&gt; </div>
 <p>The homomorphism from Z^n to Z^k is described by the given <em>k</em> by <em>n</em> matrix <em>hom</em>. The sublattice is of the form <code>(p1 Z) * (p2 Z) * ... * (pk Z)</code>, where the non-negative integers <em>p1</em>, ..., <em>pk</em> are passed in the given list <em>sublattice</em>.</p>
 <p>An equivalent problem is to consider <em>hom</em> to be a homomorphism from Z^n to Z_p1 + ... + Z_pk; this routine then finds the kernel of this homomorphism.</p>
 <p>The preimage of the sublattice (equivalently, the kernel described above) is some rank <em>n</em> lattice in Z^n. This algorithm finds and returns a basis for the lattice.</p>
-<dl class="section user"><dt>Python:\n The argument <em>sublattice</em> should be supplied as a python list.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>The argument <em>sublattice</em> should be supplied as a python list.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">hom</td><td>the matrix representing the homomorphism from Z^n to Z^k; this must be a <em>k</em> by <em>n</em> matrix. </td></tr>
@@ -4752,7 +4752,7 @@ The matrices <em>colSpaceBasis</em> and <em>colSpaceBasisInv</em> that are passe
 <p>Given an automorphism of an abelian group, this procedure computes the inverse automorphism. </p>
 <p>The abelian group is of the form <code>Z_p1 + Z_p2 + ... + Z_pn</code>. The input is an n-by-n matrix <em>A</em> which represents a lift of the automorphism to just some n-by-n matrix. Specifically, you have a little commutative diagram with <code>Z^n &ndash;A--&gt; Z^n</code> covering the automorphism of <code>Z_p1 + Z_p2 + ... + Z_pn</code>, where the maps down are the direct sum of the standard quotients <code>Z --&gt; Z_pi</code>. So if you want this procedure to give you meaningful output, <em>A</em> must be a lift of a genuine automorphism of <code>Z_p1 + ... + Z_pn</code>.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>The list p1, p2, ..., pn is a list of invariant factors, which means that p1|p2, ..., p{n-1}|pn.</dd></dl>
-<dl class="section user"><dt>Python:\n The argument <em>invF</em> should be supplied as a python list.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>The argument <em>invF</em> should be supplied as a python list.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">input</td><td>the n-by-n matrix <em>A</em>, which must be a lift of a genuine automorphism as described above. </td></tr>
@@ -4799,7 +4799,7 @@ The matrices <em>colSpaceBasis</em> and <em>colSpaceBasisInv</em> that are passe
 <p>Deprecated constant for managing floating-point roundoff errors. </p>
 <p>A very small positive real designed to accommodate for rounding error. Any two numbers within <em>epsilon</em> of each other are considered to be equal by the generic zero-testing and sign-testing routines defined in this file (<a class="el" href="group__maths.html#ga76dd91301fecb7c828edfd6dc3deed4c" title="Deprecated routine for managing floating-point roundoff errors.">isZero()</a>, <a class="el" href="group__maths.html#ga165bad6bef2cacd58c27fd8da839f560" title="Deprecated routine for managing floating-point roundoff errors.">isPositive()</a>, <a class="el" href="group__maths.html#ga5741179d3bd4c4373efca1e12c8dd8c4" title="Deprecated routine for managing floating-point roundoff errors.">isNonNegative()</a> and so on).</p>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000058">Deprecated:</a></b></dt><dd>This method of using a hard-coded <em>epsilon</em> is very blunt. Currently Regina does not provide alternative methods for managing round-off error, though since Regina's computations are exact, this should not be necessary.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. </dd></dl>
 
 </div>
 </div>
@@ -4886,7 +4886,7 @@ template&lt;class T&gt; </div>
 </div>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

@@ -92,13 +92,13 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><p>A forward iterator for iterating through the entire packet subtree rooted at a given packet. </p>
 <p>The order of iteration is depth-first, where a parent packet is always processed before its descendants.</p>
 <p>This header also specialises std::iterator_traits for this iterator class.</p>
-<dl class="section user"><dt>Python:\n Instead of the C++ interface described here, in Python</dt><dd>this class implements the Python iterable/iterator interface. It implements the function <code>__iter__()</code>, which returns the iterator object itself; it also implements <code>next()</code>, which either returns the next packet in the subtree iteration or else throws a <code>StopException</code> if there are no more packets to return. </dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Instead of the C++ interface described here, in Python this class implements the Python iterable/iterator interface. It implements the function <code>__iter__()</code>, which returns the iterator object itself; it also implements <code>next()</code>, which either returns the next packet in the subtree iteration or else throws a <code>StopException</code> if there are no more packets to return. </dd></dl>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>packet/<a class="el" href="packet_8h.html">packet.h</a></li>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

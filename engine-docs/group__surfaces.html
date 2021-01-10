@@ -1003,7 +1003,7 @@ template&lt;class T &gt; </div>
 </div><div class="memdoc">
 
 <p>A combination of flags for types of normal surface lists. </p>
-<dl class="section user"><dt>Python:\n This is present, and all values in the NormalAlgFlags</dt><dd>enumeration type are treated as members of this NormalAlg class. </dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This is present, and all values in the NormalAlgFlags enumeration type are treated as members of this NormalAlg class. </dd></dl>
 
 </div>
 </div>
@@ -1020,7 +1020,7 @@ template&lt;class T &gt; </div>
 </div><div class="memdoc">
 
 <p>A combination of flags for types of normal surface lists. </p>
-<dl class="section user"><dt>Python:\n This is present, and all values in the NormalListFlags</dt><dd>enumeration type are treated as members of this NormalList class. </dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This is present, and all values in the NormalListFlags enumeration type are treated as members of this NormalList class. </dd></dl>
 
 </div>
 </div>
@@ -1111,7 +1111,7 @@ template&lt;class T &gt; </div>
 
 <p>Represents options and variants of algorithms for enumerating various types of normal surfaces in 3-manifold triangulations. </p>
 <p>These options are typically combined in a bitwise fashion using the NormalAlg type, and then passed to enumeration routines such as <a class="el" href="classregina_1_1NormalSurfaces.html#a64309eac6ce681355dfc352c53299535" title="A unified routine for enumerating various classes of normal surfaces within a given triangulation.">NormalSurfaces::enumerate()</a>.</p>
-<dl class="section user"><dt>Python:\n The values in this enumeration type are present, but</dt><dd>they are treated by Python as NormalList objects (and they can be combined and/or queried as such). The underlying enumeration type is not exposed to Python. </dd></dl>
+<dl class="section user"><dt>Python</dt><dd>The values in this enumeration type are present, but they are treated by Python as NormalList objects (and they can be combined and/or queried as such). The underlying enumeration type is not exposed to Python. </dd></dl>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga3c4cfc5de652a5beaadaaee0cacdeedeadae5f2eb4210841d3473b97e2ccb7c6b"></a>NS_ALG_DEFAULT&#160;</td><td class="fielddoc"><p>An empty flag, indicating to an enumeration routine that it should use its default behaviour. </p>
 <p>The numeric value of this flag is zero (i.e., it has no effect when combined with other flags using bitwise OR). </p>
@@ -1245,7 +1245,7 @@ essential surfaces in knot complements", by Burton, Coward and Tillmann, in SCG 
 
 <p>Represents different lists of normal surfaces that might be constructed for a given 3-manifold triangulation. </p>
 <p>The NormalList enumeration refers to the <em>contents</em> of the list, whereas the NormalAlgFlags enumeration refers to the <em>algorithm</em> used to build it.</p>
-<dl class="section user"><dt>Python:\n The values in this enumeration type are present, but</dt><dd>they are treated by Python as NormalList objects (and they can be combined and/or queried as such). The underlying enumeration type is not exposed to Python. </dd></dl>
+<dl class="section user"><dt>Python</dt><dd>The values in this enumeration type are present, but they are treated by Python as NormalList objects (and they can be combined and/or queried as such). The underlying enumeration type is not exposed to Python. </dd></dl>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggabff25e58607c49cca84049a1069c2ccead3eeb14f2572d18cd230d6dab84e1864"></a>NS_LIST_DEFAULT&#160;</td><td class="fielddoc"><p>An empty flag, indicating to an enumeration routine that it should use its default behaviour. </p>
 <p>The numeric value of this flag is zero (i.e., it has no effect when combined with other flags using bitwise OR). </p>
@@ -2480,7 +2480,7 @@ template&lt;typename FunctionObject , typename... Args&gt; </div>
 <p>In detail: the function object <em>func</em> must define a templated bracket operator, so that <code>func.operator()&lt;NormalInfo&lt;c&gt;&gt;(...)</code> is defined for any valid NormalCoords enum value <em>c</em>. Then, when the user calls <code>forCoords(coords, func, defaultReturn, ...)</code>, this routine will call <code>func.operator()&lt;NormalInfo&lt;coords&gt;&gt;(...)</code> and pass back the corresponding return value. If <em>coords</em> does not denote a valid coordinate system as described above, then <a class="el" href="group__hypersurface.html#ga36de7c6e11fe8b3cf37d0ea7f6f90645" title="Allows the user to call a template function whose template parameter matches a given value of HyperCo...">forCoords()</a> will pass back <em>defaultReturn</em> instead.</p>
 <p>There is also a variant of <a class="el" href="group__hypersurface.html#ga36de7c6e11fe8b3cf37d0ea7f6f90645" title="Allows the user to call a template function whose template parameter matches a given value of HyperCo...">forCoords()</a> that works with void functions, and so does not take the extra <em>defaultReturn</em> argument.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>The function object must have a typedef <em>ReturnType</em> indicating the return type of the corresponding templated bracket operator. Inheriting from Returns&lt;...&gt; is a convenient way to ensure this.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">coords</td><td>the given normal coordinate system. </td></tr>
@@ -2535,7 +2535,7 @@ template&lt;typename FunctionObject , typename... Args&gt; </div>
 <p>In detail: the function object <em>func</em> must define a templated bracket operator, so that <code>func.operator()&lt;NormalInfo&lt;c&gt;&gt;(...)</code> is defined for any valid NormalCoords enum value <em>c</em>. Then, when the user calls <code>forCoords(coords, func, ...)</code>, this routine will call <code>func.operator()&lt;NormalInfo&lt;coords&gt;&gt;(...)</code> in turn. If <em>coords</em> does not denote a valid coordinate system as described above, then <a class="el" href="group__hypersurface.html#ga36de7c6e11fe8b3cf37d0ea7f6f90645" title="Allows the user to call a template function whose template parameter matches a given value of HyperCo...">forCoords()</a> will do nothing.</p>
 <p>There is also a variant of <a class="el" href="group__hypersurface.html#ga36de7c6e11fe8b3cf37d0ea7f6f90645" title="Allows the user to call a template function whose template parameter matches a given value of HyperCo...">forCoords()</a> that works with functions with return values, and which takes an extra <em>defaultReturn</em> argument.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>There must not exist a type <em>FunctionObject::ReturnType</em>. (or, if <em>FunctionObject</em> is a reference to a class/struct <em>F</em>, there must likewise not exist a type <em>F::ReturnType</em>). The existence of a type <em>FunctionObject::ReturnType</em> will cause the non-void variant of <a class="el" href="group__hypersurface.html#ga36de7c6e11fe8b3cf37d0ea7f6f90645" title="Allows the user to call a template function whose template parameter matches a given value of HyperCo...">forCoords()</a> to be used instead.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">coords</td><td>the given normal coordinate system. </td></tr>
@@ -2594,7 +2594,7 @@ template&lt;typename FunctionObject , typename... Args&gt; </div>
 <p>In detail: the function object <em>func</em> must define a templated bracket operator, so that <code>func.operator()&lt;SurfaceFilterInfo&lt;t&gt;&gt;(...)</code> is defined for any valid SurfaceFilterType enum value <em>t</em>. Then, when the user calls <code>forFilter(filter, func, defaultReturn, ...)</code>, this routine will call <code>func.operator()&lt;SurfaceFilterInfo&lt;filter&gt;&gt;(...)</code> and pass back the corresponding return value. If <em>filter</em> does not denote a valid filter type, then <a class="el" href="group__surfaces.html#gadfcdfb4006b01269d80720b647e1dc37" title="Allows the user to call a template function whose template parameter matches a given value of Surface...">forFilter()</a> will pass back <em>defaultReturn</em> instead.</p>
 <p>There is also a variant of <a class="el" href="group__surfaces.html#gadfcdfb4006b01269d80720b647e1dc37" title="Allows the user to call a template function whose template parameter matches a given value of Surface...">forFilter()</a> that works with void functions, and so does not take the extra <em>defaultReturn</em> argument.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>The function object must have a typedef <em>ReturnType</em> indicating the return type of the corresponding templated bracket operator. Inheriting from Returns&lt;...&gt; is a convenient way to ensure this.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filter</td><td>the given type of normal surface filter. </td></tr>
@@ -2648,7 +2648,7 @@ template&lt;typename FunctionObject , typename... Args&gt; </div>
 <p>In detail: the function object <em>func</em> must define a templated bracket operator, so that <code>func.operator()&lt;SurfaceFilterInfo&lt;t&gt;&gt;(...)</code> is defined for any valid SurfaceFilterType enum value <em>t</em>. Then, when the user calls <code>forFilter(filter, func, ...)</code>, this routine will call <code>func.operator()&lt;SurfaceFilterInfo&lt;filter&gt;&gt;(...)</code> in turn. If <em>filter</em> does not denote a valid filter type, then <a class="el" href="group__surfaces.html#gadfcdfb4006b01269d80720b647e1dc37" title="Allows the user to call a template function whose template parameter matches a given value of Surface...">forFilter()</a> will do nothing.</p>
 <p>There is also a variant of <a class="el" href="group__surfaces.html#gadfcdfb4006b01269d80720b647e1dc37" title="Allows the user to call a template function whose template parameter matches a given value of Surface...">forFilter()</a> that works with functions with return values, and which takes an extra <em>defaultReturn</em> argument.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>There must not exist a type <em>FunctionObject::ReturnType</em> (or, if <em>FunctionObject</em> is a reference to a class/struct <em>F</em>, there must likewise not exist a type <em>F::ReturnType</em>). The existence of a type <em>FunctionObject::ReturnType</em> will cause the non-void variant of <a class="el" href="group__surfaces.html#gadfcdfb4006b01269d80720b647e1dc37" title="Allows the user to call a template function whose template parameter matches a given value of Surface...">forFilter()</a> to be used instead.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filter</td><td>the given type of normal surface filter. </td></tr>
@@ -2723,7 +2723,7 @@ template&lt;typename FunctionObject , typename... Args&gt; </div>
 
 <p>Creates a new set of validity constraints representing the condition that normal surfaces be embedded. </p>
 <p>The validity constraints will be expressed relative to the given coordinate system.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">triangulation</td><td>the triangulation upon which these validity constraints will be based. </td></tr>
@@ -2805,7 +2805,7 @@ template&lt;typename FunctionObject , typename... Args&gt; </div>
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a new normal surface vector of the appropriate length for the given triangulation and the given coordinate system. </p>
 <p>All elements of this vector will be initialised to zero.</p>
 <p>The new vector will be of the subclass of <a class="el" href="classregina_1_1NormalSurfaceVector.html" title="Stores the vector of a single normal surface in a 3-manifold.">NormalSurfaceVector</a> corresponding to the given coordinate system. The caller of this routine is responsible for destroying the new vector.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">triangulation</td><td>the triangulation upon which the underlying coordinate system is based. </td></tr>
@@ -3060,7 +3060,7 @@ template&lt;typename FunctionObject , typename... Args&gt; </div>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a reference to the disc pointed to by this iterator. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>This iterator is not past-the-end.</dd></dl>
-<dl class="section user"><dt>Python:\n This routine is called deref(), since Python does</dt><dd>not support the dereference operator.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This routine is called deref(), since Python does not support the dereference operator.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a reference to the disc pointed to by this iterator. </dd></dl>
 
 </div>
@@ -3090,7 +3090,7 @@ template&lt;typename FunctionObject , typename... Args&gt; </div>
 
 <p>Preincrement operator. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>This iterator is not past-the-end.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present; instead this class implements</dt><dd><code>next()</code>, which either returns the current packet in the subtree and increments the iterator, or else throws a <code>StopIteration</code> exception if the iterator is past-the-end.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present; instead this class implements <code>next()</code>, which either returns the current packet in the subtree and increments the iterator, or else throws a <code>StopIteration</code> exception if the iterator is past-the-end.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a reference to this iterator. </dd></dl>
 
 </div>
@@ -3121,7 +3121,7 @@ template&lt;typename FunctionObject , typename... Args&gt; </div>
 
 <p>Postincrement operator. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>This iterator is not past-the-end.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present; instead this class implements</dt><dd><code>next()</code>, which either returns the current packet in the subtree and increments the iterator, or else throws a <code>StopIteration</code> exception if the iterator is past-the-end.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present; instead this class implements <code>next()</code>, which either returns the current packet in the subtree and increments the iterator, or else throws a <code>StopIteration</code> exception if the iterator is past-the-end.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a copy of this iterator before it was incremented. </dd></dl>
 
 </div>
@@ -3751,7 +3751,7 @@ template&lt;class T &gt; </div>
 <p>Each permutation <em>p</em> represents an arc about vertex <code>p[0]</code> parallel to the directed edge from <code>p[1]</code> to <code>p[2]</code>.</p>
 <p>Array <code>octDiscArcs[i]</code> lists the boundary arcs of the octagonal disc of type <em>i</em>. See <a class="el" href="classregina_1_1NormalSurface.html#abae51e35ce30784d586dfca6576243ee" title="Returns the number of octagonal discs of the given type in this normal surface.">NormalSurface::octs()</a> for further details.</p>
 <p>Note that permutation <code>octDiscArcs[i][j]</code> will be even precisely when <code>j</code> is 0, 1, 4 or 5.</p>
-<dl class="section user"><dt>C++:\n This array is replaced by a macro</dt><dd><code>octDiscArcs(discType, arcIndex)</code> that essentially looks up the corresponding array. This is necessary because of a bug in gcc 2.95. </dd></dl>
+<dl class="section user"><dt>C++</dt><dd>This array is replaced by a macro <code>octDiscArcs(discType, arcIndex)</code> that essentially looks up the corresponding array. This is necessary because of a bug in gcc 2.95. </dd></dl>
 
 </div>
 </div>
@@ -3776,7 +3776,7 @@ template&lt;class T &gt; </div>
 <li><code>quadDefn[i][2] &lt; quadDefn[i][3]</code>;</li>
 <li><code>quadDefn[i][0] &lt; quadDefn[i][2]</code>.</li>
 </ul>
-<p>This array contains similar information to the function <a class="el" href="group__detail.html#ga317bc3a01d0543daddb4c00ab4d27d5b" title="Given a subdim-face number within a dim-dimensional simplex, returns the corresponding canonical orde...">Edge&lt;3&gt;::ordering()</a>. Instead of quadDefn[<em>i</em>][<em>j</em>], you can call <a class="el" href="group__detail.html#ga317bc3a01d0543daddb4c00ab4d27d5b" title="Given a subdim-face number within a dim-dimensional simplex, returns the corresponding canonical orde...">Edge&lt;3&gt;::ordering</a>(<em>i</em>)[<em>j</em>]; this will give the same results for <em>j</em> = 0 and 1, but it might switch the results for <em>j</em> = 2 and 3. </p>
+<p>This array contains similar information to the function <a class="el" href="classregina_1_1detail_1_1FaceNumberingAPI.html#a317bc3a01d0543daddb4c00ab4d27d5b" title="Given a subdim-face number within a dim-dimensional simplex, returns the corresponding canonical orde...">Edge&lt;3&gt;::ordering()</a>. Instead of quadDefn[<em>i</em>][<em>j</em>], you can call <a class="el" href="classregina_1_1detail_1_1FaceNumberingAPI.html#a317bc3a01d0543daddb4c00ab4d27d5b" title="Given a subdim-face number within a dim-dimensional simplex, returns the corresponding canonical orde...">Edge&lt;3&gt;::ordering</a>(<em>i</em>)[<em>j</em>]; this will give the same results for <em>j</em> = 0 and 1, but it might switch the results for <em>j</em> = 2 and 3. </p>
 
 </div>
 </div>
@@ -3796,7 +3796,7 @@ template&lt;class T &gt; </div>
 <p>Each permutation <em>p</em> represents an arc about vertex <code>p[0]</code> parallel to the directed edge from <code>p[1]</code> to <code>p[2]</code>.</p>
 <p>Array <code>quadDiscArcs[i]</code> lists the boundary arcs of the quadrilateral disc of type <em>i</em>. See <a class="el" href="classregina_1_1NormalSurface.html#ac8380567805860ecdbde4bde09a5fc9c" title="Returns the number of quadrilateral discs of the given type in this normal surface.">NormalSurface::quads()</a> for further details.</p>
 <p>Note that permutation <code>quadDiscArcs[i][j]</code> will be even precisely when <code>j</code> is even.</p>
-<dl class="section user"><dt>C++:\n This array is replaced by a macro</dt><dd><code>quadDiscArcs(discType, arcIndex)</code> that essentially looks up the corresponding array. This is necessary because of a bug in gcc 2.95. </dd></dl>
+<dl class="section user"><dt>C++</dt><dd>This array is replaced by a macro <code>quadDiscArcs(discType, arcIndex)</code> that essentially looks up the corresponding array. This is necessary because of a bug in gcc 2.95. </dd></dl>
 
 </div>
 </div>
@@ -3928,7 +3928,7 @@ template&lt;class T &gt; </div>
 <p>Each permutation <em>p</em> represents an arc about vertex <code>p[0]</code> parallel to the directed edge from <code>p[1]</code> to <code>p[2]</code>.</p>
 <p>Array <code>triDiscArcs[i]</code> lists the boundary arcs of the triangular disc of type <em>i</em>. See <a class="el" href="classregina_1_1NormalSurface.html#aa25f8c4dad5d3efcfe3f01aeca20c8a8" title="Returns the number of triangular discs of the given type in this normal surface.">NormalSurface::triangles()</a> for further details.</p>
 <p>Note that every permutation in this array is even.</p>
-<dl class="section user"><dt>C++:\n This array is replaced by a macro</dt><dd><code>triDiscArcs(discType, arcIndex)</code> that essentially looks up the corresponding array. This is necessary because of a bug in gcc 2.95. </dd></dl>
+<dl class="section user"><dt>C++</dt><dd>This array is replaced by a macro <code>triDiscArcs(discType, arcIndex)</code> that essentially looks up the corresponding array. This is necessary because of a bug in gcc 2.95. </dd></dl>
 
 </div>
 </div>
@@ -3998,7 +3998,7 @@ template&lt;class T &gt; </div>
 </div>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

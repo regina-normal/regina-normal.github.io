@@ -94,7 +94,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae1f4e57841e1621eccba6a95c18faa43"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1Perm.html">Perm</a>&lt; dim+1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html#ae1f4e57841e1621eccba6a95c18faa43">facetPerm</a> (unsigned sourceSimp) const</td></tr>
 <tr class="memdesc:ae1f4e57841e1621eccba6a95c18faa43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the permutation that is applied to the (<em>dim</em> + 1) facets of the given source simplex under this isomorphism.  <a href="#ae1f4e57841e1621eccba6a95c18faa43">More...</a><br /></td></tr>
 <tr class="separator:ae1f4e57841e1621eccba6a95c18faa43"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3c8b33250750d4aeded7bffa97d5034"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structregina_1_1FacetSpec.html">FacetSpec</a>&lt; dim &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html#ac3c8b33250750d4aeded7bffa97d5034">operator []</a> (const <a class="el" href="structregina_1_1FacetSpec.html">FacetSpec</a>&lt; dim &gt; &amp;<a class="el" href="namespaceregina.html#aa80a53fba63b479f27268662ec97e248">source</a>) const</td></tr>
+<tr class="memitem:ac3c8b33250750d4aeded7bffa97d5034"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structregina_1_1FacetSpec.html">FacetSpec</a>&lt; dim &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html#ac3c8b33250750d4aeded7bffa97d5034">operator []</a> (const <a class="el" href="structregina_1_1FacetSpec.html">FacetSpec</a>&lt; dim &gt; &amp;<a class="el" href="namespaceregina.html#adcfb69a69d63e77fb947c071b0b65cb8">source</a>) const</td></tr>
 <tr class="memdesc:ac3c8b33250750d4aeded7bffa97d5034"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the image of the given source simplex facet under this isomorphism.  <a href="#ac3c8b33250750d4aeded7bffa97d5034">More...</a><br /></td></tr>
 <tr class="separator:ac3c8b33250750d4aeded7bffa97d5034"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa52235513aeff37221ee92a654397e32"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html#aa52235513aeff37221ee92a654397e32">isIdentity</a> () const</td></tr>
@@ -160,7 +160,7 @@ class regina::Isomorphism&lt; dim &gt;</h3>
 <p>A boundary complete isomorphism thus indicates that a copy of triangulation <em>T</em> is present as an entire component (or components) of <em>U</em>, whereas a boundary incomplete isomorphism represents an embedding of a copy of triangulation <em>T</em> as a subcomplex of some possibly larger component (or components) of <em>U</em>.</p>
 <p>Note that for all types of isomorphism, triangulation <em>U</em> is allowed to contain more simplices than triangulation <em>T</em>.</p>
 <p>This class is designed to avoid deep copies wherever possible. In particular, it supports C++11 move constructors and move assignment, and calling routines that return an <a class="el" href="classregina_1_1Isomorphism.html" title="Represents a combinatorial isomorphism from one dim-manifold triangulation into another.">Isomorphism</a> (e.g., <a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html#a87b4a13ff55946309b4969dc76183432" title="Returns the identity isomorphism for the given number of simplices.">identity()</a> and <a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html#aef2a40f3357732361a596788206daccf" title="Returns a random isomorphism for the given number of simplices.">random()</a>) should not perform any unwanted deep copies.</p>
-<dl class="section user"><dt>Python:\n Python does not support templates. Instead</dt><dd>this class can be used by appending the dimension as a suffix (e.g., Isomorphism2 and Isomorphism3 for dimensions 2 and 3).</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Python does not support templates. Instead this class can be used by appending the dimension as a suffix (e.g., Isomorphism2 and Isomorphism3 for dimensions 2 and 3).</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">dim</td><td>The dimension of the underlying triangulation. This must be between 2 and 15 inclusive. </td></tr>
@@ -196,7 +196,7 @@ template&lt;int dim&gt; </div>
 
 <p>Creates a new isomorphism with no initialisation. </p>
 <p>The images of the simplices and their vertices must be explicitly set using <a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html#acc12157b7e664b84894574e149ee1023" title="Determines the image of the given source simplex under this isomorphism.">simpImage()</a> and <a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html#aeb0ad0ed6aad84455848858b1df4c682" title="Returns a read-write reference to the permutation that is applied to the (dim + 1) facets of the give...">facetPerm()</a>.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">nSimplices</td><td>the number of simplices in the source triangulation associated with this isomorphism. This is allowed to be zero. </td></tr>
@@ -426,7 +426,7 @@ template&lt;int dim&gt; </div>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a read-write reference to the permutation that is applied to the (<em>dim</em> + 1) facets of the given source simplex under this isomorphism. </p>
 <p>Facet <em>i</em> of source simplex <em>sourceSimp</em> will be mapped to facet <code>facetPerm(sourceSimp)[i]</code> of simplex <code>simpImage(sourceSimp)</code>.</p>
-<dl class="section user"><dt>Python:\n This is not available for Python users.</dt><dd>However, the read-only version of this routine is.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This is not available for Python users. However, the read-only version of this routine is.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">sourceSimp</td><td>the index of the source simplex containing the original (<em>dim</em> + 1) facets; this must be between 0 and <code><a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html#a43c659599534e20778107158e2246958" title="Returns the number of simplices in the source triangulation associated with this isomorphism.">size()</a>-1</code> inclusive. </td></tr>
@@ -660,7 +660,7 @@ template&lt;int dim&gt; </div>
 </div><div class="memdoc">
 
 <p>Determines the image of the given source simplex under this isomorphism. </p>
-<dl class="section user"><dt>Python:\n This is not available for Python users.</dt><dd>However, the read-only version of this routine is.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This is not available for Python users. However, the read-only version of this routine is.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">sourceSimp</td><td>the index of the source simplex; this must be between 0 and <code><a class="el" href="classregina_1_1detail_1_1IsomorphismBase.html#a43c659599534e20778107158e2246958" title="Returns the number of simplices in the source triangulation associated with this isomorphism.">size()</a>-1</code> inclusive. </td></tr>
@@ -764,7 +764,7 @@ template&lt;int dim&gt; </div>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a short text representation of this object. </p>
 <p>This text should be human-readable, should fit on a single line, and should not end with a newline. Where possible, it should use plain ASCII characters.</p>
-<dl class="section user"><dt>Python:\n In addition to str(), this is also used as the</dt><dd>Python "stringification" function <code>__str__()</code>.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>In addition to <a class="el" href="structregina_1_1Output.html#a2212a7a96adf2538ea875d49a98d99ad" title="Returns a short text representation of this object.">str()</a>, this is also used as the Python "stringification" function <code>__str__()</code>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a short text representation of this object. </dd></dl>
 
 </div>
@@ -825,7 +825,7 @@ template&lt;int dim&gt; </div>
 </div><div class="memdoc">
 
 <p>Writes a detailed text representation of this object to the given output stream. </p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -862,7 +862,7 @@ template&lt;int dim&gt; </div>
 </div><div class="memdoc">
 
 <p>Writes a short text representation of this object to the given output stream. </p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -959,7 +959,7 @@ template&lt;int dim&gt; </div>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

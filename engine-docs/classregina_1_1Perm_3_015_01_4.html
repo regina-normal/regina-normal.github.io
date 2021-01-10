@@ -111,7 +111,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a97f1b2260ecff7d90124388c78ecfae7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Perm_3_015_01_4.html#a97f1b2260ecff7d90124388c78ecfae7">sign</a> () const</td></tr>
 <tr class="memdesc:a97f1b2260ecff7d90124388c78ecfae7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the sign of this permutation.  <a href="#a97f1b2260ecff7d90124388c78ecfae7">More...</a><br /></td></tr>
 <tr class="separator:a97f1b2260ecff7d90124388c78ecfae7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a0ee1b85646da6a3fe19791ab243c87"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__engine.html#ga6c88de0d46fb43fb08bf788c82243ccc">REGINA_INLINE_REQUIRED</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Perm_3_015_01_4.html#a7a0ee1b85646da6a3fe19791ab243c87">operator[]</a> (int <a class="el" href="namespaceregina.html#aa80a53fba63b479f27268662ec97e248">source</a>) const</td></tr>
+<tr class="memitem:a7a0ee1b85646da6a3fe19791ab243c87"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__engine.html#ga6c88de0d46fb43fb08bf788c82243ccc">REGINA_INLINE_REQUIRED</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Perm_3_015_01_4.html#a7a0ee1b85646da6a3fe19791ab243c87">operator[]</a> (int <a class="el" href="namespaceregina.html#adcfb69a69d63e77fb947c071b0b65cb8">source</a>) const</td></tr>
 <tr class="memdesc:a7a0ee1b85646da6a3fe19791ab243c87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the image of the given integer under this permutation.  <a href="#a7a0ee1b85646da6a3fe19791ab243c87">More...</a><br /></td></tr>
 <tr class="separator:a7a0ee1b85646da6a3fe19791ab243c87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a297ce41844cef501aa4f7765b7778e51"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Perm_3_015_01_4.html#a297ce41844cef501aa4f7765b7778e51">preImageOf</a> (int image) const</td></tr>
@@ -251,7 +251,7 @@ class regina::Perm&lt; 5 &gt;</h3>
 <p>As with all <a class="el" href="classregina_1_1Perm.html" title="Represents a permutation of {0,1,...,n-1}.">Perm</a> template classes, these objects are small enough to pass about by value instead of by reference.</p>
 <p>Each permutation has an internal code, which is a single native integer that is sufficient to reconstruct the permutation. Thus the internal code may be a useful means for passing permutation objects to and from the engine. For <a class="el" href="classregina_1_1Perm_3_015_01_4.html" title="Represents a permutation of {0,1,2,3,4}.">Perm&lt;5&gt;</a>, the internal code follows the general scheme used for Perm&lt;n&gt;: the lowest three bits represent the image of 0, the next lowest three bits represent the image of 1 and so on. See the generic <a class="el" href="classregina_1_1Perm.html" title="Represents a permutation of {0,1,...,n-1}.">Perm</a> template for further details.</p>
 <p>To use this class, simply include the main permutation header <a class="el" href="perm_8h.html" title="Deals with permutations of {0,1,...,n-1}.">maths/perm.h</a>.</p>
-<dl class="section user"><dt>Python:\n Since Python does not support templates, this class is</dt><dd>made available under the name Perm5. </dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Since Python does not support templates, this class is made available under the name Perm5. </dd></dl>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ae7cca8d1e2e89ec44649e66a71d1f7bb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae7cca8d1e2e89ec44649e66a71d1f7bb">&#9670;&nbsp;</a></span>Code</h2>
@@ -454,7 +454,7 @@ class regina::Perm&lt; 5 &gt;</h3>
 
 <p>Creates a permutation mapping <em>i</em> to <em>image</em>[i] for each <em>i</em> = 0,1,2,3,4. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>The array <em>image</em> contains five elements, which are 0, 1, 2, 3 and 4 in some order.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">image</td><td>the array of images. </td></tr>
@@ -500,7 +500,7 @@ class regina::Perm&lt; 5 &gt;</h3>
 
 <p>Creates a permutation mapping (<em>a</em>[0], ..., <em>a</em>[4]) to (<em>b</em>[0], ..., <em>b</em>[4]) respectively. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>Both arrays <em>a</em> and <em>b</em> contain 5 elements, which are 0,...,4 in some order.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">a</td><td>the array of preimages; this must have length 5. </td></tr>
@@ -1359,10 +1359,10 @@ template&lt;class URBG &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Python:\n Not present, though the non-thread-safe variant</dt><dd>without the <em>gen</em> argument is available.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present, though the non-thread-safe variant without the <em>gen</em> argument is available.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">gen</td><td>the source of randomness to use (e.g., one of the many options provided in the C++ standard &lt;random&gt; header). </td></tr>
+    <tr><td class="paramname">gen</td><td>the source of randomness to use (e.g., one of the many options provided in the C++ standard <code>random</code> header). </td></tr>
     <tr><td class="paramname">even</td><td>if <code>true</code>, then the resulting permutation is guaranteed to be even (and again all even permutations are returned with equal probability). </td></tr>
   </table>
   </dd>
@@ -2005,7 +2005,7 @@ template&lt;class URBG &gt; </div>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

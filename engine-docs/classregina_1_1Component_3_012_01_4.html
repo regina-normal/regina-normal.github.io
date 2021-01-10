@@ -225,7 +225,7 @@ class regina::Component&lt; 2 &gt;</h3>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> all boundary components in this component. </p>
 <p>The reference that is returned will remain valid only for as long as this component object exists. In particular, the reference will become invalid any time that the triangulation changes (since all component objects will be destroyed and others rebuilt in their place).</p>
-<dl class="section user"><dt>Python:\n This routine returns a python list.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This routine returns a python list.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the list of all boundary components. </dd></dl>
 
 </div>
@@ -307,7 +307,7 @@ template&lt;int subdim&gt; </div>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the number of <em>subdim</em>-faces in this component. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>The template argument <em>subdim</em> is either 0 or 1.</dd></dl>
-<dl class="section user"><dt>Python:\n Python does not support templates. Instead,</dt><dd>Python users should call this function in the form <code>countFaces(subdim)</code>; that is, the template parameter <em>subdim</em> becomes the first argument of the function.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Python does not support templates. Instead, Python users should call this function in the form <code>countFaces(subdim)</code>; that is, the template parameter <em>subdim</em> becomes the first argument of the function.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the number of <em>subdim</em>-faces. </dd></dl>
 
 </div>
@@ -362,7 +362,7 @@ template&lt;int subdim&gt; </div>
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the requested <em>subdim</em>-face in this component. </p>
 <p>Note that the index of a face in the component need not be the index of the same face in the overall triangulation.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>The template argument <em>subdim</em> is either 0 or 1.</dd></dl>
-<dl class="section user"><dt>Python:\n Python does not support templates. Instead,</dt><dd>Python users should call this function in the form <code>face(subdim, index)</code>; that is, the template parameter <em>subdim</em> becomes the first argument of the function.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Python does not support templates. Instead, Python users should call this function in the form <code>face(subdim, index)</code>; that is, the template parameter <em>subdim</em> becomes the first argument of the function.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">index</td><td>the index of the desired face, ranging from 0 to <a class="el" href="classregina_1_1Component_3_012_01_4.html#a6ebd6cf9ae4059803d7072006ffac174" title="Returns the number of subdim-faces in this component.">countFaces&lt;subdim&gt;()</a>-1 inclusive. </td></tr>
@@ -392,7 +392,7 @@ template&lt;int subdim&gt; </div>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a reference to the list of all <em>subdim</em>-faces in this component. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>The template argument <em>subdim</em> is either 0 or 1.</dd></dl>
-<dl class="section user"><dt>Python:\n Python users should call this function in the</dt><dd>form <code>faces(subdim)</code>. It will then return a Python list containing all the <em>subdim</em>-faces of the triangulation.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Python users should call this function in the form <code>faces(subdim)</code>. It will then return a Python list containing all the <em>subdim</em>-faces of the triangulation.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the list of all <em>subdim</em>-faces. </dd></dl>
 
 </div>
@@ -632,7 +632,7 @@ template&lt;int subdim&gt; </div>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> all top-dimensional simplices in this component. </p>
 <p>The reference that is returned will remain valid only for as long as this component object exists. In particular, the reference will become invalid any time that the triangulation changes (since all component objects will be destroyed and others rebuilt in their place).</p>
-<dl class="section user"><dt>Python:\n This routine returns a python list.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This routine returns a python list.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the list of all top-dimensional simplices. </dd></dl>
 
 </div>
@@ -690,7 +690,7 @@ template&lt;int subdim&gt; </div>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a short text representation of this object. </p>
 <p>This text should be human-readable, should fit on a single line, and should not end with a newline. Where possible, it should use plain ASCII characters.</p>
-<dl class="section user"><dt>Python:\n In addition to str(), this is also used as the</dt><dd>Python "stringification" function <code>__str__()</code>.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>In addition to <a class="el" href="structregina_1_1Output.html#a2212a7a96adf2538ea875d49a98d99ad" title="Returns a short text representation of this object.">str()</a>, this is also used as the Python "stringification" function <code>__str__()</code>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a short text representation of this object. </dd></dl>
 
 </div>
@@ -749,7 +749,7 @@ template&lt;int subdim&gt; </div>
 </div><div class="memdoc">
 
 <p>Writes a detailed text representation of this object to the given output stream. </p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -784,7 +784,7 @@ template&lt;int subdim&gt; </div>
 </div><div class="memdoc">
 
 <p>Writes a short text representation of this object to the given output stream. </p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -824,7 +824,7 @@ template&lt;int subdim&gt; </div>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

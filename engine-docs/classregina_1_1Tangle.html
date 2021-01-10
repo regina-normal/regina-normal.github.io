@@ -245,7 +245,7 @@ Static Public Member Functions</h2></td></tr>
 <p>In all cases, this is equivalent to calling the rational tangle constructor <a class="el" href="classregina_1_1Tangle.html" title="Represents a 2-tangle in the 3-ball.">Tangle</a>(<em>twists</em>, 1).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">num</td><td>the number of twists to perform; this may be positive, negative or zero. </td></tr>
+    <tr><td class="paramname">twists</td><td>the number of twists to perform; this may be positive, negative or zero. </td></tr>
   </table>
   </dd>
 </dl>
@@ -755,7 +755,7 @@ Dereferencing such an iterator produces either a C-style string (which can be ca
 <dd>
 The tokens in the input sequence do not contain any whitespace.</dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>While this routine does some error checking on the input, it does <em>not</em> test for the viability of the diagram (i.e., whether the given crossings with the given signs actually produce a tangle of the given type with the correct endpoints). Of course non-viable inputs are not allowed, and it is currently up to the user to enforce this.</dd></dl>
-<dl class="section user"><dt>Python:\n Instead of a pair of begin and past-the-end</dt><dd>iterators, this routine takes a Python list of strings.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Instead of a pair of begin and past-the-end iterators, this routine takes a Python list of strings.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">begin</td><td>an iterator that points to the beginning of the sequence of tokens for an oriented Gauss code. </td></tr>
@@ -853,7 +853,7 @@ The tokens in the input sequence do not contain any whitespace.</dd></dl>
 <p>For a full explanation of how oriented Gauss codes work for tangles, see the documentation for <a class="el" href="classregina_1_1Tangle.html#ad9fb20a28b2e91fb8c5a72de9f2e0e19" title="Creates a new tangle from an oriented Gauss code.">fromOrientedGauss(const std::string&amp;)</a>, which imports tangles in this format.</p>
 <p>The output will not contain any newlines.</p>
 <dl class="section note"><dt>Note</dt><dd>There is another variant of this routine that, instead of using an output stream, simply returns a string.</dd></dl>
-<dl class="section user"><dt>Python:\n This routine is not available in Python. Instead,</dt><dd>Python users can use the variant <a class="el" href="classregina_1_1Tangle.html#a4901f74db4ad01ee8987de6b2e87191e" title="Outputs an oriented Gauss code for this tangle.">orientedGauss()</a>, which takes no arguments and returns the output as a string.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This routine is not available in Python. Instead, Python users can use the variant <a class="el" href="classregina_1_1Tangle.html#a4901f74db4ad01ee8987de6b2e87191e" title="Outputs an oriented Gauss code for this tangle.">orientedGauss()</a>, which takes no arguments and returns the output as a string.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1104,7 +1104,7 @@ The given crossing is either a null pointer, or else some crossing in this tangl
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a short text representation of this object. </p>
 <p>This text should be human-readable, should fit on a single line, and should not end with a newline. Where possible, it should use plain ASCII characters.</p>
-<dl class="section user"><dt>Python:\n In addition to str(), this is also used as the</dt><dd>Python "stringification" function <code>__str__()</code>.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>In addition to <a class="el" href="structregina_1_1Output.html#a2212a7a96adf2538ea875d49a98d99ad" title="Returns a short text representation of this object.">str()</a>, this is also used as the Python "stringification" function <code>__str__()</code>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a short text representation of this object. </dd></dl>
 
 </div>
@@ -1302,7 +1302,7 @@ The given crossing is either a null pointer, or else some crossing in this tangl
 </div><div class="memdoc">
 
 <p>Writes a detailed text representation of this tangle to the given output stream. </p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1329,7 +1329,7 @@ The given crossing is either a null pointer, or else some crossing in this tangl
 </div><div class="memdoc">
 
 <p>Writes a short text representation of this tangle to the given output stream. </p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1344,7 +1344,7 @@ The given crossing is either a null pointer, or else some crossing in this tangl
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

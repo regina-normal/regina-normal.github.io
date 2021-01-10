@@ -123,9 +123,9 @@ experimental polynomial-time behaviour", Burton and Ozlen, arXiv:1211.1079. It i
 <p>This class can only work in quadrilateral normal coordinates (NS_QUAD), standard normal coordinates (NS_STANDARD), or angle structure coordinates (NS_ANGLE). No other coordinate systems are supported.</p>
 <dl class="section warning"><dt>Warning</dt><dd>The implementation of this class relies on the fact that the sum of <em>absolute values</em> of all coefficients in each column is at most four (not counting the rows for any optional extra constraints). If you are extending this class to work with more general matching equation matrices, you may need to change the implementation accordingly.</dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>The template parameter LPConstraint must be one of the subclasses of <a class="el" href="classregina_1_1LPConstraintBase.html" title="A base class for additional linear constraints that we can add to the tableaux of normal surface or a...">LPConstraintBase</a>. See the <a class="el" href="classregina_1_1LPConstraintBase.html" title="A base class for additional linear constraints that we can add to the tableaux of normal surface or a...">LPConstraintBase</a> class notes for further details.</dd></dl>
-<dl class="section user"><dt>Headers:\n Parts of this template class are implemented in a separate header</dt><dd>(treelp-impl.h), which is not included automatically by this file. Most end users should not need this extra header, since Regina's calculation engine already includes explicit instantiations for common combinations of template arguments.</dd></dl>
+<dl class="section user"><dt>Headers</dt><dd>Parts of this template class are implemented in a separate header (treelp-impl.h), which is not included automatically by this file. Most end users should not need this extra header, since Regina's calculation engine already includes explicit instantiations for common combinations of template arguments.</dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>The API for this class has not yet been finalised. This means that the class interface may change in new versions of Regina, without maintaining backward compatibility. If you use this class directly in your own code, please watch the detailed changelogs upon new releases to see if you need to make changes to your code.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abe983e975f8883df9f512622f43ccaf3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abe983e975f8883df9f512622f43ccaf3">&#9670;&nbsp;</a></span>LPInitialTableaux()</h2>
@@ -600,7 +600,7 @@ template&lt;class LPConstraint &gt; </div>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

@@ -240,7 +240,7 @@ class regina::Polynomial&lt; T &gt;</h3>
 <p>This means that Regina's numerical types such as Integer and <a class="el" href="classregina_1_1Rational.html" title="Represents an arbitrary precision rational number.">Rational</a> are supported, but native data types such as int and long are not (since they have no zero-initialising default constructor).</p>
 <p>The underlying storage method for this class is dense (i.e., all coefficients are explicitly stored, including zero coefficients).</p>
 <p>This class is designed to avoid deep copies wherever possible. In particular, it supports C++11 move constructors and move assignment. Functions that take or return objects by value are designed to be just as efficient as working with references or pointers (any variations to this are noted in the method documentation), and long chains of operators such as <code>a = b * c + d</code> do not make unwanted deep copies.</p>
-<dl class="section user"><dt>Python:\n In Python, the class Polynomial refers to the specific</dt><dd>template class Polynomial&lt;Rational&gt;. </dd></dl>
+<dl class="section user"><dt>Python</dt><dd>In Python, the class <a class="el" href="classregina_1_1Polynomial.html" title="Represents a single-variable polynomial with coefficients of type T.">Polynomial</a> refers to the specific template class Polynomial&lt;Rational&gt;. </dd></dl>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ade540f6e28a2372b35528fe4a60ebf54"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ade540f6e28a2372b35528fe4a60ebf54">&#9670;&nbsp;</a></span>Coefficient</h2>
@@ -485,7 +485,7 @@ template&lt;typename iterator &gt; </div>
 <p>There is no problem if the leading coefficient (i.e., the last coefficient in the sequence) is zero. An empty sequence will be treated as the zero polynomial.</p>
 <p>This constructor induces a deep copy of the given range.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>Objects of type <em>T</em> can be assigned values from dereferenced iterators of type <em>iterator</em>.</dd></dl>
-<dl class="section user"><dt>Python:\n Instead of a pair of iterators, this routine</dt><dd>takes a python list of coefficients.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Instead of a pair of iterators, this routine takes a python list of coefficients.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">begin</td><td>the beginning of the sequence of coefficients. </td></tr>
@@ -525,7 +525,7 @@ template&lt;typename T &gt; </div>
 <p>Creates a new polynomial from a hard-coded sequence of coefficients. </p>
 <p>This constructor takes a C++11 initialiser list, which should contain the coefficients in order from the constant coefficient to the leading coefficient.</p>
 <p>There is no problem if the leading coefficient (i.e., the last coefficient in the sequence) is zero. An empty sequence will be treated as the zero polynomial.</p>
-<dl class="section user"><dt>Python:\n Not available, but there is a Python constructor</dt><dd>that takes a list of coefficients (which need not be constant).</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not available, but there is a Python constructor that takes a list of coefficients (which need not be constant).</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">coefficients</td><td>the full sequence of coefficients. </td></tr>
@@ -670,7 +670,7 @@ template&lt;typename T &gt; </div>
 The quotient as defined above exists. If <em>T</em> is a field type (e.g., if <em>T</em> is <a class="el" href="classregina_1_1Rational.html" title="Represents an arbitrary precision rational number.">Rational</a>) then this is true automatically. If not (e.g., if <em>T</em> is Integer) then this requires some prior knowledge about the arguments.</dd>
 <dd>
 Neither <em>quotient</em> nor <em>remainder</em> is a reference to this polynomial.</dd></dl>
-<dl class="section user"><dt>Python:\n The arguments <em>quotient</em> and <em>remainder</em> are</dt><dd>missing; instead these are passed back through the return value of the function. Specifically, this function returns a (<em>quotient</em>, <em>remainder</em>) pair.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>The arguments <em>quotient</em> and <em>remainder</em> are missing; instead these are passed back through the return value of the function. Specifically, this function returns a (<em>quotient</em>, <em>remainder</em>) pair.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">divisor</td><td>the polynomial to divide by this. </td></tr>
@@ -840,7 +840,7 @@ template&lt;typename iterator &gt; </div>
 <p>There is no problem if the leading coefficient (i.e., the last coefficient in the sequence) is zero. An empty sequence will be treated as the zero polynomial.</p>
 <p>This routine induces a deep copy of the given range.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>Objects of type <em>T</em> can be assigned values from dereferenced iterators of type <em>iterator</em>.</dd></dl>
-<dl class="section user"><dt>Python:\n Instead of a pair of iterators, this routine</dt><dd>takes a python list of coefficients.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Instead of a pair of iterators, this routine takes a python list of coefficients.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">begin</td><td>the beginning of the sequence of coefficients. </td></tr>
@@ -1414,7 +1414,7 @@ template&lt;typename T &gt; </div>
 <p>Changes the given coefficient of this polynomial. </p>
 <p>It is fine to set the leading coefficient to zero, though note that <a class="el" href="classregina_1_1Polynomial.html#a06ddd917f599a817a2a76e4e86676157" title="Returns the degree of this polynomial.">degree()</a> will now return a smaller value as a result.</p>
 <p>It is also fine to set a coefficient whose exponent is larger than the current degree; this time <a class="el" href="classregina_1_1Polynomial.html#a06ddd917f599a817a2a76e4e86676157" title="Returns the degree of this polynomial.">degree()</a> will now return a larger value (unless the given coefficient is zero). Such an operation is expensive, however, since it will require deallocating and reallocating the full list of coefficients.</p>
-<dl class="section user"><dt>Python:\n This set() routine is available, but you can</dt><dd>also set coefficients directly using syntax of the form <code>p[exp] = value</code>.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This <a class="el" href="classregina_1_1Polynomial.html#a7678b0705217bd21bf867bee8d310535" title="Changes the given coefficient of this polynomial.">set()</a> routine is available, but you can also set coefficients directly using syntax of the form <code>p[exp] = value</code>.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">exp</td><td>the exponent of the term whose coefficient should be changed. </td></tr>
@@ -1450,7 +1450,7 @@ template&lt;typename T &gt; </div>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a short text representation of this object. </p>
 <p>This text should be human-readable, should fit on a single line, and should not end with a newline. Where possible, it should use plain ASCII characters.</p>
-<dl class="section user"><dt>Python:\n In addition to str(), this is also used as the</dt><dd>Python "stringification" function <code>__str__()</code>.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>In addition to <a class="el" href="classregina_1_1Polynomial.html#ab8c69f4d8e5e0f4679fc39ec49ecc78a" title="Returns this polynomial as a human-readable string, using the given variable name instead of x.">str()</a>, this is also used as the Python "stringification" function <code>__str__()</code>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a short text representation of this object. </dd></dl>
 
 </div>
@@ -1626,7 +1626,7 @@ template&lt;typename T &gt; </div>
 
 <p>A default implementation for detailed output. </p>
 <p>This routine simply calls <em>T::writeTextShort()</em> and appends a final newline.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1672,7 +1672,7 @@ template&lt;typename T &gt; </div>
 
 <p>Writes this polynomial to the given output stream, using the given variable name instead of <code>x</code>. </p>
 <p>If <em>utf8</em> is passed as <code>true</code> then unicode superscript characters will be used for exponents; these will be encoded using UTF-8. This will make the output nicer, but will require more complex fonts to be available on the user's machine.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1689,7 +1689,7 @@ template&lt;typename T &gt; </div>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

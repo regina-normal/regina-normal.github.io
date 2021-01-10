@@ -341,11 +341,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a18754e52a8c76dcadb6f885bb7c551bc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#a18754e52a8c76dcadb6f885bb7c551bc">knowsZeroEfficient</a> () const</td></tr>
 <tr class="memdesc:a18754e52a8c76dcadb6f885bb7c551bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is it already known whether or not this triangulation is 0-efficient? See <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#a570440313fe0bfe6b6a56afd00c3b0b6" title="Determines if this triangulation is 0-efficient.">isZeroEfficient()</a> for further details.  <a href="#a18754e52a8c76dcadb6f885bb7c551bc">More...</a><br /></td></tr>
 <tr class="separator:a18754e52a8c76dcadb6f885bb7c551bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9bd8ce6c609ca68cb5773a832cbf548a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#a9bd8ce6c609ca68cb5773a832cbf548a">hasSplittingSurface</a> ()</td></tr>
-<tr class="memdesc:a9bd8ce6c609ca68cb5773a832cbf548a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether this triangulation has a normal splitting surface.  <a href="#a9bd8ce6c609ca68cb5773a832cbf548a">More...</a><br /></td></tr>
-<tr class="separator:a9bd8ce6c609ca68cb5773a832cbf548a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d92d88a4a00fee457751e054e0ae4f7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#a5d92d88a4a00fee457751e054e0ae4f7">hasSplittingSurface</a> () const</td></tr>
+<tr class="memdesc:a5d92d88a4a00fee457751e054e0ae4f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether this triangulation has a normal splitting surface.  <a href="#a5d92d88a4a00fee457751e054e0ae4f7">More...</a><br /></td></tr>
+<tr class="separator:a5d92d88a4a00fee457751e054e0ae4f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96c145120697c1050b74e917dd341dd3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#a96c145120697c1050b74e917dd341dd3">knowsSplittingSurface</a> () const</td></tr>
-<tr class="memdesc:a96c145120697c1050b74e917dd341dd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is it already known whether or not this triangulation has a splitting surface? See <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#a9bd8ce6c609ca68cb5773a832cbf548a" title="Determines whether this triangulation has a normal splitting surface.">hasSplittingSurface()</a> for further details.  <a href="#a96c145120697c1050b74e917dd341dd3">More...</a><br /></td></tr>
+<tr class="memdesc:a96c145120697c1050b74e917dd341dd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is it already known whether or not this triangulation has a splitting surface? See <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#a5d92d88a4a00fee457751e054e0ae4f7" title="Determines whether this triangulation has a normal splitting surface.">hasSplittingSurface()</a> for further details.  <a href="#a96c145120697c1050b74e917dd341dd3">More...</a><br /></td></tr>
 <tr class="separator:a96c145120697c1050b74e917dd341dd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a083a8ddcda2a432be55fa74fff30f5c7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1NormalSurface.html">NormalSurface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#a083a8ddcda2a432be55fa74fff30f5c7">hasNonTrivialSphereOrDisc</a> ()</td></tr>
 <tr class="memdesc:a083a8ddcda2a432be55fa74fff30f5c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches for a non-vertex-linking normal sphere or disc within this triangulation.  <a href="#a083a8ddcda2a432be55fa74fff30f5c7">More...</a><br /></td></tr>
@@ -382,6 +382,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5b703a9bd9717144c800a710870d1e12"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#a5b703a9bd9717144c800a710870d1e12">retriangulate</a> (int height, unsigned nThreads, <a class="el" href="classregina_1_1ProgressTrackerOpen.html">ProgressTrackerOpen</a> *tracker, Action &amp;&amp;action, Args &amp;&amp;... args) const</td></tr>
 <tr class="memdesc:a5b703a9bd9717144c800a710870d1e12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explores all triangulations that can be reached from this via Pachner moves, without exceeding a given number of additional tetrahedra.  <a href="#a5b703a9bd9717144c800a710870d1e12">More...</a><br /></td></tr>
 <tr class="separator:a5b703a9bd9717144c800a710870d1e12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3e659747844d582d50162a471fd81ab"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#ae3e659747844d582d50162a471fd81ab">minimiseBoundary</a> ()</td></tr>
+<tr class="memdesc:ae3e659747844d582d50162a471fd81ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensures that the boundary contains the smallest possible number of triangles, potentially adding tetrahedra to do this.  <a href="#ae3e659747844d582d50162a471fd81ab">More...</a><br /></td></tr>
+<tr class="separator:ae3e659747844d582d50162a471fd81ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9160ade86ae2ac23ac91a97d25aa79de"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#a9160ade86ae2ac23ac91a97d25aa79de">minimizeBoundary</a> ()</td></tr>
+<tr class="memdesc:a9160ade86ae2ac23ac91a97d25aa79de"><td class="mdescLeft">&#160;</td><td class="mdescRight">A synonym for <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#ae3e659747844d582d50162a471fd81ab" title="Ensures that the boundary contains the smallest possible number of triangles, potentially adding tetr...">minimiseBoundary()</a>.  <a href="#a9160ade86ae2ac23ac91a97d25aa79de">More...</a><br /></td></tr>
+<tr class="separator:a9160ade86ae2ac23ac91a97d25aa79de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61a3cf330dd5f6900cff75d237242ef7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#a61a3cf330dd5f6900cff75d237242ef7">fourOneMove</a> (<a class="el" href="group__generic.html#ga275f76603ae79c86d0d45cc954449ba7">Vertex</a>&lt; 3 &gt; *v, bool check=true, bool perform=true)</td></tr>
 <tr class="memdesc:a61a3cf330dd5f6900cff75d237242ef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated function that checks the eligibility of and/or performs a 4-1 Pachner move upon the given vertex.  <a href="#a61a3cf330dd5f6900cff75d237242ef7">More...</a><br /></td></tr>
 <tr class="separator:a61a3cf330dd5f6900cff75d237242ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -449,6 +455,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a281f3fc9351e4c757fec0053252d1dd4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#a281f3fc9351e4c757fec0053252d1dd4">knowsSolidTorus</a> () const</td></tr>
 <tr class="memdesc:a281f3fc9351e4c757fec0053252d1dd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is it already known (or trivial to determine) whether or not this is a triangulation of a solid torus (that is, the unknot complement)? See <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#a6887425d2144a4f3a485c59ec9b74c3e" title="Determines whether this is a triangulation of the solid torus; that is, the unknot complement.">isSolidTorus()</a> for further details.  <a href="#a281f3fc9351e4c757fec0053252d1dd4">More...</a><br /></td></tr>
 <tr class="separator:a281f3fc9351e4c757fec0053252d1dd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0326a12e5c235b90e78ccd3f51e5863"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#ae0326a12e5c235b90e78ccd3f51e5863">isTxI</a> () const</td></tr>
+<tr class="memdesc:ae0326a12e5c235b90e78ccd3f51e5863"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether or not the underlying 3-manifold is the product of a torus with an interval.  <a href="#ae0326a12e5c235b90e78ccd3f51e5863">More...</a><br /></td></tr>
+<tr class="separator:ae0326a12e5c235b90e78ccd3f51e5863"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53ffd0e9e8e5b2e9c8521c58871ec56b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#a53ffd0e9e8e5b2e9c8521c58871ec56b">knowsTxI</a> () const</td></tr>
+<tr class="memdesc:a53ffd0e9e8e5b2e9c8521c58871ec56b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is it already known (or trivial to determine) whether or not this is a triangulation of a the product of a torus with an interval? See <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#ae0326a12e5c235b90e78ccd3f51e5863" title="Determines whether or not the underlying 3-manifold is the product of a torus with an interval.">isTxI()</a> for further details.  <a href="#a53ffd0e9e8e5b2e9c8521c58871ec56b">More...</a><br /></td></tr>
+<tr class="separator:a53ffd0e9e8e5b2e9c8521c58871ec56b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7785d4bb75a5366cc4d9bae5bf5536ae"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#a7785d4bb75a5366cc4d9bae5bf5536ae">isIrreducible</a> () const</td></tr>
 <tr class="memdesc:a7785d4bb75a5366cc4d9bae5bf5536ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the underlying 3-manifold (which must be closed) is irreducible.  <a href="#a7785d4bb75a5366cc4d9bae5bf5536ae">More...</a><br /></td></tr>
 <tr class="separator:a7785d4bb75a5366cc4d9bae5bf5536ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -866,7 +878,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a13bd275984bd2e6241fc220229f39490"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds all ways in which an isomorphic copy of this triangulation is contained within the given triangulation, possibly as a subcomplex of some larger component (or components).  <a href="#a13bd275984bd2e6241fc220229f39490">More...</a><br /></td></tr>
 <tr class="separator:a13bd275984bd2e6241fc220229f39490"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Building Triangulations</div></td></tr>
-<tr class="memitem:a2bf93dbca6715c1a455a2d47f66a6476"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a2bf93dbca6715c1a455a2d47f66a6476">insertTriangulation</a> (const <a class="el" href="classregina_1_1Triangulation.html">Triangulation</a>&lt; dim &gt; &amp;<a class="el" href="namespaceregina.html#aa80a53fba63b479f27268662ec97e248">source</a>)</td></tr>
+<tr class="memitem:a2bf93dbca6715c1a455a2d47f66a6476"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a2bf93dbca6715c1a455a2d47f66a6476">insertTriangulation</a> (const <a class="el" href="classregina_1_1Triangulation.html">Triangulation</a>&lt; dim &gt; &amp;<a class="el" href="namespaceregina.html#adcfb69a69d63e77fb947c071b0b65cb8">source</a>)</td></tr>
 <tr class="memdesc:a2bf93dbca6715c1a455a2d47f66a6476"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a copy of the given triangulation into this triangulation.  <a href="#a2bf93dbca6715c1a455a2d47f66a6476">More...</a><br /></td></tr>
 <tr class="separator:a2bf93dbca6715c1a455a2d47f66a6476"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1e8b7cf820ff452059f817d55536155"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#af1e8b7cf820ff452059f817d55536155">insertConstruction</a> (size_t nSimplices, const int adjacencies[][dim+1], const int gluings[][dim+1][dim+1])</td></tr>
@@ -1397,7 +1409,7 @@ static <a class="el" href="classregina_1_1XMLPacketReader.html">XMLPacketReader<
 <p>The triangulation will automatically be given a packet label based on the manifold name stored in the second line of the SnapPea data file.</p>
 <dl class="section note"><dt>Note</dt><dd>This constructor can be used in a Python session to pass data from SnapPy through to Regina's copy of the SnapPea kernel (which is strictly separate from SnapPy's), without losing any of SnapPy's internal information.</dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>If (for some reason) you pass a filename that begins with "% Triangulation", then Regina will interpret this as the contents of a SnapPea file (not a filename).</dd></dl>
-<dl class="section user"><dt>Internationalisation:\n If the given argument is a filename, then this routine makes</dt><dd>no assumptions about the <a class="el" href="i18n.html">character encoding</a> used in the filename, and simply passes it through unchanged to low-level C/C++ file I/O routines. This routine assumes that the file <em>contents</em>, however, are in UTF-8 (the standard encoding used throughout Regina).</dd></dl>
+<dl class="section user"><dt>Internationalisation</dt><dd>If the given argument is a filename, then this routine makes no assumptions about the <a class="el" href="i18n.html">character encoding</a> used in the filename, and simply passes it through unchanged to low-level C/C++ file I/O routines. This routine assumes that the file <em>contents</em>, however, are in UTF-8 (the standard encoding used throughout Regina).</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">fileNameOrContents</td><td>either the name of a SnapPea data file, or the contents of a SnapPea data file (which need not actually exist on the filesystem). </td></tr>
@@ -1539,7 +1551,7 @@ static <a class="el" href="classregina_1_1XMLPacketReader.html">XMLPacketReader<
 <p>Turaev-Viro invariants are identified by an (<em>r</em>, <em>parity</em>) pair as described in the <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#ad3c7fc5f723ce2c68158d7319dda0cc4" title="Computes the given Turaev-Viro state sum invariant of this 3-manifold using exact arithmetic.">turaevViro()</a> documentation. The cache is just a set that maps (<em>r</em>, <em>parity</em>) pairs to the corresponding invariant values.</p>
 <p>For even values of <em>r</em>, the parity is ignored when calling <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#ad3c7fc5f723ce2c68158d7319dda0cc4" title="Computes the given Turaev-Viro state sum invariant of this 3-manifold using exact arithmetic.">turaevViro()</a> (since the even and odd versions of the invariant contain essentially the same information). Therefore, in this cache, all even values of <em>r</em> will have the corresponding parities set to <code>false</code>.</p>
 <dl class="section note"><dt>Note</dt><dd>All invariants in this cache are now computed using exact arithmetic, as elements of a cyclotomic field. This is a change from Regina 4.96 and earlier, which computed floating-point approximations instead.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the cache of all Turaev-Viro invariants that have already been calculated.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#ad3c7fc5f723ce2c68158d7319dda0cc4" title="Computes the given Turaev-Viro state sum invariant of this 3-manifold using exact arithmetic.">turaevViro</a> </dd></dl>
 
@@ -1586,6 +1598,7 @@ static <a class="el" href="classregina_1_1XMLPacketReader.html">XMLPacketReader<
 <li>...</li>
 <li>the centroid of <em>s</em> itself will be labelled <em>p</em>[<em>dim</em>] in <em>t</em>.</li>
 </ul>
+<p>In particular, if this triangulation is currently oriented, then this barycentric subdivision will preserve the orientation.</p>
 <p>If simplex <em>s</em> has index <em>i</em> in the original triangulation, then its sub-simplex corresponding to permutation <em>p</em> will have index <code>((dim + 1)! * i + p.index())</code> in the resulting triangulation. In other words: sub-simplices are ordered first according to the original simplex that contains them, and then according to the lexicographical ordering of the corresponding permutations <em>p</em>.</p>
 <dl class="section pre"><dt>Precondition</dt><dd><em>dim</em> is one of Regina's standard dimensions. This precondition is a safety net, since in higher dimensions the triangulation would explode too quickly in size (and for the highest dimensions, possibly beyond the limits of <code>size_t</code>).</dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>In dimensions 3 and 4, both the labelling and ordering of sub-simplices in the subdivided triangulation has changed as of Regina 5.1. (Earlier versions of Regina made no guarantee about the labelling and ordering; these guarantees are also new to Regina 5.1).</dd></dl>
@@ -1656,7 +1669,7 @@ static <a class="el" href="classregina_1_1XMLPacketReader.html">XMLPacketReader<
 <p>Note that, in Regina's <a class="el" href="stddim.html">standard dimensions</a>, each ideal vertex forms its own boundary component, and some invalid vertices do also. See the <a class="el" href="classregina_1_1BoundaryComponent.html" title="A component of the boundary of a dim-manifold triangulation.">BoundaryComponent</a> class notes for full details on what constitutes a boundary component in standard and non-standard dimensions.</p>
 <p>Bear in mind that each time the triangulation changes, all boundary component objects will be deleted and replaced with new ones. Therefore these boundary component objects should be considered temporary only.</p>
 <p>In contrast, this reference to the <em>list</em> of <a class="el" href="classregina_1_1BoundaryComponent.html" title="A component of the boundary of a dim-manifold triangulation.">BoundaryComponent</a> objects will remain valid and up-to-date for as long as the triangulation exists.</p>
-<dl class="section user"><dt>Python:\n This routine returns a python list.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This routine returns a python list.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the list of all boundary components. </dd></dl>
 
 </div>
@@ -1745,7 +1758,7 @@ static <a class="el" href="classregina_1_1XMLPacketReader.html">XMLPacketReader<
 <p>This routine discards the hyperbolic structure along with all SnapPea-specific information (such as peripheral curves and fillings), and simply returns one of Regina's native triangulations. If you need to preserve SnapPea-specific information then you should call <a class="el" href="classregina_1_1SnapPeaTriangulation.html#a996124cc216705075cc4dcdd5ebf1977" title="Constructs the canonical cell decomposition, using an arbitrary retriangulation if this decomposition...">protoCanonize()</a> instead.</p>
 <p>The resulting triangulation will be newly allocated, and it is the responsibility of the caller of this routine to destroy it.</p>
 <p>If for any reason either Regina or SnapPea are unable to construct the canonical retriangulation of the canonical cell decomposition, this routine will return 0.</p>
-<dl class="section user"><dt>SnapPy:\n The function canonize() means different</dt><dd>things for SnapPy versus the SnapPea kernel. Here Regina follows the naming convention used in the SnapPea kernel. Specifically: Regina's routine <a class="el" href="classregina_1_1SnapPeaTriangulation.html#a996124cc216705075cc4dcdd5ebf1977" title="Constructs the canonical cell decomposition, using an arbitrary retriangulation if this decomposition...">SnapPeaTriangulation::protoCanonize()</a> corresponds to SnapPy's <code>Manifold.canonize()</code> and the SnapPea kernel's <code>proto_canonize(manifold)</code>. Regina's routine <a class="el" href="classregina_1_1SnapPeaTriangulation.html#a65cf5b98c9a2236fb518d6d0fd2844ce" title="Constructs the canonical retriangulation of the canonical cell decomposition.">SnapPeaTriangulation::canonize()</a> corresponds to the SnapPea kernel's <code>canonize(manifold)</code>, and is not available through SnapPy at all.</dd></dl>
+<dl class="section user"><dt>SnapPy</dt><dd>The function <code><a class="el" href="classregina_1_1SnapPeaTriangulation.html#a65cf5b98c9a2236fb518d6d0fd2844ce" title="Constructs the canonical retriangulation of the canonical cell decomposition.">canonize()</a></code> means different things for SnapPy versus the SnapPea kernel. Here Regina follows the naming convention used in the SnapPea kernel. Specifically: Regina's routine <a class="el" href="classregina_1_1SnapPeaTriangulation.html#a996124cc216705075cc4dcdd5ebf1977" title="Constructs the canonical cell decomposition, using an arbitrary retriangulation if this decomposition...">SnapPeaTriangulation::protoCanonize()</a> corresponds to SnapPy's <code>Manifold.canonize()</code> and the SnapPea kernel's <code>proto_canonize(manifold)</code>. Regina's routine <a class="el" href="classregina_1_1SnapPeaTriangulation.html#a65cf5b98c9a2236fb518d6d0fd2844ce" title="Constructs the canonical retriangulation of the canonical cell decomposition.">SnapPeaTriangulation::canonize()</a> corresponds to the SnapPea kernel's <code>canonize(manifold)</code>, and is not available through SnapPy at all.</dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>The SnapPea kernel does not always compute the canonical cell decomposition correctly. However, it guarantees that the manifold that it does compute is homeomorphic to the original.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the canonical triangulation of the canonical cell decomposition, or 0 if this could not be constructed. </dd></dl>
 
@@ -1824,11 +1837,10 @@ static <a class="el" href="classregina_1_1XMLPacketReader.html">XMLPacketReader<
 <p>This involves taking a boundary edge of the triangulation and folding together the two boundary triangles on either side. This move is the inverse of the <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#a4e1f76566647492c74f380c466edcbe5" title="Checks the eligibility of and/or performs a book opening move about the given triangle.">openBook()</a> move, and is used to simplify the boundary of the triangulation. This move can be done if:</p>
 <ul>
 <li>the edge <em>e</em> is a boundary edge;</li>
-<li>the two boundary triangles that it joins are distinct;</li>
-<li>the two vertices opposite <em>e</em> in each of these boundary triangles are valid and distinct;</li>
-<li>if edges <em>e1</em> and <em>e2</em> of one boundary triangle are to be folded onto edges <em>f1</em> and <em>f2</em> of the other boundary triangle respectively, then we do not have both <em>e1</em> = <em>e2</em> and <em>f1</em> = <em>f2</em>.</li>
+<li>the two vertices opposite <em>e</em> in the boundary triangles that contain <em>e</em> are valid and distinct;</li>
+<li>the boundary component containing <em>e</em> contains more than two triangles.</li>
 </ul>
-<p>There are in fact several other "distinctness" conditions on the edges <em>e1</em>, <em>e2</em>, <em>f1</em> and <em>f2</em>, but they follow automatically from the "distinct vertices" condition above.</p>
+<p>There are in fact several other distinctness conditions on the nearby edges and triangles, but they follow automatically from the conditions above.</p>
 <p>If the routine is asked to both check and perform, the move will only be performed if the check shows it is legal.</p>
 <p>Note that after performing this move, all skeletal objects (triangles, components, etc.) will be reconstructed, which means any pointers to old skeletal objects (such as the argument <em>f</em>) can no longer be used.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>If the move is being performed and no check is being run, it must be known in advance that the move is legal. </dd>
@@ -1973,7 +1985,7 @@ The given edge is an edge of this triangulation.</dd></dl>
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> all connected components of this triangulation. </p>
 <p>Note that each time the triangulation changes, all component objects will be deleted and replaced with new ones. Therefore these component objects should be considered temporary only.</p>
 <p>In contrast, this reference to the <em>list</em> of all components will remain valid and up-to-date for as long as the triangulation exists.</p>
-<dl class="section user"><dt>Python:\n This routine returns a python list.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This routine returns a python list.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the list of all components. </dd></dl>
 
 </div>
@@ -2159,7 +2171,7 @@ The algorithms used in this routine rely on normal surface theory and so can be 
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the total number of complete cusps (that is, unfilled cusps). </p>
 <p>It is always true that <code><a class="el" href="classregina_1_1SnapPeaTriangulation.html#aec4b3badd67a8ccb5ec0111d5c995e19" title="Returns the total number of complete cusps (that is, unfilled cusps).">countCompleteCusps()</a> + <a class="el" href="classregina_1_1SnapPeaTriangulation.html#a3666f1827e93752400941de349992d1f" title="Returns the total number of filled cusps.">countFilledCusps()</a> == <a class="el" href="classregina_1_1SnapPeaTriangulation.html#a67facbc8a73fa32e37ee2bc79df76aa1" title="Returns the total number of cusps (both filled and complete).">countCusps()</a></code>.</p>
-<dl class="section user"><dt>SnapPy:\n This has no corresponding routine in SnapPy,</dt><dd>though the information is easily acessible via <code>Manifold.cusp_info('is_complete')</code>.</dd></dl>
+<dl class="section user"><dt>SnapPy</dt><dd>This has no corresponding routine in SnapPy, though the information is easily acessible via <code>Manifold.cusp_info('is_complete')</code>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the total number of complete cusps. </dd></dl>
 
 </div>
@@ -2217,7 +2229,7 @@ The algorithms used in this routine rely on normal surface theory and so can be 
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the total number of cusps (both filled and complete). </p>
 <p>This returns the same value as the inherited function <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a658bf830fdf052e1beaa5423298c51b2" title="Returns the number of boundary components in this triangulation.">Triangulation&lt;3&gt;::countBoundaryComponents()</a>.</p>
-<dl class="section user"><dt>SnapPy:\n In SnapPy, this routine corresponds to calling</dt><dd><code>Manifold.num_cusps()</code>.</dd></dl>
+<dl class="section user"><dt>SnapPy</dt><dd>In SnapPy, this routine corresponds to calling <code>Manifold.num_cusps()</code>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the total number of cusps. </dd></dl>
 
 </div>
@@ -2247,7 +2259,7 @@ The algorithms used in this routine rely on normal surface theory and so can be 
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the number of <em>subdim</em>-faces in this triangulation. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>The template argument <em>subdim</em> is between 0 and <em>dim</em>-1 inclusive.</dd></dl>
-<dl class="section user"><dt>Python:\n Python does not support templates. Instead,</dt><dd>Python users should call this function in the form <code>countFaces(subdim)</code>; that is, the template parameter <em>subdim</em> becomes the first argument of the function.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Python does not support templates. Instead, Python users should call this function in the form <code>countFaces(subdim)</code>; that is, the template parameter <em>subdim</em> becomes the first argument of the function.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the number of <em>subdim</em>-faces. </dd></dl>
 
 </div>
@@ -2277,7 +2289,7 @@ The algorithms used in this routine rely on normal surface theory and so can be 
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the total number of filled cusps. </p>
 <p>It is always true that <code><a class="el" href="classregina_1_1SnapPeaTriangulation.html#aec4b3badd67a8ccb5ec0111d5c995e19" title="Returns the total number of complete cusps (that is, unfilled cusps).">countCompleteCusps()</a> + <a class="el" href="classregina_1_1SnapPeaTriangulation.html#a3666f1827e93752400941de349992d1f" title="Returns the total number of filled cusps.">countFilledCusps()</a> == <a class="el" href="classregina_1_1SnapPeaTriangulation.html#a67facbc8a73fa32e37ee2bc79df76aa1" title="Returns the total number of cusps (both filled and complete).">countCusps()</a></code>.</p>
-<dl class="section user"><dt>SnapPy:\n This has no corresponding routine in SnapPy,</dt><dd>though the information is easily acessible via <code>Manifold.cusp_info('is_complete')</code>.</dd></dl>
+<dl class="section user"><dt>SnapPy</dt><dd>This has no corresponding routine in SnapPy, though the information is easily acessible via <code>Manifold.cusp_info('is_complete')</code>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the total number of filled cusps. </dd></dl>
 
 </div>
@@ -2308,7 +2320,7 @@ The algorithms used in this routine rely on normal surface theory and so can be 
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> information about the given cusp of this manifold. </p>
 <p>This information includes the filling coefficients (if any), along with other combinatorial information.</p>
-<dl class="section user"><dt>SnapPy:\n In SnapPy, this routine corresponds to calling</dt><dd><code>Manifold.cusp_info()[c]</code>, though the set of information returned about each cusp is different.</dd></dl>
+<dl class="section user"><dt>SnapPy</dt><dd>In SnapPy, this routine corresponds to calling <code>Manifold.cusp_info()[c]</code>, though the set of information returned about each cusp is different.</dd></dl>
 <p>These <a class="el" href="classregina_1_1Cusp.html" title="Represents a single cusp of a SnapPea triangulation.">Cusp</a> objects should be considered temporary only. They are preserved if you change the fillings (via <a class="el" href="classregina_1_1SnapPeaTriangulation.html#ae6b013fc3e254abe020b7ed51622c88e" title="Assigns a Dehn filling to the given cusp.">fill()</a> or <a class="el" href="classregina_1_1SnapPeaTriangulation.html#ae0f9c7a14c1bbe226f4215d19ab5becd" title="Removes any filling on the given cusp.">unfill()</a>). However, if you change the SnapPea triangulation itself (e.g., via <a class="el" href="classregina_1_1SnapPeaTriangulation.html#ac8f4b530f457331a0fd1958b32a5d0b3" title="Asks SnapPea to randomly retriangulate this manifold, using local moves that preserve the topology.">randomize()</a>), then all cusp objects will be deleted and replaced with new ones (using fresh data re-fetched from the SnapPea kernel).</p>
 <dl class="section warning"><dt>Warning</dt><dd>Be warned that cusp <em>i</em> might not correspond to vertex <em>i</em> of the triangulation. The <a class="el" href="classregina_1_1Cusp.html#a4684e9ef9cccb082e106f50f91c856ac" title="Returns the corresponding vertex of the Regina triangulation (i.e., of the Triangulation&lt;3&gt; structure...">Cusp::vertex()</a> method (which is accessed through the <a class="el" href="classregina_1_1SnapPeaTriangulation.html#a67c52ff042954631372dd8195a404238" title="Returns information about the given cusp of this manifold.">cusp()</a> routine) can help translate between SnapPea's cusp numbers and Regina's vertex numbers.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -2515,7 +2527,7 @@ The algorithms used in this routine rely on normal surface theory and so can be 
 
 <p>Deprecated routine that drills out a regular neighbourhood of the given edge of the triangulation. </p>
 <p>The drilling is done by (i) performing two barycentric subdivisions, (ii) removing all tetrahedra that touch the original edge, and then (iii) simplifying the resulting triangulation (unless the optional argument <em>simplify</em> is <code>false</code>).</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000197">Deprecated:</a></b></dt><dd>This routine is very slow, largely thanks to the simplification needed after the second barycentric subdivision multiplies the number of tetrahedra by 576. For those cases where <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#a65db6a4aa82283c7b68b9c2525ff7c69" title="Deprecated routine that drills out a regular neighbourhood of the given edge of the triangulation.">drillEdge()</a> does something interesting, you can typically achieve the same topological effect by calling <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#ad24fe1e3bae956fbf8954fb54adc19e4" title="Pinches an internal edge to a point.">pinchEdge()</a> (followed by <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#ac025b93b99f5b674fd448e6374c81142" title="Converts an ideal triangulation into a finite triangulation.">idealToFinite()</a> if you need real boundary).</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000198">Deprecated:</a></b></dt><dd>This routine is very slow, largely thanks to the simplification needed after the second barycentric subdivision multiplies the number of tetrahedra by 576. For those cases where <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#a65db6a4aa82283c7b68b9c2525ff7c69" title="Deprecated routine that drills out a regular neighbourhood of the given edge of the triangulation.">drillEdge()</a> does something interesting, you can typically achieve the same topological effect by calling <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#ad24fe1e3bae956fbf8954fb54adc19e4" title="Pinches an internal edge to a point.">pinchEdge()</a> (followed by <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#ac025b93b99f5b674fd448e6374c81142" title="Converts an ideal triangulation into a finite triangulation.">idealToFinite()</a> if you need real boundary).</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">e</td><td>the edge to drill out. </td></tr>
@@ -2660,7 +2672,7 @@ The algorithms used in this routine rely on normal surface theory and so can be 
 
 <p>Allows the user to interactively enter a triangulation in plain text. </p>
 <p>Prompts will be sent to the given output stream and information will be read from the given input stream.</p>
-<dl class="section user"><dt>Python:\n This routine is a member of class Engine.</dt><dd>It takes no parameters; <em>in</em> and <em>out</em> are always assumed to be standard input and standard output respectively.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This routine is a member of class Engine. It takes no parameters; <em>in</em> and <em>out</em> are always assumed to be standard input and standard output respectively.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">in</td><td>the input stream from which text will be read. </td></tr>
@@ -2765,7 +2777,7 @@ The algorithms used in this routine rely on normal surface theory and so can be 
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the requested <em>subdim</em>-face of this triangulation. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>The template argument <em>subdim</em> is between 0 and <em>dim</em>-1 inclusive.</dd></dl>
-<dl class="section user"><dt>Python:\n Python does not support templates. Instead,</dt><dd>Python users should call this function in the form <code>face(subdim, index)</code>; that is, the template parameter <em>subdim</em> becomes the first argument of the function.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Python does not support templates. Instead, Python users should call this function in the form <code>face(subdim, index)</code>; that is, the template parameter <em>subdim</em> becomes the first argument of the function.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">index</td><td>the index of the desired face, ranging from 0 to <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a929d32300a09aa008d03099e4b84e873" title="Returns the number of subdim-faces in this triangulation.">countFaces&lt;subdim&gt;()</a>-1 inclusive. </td></tr>
@@ -2802,7 +2814,7 @@ The algorithms used in this routine rely on normal surface theory and so can be 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> an object that allows iteration through and random access to all <em>subdim</em>-faces of this triangulation. </p>
 <p>Bear in mind that each time the triangulation changes, all face objects will be deleted and replaced with new ones. Therefore these face objects should be considered temporary only.</p>
 <p>In contrast, this reference to the <a class="el" href="classregina_1_1FaceList.html" title="Stores the list of all subdim-faces of a dim-dimensional triangulation.">FaceList</a> object itself will remain valid and up-to-date for as long as the triangulation exists.</p>
-<dl class="section user"><dt>Python:\n Python users should call this function in the</dt><dd>form <code>faces(subdim)</code>. It will then return a Python list containing all the <em>subdim</em>-faces of the triangulation. Be warned that, unlike in C++, this Python list will be a snapshot of the faces when this function is called, and will <em>not</em> be kept up-to-date as the triangulation changes.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Python users should call this function in the form <code>faces(subdim)</code>. It will then return a Python list containing all the <em>subdim</em>-faces of the triangulation. Be warned that, unlike in C++, this Python list will be a snapshot of the faces when this function is called, and will <em>not</em> be kept up-to-date as the triangulation changes.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>access to the list of all <em>subdim</em>-faces. </dd></dl>
 
 </div>
@@ -3133,7 +3145,7 @@ The algorithms used in this routine rely on normal surface theory and so can be 
 <p>See the <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#af68572c80fc27fc3a069ad01d9615952" title="Determines if this triangulation is combinatorially isomorphic to the given triangulation.">isIsomorphicTo()</a> notes for additional information.</p>
 <p>The isomorphisms that are found will be written to the given output iterator. This iterator must accept objects of type Isomorphism&lt;dim&gt;*. As an example, <em>output</em> might be a back_insert_iterator for a std::vector&lt;Isomorphism&lt;dim&gt;*&gt;.</p>
 <p>The isomorphisms that are written to the given output iterator will be newly created, and the caller of this routine is responsible for destroying them.</p>
-<dl class="section user"><dt>Python:\n The <em>output</em> argument is not present.</dt><dd>Instead, this routine returns a python list containing all of the isomorphisms that were found.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>The <em>output</em> argument is not present. Instead, this routine returns a python list containing all of the isomorphisms that were found.</dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>For large dimensions, this routine can become extremely slow: its running time includes a factor of (<em>dim</em>+1)!.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -3186,7 +3198,7 @@ The algorithms used in this routine rely on normal surface theory and so can be 
 <p>The isomorphisms that are found will be written to the given output iterator. This iterator must accept objects of type Isomorphism&lt;dim&gt;*. As an example, <em>output</em> might be a back_insert_iterator for a std::vector&lt;Isomorphism&lt;dim&gt;*&gt;.</p>
 <p>The isomorphisms that are written to the given output iterator will be newly created, and the caller of this routine is responsible for destroying them.</p>
 <dl class="section warning"><dt>Warning</dt><dd>For large dimensions, this routine can become extremely slow: its running time includes a factor of (<em>dim</em>+1)!.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">other</td><td>the triangulation in which to search for isomorphic copies of this triangulation. </td></tr>
@@ -3314,6 +3326,7 @@ The algorithms used in this routine rely on normal surface theory and so can be 
 <p>Checks the eligibility of and/or performs a 4-4 move about the given edge. </p>
 <p>This involves replacing the four tetrahedra joined at that edge with four tetrahedra joined along a different edge. Consider the octahedron made up of the four original tetrahedra; this has three internal axes. The initial four tetrahedra meet along the given edge which forms one of these axes; the new tetrahedra will meet along a different axis. This move can be done iff (i) the edge is valid and non-boundary, and (ii) the four tetrahedra are distinct.</p>
 <p>If the routine is asked to both check and perform, the move will only be performed if the check shows it is legal.</p>
+<p>If this triangulation is currently oriented, then this 4-4 move will label the new tetrahedra in a way that preserves the orientation.</p>
 <p>Note that after performing this move, all skeletal objects (triangles, components, etc.) will be reconstructed, which means any pointers to old skeletal objects (such as the argument <em>e</em>) can no longer be used.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>If the move is being performed and no check is being run, it must be known in advance that the move is legal. </dd>
 <dd>
@@ -3379,7 +3392,7 @@ The given edge is an edge of this triangulation.</dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>If the move is being performed and no check is being run, it must be known in advance that the move is legal. </dd>
 <dd>
 The given vertex is a vertex of this triangulation.</dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000194">Deprecated:</a></b></dt><dd>You should use the identical routine <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a39dc5df8252f6e34ea45b19ca33c3964" title="Checks the eligibility of and/or performs a (dim + 1 - k)-(k + 1) Pachner move about the given k-face...">pachner()</a> instead.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000195">Deprecated:</a></b></dt><dd>You should use the identical routine <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a39dc5df8252f6e34ea45b19ca33c3964" title="Checks the eligibility of and/or performs a (dim + 1 - k)-(k + 1) Pachner move about the given k-face...">pachner()</a> instead.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">v</td><td>the vertex about which to perform the move. </td></tr>
@@ -3620,7 +3633,7 @@ The given vertex is a vertex of this triangulation.</dd></dl>
 <p>The matrix will contain <code>3 * <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a3871caa1f02ccda957f22ebd9a646ff5" title="Returns the number of top-dimensional simplices in the triangulation.">size()</a></code> columns. The first three columns represent shape parameters <code>z</code>, <code>1/(1-z)</code> and <code>(z-1)/z</code> for the first tetrahedron; the next three columns represent shape parameters <code>z</code>, <code>1/(1-z)</code> and <code>(z-1)/z</code> for the second tetrahedron, and so on. By Regina's edge numbering conventions, <code>z</code> corresponds to edges 0 and 5 of the tetrahedron, <code>1/(1-z)</code> corresponds to edges 1 and 4 of the tetrahedron, and <code>(z-1)/z</code> corresponds to edges 2 and 3 of the tetrahedron.</p>
 <p>More specifically, a row of the form <code>a b c d e f ...</code> describes an equation with left hand side <code>a * log(z0) + b * log(1/(1-z0)) + c * log((z0-1)/z) + d * log(z1) + ... = 2 pi i</code>, and with right hand side <code>2 pi i</code> for an edge equation or 0 for a cusp equation.</p>
 <p>See also <a class="el" href="classregina_1_1SnapPeaTriangulation.html#a1c74e8251918b378ec23731767b3e4c2" title="Returns a matrix describing Thurston&#39;s gluing equations in a streamlined form.">gluingEquationsRect()</a>, which returns the gluing equations in a more streamlined form.</p>
-<dl class="section user"><dt>SnapPy:\n In SnapPy, this routine corresponds to calling</dt><dd><code>Manifold.gluing_equations()</code>.</dd></dl>
+<dl class="section user"><dt>SnapPy</dt><dd>In SnapPy, this routine corresponds to calling <code>Manifold.gluing_equations()</code>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a newly allocated matrix with (<em>number_of_rows</em> + <em>number_of_cusps</em>) rows and (3 * <em>number_of_tetrahedra</em>) columns as described above, or 0 if this is a null triangulation. </dd></dl>
 
 </div>
@@ -3645,7 +3658,7 @@ The given vertex is a vertex of this triangulation.</dd></dl>
 <p>Each row of this matrix will describe a single equation. The rows begin with the edge equations (in arbitrary order) followed by the cusp equations (ordered by cusp index); for precise details see the documentation for <a class="el" href="classregina_1_1SnapPeaTriangulation.html#aae3bdd0c7a07d0c2879c6d647367fb43" title="Returns a matrix describing Thurston&#39;s gluing equations.">gluingEquations()</a>, which uses the same ordering.</p>
 <p>The matrix will contain <code>2 * <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a3871caa1f02ccda957f22ebd9a646ff5" title="Returns the number of top-dimensional simplices in the triangulation.">size()</a> + 1</code> columns. Let <em>k</em> = <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a3871caa1f02ccda957f22ebd9a646ff5" title="Returns the number of top-dimensional simplices in the triangulation.">size()</a>-1, and suppose the shape parameters for tetrahedra 0, 1, ..., k are <em>z0</em>, <em>z1</em>, ..., <em>zk</em> (here each shape parameter corresponds to edges 0 and 5 of the corresponding tetrahedron). Then a row of the form <code>a0 a1 ... ak b0 b1 ... bk c</code> describes the equation <code>z0^a0 z1^a1 ... zk^ak (1-z0)^b0 (1-z1)^b1 ... (1-zk)^bk = c</code>, where <em>c</em> will always be 1 or -1.</p>
 <p>See also <a class="el" href="classregina_1_1SnapPeaTriangulation.html#aae3bdd0c7a07d0c2879c6d647367fb43" title="Returns a matrix describing Thurston&#39;s gluing equations.">gluingEquations()</a>, which returns the gluing equations in a more transparent term-by-term form.</p>
-<dl class="section user"><dt>SnapPy:\n In SnapPy, this routine corresponds to calling</dt><dd><code>Manifold.gluing_equations(form='rect')</code>.</dd></dl>
+<dl class="section user"><dt>SnapPy</dt><dd>In SnapPy, this routine corresponds to calling <code>Manifold.gluing_equations(form='rect')</code>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a newly allocated matrix with (<em>number_of_rows</em> + <em>number_of_cusps</em>) rows and (2 * <em>number_of_tetrahedra</em> + 1) columns as described above, or 0 if this is a null triangulation. </dd></dl>
 
 </div>
@@ -3875,8 +3888,8 @@ dodecahedral space is non-Haken", Benjamin A. Burton, J. Hyam Rubinstein and Ste
 
 </div>
 </div>
-<a id="a9bd8ce6c609ca68cb5773a832cbf548a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9bd8ce6c609ca68cb5773a832cbf548a">&#9670;&nbsp;</a></span>hasSplittingSurface()</h2>
+<a id="a5d92d88a4a00fee457751e054e0ae4f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d92d88a4a00fee457751e054e0ae4f7">&#9670;&nbsp;</a></span>hasSplittingSurface()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3888,7 +3901,7 @@ dodecahedral space is non-Haken", Benjamin A. Burton, J. Hyam Rubinstein and Ste
           <td class="memname">bool <a class="el" href="classregina_1_1Triangulation.html">regina::Triangulation</a>&lt; 3 &gt;::hasSplittingSurface </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -3900,7 +3913,8 @@ dodecahedral space is non-Haken", Benjamin A. Burton, J. Hyam Rubinstein and Ste
 
 <p>Determines whether this triangulation has a normal splitting surface. </p>
 <p>See <a class="el" href="classregina_1_1NormalSurface.html#a330f08b68053b89d2545c0027bbc3405" title="Determines whether or not this surface is a splitting surface.">NormalSurface::isSplitting()</a> for details regarding normal splitting surfaces.</p>
-<dl class="section pre"><dt>Precondition</dt><dd>This triangulation is connected. If the triangulation is not connected, this routine will still return a result but that result will be unreliable.</dd></dl>
+<p>In the special case where this is the empty triangulation, this routine returns <code>false</code>.</p>
+<p>As of Regina 6.0, this routine is now fast (small polynomial time), and works even for triangulations with more than one connected component. Thanks to Robert Haraway.</p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if and only if this triangulation has a normal splitting surface. </dd></dl>
 
 </div>
@@ -4351,7 +4365,7 @@ gcd(<em>a3</em>, <em>b3</em>) = 1.</dd></dl>
 <p>The <em>gluings</em> array describes the particular gluing permutations used to join these simplices together. Specifically, <code>gluings[s][f][0..<em>dim</em>]</code> should describe the permutation used to join facet <em>f</em> of simplex <em>s</em> to its adjacent simplex. These <em>dim</em>+1 integers should be 0,1,...,<em>dim</em> in some order, so that <code>gluings[s][f][i]</code> contains the image of <em>i</em> under this permutation. If facet <em>f</em> of simplex <em>s</em> is to be left as a boundary facet, then <code>gluings[s][f][0..<em>dim</em>]</code> may contain anything (and will be duly ignored).</p>
 <p>If this triangulation is empty before this routine is called, then the new simplices will be given indices 0,1,...,<em>nSimplices</em>-1 according to the numbering described above. Otherwise they will be inserted after any pre-existing simplices, and so they will be given larger indices instead. In the latter case, the <em>adjacencies</em> array should still refer to the new simplices as 0,1,...,<em>nSimplices</em>-1, and this routine will handle any renumbering automatically at runtime.</p>
 <p>It is the responsibility of the caller of this routine to ensure that the given arrays are correct and consistent. No error checking will be performed by this routine.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">nSimplices</td><td>the number of additional simplices to insert. </td></tr>
@@ -4704,6 +4718,7 @@ gcd(<em>a3</em>, <em>b3</em>) = 1.</dd></dl>
 <p>This routine will attempt to reduce both the number of tetrahedra and the number of boundary triangles (with the number of tetrahedra as its priority).</p>
 <p>Currently this routine uses <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#a0bc067391ecf8f6269e624ee9d658761" title="Uses all known simplification moves to reduce the triangulation monotonically to some local minimum n...">simplifyToLocalMinimum()</a> in combination with random 4-4 moves, book opening moves and book closing moves.</p>
 <p>Although <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#ad63140ff3ab1dd53acd661a6c8cde47e" title="Attempts to simplify the triangulation using fast and greedy heuristics.">intelligentSimplify()</a> works very well most of the time, it can occasionally get stuck; in such cases you may wish to try the more powerful but (much) slower <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#af4ba73293308b8bfba1947ba4716457b" title="Attempts to simplify this triangulation using a slow but exhaustive search through the Pachner graph.">simplifyExhaustive()</a> instead.</p>
+<p>If this triangulation is currently oriented, then this operation will preserve the orientation.</p>
 <dl class="section warning"><dt>Warning</dt><dd>Running this routine multiple times upon the same triangulation may return different results, since the implementation makes random decisions. More broadly, the implementation of this routine (and therefore its results) may change between different releases of Regina.</dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000051">Todo:</a></b></dt><dd><em>Optimise:</em> Include random 2-3 moves to get out of wells.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if and only if the triangulation was successfully simplified. Otherwise this triangulation will not be changed. </dd></dl>
@@ -4832,6 +4847,7 @@ gcd(<em>a3</em>, <em>b3</em>) = 1.</dd></dl>
 </div><div class="memdoc">
 
 <p>Determines if this triangulation is connected. </p>
+<p>This routine returns <code>false</code> only if there is more than one connected component. In particular, it returns <code>true</code> for the empty triangulation.</p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if and only if this triangulation is connected. </dd></dl>
 
 </div>
@@ -5232,7 +5248,7 @@ gcd(<em>a3</em>, <em>b3</em>) = 1.</dd></dl>
 <p>The routine <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#ac7a5a9449f2de027e0cae40ff8a3ee38" title="Recovers a full triangulation from an isomorphism signature.">fromIsoSig()</a> can be used to recover a triangulation from an isomorphism signature. The triangulation recovered might not be identical to the original, but it will be combinatorially isomorphic.</p>
 <p>If <em>relabelling</em> is non-null (i.e., it points to some <a class="el" href="classregina_1_1Isomorphism.html" title="Represents a combinatorial isomorphism from one dim-manifold triangulation into another.">Isomorphism</a> pointer <em>p</em>), then it will be modified to point to a new isomorphism that describes the precise relationship between this triangulation and the reconstruction from <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#ac7a5a9449f2de027e0cae40ff8a3ee38" title="Recovers a full triangulation from an isomorphism signature.">fromIsoSig()</a>. Specifically, the triangulation that is reconstructed from <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#ac7a5a9449f2de027e0cae40ff8a3ee38" title="Recovers a full triangulation from an isomorphism signature.">fromIsoSig()</a> will be combinatorially identical to <code>relabelling.apply(this)</code>.</p>
 <p>For a full and precise description of the isomorphism signature format for 3-manifold triangulations, see <em>Simplification paths in the Pachner graphs of closed orientable 3-manifold triangulations</em>, Burton, 2011, <code>arXiv:1110.6080</code>. The format for other dimensions is essentially the same, but with minor dimension-specific adjustments.</p>
-<dl class="section user"><dt>Python:\n The isomorphism argument is not present.</dt><dd>Instead there are two routines: <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a4f5592a00cb4a895564e5b8169850879" title="Constructs the isomorphism signature for this triangulation.">isoSig()</a>, which returns a string only, and isoSigDetail(), which returns a pair (<em>signature</em>, <em>relabelling</em>).</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>The isomorphism argument is not present. Instead there are two routines: <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a4f5592a00cb4a895564e5b8169850879" title="Constructs the isomorphism signature for this triangulation.">isoSig()</a>, which returns a string only, and isoSigDetail(), which returns a pair (<em>signature</em>, <em>relabelling</em>).</dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>If <em>relabelling</em> is non-null, then this triangulation must be non-empty and connected. The facility to return a relabelling for disconnected triangulations may be added to Regina in a later release.</dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Do not mix isomorphism signatures between dimensions! It is possible that the same string could corresponding to both a <em>p-dimensional</em> triangulation and a <em>q-dimensional</em> triangulation for different dimensions <em>p</em> and <em>q</em>.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -5370,6 +5386,37 @@ gcd(<em>a3</em>, <em>b3</em>) = 1.</dd></dl>
 <p>This routine relies upon a combination of Rubinstein's 3-sphere recognition algorithm and Jaco and Rubinstein's 0-efficiency prime decomposition algorithm.</p>
 <dl class="section warning"><dt>Warning</dt><dd>The algorithms used in this routine rely on normal surface theory and so can be very slow for larger triangulations (although faster tests are used where possible). The routine <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#a265402601c5756fec4ea837197aeac89" title="Is it already known (or trivial to determine) whether or not this is a triangulation of a 3-sphere?...">knowsThreeSphere()</a> can be called to see if this property is already known or if it happens to be very fast to calculate for this triangulation.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if and only if this is a 3-sphere triangulation. </dd></dl>
+
+</div>
+</div>
+<a id="ae0326a12e5c235b90e78ccd3f51e5863"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0326a12e5c235b90e78ccd3f51e5863">&#9670;&nbsp;</a></span>isTxI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classregina_1_1Triangulation.html">regina::Triangulation</a>&lt; 3 &gt;::isTxI </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determines whether or not the underlying 3-manifold is the product of a torus with an interval. </p>
+<p>This routine can be used on a triangulation with real boundary triangles, or ideal boundary components, or a mix of both. If there are any ideal vertices, they will be treated as though they were truncated.</p>
+<p>The underlying algorithm is due to Robert C. Haraway, III; see <a href="https://journals.carleton.ca/jocg/index.php/jocg/article/view/433">https://journals.carleton.ca/jocg/index.php/jocg/article/view/433</a> for details.</p>
+<dl class="section warning"><dt>Warning</dt><dd>This algorithm ultimately relies on <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#a6887425d2144a4f3a485c59ec9b74c3e" title="Determines whether this is a triangulation of the solid torus; that is, the unknot complement.">isSolidTorus()</a>, which might run slowly for large triangulations.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if and only if this is a triangulation (either real, ideal or a combination) of the product of the torus with an interval. </dd></dl>
 
 </div>
 </div>
@@ -5657,9 +5704,10 @@ The underlying 3-manifold is irreducible.</dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Is it already known whether or not this triangulation has a splitting surface? See <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#a9bd8ce6c609ca68cb5773a832cbf548a" title="Determines whether this triangulation has a normal splitting surface.">hasSplittingSurface()</a> for further details. </p>
-<p>If this property is already known, future calls to <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#a9bd8ce6c609ca68cb5773a832cbf548a" title="Determines whether this triangulation has a normal splitting surface.">hasSplittingSurface()</a> will be very fast (simply returning the precalculated value).</p>
+<p>Is it already known whether or not this triangulation has a splitting surface? See <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#a5d92d88a4a00fee457751e054e0ae4f7" title="Determines whether this triangulation has a normal splitting surface.">hasSplittingSurface()</a> for further details. </p>
+<p>If this property is already known, future calls to <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#a5d92d88a4a00fee457751e054e0ae4f7" title="Determines whether this triangulation has a normal splitting surface.">hasSplittingSurface()</a> will be very fast (simply returning the precalculated value).</p>
 <dl class="section warning"><dt>Warning</dt><dd>This routine does not actually tell you <em>whether</em> this triangulation has a splitting surface; it merely tells you whether the answer has already been computed.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000194">Deprecated:</a></b></dt><dd>Since <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#a5d92d88a4a00fee457751e054e0ae4f7" title="Determines whether this triangulation has a normal splitting surface.">hasSplittingSurface()</a> now uses a fast (small polynomial time) algorithm, there is no need to pre-query whether the property is already known. Just call <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#a5d92d88a4a00fee457751e054e0ae4f7" title="Determines whether this triangulation has a normal splitting surface.">hasSplittingSurface()</a> directly.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if and only if this property is already known. </dd></dl>
 
 </div>
@@ -5722,6 +5770,38 @@ The underlying 3-manifold is irreducible.</dd></dl>
 <p>If this property is not already known, this routine will nevertheless run some very fast preliminary tests to see if the answer is obviously no. If so, it will store <code>false</code> as the precalculated value for <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#a1ca834327979c983148c9bd166c39a77" title="Determines whether this is a triangulation of a 3-sphere.">isThreeSphere()</a> and this routine will return <code>true</code>.</p>
 <p>Otherwise a call to <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#a1ca834327979c983148c9bd166c39a77" title="Determines whether this is a triangulation of a 3-sphere.">isThreeSphere()</a> may potentially require more significant work, and so this routine will return <code>false</code>.</p>
 <dl class="section warning"><dt>Warning</dt><dd>This routine does not actually tell you <em>whether</em> this triangulation forms a 3-sphere; it merely tells you whether the answer has already been computed (or is very easily computed).</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if and only if this property is already known or trivial to calculate. </dd></dl>
+
+</div>
+</div>
+<a id="a53ffd0e9e8e5b2e9c8521c58871ec56b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53ffd0e9e8e5b2e9c8521c58871ec56b">&#9670;&nbsp;</a></span>knowsTxI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classregina_1_1Triangulation.html">regina::Triangulation</a>&lt; 3 &gt;::knowsTxI </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Is it already known (or trivial to determine) whether or not this is a triangulation of a the product of a torus with an interval? See <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#ae0326a12e5c235b90e78ccd3f51e5863" title="Determines whether or not the underlying 3-manifold is the product of a torus with an interval.">isTxI()</a> for further details. </p>
+<p>If this property is indeed already known, future calls to <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#ae0326a12e5c235b90e78ccd3f51e5863" title="Determines whether or not the underlying 3-manifold is the product of a torus with an interval.">isTxI()</a> will be very fast (simply returning the precalculated value).</p>
+<p>If this property is not already known, this routine will nevertheless run some very fast preliminary tests to see if the answer is obviously no. If so, it will store <code>false</code> as the precalculated value for <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#ae0326a12e5c235b90e78ccd3f51e5863" title="Determines whether or not the underlying 3-manifold is the product of a torus with an interval.">isTxI()</a> and this routine will return <code>true</code>.</p>
+<p>Otherwise a call to <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#ae0326a12e5c235b90e78ccd3f51e5863" title="Determines whether or not the underlying 3-manifold is the product of a torus with an interval.">isTxI()</a> may potentially require more significant work, and so this routine will return <code>false</code>.</p>
+<dl class="section warning"><dt>Warning</dt><dd>This routine does not actually tell you <em>whether</em> this triangulation forms the product of the torus with an interval; it merely tells you whether the answer has already been computed (or is very easily computed).</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if and only if this property is already known or trivial to calculate. </dd></dl>
 
 </div>
@@ -5970,7 +6050,7 @@ If you have an <em>ideal</em> triangulation of a knot complement, you <em>must</
 <p>Produces a maximal forest in the 1-skeleton of the triangulation boundary. </p>
 <p>Both given sets will be emptied and the edges and vertices of the maximal forest will be placed into them. A vertex that forms its own boundary component (such as an ideal vertex) will still be placed in <code>vertexSet</code>.</p>
 <p>Note that the edge and vertex pointers returned will become invalid once the triangulation has changed.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">edgeSet</td><td>the set to be emptied and into which the edges of the maximal forest will be placed. </td></tr>
@@ -6019,7 +6099,7 @@ If you have an <em>ideal</em> triangulation of a knot complement, you <em>must</
 <p>The given set will be emptied and will have the edges of the maximal forest placed into it. It can be specified whether or not different boundary components may be joined by the maximal forest.</p>
 <p>An edge leading to an ideal vertex is still a candidate for inclusion in the maximal forest. For the purposes of this algorithm, any ideal vertex will be treated as any other vertex (and will still be considered part of its own boundary component).</p>
 <p>Note that the edge pointers returned will become invalid once the triangulation has changed.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">edgeSet</td><td>the set to be emptied and into which the edges of the maximal forest will be placed. </td></tr>
@@ -6092,8 +6172,73 @@ If you have an <em>ideal</em> triangulation of a knot complement, you <em>must</
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the minimum imaginary part found amongst all tetrahedron shapes, with respect to the Dehn filled hyperbolic structure. </p>
 <p>Tetrahedron shapes are given in rectangular form using a fixed coordinate system, as described in the documentation for <a class="el" href="classregina_1_1SnapPeaTriangulation.html#a1b666a02b7ac9cccc1194f0638be17e9" title="Returns the shape of the given tetrahedron, with respect to the Dehn filled hyperbolic structure.">shape()</a>.</p>
 <p>If this is a null triangulation, or if <a class="el" href="classregina_1_1SnapPeaTriangulation.html#ad406c96fb657b36cba5fddb1366a729f" title="Returns the type of solution found when solving for a hyperbolic structure, with respect to the curre...">solutionType()</a> is no_solution or not_attempted (i.e., we did not or could not solve for a hyperbolic structure), then this routine will simply return zero.</p>
-<dl class="section user"><dt>SnapPy:\n This has no corresponding routine in SnapPy,</dt><dd>though the information is easily acessible via <code>Manifold.tetrahedra_shapes(part='rect')</code>.</dd></dl>
+<dl class="section user"><dt>SnapPy</dt><dd>This has no corresponding routine in SnapPy, though the information is easily acessible via <code>Manifold.tetrahedra_shapes(part='rect')</code>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the minimum imaginary part amongst all tetrahedron shapes. </dd></dl>
+
+</div>
+</div>
+<a id="ae3e659747844d582d50162a471fd81ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3e659747844d582d50162a471fd81ab">&#9670;&nbsp;</a></span>minimiseBoundary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classregina_1_1Triangulation.html">regina::Triangulation</a>&lt; 3 &gt;::minimiseBoundary </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ensures that the boundary contains the smallest possible number of triangles, potentially adding tetrahedra to do this. </p>
+<p>This routine is for use with algorithms that require minimal boundaries (e.g., torus boundaries must contain exactly two triangles). As noted above, it may in fact increase the total number of tetrahedra in the triangulation (though the implementation does make efforts not to do this).</p>
+<p>Once this routine is finished, every boundary component will have exactly one vertex, except for sphere and projective plane boundaries which will have exactly two triangles (but three and two vertices respectively).</p>
+<p>The changes that this routine performs can always be expressed using only close book moves and/or layerings. In particular, this routine never creates new vertices, and it never creates a non-vertex-linking normal disc or sphere if there was not one before.</p>
+<p>Although this routine only modifies real boundary components, it is fine if the triangulation also contains ideal boundary components (and these simply will be left alone).</p>
+<p>If this triangulation is currently oriented, then this operation will preserve the orientation.</p>
+<dl class="section pre"><dt>Precondition</dt><dd>This triangulation is valid.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the triangulation was changed, or <code>false</code> if every boundary component was already minimal to begin with. </dd></dl>
+
+</div>
+</div>
+<a id="a9160ade86ae2ac23ac91a97d25aa79de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9160ade86ae2ac23ac91a97d25aa79de">&#9670;&nbsp;</a></span>minimizeBoundary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classregina_1_1Triangulation.html">regina::Triangulation</a>&lt; 3 &gt;::minimizeBoundary </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A synonym for <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#ae3e659747844d582d50162a471fd81ab" title="Ensures that the boundary contains the smallest possible number of triangles, potentially adding tetr...">minimiseBoundary()</a>. </p>
+<p>This ensures that the boundary contains the smallest possible number of triangles, potentially adding tetrahedra to do this.</p>
+<p>See <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#ae3e659747844d582d50162a471fd81ab" title="Ensures that the boundary contains the smallest possible number of triangles, potentially adding tetr...">minimiseBoundary()</a> for further details.</p>
+<dl class="section pre"><dt>Precondition</dt><dd>This triangulation is valid.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the triangulation was changed, or <code>false</code> if every boundary component was already minimal to begin with. </dd></dl>
 
 </div>
 </div>
@@ -6153,7 +6298,7 @@ If you have an <em>ideal</em> triangulation of a knot complement, you <em>must</
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> SnapPea's internal name for this triangulation. </p>
 <p>This is the manifold name stored in the SnapPea kernel, which is typically different from the packet label assigned by Regina.</p>
 <p>If this is a null triangulation then the empty string will be returned.</p>
-<dl class="section user"><dt>SnapPy:\n In SnapPy, this routine corresponds to calling</dt><dd><code><a class="el" href="classregina_1_1Manifold.html#a93d702e878c4a5e17dc17245b8e3d667" title="Returns the common name of this 3-manifold as a human-readable string.">Manifold.name()</a></code>.</dd></dl>
+<dl class="section user"><dt>SnapPy</dt><dd>In SnapPy, this routine corresponds to calling <code><a class="el" href="classregina_1_1Manifold.html#a93d702e878c4a5e17dc17245b8e3d667" title="Returns the common name of this 3-manifold as a human-readable string.">Manifold.name()</a></code>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>SnapPea's name for this triangulation. </dd></dl>
 
 </div>
@@ -6362,7 +6507,7 @@ If you have an <em>ideal</em> triangulation of a knot complement, you <em>must</
 <li><a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#a4e014a14f3ab909fb0774190725c1898" title="Deprecated function that checks the eligibility of and/or performs a 1-4 Pachner move upon the given ...">oneFourMove()</a> will create the new vertex as <code><a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a8322ef559fdee45b8905c8eef682ac77" title="Returns all top-dimensional simplices in the triangulation.">simplices()</a>.back()-&gt;vertex(3)</code>, for consistency with earlier versions of Regina.</li>
 </ul>
 <dl class="section pre"><dt>Precondition</dt><dd>The given tetrahedron is a tetrahedron of this triangulation.</dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000196">Deprecated:</a></b></dt><dd>You should use the new routine <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a39dc5df8252f6e34ea45b19ca33c3964" title="Checks the eligibility of and/or performs a (dim + 1 - k)-(k + 1) Pachner move about the given k-face...">pachner()</a> instead (though note that this changes the labelling of the new tetrahedra).</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000197">Deprecated:</a></b></dt><dd>You should use the new routine <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a39dc5df8252f6e34ea45b19ca33c3964" title="Checks the eligibility of and/or performs a (dim + 1 - k)-(k + 1) Pachner move about the given k-face...">pachner()</a> instead (though note that this changes the labelling of the new tetrahedra).</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">t</td><td>the tetrahedron about which to perform the move. </td></tr>
@@ -6549,7 +6694,7 @@ The given triangle is a triangle of this triangulation.</dd></dl>
 </div><div class="memdoc">
 
 <p>Checks the eligibility of and/or performs a (<em>dim</em> + 1 - <em>k</em>)-(<em>k</em> + 1) Pachner move about the given <em>k</em>-face. </p>
-<p>This involves replacing the (<em>dim</em> + 1 - <em>k</em>) top-dimensional simplices meeting that <em>k</em>-face with (<em>k</em> + 1) new top-dimensional simplices joined along a new internal (<em>dim</em> - <em>k</em>)-face. This can be done iff (i) the given <em>k</em>-face is valid and non-boundary; (ii) the (<em>dim</em> + 1 - <em>k</em>) top-dimensional simplices that contain it are distinct; and (iii) these simplices are joined in such a way that the link of the given <em>k</em>-face is the standard triangulation of the (<em>dim</em> - 1 - <em>k</em>)-sphere as the boundary of a (<em>dim</em> - \k)-simplex.</p>
+<p>This involves replacing the (<em>dim</em> + 1 - <em>k</em>) top-dimensional simplices meeting that <em>k</em>-face with (<em>k</em> + 1) new top-dimensional simplices joined along a new internal (<em>dim</em> - <em>k</em>)-face. This can be done iff (i) the given <em>k</em>-face is valid and non-boundary; (ii) the (<em>dim</em> + 1 - <em>k</em>) top-dimensional simplices that contain it are distinct; and (iii) these simplices are joined in such a way that the link of the given <em>k</em>-face is the standard triangulation of the (<em>dim</em> - 1 - <em>k</em>)-sphere as the boundary of a (<em>dim</em> - <em>k</em>)-simplex.</p>
 <p>If the routine is asked to both check and perform, the move will only be performed if the check shows it is legal. In In the special case <em>k</em> = <em>dim</em>, the move is always legal and so the <em>check</em> argument will simply be ignored.</p>
 <p>Note that after performing this move, all skeletal objects (facets, components, etc.) will be reconstructed, which means any pointers to old skeletal objects (such as the argument <em>v</em>) can no longer be used.</p>
 <p>If this triangulation is currently oriented, then this Pachner move will label the new top-dimensional simplices in a way that preserves the orientation.</p>
@@ -6712,7 +6857,7 @@ The given <em>k</em>-face is a <em>k</em>-face of this triangulation.</dd></dl>
 <p>If you need a canonical triangulation (as opposed to an arbitrary retriangulation), then you should call <a class="el" href="classregina_1_1SnapPeaTriangulation.html#a65cf5b98c9a2236fb518d6d0fd2844ce" title="Constructs the canonical retriangulation of the canonical cell decomposition.">canonize()</a> instead.</p>
 <p>The resulting triangulation will be newly allocated, and it is the responsibility of the caller of this routine to destroy it.</p>
 <p>If for any reason either Regina or SnapPea are unable to construct a triangulation of the canonical cell decomposition, then this routine will return 0.</p>
-<dl class="section user"><dt>SnapPy:\n The function canonize() means different</dt><dd>things for SnapPy versus the SnapPea kernel. Here Regina follows the naming convention used in the SnapPea kernel. Specifically: Regina's routine <a class="el" href="classregina_1_1SnapPeaTriangulation.html#a996124cc216705075cc4dcdd5ebf1977" title="Constructs the canonical cell decomposition, using an arbitrary retriangulation if this decomposition...">SnapPeaTriangulation::protoCanonize()</a> corresponds to SnapPy's <code>Manifold.canonize()</code> and the SnapPea kernel's <code>proto_canonize(manifold)</code>. Regina's routine <a class="el" href="classregina_1_1SnapPeaTriangulation.html#a65cf5b98c9a2236fb518d6d0fd2844ce" title="Constructs the canonical retriangulation of the canonical cell decomposition.">SnapPeaTriangulation::canonize()</a> corresponds to the SnapPea kernel's <code>canonize(manifold)</code>, and is not available through SnapPy at all.</dd></dl>
+<dl class="section user"><dt>SnapPy</dt><dd>The function <code><a class="el" href="classregina_1_1SnapPeaTriangulation.html#a65cf5b98c9a2236fb518d6d0fd2844ce" title="Constructs the canonical retriangulation of the canonical cell decomposition.">canonize()</a></code> means different things for SnapPy versus the SnapPea kernel. Here Regina follows the naming convention used in the SnapPea kernel. Specifically: Regina's routine <a class="el" href="classregina_1_1SnapPeaTriangulation.html#a996124cc216705075cc4dcdd5ebf1977" title="Constructs the canonical cell decomposition, using an arbitrary retriangulation if this decomposition...">SnapPeaTriangulation::protoCanonize()</a> corresponds to SnapPy's <code>Manifold.canonize()</code> and the SnapPea kernel's <code>proto_canonize(manifold)</code>. Regina's routine <a class="el" href="classregina_1_1SnapPeaTriangulation.html#a65cf5b98c9a2236fb518d6d0fd2844ce" title="Constructs the canonical retriangulation of the canonical cell decomposition.">SnapPeaTriangulation::canonize()</a> corresponds to the SnapPea kernel's <code>canonize(manifold)</code>, and is not available through SnapPy at all.</dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>The SnapPea kernel does not always compute the canonical cell decomposition correctly. However, it guarantees that the manifold that it does compute is homeomorphic to the original.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the canonical triangulation of the canonical cell decomposition, or 0 if this could not be constructed. </dd></dl>
 
@@ -6805,7 +6950,7 @@ The given <em>k</em>-face is a <em>k</em>-face of this triangulation.</dd></dl>
 <p>This routine uses SnapPea's own internal retriangulation code.</p>
 <p>After randomizing, this routine will immediately ask SnapPea to try to find a hyperbolic structure.</p>
 <p>If this is a null SnapPea triangulation, this routine does nothing.</p>
-<dl class="section user"><dt>SnapPy:\n In SnapPy, this routine corresponds to calling</dt><dd><code>Manifold.randomize()</code>. </dd></dl>
+<dl class="section user"><dt>SnapPy</dt><dd>In SnapPy, this routine corresponds to calling <code>Manifold.randomize()</code>. </dd></dl>
 
 </div>
 </div>
@@ -6864,7 +7009,7 @@ The given <em>k</em>-face is a <em>k</em>-face of this triangulation.</dd></dl>
 
 <p>Writes a string expressing this triangulation in Matveev's 3-manifold recogniser format to the given output stream. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>This triangulation is not invalid, and does not contain any boundary triangles.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which the recogniser data file will be written. </td></tr>
@@ -6931,7 +7076,7 @@ The given <em>k</em>-face is a <em>k</em>-face of this triangulation.</dd></dl>
 <p>A synonym for recognizer(std::ostream&amp;). </p>
 <p>This writes a string expressing this triangulation in Matveev's 3-manifold recogniser format to the given output stream.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>This triangulation is not invalid, and does not contain any boundary triangles.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which the recogniser data file will be written. </td></tr>
@@ -7307,7 +7452,7 @@ template&lt;typename Action , typename... Args&gt; </div>
 <dl class="section warning"><dt>Warning</dt><dd>By default, the arguments <em>args</em> will be copied (or moved) when they are passed to <em>action</em>. If you need to pass some argument(s) by reference, you must wrap them in std::ref or std::cref.</dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>This triangulation is connected.</dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>The API for this class has not yet been finalised. This means that the class interface may change in new versions of Regina, without maintaining backward compatibility. If you use this class directly in your own code, please watch the detailed changelogs upon new releases to see if you need to make changes to your code.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">height</td><td>the maximum number of <em>additional</em> tetrahedra to allow beyond the number of tetrahedra originally present in the triangulation, or a negative number if this should not be bounded. </td></tr>
@@ -7420,7 +7565,7 @@ template&lt;typename Action , typename... Args&gt; </div>
 
 <p>Writes this triangulation to the given file in Matveev's 3-manifold recogniser format. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>This triangulation is not invalid, and does not contain any boundary triangles.</dd></dl>
-<dl class="section user"><dt>Internationalisation:\n This routine makes no assumptions about the</dt><dd><a class="el" href="i18n.html">character encoding</a> used in the given file <em>name</em>, and simply passes it through unchanged to low-level C/C++ file I/O routines. The <em>contents</em> of the file will be written using UTF-8.</dd></dl>
+<dl class="section user"><dt>Internationalisation</dt><dd>This routine makes no assumptions about the <a class="el" href="i18n.html">character encoding</a> used in the given file <em>name</em>, and simply passes it through unchanged to low-level C/C++ file I/O routines. The <em>contents</em> of the file will be written using UTF-8.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>the name of the Recogniser file to which to write. </td></tr>
@@ -7458,7 +7603,7 @@ template&lt;typename Action , typename... Args&gt; </div>
 <p>A synonym for <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#aa0c68d0faa4438c15960509298e100ec" title="Writes this triangulation to the given file in Matveev&#39;s 3-manifold recogniser format.">saveRecogniser()</a>. </p>
 <p>This writes this triangulation to the given file in Matveev's 3-manifold recogniser format.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>This triangulation is not invalid, and does not contain any boundary triangles.</dd></dl>
-<dl class="section user"><dt>Internationalisation:\n This routine makes no assumptions about the</dt><dd><a class="el" href="i18n.html">character encoding</a> used in the given file <em>name</em>, and simply passes it through unchanged to low-level C/C++ file I/O routines. The <em>contents</em> of the file will be written using UTF-8.</dd></dl>
+<dl class="section user"><dt>Internationalisation</dt><dd>This routine makes no assumptions about the <a class="el" href="i18n.html">character encoding</a> used in the given file <em>name</em>, and simply passes it through unchanged to low-level C/C++ file I/O routines. The <em>contents</em> of the file will be written using UTF-8.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>the name of the Recogniser file to which to write. </td></tr>
@@ -7500,7 +7645,7 @@ template&lt;typename Action , typename... Args&gt; </div>
 <li>If you are calling this from the subclass <a class="el" href="classregina_1_1SnapPeaTriangulation.html" title="Offers direct access to the SnapPea kernel from within Regina.">SnapPeaTriangulation</a>, then all additional SnapPea-specific information will be written to the file (indeed, the SnapPea kernel itself will be used to produce the file contents).</li>
 </ul>
 <p>If this triangulation is empty, invalid, or contains boundary triangles (which SnapPea cannot represent), then the file will not be written and this routine will return <code>false</code>.</p>
-<dl class="section user"><dt>Internationalisation:\n This routine makes no assumptions about the</dt><dd><a class="el" href="i18n.html">character encoding</a> used in the given file <em>name</em>, and simply passes it through unchanged to low-level C/C++ file I/O routines. The <em>contents</em> of the file will be written using UTF-8.</dd></dl>
+<dl class="section user"><dt>Internationalisation</dt><dd>This routine makes no assumptions about the <a class="el" href="i18n.html">character encoding</a> used in the given file <em>name</em>, and simply passes it through unchanged to low-level C/C++ file I/O routines. The <em>contents</em> of the file will be written using UTF-8.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>the name of the SnapPea file to which to write. </td></tr>
@@ -7541,7 +7686,7 @@ template&lt;typename Action , typename... Args&gt; </div>
 <p>Tetrahedron shapes are given in rectangular form, and using a fixed coordinate system (fixed alignment, in SnapPea's terminology).</p>
 <p>If this is a null triangulation, or if <a class="el" href="classregina_1_1SnapPeaTriangulation.html#ad406c96fb657b36cba5fddb1366a729f" title="Returns the type of solution found when solving for a hyperbolic structure, with respect to the curre...">solutionType()</a> is no_solution or not_attempted (i.e., we did not or could not solve for a hyperbolic structure), then this routine will simply return zero.</p>
 <p>This routine is fast constant time (unlike in SnapPea, where the corresponding routine <em>get_tet_shape</em> takes linear time). Therefore you can happily call this routine repeatedly without a significant performance penalty.</p>
-<dl class="section user"><dt>SnapPy:\n In SnapPy, this routine corresponds to calling</dt><dd><code>Manifold.tetrahedra_shapes(part='rect')[tet]</code>.</dd></dl>
+<dl class="section user"><dt>SnapPy</dt><dd>In SnapPy, this routine corresponds to calling <code>Manifold.tetrahedra_shapes(part='rect')[tet]</code>.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">tet</td><td>the index of a tetrahedron; this must be between 0 and <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a3871caa1f02ccda957f22ebd9a646ff5" title="Returns the number of top-dimensional simplices in the triangulation.">size()</a>-1 inclusive. </td></tr>
@@ -7714,7 +7859,7 @@ The given tetrahedron is a tetrahedron of this triangulation.</dd></dl>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> all top-dimensional simplices in the triangulation. </p>
 <p>The reference that is returned will remain valid for as long as the triangulation exists: even as simplices are added and/or removed, it will always reflect the simplices that are currently in the triangulation.</p>
-<dl class="section user"><dt>Python:\n This routine returns a python list.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This routine returns a python list.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the list of all top-dimensional simplices. </dd></dl>
 
 </div>
@@ -7850,6 +7995,7 @@ The given tetrahedron is a tetrahedron of this triangulation.</dd></dl>
 <p>End users will probably not want to call this routine. You should call <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#ad63140ff3ab1dd53acd661a6c8cde47e" title="Attempts to simplify the triangulation using fast and greedy heuristics.">intelligentSimplify()</a> if you want a fast (and usually effective) means of simplifying a triangulation, or you should call <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#af4ba73293308b8bfba1947ba4716457b" title="Attempts to simplify this triangulation using a slow but exhaustive search through the Pachner graph.">simplifyExhaustive()</a> if you are still stuck and you want to try a slower but more powerful method instead.</p>
 <p>The moves used by this routine include 3-2, 2-0 (edge and vertex), 2-1 and boundary shelling moves.</p>
 <p>Moves that do not reduce the number of tetrahedra (such as 4-4 moves or book opening moves) are not used in this routine. Such moves do however feature in <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#ad63140ff3ab1dd53acd661a6c8cde47e" title="Attempts to simplify the triangulation using fast and greedy heuristics.">intelligentSimplify()</a>.</p>
+<p>If this triangulation is currently oriented, then this operation will preserve the orientation.</p>
 <dl class="section warning"><dt>Warning</dt><dd>The implementation of this routine (and therefore its results) may change between different releases of Regina.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -7910,7 +8056,7 @@ The given tetrahedron is a tetrahedron of this triangulation.</dd></dl>
 <p>For the purposes of this routine, any fillings on the cusps of this SnapPea triangulation will be ignored.</p>
 <p>This matrix is constructed so that, if <em>M</em> and <em>L</em> are the rows for the meridian and longitude at some cusp, then for any spun-normal surface with quadrilateral coordinates <em>q</em>, the boundary curves have algebraic intersection number <em>M.q</em> with the meridian and <em>L.q</em> with the longitude. Equivalently, the boundary curves pass <em>L.q</em> times around the meridian and <em>-M.q</em> times around the longitude. To compute these slopes directly from a normal surface, see <a class="el" href="classregina_1_1NormalSurface.html#a0b6b0e73ae35e166dc07e3ac1cd54cae" title="Computes the information about the boundary slopes of this surface at each cusp of the triangulation.">NormalSurface::boundaryIntersections()</a>.</p>
 <p>The orientations of the boundary curves of a spun-normal surface are chosen so that <em>if</em> meridian and longitude are a positive basis as vieved from the cusp, then as one travels along an oriented boundary curve, the spun-normal surface spirals into the cusp to one's right and down into the manifold to one's left.</p>
-<dl class="section user"><dt>SnapPy:\n This has no corresponding routine in SnapPy.</dt><dd></dd></dl>
+<dl class="section user"><dt>SnapPy</dt><dd>This has no corresponding routine in SnapPy.</dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>All vertex links in this triangulation must be tori.</dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>If this triangulation was constructed from a Regina triangulation (of class <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html" title="Represents a 3-dimensional triangulation, typically of a 3-manifold.">Triangulation&lt;3&gt;</a>), then Regina will have no information about what meridian and longitude the user wishes to use (since Regina does not keep track of peripheral curves on cusps). Therefore Regina will give boundary slopes relative to the (shortest, second-shortest) basis, as described in the constructor <a class="el" href="classregina_1_1SnapPeaTriangulation.html#a7f4c2d636af7f2e3f341f451a6990479" title="Converts the given Regina triangulation to a SnapPea triangulation.">SnapPeaTriangulation(const Triangulation&lt;3&gt;&amp;, bool)</a>. This might not be what the user expects.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>William Pettersson and Stephan Tillmann</dd></dl>
@@ -7988,7 +8134,7 @@ The given tetrahedron is a tetrahedron of this triangulation.</dd></dl>
 </ul>
 <p>If you wish to extract the SnapPea data file as a string, you should call the zero-argument routine <a class="el" href="classregina_1_1SnapPeaTriangulation.html#a43d1d52bc2464567b30e8fc5138cc123" title="Returns a string containing the full contents of a SnapPea data file that describes this triangulatio...">snapPea()</a> instead. If you wish to write to a real SnapPea data file on the filesystem, you should call <a class="el" href="classregina_1_1SnapPeaTriangulation.html#a6d3b0b358056999d12fa4dffdf35e923" title="Writes this triangulation to the given file using SnapPea&#39;s native file format.">saveSnapPea()</a> (which is also available in Python).</p>
 <p>If this triangulation is empty, invalid, or contains boundary triangles (which SnapPea cannot represent), then nothing will be written to the output stream.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which the SnapPea data file will be written. </td></tr>
@@ -8016,7 +8162,7 @@ The given tetrahedron is a tetrahedron of this triangulation.</dd></dl>
 </div><div class="memdoc">
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the type of solution found when solving for a hyperbolic structure, with respect to the current Dehn filling (if any). </p>
-<dl class="section user"><dt>SnapPy:\n In SnapPy, this routine corresponds to calling</dt><dd><code>Manifold.solution_type()</code>.</dd></dl>
+<dl class="section user"><dt>SnapPy</dt><dd>In SnapPy, this routine corresponds to calling <code>Manifold.solution_type()</code>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the solution type. </dd></dl>
 
 </div>
@@ -8095,7 +8241,7 @@ The given tetrahedron is a tetrahedron of this triangulation.</dd></dl>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a short text representation of this object. </p>
 <p>This text should be human-readable, should fit on a single line, and should not end with a newline. Where possible, it should use plain ASCII characters.</p>
-<dl class="section user"><dt>Python:\n In addition to str(), this is also used as the</dt><dd>Python "stringification" function <code>__str__()</code>.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>In addition to <a class="el" href="structregina_1_1Output.html#a2212a7a96adf2538ea875d49a98d99ad" title="Returns a short text representation of this object.">str()</a>, this is also used as the Python "stringification" function <code>__str__()</code>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a short text representation of this object. </dd></dl>
 
 </div>
@@ -8251,7 +8397,7 @@ The given tetrahedron is a tetrahedron of this triangulation.</dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>If the move is being performed and no check is being run, it must be known in advance that the move is legal. </dd>
 <dd>
 The given edge is an edge of this triangulation.</dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000195">Deprecated:</a></b></dt><dd>You should use the identical routine <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a39dc5df8252f6e34ea45b19ca33c3964" title="Checks the eligibility of and/or performs a (dim + 1 - k)-(k + 1) Pachner move about the given k-face...">pachner()</a> instead.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000196">Deprecated:</a></b></dt><dd>You should use the identical routine <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a39dc5df8252f6e34ea45b19ca33c3964" title="Checks the eligibility of and/or performs a (dim + 1 - k)-(k + 1) Pachner move about the given k-face...">pachner()</a> instead.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">e</td><td>the edge about which to perform the move. </td></tr>
@@ -8459,6 +8605,7 @@ The argument <em>whichRoot</em> is strictly between 0 and <em>2r</em>, and has n
 </ul>
 <p>There are additional "distinct and not both boundary" conditions on faces of the second tetrahedron, but those follow automatically from the final condition above.</p>
 <p>If the routine is asked to both check and perform, the move will only be performed if the check shows it is legal.</p>
+<p>If this triangulation is currently oriented, then this 2-1 move will label the new tetrahedra in a way that preserves the orientation.</p>
 <p>Note that after performing this move, all skeletal objects (triangles, components, etc.) will be reconstructed, which means any pointers to old skeletal objects (such as the argument <em>e</em>) can no longer be used.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>If the move is being performed and no check is being run, it must be known in advance that the move is legal. </dd>
 <dd>
@@ -8738,7 +8885,7 @@ The given vertex is a vertex of this triangulation.</dd></dl>
 
 <p>Computes the volume of the current solution to the hyperbolic gluing equations. </p>
 <p>This will be with respect to the current Dehn filling (if any).</p>
-<dl class="section user"><dt>SnapPy:\n In SnapPy, this routine corresponds to calling</dt><dd><code>Manifold.volume()</code>.</dd></dl>
+<dl class="section user"><dt>SnapPy</dt><dd>In SnapPy, this routine corresponds to calling <code>Manifold.volume()</code>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the estimated volume of the underlying 3-manifold, or 0 if this is a null triangulation. </dd></dl>
 
 </div>
@@ -8761,8 +8908,8 @@ The given vertex is a vertex of this triangulation.</dd></dl>
 
 <p>Computes the volume of the current solution to the hyperbolic gluing equations, and estimates the accuracy of the answer. </p>
 <p>This will be with respect to the current Dehn filling (if any).</p>
-<dl class="section user"><dt>SnapPy:\n In SnapPy, this routine corresponds to calling</dt><dd><code>Manifold.volume(accuracy=True)</code>.</dd></dl>
-<dl class="section user"><dt>Python:\n The <em>precision</em> argument is not present.</dt><dd>Instead, two routines are offered. The routine <em><a class="el" href="classregina_1_1SnapPeaTriangulation.html#a757ff5bfcc94c9e3a1c17a6c464a62ca" title="Computes the volume of the current solution to the hyperbolic gluing equations.">volume()</a></em> takes no arguments and returns the volume only, whereas the routine <em>volumeWithPrecision()</em> takes no arguments and returns a (<em>volume</em>, <em>precision</em>) tuple.</dd></dl>
+<dl class="section user"><dt>SnapPy</dt><dd>In SnapPy, this routine corresponds to calling <code>Manifold.volume(accuracy=True)</code>.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>The <em>precision</em> argument is not present. Instead, two routines are offered. The routine <em><a class="el" href="classregina_1_1SnapPeaTriangulation.html#a757ff5bfcc94c9e3a1c17a6c464a62ca" title="Computes the volume of the current solution to the hyperbolic gluing equations.">volume()</a></em> takes no arguments and returns the volume only, whereas the routine <em>volumeWithPrecision()</em> takes no arguments and returns a (<em>volume</em>, <em>precision</em>) tuple.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">precision</td><td>used to return an estimate of the number of decimal places of accuracy in the calculated volume.</td></tr>
@@ -8821,7 +8968,7 @@ The given vertex is a vertex of this triangulation.</dd></dl>
 
 <p>Writes a detailed text representation of this object to the given output stream. </p>
 <p>This may be reimplemented by subclasses, but the parent <a class="el" href="classregina_1_1Packet.html" title="Represents a packet of information that may be individually edited or operated upon.">Packet</a> class offers a reasonable default implementation.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -8859,7 +9006,7 @@ The given vertex is a vertex of this triangulation.</dd></dl>
 
 <p>Writes a short text representation of this object to the given output stream. </p>
 <p>This must be reimplemented by subclasses.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -9072,7 +9219,7 @@ The given vertex is a vertex of this triangulation.</dd></dl>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

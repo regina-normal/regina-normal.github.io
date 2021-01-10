@@ -46,7 +46,7 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="structregina_1_1LPConstraintBase_1_1Coefficients-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">regina::LPConstraintBase::Coefficients Struct Reference<div class="ingroups"><a class="el" href="group__enumerate.html">Vertex Enumeration</a></div></div>  </div>
+<div class="title">regina::LPConstraintBase::Coefficients Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -57,31 +57,185 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ga85b4c270ce9f7ebedce05636a6391e47"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__enumerate.html#ga85b4c270ce9f7ebedce05636a6391e47">Coefficients</a> ()</td></tr>
-<tr class="memdesc:ga85b4c270ce9f7ebedce05636a6391e47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an uninitialised set of coefficients for a single column.  <a href="group__enumerate.html#ga85b4c270ce9f7ebedce05636a6391e47">More...</a><br /></td></tr>
-<tr class="separator:ga85b4c270ce9f7ebedce05636a6391e47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad58303ac129d99491f1b82d0e116f546"><td class="memTemplParams" colspan="2">template&lt;typename IntType &gt; </td></tr>
-<tr class="memitem:gad58303ac129d99491f1b82d0e116f546"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__enumerate.html#gad58303ac129d99491f1b82d0e116f546">fillFinalRows</a> (<a class="el" href="classregina_1_1LPMatrix.html">LPMatrix</a>&lt; IntType &gt; &amp;m, unsigned col) const</td></tr>
-<tr class="memdesc:gad58303ac129d99491f1b82d0e116f546"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicitly fills the final row(s) of the given tableaux matrix with the coefficients stored in this <a class="el" href="structregina_1_1LPConstraintBase_1_1Coefficients.html" title="Stores the extra coefficients in a single column for the nConstraints additional rows that we add to ...">Coefficients</a> structure.  <a href="group__enumerate.html#gad58303ac129d99491f1b82d0e116f546">More...</a><br /></td></tr>
-<tr class="separator:gad58303ac129d99491f1b82d0e116f546"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6e9ef3807590e6a5b754276397b6c29e"><td class="memTemplParams" colspan="2">template&lt;typename IntType &gt; </td></tr>
-<tr class="memitem:ga6e9ef3807590e6a5b754276397b6c29e"><td class="memTemplItemLeft" align="right" valign="top">IntType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__enumerate.html#ga6e9ef3807590e6a5b754276397b6c29e">innerProduct</a> (const <a class="el" href="classregina_1_1LPMatrix.html">LPMatrix</a>&lt; IntType &gt; &amp;m, unsigned mRow) const</td></tr>
-<tr class="memdesc:ga6e9ef3807590e6a5b754276397b6c29e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the inner product of (i) the final <em>nConstraints</em> entries in the given row of the given matrix with (ii) the <em>nConstraints</em> column coefficients stored in this data structure.  <a href="group__enumerate.html#ga6e9ef3807590e6a5b754276397b6c29e">More...</a><br /></td></tr>
-<tr class="separator:ga6e9ef3807590e6a5b754276397b6c29e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga61c6ff37ed763967cc826e5520d88694"><td class="memTemplParams" colspan="2">template&lt;typename IntType &gt; </td></tr>
-<tr class="memitem:ga61c6ff37ed763967cc826e5520d88694"><td class="memTemplItemLeft" align="right" valign="top">IntType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__enumerate.html#ga61c6ff37ed763967cc826e5520d88694">innerProductOct</a> (const <a class="el" href="classregina_1_1LPMatrix.html">LPMatrix</a>&lt; IntType &gt; &amp;m, unsigned mRow) const</td></tr>
-<tr class="memdesc:ga61c6ff37ed763967cc826e5520d88694"><td class="mdescLeft">&#160;</td><td class="mdescRight">A variant of <a class="el" href="group__enumerate.html#ga6e9ef3807590e6a5b754276397b6c29e" title="Computes the inner product of (i) the final nConstraints entries in the given row of the given matrix...">innerProduct()</a> that takes into account any adjustments to these linear constraint(s) that are required when this is a quadrilateral column being used to represent an octagon type.  <a href="group__enumerate.html#ga61c6ff37ed763967cc826e5520d88694">More...</a><br /></td></tr>
-<tr class="separator:ga61c6ff37ed763967cc826e5520d88694"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85b4c270ce9f7ebedce05636a6391e47"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structregina_1_1LPConstraintBase_1_1Coefficients.html#a85b4c270ce9f7ebedce05636a6391e47">Coefficients</a> ()</td></tr>
+<tr class="memdesc:a85b4c270ce9f7ebedce05636a6391e47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an uninitialised set of coefficients for a single column.  <a href="#a85b4c270ce9f7ebedce05636a6391e47">More...</a><br /></td></tr>
+<tr class="separator:a85b4c270ce9f7ebedce05636a6391e47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad58303ac129d99491f1b82d0e116f546"><td class="memTemplParams" colspan="2">template&lt;typename IntType &gt; </td></tr>
+<tr class="memitem:ad58303ac129d99491f1b82d0e116f546"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structregina_1_1LPConstraintBase_1_1Coefficients.html#ad58303ac129d99491f1b82d0e116f546">fillFinalRows</a> (<a class="el" href="classregina_1_1LPMatrix.html">LPMatrix</a>&lt; IntType &gt; &amp;m, unsigned col) const</td></tr>
+<tr class="memdesc:ad58303ac129d99491f1b82d0e116f546"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicitly fills the final row(s) of the given tableaux matrix with the coefficients stored in this <a class="el" href="structregina_1_1LPConstraintBase_1_1Coefficients.html" title="Stores the extra coefficients in a single column for the nConstraints additional rows that we add to ...">Coefficients</a> structure.  <a href="#ad58303ac129d99491f1b82d0e116f546">More...</a><br /></td></tr>
+<tr class="separator:ad58303ac129d99491f1b82d0e116f546"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e9ef3807590e6a5b754276397b6c29e"><td class="memTemplParams" colspan="2">template&lt;typename IntType &gt; </td></tr>
+<tr class="memitem:a6e9ef3807590e6a5b754276397b6c29e"><td class="memTemplItemLeft" align="right" valign="top">IntType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structregina_1_1LPConstraintBase_1_1Coefficients.html#a6e9ef3807590e6a5b754276397b6c29e">innerProduct</a> (const <a class="el" href="classregina_1_1LPMatrix.html">LPMatrix</a>&lt; IntType &gt; &amp;m, unsigned mRow) const</td></tr>
+<tr class="memdesc:a6e9ef3807590e6a5b754276397b6c29e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the inner product of (i) the final <em>nConstraints</em> entries in the given row of the given matrix with (ii) the <em>nConstraints</em> column coefficients stored in this data structure.  <a href="#a6e9ef3807590e6a5b754276397b6c29e">More...</a><br /></td></tr>
+<tr class="separator:a6e9ef3807590e6a5b754276397b6c29e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61c6ff37ed763967cc826e5520d88694"><td class="memTemplParams" colspan="2">template&lt;typename IntType &gt; </td></tr>
+<tr class="memitem:a61c6ff37ed763967cc826e5520d88694"><td class="memTemplItemLeft" align="right" valign="top">IntType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structregina_1_1LPConstraintBase_1_1Coefficients.html#a61c6ff37ed763967cc826e5520d88694">innerProductOct</a> (const <a class="el" href="classregina_1_1LPMatrix.html">LPMatrix</a>&lt; IntType &gt; &amp;m, unsigned mRow) const</td></tr>
+<tr class="memdesc:a61c6ff37ed763967cc826e5520d88694"><td class="mdescLeft">&#160;</td><td class="mdescRight">A variant of <a class="el" href="structregina_1_1LPConstraintBase_1_1Coefficients.html#a6e9ef3807590e6a5b754276397b6c29e" title="Computes the inner product of (i) the final nConstraints entries in the given row of the given matrix...">innerProduct()</a> that takes into account any adjustments to these linear constraint(s) that are required when this is a quadrilateral column being used to represent an octagon type.  <a href="#a61c6ff37ed763967cc826e5520d88694">More...</a><br /></td></tr>
+<tr class="separator:a61c6ff37ed763967cc826e5520d88694"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Stores the extra coefficients in a single column for the <em>nConstraints</em> additional rows that we add to the tableaux to describe the <em>nConstraints</em> additional linear equations or inequalities. </p>
 <p>Subclasses may store these coefficients however they like (in particular, they may optimise for sparse coefficients, binary coefficients, and so on). They will only ever be accessed through the member functions of this <a class="el" href="structregina_1_1LPConstraintBase_1_1Coefficients.html" title="Stores the extra coefficients in a single column for the nConstraints additional rows that we add to ...">Coefficients</a> class. </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a85b4c270ce9f7ebedce05636a6391e47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85b4c270ce9f7ebedce05636a6391e47">&#9670;&nbsp;</a></span>Coefficients()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">regina::LPConstraintBase::Coefficients::Coefficients </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates an uninitialised set of coefficients for a single column. </p>
+<p>These cofficients must be initialised through a call to <a class="el" href="classregina_1_1LPConstraintBase.html#ac663caf3a27a7f814eec98e42cce10cf" title="Explicitly constructs equations for the linear function(s) constrained by this class.">addRows()</a> before they can be used. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad58303ac129d99491f1b82d0e116f546"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad58303ac129d99491f1b82d0e116f546">&#9670;&nbsp;</a></span>fillFinalRows()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename IntType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void regina::LPConstraintBase::Coefficients::fillFinalRows </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classregina_1_1LPMatrix.html">LPMatrix</a>&lt; IntType &gt; &amp;&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>col</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Explicitly fills the final row(s) of the given tableaux matrix with the coefficients stored in this <a class="el" href="structregina_1_1LPConstraintBase_1_1Coefficients.html" title="Stores the extra coefficients in a single column for the nConstraints additional rows that we add to ...">Coefficients</a> structure. </p>
+<p>In essence, this routine simply copies this sparse and/or specialised representation of the final row(s) into a more standard dense matrix representation.</p>
+<p>This routine should only affect the final <em>nConstraints</em> entries in the given column of the matrix. It may assume that these final row(s) have already been initialised to zero.</p>
+<dl class="section pre"><dt>Precondition</dt><dd>The given matrix has at least <em>nConstraints</em> rows and at least <em>col</em> + 1 columns. </dd>
+<dd>
+The final <em>nConstraints</em> entries in column <em>col</em> of the given matrix have already been set to zero.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>the matrix in which to place these column coefficients. </td></tr>
+    <tr><td class="paramname">col</td><td>the column of the given matrix in which to place these coefficients. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6e9ef3807590e6a5b754276397b6c29e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e9ef3807590e6a5b754276397b6c29e">&#9670;&nbsp;</a></span>innerProduct()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename IntType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">IntType regina::LPConstraintBase::Coefficients::innerProduct </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classregina_1_1LPMatrix.html">LPMatrix</a>&lt; IntType &gt; &amp;&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>mRow</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the inner product of (i) the final <em>nConstraints</em> entries in the given row of the given matrix with (ii) the <em>nConstraints</em> column coefficients stored in this data structure. </p>
+<dl class="section pre"><dt>Precondition</dt><dd>The given matrix has at least <em>nConstraints</em> columns and at least <em>mRow</em> + 1 rows.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>the matrix whose row we will use in the inner product. </td></tr>
+    <tr><td class="paramname">mRow</td><td>the row of the matrix <em>m</em> to use in the inner product. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the resulting portion of the inner product. </dd></dl>
+
+</div>
+</div>
+<a id="a61c6ff37ed763967cc826e5520d88694"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61c6ff37ed763967cc826e5520d88694">&#9670;&nbsp;</a></span>innerProductOct()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename IntType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">IntType regina::LPConstraintBase::Coefficients::innerProductOct </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classregina_1_1LPMatrix.html">LPMatrix</a>&lt; IntType &gt; &amp;&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>mRow</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A variant of <a class="el" href="structregina_1_1LPConstraintBase_1_1Coefficients.html#a6e9ef3807590e6a5b754276397b6c29e" title="Computes the inner product of (i) the final nConstraints entries in the given row of the given matrix...">innerProduct()</a> that takes into account any adjustments to these linear constraint(s) that are required when this is a quadrilateral column being used to represent an octagon type. </p>
+<p>The <a class="el" href="classregina_1_1LPData.html" title="Stores an intermediate tableaux for the dual simplex method, and contains all of the core machinery f...">LPData</a> class offers support for octagonal almost normal surfaces, in which exactly one tetrahedron is allowed to have exactly one octagon type. We represent such an octagon as a <em>pair</em> of incompatible quadrilaterals within the same tetrahedron. See the <a class="el" href="classregina_1_1LPData.html" title="Stores an intermediate tableaux for the dual simplex method, and contains all of the core machinery f...">LPData</a> class notes for details on how this works.</p>
+<p>In some settings, our extra linear constraints must behave differently in the presence of octagons (i.e., the coefficient of the octagon type is not just the sum of coefficients of the two constituent quadrilateral types). This routine effectively allows us to adjust the tableaux accordingly.</p>
+<p>Specifically: this routine computes the inner product of (i) the final <em>nConstraints</em> entries in the given row of the given matrix with (ii) the <em>nConstraints</em> column coefficients stored in this data structure. We assume that this column in the underlying tableaux describes one of the two quadrilateral coordinates in some tetrahedron that together form an octagon type, and if necessary we implicitly adjust the coefficients stored in this data structure accordingly.</p>
+<p>This routine is not used with angle structure coordinates.</p>
+<dl class="section pre"><dt>Precondition</dt><dd>The given matrix has at least <em>nConstraints</em> columns and at least <em>mRow</em> + 1 rows.</dd>
+<dd>
+This column of the underlying tableaux describes one of the two quadrilateral coordinates that are being combined to form an octagon type within some tetrahedron.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>the matrix whose row we will use in the inner product. </td></tr>
+    <tr><td class="paramname">mRow</td><td>the row of the matrix <em>m</em> to use in the inner product. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the resulting portion of the inner product. </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>enumerate/<a class="el" href="treeconstraint_8h.html">treeconstraint.h</a></li>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

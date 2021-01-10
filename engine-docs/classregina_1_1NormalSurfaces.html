@@ -651,7 +651,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>XMLNormalSurfacesRea
 </div><div class="memdoc">
 
 <p>An iterator that gives access to the raw vectors for surfaces in this list, pointing to the beginning of this surface list. </p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>an iterator at the beginning of this surface list. </dd></dl>
 
 </div>
@@ -769,7 +769,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>XMLNormalSurfacesRea
 
 <p>An iterator that gives access to the raw vectors for surfaces in this list, pointing past the end of this surface list. </p>
 <p>This iterator is not dereferenceable.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>an iterator past the end of this surface list. </dd></dl>
 
 </div>
@@ -1145,7 +1145,7 @@ This normal surface list is precisely the set of all embedded vertex normal surf
 <p>The surfaces will be exported in edge weight coordinates. Thus there will be one coordinate for each edge of the underlying triangulation; each such coordinate will become a separate field in the CSV file.</p>
 <p>As well as the normal surface coordinates, additional properties of the normal surfaces (such as Euler characteristic, orientability, and so on) can be included as extra fields in the export. Users can select precisely which properties to include by passing a bitmask, formed as a bitwise <em>or</em> combination of constants from the <a class="el" href="group__surfaces.html#gae923c7c2fa692192d45bdf563f380918" title="Used to describe a field, or a set of fields, that can be exported alongside a normal surface list.">regina::SurfaceExportFields</a> enumeration type.</p>
 <p>The CSV format used here begins with a header row, and uses commas as field separators. <a class="el" href="classregina_1_1Text.html" title="A packet representing a text string.">Text</a> fields with arbitrary contents are placed inside double quotes, and the double quote character itself is represented by a pair of double quotes. Thus the string <code>my "normal" surface's name</code> would be stored as <code>"my ""normal"" surface's name"</code>.</p>
-<dl class="section user"><dt>Internationalisation:\n This routine makes no assumptions about the</dt><dd><a class="el" href="i18n.html">character encoding</a> used in the given file <em>name</em>, and simply passes it through unchanged to low-level C/C++ file I/O routines. Any user strings such as surface names will be written in UTF-8.</dd></dl>
+<dl class="section user"><dt>Internationalisation</dt><dd>This routine makes no assumptions about the <a class="el" href="i18n.html">character encoding</a> used in the given file <em>name</em>, and simply passes it through unchanged to low-level C/C++ file I/O routines. Any user strings such as surface names will be written in UTF-8.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>the name of the CSV file to export to. </td></tr>
@@ -1188,7 +1188,7 @@ This normal surface list is precisely the set of all embedded vertex normal surf
 <p>The surfaces will be exported in standard coordinates (tri-quad coordinates for normal surfaces, or tri-quad-oct coordinates for almost normal surfaces). Each coordinate will become a separate field in the CSV file.</p>
 <p>As well as the normal surface coordinates, additional properties of the normal surfaces (such as Euler characteristic, orientability, and so on) can be included as extra fields in the export. Users can select precisely which properties to include by passing a bitmask, formed as a bitwise <em>or</em> combination of constants from the <a class="el" href="group__surfaces.html#gae923c7c2fa692192d45bdf563f380918" title="Used to describe a field, or a set of fields, that can be exported alongside a normal surface list.">regina::SurfaceExportFields</a> enumeration type.</p>
 <p>The CSV format used here begins with a header row, and uses commas as field separators. <a class="el" href="classregina_1_1Text.html" title="A packet representing a text string.">Text</a> fields with arbitrary contents are placed inside double quotes, and the double quote character itself is represented by a pair of double quotes. Thus the string <code>my "normal" surface's name</code> would be stored as <code>"my ""normal"" surface's name"</code>.</p>
-<dl class="section user"><dt>Internationalisation:\n This routine makes no assumptions about the</dt><dd><a class="el" href="i18n.html">character encoding</a> used in the given file <em>name</em>, and simply passes it through unchanged to low-level C/C++ file I/O routines. Any user strings such as surface names will be written in UTF-8.</dd></dl>
+<dl class="section user"><dt>Internationalisation</dt><dd>This routine makes no assumptions about the <a class="el" href="i18n.html">character encoding</a> used in the given file <em>name</em>, and simply passes it through unchanged to low-level C/C++ file I/O routines. Any user strings such as surface names will be written in UTF-8.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>the name of the CSV file to export to. </td></tr>
@@ -1257,7 +1257,7 @@ template&lt;typename Comparison &gt; </div>
 <p>Sorts the surfaces in this list according to the given criterion. </p>
 <p>This sort is stable, i.e., surfaces that are equivalent under the given criterion will remain in the same relative order.</p>
 <p>The implementation of this routine uses std::stable_sort.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">comp</td><td>a binary function (or function object) that accepts two const <a class="el" href="classregina_1_1NormalSurface.html" title="Represents a single normal surface in a 3-manifold.">NormalSurface</a> pointers, and returns <code>true</code> if and only if the first surface should appear before the second in the sorted list. </td></tr>
@@ -1345,7 +1345,7 @@ This normal surface list is precisely the set of all embedded vertex normal surf
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a short text representation of this object. </p>
 <p>This text should be human-readable, should fit on a single line, and should not end with a newline. Where possible, it should use plain ASCII characters.</p>
-<dl class="section user"><dt>Python:\n In addition to str(), this is also used as the</dt><dd>Python "stringification" function <code>__str__()</code>.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>In addition to <a class="el" href="structregina_1_1Output.html#a2212a7a96adf2538ea875d49a98d99ad" title="Returns a short text representation of this object.">str()</a>, this is also used as the Python "stringification" function <code>__str__()</code>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a short text representation of this object. </dd></dl>
 
 </div>
@@ -1481,7 +1481,7 @@ This normal surface list is precisely the set of all embedded vertex normal surf
 
 <p>Writes the number of surfaces in this set followed by the details of each surface to the given output stream. </p>
 <p><a class="el" href="structregina_1_1Output.html" title="A common base class for objects that write human-readable text output.">Output</a> will be over many lines.</p>
-<dl class="section user"><dt>Python:\n Parameter <em>out</em> is not present and is assumed</dt><dd>to be standard output.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Parameter <em>out</em> is not present and is assumed to be standard output.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1517,7 +1517,7 @@ This normal surface list is precisely the set of all embedded vertex normal surf
 
 <p>Writes a detailed text representation of this object to the given output stream. </p>
 <p>This may be reimplemented by subclasses, but the parent <a class="el" href="classregina_1_1Packet.html" title="Represents a packet of information that may be individually edited or operated upon.">Packet</a> class offers a reasonable default implementation.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1555,7 +1555,7 @@ This normal surface list is precisely the set of all embedded vertex normal surf
 
 <p>Writes a short text representation of this object to the given output stream. </p>
 <p>This must be reimplemented by subclasses.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1707,7 +1707,7 @@ This normal surface list is precisely the set of all embedded vertex normal surf
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

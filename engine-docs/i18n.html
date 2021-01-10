@@ -46,13 +46,11 @@ $(function() {
 <p>The calculation engine uses UTF-8 for all strings (except possibly for filenames; see below). This means that programmers who pass strings <em>into</em> routines must ensure that they use UTF-8, and programmers who receive strings <em>from</em> routines may assume that they are returned in UTF-8. Note that plain ASCII is a subset of UTF-8, so plain ASCII text is always fine to use.</p>
 <p>Regina's XML data files are also stored using UTF-8. Older versions of Regina used LATIN1 (the default for the Qt libraries) and did not specify an encoding in the XML header; however, Regina's file I/O routines are aware of this, and will convert older data into UTF-8 as it is loaded into memory (the files themselves are of course not modified). The routine <a class="el" href="group__engine.html#ga257ab85c7bb3171197b627ba4a6d1c2c" title="Did the given version of Regina consistently use UTF-8 in its data files?">versionUsesUTF8()</a> may be useful for programmers who need to work with older data files at a low level.</p>
 <p>File <em>names</em> are a special case, since here Regina must interact with the underlying operating system. All filenames that are passed into routines must be presented in whatever encoding the operating system expects; Regina will simply pass them through to the standard C/C++ file I/O routines (such as fopen() or <a class="el" href="group__packet.html#ga964a605603a33a84e5004e9ebb0ac5ec" title="Reads a Regina data file, and returns the corresponding packet tree.">std::ifstream::open()</a>) without modifying them in any way.</p>
-<p>It should be noted that ancient data files that use the old binary format (Regina 2.x, before mid-2002) only support plain ASCII text. Support for the old binary format is likely to be removed entirely in the very near future.</p>
-<dl class="section user"><dt>Python:\n Users and programmers who use the Python interface must</dt><dd>take special care, since Python does not pass strings around in UTF-8 by default.</dd></dl>
-<p>Proper support for character encodings is quite new, and the main author rarely uses this (being a native English speaker). If you see Regina treating international characters in unexpected ways, please mail the author(s) or file a bug report so the problem can be fixed! </p>
+<dl class="section user"><dt>Python</dt><dd>Users and programmers who use the Python interface must take special care, since Python does not pass strings around in UTF-8 by default. </dd></dl>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

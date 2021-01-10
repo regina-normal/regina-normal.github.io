@@ -49,7 +49,7 @@ $(function() {
 <li>Standard C++ types become native Python types. For example, the C++ type <code>std::string</code> becomes the native Python string type.</li>
 <li>Everything within the C++ namespace <em>regina</em> becomes part of the Python module <em>regina</em>. For example, the C++ class <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html" title="Represents a 3-dimensional triangulation, typically of a 3-manifold.">regina::Triangulation&lt;3&gt;</a> becomes the Python class regina.Triangulation3.</li>
 <li>Regina's most important C++ classes and functions are wrapped in Python. However, not all classes and functions are wrapped. If a class or function is not available in Python then you will see a bold <b>Python:</b> note indicating this. See for instance the class <a class="el" href="classregina_1_1Bitmask.html" title="A bitmask that can store arbitrarily many true-or-false bits.">Bitmask</a>, or the function <a class="el" href="group__utilities.html#ga69b2411865af18bf506a1afb7d2bc2ca" title="Creates a new C string that is a duplicate of the given C++ string.">duplicate()</a>.</li>
-<li>Most of Regina's classes and functions have the same interface in both C++ and Python, but occasionally there are differences. Again, you will see a bold <b>Python:</b> note indicating this. See for instance the method Triangulation&lt;3&gt;::tetrahedra(), or the global function <a class="el" href="namespaceregina.html#a52c8776c5329496a0b34c914706031e4" title="Writes time and memory usage for the current process to the given output stream.">writeResUsage()</a>.</li>
+<li>Most of Regina's classes and functions have the same interface in both C++ and Python, but occasionally there are differences. Again, you will see a bold <b>Python:</b> note indicating this. See for instance the method Triangulation&lt;3&gt;::tetrahedra(), or the global function <a class="el" href="group__utilities.html#ga52c8776c5329496a0b34c914706031e4" title="Writes time and memory usage for the current process to the given output stream.">writeResUsage()</a>.</li>
 </ul>
 <h3>Testing equality</h3>
 <p>It is important to understand how Python's equality tests <code>x == y</code> and <code>x is y</code> operate under Python.</p>
@@ -69,7 +69,7 @@ $(function() {
 <div class="fragment"><div class="line">&gt;&gt;&gt; print Triangulation3.equalityType</div><div class="line">BY_REFERENCE</div></div><!-- fragment --> </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

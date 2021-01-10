@@ -249,8 +249,8 @@ template&lt;int dim&gt; </div>
 
 <p>Builds a tree decomposition of the facet pairing graph of the given triangulation. </p>
 <p>The nodes of the graph will be numbered in the same way as the top-dimensional simplices of the given triangulation.</p>
-<dl class="section user"><dt>Headers:\n This routine is implemented in a separate header</dt><dd>(treedecomposition-impl.h), which is not included automatically by this file. However, typical end users should never need this extra header, since Regina's calculation engine already includes explicit instantiations for <a class="el" href="stddim.html">standard dimensions</a>.</dd></dl>
-<dl class="section user"><dt>Python:\n This constructor is only available in Python when</dt><dd><em>dim</em> is one of Regina's <a class="el" href="stddim.html">standard dimensions</a>.</dd></dl>
+<dl class="section user"><dt>Headers</dt><dd>This routine is implemented in a separate header (treedecomposition-impl.h), which is not included automatically by this file. However, typical end users should never need this extra header, since Regina's calculation engine already includes explicit instantiations for <a class="el" href="stddim.html">standard dimensions</a>.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This constructor is only available in Python when <em>dim</em> is one of Regina's <a class="el" href="stddim.html">standard dimensions</a>.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">triangulation</td><td>the triangulation whose facet pairing graph we are working with. </td></tr>
@@ -291,8 +291,8 @@ template&lt;int dim&gt; </div>
 
 <p>Builds a tree decomposition of the given facet pairing graph. </p>
 <p>The nodes of the graph will be numbered in the same way as the top-dimensional simplices of the given triangulation.</p>
-<dl class="section user"><dt>Headers:\n This routine is implemented in a separate header</dt><dd>(treedecomposition-impl.h), which is not included automatically by this file. However, typical end users should never need this extra header, since Regina's calculation engine already includes explicit instantiations for <a class="el" href="stddim.html">standard dimensions</a>.</dd></dl>
-<dl class="section user"><dt>Python:\n This constructor is only available in Python when</dt><dd><em>dim</em> is one of Regina's <a class="el" href="stddim.html">standard dimensions</a>.</dd></dl>
+<dl class="section user"><dt>Headers</dt><dd>This routine is implemented in a separate header (treedecomposition-impl.h), which is not included automatically by this file. However, typical end users should never need this extra header, since Regina's calculation engine already includes explicit instantiations for <a class="el" href="stddim.html">standard dimensions</a>.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This constructor is only available in Python when <em>dim</em> is one of Regina's <a class="el" href="stddim.html">standard dimensions</a>.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pairing</td><td>the facet pairing graph that we are working with. </td></tr>
@@ -378,8 +378,8 @@ template&lt;typename T &gt; </div>
 <p>Builds a tree decomposition of an arbitrary graph. </p>
 <p>The graph may be directed or undirected.</p>
 <p>The graph is specified by an adjacency matrix. The matrix may contain any data type (this is the template argument <em>T</em>). However, the contents of this matrix will be interpreted as booleans: an arc runs from node <em>i</em> to node <em>j</em> if and only if <em>graph</em>[i][j] is <code>true</code> when interpreted as a boolean.</p>
-<dl class="section user"><dt>Headers:\n This routine is implemented in a separate header</dt><dd>(treedecomposition-impl.h), which is not included automatically by this file. Regina's calculation engine already includes explicit instantiations for types <code>bool</code> and <code>int</code>, but for other types you will need to include treedecomposition-impl.h along with this header.</dd></dl>
-<dl class="section user"><dt>Python:\n The argument <em>order</em> is not present (it will be</dt><dd>deduced automatically from <em>graph</em>). The adjacency matrix should be given as a list of lists. There is no need to use the same data type <em>T</em> throughout: each element of the matrix will be individually interpreted as a boolean as described above.</dd></dl>
+<dl class="section user"><dt>Headers</dt><dd>This routine is implemented in a separate header (treedecomposition-impl.h), which is not included automatically by this file. Regina's calculation engine already includes explicit instantiations for types <code>bool</code> and <code>int</code>, but for other types you will need to include treedecomposition-impl.h along with this header.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>The argument <em>order</em> is not present (it will be deduced automatically from <em>graph</em>). The adjacency matrix should be given as a list of lists. There is no need to use the same data type <em>T</em> throughout: each element of the matrix will be individually interpreted as a boolean as described above.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">order</td><td>the number of nodes in the graph. </td></tr>
@@ -674,10 +674,10 @@ b 4
 <p>See the constructor TreeDecomposition(const std::string&amp;) for a description of this text format.</p>
 <p>There are two variants of this routine. The other variant contains a single string containing the entire text representation. This variant takes an input stream, from which the text representation will be read.</p>
 <p>This routine assumes that it should exhaust the input stream (i.e., it should contain no additional text after this text representation).</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">paceFormat</td><td>an input stream that provides a text representation of the tree decomposition using the PACE text format. </td></tr>
+    <tr><td class="paramname">in</td><td>an input stream that provides a text representation of the tree decomposition using the PACE text format. </td></tr>
   </table>
   </dd>
 </dl>
@@ -722,7 +722,7 @@ b 4
 <p>You may optionally pass an argument <em>heightHint</em>, which is an array indicating how close to the root of the tree you would like each node to be. At present, this only affects the final chain of forget bags leading up to the root bag - if <em>heightHint</em> is passed, then this chain will be ordered so that nodes with a larger <em>heightHint</em> will be forgotten closer to the root bag. These should be considered hints only, in that their effect on the final tree decomposition might change in future versions of Regina.</p>
 <dl class="section warning"><dt>Warning</dt><dd>Note that <a class="el" href="classregina_1_1TreeBag.html#ad7c848030e790f33d5cbe6424829f5c8" title="Returns a secondary level of auxiliary information associated with bags in special classes of tree de...">TreeBag::subtype()</a> is <em>not</em> the number of the new or missing node, but instead gives the <em>index</em> of the new or missing node within the relevant bag.</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>This routine calls <a class="el" href="classregina_1_1TreeDecomposition.html#abaf631d4dcefa2e7f025c727ffa313a6" title="Removes redundant bags from this tree decomposition.">compress()</a> automatically, and so there is no need to explicitly call <a class="el" href="classregina_1_1TreeDecomposition.html#abaf631d4dcefa2e7f025c727ffa313a6" title="Removes redundant bags from this tree decomposition.">compress()</a> before calling <a class="el" href="classregina_1_1TreeDecomposition.html#ae0c14882c657a38208732e025be562bc" title="Converts this into a nice tree decomposition.">makeNice()</a>.</dd></dl>
-<dl class="section user"><dt>Python:\n The <em>heightHint</em> argument is not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>The <em>heightHint</em> argument is not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">heightHint</td><td>an optional array where, for each node <em>i</em>, a higher value of <code>heightHint[i]</code> indicates that the node should be forgotten closer to the root bag. If this is non-null, then the size of this array should be the number of nodes in the underlying graph. </td></tr>
@@ -845,8 +845,8 @@ template&lt;typename T &gt; </div>
 <li>all bag types will be reset to 0, since in general rerooting may break whatever properties the bag types and subtypes represent.</li>
 </ul>
 <p>If the given bag is already the root bag, then this routine does nothing (and in particular, types and subtypes are preserved).</p>
-<dl class="section user"><dt>Headers:\n This routine is implemented in a separate header</dt><dd>(treedecomposition-impl.h), which is not included automatically by this file. However, typical end users should never need this extra header, since Regina's calculation engine already includes explicit instantiations for common types.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Headers</dt><dd>This routine is implemented in a separate header (treedecomposition-impl.h), which is not included automatically by this file. However, typical end users should never need this extra header, since Regina's calculation engine already includes explicit instantiations for common types.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>the type being used to estimate costs. It must be possible to assign 0 to a variable of type <em>T</em> using both constructors and the assignment operator.</td></tr>
@@ -945,7 +945,7 @@ template&lt;typename T &gt; </div>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a short text representation of this object. </p>
 <p>This text should be human-readable, should fit on a single line, and should not end with a newline. Where possible, it should use plain ASCII characters.</p>
-<dl class="section user"><dt>Python:\n In addition to str(), this is also used as the</dt><dd>Python "stringification" function <code>__str__()</code>.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>In addition to <a class="el" href="structregina_1_1Output.html#a2212a7a96adf2538ea875d49a98d99ad" title="Returns a short text representation of this object.">str()</a>, this is also used as the Python "stringification" function <code>__str__()</code>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a short text representation of this object. </dd></dl>
 
 </div>
@@ -1027,7 +1027,7 @@ template&lt;typename T &gt; </div>
 <p>Outputs this tree decomposition in the Graphviz DOT language. </p>
 <p>This produces a standalone DOT file that can be run through Graphviz in order to visualise the tree decomposition.</p>
 <p>This routine generates a directed graph (with arrows running from parent bags to their children). The nodes of this graph will be labelled in a way that indicates the tetrahedra contained in each bag. The resulting DOT file should be used with the <em>dot</em> program shipped with Graphviz.</p>
-<dl class="section user"><dt>Python:\n The <em>out</em> argument is not present; instead</dt><dd>standard output is assumed.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>The <em>out</em> argument is not present; instead standard output is assumed.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write.</td></tr>
@@ -1057,7 +1057,7 @@ template&lt;typename T &gt; </div>
 <p>Outputs this tree decomposition using the PACE text format. </p>
 <p>The text format is described in detail at <a href="https://pacechallenge.wordpress.com/pace-2016/track-a-treewidth/">https://pacechallenge.wordpress.com/pace-2016/track-a-treewidth/</a> , and is documented in detail by the routine <a class="el" href="classregina_1_1TreeDecomposition.html#aeaa9effe91aa0076f60d92369d188280" title="Builds a tree decomposition from a string using the PACE text format.">fromPACE(const std::string&amp;)</a>.</p>
 <p>If you write a tree decomposition using <a class="el" href="classregina_1_1TreeDecomposition.html#a0dabce1a3f084a041e1dd15c9a5cdb61" title="Returns a text representation of this tree decomposition using the PACE text format.">pace()</a> or <a class="el" href="classregina_1_1TreeDecomposition.html#a2668cd1871a2d62c7dca27c8540fca91" title="Outputs this tree decomposition using the PACE text format.">writePACE()</a> and then read it again using <a class="el" href="classregina_1_1TreeDecomposition.html#aeaa9effe91aa0076f60d92369d188280" title="Builds a tree decomposition from a string using the PACE text format.">fromPACE()</a>, you are <em>not</em> guaranteed to obtain an identical tree decomposition. This is because the PACE text format stores the connections between bags as an undirected, unrooted tree.</p>
-<dl class="section user"><dt>Python:\n The <em>out</em> argument is not present; instead</dt><dd>standard output is assumed.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>The <em>out</em> argument is not present; instead standard output is assumed.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write.</td></tr>
@@ -1085,7 +1085,7 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Writes a detailed text representation of this object to the given output stream. </p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1112,7 +1112,7 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Writes a short text representation of this object to the given output stream. </p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1127,7 +1127,7 @@ template&lt;typename T &gt; </div>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

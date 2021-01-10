@@ -846,7 +846,7 @@ template&lt;class List &gt; </div>
 <p>The given list of tetrahedra will not be examined by this routine. That is, only saturated blocks that do not contain any of these tetrahedra will be considered. As a consequence, if the given annulus uses any of these tetrahedra then <code>null</code> will be returned.</p>
 <p>If a block is found on the other hand, all of the tetrahedra within this block will be added to the given list.</p>
 <p>In the event that a block is found, it is guaranteed that the given annulus will be listed as annulus number 0 in the block structure, without any horizontal or vertical reflection.</p>
-<dl class="section user"><dt>Python:\n The second argument <em>avoidTets</em> is not</dt><dd>present. An empty list will be passed instead.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>The second argument <em>avoidTets</em> is not present. An empty list will be passed instead.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">annulus</td><td>the proposed boundary annulus that should form part of the new saturated block. </td></tr>
@@ -1000,7 +1000,7 @@ template&lt;class List &gt; </div>
 <p>Finally, note that if the large boundary ring is twisted (i.e., it forms a Klein bottle), then following the entire boundary ring around using this routine will bring you back to the starting annulus but with the <em>refVert</em> flag set.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>Annulus <em>thisAnnulus</em> of this block has no block adjacent to it.</dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>If you wish to trace around an entire boundary ring, you will need to adjust the argument <em>followPrev</em> according to whether or not the current annulus is reflected horizontally (since, under a horizontal reflection, "next" becomes "previous" and vice versa).</dd></dl>
-<dl class="section user"><dt>Python:\n This routine only takes two arguments (<em>thisAnnulus</em> </dt><dd>and <em>followPrev</em>). The return value is a tuple of four values: the block returned in <em>nextBlock</em>, the integer returned in <em>nextAnnulus</em>, the boolean returned in <em>refVert</em>, and the boolean returned in <em>refHoriz</em>.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This routine only takes two arguments (<em>thisAnnulus</em> and <em>followPrev</em>). The return value is a tuple of four values: the block returned in <em>nextBlock</em>, the integer returned in <em>nextAnnulus</em>, the boolean returned in <em>refVert</em>, and the boolean returned in <em>refHoriz</em>.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">thisAnnulus</td><td>describes which original boundary annulus of this block to examine; this must be between 0 and <a class="el" href="classregina_1_1SatBlock.html#ab6315fa72abebfdd6c03f4ed5ea68bab" title="Returns the number of annuli on the boundary of this saturated block.">nAnnuli()</a>-1 inclusive. </td></tr>
@@ -1410,7 +1410,7 @@ template&lt;class List &gt; </div>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a short text representation of this object. </p>
 <p>This text should be human-readable, should fit on a single line, and should not end with a newline. Where possible, it should use plain ASCII characters.</p>
-<dl class="section user"><dt>Python:\n In addition to str(), this is also used as the</dt><dd>Python "stringification" function <code>__str__()</code>.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>In addition to <a class="el" href="structregina_1_1Output.html#a2212a7a96adf2538ea875d49a98d99ad" title="Returns a short text representation of this object.">str()</a>, this is also used as the Python "stringification" function <code>__str__()</code>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a short text representation of this object. </dd></dl>
 
 </div>
@@ -1569,7 +1569,7 @@ template&lt;class List &gt; </div>
 <p>Writes an abbreviated name or symbol for this block to the given output stream. </p>
 <p>This name should reflect the particular block type, but need not provide thorough details.</p>
 <p>The output should be no more than a handful of characters long, and no newline should be written. In TeX mode, no leading or trailing dollar signs should be written.</p>
-<dl class="section user"><dt>Python:\n The parameter <em>out</em> does not exist; standard</dt><dd>output will be used.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>The parameter <em>out</em> does not exist; standard output will be used.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1608,7 +1608,7 @@ template&lt;class List &gt; </div>
 
 <p>Writes a detailed text representation of this object to the given output stream. </p>
 <p>This may be reimplemented by subclasses, but the parent <a class="el" href="classregina_1_1SatBlock.html" title="Represents a saturated block in a Seifert fibred space.">SatBlock</a> class offers a reasonable default implementation.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1644,7 +1644,7 @@ template&lt;class List &gt; </div>
 
 <p>Writes a short text representation of this object to the given output stream. </p>
 <p>This must be implemented by subclasses.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1833,7 +1833,7 @@ template&lt;class List &gt; </div>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

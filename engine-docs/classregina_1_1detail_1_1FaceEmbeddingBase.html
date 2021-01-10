@@ -120,7 +120,7 @@ class regina::detail::FaceEmbeddingBase&lt; dim, subdim &gt;</h3>
 <p>Helper class that provides core functionality for describing how a <em>subdim</em>-face of a <em>dim</em>-dimensional triangulation appears within each top-dimensional simplex. </p>
 <p>Each such appearance is described by a FaceEmbedding&lt;dim, subdim&gt; object, which uses this as a base class. End users should not need to refer to <a class="el" href="classregina_1_1detail_1_1FaceEmbeddingBase.html" title="Helper class that provides core functionality for describing how a subdim-face of a dim-dimensional t...">FaceEmbeddingBase</a> directly.</p>
 <p>See the <a class="el" href="classregina_1_1FaceEmbedding.html" title="Details how a subdim-face of a dim-dimensional triangulation appears within each top-dimensional simp...">FaceEmbedding</a> template class notes for further information.</p>
-<dl class="section user"><dt>Python:\n This base class is not present, but the "end user" class</dt><dd>FaceEmbedding&lt;dim, subdim&gt; is.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This base class is not present, but the "end user" class FaceEmbedding&lt;dim, subdim&gt; is.</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">dim</td><td>the dimension of the underlying triangulation. This must be between 2 and 15 inclusive. </td></tr>
@@ -156,7 +156,7 @@ template&lt;int dim, int subdim&gt; </div>
 
 <p>Default constructor. </p>
 <p>This object is unusable until it has some data assigned to it using <code>operator =</code>.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. </dd></dl>
 
 </div>
 </div>
@@ -471,7 +471,7 @@ template&lt;int dim, int subdim&gt; </div>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a short text representation of this object. </p>
 <p>This text should be human-readable, should fit on a single line, and should not end with a newline. Where possible, it should use plain ASCII characters.</p>
-<dl class="section user"><dt>Python:\n In addition to str(), this is also used as the</dt><dd>Python "stringification" function <code>__str__()</code>.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>In addition to <a class="el" href="structregina_1_1Output.html#a2212a7a96adf2538ea875d49a98d99ad" title="Returns a short text representation of this object.">str()</a>, this is also used as the Python "stringification" function <code>__str__()</code>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a short text representation of this object. </dd></dl>
 
 </div>
@@ -563,7 +563,7 @@ template&lt;int dim, int subdim&gt; </div>
 
 <p>A default implementation for detailed output. </p>
 <p>This routine simply calls <em>T::writeTextShort()</em> and appends a final newline.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -600,7 +600,7 @@ template&lt;int dim, int subdim&gt; </div>
 </div><div class="memdoc">
 
 <p>Writes a short text representation of this object to the given output stream. </p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -615,7 +615,7 @@ template&lt;int dim, int subdim&gt; </div>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

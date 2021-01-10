@@ -106,7 +106,7 @@ struct regina::Output&lt; T, supportsUtf8 &gt;</h3>
   </dd>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>Every object of this class that is ever instantiated <em>must</em> be derived from the class <em>T</em>. In other words, end users can construct objects of type <em>T</em> (which derives from Output&lt;T&gt;), but they cannot construct objects of the parent class Output&lt;T&gt; itself.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present, but the output routines str(), utf8() and</dt><dd><a class="el" href="structregina_1_1Output.html#ac2e81e576b58c7d8f52c252c4eb19cda" title="Returns a detailed text representation of this object.">detail()</a> will be provided directly through the various subclasses. </dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present, but the output routines <a class="el" href="structregina_1_1Output.html#a2212a7a96adf2538ea875d49a98d99ad" title="Returns a short text representation of this object.">str()</a>, <a class="el" href="structregina_1_1Output.html#ae34f42ab7aca350cf7b1dd6f2240a7f2" title="Returns a short text representation of this object using unicode characters.">utf8()</a> and <a class="el" href="structregina_1_1Output.html#ac2e81e576b58c7d8f52c252c4eb19cda" title="Returns a detailed text representation of this object.">detail()</a> will be provided directly through the various subclasses. </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ac2e81e576b58c7d8f52c252c4eb19cda"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac2e81e576b58c7d8f52c252c4eb19cda">&#9670;&nbsp;</a></span>detail()</h2>
@@ -150,7 +150,7 @@ template&lt;class T, bool supportsUtf8 = false&gt; </div>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a short text representation of this object. </p>
 <p>This text should be human-readable, should fit on a single line, and should not end with a newline. Where possible, it should use plain ASCII characters.</p>
-<dl class="section user"><dt>Python:\n In addition to str(), this is also used as the</dt><dd>Python "stringification" function <code>__str__()</code>.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>In addition to <a class="el" href="structregina_1_1Output.html#a2212a7a96adf2538ea875d49a98d99ad" title="Returns a short text representation of this object.">str()</a>, this is also used as the Python "stringification" function <code>__str__()</code>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a short text representation of this object. </dd></dl>
 
 </div>
@@ -183,7 +183,7 @@ template&lt;class T, bool supportsUtf8 = false&gt; </div>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

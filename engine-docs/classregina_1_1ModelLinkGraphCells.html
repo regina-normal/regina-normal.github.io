@@ -229,7 +229,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ModelLinkGraph</b></
 <p>Suppose that the <em>i</em>th cell is a <em>k</em>-gon. Then the iterator range described by <code>begin(i)</code> and <code>end(i)</code> will iterate through the <em>k</em> arcs along the boundary of the <em>i</em>th cell in the same order as described by <a class="el" href="classregina_1_1ModelLinkGraphCells.html#a82a2312e1d7864ab49cc946915d5ebe3" title="Returns the given arc along the boundary of the given 2-cell.">arc()</a>; that is, walking anticlockwise around the cell boundary with the cell to the left of each arc.</p>
 <p>Dereferencing the <em>j</em>th iterator in this range gives the same result as calling <code>arc(cell, j)</code>.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>The underlying <a class="el" href="classregina_1_1ModelLinkGraph.html" title="Represents an undirected 4-valent planar graph with a specific planar embedding.">ModelLinkGraph</a> is non-empty, connected, and describes a planar graph embedding. Note that connectivity is already required by the class constructor, and you can test the remaining conditions by calling <a class="el" href="classregina_1_1ModelLinkGraphCells.html#a0ae15c42db3ab8321a751201bfeaef19" title="Determines whether the underlying graph is non-empty with a planar embedding, assuming that it is alr...">isValid()</a>.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present. Use arc() and size() instead.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. Use <a class="el" href="classregina_1_1ModelLinkGraphCells.html#a82a2312e1d7864ab49cc946915d5ebe3" title="Returns the given arc along the boundary of the given 2-cell.">arc()</a> and <a class="el" href="classregina_1_1ModelLinkGraphCells.html#a4043ef70f0d094c3ff49d8422e581529" title="Returns the number of arcs aloung the boundary of the given 2-cell.">size()</a> instead.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the beginning of an iterator range for the boundary of the given cell. </dd></dl>
 
 </div>
@@ -398,7 +398,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ModelLinkGraph</b></
 <p>Suppose that the <em>i</em>th cell is a <em>k</em>-gon. Then the iterator range described by <code>begin(i)</code> and <code>end(i)</code> will iterate through the <em>k</em> arcs along the boundary of the <em>i</em>th cell in the same order as described by <a class="el" href="classregina_1_1ModelLinkGraphCells.html#a82a2312e1d7864ab49cc946915d5ebe3" title="Returns the given arc along the boundary of the given 2-cell.">arc()</a>; that is, walking anticlockwise around the cell boundary with the cell to the left of each arc.</p>
 <p>Dereferencing the <em>j</em>th iterator in this range gives the same result as calling <code>arc(cell, j)</code>.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>The underlying <a class="el" href="classregina_1_1ModelLinkGraph.html" title="Represents an undirected 4-valent planar graph with a specific planar embedding.">ModelLinkGraph</a> is non-empty, connected, and describes a planar graph embedding. Note that connectivity is already required by the class constructor, and you can test the remaining conditions by calling <a class="el" href="classregina_1_1ModelLinkGraphCells.html#a0ae15c42db3ab8321a751201bfeaef19" title="Determines whether the underlying graph is non-empty with a planar embedding, assuming that it is alr...">isValid()</a>.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present. Use arc() and size() instead.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. Use <a class="el" href="classregina_1_1ModelLinkGraphCells.html#a82a2312e1d7864ab49cc946915d5ebe3" title="Returns the given arc along the boundary of the given 2-cell.">arc()</a> and <a class="el" href="classregina_1_1ModelLinkGraphCells.html#a4043ef70f0d094c3ff49d8422e581529" title="Returns the number of arcs aloung the boundary of the given 2-cell.">size()</a> instead.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the end of an iterator range for the boundary of the given cell. </dd></dl>
 
 </div>
@@ -497,7 +497,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ModelLinkGraph</b></
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a short text representation of this object. </p>
 <p>This text should be human-readable, should fit on a single line, and should not end with a newline. Where possible, it should use plain ASCII characters.</p>
-<dl class="section user"><dt>Python:\n In addition to str(), this is also used as the</dt><dd>Python "stringification" function <code>__str__()</code>.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>In addition to <a class="el" href="structregina_1_1Output.html#a2212a7a96adf2538ea875d49a98d99ad" title="Returns a short text representation of this object.">str()</a>, this is also used as the Python "stringification" function <code>__str__()</code>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a short text representation of this object. </dd></dl>
 
 </div>
@@ -548,7 +548,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ModelLinkGraph</b></
 </div><div class="memdoc">
 
 <p>Writes a detailed text representation of this object to the given output stream. </p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -575,7 +575,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ModelLinkGraph</b></
 </div><div class="memdoc">
 
 <p>Writes a short text representation of this object to the given output stream. </p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -590,7 +590,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ModelLinkGraph</b></
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

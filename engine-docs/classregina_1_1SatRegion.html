@@ -281,7 +281,7 @@ Public Member Functions</h2></td></tr>
 <p>It is guaranteed however that, if the starter block passed to the <a class="el" href="classregina_1_1SatRegion.html" title="A large saturated region in a Seifert fibred space formed by joining together saturated blocks.">SatRegion</a> constructor provides any boundary annuli for the overall region, then the first such annulus in the starter block will be numbered 0 here.</p>
 <p>The structure returned will be the annulus precisely as it appears within its particular saturated block. As discussed in the <a class="el" href="structregina_1_1SatBlockSpec.html" title="Describes how a single saturated block forms a part of a larger saturated region.">SatBlockSpec</a> class notes, the block might be reflected horizontally and/or vertically within the overall region, which will affect how the annulus is positioned as part of the overall region boundary (e.g., the annulus might be positioned upside-down in the overall region boundary, or it might be positioned with its second triangle appearing before its first triangle as one walks around the boundary). To account for this, the two boolean arguments <em>blockRefVert</em> and <em>blockRefHoriz</em> will be modified to indicate if and how the block is reflected.</p>
 <dl class="section warning"><dt>Warning</dt><dd>This routine is quite slow, since it currently scans through every annulus of every saturated block. Use it sparingly!</dd></dl>
-<dl class="section user"><dt>Python:\n Both variants of boundaryAnnulus() are</dt><dd>combined into a single routine, which takes the integer <em>which</em> as its only argument and returns its results as a tuple. See the alternate version of <a class="el" href="classregina_1_1SatRegion.html#ad5b71f8fb8bb29e4cb4347fd25b6e1f4" title="Returns the requested saturated annulus on the boundary of this region.">boundaryAnnulus()</a> for details on how the return tuple is structured.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Both variants of <a class="el" href="classregina_1_1SatRegion.html#ad5b71f8fb8bb29e4cb4347fd25b6e1f4" title="Returns the requested saturated annulus on the boundary of this region.">boundaryAnnulus()</a> are combined into a single routine, which takes the integer <em>which</em> as its only argument and returns its results as a tuple. See the alternate version of <a class="el" href="classregina_1_1SatRegion.html#ad5b71f8fb8bb29e4cb4347fd25b6e1f4" title="Returns the requested saturated annulus on the boundary of this region.">boundaryAnnulus()</a> for details on how the return tuple is structured.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">which</td><td>specifies which boundary annulus of this region to return; this must be between 0 and <a class="el" href="classregina_1_1SatRegion.html#a0eab8ca2776c0047b5f25c2aad047ad1" title="Returns the number of saturated annuli that together form the boundary components of this region.">numberOfBoundaryAnnuli()</a>-1 inclusive. </td></tr>
@@ -343,7 +343,7 @@ Public Member Functions</h2></td></tr>
 <p>Various details of the requested boundary annulus are returned in the various arguments, as described below.</p>
 <p>Be aware that the block containing the requested annulus might be reflected horizontally and/or vertically within the overall region, as discussed in the <a class="el" href="structregina_1_1SatBlockSpec.html" title="Describes how a single saturated block forms a part of a larger saturated region.">SatBlockSpec</a> class notes. This will affect how the annulus is positioned as part of the overall region boundary (e.g., the annulus might be positioned upside-down in the overall region boundary, or it might be positioned with its second triangle appearing before its first triangle as one walks around the boundary). The two boolean arguments <em>blockRefVert</em> and <em>blockRefHoriz</em> will be modified to indicate if and how the block is reflected.</p>
 <dl class="section warning"><dt>Warning</dt><dd>This routine is quite slow, since it currently scans through every annulus of every saturated block. Use it sparingly!</dd></dl>
-<dl class="section user"><dt>Python:\n This routine only takes a single argument (the</dt><dd>integer <em>which</em>). The return value is a tuple of four values: the block returned in <em>block</em>, the integer returned in <em>annulus</em>, the boolean returned in <em>blockRefVert</em>, and the boolean returned in <em>blockRefHoriz</em>.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This routine only takes a single argument (the integer <em>which</em>). The return value is a tuple of four values: the block returned in <em>block</em>, the integer returned in <em>annulus</em>, the boolean returned in <em>blockRefVert</em>, and the boolean returned in <em>blockRefHoriz</em>.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">which</td><td>specifies which boundary annulus of this region to return; this must be between 0 and <a class="el" href="classregina_1_1SatRegion.html#a0eab8ca2776c0047b5f25c2aad047ad1" title="Returns the number of saturated annuli that together form the boundary components of this region.">numberOfBoundaryAnnuli()</a>-1 inclusive. </td></tr>
@@ -457,7 +457,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section pre"><dt>Precondition</dt><dd>If any blocks already belonging to this region have adjacencies listed in their <a class="el" href="classregina_1_1SatBlock.html" title="Represents a saturated block in a Seifert fibred space.">SatBlock</a> structures, then these adjacent blocks belong to this region also. This precondition is easily satisfied if you let the <a class="el" href="classregina_1_1SatRegion.html" title="A large saturated region in a Seifert fibred space formed by joining together saturated blocks.">SatRegion</a> constructor and <a class="el" href="classregina_1_1SatRegion.html#a737839a4e297056cf8328c03a86b57b5" title="Expands this region as far as possible within the overall triangulation.">expand()</a> do all of the adjacency handling, as described in the class notes. </dd>
 <dd>
 The list <em>avoidTets</em> includes all tetrahedra on the boundaries of any blocks already contained in this region.</dd></dl>
-<dl class="section user"><dt>Python:\n The first argument <em>avoidTets</em> is not present.</dt><dd>An empty list will be passed instead.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>The first argument <em>avoidTets</em> is not present. An empty list will be passed instead.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">avoidTets</td><td>a list of tetrahedra that should not be considered for new blocks, as discussed above. Note that this list may be modified by this routine. </td></tr>
@@ -549,7 +549,7 @@ The list <em>avoidTets</em> includes all tetrahedra on the boundaries of any blo
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a short text representation of this object. </p>
 <p>This text should be human-readable, should fit on a single line, and should not end with a newline. Where possible, it should use plain ASCII characters.</p>
-<dl class="section user"><dt>Python:\n In addition to str(), this is also used as the</dt><dd>Python "stringification" function <code>__str__()</code>.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>In addition to <a class="el" href="structregina_1_1Output.html#a2212a7a96adf2538ea875d49a98d99ad" title="Returns a short text representation of this object.">str()</a>, this is also used as the Python "stringification" function <code>__str__()</code>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a short text representation of this object. </dd></dl>
 
 </div>
@@ -612,7 +612,7 @@ The list <em>avoidTets</em> includes all tetrahedra on the boundaries of any blo
 <p>Writes an abbreviated list of blocks within this region to the given output stream. </p>
 <p>Blocks will be written using their abbreviated names, and these names will be separated by commas. See <a class="el" href="classregina_1_1SatBlock.html#ab81d8335c3999dfea5665b9d2b21134f" title="Writes an abbreviated name or symbol for this block to the given output stream.">SatBlock::writeAbbr()</a> for further details.</p>
 <p>The blocks within this region will be sorted before their abbreviated names are output. The particular method of sorting is an arbitrary aesthetic decision on the part of the author, and is subject to change in future versions of Regina.</p>
-<dl class="section user"><dt>Python:\n The parameter <em>out</em> does not exist; standard</dt><dd>output will be used.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>The parameter <em>out</em> does not exist; standard output will be used.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -651,7 +651,7 @@ The list <em>avoidTets</em> includes all tetrahedra on the boundaries of any blo
 
 <p>Writes details of the composition of this region to the given output stream. </p>
 <p>The output will consist of several lines. The first line will contain the title string (passed as a separate argument to this routine), followed by a colon. Following this will be a number of lines describing the individual blocks that make up this region and the various adjacencies between them.</p>
-<dl class="section user"><dt>Python:\n The parameter <em>out</em> does not exist; standard</dt><dd>output will be used.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>The parameter <em>out</em> does not exist; standard output will be used.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -687,7 +687,7 @@ The list <em>avoidTets</em> includes all tetrahedra on the boundaries of any blo
 </div><div class="memdoc">
 
 <p>Writes a detailed text representation of this object to the given output stream. </p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -714,7 +714,7 @@ The list <em>avoidTets</em> includes all tetrahedra on the boundaries of any blo
 </div><div class="memdoc">
 
 <p>Writes a short text representation of this object to the given output stream. </p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -729,7 +729,7 @@ The list <em>avoidTets</em> includes all tetrahedra on the boundaries of any blo
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

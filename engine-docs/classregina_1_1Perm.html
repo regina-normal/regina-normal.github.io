@@ -105,7 +105,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad1114e07e4d11ec2d89e182768bfe360"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Perm.html#ad1114e07e4d11ec2d89e182768bfe360">sign</a> () const</td></tr>
 <tr class="memdesc:ad1114e07e4d11ec2d89e182768bfe360"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the sign of this permutation.  <a href="#ad1114e07e4d11ec2d89e182768bfe360">More...</a><br /></td></tr>
 <tr class="separator:ad1114e07e4d11ec2d89e182768bfe360"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a191a1601142268e269f32ca1b153efe0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Perm.html#a191a1601142268e269f32ca1b153efe0">operator[]</a> (int <a class="el" href="namespaceregina.html#aa80a53fba63b479f27268662ec97e248">source</a>) const</td></tr>
+<tr class="memitem:a191a1601142268e269f32ca1b153efe0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Perm.html#a191a1601142268e269f32ca1b153efe0">operator[]</a> (int <a class="el" href="namespaceregina.html#adcfb69a69d63e77fb947c071b0b65cb8">source</a>) const</td></tr>
 <tr class="memdesc:a191a1601142268e269f32ca1b153efe0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the image of the given integer under this permutation.  <a href="#a191a1601142268e269f32ca1b153efe0">More...</a><br /></td></tr>
 <tr class="separator:a191a1601142268e269f32ca1b153efe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9984307423615a00f75c5d4d90050d27"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Perm.html#a9984307423615a00f75c5d4d90050d27">preImageOf</a> (int image) const</td></tr>
@@ -169,7 +169,7 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:a4269d01e17426bef1f0c12faa2e18253"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Perm.html#a4269d01e17426bef1f0c12faa2e18253">imageBits</a> = <a class="el" href="namespaceregina.html#af3cfd88109df8473b8ae9647ff96d35a">regina::bitsRequired</a>(n)</td></tr>
+<tr class="memitem:a4269d01e17426bef1f0c12faa2e18253"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Perm.html#a4269d01e17426bef1f0c12faa2e18253">imageBits</a> = <a class="el" href="group__utilities.html#gaf3cfd88109df8473b8ae9647ff96d35a">regina::bitsRequired</a>(n)</td></tr>
 <tr class="memdesc:a4269d01e17426bef1f0c12faa2e18253"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the number of bits used by the permutation code to store the image of a single integer.  <a href="#a4269d01e17426bef1f0c12faa2e18253">More...</a><br /></td></tr>
 <tr class="separator:a4269d01e17426bef1f0c12faa2e18253"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1f169b18d4361e484c3fca6bf9d57c5"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="classregina_1_1Perm.html#a5cde8c810707ad0223b49b9240e1b655">Index</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Perm.html#ae1f169b18d4361e484c3fca6bf9d57c5">nPerms</a> = <a class="el" href="group__maths.html#gae6de79415ac9f777d8015d05df88d0af">factorial</a>(n)</td></tr>
@@ -192,7 +192,7 @@ class regina::Perm&lt; n &gt;</h3>
 <li>For <em>n</em> &le; 4, the code is an index into a hard-coded list of all possible permutations (i.e., an index into the symmetric group <em>S<sub>n</sub></em>). For details, see the documentation for the specialisations <a class="el" href="classregina_1_1Perm_3_012_01_4.html" title="Represents a permutation of {0,1}.">Perm&lt;2&gt;</a>, <a class="el" href="classregina_1_1Perm_3_013_01_4.html" title="Represents a permutation of {0,1,2}.">Perm&lt;3&gt;</a> and <a class="el" href="classregina_1_1Perm_3_014_01_4.html" title="Represents a permutation of {0,1,2,3}.">Perm&lt;4&gt;</a> respectively.</li>
 </ul>
 <p>For <em>n</em> = 2,...,5 (which appear throughout 2-, 3- and 4-manifold triangulations), this template is specialised: the code is highly optimised and also offers some extra functionality.</p>
-<dl class="section user"><dt>Python:\n Python does not support templates. For each</dt><dd><em>n</em> = 2,...,16, this class is available in Python under the corresponding name Perm2, Perm3, ..., Perm16.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Python does not support templates. For each <em>n</em> = 2,...,16, this class is available in Python under the corresponding name Perm2, Perm3, ..., Perm16.</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">n</td><td>the number of objects being permuted. This must be between 2 and 16 inclusive. </td></tr>
@@ -392,7 +392,7 @@ template&lt;int n&gt; </div>
 
 <p>Creates a permutation mapping (<em>a</em>[0], ..., <em>a</em>[<em>n</em>-1]) to (<em>b</em>[0], ..., <em>b</em>[<em>n</em>-1]) respectively. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>Both arrays <em>a</em> and <em>b</em> contain <em>n</em> elements, which are 0,...,<em>n</em>-1 in some order.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">a</td><td>the array of preimages; this must have length <em>n</em>. </td></tr>
@@ -1129,10 +1129,10 @@ template&lt;class URBG &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Python:\n Not present, though the non-thread-safe variant</dt><dd>without the <em>gen</em> argument is available.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present, though the non-thread-safe variant without the <em>gen</em> argument is available.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">gen</td><td>the source of randomness to use (e.g., one of the many options provided in the C++ standard &lt;random&gt; header). </td></tr>
+    <tr><td class="paramname">gen</td><td>the source of randomness to use (e.g., one of the many options provided in the C++ standard <code>random</code> header). </td></tr>
     <tr><td class="paramname">even</td><td>if <code>true</code>, then the resulting permutation is guaranteed to be even (and again all even permutations are returned with equal probability). </td></tr>
   </table>
   </dd>
@@ -1296,7 +1296,7 @@ template&lt;int n&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr int <a class="el" href="classregina_1_1Perm.html">regina::Perm</a>&lt; n &gt;::imageBits = <a class="el" href="namespaceregina.html#af3cfd88109df8473b8ae9647ff96d35a">regina::bitsRequired</a>(n)</td>
+          <td class="memname">constexpr int <a class="el" href="classregina_1_1Perm.html">regina::Perm</a>&lt; n &gt;::imageBits = <a class="el" href="group__utilities.html#gaf3cfd88109df8473b8ae9647ff96d35a">regina::bitsRequired</a>(n)</td>
         </tr>
       </table>
   </td>
@@ -1371,7 +1371,7 @@ template&lt;int n&gt; </div>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

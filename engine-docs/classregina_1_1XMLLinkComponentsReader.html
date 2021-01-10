@@ -75,8 +75,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a48568fbbfc05a92588119ad31434fc51"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1XMLLinkComponentsReader.html#a48568fbbfc05a92588119ad31434fc51">initialChars</a> (const std::string &amp;chars)</td></tr>
 <tr class="memdesc:a48568fbbfc05a92588119ad31434fc51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signifies that the initial text belonging to this XML element has been read.  <a href="#a48568fbbfc05a92588119ad31434fc51">More...</a><br /></td></tr>
 <tr class="separator:a48568fbbfc05a92588119ad31434fc51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86291976a435ec8528337b14bd8d346e"><td class="memItemLeft" align="right" valign="top"><a id="a86291976a435ec8528337b14bd8d346e"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>broken</b> () const</td></tr>
+<tr class="memitem:a86291976a435ec8528337b14bd8d346e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1XMLLinkComponentsReader.html#a86291976a435ec8528337b14bd8d346e">broken</a> () const</td></tr>
+<tr class="memdesc:a86291976a435ec8528337b14bd8d346e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the XML element has been found to contain invalid data.  <a href="#a86291976a435ec8528337b14bd8d346e">More...</a><br /></td></tr>
 <tr class="separator:a86291976a435ec8528337b14bd8d346e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16a3e05cc93447ee75489bad822feeb9"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classregina_1_1XMLElementReader.html">XMLElementReader</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1XMLElementReader.html#a16a3e05cc93447ee75489bad822feeb9">startSubElement</a> (const std::string &amp;subTagName, const <a class="el" href="classregina_1_1xml_1_1XMLPropertyDict.html">regina::xml::XMLPropertyDict</a> &amp;subTagProps)</td></tr>
 <tr class="memdesc:a16a3e05cc93447ee75489bad822feeb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signifies that a subelement of this XML element is about to be parsed.  <a href="#a16a3e05cc93447ee75489bad822feeb9">More...</a><br /></td></tr>
@@ -160,6 +160,26 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>broken</b> () const</
 </dl>
 
 <p>Reimplemented in <a class="el" href="classregina_1_1XMLPacketReader.html#aa9dde3d8d3d8d189d355e1b186f1b83a">regina::XMLPacketReader</a>.</p>
+
+</div>
+</div>
+<a id="a86291976a435ec8528337b14bd8d346e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86291976a435ec8528337b14bd8d346e">&#9670;&nbsp;</a></span>broken()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool regina::XMLLinkComponentsReader::broken </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indicates whether the XML element has been found to contain invalid data. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if and only if invalid data has been found. </dd></dl>
 
 </div>
 </div>
@@ -419,11 +439,11 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>broken</b> () const</
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>link/xmllinkreader.h</li>
+<li>link/<a class="el" href="xmllinkreader_8h.html">xmllinkreader.h</a></li>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

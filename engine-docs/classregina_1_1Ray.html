@@ -144,7 +144,7 @@ Protected Attributes</h2></td></tr>
 <p>Such a ray is a half-line beginning at the origin, and is represented by some integer point that it passes through. Positive scalar multiples of a ray are considered to represent the same ray.</p>
 <p>This class is intended for serious computation, and as a result it has a streamlined implementation with no virtual methods. It can be subclassed, but since there are no virtual methods, type information must generally be known at compile time. Nevertheless, in many respects, different subclasses of <a class="el" href="classregina_1_1Ray.html" title="A fast class for storing a ray rooted at the origin that passes through an integer point.">Ray</a> can happily interact with one another.</p>
 <dl class="section warning"><dt>Warning</dt><dd>As of Regina 4.90, this class merges the old functionality of NFastRay and NRay from Regina 4.6. Since functions are no longer virtual, the old clone() method and intersect() function are gone completely. Instead you can just use the copy constructor and standard linear operators respectively.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab4d750493cf7c4761b6f10c51ffa77e1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab4d750493cf7c4761b6f10c51ffa77e1">&#9670;&nbsp;</a></span>Ray() <span class="overload">[1/2]</span></h2>
@@ -835,7 +835,7 @@ Protected Attributes</h2></td></tr>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

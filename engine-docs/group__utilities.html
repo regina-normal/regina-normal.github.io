@@ -39,8 +39,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a> &#124;
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
@@ -51,12 +51,6 @@ $(function() {
 <p>Miscellaneous helper classes and functions.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespaceregina"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceregina.html">regina</a></td></tr>
-<tr class="memdesc:namespaceregina"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the entire Regina calculation engine. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1BitManipulatorByType.html">regina::BitManipulatorByType&lt; T &gt;</a></td></tr>
@@ -91,6 +85,15 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1i18n_1_1IConvStream.html">regina::i18n::IConvStream</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An output stream that converts between character encodings.  <a href="classregina_1_1i18n_1_1IConvStream.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structregina_1_1IsReginaInteger.html">regina::IsReginaInteger&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if the type <em>T</em> is one of Regina's own integer types.  <a href="structregina_1_1IsReginaInteger.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structregina_1_1IntOfSize.html">regina::IntOfSize&lt; bytes &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives access to native integer types that hold <em>exactly</em> <em>k</em> bytes, where <em>k</em> may be any compile-time constant.  <a href="structregina_1_1IntOfSize.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structregina_1_1IntOfMinSize.html">regina::IntOfMinSize&lt; bytes &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives access to native integer types that hold <em>at least</em> <em>k</em> bytes, where <em>k</em> may be any compile-time constant.  <a href="structregina_1_1IntOfMinSize.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1ListOnCall.html">regina::ListOnCall&lt; T &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offers a hard-coded list of expensive objects that should only be created if they are required.  <a href="classregina_1_1ListOnCall.html#details">More...</a><br /></td></tr>
@@ -146,11 +149,29 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1RandomEngine.html">regina::RandomEngine</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offers threadsafe access to Regina's global uniform random bit generator.  <a href="classregina_1_1RandomEngine.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structregina_1_1Returns.html">regina::Returns&lt; ReturnType_ &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A convenience base class for a non-void function object, which does nothing beyond provide a <em>ReturnType</em> typedef.  <a href="structregina_1_1Returns.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1HasReturnType.html">regina::HasReturnType&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal to <a class="el" href="structregina_1_1ReturnsTraits.html" title="Helper class to assist with compile-time analysis of Regina&#39;s function objects.">ReturnsTraits</a>.  <a href="classregina_1_1HasReturnType.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structregina_1_1ReturnsTraitsImplementation.html">regina::ReturnsTraitsImplementation&lt; T, hasReturnType &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the implementation of <a class="el" href="structregina_1_1ReturnsTraits.html" title="Helper class to assist with compile-time analysis of Regina&#39;s function objects.">ReturnsTraits</a>.  <a href="structregina_1_1ReturnsTraitsImplementation.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structregina_1_1ReturnsTraits.html">regina::ReturnsTraits&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper class to assist with compile-time analysis of Regina's function objects.  <a href="structregina_1_1ReturnsTraits.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structregina_1_1NewFunction.html">regina::NewFunction&lt; Base &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function object that creates a new object subclassed from <em>Base</em>, where the particular subclass is chosen according to the template argument to operator().  <a href="structregina_1_1NewFunction.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1SafePointeeBase.html">regina::SafePointeeBase&lt; T &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A base class for objects of type <em>T</em> to be referenceable by a <a class="el" href="classregina_1_1SafePtr.html" title="A reference counted smart pointer that supports alternate models of ownership.">SafePtr</a>.  <a href="classregina_1_1SafePointeeBase.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1SafePtr.html">regina::SafePtr&lt; T &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A reference counted smart pointer that supports alternate models of ownership.  <a href="classregina_1_1SafePtr.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1LightweightSequence.html">regina::LightweightSequence&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A lightweight class for storing a random-access sequence of objects.  <a href="classregina_1_1LightweightSequence.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1TrieSet.html">regina::TrieSet&lt; T &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A trie-like data structure for storing and retriving sets.  <a href="classregina_1_1TrieSet.html#details">More...</a><br /></td></tr>
@@ -170,6 +191,12 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1xml_1_1XMLParser.html">regina::xml::XMLParser</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to parse an entire XML file.  <a href="classregina_1_1xml_1_1XMLParser.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga5ffec6ccec6eaaf2e875fd1533a50c05"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utilities.html#ga5ffec6ccec6eaaf2e875fd1533a50c05">INT128_AVAILABLE</a></td></tr>
+<tr class="memdesc:ga5ffec6ccec6eaaf2e875fd1533a50c05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defined if and only if native 128-bit arithmetic is available on this platform.  <a href="#ga5ffec6ccec6eaaf2e875fd1533a50c05">More...</a><br /></td></tr>
+<tr class="separator:ga5ffec6ccec6eaaf2e875fd1533a50c05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -200,9 +227,6 @@ Typedefs</h2></td></tr>
 <tr class="memitem:gaf4b4c70291965332b28e1891b86ea054"><td class="memItemLeft" align="right" valign="top">typedef InternalQitmaskLen64 ::Type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utilities.html#gaf4b4c70291965332b28e1891b86ea054">regina::QitmaskLen64</a></td></tr>
 <tr class="memdesc:gaf4b4c70291965332b28e1891b86ea054"><td class="mdescLeft">&#160;</td><td class="mdescRight">A convenience typedef that gives a small and extremely fast qitmask class capable of holding at least 64 true-or-false bits.  <a href="group__utilities.html#gaf4b4c70291965332b28e1891b86ea054">More...</a><br /></td></tr>
 <tr class="separator:gaf4b4c70291965332b28e1891b86ea054"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaabac6c7ebbdfadab22b74bca62c900e5"><td class="memItemLeft" align="right" valign="top">typedef T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utilities.html#gaabac6c7ebbdfadab22b74bca62c900e5">regina::SafePtr&lt; T &gt;::element_type</a></td></tr>
-<tr class="memdesc:gaabac6c7ebbdfadab22b74bca62c900e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The pointee type.  <a href="#gaabac6c7ebbdfadab22b74bca62c900e5">More...</a><br /></td></tr>
-<tr class="separator:gaabac6c7ebbdfadab22b74bca62c900e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1e6b4c5fb1f5cfb89c1e4ed334b9d465"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classregina_1_1Tritmask1.html">Tritmask1</a>&lt; unsigned char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utilities.html#ga1e6b4c5fb1f5cfb89c1e4ed334b9d465">regina::TritmaskLen8</a></td></tr>
 <tr class="memdesc:ga1e6b4c5fb1f5cfb89c1e4ed334b9d465"><td class="mdescLeft">&#160;</td><td class="mdescRight">A convenience typedef that gives a small and extremely fast tritmask class capable of holding at least 8 true-or-false bits.  <a href="group__utilities.html#ga1e6b4c5fb1f5cfb89c1e4ed334b9d465">More...</a><br /></td></tr>
 <tr class="separator:ga1e6b4c5fb1f5cfb89c1e4ed334b9d465"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -256,45 +280,17 @@ Functions</h2></td></tr>
 <tr class="memitem:ga9952c5bb8780ca8f54d450350cc640d7"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utilities.html#ga9952c5bb8780ca8f54d450350cc640d7">regina::i18n::utf8ValidTo</a> (const char *s)</td></tr>
 <tr class="memdesc:ga9952c5bb8780ca8f54d450350cc640d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifies the longest prefix of the given string that is valid UTF-8.  <a href="group__utilities.html#ga9952c5bb8780ca8f54d450350cc640d7">More...</a><br /></td></tr>
 <tr class="separator:ga9952c5bb8780ca8f54d450350cc640d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2a96ed25fecca35188a79267f9d4f4ae"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utilities.html#ga2a96ed25fecca35188a79267f9d4f4ae">regina::i18n::Locale::codeset</a> ()</td></tr>
-<tr class="memdesc:ga2a96ed25fecca35188a79267f9d4f4ae"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the character encoding used in the current locale.  <a href="#ga2a96ed25fecca35188a79267f9d4f4ae">More...</a><br /></td></tr>
-<tr class="separator:ga2a96ed25fecca35188a79267f9d4f4ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3334747d42a32a95043a910a6dd173bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utilities.html#ga3334747d42a32a95043a910a6dd173bc">regina::i18n::IConvStreamBuffer::IConvStreamBuffer</a> ()</td></tr>
-<tr class="memdesc:ga3334747d42a32a95043a910a6dd173bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new stream buffer.  <a href="#ga3334747d42a32a95043a910a6dd173bc">More...</a><br /></td></tr>
-<tr class="separator:ga3334747d42a32a95043a910a6dd173bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga61810bdda48b4a95ef66c577f62eadf4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utilities.html#ga61810bdda48b4a95ef66c577f62eadf4">regina::i18n::IConvStreamBuffer::~IConvStreamBuffer</a> ()</td></tr>
-<tr class="memdesc:ga61810bdda48b4a95ef66c577f62eadf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys this stream buffer.  <a href="#ga61810bdda48b4a95ef66c577f62eadf4">More...</a><br /></td></tr>
-<tr class="separator:ga61810bdda48b4a95ef66c577f62eadf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8170e81f5d3a805161cc1ff9800e458f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1i18n_1_1IConvStreamBuffer.html">IConvStreamBuffer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utilities.html#ga8170e81f5d3a805161cc1ff9800e458f">regina::i18n::IConvStreamBuffer::open</a> (std::ostream &amp;dest, const char *srcCode, const char *destCode)</td></tr>
-<tr class="memdesc:ga8170e81f5d3a805161cc1ff9800e458f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens a new stream buffer that wraps around the given output stream.  <a href="#ga8170e81f5d3a805161cc1ff9800e458f">More...</a><br /></td></tr>
-<tr class="separator:ga8170e81f5d3a805161cc1ff9800e458f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaec85de7b3e74749b1dd1d5d8b5f6c1aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1i18n_1_1IConvStreamBuffer.html">IConvStreamBuffer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utilities.html#gaec85de7b3e74749b1dd1d5d8b5f6c1aa">regina::i18n::IConvStreamBuffer::close</a> ()  throw ()</td></tr>
-<tr class="memdesc:gaec85de7b3e74749b1dd1d5d8b5f6c1aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes this stream buffer.  <a href="#gaec85de7b3e74749b1dd1d5d8b5f6c1aa">More...</a><br /></td></tr>
-<tr class="separator:gaec85de7b3e74749b1dd1d5d8b5f6c1aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga14a3b54d5a102597eb6abfbb173bce7b"><td class="memItemLeft" align="right" valign="top">int_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utilities.html#ga14a3b54d5a102597eb6abfbb173bce7b">regina::i18n::IConvStreamBuffer::overflow</a> (int_type c)</td></tr>
-<tr class="memdesc:ga14a3b54d5a102597eb6abfbb173bce7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends buffered data to the destination output stream, converting between character sets en route.  <a href="#ga14a3b54d5a102597eb6abfbb173bce7b">More...</a><br /></td></tr>
-<tr class="separator:ga14a3b54d5a102597eb6abfbb173bce7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga830d349d83cfdb64fee00d58d65f4aab"><td class="memItemLeft" align="right" valign="top">int_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utilities.html#ga830d349d83cfdb64fee00d58d65f4aab">regina::i18n::IConvStreamBuffer::underflow</a> ()</td></tr>
-<tr class="memdesc:ga830d349d83cfdb64fee00d58d65f4aab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simply returns EOF (since this is not an input stream).  <a href="#ga830d349d83cfdb64fee00d58d65f4aab">More...</a><br /></td></tr>
-<tr class="separator:ga830d349d83cfdb64fee00d58d65f4aab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadd2ef9bdf704ed5c23eea6db04fb40e4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utilities.html#gadd2ef9bdf704ed5c23eea6db04fb40e4">regina::i18n::IConvStreamBuffer::sync</a> ()</td></tr>
-<tr class="memdesc:gadd2ef9bdf704ed5c23eea6db04fb40e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flushes all output buffers.  <a href="#gadd2ef9bdf704ed5c23eea6db04fb40e4">More...</a><br /></td></tr>
-<tr class="separator:gadd2ef9bdf704ed5c23eea6db04fb40e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae0cf28d98ddd5269875d02dd4a0b0189"><td class="memItemLeft" align="right" valign="top"><a id="gae0cf28d98ddd5269875d02dd4a0b0189"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>regina::i18n::IConvStreamBuffer::IConvStreamBuffer</b> (const <a class="el" href="classregina_1_1i18n_1_1IConvStreamBuffer.html">IConvStreamBuffer</a> &amp;)=delete</td></tr>
-<tr class="separator:gae0cf28d98ddd5269875d02dd4a0b0189"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga966c01eea5ec53e0b428bfd47696247c"><td class="memItemLeft" align="right" valign="top"><a id="ga966c01eea5ec53e0b428bfd47696247c"></a>
-<a class="el" href="classregina_1_1i18n_1_1IConvStreamBuffer.html">IConvStreamBuffer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>regina::i18n::IConvStreamBuffer::operator=</b> (const <a class="el" href="classregina_1_1i18n_1_1IConvStreamBuffer.html">IConvStreamBuffer</a> &amp;)=delete</td></tr>
-<tr class="separator:ga966c01eea5ec53e0b428bfd47696247c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae08add9882e50e93fb34b4e420725d90"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utilities.html#gae08add9882e50e93fb34b4e420725d90">regina::i18n::IConvStream::IConvStream</a> (std::ostream &amp;dest, const char *srcCode, const char *destCode)</td></tr>
-<tr class="memdesc:gae08add9882e50e93fb34b4e420725d90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <a class="el" href="classregina_1_1i18n_1_1IConvStream.html" title="An output stream that converts between character encodings.">IConvStream</a>; see the class notes for details.  <a href="#gae08add9882e50e93fb34b4e420725d90">More...</a><br /></td></tr>
-<tr class="separator:gae08add9882e50e93fb34b4e420725d90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaba460f1570369db5a186acdc716a9e9f"><td class="memItemLeft" align="right" valign="top"><a id="gaba460f1570369db5a186acdc716a9e9f"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>regina::i18n::IConvStream::IConvStream</b> (const <a class="el" href="classregina_1_1i18n_1_1IConvStream.html">IConvStream</a> &amp;)=delete</td></tr>
-<tr class="separator:gaba460f1570369db5a186acdc716a9e9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7f300df6b84d045fa1236fbeac302be5"><td class="memItemLeft" align="right" valign="top"><a id="ga7f300df6b84d045fa1236fbeac302be5"></a>
-<a class="el" href="classregina_1_1i18n_1_1IConvStream.html">IConvStream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>regina::i18n::IConvStream::operator=</b> (const <a class="el" href="classregina_1_1i18n_1_1IConvStream.html">IConvStream</a> &amp;)=delete</td></tr>
-<tr class="separator:ga7f300df6b84d045fa1236fbeac302be5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf3cfd88109df8473b8ae9647ff96d35a"><td class="memTemplParams" colspan="2">template&lt;typename IntType &gt; </td></tr>
+<tr class="memitem:gaf3cfd88109df8473b8ae9647ff96d35a"><td class="memTemplItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__utilities.html#gaf3cfd88109df8473b8ae9647ff96d35a">regina::bitsRequired</a> (IntType n)</td></tr>
+<tr class="memdesc:gaf3cfd88109df8473b8ae9647ff96d35a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the number of bits required to store integers in the range 0,...,<em>n</em>-1.  <a href="group__utilities.html#gaf3cfd88109df8473b8ae9647ff96d35a">More...</a><br /></td></tr>
+<tr class="separator:gaf3cfd88109df8473b8ae9647ff96d35a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf8ad7790348b617ffd8fdf50736cd9cf"><td class="memTemplParams" colspan="2">template&lt;typename IntType &gt; </td></tr>
+<tr class="memitem:gaf8ad7790348b617ffd8fdf50736cd9cf"><td class="memTemplItemLeft" align="right" valign="top">constexpr IntType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__utilities.html#gaf8ad7790348b617ffd8fdf50736cd9cf">regina::nextPowerOfTwo</a> (IntType n)</td></tr>
+<tr class="memdesc:gaf8ad7790348b617ffd8fdf50736cd9cf"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the smallest integer power of two that is greater than or equal to the given argument <em>n</em>.  <a href="group__utilities.html#gaf8ad7790348b617ffd8fdf50736cd9cf">More...</a><br /></td></tr>
+<tr class="separator:gaf8ad7790348b617ffd8fdf50736cd9cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga52c8776c5329496a0b34c914706031e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utilities.html#ga52c8776c5329496a0b34c914706031e4">regina::writeResUsage</a> (std::ostream &amp;out)</td></tr>
+<tr class="memdesc:ga52c8776c5329496a0b34c914706031e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes time and memory usage for the current process to the given output stream.  <a href="group__utilities.html#ga52c8776c5329496a0b34c914706031e4">More...</a><br /></td></tr>
+<tr class="separator:ga52c8776c5329496a0b34c914706031e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3a20ee136c5a257176ff117f0eafb4a0"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ga3a20ee136c5a257176ff117f0eafb4a0"><td class="memTemplItemLeft" align="right" valign="top">T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__utilities.html#ga3a20ee136c5a257176ff117f0eafb4a0">regina::clonePtr</a> (T *cloneMe)</td></tr>
 <tr class="memdesc:ga3a20ee136c5a257176ff117f0eafb4a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">A simple routine for cloning an object if and only if it exists.  <a href="group__utilities.html#ga3a20ee136c5a257176ff117f0eafb4a0">More...</a><br /></td></tr>
@@ -311,28 +307,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ga0a04e46c3516672d83a09e6f07b85876"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__utilities.html#ga0a04e46c3516672d83a09e6f07b85876">regina::operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="classregina_1_1Qitmask2.html">Qitmask2</a>&lt; T, U &gt; &amp;mask)</td></tr>
 <tr class="memdesc:ga0a04e46c3516672d83a09e6f07b85876"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the given qitmask to the given output stream as a sequence of digits (0, 1, 2 and/or 3).  <a href="group__utilities.html#ga0a04e46c3516672d83a09e6f07b85876">More...</a><br /></td></tr>
 <tr class="separator:ga0a04e46c3516672d83a09e6f07b85876"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf33b066afbad6a25be00878c7cf3a7e6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utilities.html#gaf33b066afbad6a25be00878c7cf3a7e6">regina::SafePtr&lt; T &gt;::SafePtr</a> ()</td></tr>
-<tr class="memdesc:gaf33b066afbad6a25be00878c7cf3a7e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new null pointer.  <a href="#gaf33b066afbad6a25be00878c7cf3a7e6">More...</a><br /></td></tr>
-<tr class="separator:gaf33b066afbad6a25be00878c7cf3a7e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga75651d857fbb4f708f91c06a4cc178dd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utilities.html#ga75651d857fbb4f708f91c06a4cc178dd">regina::SafePtr&lt; T &gt;::SafePtr</a> (T *object)</td></tr>
-<tr class="memdesc:ga75651d857fbb4f708f91c06a4cc178dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new safe pointer that points to the given object.  <a href="#ga75651d857fbb4f708f91c06a4cc178dd">More...</a><br /></td></tr>
-<tr class="separator:ga75651d857fbb4f708f91c06a4cc178dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa8eb187bbdad812403168457626247f8"><td class="memTemplParams" colspan="2">template&lt;class Y &gt; </td></tr>
-<tr class="memitem:gaa8eb187bbdad812403168457626247f8"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__utilities.html#gaa8eb187bbdad812403168457626247f8">regina::SafePtr&lt; T &gt;::SafePtr</a> (const <a class="el" href="classregina_1_1SafePtr.html">SafePtr</a>&lt; Y &gt; &amp;other)</td></tr>
-<tr class="memdesc:gaa8eb187bbdad812403168457626247f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor.  <a href="#gaa8eb187bbdad812403168457626247f8">More...</a><br /></td></tr>
-<tr class="separator:gaa8eb187bbdad812403168457626247f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa27b83072e5e62e6cfb7a263847cef81"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utilities.html#gaa27b83072e5e62e6cfb7a263847cef81">regina::SafePtr&lt; T &gt;::get</a> () const</td></tr>
-<tr class="memdesc:gaa27b83072e5e62e6cfb7a263847cef81"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a raw pointer to the pointee.  <a href="#gaa27b83072e5e62e6cfb7a263847cef81">More...</a><br /></td></tr>
-<tr class="separator:gaa27b83072e5e62e6cfb7a263847cef81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga329db8d529368e9df9a4db80a0c22206"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utilities.html#ga329db8d529368e9df9a4db80a0c22206">regina::SafePtr&lt; T &gt;::operator bool</a> () const</td></tr>
-<tr class="memdesc:ga329db8d529368e9df9a4db80a0c22206"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> <code>true</code> if the pointee is non-null.  <a href="#ga329db8d529368e9df9a4db80a0c22206">More...</a><br /></td></tr>
-<tr class="separator:ga329db8d529368e9df9a4db80a0c22206"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga165989a691406469cf5132c4e5816ce4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utilities.html#ga165989a691406469cf5132c4e5816ce4">regina::SafePtr&lt; T &gt;::reset</a> (T *object=nullptr)</td></tr>
-<tr class="memdesc:ga165989a691406469cf5132c4e5816ce4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets this to point to the given object.  <a href="#ga165989a691406469cf5132c4e5816ce4">More...</a><br /></td></tr>
-<tr class="separator:ga165989a691406469cf5132c4e5816ce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga30127ffda526093d6451ff8a5642994b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1SafePtr.html">SafePtr</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utilities.html#ga30127ffda526093d6451ff8a5642994b">regina::SafePtr&lt; T &gt;::operator=</a> (const <a class="el" href="classregina_1_1SafePtr.html">SafePtr</a>&lt; T &gt; &amp;)=delete</td></tr>
-<tr class="memdesc:ga30127ffda526093d6451ff8a5642994b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable the default assignment operator.  <a href="#ga30127ffda526093d6451ff8a5642994b">More...</a><br /></td></tr>
-<tr class="separator:ga30127ffda526093d6451ff8a5642994b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa0c5c9157147686a6bfc401312b8d90c"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:gaa0c5c9157147686a6bfc401312b8d90c"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__utilities.html#gaa0c5c9157147686a6bfc401312b8d90c">regina::operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="classregina_1_1LightweightSequence.html">LightweightSequence</a>&lt; T &gt; &amp;s)</td></tr>
+<tr class="memdesc:gaa0c5c9157147686a6bfc401312b8d90c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the given sequence to the given output stream.  <a href="group__utilities.html#gaa0c5c9157147686a6bfc401312b8d90c">More...</a><br /></td></tr>
+<tr class="separator:gaa0c5c9157147686a6bfc401312b8d90c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga69b2411865af18bf506a1afb7d2bc2ca"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utilities.html#ga69b2411865af18bf506a1afb7d2bc2ca">regina::duplicate</a> (const std::string &amp;str)</td></tr>
 <tr class="memdesc:ga69b2411865af18bf506a1afb7d2bc2ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new C string that is a duplicate of the given C++ string.  <a href="group__utilities.html#ga69b2411865af18bf506a1afb7d2bc2ca">More...</a><br /></td></tr>
 <tr class="separator:ga69b2411865af18bf506a1afb7d2bc2ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -427,6 +405,25 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Miscellaneous helper classes and functions. </p>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga5ffec6ccec6eaaf2e875fd1533a50c05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5ffec6ccec6eaaf2e875fd1533a50c05">&#9670;&nbsp;</a></span>INT128_AVAILABLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INT128_AVAILABLE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Defined if and only if native 128-bit arithmetic is available on this platform. </p>
+<p>If this macro is defined, then you can access native signed and unsigned 128-bit integers through the types IntOfSize&lt;16&gt;::type and IntOfSize&lt;16&gt;::utype respectively.</p>
+<p>If this macro is not defined, then the types IntOfSize&lt;16&gt;::type and IntOfSize&lt;16&gt;::utype will both be <code>void</code>. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="ga79171eb0dd3165e733ca97b8240b861b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga79171eb0dd3165e733ca97b8240b861b">&#9670;&nbsp;</a></span>BitmaskLen16</h2>
@@ -443,7 +440,7 @@ Functions</h2></td></tr>
 <p>A convenience typedef that gives a small and extremely fast bitmask class capable of holding at least 16 true-or-false bits. </p>
 <p>This bitmask class is guaranteed to be an instantiation of the template class <a class="el" href="classregina_1_1Bitmask1.html" title="A small but extremely fast bitmask class that can store up to 8 * sizeof(T) true-or-false bits.">Bitmask1</a>.</p>
 <p>The particular instantiation is subject to change between different platforms, different compilers and/or different versions of Regina.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. </dd></dl>
 
 </div>
 </div>
@@ -462,7 +459,7 @@ Functions</h2></td></tr>
 <p>A convenience typedef that gives a small and extremely fast bitmask class capable of holding at least 32 true-or-false bits. </p>
 <p>This bitmask class is guaranteed to be an instantiation of the template class <a class="el" href="classregina_1_1Bitmask1.html" title="A small but extremely fast bitmask class that can store up to 8 * sizeof(T) true-or-false bits.">Bitmask1</a>.</p>
 <p>The particular instantiation is subject to change between different platforms, different compilers and/or different versions of Regina.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. </dd></dl>
 
 </div>
 </div>
@@ -481,7 +478,7 @@ Functions</h2></td></tr>
 <p>A convenience typedef that gives a small and extremely fast bitmask class capable of holding at least 64 true-or-false bits. </p>
 <p>This bitmask class is guaranteed to be an instantiation of <em>either</em> the template class <a class="el" href="classregina_1_1Bitmask1.html" title="A small but extremely fast bitmask class that can store up to 8 * sizeof(T) true-or-false bits.">Bitmask1</a> or the template class <a class="el" href="classregina_1_1Bitmask2.html" title="A small but extremely fast bitmask class that can store up to 8 * sizeof(T) + 8 * sizeof(U) true-or-f...">Bitmask2</a>.</p>
 <p>The particular instantiation is subject to change between different platforms, different compilers and/or different versions of Regina.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. </dd></dl>
 
 </div>
 </div>
@@ -500,26 +497,7 @@ Functions</h2></td></tr>
 <p>A convenience typedef that gives a small and extremely fast bitmask class capable of holding at least 8 true-or-false bits. </p>
 <p>This bitmask class is guaranteed to be an instantiation of the template class <a class="el" href="classregina_1_1Bitmask1.html" title="A small but extremely fast bitmask class that can store up to 8 * sizeof(T) true-or-false bits.">Bitmask1</a>.</p>
 <p>The particular instantiation is subject to change between different platforms, different compilers and/or different versions of Regina.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
-
-</div>
-</div>
-<a id="gaabac6c7ebbdfadab22b74bca62c900e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaabac6c7ebbdfadab22b74bca62c900e5">&#9670;&nbsp;</a></span>element_type</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef T <a class="el" href="classregina_1_1SafePtr.html">regina::SafePtr</a>&lt; T &gt;::<a class="el" href="group__utilities.html#gaabac6c7ebbdfadab22b74bca62c900e5">element_type</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The pointee type. </p>
-<p>This typedef is used by the pybind11 infrastructure. </p>
+<dl class="section user"><dt>Python</dt><dd>Not present. </dd></dl>
 
 </div>
 </div>
@@ -537,7 +515,7 @@ template&lt;class T &gt; </div>
 
 <p>Deprecated typedef for backward compatibility. </p>
 <p>This typedef will be removed in a future release of Regina.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000230">Deprecated:</a></b></dt><dd>The class NBoolSet has now been renamed to <a class="el" href="classregina_1_1BoolSet.html" title="A set of booleans.">BoolSet</a>. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000231">Deprecated:</a></b></dt><dd>The class NBoolSet has now been renamed to <a class="el" href="classregina_1_1BoolSet.html" title="A set of booleans.">BoolSet</a>. </dd></dl>
 
 </div>
 </div>
@@ -556,7 +534,7 @@ template&lt;class T &gt; </div>
 <p>A convenience typedef that gives a small and extremely fast qitmask class capable of holding at least 16 true-or-false bits. </p>
 <p>This qitmask class is guaranteed to be an instantiation of the template class <a class="el" href="classregina_1_1Qitmask1.html" title="A small but extremely fast &quot;base 4 bitmask&quot; class that can store up to 8 * sizeof(T) &quot;qits&quot;,...">Qitmask1</a>.</p>
 <p>The particular instantiation is subject to change between different platforms, different compilers and/or different versions of Regina.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. </dd></dl>
 
 </div>
 </div>
@@ -575,7 +553,7 @@ template&lt;class T &gt; </div>
 <p>A convenience typedef that gives a small and extremely fast qitmask class capable of holding at least 32 true-or-false bits. </p>
 <p>This qitmask class is guaranteed to be an instantiation of the template class <a class="el" href="classregina_1_1Qitmask1.html" title="A small but extremely fast &quot;base 4 bitmask&quot; class that can store up to 8 * sizeof(T) &quot;qits&quot;,...">Qitmask1</a>.</p>
 <p>The particular instantiation is subject to change between different platforms, different compilers and/or different versions of Regina.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. </dd></dl>
 
 </div>
 </div>
@@ -594,7 +572,7 @@ template&lt;class T &gt; </div>
 <p>A convenience typedef that gives a small and extremely fast qitmask class capable of holding at least 64 true-or-false bits. </p>
 <p>This qitmask class is guaranteed to be an instantiation of <em>either</em> the template class <a class="el" href="classregina_1_1Qitmask1.html" title="A small but extremely fast &quot;base 4 bitmask&quot; class that can store up to 8 * sizeof(T) &quot;qits&quot;,...">Qitmask1</a> or the template class <a class="el" href="classregina_1_1Qitmask2.html" title="A small but extremely fast &quot;base 4 bitmask&quot; class that can store up to 8 * sizeof(T) + 8 * sizeof(U) ...">Qitmask2</a>.</p>
 <p>The particular instantiation is subject to change between different platforms, different compilers and/or different versions of Regina.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. </dd></dl>
 
 </div>
 </div>
@@ -613,7 +591,7 @@ template&lt;class T &gt; </div>
 <p>A convenience typedef that gives a small and extremely fast qitmask class capable of holding at least 8 true-or-false bits. </p>
 <p>This qitmask class is guaranteed to be an instantiation of the template class <a class="el" href="classregina_1_1Qitmask1.html" title="A small but extremely fast &quot;base 4 bitmask&quot; class that can store up to 8 * sizeof(T) &quot;qits&quot;,...">Qitmask1</a>.</p>
 <p>The particular instantiation is subject to change between different platforms, different compilers and/or different versions of Regina.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. </dd></dl>
 
 </div>
 </div>
@@ -632,7 +610,7 @@ template&lt;class T &gt; </div>
 <p>A convenience typedef that gives a small and extremely fast tritmask class capable of holding at least 16 true-or-false bits. </p>
 <p>This tritmask class is guaranteed to be an instantiation of the template class <a class="el" href="classregina_1_1Tritmask1.html" title="A small but extremely fast &quot;ternary bitmask&quot; class that can store up to 8 * sizeof(T) &quot;trits&quot;,...">Tritmask1</a>.</p>
 <p>The particular instantiation is subject to change between different platforms, different compilers and/or different versions of Regina.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. </dd></dl>
 
 </div>
 </div>
@@ -651,7 +629,7 @@ template&lt;class T &gt; </div>
 <p>A convenience typedef that gives a small and extremely fast tritmask class capable of holding at least 32 true-or-false bits. </p>
 <p>This tritmask class is guaranteed to be an instantiation of the template class <a class="el" href="classregina_1_1Tritmask1.html" title="A small but extremely fast &quot;ternary bitmask&quot; class that can store up to 8 * sizeof(T) &quot;trits&quot;,...">Tritmask1</a>.</p>
 <p>The particular instantiation is subject to change between different platforms, different compilers and/or different versions of Regina.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. </dd></dl>
 
 </div>
 </div>
@@ -670,7 +648,7 @@ template&lt;class T &gt; </div>
 <p>A convenience typedef that gives a small and extremely fast tritmask class capable of holding at least 64 true-or-false bits. </p>
 <p>This tritmask class is guaranteed to be an instantiation of <em>either</em> the template class <a class="el" href="classregina_1_1Tritmask1.html" title="A small but extremely fast &quot;ternary bitmask&quot; class that can store up to 8 * sizeof(T) &quot;trits&quot;,...">Tritmask1</a> or the template class <a class="el" href="classregina_1_1Tritmask2.html" title="A small but extremely fast &quot;ternary bitmask&quot; class that can store up to 8 * sizeof(T) + 8 * sizeof(U)...">Tritmask2</a>.</p>
 <p>The particular instantiation is subject to change between different platforms, different compilers and/or different versions of Regina.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. </dd></dl>
 
 </div>
 </div>
@@ -689,7 +667,7 @@ template&lt;class T &gt; </div>
 <p>A convenience typedef that gives a small and extremely fast tritmask class capable of holding at least 8 true-or-false bits. </p>
 <p>This tritmask class is guaranteed to be an instantiation of the template class <a class="el" href="classregina_1_1Tritmask1.html" title="A small but extremely fast &quot;ternary bitmask&quot; class that can store up to 8 * sizeof(T) &quot;trits&quot;,...">Tritmask1</a>.</p>
 <p>The particular instantiation is subject to change between different platforms, different compilers and/or different versions of Regina.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. </dd></dl>
 
 </div>
 </div>
@@ -736,7 +714,7 @@ template&lt;class T &gt; </div>
 <p>The given base64 sequence should not contain any unexpected characters; even whitespace will cause the decoding procedure to abort.</p>
 <p>The length of the output buffer is passed as the argument <em>outlen</em>. If an unexpected or invalid character is found, or the output buffer is exhausted, this routine will write as many output bytes as it can and then return <code>false</code>. Otherwise (on success) it will return <code>true</code>. Either way, it will reset <em>outlen</em> to the total number of bytes that were written.</p>
 <p>The total number of output bytes is important to know, since the output array is not terminated in any special way.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">in</td><td>the input sequence of base64 characters; this does not need to be terminated in any special way. </td></tr>
@@ -794,7 +772,7 @@ template&lt;class T &gt; </div>
 <p>The given base64 sequence should not contain any unexpected characters; even whitespace will cause the decoding procedure to abort.</p>
 <p>The length of the output buffer is passed as the argument <em>outlen</em>. If an unexpected or invalid character is found or the output buffer is exhausted, this routine will return <code>false</code>, set <em>out</em> to <code>null</code>, and leave <em>outlen</em> undefined. Otherwise (on success) it will return <code>true</code> and set <em>outlen</em> to the total number of output bytes.</p>
 <p>If the user is not interested in the length of the output array, a null pointer may be passed in the <em>outlen</em> argument. Note however that the output array is not terminated in any special way.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">in</td><td>the input sequence of base64 characters; this does not need to be terminated in any special way. </td></tr>
@@ -850,7 +828,7 @@ template&lt;class T &gt; </div>
 <p>Encodes the given sequence of raw bytes in base64, and writes the results into a preallocated output buffer. </p>
 <p>The length of the output buffer is passed as the argument <em>outlen</em>. If the number of base64 characters required is less than <em>outlen</em>, a terminating <code>null</code> will be written to the end of the output sequence. If the number of base64 characters is <em>outlen</em> or greater, this routine will output as many base64 characters as possible, up to a maximum of <em>outlen</em>.</p>
 <p>The routine <a class="el" href="group__utilities.html#gaa8d632b73943b5c52e395d56f8e03af2" title="Returns the number of base64 characters required to encode the given number of bytes.">base64Length()</a> can be used to precalculate precisely how many output characters will be required.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">in</td><td>the sequence of input bytes; this does not need to be terminated in any special way. </td></tr>
@@ -899,7 +877,7 @@ template&lt;class T &gt; </div>
 <p>Encodes the given sequence of raw bytes in base64, and passes back a newly allocated array containing the results. </p>
 <p>The <em>out</em> pointer will be set to this new array, which will be null-terminated. This array will be allocated using <code>new</code>[], and the caller is responsible for destroying it using <code>delete</code>[].</p>
 <p>If the output array is too large (in particular, the expected size will overflow a <code>size_t</code>), the <em>out</em> pointer will be set to <code>null</code>.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">in</td><td>the sequence of input bytes; this does not need to be terminated in any special way. </td></tr>
@@ -939,7 +917,7 @@ template&lt;class T &gt; </div>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the number of base64 characters required to encode the given number of bytes. </p>
 <p>This is the number of characters used (excluding the null terminator) by the routine <a class="el" href="group__utilities.html#ga541f612d6bb0f94db16da14169813e29" title="Encodes the given sequence of raw bytes in base64, and passes back a newly allocated array containing...">base64Encode(const char*, size_t, char**)</a>.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">bytes</td><td>the number of raw input bytes. </td></tr>
@@ -981,7 +959,7 @@ template&lt;class OutputIterator &gt; </div>
 <p>Decomposes the given string into tokens. </p>
 <p>This is an extremely simple tokeniser; tokens are defined to be separated by whitespace.</p>
 <dl class="section warning"><dt>Warning</dt><dd>This routine treats all strings as plain ASCII. In particular, characters are examined one at a time, and the C routine isspace() is used to identify whitespace. Use it on strings with international characters at your own peril.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">results</td><td>the output iterator to which the resulting tokens will be written; this must accept objects of type <code>const std::string&amp;</code>. </td></tr>
@@ -990,6 +968,44 @@ template&lt;class OutputIterator &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the number of tokens found. </dd></dl>
+
+</div>
+</div>
+<a id="gaf3cfd88109df8473b8ae9647ff96d35a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf3cfd88109df8473b8ae9647ff96d35a">&#9670;&nbsp;</a></span>bitsRequired()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename IntType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int regina::bitsRequired </td>
+          <td>(</td>
+          <td class="paramtype">IntType&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the number of bits required to store integers in the range 0,...,<em>n</em>-1. </p>
+<p>This is simply the number of bits in the binary expansion of <em>n</em>-1.</p>
+<p>If <em>n</em> is non-positive then this function will return 0.</p>
+<dl class="section user"><dt>Python</dt><dd>In Python, this routine fixes the integer type <em>IntType</em> to be <code>long</code>.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>any integer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the number of bits required to store 0,...,<em>n</em>-1.</dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">IntType</td><td>any integer type, such as <code>int</code>, <code>long</code>, and so on. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1023,7 +1039,7 @@ template&lt;typename T &gt; </div>
 <p>If the given pointer is non-null, this routine returns a new clone of the object, created using the copy constructor for type <em>T</em>. Otherwise this routine simply returns a null pointer.</p>
 <p>The caller of this routine is responsible for deleting the new clone when it is no longer required.</p>
 <p>This routine can be useful when implementing copy constructors for classes that only initialise internal data members on demand.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">cloneMe</td><td>a pointer to the object to clone; this may be null. </td></tr>
@@ -1064,7 +1080,7 @@ template&lt;typename T &gt; </div>
 <p>If the given pointer is non-null, this routine returns a new clone of the object, created using the copy constructor for type <em>T</em>. Otherwise this routine simply returns a null pointer.</p>
 <p>Note that, even though this routine takes a std::unique_ptr, it returns a raw pointer. The caller of this routine is responsible for deleting the new clone when it is no longer required.</p>
 <p>This routine can be useful when implementing copy constructors for classes that only initialise internal data members on demand.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">cloneMe</td><td>a pointer to the object to clone; this may be null. </td></tr>
@@ -1072,61 +1088,6 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a newly allocated copy of the given object, or the null pointer if <em>cloneMe</em> is null. </dd></dl>
-
-</div>
-</div>
-<a id="gaec85de7b3e74749b1dd1d5d8b5f6c1aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaec85de7b3e74749b1dd1d5d8b5f6c1aa">&#9670;&nbsp;</a></span>close()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classregina_1_1i18n_1_1IConvStreamBuffer.html">IConvStreamBuffer</a>* regina::i18n::IConvStreamBuffer::close </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td align="right">throw </td><td>(</td><td colspan="2"></td>
-        </tr>
-        <tr>
-          <td align="right"></td><td>)</td><td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Closes this stream buffer. </p>
-<dl class="section return"><dt>Returns</dt><dd>this stream buffer on success, or 0 on error. </dd></dl>
-
-</div>
-</div>
-<a id="ga2a96ed25fecca35188a79267f9d4f4ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2a96ed25fecca35188a79267f9d4f4ae">&#9670;&nbsp;</a></span>codeset()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static const char* regina::i18n::Locale::codeset </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the character encoding used in the current locale. </p>
-<p>This is a plain string, such as "UTF-8" or "ISO-8859-1".</p>
-<dl class="section return"><dt>Returns</dt><dd>the character encoding for the current locale. </dd></dl>
 
 </div>
 </div>
@@ -1148,7 +1109,7 @@ template&lt;typename T &gt; </div>
 
 <p>Creates a new C string that is a duplicate of the given C++ string. </p>
 <p>The deallocation of the new C string is the responsibility of the caller of this routine.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>the C++ string to duplicate. </td></tr>
@@ -1156,118 +1117,6 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the new duplicate C string. </dd></dl>
-
-</div>
-</div>
-<a id="gaa27b83072e5e62e6cfb7a263847cef81"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa27b83072e5e62e6cfb7a263847cef81">&#9670;&nbsp;</a></span>get()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">T * <a class="el" href="classregina_1_1SafePtr.html">regina::SafePtr</a>&lt; T &gt;::get </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a raw pointer to the pointee. </p>
-<dl class="section return"><dt>Returns</dt><dd>the pointee. </dd></dl>
-
-</div>
-</div>
-<a id="gae08add9882e50e93fb34b4e420725d90"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae08add9882e50e93fb34b4e420725d90">&#9670;&nbsp;</a></span>IConvStream()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">regina::i18n::IConvStream::IConvStream </td>
-          <td>(</td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
-          <td class="paramname"><em>dest</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>srcCode</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>destCode</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Creates a new <a class="el" href="classregina_1_1i18n_1_1IConvStream.html" title="An output stream that converts between character encodings.">IConvStream</a>; see the class notes for details. </p>
-<p>If the given encodings are invalid, this stream will still forward data to the given output stream but no conversion will take place.</p>
-<p>See the <em>iconv</em> documentation for information on what encodings are supported. For the GNU C library implementation, valid encodings can be found by running <code>iconv &ndash;list</code>.</p>
-<dl class="section pre"><dt>Precondition</dt><dd>The destination output stream is already open.</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">dest</td><td>the destination output stream. </td></tr>
-    <tr><td class="paramname">srcCode</td><td>the character encoding for data that is to be written into this <a class="el" href="classregina_1_1i18n_1_1IConvStream.html" title="An output stream that converts between character encodings.">IConvStream</a>. </td></tr>
-    <tr><td class="paramname">destCode</td><td>the character encoding for the translated data that will subsequently be written to the destination output stream. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ga3334747d42a32a95043a910a6dd173bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3334747d42a32a95043a910a6dd173bc">&#9670;&nbsp;</a></span>IConvStreamBuffer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">regina::i18n::IConvStreamBuffer::IConvStreamBuffer </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Creates a new stream buffer. </p>
 
 </div>
 </div>
@@ -1298,7 +1147,7 @@ template&lt;class T &gt; </div>
 <p>Determines whether the given character is a base64 printable character as used by the base64 routines in Regina. </p>
 <p>The base64 printable characters are the letters (both upper-case and lower-case), digits, plus (+), and forward slash (/).</p>
 <p>Note that the equals sign (=) is padding, and is not considered by this routine to be a base64 printable character.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ch</td><td>any character. </td></tr>
@@ -1309,89 +1158,46 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a id="ga8170e81f5d3a805161cc1ff9800e458f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8170e81f5d3a805161cc1ff9800e458f">&#9670;&nbsp;</a></span>open()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classregina_1_1i18n_1_1IConvStreamBuffer.html">IConvStreamBuffer</a>* regina::i18n::IConvStreamBuffer::open </td>
-          <td>(</td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
-          <td class="paramname"><em>dest</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>srcCode</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>destCode</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Opens a new stream buffer that wraps around the given output stream. </p>
-<p>If this stream buffer is already open, it will be closed and then reopened with the given parameters.</p>
-<p>Any data that is sent to this stream buffer will be translated from <em>srcCode</em> to <em>destCode</em> and passed on to the given output stream.</p>
-<p>If the given encodings are invalid, this stream will still forward data to the given output stream but no conversion will take place.</p>
-<p>See the <em>iconv</em> documentation for information on what encodings are supported. For the GNU C library implementation, valid encodings can be found by running <code>iconv &ndash;list</code>.</p>
-<dl class="section pre"><dt>Precondition</dt><dd>The destination output stream is already open.</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">dest</td><td>the destination output stream. </td></tr>
-    <tr><td class="paramname">srcCode</td><td>the character encoding for data that is to be written into this stream buffer. </td></tr>
-    <tr><td class="paramname">destCode</td><td>the character encoding for the translated data that will subsequently be written to the destination output stream. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>this stream buffer on success, or 0 on error. </dd></dl>
-
-</div>
-</div>
-<a id="ga329db8d529368e9df9a4db80a0c22206"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga329db8d529368e9df9a4db80a0c22206">&#9670;&nbsp;</a></span>operator bool()</h2>
+<a id="gaf8ad7790348b617ffd8fdf50736cd9cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf8ad7790348b617ffd8fdf50736cd9cf">&#9670;&nbsp;</a></span>nextPowerOfTwo()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
+template&lt;typename IntType &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classregina_1_1SafePtr.html">regina::SafePtr</a>&lt; T &gt;::operator bool </td>
+          <td class="memname">constexpr IntType regina::nextPowerOfTwo </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">IntType&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> <code>true</code> if the pointee is non-null. </p>
-<p>This is equivalent to testing whether <a class="el" href="group__utilities.html#gaa27b83072e5e62e6cfb7a263847cef81" title="Returns a raw pointer to the pointee.">get()</a> is not <code>null</code>.</p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if and only if the pointee is non-null. </dd></dl>
+<p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the smallest integer power of two that is greater than or equal to the given argument <em>n</em>. </p>
+<p>If <em>n</em> is non-positive then this function will return 1.</p>
+<dl class="section user"><dt>Python</dt><dd>In Python, this routine fixes the integer type <em>IntType</em> to be <code>long</code>.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Even though the return value is the same type as the argument <em>n</em>, this routine may still overflow. For example, if <em>IntType</em> is a signed char then nextPowerOfTwo(127) will return -128, and if <em>IntType</em> is an unsigned char then nextPowerOfTwo(255) will return 0. Be sure that <em>IntType</em> is large enough for your requirements.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>any integer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the smallest integer power of two that is &ge; <em>n</em>.</dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">IntType</td><td>any integer type, such as <code>int</code>, <code>long</code>, and so on. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
 <a id="gab1fc8fedcb72b9db35901807c795486c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab1fc8fedcb72b9db35901807c795486c">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[1/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gab1fc8fedcb72b9db35901807c795486c">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[1/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1420,7 +1226,7 @@ template&lt;typename T &gt; </div>
 
 <p>Writes the given qitmask to the given output stream as a sequence of digits (0, 1, 2 and/or 3). </p>
 <p>Since the length of the qitmask is not stored, the number of qits written will be 8 * sizeof(<em>T</em>).</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1433,7 +1239,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="gabf61c8a34e52f0aeb02f200c88026c1c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabf61c8a34e52f0aeb02f200c88026c1c">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[2/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gabf61c8a34e52f0aeb02f200c88026c1c">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[2/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1462,7 +1268,7 @@ template&lt;typename T &gt; </div>
 
 <p>Writes the given tritmask to the given output stream as a sequence of digits (0, 1 and/or 2). </p>
 <p>Since the length of the tritmask is not stored, the number of trits written will be 8 * sizeof(<em>T</em>).</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1475,7 +1281,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="ga0a04e46c3516672d83a09e6f07b85876"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0a04e46c3516672d83a09e6f07b85876">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[3/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0a04e46c3516672d83a09e6f07b85876">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[3/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1504,7 +1310,7 @@ template&lt;typename T , typename U &gt; </div>
 
 <p>Writes the given qitmask to the given output stream as a sequence of digits (0, 1, 2 and/or 3). </p>
 <p>Since the length of the qitmask is not stored, the number of qits written will be 8 * sizeof(<em>T</em>) + 8 * sizeof(<em>U</em>).</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1517,7 +1323,7 @@ template&lt;typename T , typename U &gt; </div>
 </div>
 </div>
 <a id="ga7e140a57f469e663d87f1d3e14a90187"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7e140a57f469e663d87f1d3e14a90187">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[4/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7e140a57f469e663d87f1d3e14a90187">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[4/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1555,8 +1361,59 @@ template&lt;typename T , typename U &gt; </div>
 
 </div>
 </div>
+<a id="gaa0c5c9157147686a6bfc401312b8d90c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa0c5c9157147686a6bfc401312b8d90c">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[5/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; regina::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classregina_1_1LightweightSequence.html">LightweightSequence</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>s</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes the given sequence to the given output stream. </p>
+<p>No newline will be written.</p>
+<p>The sequence will be written in the form <code>(a, b, c, ...)</code>.</p>
+<dl class="section pre"><dt>Precondition</dt><dd>An object <em>x</em> of type <em>T</em> can be written to an output stream using the syntax <code>out &lt;&lt; x</code>.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
+    <tr><td class="paramname">s</td><td>the sequence to write. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a reference to the given output stream. </dd></dl>
+
+</div>
+</div>
 <a id="ga687edae41955adbcf9e58c8cce90ea68"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga687edae41955adbcf9e58c8cce90ea68">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[5/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga687edae41955adbcf9e58c8cce90ea68">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[6/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1592,7 +1449,7 @@ template&lt;typename T , typename U &gt; </div>
 <p>Writes the given bitmask to the given output stream as a sequence of zeroes and ones. </p>
 <p>Since the length of the bitmask is not stored, the number of bits written might be greater than the length initially assigned to this bitmask (specifically, the length will be rounded up to the next "raw
 unit of storage").</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1605,7 +1462,7 @@ unit of storage").</p>
 </div>
 </div>
 <a id="ga42e53899b74d99054f31035492d5890a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga42e53899b74d99054f31035492d5890a">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[6/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga42e53899b74d99054f31035492d5890a">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[7/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1634,7 +1491,7 @@ template&lt;typename T &gt; </div>
 
 <p>Writes the given bitmask to the given output stream as a sequence of zeroes and ones. </p>
 <p>Since the length of the bitmask is not stored, the number of bits written will be 8 * sizeof(<em>T</em>).</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1647,7 +1504,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="gac720197cc16b77f2647c6cfdeccd8038"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac720197cc16b77f2647c6cfdeccd8038">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[7/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gac720197cc16b77f2647c6cfdeccd8038">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[8/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1676,7 +1533,7 @@ template&lt;typename T , typename U &gt; </div>
 
 <p>Writes the given tritmask to the given output stream as a sequence of digits (0, 1 and/or 2). </p>
 <p>Since the length of the tritmask is not stored, the number of trits written will be 8 * sizeof(<em>T</em>) + 8 * sizeof(<em>U</em>).</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1689,7 +1546,7 @@ template&lt;typename T , typename U &gt; </div>
 </div>
 </div>
 <a id="ga0dc9ea5844d6e3886aae7e101929e85e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0dc9ea5844d6e3886aae7e101929e85e">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[8/8]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0dc9ea5844d6e3886aae7e101929e85e">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[9/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1718,7 +1575,7 @@ template&lt;typename T , typename U &gt; </div>
 
 <p>Writes the given bitmask to the given output stream as a sequence of zeroes and ones. </p>
 <p>Since the length of the bitmask is not stored, the number of bits written will be 8 * sizeof(<em>T</em>) + 8 * sizeof(<em>U</em>).</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1727,206 +1584,6 @@ template&lt;typename T , typename U &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a reference to the given output stream. </dd></dl>
-
-</div>
-</div>
-<a id="ga30127ffda526093d6451ff8a5642994b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga30127ffda526093d6451ff8a5642994b">&#9670;&nbsp;</a></span>operator=()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classregina_1_1SafePtr.html">SafePtr</a>&lt;T&gt;&amp; <a class="el" href="classregina_1_1SafePtr.html">regina::SafePtr</a>&lt; T &gt;::operator= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classregina_1_1SafePtr.html">SafePtr</a>&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Disable the default assignment operator. </p>
-
-</div>
-</div>
-<a id="ga14a3b54d5a102597eb6abfbb173bce7b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga14a3b54d5a102597eb6abfbb173bce7b">&#9670;&nbsp;</a></span>overflow()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int_type regina::i18n::IConvStreamBuffer::overflow </td>
-          <td>(</td>
-          <td class="paramtype">int_type&#160;</td>
-          <td class="paramname"><em>c</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sends buffered data to the destination output stream, converting between character sets en route. </p>
-<p>The buffer will be flushed as far as possible, and any invalid characters will be replaced with one or more question marks. If the buffer ends in an incomplete multibyte character, this incomplete character will be held back (since it presumably needs to be combined with later input).</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">c</td><td>an extra character to send that did not fit in the internal buffer, or EOF if we simply wish to flush the buffer. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>0 on success, or EOF on error. </dd></dl>
-
-</div>
-</div>
-<a id="ga165989a691406469cf5132c4e5816ce4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga165989a691406469cf5132c4e5816ce4">&#9670;&nbsp;</a></span>reset()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classregina_1_1SafePtr.html">regina::SafePtr</a>&lt; T &gt;::reset </td>
-          <td>(</td>
-          <td class="paramtype">T *&#160;</td>
-          <td class="paramname"><em>object</em> = <code>nullptr</code></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Resets this to point to the given object. </p>
-<p>This behaves in a similar manner to destroying the old safe pointer and constructing a new one: in particular, the old pointee may be destroyed if it meets the conditions outlined in the class notes above.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">object</td><td>the new pointee. This may be <code>null</code>. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="gaf33b066afbad6a25be00878c7cf3a7e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf33b066afbad6a25be00878c7cf3a7e6">&#9670;&nbsp;</a></span>SafePtr() <span class="overload">[1/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classregina_1_1SafePtr.html">regina::SafePtr</a>&lt; T &gt;::<a class="el" href="classregina_1_1SafePtr.html">SafePtr</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Constructs a new null pointer. </p>
-
-</div>
-</div>
-<a id="ga75651d857fbb4f708f91c06a4cc178dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga75651d857fbb4f708f91c06a4cc178dd">&#9670;&nbsp;</a></span>SafePtr() <span class="overload">[2/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classregina_1_1SafePtr.html">regina::SafePtr</a>&lt; T &gt;::<a class="el" href="classregina_1_1SafePtr.html">SafePtr</a> </td>
-          <td>(</td>
-          <td class="paramtype">T *&#160;</td>
-          <td class="paramname"><em>object</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Constructs a new safe pointer that points to the given object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">object</td><td>the pointee. This may be <code>null</code>. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="gaa8eb187bbdad812403168457626247f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa8eb187bbdad812403168457626247f8">&#9670;&nbsp;</a></span>SafePtr() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-<div class="memtemplate">
-template&lt;class Y &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classregina_1_1SafePtr.html">regina::SafePtr</a>&lt; T &gt;::<a class="el" href="classregina_1_1SafePtr.html">SafePtr</a> </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classregina_1_1SafePtr.html">SafePtr</a>&lt; Y &gt; &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Copy constructor. </p>
-<p>This constructor can also be used to cast a <a class="el" href="classregina_1_1SafePtr.html" title="A reference counted smart pointer that supports alternate models of ownership.">SafePtr</a> for a derived class <em>Y</em> to a <a class="el" href="classregina_1_1SafePtr.html" title="A reference counted smart pointer that supports alternate models of ownership.">SafePtr</a> for a base class <em>T</em>.</p>
-<dl class="section pre"><dt>Precondition</dt><dd>the class <em>T</em> (whose constructor is called) is a base class of <em>Y</em>.</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">other</td><td>the pointer to copy. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
@@ -1957,7 +1614,7 @@ template&lt;class Y &gt; </div>
 </div><div class="memdoc">
 
 <p>Determines whether the given C++ string begins with the given prefix. </p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>the full C++ string to examine. </td></tr>
@@ -2044,7 +1701,7 @@ template&lt;class Y &gt; </div>
 <p>Strips all whitespace from the beginning and end of the given C++ string. </p>
 <p>The new stripped string is returned; the original string is not altered.</p>
 <dl class="section warning"><dt>Warning</dt><dd>This routine treats all strings as plain ASCII. In particular, characters are examined one at a time, and the C routine isspace() is used to identify whitespace. Use it on strings with international characters at your own peril.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>the string to be stripped. </td></tr>
@@ -2076,7 +1733,7 @@ template&lt;typename T &gt; </div>
 <p>Converts the given C++ integer into a unicode subscript string. </p>
 <p>The resulting string will be encoded using UTF-8.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>The template argument <em>T</em> is either (i) a native C++ integer type, for which the standard C++11 library routine std::to_string(T) is defined; or (ii) a const reference to Integer or LargeInteger.</dd></dl>
-<dl class="section user"><dt>Python:\n This template function is instantiated in Python for types</dt><dd><em>T</em> = <code>long</code>, as well as const references to Integer and LargeInteger. </dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This template function is instantiated in Python for types <em>T</em> = <code>long</code>, as well as const references to Integer and LargeInteger. </dd></dl>
 
 </div>
 </div>
@@ -2101,56 +1758,7 @@ template&lt;typename T &gt; </div>
 <p>Converts the given C++ integer into a unicode superscript string. </p>
 <p>The resulting string will be encoded using UTF-8.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>The template argument <em>T</em> is either (i) a native C++ integer type, for which the standard C++11 library routine std::to_string(T) is defined; or (ii) a const reference to Integer or LargeInteger.</dd></dl>
-<dl class="section user"><dt>Python:\n This template function is instantiated in Python for types</dt><dd><em>T</em> = <code>long</code>, as well as const references to Integer and LargeInteger. </dd></dl>
-
-</div>
-</div>
-<a id="gadd2ef9bdf704ed5c23eea6db04fb40e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadd2ef9bdf704ed5c23eea6db04fb40e4">&#9670;&nbsp;</a></span>sync()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int regina::i18n::IConvStreamBuffer::sync </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Flushes all output buffers. </p>
-<p>The buffers for both this stream and the destination output stream will be flushed.</p>
-<dl class="section return"><dt>Returns</dt><dd>0 on success, or -1 on error. </dd></dl>
-
-</div>
-</div>
-<a id="ga830d349d83cfdb64fee00d58d65f4aab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga830d349d83cfdb64fee00d58d65f4aab">&#9670;&nbsp;</a></span>underflow()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">IConvStreamBuffer::int_type regina::i18n::IConvStreamBuffer::underflow </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Simply returns EOF (since this is not an input stream). </p>
-<dl class="section return"><dt>Returns</dt><dd>EOF. </dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This template function is instantiated in Python for types <em>T</em> = <code>long</code>, as well as const references to Integer and LargeInteger. </dd></dl>
 
 </div>
 </div>
@@ -2172,7 +1780,7 @@ template&lt;typename T &gt; </div>
 
 <p>Identifies the longest prefix of the given string that is valid UTF-8. </p>
 <p>The substring from <code>s.begin()</code> to the iterator that is returned is guaranteed to be valid UTF-8. If the entire string is valid UTF-8, then this routine will return <code>s.end()</code>.</p>
-<dl class="section user"><dt>Python:\n This routine returns the <em>length</em> of the longest valid</dt><dd>UTF-8 prefix. The length is measured in raw bytes (not unicode characters).</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This routine returns the <em>length</em> of the longest valid UTF-8 prefix. The length is measured in raw bytes (not unicode characters).</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>an iterator marking the end of the longest valid UTF-8 prefix. </dd></dl>
 
 </div>
@@ -2195,7 +1803,7 @@ template&lt;typename T &gt; </div>
 
 <p>Identifies the longest prefix of the given string that is valid UTF-8. </p>
 <p>The substring from <em>s</em> until just before the pointer that is returned is guaranteed to be valid UTF-8. If the entire string is valid UTF-8, then this routine will return a pointer to the null terminator of <em>s</em>.</p>
-<dl class="section user"><dt>Python:\n This routine returns the <em>length</em> of the longest valid</dt><dd>UTF-8 prefix. The length is measured in raw bytes (not unicode characters).</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This routine returns the <em>length</em> of the longest valid UTF-8 prefix. The length is measured in raw bytes (not unicode characters).</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a pointer marking the end of the longest valid UTF-8 prefix. </dd></dl>
 
 </div>
@@ -2228,7 +1836,7 @@ template&lt;typename T &gt; </div>
 
 <p>Converts the entire given string to an 8-bit integer and reports whether this conversion was successful. </p>
 <p>The given string should contain no whitespace or other characters that are not a part of the integer that the string represents. If any unexpected characters are encountered, the routine will convert the string as best it can but <code>false</code> will be returned.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>the string to convert. </td></tr>
@@ -2268,7 +1876,7 @@ template&lt;typename T &gt; </div>
 
 <p>Converts the entire given string to an unsigned 8-bit integer and reports whether this conversion was successful. </p>
 <p>The given string should contain no whitespace or other characters that are not a part of the integer that the string represents. If any unexpected characters are encountered, the routine will convert the string as best it can but <code>false</code> will be returned.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>the string to convert. </td></tr>
@@ -2308,7 +1916,7 @@ template&lt;typename T &gt; </div>
 
 <p>Converts the entire given string to a short integer and reports whether this conversion was successful. </p>
 <p>The given string should contain no whitespace or other characters that are not a part of the integer that the string represents. If any unexpected characters are encountered, the routine will convert the string as best it can but <code>false</code> will be returned.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>the string to convert. </td></tr>
@@ -2348,7 +1956,7 @@ template&lt;typename T &gt; </div>
 
 <p>Converts the entire given string to an unsigned short integer and reports whether this conversion was successful. </p>
 <p>The given string should contain no whitespace or other characters that are not a part of the integer that the string represents. If any unexpected characters are encountered, the routine will convert the string as best it can but <code>false</code> will be returned.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>the string to convert. </td></tr>
@@ -2388,7 +1996,7 @@ template&lt;typename T &gt; </div>
 
 <p>Converts the entire given string to an integer and reports whether this conversion was successful. </p>
 <p>The given string should contain no whitespace or other characters that are not a part of the integer that the string represents. If any unexpected characters are encountered, the routine will convert the string as best it can but <code>false</code> will be returned.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>the string to convert. </td></tr>
@@ -2428,7 +2036,7 @@ template&lt;typename T &gt; </div>
 
 <p>Converts the entire given string to an unsigned integer and reports whether this conversion was successful. </p>
 <p>The given string should contain no whitespace or other characters that are not a part of the integer that the string represents. If any unexpected characters are encountered, the routine will convert the string as best it can but <code>false</code> will be returned.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>the string to convert. </td></tr>
@@ -2468,7 +2076,7 @@ template&lt;typename T &gt; </div>
 
 <p>Converts the entire given string to a long integer and reports whether this conversion was successful. </p>
 <p>The given string should contain no whitespace or other characters that are not a part of the integer that the string represents. If any unexpected characters are encountered, the routine will convert the string as best it can but <code>false</code> will be returned.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>the string to convert. </td></tr>
@@ -2508,7 +2116,7 @@ template&lt;typename T &gt; </div>
 
 <p>Converts the entire given string to an unsigned long integer and reports whether this conversion was successful. </p>
 <p>The given string should contain no whitespace or other characters that are not a part of the integer that the string represents. If any unexpected characters are encountered, the routine will convert the string as best it can but <code>false</code> will be returned.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>the string to convert. </td></tr>
@@ -2548,7 +2156,7 @@ template&lt;typename T &gt; </div>
 
 <p>Converts the entire given string to a long long integer and reports whether this conversion was successful. </p>
 <p>The given string should contain no whitespace or other characters that are not a part of the integer that the string represents. If any unexpected characters are encountered, the routine will convert the string as best it can but <code>false</code> will be returned.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>the string to convert. </td></tr>
@@ -2588,7 +2196,7 @@ template&lt;typename T &gt; </div>
 
 <p>Converts the entire given string to an unsigned long long integer and reports whether this conversion was successful. </p>
 <p>The given string should contain no whitespace or other characters that are not a part of the integer that the string represents. If any unexpected characters are encountered, the routine will convert the string as best it can but <code>false</code> will be returned.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>the string to convert. </td></tr>
@@ -2630,7 +2238,7 @@ template&lt;bool supportInfinity&gt; </div>
 
 <p>Converts the entire given string to an arbitrary precision integer and reports whether this conversion was successful. </p>
 <p>The given string should contain no whitespace or other characters that are not a part of the integer that the string represents. If any unexpected characters are encountered, the routine will convert the string as best it can but <code>false</code> will be returned.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>the string to convert. </td></tr>
@@ -2670,7 +2278,7 @@ template&lt;bool supportInfinity&gt; </div>
 
 <p>Converts the entire given string to a double precision real number and reports whether this conversion was successful. </p>
 <p>The given string should contain no whitespace or other characters that are not a part of the real number that the string represents. If any unexpected characters are encountered, the routine will convert the string as best it can but <code>false</code> will be returned.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>the string to convert. </td></tr>
@@ -2710,7 +2318,7 @@ template&lt;bool supportInfinity&gt; </div>
 
 <p>Converts the entire given string to a boolean and reports whether this conversion was successful. </p>
 <p>If the given string begins with <code>T</code>, <code>t</code> or <code>1</code>, then the string will be successfully converted to <code>true</code>. If the given string begins with <code>F</code>, <code>f</code> or <code>0</code>, then the string will be successfully converted to <code>false</code>. Otherwise the conversion will be unsuccessful and argument <em>dest</em> will be set to <code>false</code>.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>the string to convert. </td></tr>
@@ -2750,7 +2358,7 @@ template&lt;bool supportInfinity&gt; </div>
 
 <p>Converts the entire given string to a set of booleans and reports whether this conversion was successful. </p>
 <p>A set of booleans is represented by one of the four strings <code>&ndash;</code>, <code>T-</code>, <code>-F</code> or <code>TF</code>. If the conversion is unsuccessful, argument <em>dest</em> will be set to <a class="el" href="classregina_1_1BoolSet.html#ac99098499b5705ba13a480097906deed" title="The empty set.">BoolSet::sNone</a> and <code>false</code> will be returned.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>the string to convert. </td></tr>
@@ -2759,6 +2367,46 @@ template&lt;bool supportInfinity&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the conversion was successful or <code>false</code> otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="ga52c8776c5329496a0b34c914706031e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga52c8776c5329496a0b34c914706031e4">&#9670;&nbsp;</a></span>writeResUsage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void regina::writeResUsage </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Writes time and memory usage for the current process to the given output stream. </p>
+<p>Information is gathered from the <code>/proc</code> filesystem, which means that this routine will only write meaningful information under a Linux system where <code>/proc</code> is mounted.</p>
+<p>Specifically, this routine reads information on the running process from <code>/proc/self/stat</code>, and writes a short string to the given output stream of the form:</p>
+<div class="fragment"><div class="line">utime=..., stime=..., vsize=...</div></div><!-- fragment --><p>The three ellipses in the example above will be replaced with integers, representing:</p>
+<ul>
+<li>the number jiffies that this process has been scheduled in user mode (the <em>utime</em> field);</li>
+<li>the number jiffies that this process has been scheduled in kernel mode (the <em>stime</em> field);</li>
+<li>the the virtual memory size in bytes (the <em>vsize</em> field).</li>
+</ul>
+<p>The description of these three fields is taken directly from the <code>proc(5)</code> manpage. Note that the length of a jiffy can differ from system to system; see the <code>time(7)</code> manpage for details.</p>
+<p>The output will not contain a newline, and the given output stream will not be flushed.</p>
+<p>If <code>/proc/self/stat</code> cannot be read, this routine will write a short message to that effect to the given output stream (which means that this utility is safe to call under non-Linux operating systems, although it will of course be useless in such scenarios).</p>
+<p>If <code>/proc/self/stat</code> can be read but contains unexpected information, the behaviour of this routine is undefined.</p>
+<dl class="section user"><dt>Python</dt><dd>This routine does not take any arguments; instead the stream <em>out</em> is assumed to be standard output.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Currently this routine allows at most 255 characters for the <em>comm</em> field in <code>/proc/self/stat</code> (which stores the executable filename along with surrounding parentheses). If the <em>comm</em> field is too long (i.e., the executable filename is too long), then this routine will not be able to parse <code>/proc/self/stat</code>, and will write a note to this effect to the given output stream. If you encounter this problem, you should be able to fix it by renaming your executable to something shorter.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>the output stream to which usage information will be written. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -2780,7 +2428,7 @@ template&lt;bool supportInfinity&gt; </div>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the given string encoded so it is suitable for use inside an XML comment. </p>
 <p>As well as converting special characters to XML entities, this routine will replace dashes with underscores to avoid double-hyphens (which are illegal in XML comments).</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">comment</td><td>the string to convert; this string will not be changed. </td></tr>
@@ -2809,7 +2457,7 @@ template&lt;bool supportInfinity&gt; </div>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the given string with special characters converted to XML entities. </p>
 <p>For instance, the string <code>"a \&lt; b"</code> would be converted to <code>"a \&amp;lt; b"</code>.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">original</td><td>the string to convert; this string will not be changed. </td></tr>
@@ -2907,7 +2555,7 @@ template&lt;class T &gt; </div>
 <p>The tag will be of the form <code>&lt;tagName value="..."/&gt;</code>.</p>
 <p>The value itself will be written to the tag string using the standard output stream operator &lt;&lt;.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>The property value when written to an output stream does not contain any special characters (such as <code>&lt;</code> or <code>&amp;</code>) that need to be encoded as XML entities.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">tagName</td><td>the name of the XML tag to create. </td></tr>
@@ -2919,37 +2567,9 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a id="ga61810bdda48b4a95ef66c577f62eadf4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga61810bdda48b4a95ef66c577f62eadf4">&#9670;&nbsp;</a></span>~IConvStreamBuffer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">regina::i18n::IConvStreamBuffer::~IConvStreamBuffer </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Destroys this stream buffer. </p>
-<p>This stream buffer will be closed, but the destination output stream will not be. </p>
-
-</div>
-</div>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

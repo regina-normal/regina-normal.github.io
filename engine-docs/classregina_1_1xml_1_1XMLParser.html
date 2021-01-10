@@ -88,7 +88,7 @@ Static Public Member Functions</h2></td></tr>
 <p>When particular XML components are encountered, this will be signalled by calling corresponding routines from the <a class="el" href="classregina_1_1xml_1_1XMLParserCallback.html" title="Provides the callbacks for an XMLParser.">XMLParserCallback</a> that is passed to the <a class="el" href="classregina_1_1xml_1_1XMLParser.html" title="Used to parse an entire XML file.">XMLParser</a> constructor.</p>
 <p>To parse an entire XML file, simply call static routine <a class="el" href="classregina_1_1xml_1_1XMLParser.html#a6565a33c4a2fb6eec4da4b8810823de2" title="Parses an entire XML file.">parse_stream()</a>, which does not require you to create an <a class="el" href="classregina_1_1xml_1_1XMLParser.html" title="Used to parse an entire XML file.">XMLParser</a> yourself.</p>
 <p>If you desire more fine-grained control over the parsing process, you may create an <a class="el" href="classregina_1_1xml_1_1XMLParser.html" title="Used to parse an entire XML file.">XMLParser</a> yourself and parse the file manually in small pieces. To do this, routine <a class="el" href="classregina_1_1xml_1_1XMLParser.html#ab060d4e56a2a79ad6acbb1911e28ec1b" title="Parses the given chunk of XML.">parse_chunk()</a> should be called repeatedly with consecutive pieces of the XML file. Once the entire XML file has been sent through <a class="el" href="classregina_1_1xml_1_1XMLParser.html#ab060d4e56a2a79ad6acbb1911e28ec1b" title="Parses the given chunk of XML.">parse_chunk()</a>, routine <a class="el" href="classregina_1_1xml_1_1XMLParser.html#a6bdd6fdd37147d44dcf134d6a7187de5" title="Signals that there are no more XML chunks to parse.">finish()</a> should be called once to signal that processing is complete.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>This class was taken and modified from the libxml++ library (<code><a href="http://lusis.org/~ari/xml++/">http://lusis.org/~ari/xml++/</a></code>). </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a4c433d55f1002dcda968f0d6a31cc280"></a>
@@ -264,7 +264,7 @@ Static Public Member Functions</h2></td></tr>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

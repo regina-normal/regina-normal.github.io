@@ -385,8 +385,8 @@ class regina::IntegerBase&lt; supportInfinity &gt;</h3>
 <p>For the purposes of comparison, infinity is considered larger than any other integer but equal to itself.</p>
 <p>All routines in this class, including random number generation, are thread-safe.</p>
 <p>The opportunistic use of native arithmetic where possible was inspired by the (much more complex and powerful) lazy exact arithmetic in CGAL. Thanks to Menelaos Karavelas for encouraging me to take another look at these ideas.</p>
-<dl class="section user"><dt>Headers:\n Parts of this template class are implemented in a C++ source</dt><dd>file that is not available through the headers. However, this should not affect users since the calculation engine includes explicit instantiations for all possible template parameters.</dd></dl>
-<dl class="section user"><dt>Python:\n Both variants of this template are available through Python.</dt><dd>For <em>supportInfinity</em> = <code>false</code>, use the name Integer. For <em>supportInfinity</em> = <code>true</code>, use the name LargeInteger. </dd></dl>
+<dl class="section user"><dt>Headers</dt><dd>Parts of this template class are implemented in a C++ source file that is not available through the headers. However, this should not affect users since the calculation engine includes explicit instantiations for all possible template parameters.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Both variants of this template are available through Python. For <em>supportInfinity</em> = <code>false</code>, use the name Integer. For <em>supportInfinity</em> = <code>true</code>, use the name LargeInteger. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8e2f44c8ac0537b40ea2318c08974be1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8e2f44c8ac0537b40ea2318c08974be1">&#9670;&nbsp;</a></span>IntegerBase() <span class="overload">[1/12]</span></h2>
@@ -444,7 +444,7 @@ template&lt;bool supportInfinity&gt; </div>
 </div><div class="memdoc">
 
 <p>Initialises this integer to the given value. </p>
-<dl class="section user"><dt>Python:\n In Python, the only native-integer constructor</dt><dd>is <a class="el" href="classregina_1_1IntegerBase.html#accf7d7444907d00cbcc77a790dd3214d" title="Initialises this integer to the given value.">IntegerBase(long)</a>.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>In Python, the only native-integer constructor is <a class="el" href="classregina_1_1IntegerBase.html#accf7d7444907d00cbcc77a790dd3214d" title="Initialises this integer to the given value.">IntegerBase(long)</a>.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>the new value of this integer. </td></tr>
@@ -481,7 +481,7 @@ template&lt;bool supportInfinity&gt; </div>
 </div><div class="memdoc">
 
 <p>Initialises this integer to the given value. </p>
-<dl class="section user"><dt>Python:\n In Python, the only native-integer constructor</dt><dd>is <a class="el" href="classregina_1_1IntegerBase.html#accf7d7444907d00cbcc77a790dd3214d" title="Initialises this integer to the given value.">IntegerBase(long)</a>.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>In Python, the only native-integer constructor is <a class="el" href="classregina_1_1IntegerBase.html#accf7d7444907d00cbcc77a790dd3214d" title="Initialises this integer to the given value.">IntegerBase(long)</a>.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>the new value of this integer. </td></tr>
@@ -518,7 +518,7 @@ template&lt;bool supportInfinity&gt; </div>
 </div><div class="memdoc">
 
 <p>Initialises this integer to the given value. </p>
-<dl class="section user"><dt>Python:\n In Python, this is the only native-integer</dt><dd>constructor available.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>In Python, this is the only native-integer constructor available.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>the new value of this integer. </td></tr>
@@ -555,7 +555,7 @@ template&lt;bool supportInfinity&gt; </div>
 </div><div class="memdoc">
 
 <p>Initialises this integer to the given value. </p>
-<dl class="section user"><dt>Python:\n In Python, the only native-integer constructor</dt><dd>is <a class="el" href="classregina_1_1IntegerBase.html#accf7d7444907d00cbcc77a790dd3214d" title="Initialises this integer to the given value.">IntegerBase(long)</a>.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>In Python, the only native-integer constructor is <a class="el" href="classregina_1_1IntegerBase.html#accf7d7444907d00cbcc77a790dd3214d" title="Initialises this integer to the given value.">IntegerBase(long)</a>.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>the new value of this integer. </td></tr>
@@ -670,7 +670,7 @@ template&lt;int bytes&gt; </div>
 <p>Initialises this integer to the given value. </p>
 <p>This constructor is marked as explicit in the hope of avoiding accidental (and unintentional) mixing of integer classes.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>If <em>bytes</em> is larger than sizeof(long), then <em>bytes</em> is a strict <em>multiple</em> of sizeof(long). For instance, if longs are 8 bytes then you can use <em>bytes=16</em> but not <em>bytes=12</em>. This restriction is enforced through a compile-time assertion, but may be lifted in future versions of Regina.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>the new value of this integer. </td></tr>
@@ -700,7 +700,7 @@ template&lt;bool supportInfinity = false&gt; </div>
 
 <p>Initialises this to the given Python arbitrary-precision integer. </p>
 <p>The argument is of the Python type <code>long</code>, which Python uses to store integers of arbitrary magnitude (much like Regina does with its Integer and LargeInteger classes).</p>
-<dl class="section user"><dt>C++:\n Not available: this constructor is for Python only.</dt><dd></dd></dl>
+<dl class="section user"><dt>C++</dt><dd>Not available: this constructor is for Python only.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>the new value of this integer. </td></tr>
@@ -788,7 +788,7 @@ template&lt;bool supportInfinity = false&gt; </div>
 <dl class="section pre"><dt>Precondition</dt><dd>The given base is zero, or is between 2 and 36 inclusive. </dd>
 <dd>
 The given string represents a finite integer in the given base, with optional whitespace beforehand.</dd></dl>
-<dl class="section user"><dt>Python:\n The final parameter <em>valid</em> is not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>The final parameter <em>valid</em> is not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>the new value of this integer, represented as a string of digits in base <em>base</em>. </td></tr>
@@ -842,7 +842,7 @@ template&lt;bool supportInfinity = false&gt; </div>
 <dl class="section pre"><dt>Precondition</dt><dd>The given base is zero, or is between 2 and 36 inclusive. </dd>
 <dd>
 The given string represents an integer in the given base, with optional whitespace beforehand.</dd></dl>
-<dl class="section user"><dt>Python:\n The final parameter <em>valid</em> is not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>The final parameter <em>valid</em> is not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>the new value of this integer, represented as a string of digits in base <em>base</em>. </td></tr>
@@ -1106,7 +1106,7 @@ template&lt;bool supportInfinity = false&gt; </div>
 <p>The two results are passed back to the caller as follows: The quotient <em>q</em> is passed back as the return value of the function, and the remainder <em>r</em> is stored in the reference argument <em>r</em>.</p>
 <p>In the special case where the given divisor is 0 (not allowed by the usual division algorithm), this routine selects quotient 0 and remainder <em>n</em>.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>Neither this nor the divisor are infinite.</dd></dl>
-<dl class="section user"><dt>Python:\n The argument <em>remainder</em> is missing; instead both</dt><dd>the quotient and remainder are passed back through the return value of the function. Specifically, this function returns a (<em>quotient</em>, <em>remainder</em>) pair.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>The argument <em>remainder</em> is missing; instead both the quotient and remainder are passed back through the return value of the function. Specifically, this function returns a (<em>quotient</em>, <em>remainder</em>) pair.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">divisor</td><td>the divisor <em>d</em>. </td></tr>
@@ -1531,7 +1531,7 @@ template&lt;int bytes&gt; </div>
 <dl class="section pre"><dt>Precondition</dt><dd>If <em>bytes</em> is larger than sizeof(long), then <em>bytes</em> is a strict <em>multiple</em> of sizeof(long). For instance, if longs are 8 bytes then you can use this routine with <em>bytes=16</em> but not <em>bytes=12</em>. This restriction is enforced through a compile-time assertion, but may be lifted in future versions of Regina.</dd>
 <dd>
 This integer is not infinity.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the value of this integer. </dd></dl>
 
 </div>
@@ -2111,7 +2111,7 @@ template&lt;bool supportInfinity&gt; </div>
 
 <p>The predecrement operator. </p>
 <p>This operator decrements this integer by one, and returns a reference to the integer <em>after</em> the decrement.</p>
-<dl class="section user"><dt>Python:\n Not available.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not available.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a reference to this integer after the decrement. </dd></dl>
 
 </div>
@@ -2144,7 +2144,7 @@ template&lt;bool supportInfinity&gt; </div>
 
 <p>The postdecrement operator. </p>
 <p>This operator decrements this integer by one, and returns a copy of the integer <em>before</em> the decrement.</p>
-<dl class="section user"><dt>Python:\n Not available.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not available.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a copy of this integer before the decrement took place. </dd></dl>
 
 </div>
@@ -2472,7 +2472,7 @@ template&lt;bool supportInfinity&gt; </div>
 
 <p>The preincrement operator. </p>
 <p>This operator increments this integer by one, and returns a reference to the integer <em>after</em> the increment.</p>
-<dl class="section user"><dt>Python:\n Not available.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not available.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a reference to this integer after the increment. </dd></dl>
 
 </div>
@@ -2505,7 +2505,7 @@ template&lt;bool supportInfinity&gt; </div>
 
 <p>The postincrement operator. </p>
 <p>This operator increments this integer by one, and returns a copy of the integer <em>before</em> the increment.</p>
-<dl class="section user"><dt>Python:\n Not available.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not available.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a copy of this integer before the increment took place. </dd></dl>
 
 </div>
@@ -3449,7 +3449,7 @@ template&lt;bool supportInfinity&gt; </div>
 <p>This routine allows <a class="el" href="classregina_1_1IntegerBase.html" title="Represents an arbitrary precision integer.">IntegerBase</a> to interact directly with libgmp and libgmpxx if necessary.</p>
 <dl class="section warning"><dt>Warning</dt><dd>This routine will have the side-effect of converting this integer to a (bulkier and slower) GMP representation, regardless of whether it is small enough to fit within a native integer. Excessive use of this routine could lead to a significant performance loss. It is best to use this only when <a class="el" href="classregina_1_1IntegerBase.html#a7a397182b688be8cadb624570bcf5f39" title="Returns whether we are currently working with a native C/C++ long, or whether we have switched to GMP...">isNative()</a> is already known to return <code>false</code>.</dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>This integer is not infinite.</dd></dl>
-<dl class="section user"><dt>Python:\n Not available.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not available.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the raw GMP data. </dd></dl>
 
 </div>
@@ -3483,7 +3483,7 @@ template&lt;bool supportInfinity&gt; </div>
 <p>This routine allows <a class="el" href="classregina_1_1IntegerBase.html" title="Represents an arbitrary precision integer.">IntegerBase</a> to interact directly with libgmp and libgmpxx if necessary.</p>
 <dl class="section warning"><dt>Warning</dt><dd>This routine will have the side-effect of converting this integer to a (bulkier and slower) GMP representation, regardless of whether it is small enough to fit within a native integer. Excessive use of this routine could lead to a significant performance loss. It is best to use this only when <a class="el" href="classregina_1_1IntegerBase.html#a7a397182b688be8cadb624570bcf5f39" title="Returns whether we are currently working with a native C/C++ long, or whether we have switched to GMP...">isNative()</a> is already known to return <code>false</code>.</dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>This integer is not infinite.</dd></dl>
-<dl class="section user"><dt>Python:\n Not available.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not available.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the raw GMP data. </dd></dl>
 
 </div>
@@ -3516,7 +3516,7 @@ template&lt;bool supportInfinity&gt; </div>
 
 <p>Set this to a copy of the given raw GMP integer. </p>
 <p>This routine allows <a class="el" href="classregina_1_1IntegerBase.html" title="Represents an arbitrary precision integer.">IntegerBase</a> to interact directly with libgmp and libgmpxx if necessary.</p>
-<dl class="section user"><dt>Python:\n Not available.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not available.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">fromData</td><td>the raw GMP integer to clone. </td></tr>
@@ -3728,7 +3728,7 @@ template&lt;bool supportInfinity = false&gt; </div>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

@@ -121,7 +121,7 @@ class regina::FaceEmbedding&lt; dim, subdim &gt;</h3>
 <p>For small-dimensional faces, this class is typically described using dimension-specific type aliases: VertexEmbedding&lt;dim&gt;, EdgeEmbedding&lt;dim&gt;, TriangleEmbedding&lt;dim&gt;, TetrahedronEmbedding&lt;dim&gt; and PentachoronEmbedding&lt;dim&gt; refer to the cases <em>subdim</em> = 0, 1, 2, 3 and 4 respectively.</p>
 <p>For a <em>dim</em>-dimensional triangulation <em>T</em>, each <em>subdim</em>-face <em>F</em> typically belongs to many top-dimensional simplices of <em>T</em>, and therefore has many associated <a class="el" href="classregina_1_1FaceEmbedding.html" title="Details how a subdim-face of a dim-dimensional triangulation appears within each top-dimensional simp...">FaceEmbedding</a> objects. These individual <a class="el" href="classregina_1_1FaceEmbedding.html" title="Details how a subdim-face of a dim-dimensional triangulation appears within each top-dimensional simp...">FaceEmbedding</a> objects correspond to the top-dimensional simplices of the link of <em>F</em> (which is a (<em>dim</em> - <em>subdim</em> - 1)-dimensional triangulation).</p>
 <p>If <em>dim</em> is one of Regina's <a class="el" href="stddim.html">standard dimensions</a>, then this template is specialised to offer additional dimension-specific aliases. In order to use these specialised classes, you will need to include the corresponding triangulation headers (e.g., <a class="el" href="dim2_8h.html" title="Includes all headers for working with 2-dimensional triangulations. This includes headers for the mai...">triangulation/dim2.h</a> for <em>dim</em> = 2, or <a class="el" href="dim3_8h.html" title="Includes all headers for working with 3-dimensional triangulations. This includes headers for the mai...">triangulation/dim3.h</a> for <em>dim</em> = 3).</p>
-<dl class="section user"><dt>Python:\n Python does not support templates. Instead this class</dt><dd>can be used by appending dimensions <em>dim</em> and <em>subdim</em> as suffices (e.g., FaceEmbedding2_1 and FaceEmbedding3_0 for the two examples above).</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Python does not support templates. Instead this class can be used by appending dimensions <em>dim</em> and <em>subdim</em> as suffices (e.g., FaceEmbedding2_1 and FaceEmbedding3_0 for the two examples above).</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">dim</td><td>the dimension of the underlying triangulation. This must be between 2 and 15 inclusive. </td></tr>
@@ -157,7 +157,7 @@ template&lt;int dim, int subdim&gt; </div>
 
 <p>Default constructor. </p>
 <p>This object is unusable until it has some data assigned to it using <code>operator =</code>.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. </dd></dl>
 
 </div>
 </div>
@@ -472,7 +472,7 @@ template&lt;int dim, int subdim&gt; </div>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a short text representation of this object. </p>
 <p>This text should be human-readable, should fit on a single line, and should not end with a newline. Where possible, it should use plain ASCII characters.</p>
-<dl class="section user"><dt>Python:\n In addition to str(), this is also used as the</dt><dd>Python "stringification" function <code>__str__()</code>.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>In addition to <a class="el" href="structregina_1_1Output.html#a2212a7a96adf2538ea875d49a98d99ad" title="Returns a short text representation of this object.">str()</a>, this is also used as the Python "stringification" function <code>__str__()</code>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a short text representation of this object. </dd></dl>
 
 </div>
@@ -564,7 +564,7 @@ template&lt;int dim, int subdim&gt; </div>
 
 <p>A default implementation for detailed output. </p>
 <p>This routine simply calls <em>T::writeTextShort()</em> and appends a final newline.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -601,7 +601,7 @@ template&lt;int dim, int subdim&gt; </div>
 </div><div class="memdoc">
 
 <p>Writes a short text representation of this object to the given output stream. </p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -617,7 +617,7 @@ template&lt;int dim, int subdim&gt; </div>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

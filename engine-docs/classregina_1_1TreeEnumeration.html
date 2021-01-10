@@ -193,9 +193,9 @@ algorithm for decision problems in knot theory and 3-manifold topology", Burton 
 <dd>
 The default constructor for the template class IntType must intialise each new integer to zero. The classes Integer and <a class="el" href="classregina_1_1NativeInteger.html" title="A wrapper class for a native, fixed-precision integer type of the given size.">NativeInteger</a>, for instance, have this property.</dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Although the tree traversal algorithm can run in standard normal or almost normal coordinates, this is not recommended: it is likely to be <em>much</em> slower than in quadrilateral or quadrilateral-octagon coordinates respectively. Instead you should enumerate vertex solutions using quadrilateral or quadrilateral-octagon coordinates, and then run the conversion procedure <a class="el" href="classregina_1_1NormalSurfaces.html#a923d837b8eb709fd079d4ec8e5f30889" title="Converts the set of all embedded vertex normal surfaces in quadrilateral space to the set of all embe...">NormalSurfaces::quadToStandard()</a> or <a class="el" href="classregina_1_1NormalSurfaces.html#a8e160a2b7934ad098ab2252adfd128db" title="Converts the set of all embedded vertex almost normal surfaces in quadrilateral-octagon space to the ...">NormalSurfaces::quadOctToStandardAN()</a>.</dd></dl>
-<dl class="section user"><dt>Headers:\n Parts of this template class are implemented in a separate header</dt><dd>(treetraversal-impl.h), which is not included automatically by this file. Most end users should not need this extra header, since Regina's calculation engine already includes explicit instantiations for common combinations of template arguments.</dd></dl>
+<dl class="section user"><dt>Headers</dt><dd>Parts of this template class are implemented in a separate header (treetraversal-impl.h), which is not included automatically by this file. Most end users should not need this extra header, since Regina's calculation engine already includes explicit instantiations for common combinations of template arguments.</dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>The API for this class has not yet been finalised. This means that the class interface may change in new versions of Regina, without maintaining backward compatibility. If you use this class directly in your own code, please watch the detailed changelogs upon new releases to see if you need to make changes to your code.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac53f9077d41478f5ec66bf131eab2f22"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac53f9077d41478f5ec66bf131eab2f22">&#9670;&nbsp;</a></span>TreeEnumeration()</h2>
@@ -1332,7 +1332,7 @@ template&lt;class LPConstraint , typename BanConstraint , typename IntType &gt; 
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

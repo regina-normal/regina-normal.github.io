@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Regina Calculation Engine: Foreign</title>
+<title>Regina Calculation Engine: Foreign File Formats</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -41,9 +41,12 @@ $(function() {
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Foreign</div>  </div>
+<div class="title">Foreign File Formats</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Reading and writing foreign file formats.  
+<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -58,6 +61,7 @@ Functions</h2></td></tr>
 <tr class="separator:ga98f9aa0ff22c6b72a08a37e90d0c16c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Reading and writing foreign file formats. </p>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="gacb10fcf6d516d92a8fb4591c98002842"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gacb10fcf6d516d92a8fb4591c98002842">&#9670;&nbsp;</a></span>readDehydrationList()</h2>
@@ -103,7 +107,7 @@ Functions</h2></td></tr>
 <p>If any dehydrations strings are invalid, these will be recorded in an additional text packet that will be the last child of the returned container.</p>
 <p>If an I/O error occurred while trying to read the given file, 0 will be returned.</p>
 <p>In its simplest form, the text file can simply contain one dehydration string per line and nothing else. However, more complex formats are allowed. In particular, by passing appropriate values for the arguments <em>colDehydrations</em> and <em>colLabels</em>, the dehydration strings and triangulation packet labels can be taken from arbitrary columns of the text file. Columns are considered to be separated by whitespace and are numbered beginning at 0.</p>
-<dl class="section user"><dt>Internationalisation:\n This routine makes no assumptions about the</dt><dd><a class="el" href="i18n.html">character encoding</a> used in the given file <em>name</em>, and simply passes it through unchanged to low-level C/C++ file I/O routines. It assumes however that the <em>contents</em> of the file are in UTF-8.</dd></dl>
+<dl class="section user"><dt>Internationalisation</dt><dd>This routine makes no assumptions about the <a class="el" href="i18n.html">character encoding</a> used in the given file <em>name</em>, and simply passes it through unchanged to low-level C/C++ file I/O routines. It assumes however that the <em>contents</em> of the file are in UTF-8.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>the name of the text file from which to read. </td></tr>
@@ -167,7 +171,7 @@ Functions</h2></td></tr>
 <p>If any isomorphism signatures are invalid, these will be recorded in an additional text packet that will be the last child of the returned container.</p>
 <p>If an I/O error occurred while trying to read the given file, 0 will be returned.</p>
 <p>In its simplest form, the text file can simply contain one isomorphism signature per line and nothing else. However, more complex formats are allowed. In particular, by passing appropriate values for the arguments <em>colSigs</em> and <em>colLabels</em>, the isomorphism signatures and triangulation packet labels can be taken from arbitrary columns of the text file. Columns are considered to be separated by whitespace and are numbered beginning at 0.</p>
-<dl class="section user"><dt>Internationalisation:\n This routine makes no assumptions about the</dt><dd><a class="el" href="i18n.html">character encoding</a> used in the given file <em>name</em>, and simply passes it through unchanged to low-level C/C++ file I/O routines. It assumes however that the <em>contents</em> of the file are in UTF-8.</dd></dl>
+<dl class="section user"><dt>Internationalisation</dt><dd>This routine makes no assumptions about the <a class="el" href="i18n.html">character encoding</a> used in the given file <em>name</em>, and simply passes it through unchanged to low-level C/C++ file I/O routines. It assumes however that the <em>contents</em> of the file are in UTF-8.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>the name of the text file from which to read. </td></tr>
@@ -202,7 +206,7 @@ Functions</h2></td></tr>
 <p>A newly allocated triangulation will be returned; it is the user's responsibility to deallocate this when it is finished with.</p>
 <p>The packet label of the new triangulation will be the manifold name read from the second line of the Orb / Casson file. The first line of the Orb / Casson file must simply be `&lsquo;<code>% orb</code>&rsquo;'.</p>
 <p>If the file could not be read or if the data was not in the correct format, 0 will be returned.</p>
-<dl class="section user"><dt>Internationalisation:\n This routine makes no assumptions about the</dt><dd><a class="el" href="i18n.html">character encoding</a> used in the given file <em>name</em>, and simply passes it through unchanged to low-level C/C++ file I/O routines. It assumes however that the <em>contents</em> of the file are in UTF-8.</dd></dl>
+<dl class="section user"><dt>Internationalisation</dt><dd>This routine makes no assumptions about the <a class="el" href="i18n.html">character encoding</a> used in the given file <em>name</em>, and simply passes it through unchanged to low-level C/C++ file I/O routines. It assumes however that the <em>contents</em> of the file are in UTF-8.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>the name of the Orb / Casson file from which to read. </td></tr>
@@ -216,7 +220,7 @@ Functions</h2></td></tr>
 </div>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

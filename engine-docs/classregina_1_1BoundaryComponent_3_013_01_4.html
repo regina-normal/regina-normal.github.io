@@ -319,7 +319,7 @@ class regina::BoundaryComponent&lt; 3 &gt;</h3>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the number of <em>subdim</em>-faces in this boundary component. </p>
 <p>This routine is only available where <em>dim</em> is one of Regina's <a class="el" href="stddim.html">standard dimensions</a>.</p>
-<dl class="section user"><dt>Python:\n Python does not support templates. Instead,</dt><dd>Python users should call this function in the form <code>countFaces(subdim)</code>; that is, the template parameter <em>subdim</em> becomes the first argument of the function.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Python does not support templates. Instead, Python users should call this function in the form <code>countFaces(subdim)</code>; that is, the template parameter <em>subdim</em> becomes the first argument of the function.</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">subdim</td><td>the dimension of the faces to query. This must be between 0 and <em>dim</em>-1 inclusive.</td></tr>
@@ -445,7 +445,7 @@ class regina::BoundaryComponent&lt; 3 &gt;</h3>
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the requested <em>subdim</em>-face in this boundary component. </p>
 <p>Note that the index of a face in the boundary component need not be the index of the same face in the overall triangulation. However, if this is a real boundary component (i.e., it is built from one or more (<em>dim</em>-1)-faces), then the index of each <em>subdim</em>-face in this boundary component will match the index of the corresponding <em>subdim</em>-face in the (<em>dim</em>-1)-manifold triangulation returned by <a class="el" href="classregina_1_1detail_1_1BoundaryComponentStorage.html#a833940ddf9a9813d8a683f1ed8697999" title="Returns the full (dim-1)-dimensional triangulation of this boundary component.">build()</a>.</p>
 <p>This routine is only available where <em>dim</em> is one of Regina's <a class="el" href="stddim.html">standard dimensions</a>.</p>
-<dl class="section user"><dt>Python:\n Python does not support templates. Instead,</dt><dd>Python users should call this function in the form <code>face(subdim, index)</code>; that is, the template parameter <em>subdim</em> becomes the first argument of the function.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Python does not support templates. Instead, Python users should call this function in the form <code>face(subdim, index)</code>; that is, the template parameter <em>subdim</em> becomes the first argument of the function.</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">subdim</td><td>the dimension of the face to query. This must be between 0 and <em>dim</em>-1 inclusive.</td></tr>
@@ -487,7 +487,7 @@ class regina::BoundaryComponent&lt; 3 &gt;</h3>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> all <em>subdim</em>-faces in this boundary component. </p>
 <p>The reference that is returned will remain valid only for as long as this boundary component object exists. In particular, the reference will become invalid any time that the triangulation changes (since all boundary component objects will be destroyed and others rebuilt in their place).</p>
-<dl class="section user"><dt>Python:\n Python users should call this function in the</dt><dd>form <code>faces(subdim)</code>. It will then return a Python list containing all the <em>subdim</em>-faces of the boundary component. Be warned that, unlike in C++, this Python list will be a snapshot of the faces when this function is called, and will <em>not</em> be kept up-to-date as the triangulation changes.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Python users should call this function in the form <code>faces(subdim)</code>. It will then return a Python list containing all the <em>subdim</em>-faces of the boundary component. Be warned that, unlike in C++, this Python list will be a snapshot of the faces when this function is called, and will <em>not</em> be kept up-to-date as the triangulation changes.</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">subdim</td><td>the dimension of the faces to query. This must be between 0 and <em>dim</em>-1 inclusive.</td></tr>
@@ -560,7 +560,7 @@ class regina::BoundaryComponent&lt; 3 &gt;</h3>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> all (<em>dim</em>-1)-faces in this boundary component. </p>
 <p>The reference that is returned will remain valid only for as long as this boundary component object exists. In particular, the reference will become invalid any time that the triangulation changes (since all boundary component objects will be destroyed and others rebuilt in their place).</p>
-<dl class="section user"><dt>Python:\n This routine returns a python list.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This routine returns a python list.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the list of all (<em>dim</em>-1)-faces. </dd></dl>
 
 </div>
@@ -936,7 +936,7 @@ For each <em>i</em>, the <em>i</em>th top-dimensional simplex of <em>tri</em> co
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a short text representation of this object. </p>
 <p>This text should be human-readable, should fit on a single line, and should not end with a newline. Where possible, it should use plain ASCII characters.</p>
-<dl class="section user"><dt>Python:\n In addition to str(), this is also used as the</dt><dd>Python "stringification" function <code>__str__()</code>.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>In addition to <a class="el" href="structregina_1_1Output.html#a2212a7a96adf2538ea875d49a98d99ad" title="Returns a short text representation of this object.">str()</a>, this is also used as the Python "stringification" function <code>__str__()</code>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a short text representation of this object. </dd></dl>
 
 </div>
@@ -1023,7 +1023,7 @@ For each <em>i</em>, the <em>i</em>th top-dimensional simplex of <em>tri</em> co
 </div><div class="memdoc">
 
 <p>Writes a detailed text representation of this object to the given output stream. </p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1058,7 +1058,7 @@ For each <em>i</em>, the <em>i</em>th top-dimensional simplex of <em>tri</em> co
 </div><div class="memdoc">
 
 <p>Writes a short text representation of this object to the given output stream. </p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1224,7 +1224,7 @@ template&lt;int dim, int subdim&gt; </div>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

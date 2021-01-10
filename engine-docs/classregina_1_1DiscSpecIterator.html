@@ -113,13 +113,13 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>DiscSetSurface</b></
 <p>This header also specialises std::iterator_traits for this iterator class.</p>
 <dl class="section warning"><dt>Warning</dt><dd>This class converts the indices of normal discs of a given type from LargeInteger to <code>unsigned long</code>. See the precondition below.</dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>The number of normal discs of a particular type in a particular tetrahedron can be represented by a long integer.</dd></dl>
-<dl class="section user"><dt>Python:\n Instead of the C++ interface described here, in Python</dt><dd><a class="el" href="classregina_1_1DiscSetSurface.html" title="Represents the set of all normal discs forming a normal surface.">DiscSetSurface</a> and this class together implement the Python iterable/iterator interface. The <a class="el" href="classregina_1_1DiscSetSurface.html" title="Represents the set of all normal discs forming a normal surface.">DiscSetSurface</a> class implements <code>__iter__()</code>, which returns a <a class="el" href="classregina_1_1DiscSpecIterator.html" title="A forward iterator used for running through all normal discs in a normal surface.">DiscSpecIterator</a>; then <a class="el" href="classregina_1_1DiscSpecIterator.html" title="A forward iterator used for running through all normal discs in a normal surface.">DiscSpecIterator</a> implements <code>next()</code>, which either returns the next normal disc in the set or else throws a <code>StopException</code> if there are no more discs to return. </dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Instead of the C++ interface described here, in Python <a class="el" href="classregina_1_1DiscSetSurface.html" title="Represents the set of all normal discs forming a normal surface.">DiscSetSurface</a> and this class together implement the Python iterable/iterator interface. The <a class="el" href="classregina_1_1DiscSetSurface.html" title="Represents the set of all normal discs forming a normal surface.">DiscSetSurface</a> class implements <code>__iter__()</code>, which returns a <a class="el" href="classregina_1_1DiscSpecIterator.html" title="A forward iterator used for running through all normal discs in a normal surface.">DiscSpecIterator</a>; then <a class="el" href="classregina_1_1DiscSpecIterator.html" title="A forward iterator used for running through all normal discs in a normal surface.">DiscSpecIterator</a> implements <code>next()</code>, which either returns the next normal disc in the set or else throws a <code>StopException</code> if there are no more discs to return. </dd></dl>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>surfaces/<a class="el" href="disc_8h.html">disc.h</a></li>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

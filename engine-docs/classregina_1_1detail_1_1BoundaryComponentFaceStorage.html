@@ -134,7 +134,7 @@ class regina::detail::BoundaryComponentFaceStorage&lt; dim, allFaces_ &gt;</h3>
 
 <p>Helper class for storing the necessary faces of a boundary component of a <em>dim</em>-dimensional triangulation. </p>
 <p>Every class BoundaryComponent&lt;dim&gt; inherits from this template.</p>
-<dl class="section user"><dt>Python:\n This base class is not present, but the "end user" class</dt><dd>BoundaryComponent&lt;dim&gt; is.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This base class is not present, but the "end user" class BoundaryComponent&lt;dim&gt; is.</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">dim</td><td>the dimension of the underlying triangulation. This must be between 2 and 15 inclusive. </td></tr>
@@ -202,7 +202,7 @@ template&lt;int subdim&gt; </div>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the number of <em>subdim</em>-faces in this boundary component. </p>
 <p>This routine is only available where <em>dim</em> is one of Regina's <a class="el" href="stddim.html">standard dimensions</a>.</p>
-<dl class="section user"><dt>Python:\n Python does not support templates. Instead,</dt><dd>Python users should call this function in the form <code>countFaces(subdim)</code>; that is, the template parameter <em>subdim</em> becomes the first argument of the function.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Python does not support templates. Instead, Python users should call this function in the form <code>countFaces(subdim)</code>; that is, the template parameter <em>subdim</em> becomes the first argument of the function.</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">subdim</td><td>the dimension of the faces to query. This must be between 0 and <em>dim</em>-1 inclusive.</td></tr>
@@ -275,7 +275,7 @@ template&lt;int subdim&gt; </div>
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> the requested <em>subdim</em>-face in this boundary component. </p>
 <p>Note that the index of a face in the boundary component need not be the index of the same face in the overall triangulation. However, if this is a real boundary component (i.e., it is built from one or more (<em>dim</em>-1)-faces), then the index of each <em>subdim</em>-face in this boundary component will match the index of the corresponding <em>subdim</em>-face in the (<em>dim</em>-1)-manifold triangulation returned by build().</p>
 <p>This routine is only available where <em>dim</em> is one of Regina's <a class="el" href="stddim.html">standard dimensions</a>.</p>
-<dl class="section user"><dt>Python:\n Python does not support templates. Instead,</dt><dd>Python users should call this function in the form <code>face(subdim, index)</code>; that is, the template parameter <em>subdim</em> becomes the first argument of the function.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Python does not support templates. Instead, Python users should call this function in the form <code>face(subdim, index)</code>; that is, the template parameter <em>subdim</em> becomes the first argument of the function.</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">subdim</td><td>the dimension of the face to query. This must be between 0 and <em>dim</em>-1 inclusive.</td></tr>
@@ -321,7 +321,7 @@ template&lt;int subdim&gt; </div>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> all <em>subdim</em>-faces in this boundary component. </p>
 <p>The reference that is returned will remain valid only for as long as this boundary component object exists. In particular, the reference will become invalid any time that the triangulation changes (since all boundary component objects will be destroyed and others rebuilt in their place).</p>
-<dl class="section user"><dt>Python:\n Python users should call this function in the</dt><dd>form <code>faces(subdim)</code>. It will then return a Python list containing all the <em>subdim</em>-faces of the boundary component. Be warned that, unlike in C++, this Python list will be a snapshot of the faces when this function is called, and will <em>not</em> be kept up-to-date as the triangulation changes.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Python users should call this function in the form <code>faces(subdim)</code>. It will then return a Python list containing all the <em>subdim</em>-faces of the boundary component. Be warned that, unlike in C++, this Python list will be a snapshot of the faces when this function is called, and will <em>not</em> be kept up-to-date as the triangulation changes.</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">subdim</td><td>the dimension of the faces to query. This must be between 0 and <em>dim</em>-1 inclusive.</td></tr>
@@ -398,7 +398,7 @@ template&lt;int dim, bool allFaces_&gt; </div>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> all (<em>dim</em>-1)-faces in this boundary component. </p>
 <p>The reference that is returned will remain valid only for as long as this boundary component object exists. In particular, the reference will become invalid any time that the triangulation changes (since all boundary component objects will be destroyed and others rebuilt in their place).</p>
-<dl class="section user"><dt>Python:\n This routine returns a python list.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This routine returns a python list.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the list of all (<em>dim</em>-1)-faces. </dd></dl>
 
 </div>
@@ -663,7 +663,7 @@ template&lt;int dim, int subdim&gt; </div>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

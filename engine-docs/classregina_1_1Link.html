@@ -1279,7 +1279,7 @@ Building Links</h2></td></tr>
 <p>Currently Regina only supports Dowker-Thistlethwaite notation for knots, not multiple-component links. If this link does not have precisely one component then nothing will be output at all.</p>
 <p>The output will not contain any newlines.</p>
 <dl class="section note"><dt>Note</dt><dd>There is another variant of this routine that, instead of using an output stream, simply returns a string.</dd></dl>
-<dl class="section user"><dt>Python:\n This routine is not available in Python. Instead,</dt><dd>Python users can use the variant <a class="el" href="classregina_1_1Link.html#a7394cd7aa9cb8d14cb4d7d39f9d96478" title="Outputs this knot using Dowker-Thistlethwaite notation.">dt()</a>, which takes just the optional <em>alpha</em> argument and returns the output as a string.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This routine is not available in Python. Instead, Python users can use the variant <a class="el" href="classregina_1_1Link.html#a7394cd7aa9cb8d14cb4d7d39f9d96478" title="Outputs this knot using Dowker-Thistlethwaite notation.">dt()</a>, which takes just the optional <em>alpha</em> argument and returns the output as a string.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1358,11 +1358,10 @@ template&lt;typename... Args&gt; </div>
 </ul>
 <p>Be aware that, once the link has been constructed, the crossings 1, ..., <em>n</em> will have been reindexed as 0, ..., <em>n</em>-1 (since every <a class="el" href="classregina_1_1Link.html" title="Represents a directed knot or link in the 3-sphere.">Link</a> object numbers its crossings starting from 0).</p>
 <p>As an example, you can construct the left-hand trefoil and the Hopf link as follows:</p>
-<dl class="section pre"><dt>Precondition</dt><dd>trefoil = <a class="el" href="classregina_1_1Link.html#a080cbca4af7eadcab1aea5aec456d2ba" title="Creates a new link from hard-coded information about its crossings and components.">Link::fromData</a>({ -1, -1, -1 }, { 1, -2, 3, -1, 2, -3 }); hopf = <a class="el" href="classregina_1_1Link.html#a080cbca4af7eadcab1aea5aec456d2ba" title="Creates a new link from hard-coded information about its crossings and components.">Link::fromData</a>({ +1, +1 }, { 1, -2 }, { -1, 2 }); \endpre</dd></dl>
-<p>The topology of the link is defined precisely by this data, but the precise embedding of the diagram in the plane remains ambiguous. To be exact: the embedding of the diagram in the <em>2-sphere</em> is defined precisely, but there remains a choice of which 2-cell of this embedding will contain the point at infinity (i.e., which 2-cell becomes the exterior cell of the diagram in the plane).</p>
+<div class="fragment"><div class="line">trefoil = <a class="code" href="classregina_1_1Link.html#a080cbca4af7eadcab1aea5aec456d2ba">Link::fromData</a>({ -1, -1, -1 }, { 1, -2, 3, -1, 2, -3 });</div><div class="line">hopf = <a class="code" href="classregina_1_1Link.html#a080cbca4af7eadcab1aea5aec456d2ba">Link::fromData</a>({ +1, +1 }, { 1, -2 }, { -1, 2 });</div></div><!-- fragment --><p>The topology of the link is defined precisely by this data, but the precise embedding of the diagram in the plane remains ambiguous. To be exact: the embedding of the diagram in the <em>2-sphere</em> is defined precisely, but there remains a choice of which 2-cell of this embedding will contain the point at infinity (i.e., which 2-cell becomes the exterior cell of the diagram in the plane).</p>
 <dl class="section warning"><dt>Warning</dt><dd>While this routine does some error checking on the input, it does <em>not</em> test for planarity of the diagram. That is, if the input describes a link diagram that must be drawn on some higher-genus surface as opposed to the plane, this will not be detected. Of course such inputs are not allowed, and it is currently up to the user to enforce this.</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>If you have an existing link that you would like to hard-code, the routine <a class="el" href="classregina_1_1Link.html#a718258433d47de780e6905585a00bd29" title="Returns C++ code that can be used to reconstruct this link.">dumpConstruction()</a> will output C++ code that can reconstruct the link by calling this constructor.</dd></dl>
-<dl class="section user"><dt>Python:\n Not available.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not available.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">crossingSigns</td><td>a list containing the signs of the crossings; each sign must be either +1 or -1. </td></tr>
@@ -1469,7 +1468,7 @@ template&lt;typename Iterator &gt; </div>
 <dl class="section warning"><dt>Warning</dt><dd>In general, Dowker-Thistlethwaite notation does not contain enough information to uniquely reconstruct a knot. For prime knots, both a knot and its reflection can be described by the same notation; for composite knots, the same notation can describe knots that are topologically inequivalent, even when allowing for reflection. If you need to reconstruct a knot uniquely, consider using the oriented Gauss code instead.</dd>
 <dd>
 While this routine does some error checking on the input, it does <em>not</em> test for planarity of the diagram. That is, if the input describes a knot diagram that must be drawn on some higher-genus surface as opposed to the plane, this will not be detected. Of course such inputs are not allowed, and it is currently up to the user to enforce this.</dd></dl>
-<dl class="section user"><dt>Python:\n Instead of a pair of begin and past-the-end</dt><dd>iterators, this routine takes a Python list of integers.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Instead of a pair of begin and past-the-end iterators, this routine takes a Python list of integers.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Much of the code for this routine is based on the Dowker-Thistlethwaite implementation in the SnapPea/SnapPy kernel.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1580,7 +1579,7 @@ template&lt;typename Iterator &gt; </div>
 <dl class="section warning"><dt>Warning</dt><dd>In general, the classical Gauss code does not contain enough information to uniquely reconstruct a knot. For prime knots, both a knot and its reflection can be described by the same Gauss code; for composite knots, the same Gauss code can describe knots that are topologically inequivalent, even when allowing for reflection. If you need to reconstruct a knot uniquely, consider using the <em>oriented</em> Gauss code instead.</dd>
 <dd>
 While this routine does some error checking on the input, it does <em>not</em> test for planarity of the diagram. That is, if the input describes a knot diagram that must be drawn on some higher-genus surface as opposed to the plane, this will not be detected. Of course such inputs are not allowed, and it is currently up to the user to enforce this.</dd></dl>
-<dl class="section user"><dt>Python:\n Instead of a pair of begin and past-the-end</dt><dd>iterators, this routine takes a Python list of integers.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Instead of a pair of begin and past-the-end iterators, this routine takes a Python list of integers.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Adam Gowty</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1687,7 +1686,7 @@ While this routine does some error checking on the input, it does <em>not</em> t
 <p>There are two variants of this routine. The other variant takes a single string containing the integer sequence. This variant takes an input stream, from which the sequence of integers will be read.</p>
 <p>In this variant, this routine reads the integers that describe the link and then leaves the remainder of the input stream untouched (in particular, the stream may contain additional material, which can be read by the user after this routine has finished).</p>
 <dl class="section warning"><dt>Warning</dt><dd>While this routine does some error checking on the input, it does <em>not</em> test for planarity of the diagram. That is, if the input describes a knot diagram that must be drawn on some higher-genus surface as opposed to the plane, this will not be detected. Of course such inputs are not allowed, and it is currently up to the user to enforce this.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">in</td><td>an input stream that begins with a sequence of integers separated by whitespace that describes a link. </td></tr>
@@ -1840,7 +1839,7 @@ Dereferencing such an iterator produces either a C-style string (which can be ca
 <dd>
 The tokens in the input sequence do not contain any whitespace.</dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>While this routine does some error checking on the input, it does <em>not</em> test for planarity of the diagram. That is, if the input describes a knot diagram that must be drawn on some higher-genus surface as opposed to the plane, this will not be detected. Of course such inputs are not allowed, and it is currently up to the user to enforce this.</dd></dl>
-<dl class="section user"><dt>Python:\n Instead of a pair of begin and past-the-end</dt><dd>iterators, this routine takes a Python list of strings.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Instead of a pair of begin and past-the-end iterators, this routine takes a Python list of strings.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">begin</td><td>an iterator that points to the beginning of the sequence of tokens for an "oriented" Gauss code. </td></tr>
@@ -1897,7 +1896,7 @@ The tokens in the input sequence do not contain any whitespace.</dd></dl>
 <p>Currently Regina only supports Gauss codes for knots, not multiple-component links. If this link does not have precisely one component then nothing will be output at all.</p>
 <p>The output will not contain any newlines.</p>
 <dl class="section note"><dt>Note</dt><dd>There is another variant of this routine that, instead of using an output stream, simply returns a string.</dd></dl>
-<dl class="section user"><dt>Python:\n This routine is not available in Python. Instead,</dt><dd>Python users can use the variant <a class="el" href="classregina_1_1Link.html#ac05b65401950517d86be107268233b09" title="Outputs a classical Gauss code for this knot.">gauss()</a>, which takes no arguments and returns the output as a string.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This routine is not available in Python. Instead, Python users can use the variant <a class="el" href="classregina_1_1Link.html#ac05b65401950517d86be107268233b09" title="Outputs a classical Gauss code for this knot.">gauss()</a>, which takes no arguments and returns the output as a string.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -2154,6 +2153,7 @@ polynomials by using Gauss codes, with a skein-template algorithm", Applied Math
   <table class="params">
     <tr><td class="paramname">p</td><td>the first parameter of the new torus link; this must be non-negative. </td></tr>
     <tr><td class="paramname">q</td><td>the second parameter of the new torus link; this must also be non-negative. </td></tr>
+    <tr><td class="paramname">positive</td><td><code>true</code> if the crossings in the new torus link should be positive, or <code>false</code> if they should be negative. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2179,6 +2179,7 @@ polynomials by using Gauss codes, with a skein-template algorithm", Applied Math
 <p>Specifically, this routine tries combinations of Reidemeister moves with the aim of reducing the number of crossings.</p>
 <p>Currently this routine uses <a class="el" href="classregina_1_1Link.html#a3adf6c87c3dc80de018d659e686b48ef" title="Uses type I and II Reidemeister moves to reduce the link monotonically to some local minimum number o...">simplifyToLocalMinimum()</a> in combination with random type III Reidemeister moves.</p>
 <p>Although <a class="el" href="classregina_1_1Link.html#a5fc961ba707da75f2b71d3585c994cc9" title="Attempts to simplify the link diagram using fast and greedy heuristics.">intelligentSimplify()</a> often works well, it can sometimes get stuck. If this link is a knot (i.e., it has precisely one component), then in such cases you can try the more powerful but (much) slower <a class="el" href="classregina_1_1Link.html#a7701e3dd1fdbe8d8106363d118ec887d" title="Attempts to simplify this knot diagram using a slow but exhaustive search through the Reidemeister gr...">simplifyExhaustive()</a> instead.</p>
+<p>This routine will never reflect or reverse the link.</p>
 <dl class="section warning"><dt>Warning</dt><dd>Running this routine multiple times upon the same link may return different results, since the implementation makes random decisions. More broadly, the implementation of this routine (and therefore its results) may change between different releases of Regina. </dd></dl>
 
 </div>
@@ -2318,7 +2319,7 @@ polynomials by using Gauss codes, with a skein-template algorithm", Applied Math
 <p>Jenkins' text format uses a sequence of integers separated by whitespace. For details of this format, see the documentation from <a class="el" href="classregina_1_1Link.html#ac206f9e3697de7472ee9ec151c106df0" title="Builds a link from the text representation described by Bob Jenkins.">fromJenkins()</a>, which imports links using this format.</p>
 <p>The output will contain multiple lines, and will end in a newline.</p>
 <dl class="section note"><dt>Note</dt><dd>There is another variant of this routine that, instead of using an output stream, simply returns a string.</dd></dl>
-<dl class="section user"><dt>Python:\n This routine is not available in Python. Instead,</dt><dd>Python users can use the variant <a class="el" href="classregina_1_1Link.html#a194f84f5ad2fb28ab1a0da34aa69d8a8" title="Exports this link as a string using the text representation described by Bob Jenkins.">jenkins()</a>, which takes no arguments and returns the output as a string.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This routine is not available in Python. Instead, Python users can use the variant <a class="el" href="classregina_1_1Link.html#a194f84f5ad2fb28ab1a0da34aa69d8a8" title="Exports this link as a string using the text representation described by Bob Jenkins.">jenkins()</a>, which takes no arguments and returns the output as a string.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -2362,7 +2363,7 @@ polynomials by using Gauss codes, with a skein-template algorithm", Applied Math
 </ul>
 <p>If this is the empty link, then this routine will return the zero polynomial.</p>
 <p>Regina follows the conventions described in C. C. Adams, "The knot book", W. H. Freeman &amp; Co., 1994. If you wish to convert to the conventions used by Khovanov as described in Dror Bar-Natan, "On Khovanov's categorifiction of the Jones
-polynomial", Algebraic &amp; Geometric Topology 2 (2002), 337-370, you can simply take the polynomial returned by this routine and replace the variable <em>x</em> (which represents the square root of <em>t</em>) with the expression -q.</p>
+polynomial", Algebraic &amp; Geometric Topology 2 (2002), 337-370, you can simply take the polynomial returned by this routine and replace the variable <em>x</em> (which represents the square root of <em>t</em>) with the expression -<em>q</em>.</p>
 <p>To pretty-print this polynomial for human consumption, you can call <code>Laurent::str(Link::jonesVar)</code>.</p>
 <p>Bear in mind that each time the link changes, all of its polynomials will be deleted. Thus the reference that is returned from this routine should not be kept for later use. Instead, <a class="el" href="classregina_1_1Link.html#ad74edbfadfccb443efa6a6f1852ab9b5" title="Returns the Jones polynomial of this link, but with all exponents doubled.">jones()</a> should be called again; this will be instantaneous if the Jones polynomial has already been calculated.</p>
 <p>If this polynomial has already been computed, then the result will be cached and so this routine will be very fast (since it just returns the previously computed result). Otherwise the computation could be quite slow, particularly for larger numbers of crossings. This (potentially) long computation can be managed by passing a progress tracker:</p>
@@ -2615,7 +2616,7 @@ polynomial", Algebraic &amp; Geometric Topology 2 (2002), 337-370, you can simpl
 <p>Currently Regina only supports Gauss codes for knots, not multiple-component links. If this link does not have precisely one component then nothing will be output at all.</p>
 <p>The output will not contain any newlines.</p>
 <dl class="section note"><dt>Note</dt><dd>There is another variant of this routine that, instead of using an output stream, simply returns a string.</dd></dl>
-<dl class="section user"><dt>Python:\n This routine is not available in Python. Instead,</dt><dd>Python users can use the variant <a class="el" href="classregina_1_1Link.html#ab8d81af83901af217da0bee17b6bf120" title="Outputs an oriented Gauss code for this knot.">orientedGauss()</a>, which takes no arguments and returns the output as a string.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>This routine is not available in Python. Instead, Python users can use the variant <a class="el" href="classregina_1_1Link.html#ab8d81af83901af217da0bee17b6bf120" title="Outputs an oriented Gauss code for this knot.">orientedGauss()</a>, which takes no arguments and returns the output as a string.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -2686,6 +2687,7 @@ polynomial", Algebraic &amp; Geometric Topology 2 (2002), 337-370, you can simpl
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">k</td><td>the number of parallel copies to create. This must be non-negative. </td></tr>
+    <tr><td class="paramname">framing</td><td>the framing under which these copies will be parallel. </td></tr>
   </table>
   </dd>
 </dl>
@@ -3296,7 +3298,7 @@ template&lt;typename Action , typename... Args&gt; </div>
 
 <p>Explores all knot diagrams that can be reached from this via Reidemeister moves, without exceeding a given number of additional crossings. </p>
 <p>This routine is only available for knots at the present time. If this link has multiple (or zero) components, then this routine will return immediately (as described below).</p>
-<p>This routine iterates through all knot diagrams that can be reached from this via Reidemeister moves, without ever exceeding <em>height</em> additional crossings beyond the original number.</p>
+<p>This routine iterates through all knot diagrams that can be reached from this via Reidemeister moves, without ever exceeding <em>height</em> additional crossings beyond the original number. With the current implementation, these diagrams <b>could become reflected and/or reversed</b>, and moreover each diagram will only be considered once up to reflection and/or reversal; be aware that this behaviour could change and/or become configurable in a future version of Regina.</p>
 <p>For every such knot diagram (including this starting diagram), this routine will call <em>action</em> (which must be a function or some other callable object).</p>
 <ul>
 <li><em>action</em> must take at least one argument. The first argument will be of type <a class="el" href="classregina_1_1Link.html" title="Represents a directed knot or link in the 3-sphere.">Link</a>&amp;, and will reference the knot diagram that has been found. If there are any additional arguments supplied in the list <em>args</em>, then these will be passed as subsequent arguments to <em>action</em>.</li>
@@ -3313,7 +3315,7 @@ template&lt;typename Action , typename... Args&gt; </div>
 <dl class="section warning"><dt>Warning</dt><dd>By default, the arguments <em>args</em> will be copied (or moved) when they are passed to <em>action</em>. If you need to pass some argument(s) by reference, you must wrap them in std::ref or std::cref.</dd>
 <dd>
 The API for this class has not yet been finalised. This means that the class interface may change in new versions of Regina, without maintaining backward compatibility. If you use this class directly in your own code, please watch the detailed changelogs upon new releases to see if you need to make changes to your code.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">height</td><td>the maximum number of <em>additional</em> crossings to allow beyond the number of crossings originally present in this knot diagram, or a negative number if this should not be bounded. </td></tr>
@@ -3382,6 +3384,7 @@ The API for this class has not yet been finalised. This means that the class int
 
 <p>Attempts to simplify this knot diagram using a slow but exhaustive search through the Reidemeister graph. </p>
 <p>This routine is more powerful but much slower than <a class="el" href="classregina_1_1Link.html#a5fc961ba707da75f2b71d3585c994cc9" title="Attempts to simplify the link diagram using fast and greedy heuristics.">intelligentSimplify()</a>.</p>
+<p>Unlike <a class="el" href="classregina_1_1Link.html#a5fc961ba707da75f2b71d3585c994cc9" title="Attempts to simplify the link diagram using fast and greedy heuristics.">intelligentSimplify()</a>, this routine <b>could potentially reflect or reverse the link</b>.</p>
 <p>This routine is only available for knots at the present time. If this link has multiple (or zero) components, then this routine will return immediately (as described below).</p>
 <p>This routine will iterate through all knot diagrams that can be reached from this via Reidemeister moves, without ever exceeding <em>height</em> additional crossings beyond the original number.</p>
 <p>If at any stage it finds a diagram with <em>fewer</em> crossings than the original, then this routine will call <a class="el" href="classregina_1_1Link.html#a5fc961ba707da75f2b71d3585c994cc9" title="Attempts to simplify the link diagram using fast and greedy heuristics.">intelligentSimplify()</a> to simplify the diagram further if possible and will then return <code>true</code>. If it cannot find a diagram with fewer crossings then it will leave this knot diagram unchanged and return <code>false</code>.</p>
@@ -3423,6 +3426,7 @@ The API for this class has not yet been finalised. This means that the class int
 <p>Uses type I and II Reidemeister moves to reduce the link monotonically to some local minimum number of crossings. </p>
 <p>End users will probably not want to call this routine. You should call <a class="el" href="classregina_1_1Link.html#a5fc961ba707da75f2b71d3585c994cc9" title="Attempts to simplify the link diagram using fast and greedy heuristics.">intelligentSimplify()</a> if you want a fast (and usually effective) means of simplifying a link. If this link is a knot (i.e., it has precisely one component), then you can also call <a class="el" href="classregina_1_1Link.html#a7701e3dd1fdbe8d8106363d118ec887d" title="Attempts to simplify this knot diagram using a slow but exhaustive search through the Reidemeister gr...">simplifyExhaustive()</a> if you are still stuck and you want to try a slower but more powerful method instead.</p>
 <p>Type III Reidemeister moves (which do not reduce the number of crossings) are not used in this routine. Such moves do however feature in <a class="el" href="classregina_1_1Link.html#a5fc961ba707da75f2b71d3585c994cc9" title="Attempts to simplify the link diagram using fast and greedy heuristics.">intelligentSimplify()</a>.</p>
+<p>This routine will never reflect or reverse the link.</p>
 <dl class="section warning"><dt>Warning</dt><dd>The implementation of this routine (and therefore its results) may change between different releases of Regina.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -3488,7 +3492,7 @@ The API for this class has not yet been finalised. This means that the class int
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a short text representation of this object. </p>
 <p>This text should be human-readable, should fit on a single line, and should not end with a newline. Where possible, it should use plain ASCII characters.</p>
-<dl class="section user"><dt>Python:\n In addition to str(), this is also used as the</dt><dd>Python "stringification" function <code>__str__()</code>.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>In addition to <a class="el" href="structregina_1_1Output.html#a2212a7a96adf2538ea875d49a98d99ad" title="Returns a short text representation of this object.">str()</a>, this is also used as the Python "stringification" function <code>__str__()</code>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a short text representation of this object. </dd></dl>
 
 </div>
@@ -3698,7 +3702,7 @@ p tw 4 8
 1 3
 3 4
 2 4
-</pre><dl class="section user"><dt>Python:\n The <em>out</em> argument is not present; instead</dt><dd>standard output is assumed.</dd></dl>
+</pre><dl class="section user"><dt>Python</dt><dd>The <em>out</em> argument is not present; instead standard output is assumed.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write.</td></tr>
@@ -3735,7 +3739,7 @@ p tw 4 8
 
 <p>Writes a detailed text representation of this object to the given output stream. </p>
 <p>This may be reimplemented by subclasses, but the parent <a class="el" href="classregina_1_1Packet.html" title="Represents a packet of information that may be individually edited or operated upon.">Packet</a> class offers a reasonable default implementation.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -3773,7 +3777,7 @@ p tw 4 8
 
 <p>Writes a short text representation of this object to the given output stream. </p>
 <p>This must be reimplemented by subclasses.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -4042,7 +4046,7 @@ p tw 4 8
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

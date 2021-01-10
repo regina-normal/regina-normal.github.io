@@ -385,7 +385,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Describes how a <a class="el" href="classregina_1_1PDF.html" title="A packet that can hold a PDF document.">PDF</a> packet should claim ownership of a block of binary data. </p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. </dd></dl>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="abb7c46c6bbb0cfe639525d1bf5700f2caaab665d8c167fe6d05be283e87199361"></a>OWN_MALLOC&#160;</td><td class="fielddoc"><p>The packet should claim ownership of the block, and should assume that it was allocated using <em>malloc()</em>. </p>
 </td></tr>
@@ -444,7 +444,7 @@ Protected Member Functions</h2></td></tr>
 <p>Creates a <a class="el" href="classregina_1_1PDF.html" title="A packet that can hold a PDF document.">PDF</a> packet with data read from the given <a class="el" href="classregina_1_1PDF.html" title="A packet that can hold a PDF document.">PDF</a> file. </p>
 <p>This routine does not check whether the given file <em>looks</em> like a <a class="el" href="classregina_1_1PDF.html" title="A packet that can hold a PDF document.">PDF</a> document; it simply loads the file contents blindly.</p>
 <p>If the file could not be read or is empty, then no <a class="el" href="classregina_1_1PDF.html" title="A packet that can hold a PDF document.">PDF</a> document will be stored in this packet. You can test this by calling <a class="el" href="classregina_1_1PDF.html#a71eb9786bd9f73c340450b1628331039" title="Determines whether this packet is currently holding a PDF document.">isNull()</a>.</p>
-<dl class="section user"><dt>Internationalisation:\n This routine makes no assumptions about the</dt><dd><a class="el" href="i18n.html">character encoding</a> used in the given file <em>name</em>, and simply passes it through unchanged to low-level C/C++ file I/O routines.</dd></dl>
+<dl class="section user"><dt>Internationalisation</dt><dd>This routine makes no assumptions about the <a class="el" href="i18n.html">character encoding</a> used in the given file <em>name</em>, and simply passes it through unchanged to low-level C/C++ file I/O routines.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>the filename of the <a class="el" href="classregina_1_1PDF.html" title="A packet that can hold a PDF document.">PDF</a> document to read. </td></tr>
@@ -498,7 +498,7 @@ Protected Member Functions</h2></td></tr>
 <p>The <em>data</em> array must contain a full <a class="el" href="classregina_1_1PDF.html" title="A packet that can hold a PDF document.">PDF</a> document as a block of binary data.</p>
 <p>The <em>alloc</em> argument shows if/how this packet claims ownership of the data. In particular, unless <em>alloc</em> is <em>DEEP_COPY</em>, this packet will claim ownership of the given data block and will deallocate it when the packet is destroyed. If <em>alloc</em> is <em>DEEP_COPY</em> then the given block of data will not be modified in any way.</p>
 <p>It is possible to pass a null pointer as the data array, in which case the new packet will have no <a class="el" href="classregina_1_1PDF.html" title="A packet that can hold a PDF document.">PDF</a> document stored (so <a class="el" href="classregina_1_1PDF.html#a71eb9786bd9f73c340450b1628331039" title="Determines whether this packet is currently holding a PDF document.">isNull()</a> will return <code>true</code>).</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td>the block of binary data that forms the <a class="el" href="classregina_1_1PDF.html" title="A packet that can hold a PDF document.">PDF</a> document, or <code>null</code> if no document is to be stored. </td></tr>
@@ -564,7 +564,7 @@ Protected Member Functions</h2></td></tr>
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a pointer to the block of raw data that forms this <a class="el" href="classregina_1_1PDF.html" title="A packet that can hold a PDF document.">PDF</a> document. </p>
 <p>The number of bytes in this block can be found by calling <a class="el" href="classregina_1_1PDF.html#a5ae1d5476b568afe205223d8fb10563c" title="Returns the size of this PDF document in bytes.">size()</a>.</p>
 <p>If no <a class="el" href="classregina_1_1PDF.html" title="A packet that can hold a PDF document.">PDF</a> document is currently stored (i.e., <a class="el" href="classregina_1_1PDF.html#a71eb9786bd9f73c340450b1628331039" title="Determines whether this packet is currently holding a PDF document.">isNull()</a> returns <code>true</code>), then this routine will return a null pointer.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the raw <a class="el" href="classregina_1_1PDF.html" title="A packet that can hold a PDF document.">PDF</a> data. </dd></dl>
 
 </div>
@@ -779,7 +779,7 @@ Protected Member Functions</h2></td></tr>
 <p>Refills this <a class="el" href="classregina_1_1PDF.html" title="A packet that can hold a PDF document.">PDF</a> packet with the given <a class="el" href="classregina_1_1PDF.html" title="A packet that can hold a PDF document.">PDF</a> data. </p>
 <p>The old data will be deallocated if required.</p>
 <p>This routine behaves like the class constructor; see the constructor documentation for details.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td>the block of binary data that forms the new <a class="el" href="classregina_1_1PDF.html" title="A packet that can hold a PDF document.">PDF</a> document, or <code>null</code> if no document is to be stored. </td></tr>
@@ -810,7 +810,7 @@ Protected Member Functions</h2></td></tr>
 <p>Saves this <a class="el" href="classregina_1_1PDF.html" title="A packet that can hold a PDF document.">PDF</a> document to the given file in <a class="el" href="classregina_1_1PDF.html" title="A packet that can hold a PDF document.">PDF</a> format. </p>
 <p>This routine does not check whether the contents of this packet <em>look</em> like a <a class="el" href="classregina_1_1PDF.html" title="A packet that can hold a PDF document.">PDF</a> document; it simply writes them blindly to the filesystem.</p>
 <p>If no <a class="el" href="classregina_1_1PDF.html" title="A packet that can hold a PDF document.">PDF</a> document is currently stored in this <a class="el" href="classregina_1_1PDF.html" title="A packet that can hold a PDF document.">PDF</a> packet (i.e., <a class="el" href="classregina_1_1PDF.html#a71eb9786bd9f73c340450b1628331039" title="Determines whether this packet is currently holding a PDF document.">isNull()</a> returns <code>true</code>), then this routine will do nothing and simply return <code>false</code>.</p>
-<dl class="section user"><dt>Internationalisation:\n This routine makes no assumptions about the</dt><dd><a class="el" href="i18n.html">character encoding</a> used in the given file <em>name</em>, and simply passes it unchanged to low-level C/C++ file I/O routines.</dd></dl>
+<dl class="section user"><dt>Internationalisation</dt><dd>This routine makes no assumptions about the <a class="el" href="i18n.html">character encoding</a> used in the given file <em>name</em>, and simply passes it unchanged to low-level C/C++ file I/O routines.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>the name of the <a class="el" href="classregina_1_1PDF.html" title="A packet that can hold a PDF document.">PDF</a> file to write. </td></tr>
@@ -875,7 +875,7 @@ Protected Member Functions</h2></td></tr>
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a short text representation of this object. </p>
 <p>This text should be human-readable, should fit on a single line, and should not end with a newline. Where possible, it should use plain ASCII characters.</p>
-<dl class="section user"><dt>Python:\n In addition to str(), this is also used as the</dt><dd>Python "stringification" function <code>__str__()</code>.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>In addition to <a class="el" href="structregina_1_1Output.html#a2212a7a96adf2538ea875d49a98d99ad" title="Returns a short text representation of this object.">str()</a>, this is also used as the Python "stringification" function <code>__str__()</code>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a short text representation of this object. </dd></dl>
 
 </div>
@@ -935,7 +935,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Writes a short text representation of this object to the given output stream. </p>
 <p>This must be reimplemented by subclasses.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -989,7 +989,7 @@ Protected Member Functions</h2></td></tr>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

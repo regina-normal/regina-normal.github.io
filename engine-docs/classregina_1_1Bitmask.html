@@ -149,7 +149,7 @@ Friends</h2></td></tr>
 <p>The length of the bitmask is not actually stored in this structure. This means that, upon construction (or reset), the length will be automatically rounded up to the next "raw unit of storage".</p>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000054">Todo:</a></b></dt><dd><em>Optimise:</em> Insist that sizeof(Piece) is a power of two, and replace expensive division/mod operations with cheap bit operations.</dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Because this class may increase the length of the bitmask (rounding up to the next unit of storage), bitwise computations may not give the results that you expect. In particular, <a class="el" href="classregina_1_1Bitmask.html#a912eae1af8637055cd516b179d73c040" title="Negates every bit in this bitmask.">flip()</a> may set additional <code>true</code> bits in the "dead space" between the intended length and the actual length, and this may have a flow-on effect for other operations (such as subset testing, bit counting and so on). Be careful!</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a63b3974553c4c68a861724592166a4c8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a63b3974553c4c68a861724592166a4c8">&#9670;&nbsp;</a></span>Bitmask() <span class="overload">[1/3]</span></h2>
@@ -1095,7 +1095,7 @@ All indices in the given list are at least zero and strictly less than the lengt
 <p>Writes the given bitmask to the given output stream as a sequence of zeroes and ones. </p>
 <p>Since the length of the bitmask is not stored, the number of bits written might be greater than the length initially assigned to this bitmask (specifically, the length will be rounded up to the next "raw
 unit of storage").</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1112,7 +1112,7 @@ unit of storage").</p>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

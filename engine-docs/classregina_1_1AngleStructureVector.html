@@ -151,7 +151,7 @@ Protected Attributes</h2></td></tr>
 <p>This vector will contain one member per angle plus a final scaling member; to obtain the actual angle in the angle structure one should divide the corresonding angle member by the scaling member and then multiply by <em>pi</em>.</p>
 <p>The reason for using this obfuscated representation is so we can use the <a class="el" href="classregina_1_1DoubleDescription.html" title="Implements a modified double description method for polytope vertex enumeration.">DoubleDescription</a> vertex enumeration routines to calculate vertex angle structures.</p>
 <p>If there are <em>t</em> tetrahedra in the underlying triangulation, there will be precisely 3<em>t</em>+1 elements in this vector. The first three elements will be the angle members for the first tetrahedron, the next three for the second tetrahedron and so on. For each tetraheron, the three individual elements are the angle members corresponding to edges 0, 1 and 2 of the tetrahedron (and also their opposite edges 5, 4 and 3 respectively). The final element of the vector is the scaling member as described above.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a588878f6fb458eec87974b698de8dc5e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a588878f6fb458eec87974b698de8dc5e">&#9670;&nbsp;</a></span>AngleStructureVector() <span class="overload">[1/2]</span></h2>
@@ -888,7 +888,7 @@ Protected Attributes</h2></td></tr>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

@@ -144,13 +144,13 @@ Friends</h2></td></tr>
 <p>No guarantees are made as to the order in which the different packet listeners are notified of an event.</p>
 <p>When a listener is destroyed, it is automatically unregistered from any packets to which it is currently listening. Similarly, when a packet is destroyed all listeners are automatically unregistered.</p>
 <dl class="section warning"><dt>Warning</dt><dd>At the time of writing (admittedly long ago now), Qt has only limited support for multithreading. When working with an existing packet tree in a new thread (not the main thread), the <em>only</em> modification that you may make is to insert new packets. Modifications of any other type (such as changing, renaming, deleting or reordering existing packets) could lead to a crash within Qt or Xlib when running the GUI. Of course, a new thread may create, modify and delete its own temporary packet trees as it chooses (and it may in fact insert them into a pre-existing packet tree once all modifications are completed). Assuming these restrictions are respected, packet listeners may assume that no routines other than <a class="el" href="group__packet.html#gadffc274996ce2bfe35a85bc2cf7209ee" title="Called after a child packet has been inserted directly beneath the packet.">childWasAdded()</a> will be called from a non-main thread.</dd></dl>
-<dl class="section user"><dt>Python:\n You can happily make a pure Python subclass of PacketListener,</dt><dd>and packets will call whichever functions you override when events occur, just as they would for a native C++ subclass. </dd></dl>
+<dl class="section user"><dt>Python</dt><dd>You can happily make a pure Python subclass of <a class="el" href="classregina_1_1PacketListener.html" title="An object that can be registered to listen for packet events.">PacketListener</a>, and packets will call whichever functions you override when events occur, just as they would for a native C++ subclass. </dd></dl>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>packet/<a class="el" href="packet_8h.html">packet.h</a></li>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

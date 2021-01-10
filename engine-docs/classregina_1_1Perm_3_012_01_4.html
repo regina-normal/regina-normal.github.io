@@ -105,7 +105,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab01995c592d2dbd07f8bb0393d6d3634"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Perm_3_012_01_4.html#ab01995c592d2dbd07f8bb0393d6d3634">sign</a> () const</td></tr>
 <tr class="memdesc:ab01995c592d2dbd07f8bb0393d6d3634"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the sign of this permutation.  <a href="#ab01995c592d2dbd07f8bb0393d6d3634">More...</a><br /></td></tr>
 <tr class="separator:ab01995c592d2dbd07f8bb0393d6d3634"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ea9caef9f9b5831389be1f77405b20f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Perm_3_012_01_4.html#a9ea9caef9f9b5831389be1f77405b20f">operator[]</a> (int <a class="el" href="namespaceregina.html#aa80a53fba63b479f27268662ec97e248">source</a>) const</td></tr>
+<tr class="memitem:a9ea9caef9f9b5831389be1f77405b20f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Perm_3_012_01_4.html#a9ea9caef9f9b5831389be1f77405b20f">operator[]</a> (int <a class="el" href="namespaceregina.html#adcfb69a69d63e77fb947c071b0b65cb8">source</a>) const</td></tr>
 <tr class="memdesc:a9ea9caef9f9b5831389be1f77405b20f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the image of the given integer under this permutation.  <a href="#a9ea9caef9f9b5831389be1f77405b20f">More...</a><br /></td></tr>
 <tr class="separator:a9ea9caef9f9b5831389be1f77405b20f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e36ddaa3e43b9a161081178a359e986"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1Perm_3_012_01_4.html#a1e36ddaa3e43b9a161081178a359e986">preImageOf</a> (int image) const</td></tr>
@@ -218,7 +218,7 @@ class regina::Perm&lt; 2 &gt;</h3>
 <p>Each permutation has an internal code, which is a single native integer that is sufficient to reconstruct the permutation. Thus the internal code may be a useful means for passing permutation objects to and from the engine. For <a class="el" href="classregina_1_1Perm_3_012_01_4.html" title="Represents a permutation of {0,1}.">Perm&lt;2&gt;</a>, the internal code is 0 for the identity permutation, or 1 for the (unique) non-identity permutation.</p>
 <p>To use this class, simply include the main permutation header <a class="el" href="perm_8h.html" title="Deals with permutations of {0,1,...,n-1}.">maths/perm.h</a>.</p>
 <dl class="section warning"><dt>Warning</dt><dd>Every permutation class Perm&lt;n&gt; provides a transposition (i.e., pair swap) constructor <code>Perm&lt;n&gt;(a,b).</code> In addition, the specialised classes <a class="el" href="classregina_1_1Perm_3_013_01_4.html" title="Represents a permutation of {0,1,2}.">Perm&lt;3&gt;</a>, <a class="el" href="classregina_1_1Perm_3_014_01_4.html" title="Represents a permutation of {0,1,2,3}.">Perm&lt;4&gt;</a> and <a class="el" href="classregina_1_1Perm_3_015_01_4.html" title="Represents a permutation of {0,1,2,3,4}.">Perm&lt;5&gt;</a> provide "list of images" constructors <code>Perm&lt;3&gt;(a,b,c)</code>, <code>Perm&lt;4&gt;(a,b,c,d)</code> and <code>Perm&lt;5&gt;(a,b,c,d,e)</code>. For <a class="el" href="classregina_1_1Perm_3_012_01_4.html" title="Represents a permutation of {0,1}.">Perm&lt;2&gt;</a>, these two constructors would be indistinguishable (since both would take two integer arguments). Here <a class="el" href="classregina_1_1Perm_3_012_01_4.html" title="Represents a permutation of {0,1}.">Perm&lt;2&gt;</a> takes an approach that is consistent with the generic Perm&lt;n&gt; class: <code>Perm&lt;2&gt;(a,b)</code> is interpreted as the <em>transposition</em> of <em>a</em> and <em>b</em>. In particular, <code>Perm(0,1)</code> is <em>not</em> the identity permutation.</dd></dl>
-<dl class="section user"><dt>Python:\n Since Python does not support templates, this class is</dt><dd>made available under the name Perm2. </dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Since Python does not support templates, this class is made available under the name Perm2. </dd></dl>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a9400d3a96c0fd97e87542578664ab3da"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9400d3a96c0fd97e87542578664ab3da">&#9670;&nbsp;</a></span>Code</h2>
@@ -354,7 +354,7 @@ class regina::Perm&lt; 2 &gt;</h3>
 
 <p>Creates a permutation mapping <em>i</em> to <em>image</em>[i] for each <em>i</em> = 0,1. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>The array <em>image</em> contains two elements, which are 0 and 1 in some order.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">image</td><td>the array of images. </td></tr>
@@ -400,7 +400,7 @@ class regina::Perm&lt; 2 &gt;</h3>
 
 <p>Creates a permutation mapping (<em>a</em>[0], <em>a</em>[1]) to (<em>b</em>[0], <em>b</em>[1]) respectively. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>Both arrays <em>a</em> and <em>b</em> contain two elements, which are 0 and 1 in some order.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">a</td><td>the array of preimages; this must have length 2. </td></tr>
@@ -1128,10 +1128,10 @@ template&lt;class URBG &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Python:\n Not present, though the non-thread-safe variant</dt><dd>without the <em>gen</em> argument is available.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present, though the non-thread-safe variant without the <em>gen</em> argument is available.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">gen</td><td>the source of randomness to use (e.g., one of the many options provided in the C++ standard &lt;random&gt; header). </td></tr>
+    <tr><td class="paramname">gen</td><td>the source of randomness to use (e.g., one of the many options provided in the C++ standard <code>random</code> header). </td></tr>
     <tr><td class="paramname">even</td><td>if <code>true</code>, then the resulting permutation is guaranteed to be even (which means, for a permutation on two elements, the resulting permutation must be the identity). </td></tr>
   </table>
   </dd>
@@ -1612,7 +1612,7 @@ template&lt;class URBG &gt; </div>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

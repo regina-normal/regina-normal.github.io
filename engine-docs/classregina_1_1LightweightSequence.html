@@ -48,7 +48,7 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classregina_1_1LightweightSequence-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">regina::LightweightSequence&lt; T &gt; Class Template Reference</div>  </div>
+<div class="title">regina::LightweightSequence&lt; T &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__utilities.html">Miscellaneous Utilities</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -137,7 +137,7 @@ class regina::LightweightSequence&lt; T &gt;</h3>
 <p>This class is intended as a lightweight substitute for std::vector, especially when working with temporary sequences that are frequently created and destroyed. The underlying storage just uses a native C-style array, and the C++ class wrapper provides the usual mechanisms for safe and simple memory management.</p>
 <p>The size (number of elements) of a sequence can be changed, but this should not be done lightly. Unlike std::vector, resizing a sequence is an expensive operation that deletes all existing contents of the sequence and forces a reallocation of the underlying storage. See <a class="el" href="classregina_1_1LightweightSequence.html#a1c716ebe16604586927a18a795942197" title="Resizes this sequence to contain the given number of elements.">init()</a> for details.</p>
 <p>This class is designed to avoid deep copies wherever possible. In particular, it supports C++11 move construtors and move assignment.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. </dd></dl>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a68708a91988e06ed2df5adcc22539144"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a68708a91988e06ed2df5adcc22539144">&#9670;&nbsp;</a></span>const_iterator</h2>
@@ -777,7 +777,7 @@ template&lt;typename T &gt; </div>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

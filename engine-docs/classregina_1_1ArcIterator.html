@@ -63,9 +63,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aedb3a876813a8b76ba1ec2e41ba0a44f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1ArcIterator.html#aedb3a876813a8b76ba1ec2e41ba0a44f">ArcIterator</a> (const <a class="el" href="classregina_1_1ArcIterator.html">ArcIterator</a> &amp;)=default</td></tr>
 <tr class="memdesc:aedb3a876813a8b76ba1ec2e41ba0a44f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default copy constructor.  <a href="#aedb3a876813a8b76ba1ec2e41ba0a44f">More...</a><br /></td></tr>
 <tr class="separator:aedb3a876813a8b76ba1ec2e41ba0a44f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb70110b8103ced47291a622beefa694"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1ArcIterator.html#acb70110b8103ced47291a622beefa694">ArcIterator</a> (const <a class="el" href="classregina_1_1Link.html">Link</a> &amp;link, size_t index=0, bool upper=false)</td></tr>
-<tr class="memdesc:acb70110b8103ced47291a622beefa694"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new iterator pointing to the arc exiting the given strand of the given crossing of the given link.  <a href="#acb70110b8103ced47291a622beefa694">More...</a><br /></td></tr>
-<tr class="separator:acb70110b8103ced47291a622beefa694"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc176bc09bcad39131c5ad885c777176"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1ArcIterator.html#adc176bc09bcad39131c5ad885c777176">ArcIterator</a> (const <a class="el" href="classregina_1_1Link.html">Link</a> &amp;link, size_t crossing=0, bool upper=false)</td></tr>
+<tr class="memdesc:adc176bc09bcad39131c5ad885c777176"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new iterator pointing to the arc exiting the given strand of the given crossing of the given link.  <a href="#adc176bc09bcad39131c5ad885c777176">More...</a><br /></td></tr>
+<tr class="separator:adc176bc09bcad39131c5ad885c777176"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a265281688e0ff3631b6fafde3e5e46ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1ArcIterator.html">ArcIterator</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1ArcIterator.html#a265281688e0ff3631b6fafde3e5e46ec">operator++</a> ()</td></tr>
 <tr class="memdesc:a265281688e0ff3631b6fafde3e5e46ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Preincrement operator.  <a href="#a265281688e0ff3631b6fafde3e5e46ec">More...</a><br /></td></tr>
 <tr class="separator:a265281688e0ff3631b6fafde3e5e46ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -90,7 +90,7 @@ Public Member Functions</h2></td></tr>
 <p>The order of iteration is as follows. The iterator works through crossings 0,1,... of the underlying link in turn. For each crossing, it visits the arcs exiting the crossing from the lower strand and then the upper strand, in that order.</p>
 <p>Zero-crossing unknot components are not visited at all by this iterator type.</p>
 <p>This class implements the Boost multipass input iterator concept, which is similar to the standard C++ forward iterator except that the <em>reference</em> type may be the same as <em>value_type</em> (and so, in particular, the dereference operator may return by value). This header also specialises std::iterator_traits for this iterator type.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af94ee19ea10ed9f63d07bbdc5b142f37"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af94ee19ea10ed9f63d07bbdc5b142f37">&#9670;&nbsp;</a></span>ArcIterator() <span class="overload">[1/3]</span></h2>
@@ -147,8 +147,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="acb70110b8103ced47291a622beefa694"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb70110b8103ced47291a622beefa694">&#9670;&nbsp;</a></span>ArcIterator() <span class="overload">[3/3]</span></h2>
+<a id="adc176bc09bcad39131c5ad885c777176"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc176bc09bcad39131c5ad885c777176">&#9670;&nbsp;</a></span>ArcIterator() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -166,7 +166,7 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>index</em> = <code>0</code>, </td>
+          <td class="paramname"><em>crossing</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -393,7 +393,7 @@ Public Member Functions</h2></td></tr>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

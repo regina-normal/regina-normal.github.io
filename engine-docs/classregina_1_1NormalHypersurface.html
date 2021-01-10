@@ -261,7 +261,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>XMLNormalHypersurfac
 <dl class="section pre"><dt>Precondition</dt><dd>The given coordinate vector represents a normal hypersurface inside the given triangulation. </dd>
 <dd>
 The given coordinate vector cannot be the null pointer.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">triangulation</td><td>the triangulation in which this normal hypersurface resides. </td></tr>
@@ -308,7 +308,7 @@ The given coordinate vector cannot be the null pointer.</dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>The given coordinate system is one in which Regina is able to enumerate and store normal hypersurfaces (not a system like <a class="el" href="group__hypersurface.html#gga57526727019e919f8b9c3858318d2350a20231b069d7350f6da4840f48163efe1" title="Represents edge weight coordinates for normal hypersurfaces.">regina::HS_EDGE_WEIGHT</a>, which is for viewing purposes only). </dd>
 <dd>
 The given coordinate vector represents a normal hypersurface inside the given triangulation (in particular, it satisfies the relevant system of matching equations). This will not be checked, and things <em>will</em> go wrong if you break it.</dd></dl>
-<dl class="section user"><dt>C++:\n Not available; this routine is for Python only.</dt><dd></dd></dl>
+<dl class="section user"><dt>C++</dt><dd>Not available; this routine is for Python only.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">triang</td><td>the triangulation in which this normal hypersurface resides. </td></tr>
@@ -985,7 +985,7 @@ The given coordinate vector represents a normal hypersurface inside the given tr
 <p>Gives read-only access to the raw vector that sits beneath this normal hypersurface. </p>
 <p>Generally users should not need this function. However, it is provided here in case the need should arise (e.g., for reasons of efficiency).</p>
 <dl class="section warning"><dt>Warning</dt><dd>An <a class="el" href="classregina_1_1NormalHypersurface.html" title="Represents a single normal hypersurface in a 4-manifold triangulation.">NormalHypersurface</a> does not know what underlying coordinate system its raw vector uses. Unless you already know the coordinate system in advance (i.e., you created the hypersurface yourself), it is best to keep to the coordinate-system-agnostic access functions such as <a class="el" href="classregina_1_1NormalHypersurfaceVector.html#abcecbbd6ed6b1c905604345e755e9a23" title="Returns the number of tetrahedron pieces of the given type in this normal hypersurface.">NormalHypersurfaceVector::tetrahedra()</a> and <a class="el" href="classregina_1_1NormalHypersurfaceVector.html#a0d96a0eb204333f4deff8f7cacefdb00" title="Returns the number of prism pieces of the given type in this normal hypersurface.">NormalHypersurfaceVector::prisms()</a>.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the underlying raw vector. </dd></dl>
 
 </div>
@@ -1080,7 +1080,7 @@ The given coordinate vector represents a normal hypersurface inside the given tr
 
 <p><a class="el" href="structregina_1_1Returns.html" title="A convenience base class for a non-void function object, which does nothing beyond provide a ReturnTy...">Returns</a> a short text representation of this object. </p>
 <p>This text should be human-readable, should fit on a single line, and should not end with a newline. Where possible, it should use plain ASCII characters.</p>
-<dl class="section user"><dt>Python:\n In addition to str(), this is also used as the</dt><dd>Python "stringification" function <code>__str__()</code>.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>In addition to <a class="el" href="structregina_1_1Output.html#a2212a7a96adf2538ea875d49a98d99ad" title="Returns a short text representation of this object.">str()</a>, this is also used as the Python "stringification" function <code>__str__()</code>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a short text representation of this object. </dd></dl>
 
 </div>
@@ -1240,7 +1240,7 @@ The given coordinate vector represents a normal hypersurface inside the given tr
 
 <p>Writes the underlying coordinate vector to the given output stream in text format. </p>
 <p>No indication will be given as to which coordinate system is being used or what each coordinate means. No newline will be written.</p>
-<dl class="section user"><dt>Python:\n The paramater <em>out</em> does not exist, and is</dt><dd>taken to be standard output.</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>The paramater <em>out</em> does not exist, and is taken to be standard output.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1276,7 +1276,7 @@ The given coordinate vector represents a normal hypersurface inside the given tr
 
 <p>A default implementation for detailed output. </p>
 <p>This routine simply calls <em>T::writeTextShort()</em> and appends a final newline.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1303,7 +1303,7 @@ The given coordinate vector represents a normal hypersurface inside the given tr
 </div><div class="memdoc">
 
 <p>Writes this hypersurface to the given output stream, using standard tetrahedron-prism coordinates. </p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which to write. </td></tr>
@@ -1331,7 +1331,7 @@ The given coordinate vector represents a normal hypersurface inside the given tr
 
 <p>Writes a chunk of XML containing this normal hypersurface and all of its properties. </p>
 <p>This routine will be called from within <a class="el" href="classregina_1_1NormalHypersurfaces.html#af3d6b7be21b48e6ed50652634a85fcac" title="Writes a chunk of XML containing the data for this packet only.">NormalHypersurfaces::writeXMLPacketData()</a>.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>the output stream to which the XML should be written. </td></tr>
@@ -1564,7 +1564,7 @@ The given coordinate vector represents a normal hypersurface inside the given tr
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

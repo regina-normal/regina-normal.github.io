@@ -63,47 +63,257 @@ Inheritance diagram for regina::i18n::IConvStreamBuffer:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ga3334747d42a32a95043a910a6dd173bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utilities.html#ga3334747d42a32a95043a910a6dd173bc">IConvStreamBuffer</a> ()</td></tr>
-<tr class="memdesc:ga3334747d42a32a95043a910a6dd173bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new stream buffer.  <a href="group__utilities.html#ga3334747d42a32a95043a910a6dd173bc">More...</a><br /></td></tr>
-<tr class="separator:ga3334747d42a32a95043a910a6dd173bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga61810bdda48b4a95ef66c577f62eadf4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utilities.html#ga61810bdda48b4a95ef66c577f62eadf4">~IConvStreamBuffer</a> ()</td></tr>
-<tr class="memdesc:ga61810bdda48b4a95ef66c577f62eadf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys this stream buffer.  <a href="group__utilities.html#ga61810bdda48b4a95ef66c577f62eadf4">More...</a><br /></td></tr>
-<tr class="separator:ga61810bdda48b4a95ef66c577f62eadf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8170e81f5d3a805161cc1ff9800e458f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1i18n_1_1IConvStreamBuffer.html">IConvStreamBuffer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utilities.html#ga8170e81f5d3a805161cc1ff9800e458f">open</a> (std::ostream &amp;dest, const char *srcCode, const char *destCode)</td></tr>
-<tr class="memdesc:ga8170e81f5d3a805161cc1ff9800e458f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens a new stream buffer that wraps around the given output stream.  <a href="group__utilities.html#ga8170e81f5d3a805161cc1ff9800e458f">More...</a><br /></td></tr>
-<tr class="separator:ga8170e81f5d3a805161cc1ff9800e458f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaec85de7b3e74749b1dd1d5d8b5f6c1aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1i18n_1_1IConvStreamBuffer.html">IConvStreamBuffer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utilities.html#gaec85de7b3e74749b1dd1d5d8b5f6c1aa">close</a> ()  throw ()</td></tr>
-<tr class="memdesc:gaec85de7b3e74749b1dd1d5d8b5f6c1aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes this stream buffer.  <a href="group__utilities.html#gaec85de7b3e74749b1dd1d5d8b5f6c1aa">More...</a><br /></td></tr>
-<tr class="separator:gaec85de7b3e74749b1dd1d5d8b5f6c1aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga14a3b54d5a102597eb6abfbb173bce7b"><td class="memItemLeft" align="right" valign="top">int_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utilities.html#ga14a3b54d5a102597eb6abfbb173bce7b">overflow</a> (int_type c)</td></tr>
-<tr class="memdesc:ga14a3b54d5a102597eb6abfbb173bce7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends buffered data to the destination output stream, converting between character sets en route.  <a href="group__utilities.html#ga14a3b54d5a102597eb6abfbb173bce7b">More...</a><br /></td></tr>
-<tr class="separator:ga14a3b54d5a102597eb6abfbb173bce7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga830d349d83cfdb64fee00d58d65f4aab"><td class="memItemLeft" align="right" valign="top">int_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utilities.html#ga830d349d83cfdb64fee00d58d65f4aab">underflow</a> ()</td></tr>
-<tr class="memdesc:ga830d349d83cfdb64fee00d58d65f4aab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simply returns EOF (since this is not an input stream).  <a href="group__utilities.html#ga830d349d83cfdb64fee00d58d65f4aab">More...</a><br /></td></tr>
-<tr class="separator:ga830d349d83cfdb64fee00d58d65f4aab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadd2ef9bdf704ed5c23eea6db04fb40e4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utilities.html#gadd2ef9bdf704ed5c23eea6db04fb40e4">sync</a> ()</td></tr>
-<tr class="memdesc:gadd2ef9bdf704ed5c23eea6db04fb40e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flushes all output buffers.  <a href="group__utilities.html#gadd2ef9bdf704ed5c23eea6db04fb40e4">More...</a><br /></td></tr>
-<tr class="separator:gadd2ef9bdf704ed5c23eea6db04fb40e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae0cf28d98ddd5269875d02dd4a0b0189"><td class="memItemLeft" align="right" valign="top">
+<tr class="memitem:a3334747d42a32a95043a910a6dd173bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1i18n_1_1IConvStreamBuffer.html#a3334747d42a32a95043a910a6dd173bc">IConvStreamBuffer</a> ()</td></tr>
+<tr class="memdesc:a3334747d42a32a95043a910a6dd173bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new stream buffer.  <a href="#a3334747d42a32a95043a910a6dd173bc">More...</a><br /></td></tr>
+<tr class="separator:a3334747d42a32a95043a910a6dd173bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61810bdda48b4a95ef66c577f62eadf4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1i18n_1_1IConvStreamBuffer.html#a61810bdda48b4a95ef66c577f62eadf4">~IConvStreamBuffer</a> ()</td></tr>
+<tr class="memdesc:a61810bdda48b4a95ef66c577f62eadf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys this stream buffer.  <a href="#a61810bdda48b4a95ef66c577f62eadf4">More...</a><br /></td></tr>
+<tr class="separator:a61810bdda48b4a95ef66c577f62eadf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8170e81f5d3a805161cc1ff9800e458f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1i18n_1_1IConvStreamBuffer.html">IConvStreamBuffer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1i18n_1_1IConvStreamBuffer.html#a8170e81f5d3a805161cc1ff9800e458f">open</a> (std::ostream &amp;dest, const char *srcCode, const char *destCode)</td></tr>
+<tr class="memdesc:a8170e81f5d3a805161cc1ff9800e458f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens a new stream buffer that wraps around the given output stream.  <a href="#a8170e81f5d3a805161cc1ff9800e458f">More...</a><br /></td></tr>
+<tr class="separator:a8170e81f5d3a805161cc1ff9800e458f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec85de7b3e74749b1dd1d5d8b5f6c1aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classregina_1_1i18n_1_1IConvStreamBuffer.html">IConvStreamBuffer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1i18n_1_1IConvStreamBuffer.html#aec85de7b3e74749b1dd1d5d8b5f6c1aa">close</a> ()  throw ()</td></tr>
+<tr class="memdesc:aec85de7b3e74749b1dd1d5d8b5f6c1aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes this stream buffer.  <a href="#aec85de7b3e74749b1dd1d5d8b5f6c1aa">More...</a><br /></td></tr>
+<tr class="separator:aec85de7b3e74749b1dd1d5d8b5f6c1aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14a3b54d5a102597eb6abfbb173bce7b"><td class="memItemLeft" align="right" valign="top">int_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1i18n_1_1IConvStreamBuffer.html#a14a3b54d5a102597eb6abfbb173bce7b">overflow</a> (int_type c)</td></tr>
+<tr class="memdesc:a14a3b54d5a102597eb6abfbb173bce7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends buffered data to the destination output stream, converting between character sets en route.  <a href="#a14a3b54d5a102597eb6abfbb173bce7b">More...</a><br /></td></tr>
+<tr class="separator:a14a3b54d5a102597eb6abfbb173bce7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a830d349d83cfdb64fee00d58d65f4aab"><td class="memItemLeft" align="right" valign="top">int_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1i18n_1_1IConvStreamBuffer.html#a830d349d83cfdb64fee00d58d65f4aab">underflow</a> ()</td></tr>
+<tr class="memdesc:a830d349d83cfdb64fee00d58d65f4aab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simply returns EOF (since this is not an input stream).  <a href="#a830d349d83cfdb64fee00d58d65f4aab">More...</a><br /></td></tr>
+<tr class="separator:a830d349d83cfdb64fee00d58d65f4aab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add2ef9bdf704ed5c23eea6db04fb40e4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classregina_1_1i18n_1_1IConvStreamBuffer.html#add2ef9bdf704ed5c23eea6db04fb40e4">sync</a> ()</td></tr>
+<tr class="memdesc:add2ef9bdf704ed5c23eea6db04fb40e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flushes all output buffers.  <a href="#add2ef9bdf704ed5c23eea6db04fb40e4">More...</a><br /></td></tr>
+<tr class="separator:add2ef9bdf704ed5c23eea6db04fb40e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0cf28d98ddd5269875d02dd4a0b0189"><td class="memItemLeft" align="right" valign="top"><a id="ae0cf28d98ddd5269875d02dd4a0b0189"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>IConvStreamBuffer</b> (const <a class="el" href="classregina_1_1i18n_1_1IConvStreamBuffer.html">IConvStreamBuffer</a> &amp;)=delete</td></tr>
-<tr class="separator:gae0cf28d98ddd5269875d02dd4a0b0189"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga966c01eea5ec53e0b428bfd47696247c"><td class="memItemLeft" align="right" valign="top">
+<tr class="separator:ae0cf28d98ddd5269875d02dd4a0b0189"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a966c01eea5ec53e0b428bfd47696247c"><td class="memItemLeft" align="right" valign="top"><a id="a966c01eea5ec53e0b428bfd47696247c"></a>
 <a class="el" href="classregina_1_1i18n_1_1IConvStreamBuffer.html">IConvStreamBuffer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classregina_1_1i18n_1_1IConvStreamBuffer.html">IConvStreamBuffer</a> &amp;)=delete</td></tr>
-<tr class="separator:ga966c01eea5ec53e0b428bfd47696247c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a966c01eea5ec53e0b428bfd47696247c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>An output stream buffer that translates between character encodings. </p>
 <p>The <em>iconv</em> library is used to do the real work.</p>
 <p>Users should not normally instantiate this class directly; instead see <a class="el" href="classregina_1_1i18n_1_1IConvStream.html" title="An output stream that converts between character encodings.">IConvStream</a> for a higher-level interface to character conversion.</p>
 <p>This class will still work if <em>iconv</em> is not supported on the build machine, though in this case it will simply pass data through without performing any translations.</p>
-<dl class="section user"><dt>Python:\n Not included.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not included.</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Parts of this code are modified from the cxxtools library (<code><a href="http://www.tntnet.org/cxxutils.html">http://www.tntnet.org/cxxutils.html</a></code>), which is copyright (c) 2003 by Tommi Maekitalo, and covered by the GNU Lesser General Public License. </dd></dl>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a3334747d42a32a95043a910a6dd173bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3334747d42a32a95043a910a6dd173bc">&#9670;&nbsp;</a></span>IConvStreamBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">regina::i18n::IConvStreamBuffer::IConvStreamBuffer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new stream buffer. </p>
+
+</div>
+</div>
+<a id="a61810bdda48b4a95ef66c577f62eadf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61810bdda48b4a95ef66c577f62eadf4">&#9670;&nbsp;</a></span>~IConvStreamBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">regina::i18n::IConvStreamBuffer::~IConvStreamBuffer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroys this stream buffer. </p>
+<p>This stream buffer will be closed, but the destination output stream will not be. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aec85de7b3e74749b1dd1d5d8b5f6c1aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec85de7b3e74749b1dd1d5d8b5f6c1aa">&#9670;&nbsp;</a></span>close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classregina_1_1i18n_1_1IConvStreamBuffer.html">IConvStreamBuffer</a>* regina::i18n::IConvStreamBuffer::close </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td align="right">throw </td><td>(</td><td colspan="2"></td>
+        </tr>
+        <tr>
+          <td align="right"></td><td>)</td><td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Closes this stream buffer. </p>
+<dl class="section return"><dt>Returns</dt><dd>this stream buffer on success, or 0 on error. </dd></dl>
+
+</div>
+</div>
+<a id="a8170e81f5d3a805161cc1ff9800e458f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8170e81f5d3a805161cc1ff9800e458f">&#9670;&nbsp;</a></span>open()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classregina_1_1i18n_1_1IConvStreamBuffer.html">IConvStreamBuffer</a>* regina::i18n::IConvStreamBuffer::open </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>dest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>srcCode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>destCode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Opens a new stream buffer that wraps around the given output stream. </p>
+<p>If this stream buffer is already open, it will be closed and then reopened with the given parameters.</p>
+<p>Any data that is sent to this stream buffer will be translated from <em>srcCode</em> to <em>destCode</em> and passed on to the given output stream.</p>
+<p>If the given encodings are invalid, this stream will still forward data to the given output stream but no conversion will take place.</p>
+<p>See the <em>iconv</em> documentation for information on what encodings are supported. For the GNU C library implementation, valid encodings can be found by running <code>iconv &ndash;list</code>.</p>
+<dl class="section pre"><dt>Precondition</dt><dd>The destination output stream is already open.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dest</td><td>the destination output stream. </td></tr>
+    <tr><td class="paramname">srcCode</td><td>the character encoding for data that is to be written into this stream buffer. </td></tr>
+    <tr><td class="paramname">destCode</td><td>the character encoding for the translated data that will subsequently be written to the destination output stream. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>this stream buffer on success, or 0 on error. </dd></dl>
+
+</div>
+</div>
+<a id="a14a3b54d5a102597eb6abfbb173bce7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14a3b54d5a102597eb6abfbb173bce7b">&#9670;&nbsp;</a></span>overflow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int_type regina::i18n::IConvStreamBuffer::overflow </td>
+          <td>(</td>
+          <td class="paramtype">int_type&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sends buffered data to the destination output stream, converting between character sets en route. </p>
+<p>The buffer will be flushed as far as possible, and any invalid characters will be replaced with one or more question marks. If the buffer ends in an incomplete multibyte character, this incomplete character will be held back (since it presumably needs to be combined with later input).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>an extra character to send that did not fit in the internal buffer, or EOF if we simply wish to flush the buffer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, or EOF on error. </dd></dl>
+
+</div>
+</div>
+<a id="add2ef9bdf704ed5c23eea6db04fb40e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add2ef9bdf704ed5c23eea6db04fb40e4">&#9670;&nbsp;</a></span>sync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int regina::i18n::IConvStreamBuffer::sync </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Flushes all output buffers. </p>
+<p>The buffers for both this stream and the destination output stream will be flushed.</p>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, or -1 on error. </dd></dl>
+
+</div>
+</div>
+<a id="a830d349d83cfdb64fee00d58d65f4aab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a830d349d83cfdb64fee00d58d65f4aab">&#9670;&nbsp;</a></span>underflow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IConvStreamBuffer::int_type regina::i18n::IConvStreamBuffer::underflow </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Simply returns EOF (since this is not an input stream). </p>
+<dl class="section return"><dt>Returns</dt><dd>EOF. </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>utilities/<a class="el" href="i18nutils_8h.html">i18nutils.h</a></li>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

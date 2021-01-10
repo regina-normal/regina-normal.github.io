@@ -108,7 +108,7 @@ class regina::Example&lt; dim &gt;</h3>
 <p>All of the methods in this class will assign an appropriate packet label to the triangulation that they return.</p>
 <p>Note that each of these routines constructs a new triangulation from scratch. It is up to the caller of each routine to destroy the triangulation that is returned.</p>
 <p>For Regina's <a class="el" href="stddim.html">standard dimensions</a>, this template is specialised and offers many more example triangulations. In order to use these specialised classes, you will need to include the corresponding headers (e.g., <a class="el" href="example2_8h.html" title="Offers some example 2-dimensional triangulations as starting points for testing code or getting used ...">triangulation/example2.h</a> for <em>dim</em> = 2, or <a class="el" href="example3_8h.html" title="Offers some example 3-dimensional triangulations as starting points for testing code or getting used ...">triangulation/example3.h</a> for <em>dim</em> = 3).</p>
-<dl class="section user"><dt>Python:\n Python does not support templates. Instead this class</dt><dd>can be used by appending the dimension as a suffix (e.g., Example2 and Example3 for dimensions 2 and 3).</dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Python does not support templates. Instead this class can be used by appending the dimension as a suffix (e.g., Example2 and Example3 for dimensions 2 and 3).</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">dim</td><td>the dimension of the example triangulations to construct. This must be between 2 and 15 inclusive. </td></tr>
@@ -399,7 +399,7 @@ template&lt;int dim&gt; </div>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

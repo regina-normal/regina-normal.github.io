@@ -94,7 +94,7 @@ embedding").</p>
 <p>The routine <a class="el" href="classregina_1_1SatBlockStarterSearcher.html#a211f6cc1476b89316c4f5670a67e2fa2" title="Runs a search for every isomorphic embedding of every starter block from the global SatBlockStarterSe...">findStarterBlocks()</a> runs the search. Each time an isomorphic embedding of a starter block is discovered within the given triangulation, the pure virtual routine <a class="el" href="classregina_1_1SatBlockStarterSearcher.html#a3b34926e074563265cddbf5c1a4c05c0" title="Used by subclasses to process each starter block embedding that is found.">useStarterBlock()</a> will be called. The block that is passed to <a class="el" href="classregina_1_1SatBlockStarterSearcher.html#a3b34926e074563265cddbf5c1a4c05c0" title="Used by subclasses to process each starter block embedding that is found.">useStarterBlock()</a> will be a new block that refers to the particular embedding of the starter block within the given triangulation (as opposed to the original block structure referring to the prebuilt triangulation in <a class="el" href="classregina_1_1SatBlockStarter.html" title="Contains a triangulation of a saturated block along with the accompanying saturated block description...">SatBlockStarter</a>).</p>
 <p>For each situation that requires searching for starter blocks, a subclass of <a class="el" href="classregina_1_1SatBlockStarterSearcher.html" title="A helper class for locating and using starter blocks within a triangulation.">SatBlockStarterSearcher</a> will be required. This subclass should override <a class="el" href="classregina_1_1SatBlockStarterSearcher.html#a3b34926e074563265cddbf5c1a4c05c0" title="Used by subclasses to process each starter block embedding that is found.">useStarterBlock()</a> to perform whatever action is necessary.</p>
 <p>Instead of locating all isomorphic embeddings of all starter blocks in the global set, the search can be made to finish early once certain conditions are met. This is done by implementing <a class="el" href="classregina_1_1SatBlockStarterSearcher.html#a3b34926e074563265cddbf5c1a4c05c0" title="Used by subclasses to process each starter block embedding that is found.">useStarterBlock()</a> to return <code>false</code> when the search should quit.</p>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a652694021bc1c0507f24fd7d2450e7c9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a652694021bc1c0507f24fd7d2450e7c9">&#9670;&nbsp;</a></span>~SatBlockStarterSearcher()</h2>
@@ -251,7 +251,7 @@ embedding").</p>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.

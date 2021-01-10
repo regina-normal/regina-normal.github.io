@@ -247,7 +247,7 @@ class regina::NativeInteger&lt; bytes &gt;</h3>
 <p>This class behaves just like native integer arithmetic, where the underlying integer type is signed and stores the given number of bytes. There is no overflow testing, and it is up to the user to ensure that overflows do not occur. On the other hand, this class is almost as fast as native integer arithmetic (i.e., there is very little overhead).</p>
 <p>The reason for using this class, instead of working directly in a native integer type, is that this class offers an interface that is compatible with Integer. Only some of the Integer member functions are offered here; however, those that are offered behave just like their Integer counterparts (with the single exception that all arithmetic in <a class="el" href="classregina_1_1NativeInteger.html" title="A wrapper class for a native, fixed-precision integer type of the given size.">NativeInteger</a> is subject to overflow). Developers can therefore switch between integer types easily with minimal changes to their code, or support both Integer and <a class="el" href="classregina_1_1NativeInteger.html" title="A wrapper class for a native, fixed-precision integer type of the given size.">NativeInteger</a> types as template arguments.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>The system must support integers of the given size; in particular, there must be an appropriate specialisation IntOfSize&lt;bytes&gt;.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present. </dd></dl>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a68911adad5a242fc01e1e8603bd8e4a9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a68911adad5a242fc01e1e8603bd8e4a9">&#9670;&nbsp;</a></span>Native</h2>
@@ -403,7 +403,7 @@ template&lt;bool supportInfinity&gt; </div>
 <dl class="section pre"><dt>Precondition</dt><dd>If <em>bytes</em> is larger than sizeof(long), then <em>bytes</em> is a strict <em>multiple</em> of sizeof(long). For instance, if longs are 8 bytes then you can use this routine with <em>bytes=16</em> but not <em>bytes=12</em>. This restriction is enforced through a compile-time assertion, but may be lifted in future versions of Regina.</dd>
 <dd>
 The given integer is not infinity.</dd></dl>
-<dl class="section user"><dt>Python:\n Not present.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not present.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>the new value of this integer. </td></tr>
@@ -1307,7 +1307,7 @@ template&lt;int bytes&gt; </div>
 
 <p>The predecrement operator. </p>
 <p>This operator decrements this integer by one, and returns a reference to the integer <em>after</em> the decrement.</p>
-<dl class="section user"><dt>Python:\n Not available.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not available.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a reference to this integer after the decrement. </dd></dl>
 
 </div>
@@ -1340,7 +1340,7 @@ template&lt;int bytes&gt; </div>
 
 <p>The postdecrement operator. </p>
 <p>This operator decrements this integer by one, and returns a copy of the integer <em>before</em> the decrement.</p>
-<dl class="section user"><dt>Python:\n Not available.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not available.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a copy of this integer before the decrement took place. </dd></dl>
 
 </div>
@@ -1672,7 +1672,7 @@ template&lt;int bytes&gt; </div>
 
 <p>The preincrement operator. </p>
 <p>This operator increments this integer by one, and returns a reference to the integer <em>after</em> the increment.</p>
-<dl class="section user"><dt>Python:\n Not available.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not available.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a reference to this integer after the increment. </dd></dl>
 
 </div>
@@ -1705,7 +1705,7 @@ template&lt;int bytes&gt; </div>
 
 <p>The postincrement operator. </p>
 <p>This operator increments this integer by one, and returns a copy of the integer <em>before</em> the increment.</p>
-<dl class="section user"><dt>Python:\n Not available.</dt><dd></dd></dl>
+<dl class="section user"><dt>Python</dt><dd>Not available.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a copy of this integer before the increment took place. </dd></dl>
 
 </div>
@@ -2317,7 +2317,7 @@ template&lt;int bytes&gt; </div>
 </ul>
 </div><!-- contents -->
 <hr>
-Copyright &copy; 1999-2020, The Regina development team
+Copyright &copy; 1999-2021, The Regina development team
 <br>
 This software is released under the GNU General Public License,
 with some additional permissions; see the source code for details.
