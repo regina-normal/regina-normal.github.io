@@ -113,10 +113,6 @@ This controls where the application bundle will appear when you run
 relevant Qt directory containing <tt>include/</tt>, <tt>lib/</tt> and so on.
 For a typical Qt installation, this looks something like
 <tt>.../Qt5.7.0/5.7/clang_64</tt>.</li>
-<li>To tell Regina where to find Boost, set <tt>BOOST_ROOT</tt> to the
-relevant Boost directory containing <tt>include/</tt>, <tt>lib/</tt> and so on.
-For Fink's Boost packages, this may look something like
-<tt>/opt/sw/opt/boost-1_58</tt>.</li>
 <li>You do <b>not</b> need to set <tt>REGINA_INSTALL_TYPE</tt> to <tt>XDG</tt>,
 since this is now the default (and indeed the only valid option) on macOS.</li>
 </ul>
@@ -129,7 +125,6 @@ A complete example of a cmake line:
 <tt>example$ cmake -DPython_EXECUTABLE=/usr/bin/python
 -DCMAKE_INSTALL_PREFIX=/Users/bab/software
 -DCMAKE_PREFIX_PATH=/Users/bab/Qt5/5.7/clang_64
--DBOOST_ROOT=/opt/sw/opt/boost-1_58
 ..</tt>
 </p>
 </div>
