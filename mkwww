@@ -11,7 +11,7 @@ if [ ! -f buildtips.html ]; then
 fi
 
 if [ ! -d "$resources/examples" ]; then
-  echo "ERROR: The MacOS app bundle must be mounted as /Volumes/Regina/."
+  echo "ERROR: The macOS app bundle must be mounted as /Volumes/Regina/."
   exit 2
 fi
 
