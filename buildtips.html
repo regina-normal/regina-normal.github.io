@@ -78,10 +78,13 @@ directory names for 64-bit systems, and you should
 <h2><a name="macosx">Mac</a></h2>
 
 <p>
-The macOS build has been evolving to remove the need for
-<a href="http://finkproject.org/">fink</a> (and indeed,
+The macOS build has evolved to remove the need for
+software environments such as
+<a href="http://finkproject.org/">Fink</a> or
+<a href="http://www.macports.org/">MacPorts</a>
+(and indeed,
 the macOS binaries here on the Regina website were built on a system
-without fink or any similar environment installed at all).
+without any such environment installed at all).
 The current situation is as follows:
 <ul>
 <li>To build a standalone app bundle (like the one here on the Regina
@@ -97,19 +100,21 @@ out-of-the-box; read on for details.
 </ul>
 <p>
 For a full unix-like installation, assuming you already have
-<a href="http://finkproject.org/">fink</a> installed,
-you will need to pass several arguments
-to cmake:
+an environment like
+<a href="http://finkproject.org/">Fink</a> or
+<a href="http://www.macports.org/">MacPorts</a> installed,
+you may need to pass additional arguments to cmake:
 <ul>
 <li>If you wish to use the system python installation (or some other
-python installation) instead of Fink's, set
+python installation) instead of Fink's or MacPorts', set
 <tt>Python_EXECUTABLE</tt> to the python interpreter
 (e.g., <tt>/usr/bin/python</tt>).</li>
 <li>If you want to change the installation prefix from the
 default <tt>/usr/local</tt>, set <tt>CMAKE_INSTALL_PREFIX</tt>.
 This controls where the application bundle will appear when you run
 <tt>make&nbsp;install</tt>.</li>
-<li>To tell Regina where to find Qt, set <tt>CMAKE_PREFIX_PATH</tt> to the
+<li>If you have downloaded Qt separately (not via Fink/MacPorts), you
+need to tell Regina where to find it. Set <tt>CMAKE_PREFIX_PATH</tt> to the
 relevant Qt directory containing <tt>include/</tt>, <tt>lib/</tt> and so on.
 For a typical Qt installation, this looks something like
 <tt>.../Qt5.7.0/5.7/clang_64</tt>.</li>
@@ -122,7 +127,7 @@ since this is now the default (and indeed the only valid option) on macOS.</li>
 </ul>
 </p>
 <p>
-A complete example of a cmake line:
+A complete example of a cmake line using Fink:
 </p>
 <div class="example">
 <p>
