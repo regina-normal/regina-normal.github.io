@@ -1,12 +1,12 @@
 <html><head><title>regfiledump</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina Handbook"><link rel="up" href="utils.html" title="Appendix B. Command Line: Specialised Utilities"><link rel="prev" href="man-regconvert.html" title="regconvert"><link rel="next" href="man-regfiletype.html" title="regfiletype"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>regfiledump</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="man-regconvert.html">Prev</a></td><td align="center" class="navCenter" width="34%">Command Line: Specialised Utilities</td><td align="right" class="navRight" width="33%"> 
-		      <a accesskey="n" href="man-regfiletype.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="man-regfiledump"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>regfiledump — Dump the contents of a <span class="application">Regina</span> data file</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regfiledump</strong></span></span> [[<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-f</code></span>] |  [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-l</code></span>] |  [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-n</code></span>]] [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-c</code></span>] {<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>file</code></em></span>} [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>packet-label</code></em></span>...]</p></div></div><div class="refsect1" lang="en"><a name="idm3375300944"></a><h2>Description</h2><p>
+		      <a accesskey="n" href="man-regfiletype.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="man-regfiledump"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>regfiledump — Dump the contents of a <span class="application">Regina</span> data file</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regfiledump</strong></span></span> [[<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-f</code></span>] |  [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-l</code></span>] |  [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-n</code></span>]] [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-c</code></span>] {<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>file</code></em></span>} [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>packet-label</code></em></span>...]</p></div></div><div class="refsect1" lang="en"><a name="idm3148287848"></a><h2>Description</h2><p>
     This utility dumps the contents of the given <span class="application">Regina</span> data file to
     standard output in a human-readable format.
    </p><p>
     If a list of packet labels is given on the command-line, only those
     packets will be output.  Otherwise all packets in the given
     file will be output.
-   </p></div><div class="refsect1" lang="en"><a name="idm3375298432"></a><h2>Options</h2><div class="variablelist"><dl><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-f</code></span> (default)</span></dt><dd><p>
+   </p></div><div class="refsect1" lang="en"><a name="idm3148285336"></a><h2>Options</h2><div class="variablelist"><dl><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-f</code></span> (default)</span></dt><dd><p>
        Output full packet details.  The output for each packet will cover
        several lines, beginning with basic details (such as the packet label
        and type) followed by the packet's long description.
@@ -16,7 +16,7 @@
        Don't output any packets at all; this option forces a packet
        count (see option <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-c</code></span>).
       </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-c</code></span></span></dt><dd><p>Finish the output with a total count of all packets in the
-       file.</p></dd></dl></div></div><div class="refsect1" lang="en"><a name="idm3375287008"></a><h2>Internationalisation</h2><p>
+       file.</p></dd></dl></div></div><div class="refsect1" lang="en"><a name="idm3148273912"></a><h2>Internationalisation</h2><p>
   If any packets contain international characters,
   <span class="application">Regina</span> will attempt to convert these to your local character
   encoding as it writes them to the output.
@@ -37,21 +37,21 @@
   you install your <span class="application"><span class="acronym">GNU</span>/Linux</span> system, and <span class="application">Regina</span> will just use the
   right character set out of the box.  See your <span class="application"><span class="acronym">GNU</span>/Linux</span> system reference
   for further information on supporting different locales.
- </p></div><div class="refsect1" lang="en"><a name="idm3375266256"></a><h2><span class="application">MacOS</span> Users</h2><p>
+ </p></div><div class="refsect1" lang="en"><a name="idm3148253160"></a><h2><span class="application">MacOS</span> Users</h2><p>
     If you downloaded a drag-and-drop app bundle, this utility is
     shipped inside it.  If you dragged <span class="application">Regina</span> to the main
     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Applications</span></span> folder, you can run it as
     <code class="literal">/Applications/Regina.app/Contents/MacOS/regfiledump</code>.
-   </p></div><div class="refsect1" lang="en"><a name="idm3375262416"></a><h2><span class="application">Windows</span> Users</h2><p>
+   </p></div><div class="refsect1" lang="en"><a name="idm3148249320"></a><h2><span class="application">Windows</span> Users</h2><p>
     The command-line utilities are installed beneath the
     <code class="filename">Program Files</code> directory; on some
     machines this directory is called
     <code class="filename">Program Files (x86)</code>.
     You can start this utility by running
-    <code class="literal">c:\Program Files\Regina\Regina 6.0\bin\regfiledump.exe</code>.
-   </p></div><div class="refsect1" lang="en"><a name="idm3375258704"></a><h2>See Also</h2><p>
+    <code class="literal">c:\Program Files\Regina\Regina 6.0.1\bin\regfiledump.exe</code>.
+   </p></div><div class="refsect1" lang="en"><a name="idm3148245608"></a><h2>See Also</h2><p>
     <a href="man-regina-gui.html" title="regina-gui">regina-gui</a>.
-   </p></div><div class="refsect1" lang="en"><a name="idm3375256800"></a><h2>Author</h2><p>
+   </p></div><div class="refsect1" lang="en"><a name="idm3148243704"></a><h2>Author</h2><p>
     This utility was written by Benjamin Burton
     <code class="email">&lt;<a href="mailto:bab@maths.uq.edu.au">bab@maths.uq.edu.au</a>&gt;</code>.
     Many people have been involved in the development
