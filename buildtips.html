@@ -17,6 +17,7 @@
     <tr><td><a href="#macosx">Mac</a></td></tr>
     <tr><td><a href="#windows">Windows</a></td></tr>
     <tr><td><a href="#cluster">Cluster environments</a></td></tr>
+    <tr><td><a href="#linking">Compiling Regina into your software</a></td></tr>
     <tr><td><a href="index.html">Back to main page ...</a></td></tr>
     </tbody></table>
 </td></tr>
@@ -163,20 +164,15 @@ the Windows binaries that you see here on the Regina website.
 
 <p>
 If you plan to use Regina in a high-performance computing environment
-such as a university cluster, there are several complications.
-</p>
-<h4>Disabling the graphical user interface</h4>
-<p>
-You will probably <i>not</i> want to
-build the graphical user interface (in fact the cluster may well
-not have the Qt development libraries installed, which would cause
-cmake to fail).
-To fix this, set the argument <tt>DISABLE_GUI</tt>:
+such as a university cluster,
+you should set <tt>REGINA_INSTALL_TYPE</tt> to <tt>HPC</tt>.
+This will disable the graphical user interface, and will ensure that
+Regina's python module is installed alongside Regina (and not in
+the system python <tt>site-packages</tt> directory).
 </p>
 <div class="example"><p>
-<tt>example$ cmake -DDISABLE_GUI=1 ..</tt>
+<tt>example$ cmake -DREGINA_INSTALL_TYPE=HPC ..</tt>
 </p></div>
-<h4>Installing beneath your home directory</h4>
 <p>
 You will almost certainly not have root access
 to the cluster, which means you will need to install Regina beneath your
@@ -185,7 +181,7 @@ home directory.  You do this by creating a top-level install directory
 to cmake:
 </p>
 <div class="example"><p>
-<tt>example$ cmake -DDISABLE_GUI=1
+<tt>example$ cmake -DREGINA_INSTALL_TYPE=HPC
 -DCMAKE_INSTALL_PREFIX=/home/bab/software ..</tt>
 </p></div>
 <p>
@@ -193,6 +189,9 @@ Regina will now install its various components in the subdirectories
 <tt>/home/bab/software/bin</tt>,
 <tt>/home/bab/software/lib</tt>,
 <tt>/home/bab/software/share</tt> and so on.
+If you set <tt>REGINA_INSTALL_TYPE=HPC</tt> as described above, Regina
+will install its Python module in
+<tt>/home/bab/software/lib/regina/python</tt>.
 </p>
 <p>
 You should pass an <b>absolute path</b> as your install prefix
@@ -201,7 +200,7 @@ It is best if this is not the directory in which
 you unpacked Regina's sources, since otherwise you may find it hard to
 untangle sources from binaries later on.
 </p>
-<h4>Compiling your own software against Regina</h4>
+<h2><a name="linking">Compiling Regina into your software</h2>
 <p>
 Once Regina is built and installed, you may wish to compile it
 into your own C++ programs.  The helper script <tt>regina-engine-config</tt>
