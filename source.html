@@ -27,27 +27,27 @@ In summary, to build Regina:
     libraries as listed in the <a href="#sysreq">system
     requirements</a> table below.</li>
     <li>Download the source archive
-    <tt><b>regina-6.0.tar.gz</b></tt> from the
-    <a href="https://github.com/regina-normal/regina/releases/download/regina-6.0/regina-6.0.tar.gz">Regina
+    <tt><b>regina-6.0.1.tar.gz</b></tt> from the
+    <a href="https://github.com/regina-normal/regina/releases/download/regina-6.0.1/regina-6.0.1.tar.gz">Regina
     download site</a>.</li>
     <li>Unpack this source archive, which will expand into a directory
-    <tt><b>regina-6.0/</b></tt> on your machine.
+    <tt><b>regina-6.0.1/</b></tt> on your machine.
     <div class="example"><p>
-    <tt>example:~$ <b>tar -zxf regina-6.0.tar.gz</b></tt>
+    <tt>example:~$ <b>tar -zxf regina-6.0.1.tar.gz</b></tt>
     </p></div></li>
     <li>Create a build subdirectory, such as
-    <tt><b>regina-6.0/build/</b></tt>.
+    <tt><b>regina-6.0.1/build/</b></tt>.
     <div class="example"><p>
-    <tt>example:~$ <b>cd regina-6.0</b></tt><br>
-    <tt>example:~/regina-6.0$ <b>mkdir build</b></tt>
+    <tt>example:~$ <b>cd regina-6.0.1</b></tt><br>
+    <tt>example:~/regina-6.0.1$ <b>mkdir build</b></tt>
     </p></div></li>
     <li>Move into the build directory, and then run
     &ldquo;<tt><b>cmake ..</b></tt>&rdquo;.  This will
     search for the necessary tools and libraries on your system,
     and configure your build accordingly.
     <div class="example"><p>
-    <tt>example:~/regina-6.0$ <b>cd build</b></tt><br>
-    <tt>example:~/regina-6.0/build$ <b>cmake ..</b></tt>
+    <tt>example:~/regina-6.0.1$ <b>cd build</b></tt><br>
+    <tt>example:~/regina-6.0.1/build$ <b>cmake ..</b></tt>
     </p></div>
     You will <b>almost certainly need to pass additional arguments to
     cmake</b>.
@@ -57,8 +57,8 @@ In summary, to build Regina:
     Then, as root, run <tt><b>make install</b></tt> to install Regina on your
     system.
     <div class="example"><p>
-    <tt>example:~/regina-6.0/build$ <b>make</b></tt><br>
-    <tt>example:~/regina-6.0/build$ <b>sudo make install</b></tt>
+    <tt>example:~/regina-6.0.1/build$ <b>make</b></tt><br>
+    <tt>example:~/regina-6.0.1/build$ <b>sudo make install</b></tt>
     </p></div>
 </ul>
 That's all there is to it.
@@ -94,7 +94,7 @@ between different RPM-based distributions).
     <th>Version</th><th>Package Names</th></tr>
 <tr><td class="reqfirst">C++ compiler</td>
     <td class="req">Build infrastructure</td>
-    <td>Must support C++11</td>
+    <td>Must support C++17</td>
     <td>g++ (DEB)<br>gcc-c++ (RPM)
     </td></tr>
 <tr><td class="reqfirst">CMake</td>
@@ -151,7 +151,7 @@ between different RPM-based distributions).
     </td></tr>
 <tr><td class="optfirst">Doxygen</td>
     <td class="opt">C++/Python API docs</td>
-    <td>&nbsp;</td>
+    <td>&ge; 1.8.17</td>
     <td>doxygen (DEB)<br>doxygen (RPM)
     </td></tr>
 <tr><td class="optfirst">Graphviz libraries</td>
