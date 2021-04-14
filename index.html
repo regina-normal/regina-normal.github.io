@@ -11,8 +11,8 @@
   alt="Regina: Software for low-dimensional topology">
 </center>
 <center>
-<h4>Latest version: 6.0.1 (February 2021)<!--br>
-Updated packages: 31 December 2020<br>
+<h4>Latest version: 6.0.1 (February 2021)<br>
+Updated packages: 14 April 2021<!--br>
 Updated data: 31 May 2018--></h4>
 <table class="contentswrapper" cellspacing=0>
 <tbody>
@@ -52,6 +52,11 @@ Updated data: 31 May 2018--></h4>
 
 <h2><a name="news">News</a></h2>
 
+<p class="header">
+<b>14 April 2021:</b>
+Fedora and openSUSE users can (and should) now install Regina through
+package repositories instead of downlowding RPMs manually.
+Follow the <a href="#download">install links</a> for details.
 <p class="header">
 <b>12 February 2021:</b>
 Regina 6.0.1 <a href="#new">fixes an issue for Python users</a>
@@ -257,14 +262,20 @@ and you should be able to run the installer anyway.</li>
 
 <a name="linux"><h4 class="divide">GNU/Linux</h4></a>
 
-You can download ready-made packages for several GNU/Linux distributions.
-All of these packages are named <b>regina-normal</b> (to avoid conflicting
-with the <a href="http://regina-rexx.sourceforge.net/">other Regina</a>).
-Please click on the <i>Download</i> link for your system in the table below.
+You can download ready-made packages for several GNU/Linux distributions
+through Regina's online package repositorites.
+These repositories integrate with your native package manager
+(<tt>apt</tt>, <tt>dnf/yum</tt>, <tt>zypper</tt>, etc.)
+to help you keep Regina up-to-date automatically.
 <p>
-All packages are <b>64-bit Intel</b>, which means they will only work
-with an <i>x86_64</i> or <i>amd64</i> chipset (which covers almost any
-typical desktop or laptop nowadays except for Apple Silicon).
+For instructions on setting up Regina's package repositories,
+click on the <i>Install</i> link for your system in the table below.
+<p>
+Regina's GNU/Linux packages are named <b>regina-normal</b> (to avoid conflicting
+with the <a href="http://regina-rexx.sourceforge.net/">other Regina</a>).
+Unless otherwise specified, they are <b>64-bit Intel</b>, which means they
+will only work with an <i>x86_64</i> or <i>amd64</i> chipset (which covers
+almost any typical desktop or laptop nowadays except for Apple Silicon).
 The exception is the Debian packages, which are built for more
 chipsets as listed in the table below.
 If you are not sure what chipset you have, open a terminal and run
@@ -289,25 +300,29 @@ If you are not sure what chipset you have, open a terminal and run
 <tr><td rowspan=2 class="altfirstjoin">Fedora</td>
     <td rowspan=2 class="alt"><img srcset="osicons/os_fedora.png 1x, osicons/os_fedora@2x.png 2x" src="osicons/os_fedora.png" border=0 hspace=5></td>
     <td class="alt">33</td>
-    <td class="alt" align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-6.0.1/regina-normal-6.0.1-1.fedora33.x86_64.rpm">Download</a></td>
+    <td class="alt" align="center"><a href="install/fedora-33.html">Install</a></td>
     </tr>
 <tr>
     <td class="alt">32</td>
-    <td class="alt" align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-6.0.1/regina-normal-6.0.1-1.fedora32.x86_64.rpm">Download</a></td>
+    <td class="alt" align="center"><a href="install/fedora-32.html">Install</a></td>
     </tr>
 <tr><td rowspan=1 class="firstjoin">openSUSE</td>
     <td rowspan=1><img srcset="osicons/os_opensuse.png 1x, osicons/os_opensuse@2x.png 2x" src="osicons/os_opensuse.png" border=0 hspace=5></td>
     <td>Leap&nbsp;15.2</td>
-    <td align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-6.0.1/regina-normal-6.0.1-1.opensuse15.2.x86_64.rpm">Download</a></td>
+    <td class="alt" align="center"><a href="install/opensuse-15.2.html">Install</a></td>
     </tr>
-<tr><td rowspan=2 class="altfirstjoin">Ubuntu</td>
-    <td rowspan=7 class="alt"><img srcset="osicons/os_ubuntu.png 1x, osicons/os_ubuntu@2x.png 2x" src="osicons/os_ubuntu.png" border=0 hspace=5></td>
+<tr><td rowspan=3 class="altfirstjoin">Ubuntu</td>
+    <td rowspan=3 class="alt"><img srcset="osicons/os_ubuntu.png 1x, osicons/os_ubuntu@2x.png 2x" src="osicons/os_ubuntu.png" border=0 hspace=5></td>
     <td class="alt">20.10 (groovy)</td>
     <td class="alt" align="center"><a href="install/ubuntu-groovy.html">Install</a></td>
     </tr>
 <tr>
     <td class="alt">20.04 LTS (focal)</td>
     <td class="alt" align="center"><a href="install/ubuntu-focal.html">Install</a></td>
+    </tr>
+<tr>
+    <td class="alt">18.04 LTS (bionic)</td>
+    <td class="alt" align="center"><a href="install/ubuntu-bionic.html">Install</a></td>
     </tr>
 </tbody></table></blockquote>
 
