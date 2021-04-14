@@ -273,13 +273,6 @@ click on the <i>Install</i> link for your system in the table below.
 <p>
 Regina's GNU/Linux packages are named <b>regina-normal</b> (to avoid conflicting
 with the <a href="http://regina-rexx.sourceforge.net/">other Regina</a>).
-Unless otherwise specified, they are <b>64-bit Intel</b>, which means they
-will only work with an <i>x86_64</i> or <i>amd64</i> chipset (which covers
-almost any typical desktop or laptop nowadays except for Apple Silicon).
-The exception is the Debian packages, which are built for more
-chipsets as listed in the table below.
-If you are not sure what chipset you have, open a terminal and run
-&ldquo;<tt>uname&nbsp;-m</tt>&rdquo;.
 <p>
 <blockquote><table cellspacing=0 border=0 align=center class="data"><tbody>
 <tr><th class="first" colspan=2>Distribution</th>
@@ -289,13 +282,11 @@ If you are not sure what chipset you have, open a terminal and run
 <tr><td rowspan=2 class="firstjoin">Debian</td>
     <td rowspan=2><img srcset="osicons/os_debian.png 1x, osicons/os_debian@2x.png 2x" src="osicons/os_debian.png" border=0 hspace=5></td>
     <td>10.x (buster)</td>
-    <td align="center"><a href="install/debian-buster.html">Install</a><br>
-    (amd64 or i386)</td>
+    <td align="center"><a href="install/debian-buster.html">Install</a></td>
     </tr>
 <tr>
     <td>unstable (sid)</td>
-    <td align="center"><a href="install/debian-sid.html">Install</a><br>
-    (Any chipset)</td>
+    <td align="center"><a href="install/debian-sid.html">Install</a></td>
     </tr>
 <tr><td rowspan=2 class="altfirstjoin">Fedora</td>
     <td rowspan=2 class="alt"><img srcset="osicons/os_fedora.png 1x, osicons/os_fedora@2x.png 2x" src="osicons/os_fedora.png" border=0 hspace=5></td>
@@ -325,6 +316,16 @@ If you are not sure what chipset you have, open a terminal and run
     <td class="alt" align="center"><a href="install/ubuntu-bionic.html">Install</a></td>
     </tr>
 </tbody></table></blockquote>
+
+<p>
+Most packages are built only for 64-bit Intel machines
+(i.e., <tt>amd64</tt>/<tt>x86_64</tt> architectures).
+This covers almost any typical desktop or laptop nowadays except for
+Apple Silicon.
+In addition,
+the Debian&nbsp;10.x and Ubuntu 18.04&nbsp;LTS repositorites also
+include packages for the older <tt>i386</tt> architecture, and
+Debian&nbsp;unstable packages are available for every architecture in Debian.
 
 <p class="header">
 <b>For older versions of GNU/Linux:</b>
