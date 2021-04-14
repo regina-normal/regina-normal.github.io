@@ -23,30 +23,34 @@ just like for any other Debian package.
 </p>
 <ol>
 <li><p>
-Make Regina's repository a trusted source.  This helps keep your machine
-secure, and avoids messages like &ldquo;these packages cannot be
-authenticated&rdquo;.
-To do this,
-<a href="https://people.debian.org/~bab/regina-key.txt">download
- Regina's cryptographic signing key here</a>.
-Then, at a command prompt type:
+Install the <tt>debian-keyring</tt> package.  This will give you
+Regina's cryptographic signing key (since Ben is a Debian developer).
+To do this, at a command prompt, type:
 </p>
 <div class="example"><p>
-<tt>sudo apt-key add ~/Downloads/regina-key.txt</tt>
+<tt>sudo apt-get install debian-keyring</tt>
 </p></div>
-<p>
-Here you should replace <tt>~/Downloads/regina-key.txt</tt> with the location of
-the file you just downloaded.  You can now delete <tt>regina-key.txt</tt>
-if you like.
-</p>
 </li>
 <li><p>
-Add Regina's location to your list of repositories.  To do this, open
-<tt>/etc/apt/sources.list</tt> and add the following line:
+Add Regina's location to your list of repositories.  To do this,
+<a href="repos/regina-buster.sources">download
+<tt>regina-buster.sources</tt> from here</a>
+and store it in the directory <tt>/etc/apt/sources.list.d/</tt>
+(in the line below, replace <tt>~/Downloads</tt> with your real
+download location):
 </p>
 <div class="example"><p>
-<tt>deb https://people.debian.org/~bab/regina buster/</tt>
+<tt>sudo cp -i ~/Downloads/regina-buster.sources /etc/apt/sources.list.d/</tt>
 </p></div>
+<p>
+<b>Note the suffix .d on the directory name!</b>
+You do not want to overwrite <tt>sources.list</tt>.
+</p>
+<p>
+This file <tt>/etc/apt/sources.list.d/regina-buster.sources</tt>
+is just a short text file; its full contents are included
+at the bottom of this page.
+</p>
 </li>
 <li>
 <p>
@@ -56,11 +60,14 @@ Update the list of available packages.  At a command prompt, type:
 <tt>sudo apt-get update</tt>
 </p></div>
 <p>
-If you see an error like <i>&ldquo;The method driver
+If you see an error like <i>&ldquo;the method driver
 /usr/lib/apt/methods/https could not be found&rdquo;</i>,
-it is because your system does not yet know how to handle HTTPS repositories.
-Install the package <tt>apt-transport-https</tt> and try again.
+install the package <tt>apt-transport-https</tt> and try again.
 </p>
+<p>
+If you see an error like <i>&ldquo;the public key is not available&rdquo;</i>,
+it is possibly because you forgot to install <tt>debian-keyring</tt>
+in the first step.
 </li>
 <li>
 <p>
@@ -72,14 +79,40 @@ Install or upgrade Regina like you would any other package.  Type:
 <p>
 </ol>
 <p>
-The procedure above only installs the main packages
+This procedure only installs the main packages
 <tt>regina-normal</tt> and <tt>regina-normal-doc</tt>, which is all that
 most people will need.
 </p>
 <p>
+Some tips:
+</p>
+<ul>
+<li><p>
 If you are a C++ programmer and you wish to build Regina into your own
 projects, you should also install the package <tt>regina-normal-dev</tt>.
+</p></li>
+<li><p>
+If you had previously added Regina's repository as a
+single line in <tt>/etc/apt/sources.list</tt>, you can comment that line
+out now (or just delete it).  The new file <tt>regina-buster.sources</tt>
+encodes the same repository but with better security.
+</p></li>
+</ul>
 </p>
+<p>
+For reference, the file
+<tt>/etc/apt/sources.list.d/regina-buster.sources</tt>
+should contain the following text:
+</p>
+<pre class="example">
+X-Repolib-Name: Regina
+Types: deb deb-src
+URIs: https://people.debian.org/~bab/regina
+Suites: buster/
+Signed-By:
+  /usr/share/keyrings/debian-keyring.gpg
+  519A0009FB50255DDB4E889270A6BEDF542D38D9
+</pre>
 
 <p class="return">
 <a href="../index.html#linux"><img src="../regina.svg"
