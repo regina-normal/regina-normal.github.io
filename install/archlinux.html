@@ -1,0 +1,101 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../regina.css">
+    <title>Regina for Arch Linux</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000"
+    link="#0000EE" vlink="#551A8B" alink="#FF0000">
+
+<h1><a name="contents">Regina for Arch Linux</a></h1>
+
+<p>
+Regina offers Arch Linux packages through an online a package repository.
+This helps Arch Linux to find and install dependencies automatically.
+It also helps with security, since the repository is cryptographically signed.
+</p>
+<p>
+To install Regina and keep up-to-date with the newest version,
+follow these instructions.
+</p>
+<p>
+<b>You only need to follow these steps the first time you install Regina.</b>
+After this, Arch Linux's package manager will handle upgrades for you,
+just like for any other package.
+</p>
+<ol>
+<li><p>
+Open a terminal and grant yourself root privileges.
+</p></li>
+<li><p>
+Make Regina's repository a trusted source.  To do this,
+<a href="https://people.debian.org/~bab/regina-key.txt">download
+ Regina's cryptographic signing key here</a>.
+Then, in the terminal, type:
+</p>
+<div class="example"><p>
+<tt>pacman-key --add ~/Downloads/regina-key.txt</tt><br>
+<tt>pacman-key --finger bab@debian.org</tt><br>
+<tt>pacman-key --lsign bab@debian.org</tt>
+</p></div>
+<p>
+In the first step, you should replace <tt>~/Downloads/regina-key.txt</tt> with
+the location of the file you just downloaded.
+In the second step, you should <b>check that the fingerprint is correct</b>
+(the correct fingerprint is shown at the bottom of this page).
+The third step is the one that actually marks the key as trusted.
+</p>
+<p>
+You can now delete <tt>regina-key.txt</tt> if you like.
+</p>
+</li>
+<li><p>
+Add Regina's repository to your <tt>pacman</tt> configuration.
+To do this, add the following lines to the end of <tt>/etc/pacman.conf</tt>:
+</p>
+<div class="example"><p>
+<tt>[regina]</tt><br>
+<tt>Server&nbsp;=&nbsp;https://people.debian.org/~bab/archlinux/$repo/$arch</tt>
+</p></div></li>
+<li><p>
+Update the list of available packages.  To do this, type:
+</p>
+<div class="example"><p>
+<tt>pacman -Syy</tt>
+</p></div></li>
+<li><p>
+Install Regina.  To do this, type:
+</p>
+<div class="example"><p>
+<tt>pacman -S regina-normal</tt>
+</p></div></li>
+</ol>
+<p>
+That's all!  You can now keep Regina up to date in the same way that you
+manage your other Arch Linux packages.
+</p>
+<p>
+The fingerprint for Regina's cryptographic signing key is shown below
+(see the line in bold).
+If you wish to examine the key more carefully, including its links into
+the web of trust, you can
+<a href="https://people.debian.org/~bab/regina-key.txt">download it here</a>.
+</p>
+<pre class="example">
+example$ pacman-key --finger bab@debian.org
+pub   rsa4096 2014-08-28 [SC]
+      <b>519A 0009 FB50 255D DB4E  8892 70A6 BEDF 542D 38D9</b>
+uid           [ unknown] Benjamin Burton &lt;bab@debian.org&gt;
+uid           [ unknown] Benjamin Burton &lt;bab@maths.uq.edu.au&gt;
+uid           [ unknown] Benjamin Burton &lt;burton.bab@gmail.com&gt;
+sub   rsa4096 2014-08-28 [E]
+</pre>
+
+<p class="return">
+<a href="../index.html#linux"><img src="../regina.svg"
+    alt="Back to main page ..."
+    border="0" width="32" height="32" align="middle"></a>
+<a href="../index.html#linux">Back to main page ...</a></p>
+
+</body>
+</html>
+
