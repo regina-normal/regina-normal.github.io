@@ -11,8 +11,8 @@
   alt="Regina: Software for low-dimensional topology">
 </center>
 <center>
-<h4>Latest version: 6.0.1 (February 2021)<!--br>
-Updated packages: 31 December 2020<br>
+<h4>Latest version: 6.0.1 (February 2021)<br>
+Updated packages: 14 April 2021<!--br>
 Updated data: 31 May 2018--></h4>
 <table class="contentswrapper" cellspacing=0>
 <tbody>
@@ -52,6 +52,11 @@ Updated data: 31 May 2018--></h4>
 
 <h2><a name="news">News</a></h2>
 
+<p class="header">
+<b>14 April 2021:</b>
+Fedora and openSUSE users can (and should) now install Regina through
+package repositories instead of downlowding RPMs manually.
+Follow the <a href="#download">install links</a> for details.
 <p class="header">
 <b>12 February 2021:</b>
 Regina 6.0.1 <a href="#new">fixes an issue for Python users</a>
@@ -257,14 +262,20 @@ and you should be able to run the installer anyway.</li>
 
 <a name="linux"><h4 class="divide">GNU/Linux</h4></a>
 
-You can download ready-made packages for several GNU/Linux distributions.
-All of these packages are named <b>regina-normal</b> (to avoid conflicting
-with the <a href="http://regina-rexx.sourceforge.net/">other Regina</a>).
-Please click on the <i>Download</i> link for your system in the table below.
+You can download ready-made packages for several GNU/Linux distributions
+through Regina's online package repositorites.
+These repositories integrate with your native package manager
+(<tt>apt</tt>, <tt>dnf/yum</tt>, <tt>zypper</tt>, etc.)
+to help you keep Regina up-to-date automatically.
 <p>
-All packages are <b>64-bit Intel</b>, which means they will only work
-with an <i>x86_64</i> or <i>amd64</i> chipset (which covers almost any
-typical desktop or laptop nowadays except for Apple Silicon).
+For instructions on setting up Regina's package repositories,
+click on the <i>Install</i> link for your system in the table below.
+<p>
+Regina's GNU/Linux packages are named <b>regina-normal</b> (to avoid conflicting
+with the <a href="http://regina-rexx.sourceforge.net/">other Regina</a>).
+Unless otherwise specified, they are <b>64-bit Intel</b>, which means they
+will only work with an <i>x86_64</i> or <i>amd64</i> chipset (which covers
+almost any typical desktop or laptop nowadays except for Apple Silicon).
 The exception is the Debian packages, which are built for more
 chipsets as listed in the table below.
 If you are not sure what chipset you have, open a terminal and run
