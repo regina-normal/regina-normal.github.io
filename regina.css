@@ -252,3 +252,8 @@ span.question {
 body.deprecation b {
   color: #3D3F53;
 }
+
+span.placeholder {
+  color: #C71585;
+}
+

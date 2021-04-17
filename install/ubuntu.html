@@ -65,12 +65,14 @@ Ubuntu:
 </li>
 <li><p>
 Copy this repository description into Ubuntu's sources directory
-<tt>/etc/apt/sources.list.d/</tt>, as shown below
-(replacing <tt>~/Downloads/regina-VERSION.sources</tt>
+<tt>/etc/apt/sources.list.d/</tt>, as shown below (replacing
+<span class="placeholder"><tt>~/Downloads/regina-VERSION.sources</tt></span>
 with the location of the file that you just downloaded):
 </p>
 <div class="example"><p>
-<tt>sudo cp -i ~/Downloads/regina-VERSION.sources /etc/apt/sources.list.d/</tt>
+<tt>sudo cp -i
+<span class="placeholder">~/Downloads/regina-VERSION.sources</span>
+/etc/apt/sources.list.d/</tt>
 </p></div>
 <p>
 <b>Note the suffix .d on the directory name!</b>
@@ -155,18 +157,22 @@ open-source software (universe) if this has not been done before.
 </li>
 <li><p>
 Under <i>Other Software</i>, click the <i>Add...</i> button.  When Ubuntu
-asks you for an APT line, type the following line:</p>
+asks you for an APT line, type whichever line from the list below
+matches your version of Ubuntu:</p>
 <div class="example"><p>
-<tt>deb https://people.debian.org/~bab/regina VERSION/</tt>
+<tt>deb https://people.debian.org/~bab/regina hirsute/</tt><br>
+<tt>deb https://people.debian.org/~bab/regina groovy/</tt><br>
+<tt>deb https://people.debian.org/~bab/regina focal/</tt><br>
+<tt>deb https://people.debian.org/~bab/regina bionic/</tt>
 </p></div>
-Here <b>you should replace VERSION</b> with one of the following:
+<p>
+In case you forget, the supported Ubuntu versions (e.g., 20.04&nbsp;LTS)
+and their corresponding codenames (e.g., <i>focal</i>) are listed on
+Regina's <a href="../index.html#linux">main download page</a>.
 </p>
-<ul>
-<li><p><tt>hirsute</tt> if you are running Ubuntu&nbsp;21.04;</p></li>
-<li><p><tt>groovy</tt> if you are running Ubuntu&nbsp;20.10;</p></li>
-<li><p><tt>focal</tt> if you are running Ubuntu&nbsp;20.04&nbsp;LTS;</p></li>
-<li><p><tt>bionic</tt> if you are running Ubuntu&nbsp;18.04&nbsp;LTS.</p></li>
-</ul>
+<p>
+As an example, if you are running Ubuntu&nbsp;20.04&nbsp;LTS&nbsp;(focal),
+then you would use the line illustrated below:
 <p align="center"><img src="ubuntu/ubuntu-aptline.png"></p>
 </li>
 <li>
