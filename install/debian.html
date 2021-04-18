@@ -1,0 +1,141 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../regina.css">
+    <title>Regina for Debian</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000"
+    link="#0000EE" vlink="#551A8B" alink="#FF0000">
+
+<h1><a name="contents">Regina for Debian</a></h1>
+
+<p>
+Debian ships with Regina &ldquo;out of the box&rdquo;.  However, the version of
+Regina that ships with each Debian release is fixed (e.g., Debian&nbsp;10.x
+ships with Regina&nbsp;5.1, and Debian&nbsp;11.x ships with Regina&nbsp;6.0.1).
+</p>
+<p>
+If you wish to keep up-to-date with the <b>newest version</b> of Regina,
+follow these instructions.
+</p>
+<p>
+The instructions differ according to whether you are running the
+bleeding-edge <a href="#unstable">Debian unstable</a>, or a formal
+<a href="#release">Debian stable release</a>.
+</p>
+<p>
+These instructions only install the main packages
+<tt>regina-normal</tt> and <tt>regina-normal-doc</tt>, which is all that
+most people will need.
+If you are a C++ programmer and you wish to build Regina into your own
+projects, you should also install the package <tt>regina-normal-dev</tt>.
+</p>
+
+<a name="unstable"><h2>Debian Unstable (Sid)</h2></a>
+
+<p>
+If you run Sid (the Debian unstable release), you can install Regina from
+the usual Debian servers like any other package:
+</p>
+<div class="example"><p>
+<tt>example$ apt-get install regina-normal</tt>
+</p></div>
+<p>
+Sid always ships with the latest version of Regina (though it may take a
+day or two for new versions to appear on your Debian mirror).
+</p>
+
+<a name="release"><h2>Debian Stable Releases (Bullseye, Buster)</h2></a>
+
+<p>
+To keep up-to-date with Regina, you will need to add Regina's repository to
+your list of software sources.  These instructions will show you how.
+</p>
+<p>
+<b>You only need to do this once!</b>
+Once you have done this, Debian will happily manage installation and
+upgrades of Regina just like it does for any other package.
+</p>
+<ol>
+<li><p>
+Open a terminal and grant yourself root privileges.
+</p></li>
+<li><p>
+Install the <tt>debian-keyring</tt> package.  This will give you
+Regina's cryptographic signing key (since Ben is a Debian developer).
+To do this, type:
+</p>
+<div class="example"><p>
+<tt>apt-get install debian-keyring</tt>
+</p></div>
+</li>
+<li><p>
+Download Regina's repository description, according to your version of
+Debian:
+</p>
+<ul>
+<li><p>Debian 11.x (bullseye):
+<a href="../repos/regina-bullseye.sources"><tt>regina-bullseye.sources</tt></a></p></li>
+<li><p>Debian 10.x (buster):
+<a href="../repos/regina-buster.sources"><tt>regina-buster.sources</tt></a></p></li>
+</ul>
+</li>
+<li><p>
+Copy this repository description into Debian's sources directory
+<tt>/etc/apt/sources.list.d/</tt>, as shown below (replacing
+<span class="placeholder"><tt>~/Downloads/regina-VERSION.sources</tt></span>
+with the location of the file that you just downloaded):
+</p>
+<div class="example"><p>
+<tt>cp -i
+<span class="placeholder">~/Downloads/regina-VERSION.sources</span>
+/etc/apt/sources.list.d/</tt>
+</p></div>
+<p>
+<b>Note the suffix .d on the directory name!</b>
+You do <b>not</b> want to overwrite <tt>sources.list</tt>.
+</p>
+</li>
+<li>
+<p>
+Update the list of available packages.  To do this, type:
+</p>
+<div class="example"><p>
+<tt>apt-get update</tt>
+</p></div>
+<p>
+If you see an error like <i>&ldquo;the method driver
+/usr/lib/apt/methods/https could not be found&rdquo;</i>,
+install the package <tt>apt-transport-https</tt> and try again.
+</p>
+<p>
+If you see an error like <i>&ldquo;the public key is not available&rdquo;</i>,
+it may be because you forgot to install <tt>debian-keyring</tt>
+in the first step.
+</p>
+</li>
+<li>
+<p>
+Install or upgrade Regina like you would any other package.  Type:
+</p>
+<div class="example"><p>
+<tt>apt-get install regina-normal</tt>
+</p></div>
+<p>
+</ol>
+<p>
+If you had previously added Regina's repository as a
+single line in <tt>/etc/apt/sources.list</tt>, you can comment that line
+out now (or just delete it).  The new file that you just downloaded
+encodes the same repository but with better security.
+(The old apt-line will still work, so there is no urgency to change.)
+</p>
+
+<p class="return">
+<a href="../index.html#linux"><img src="../regina.svg"
+    alt="Back to main page ..."
+    border="0" width="32" height="32" align="middle"></a>
+<a href="../index.html#linux">Back to main page ...</a></p>
+
+</body>
+</html>
+
