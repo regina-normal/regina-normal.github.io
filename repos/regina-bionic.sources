@@ -1,5 +1,6 @@
 X-Repolib-Name: Regina
 Types: deb deb-src
 URIs: https://people.debian.org/~bab/regina
-Suites: bionic/
+Suites: bionic
+Components: main
 Signed-By: /usr/share/keyrings/debian-keyring.gpg
