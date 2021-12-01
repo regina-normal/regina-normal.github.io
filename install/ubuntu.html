@@ -1,0 +1,212 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../regina.css">
+    <title>Regina for Ubuntu</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000"
+    link="#0000EE" vlink="#551A8B" alink="#FF0000">
+
+<h1><a name="contents">Regina for Ubuntu</a></h1>
+
+<p>
+Ubuntu comes with Regina &ldquo;out of the box&rdquo; as part of its
+standard <i>universe</i> software collection.  However, the version of
+Regina that ships with each Ubuntu release is fixed (e.g., Ubuntu&nbsp;18.04
+ships with Regina&nbsp;5.1, and Ubuntu&nbsp;21.04 ships with Regina&nbsp;6.0.1).
+</p>
+<p>
+If you wish to keep up-to-date with the <b>newest version</b> of Regina,
+follow these instructions.
+</p>
+<p>
+<b>You only need to do this once!</b>
+These instructions show how to add Regina's repository to your list of
+software sources.
+Once you have done this, Ubuntu will happily manage installation and
+upgrades of Regina just like it does for any other Ubuntu package.
+</p>
+<p>
+There are two ways to add Regina's repository: a simple
+<a href="#cmdline">command-line method</a>, or a (slightly more complex)
+<a href="#gui">point-and-click method</a>.  Both are described below.
+</p>
+<p>
+The instructions below only install the main packages
+<tt>regina-normal</tt> and <tt>regina-normal-doc</tt>, which is all that
+most people will need.
+If you are a C++ programmer and you wish to build Regina into your own
+projects, you should also install the package <tt>regina-normal-dev</tt>.
+</p>
+<a name="cmdline"><h2>Command-line method</h2></a>
+<ol>
+<li><p>
+Install the <tt>debian-keyring</tt> package.  This will give you
+Regina's cryptographic signing key (since Ben is a Debian developer).
+To do this, type:
+</p>
+<div class="example"><p>
+<tt>sudo apt-get install debian-keyring</tt>
+</p></div>
+</li>
+<li><p>
+Download Regina's repository description, according to your version of
+Ubuntu:
+</p>
+<ul>
+<li><p>Ubuntu 21.04 (hirsute):
+<a href="../repos/regina-hirsute.sources"><tt>regina-hirsute.sources</tt></a></p></li>
+<li><p>Ubuntu 20.10 (groovy):
+<a href="../repos/regina-groovy.sources"><tt>regina-groovy.sources</tt></a></p></li>
+<li><p>Ubuntu 20.04 LTS (focal):
+<a href="../repos/regina-focal.sources"><tt>regina-focal.sources</tt></a></p></li>
+<li><p>Ubuntu 18.04 LTS (bionic):
+<a href="../repos/regina-bionic.sources"><tt>regina-bionic.sources</tt></a></p></li>
+</ul>
+</li>
+<li><p>
+Copy the file you just downloaded into Ubuntu's sources directory
+<tt>/etc/apt/sources.list.d/</tt>, as shown below (replacing
+<span class="placeholder"><tt>~/Downloads/regina-VERSION.sources</tt></span>
+with the location of the file you downloaded):
+</p>
+<div class="example"><p>
+<tt>sudo cp -i
+<span class="placeholder">~/Downloads/regina-VERSION.sources</span>
+/etc/apt/sources.list.d/</tt>
+</p></div>
+<p>
+<b>Note the suffix .d on the directory name!</b>
+You do <b>not</b> want to overwrite <tt>sources.list</tt>.
+</p>
+</li>
+<li>
+<p>
+Update the list of available packages.  To do this, type:
+</p>
+<div class="example"><p>
+<tt>sudo apt-get update</tt>
+</p></div>
+<p>
+If you see an error like <i>&ldquo;the public key is not available&rdquo;</i>,
+it may be because you forgot to install <tt>debian-keyring</tt>
+in the first step.
+</p>
+</li>
+<li>
+<p>
+Install or upgrade Regina like you would any other package.  Type:
+</p>
+<div class="example"><p>
+<tt>sudo apt-get install regina-normal</tt>
+</p></div>
+<p>
+</ol>
+<p>
+If you had previously added Regina's repository as a
+single line in <tt>/etc/apt/sources.list</tt> (possibly via the
+graphical <i>Software&nbsp;&amp;&nbsp;Updates</i> application),
+you can delete that older entry now.
+The new file that you just downloaded encodes the same repository
+but with better security.
+(The old source will still work, so there is no urgency to change.)
+</p>
+<a name="gui"><h2>Point-and-click method</h2></a>
+<ol>
+<li><p>
+Download Regina's cryptographic signing key:
+<a href="https://people.debian.org/~bab/regina-key.txt"><tt>regina-key.txt</tt></a>
+</p></li>
+<li><p>
+Open the <i>Software&nbsp;&amp;&nbsp;Updates</i> application.
+If you are running the older Ubuntu&nbsp;18.04&nbsp;LTS (bionic),
+you should open <i>Ubuntu&nbsp;Software</i> instead and select
+<i>Software&nbsp;&amp;&nbsp;Updates</i> from the main menu.
+</p></li>
+<li><p>
+Under <i>Authentication</i>, import Regina's key (which you just downloaded).
+</p>
+<p align="center"><img src="ubuntu/ubuntu-importkey.png"></p>
+<p>
+You should see new keys appear in the list of trusted software providers,
+as pictured below.
+You can now delete <tt>regina-key.txt</tt> if you like.
+</p>
+<p>
+<i>Note: Ubuntu 20.10 seems to have a bug where the list of keys appears
+empty even after the import.  Just continue, because this seems to be a
+visual problem only&mdash;despite what you see, the keys are still
+being imported.</i>
+</p></li>
+<li><p>
+<b>Carefully check the new key&nbsp;IDs.</b>
+The keys that were added should all have an ID of <b>70A6BEDF542D38D9</b>,
+under the name <i>Benjamin Burton</i>.
+</p>
+<p align="center"><img src="ubuntu/ubuntu-withkey.png"></p>
+<p>
+If you still have the older key 31036EC736B861C1 (under the name
+<i>Ben Burton</i>, dated 2000-09-17), you can (and should) delete it.
+This was Regina's old signing key from many years ago, and
+because of its smaller key size, it is not in use any more.
+</p></li>
+<li><p>
+Under <i>Ubuntu Software</i>, enable the community-maintained free and
+open-source software (universe) if this has not been done before.
+</p>
+<p align="center"><img src="ubuntu/ubuntu-universe.png"></p>
+</li>
+<li><p>
+Under <i>Other Software</i>, click the <i>Add...</i> button.  When Ubuntu
+asks you for an APT line, type whichever line from the list below
+matches your version of Ubuntu:</p>
+<div class="example"><p>
+<tt>deb https://people.debian.org/~bab/regina hirsute/</tt><br>
+<tt>deb https://people.debian.org/~bab/regina groovy/</tt><br>
+<tt>deb https://people.debian.org/~bab/regina focal/</tt><br>
+<tt>deb https://people.debian.org/~bab/regina bionic/</tt>
+</p></div>
+<p>
+In case you forget, the supported Ubuntu versions (e.g., 20.04&nbsp;LTS)
+and their corresponding codenames (e.g., <i>focal</i>) are listed on
+Regina's <a href="../index.html#linux">main download page</a>.
+</p>
+<p>
+As an example, if you are running Ubuntu&nbsp;20.04&nbsp;LTS&nbsp;(focal),
+then you would use the line illustrated below:
+<p align="center"><img src="ubuntu/ubuntu-aptline.png"></p>
+</li>
+<li>
+<p>
+Now close <i>Software&nbsp;&amp;&nbsp;Updates</i>.
+Ubuntu should offer to reload the information about available software.
+Press <i>Reload</i>, so that Ubuntu can see the new packages for Regina.
+</p>
+<p align="center"><img src="ubuntu/ubuntu-update.png"></p>
+</li>
+<li><p>
+Open the <i>Ubuntu Software</i> application and search for Regina.
+</p>
+<p align="center"><img src="ubuntu/ubuntu-search.png"></p>
+<p>
+Click on the package name (or icon, or description), and you will see
+more information.  You should ensure that the version is correct
+(i.e., you are getting the latest version of Regina from this site,
+not the older version that is shipped with your version of Ubuntu).
+</p></li>
+<li><p>
+Once you are satisfied that Ubuntu has found the right version,
+press <i>Install</i> and you are finished!
+</p>
+<p align="center"><img src="ubuntu/ubuntu-install.png"></p>
+</li>
+</ol>
+
+<p class="return">
+<a href="../index.html#linux"><img src="../regina.svg"
+    alt="Back to main page ..."
+    border="0" width="32" height="32" align="middle"></a>
+<a href="../index.html#linux">Back to main page ...</a></p>
+
+</body>
+</html>
+
