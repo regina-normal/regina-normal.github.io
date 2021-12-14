@@ -1,0 +1,39 @@
+<html><head><title>packet (normal surface list)</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Regina, XML, Data files"><link rel="start" href="index.html" title="Regina XML File Format Reference"><link rel="up" href="dataformat.html" title="Data File Format"><link rel="prev" href="data-packet-link.html" title="packet (link)"><link rel="next" href="data-packet-normalhypersurfacelist.html" title="packet (normal hypersurface list)"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>packet (normal surface list)</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="data-packet-link.html">Prev</a></td><td align="center" class="navCenter" width="34%">Data File Format</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="data-packet-normalhypersurfacelist.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="data-packet-normalsurfacelist"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>packet (normal surface list) — A normal surface list packet</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="informaltable"><table border="1"><colgroup><col><col></colgroup><tbody><tr><td colspan="2">
+      <span class="bold"><strong>Content Model</strong></span>
+     </td></tr><tr><td colspan="2">
+<pre class="synopsis">
+packet ::= (<a href="data-params.html" title="params"><code class="sgmltag-element">params</code></a>, <a href="data-surface.html" title="surface"><code class="sgmltag-element">surface</code></a>*,
+            <a href="data-tag.html" title="tag"><code class="sgmltag-element">tag</code></a>*, <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a>*)</pre>
+     </td></tr><tr><td colspan="2">
+      <span class="bold"><strong>Attributes</strong></span>
+     </td></tr><tr><td colspan="2">
+      See the general <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a> element documentation.
+     </td></tr></tbody></table></div></div><div class="refsect1" lang="en"><a name="idm4089257672"></a><h2>Description</h2><p>
+   A <span class="emphasis"><em>normal surface list</em></span>
+   packet stores a list of normal surfaces in a particular
+   3-manifold triangulation.  This list will often contain the vertex
+   surfaces whose convex span is the set of all normal surfaces in
+   the triangulation that satisfy certain constraints, though
+   other lists (such as fundamental surfaces, or other customised lists)
+   can be stored also.
+  </p><p>
+   The parent element of this normal surface list must be the
+   triangulation in which the normal surfaces lie.  The individual
+   normal surfaces in this list are contained in the child <a href="data-surface.html" title="surface"><code class="sgmltag-element">surface</code></a>
+   elements.
+  </p><p>
+   The parameters of the normal surface enumeration that created this
+   list are stored in the child <a href="data-params.html" title="params"><code class="sgmltag-element">params</code></a> element.
+  </p><p>
+   The roles played by the child <a href="data-tag.html" title="tag"><code class="sgmltag-element">tag</code></a> and <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a> elements are
+   described in the general <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a> element documentation.
+  </p><div class="refsect2" lang="en"><a name="idm4089250344"></a><h3>Parents</h3><p>
+    The following elements contain <code class="sgmltag-element">packet</code> for
+    a normal surface list packet:
+    <span class="simplelist"><a href="data-packet-dim3triangulation.html" title="packet (3-dimensional triangulation)"><code class="sgmltag-element">packet</code> (3-dimensional triangulation)</a></span>.
+   </p></div><div class="refsect2" lang="en"><a name="idm4089246968"></a><h3>Children</h3><p>
+    The following elements occur in <code class="sgmltag-element">packet</code> for
+    a normal surface list packet:
+    <span class="simplelist"><a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a>, <a href="data-params.html" title="params"><code class="sgmltag-element">params</code></a>, <a href="data-surface.html" title="surface"><code class="sgmltag-element">surface</code></a>, <a href="data-tag.html" title="tag"><code class="sgmltag-element">tag</code></a></span>.
+   </p></div></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="data-packet-link.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="data-packet-normalhypersurfacelist.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">packet (link) </td><td width="34%" align="center" class="navCenter"><a href="dataformat.html">Up</a></td><td width="33%" align="right" class="navRight"> packet (normal hypersurface list)</td></tr></table></div></body></html>

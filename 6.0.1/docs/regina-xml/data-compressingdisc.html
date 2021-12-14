@@ -1,0 +1,23 @@
+<html><head><title>compressingdisc</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Regina, XML, Data files"><link rel="start" href="index.html" title="Regina XML File Format Reference"><link rel="up" href="dataformat.html" title="Data File Format"><link rel="prev" href="data-components.html" title="components"><link rel="next" href="data-connected.html" title="connected"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>compressingdisc</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="data-components.html">Prev</a></td><td align="center" class="navCenter" width="34%">Data File Format</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="data-connected.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="data-compressingdisc"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>compressingdisc — Does a triangulation contain a compressing disc?</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="informaltable"><table border="1"><colgroup><col><col></colgroup><tbody><tr><td colspan="2">
+      <span class="bold"><strong>Content Model</strong></span>
+     </td></tr><tr><td colspan="2">
+<pre class="synopsis">
+compressingdisc ::=</pre>
+     </td></tr><tr><td colspan="2">
+      <span class="bold"><strong>Attributes</strong></span>
+     </td></tr><tr><td><span class="bold"><strong>Name</strong></span></td><td><span class="bold"><strong>Type</strong></span></td></tr><tr><td><code class="sgmltag-element">value</code></td><td><span class="type">CDATA</span> (required)</td></tr></tbody></table></div></div><div class="refsect1" lang="en"><a name="idm4091273112"></a><h2>Description</h2><p>
+   A <a href="data-compressingdisc.html" title="compressingdisc"><code class="sgmltag-element">compressingdisc</code></a> element stores whether or not the parent
+   triangulation contains a compressing disc, i.e., a properly embedded
+   disc in the underlying 3-manifold whose boundary does
+   not also bound a disc within the 3-manifold boundary.
+  </p><div class="refsect2" lang="en"><a name="idm4091271112"></a><h3>Parents</h3><p>
+    The following elements contain <code class="sgmltag-element">compressingdisc</code>:
+    <span class="simplelist"><a href="data-packet-dim3triangulation.html" title="packet (3-dimensional triangulation)"><code class="sgmltag-element">packet</code> (3-dimensional triangulation)</a></span>.
+   </p></div><div class="refsect2" lang="en"><a name="idm4091267320"></a><h3>Children</h3><p>
+    Element <code class="sgmltag-element">compressingdisc</code> has no children.
+   </p></div></div><div class="refsect1" lang="en"><a name="idm4091264888"></a><h2>Attributes</h2><div class="variablelist"><dl><dt><span class="term"><code class="sgmltag-element">value</code></span></dt><dd><p>
+      Either <code class="literal">T</code> or <code class="literal">F</code>, according to
+      whether the parent triangulation does or does not contain a
+      compressing disc.
+     </p></dd></dl></div></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="data-components.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="data-connected.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">components </td><td width="34%" align="center" class="navCenter"><a href="dataformat.html">Up</a></td><td width="33%" align="right" class="navRight"> connected</td></tr></table></div></body></html>
