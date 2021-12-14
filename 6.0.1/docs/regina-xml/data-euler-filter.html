@@ -1,0 +1,23 @@
+<html><head><title>euler (filter)</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Regina, XML, Data files"><link rel="start" href="index.html" title="Regina XML File Format Reference"><link rel="up" href="dataformat.html" title="Data File Format"><link rel="prev" href="data-crossings.html" title="crossings"><link rel="next" href="data-euler-surface.html" title="euler (surface)"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>euler (filter)</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="data-crossings.html">Prev</a></td><td align="center" class="navCenter" width="34%">Data File Format</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="data-euler-surface.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="data-euler-filter"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>euler (filter) — A constraint on Euler characteristic</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="informaltable"><table border="1"><colgroup><col><col></colgroup><tbody><tr><td colspan="2">
+      <span class="bold"><strong>Content Model</strong></span>
+     </td></tr><tr><td colspan="2">
+<pre class="synopsis">
+euler ::= (#PCDATA)</pre>
+     </td></tr></tbody></table></div></div><div class="refsect1" lang="en"><a name="idm4091049432"></a><h2>Description</h2><p>
+   An <a href="data-euler-filter.html" title="euler (filter)"><code class="sgmltag-element">euler</code> (filter)</a> element represents a constraint on the
+   Euler characteristic of a normal surface.  The character data should
+   contain a whitespace-separated list of integers; a surface will
+   satisfy this constraint if its Euler characteristic belongs to this
+   list.
+  </p><p>
+   Note that this list of acceptable Euler characteristics must not be
+   empty.
+  </p><div class="refsect2" lang="en"><a name="idm4091046792"></a><h3>Parents</h3><p>
+    The following elements contain <code class="sgmltag-element">euler</code> (in the
+    context of a constraint on surface properties):
+    <span class="simplelist"><a href="data-filter-properties.html" title="filter (properties)"><code class="sgmltag-element">filter</code> (properties)</a></span>.
+   </p></div><div class="refsect2" lang="en"><a name="idm4091042808"></a><h3>Children</h3><p>
+    Element <code class="sgmltag-element">euler</code> (in the context of a
+    constraint on surface properties) has no children.
+   </p></div></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="data-crossings.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="data-euler-surface.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">crossings </td><td width="34%" align="center" class="navCenter"><a href="dataformat.html">Up</a></td><td width="33%" align="right" class="navRight"> euler (surface)</td></tr></table></div></body></html>
