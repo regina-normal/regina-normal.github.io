@@ -1,0 +1,45 @@
+<html><head><title>packet (4-dimensional triangulation)</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Regina, XML, Data files"><link rel="start" href="index.html" title="Regina 7.0 File Format Reference"><link rel="up" href="removed.html" title="Deprecated and Removed Elements"><link rel="prev" href="data-packet-dim3triangulation.html" title="packet (3-dimensional triangulation)"><link rel="next" href="data-packet-triangulation.html" title="packet (dim-dimensional triangulation)"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>packet (4-dimensional triangulation)</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="data-packet-dim3triangulation.html">Prev</a></td><td align="center" class="navCenter" width="34%">Deprecated and Removed Elements</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="data-packet-triangulation.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="data-packet-dim4triangulation"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>packet (4-dimensional triangulation) — Replaced by <a href="data-tri.html" title="tri"><code class="sgmltag-element">tri</code></a></p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="informaltable"><table border="1"><colgroup><col><col></colgroup><tbody><tr><td colspan="2">
+      <span class="bold"><strong>Content Model</strong></span>
+     </td></tr><tr><td colspan="2">
+<pre class="synopsis">
+packet ::= (<a href="data-pentachora.html" title="pentachora"><code class="sgmltag-element">pentachora</code></a>,
+            <a href="data-fundgroup.html" title="fundgroup"><code class="sgmltag-element">fundgroup</code></a>?, <a href="data-H1.html" title="H1"><code class="sgmltag-element">H1</code></a>?, <a href="data-H2.html" title="H2"><code class="sgmltag-element">H2</code></a>?,
+            <a href="data-tag.html" title="tag"><code class="sgmltag-element">tag</code></a>*, <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a>*)</pre>
+     </td></tr><tr><td colspan="2">
+      <span class="bold"><strong>Attributes</strong></span>
+     </td></tr><tr><td colspan="2">
+      See the general <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a> element documentation.
+     </td></tr></tbody></table></div><p>Deprecated since <span class="application">Regina</span> 7.0</p></div><div class="refsect1" lang="en"><a name="idp105545335392400"></a><h2>Description</h2><p>
+   In <span class="application">Regina</span> 6.0.1 and earlier, the <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a> element was used
+   to store every packet in the entire packet tree that makes up a
+   <span class="application">Regina</span> data file.
+   This page describes how the <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a> element was structured when
+   storing a 4-dimensional triangulation.
+   Since <span class="application">Regina</span> 7.0, each packet type has its own <span class="acronym">XML</span> element;
+   in particular, all triangulations are now stored using the
+   <a href="data-tri.html" title="tri"><code class="sgmltag-element">tri</code></a> element.
+  </p><p>
+   This type of <span class="emphasis"><em>triangulation</em></span>
+   packet stores a 4-dimensional triangulation
+   (typically of a 4-manifold).
+  </p><p>
+   The pentachora forming this triangulation and their corresponding
+   facet gluings are specified by the child <a href="data-pentachora.html" title="pentachora"><code class="sgmltag-element">pentachora</code></a> element.
+   Other optional child elements may store precalculated properties of
+   this triangulation.
+  </p><p>
+   The roles played by the child <a href="data-tag.html" title="tag"><code class="sgmltag-element">tag</code></a> and <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a> elements are
+   described in the general <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a> element documentation.
+  </p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
+   <span class="application">Regina</span> supports triangulations in many dimensions.
+   See also the elements <a href="data-packet-dim2triangulation.html" title="packet (2-dimensional triangulation)"><code class="sgmltag-element">packet</code> (2-dimensional triangulation)</a>,
+   <a href="data-packet-dim3triangulation.html" title="packet (3-dimensional triangulation)"><code class="sgmltag-element">packet</code> (3-dimensional triangulation)</a>, and <a href="data-packet-triangulation.html" title="packet (dim-dimensional triangulation)"><code class="sgmltag-element">packet</code> (<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>dim</code></em></span>-dimensional triangulation)</a>.
+  </p></div><div class="refsect2" lang="en"><a name="idp105545335405200"></a><h3>Parents</h3><p>
+    The following elements contain <code class="sgmltag-element">packet</code>:
+    <span class="simplelist"><a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a>, <a href="data-reginadata.html" title="reginadata"><code class="sgmltag-element">reginadata</code></a></span>.
+   </p></div><div class="refsect2" lang="en"><a name="idp105545335408784"></a><h3>Children</h3><p>
+    The following elements occur in <code class="sgmltag-element">packet</code> for
+    a 4-dimensional triangulation packet:
+    <span class="simplelist"><a href="data-fundgroup.html" title="fundgroup"><code class="sgmltag-element">fundgroup</code></a>, <a href="data-H1.html" title="H1"><code class="sgmltag-element">H1</code></a>, <a href="data-H2.html" title="H2"><code class="sgmltag-element">H2</code></a>, <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a>, <a href="data-pentachora.html" title="pentachora"><code class="sgmltag-element">pentachora</code></a>, <a href="data-tag.html" title="tag"><code class="sgmltag-element">tag</code></a></span>.
+   </p></div></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="data-packet-dim3triangulation.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="data-packet-triangulation.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">packet (3-dimensional triangulation) </td><td width="34%" align="center" class="navCenter"><a href="removed.html">Up</a></td><td width="33%" align="right" class="navRight"> packet (<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>dim</code></em></span>-dimensional triangulation)</td></tr></table></div></body></html>

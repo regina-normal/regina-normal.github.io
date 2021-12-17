@@ -1,0 +1,222 @@
+<html><head><title>Important Changes in Regina 7.0</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina 7.0 Handbook"><link rel="up" href="about.html" title="Chapter 1. Introduction"><link rel="prev" href="featureset.html" title="What does Regina do?"><link rel="next" href="genealogy.html" title="Genealogy"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Important Changes in <span class="application">Regina</span> 7.0</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="featureset.html">Prev</a></td><td align="center" class="navCenter" width="34%">Introduction</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="genealogy.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="regina7"></a>Important Changes in <span class="application">Regina</span> 7.0</h2></div></div></div><p>
+   <span class="application">Regina</span> 7.0 brings an enormous overhaul across the entire
+   codebase—possibly the largest overhaul in almost two decades.
+   There has been signficant work to insulate users from these changes:
+   the bulk of these changes should only be visible to <span class="application">C++</span> programmers, but
+   there are important behavioural changes that will affect everybody.
+  </p><p>
+   <span class="emphasis"><em>Some of these changes break backward compatibility.</em></span>
+  </p><p>
+   If you are migrating from <span class="application">Regina</span> ≤ 6.0.1, you should read the
+   brief summary below so you understand the most important changes.
+  </p><p>
+   <span class="application">C++</span> and <span class="application">Python</span> programmers can find a more fine-grained
+   explanation of the <span class="acronym">API</span> changes on the
+   <a href="https://regina-normal.github.io/api/regina7.html" target="_top"><span class="application">Regina</span>
+   website</a>.
+  </p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="regina7-fileformat"></a>A new, more flexible file format</h3></div></div></div><p>
+    <span class="application">Regina</span>'s data file format has changed.  <span class="application">Regina</span> 7.0 can read
+    your old data files, but <span class="application">Regina</span> 6.0.1 and earlier will not be
+    able to read files from newer versions of <span class="application">Regina</span>.
+   </p><p>
+    If you need to export a file so that <span class="application">Regina</span> ≤ 6.0.1
+    can read it, you use the command-line
+    <a href="man-regconvert.html" title="regconvert"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regconvert</strong></span></span></a>
+    utility, or the
+    <a href="foreign-export.html#export-rga" title="Regina Data Files"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">File</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guisubmenu">Export</span></span></a>
+    menu in the user interface.
+   </p><p>
+    A major advantage of the new file format is that different packets
+    no longer depend on each other.  In particular, if you create a
+    normal surface, hypersurface or angle structure list from a
+    triangulation, you can later change the triangulation, or move it to
+    a separate location in the tree, or even delete it.
+    The list will make its own copy of the original triangulation if
+    this becomes necessary (which you can
+    <a href="surfaces-analysis.html" title="Analysis">access through the header</a>
+    of the normal surface, hypersurface or angle structure viewer).
+    Likewise, the list will bundle this copy of the original triangulation
+    into the data file if necessary.
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="regina7-highdim"></a>Dimensions 9–15 removed by default</h3></div></div></div><p>
+    For several years, <span class="application">Regina</span> has supported triangulations of
+    dimensions 2–15.  However, these higher dimensions add
+    significant overhead (even if you are not using them), particularly
+    for <span class="application">Python</span> users.
+   </p><p>
+    For this reason, <span class="application">Regina</span> 7.0 now only includes dimensions
+    2–8 by default.  In particular, if you open a data file
+    containing triangulations of dimension 9–15 and then save the
+    file again, <span class="emphasis"><em>these triangulations will be lost</em></span>.
+   </p><p>
+    If you need to work with dimensions 9–15, you can make your own
+    <a href="https://regina-normal.github.io/buildtips.html#highdim" target="_top">custom
+    build</a> of <span class="application">Regina</span>; be sure to pass the option
+    <code class="literal">-DHIGHDIM=1</code> to <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">cmake</strong></span></span>.
+    Also perhaps drop Ben an email so he knows that there are users who
+    want these features.
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="regina7-python"></a><span class="application">Python</span> is a first-class citizen</h3></div></div></div><p>
+    For the first time, <span class="application">Python</span> users now have access to essentially
+    <span class="emphasis"><em>everything</em></span> inside <span class="application">Regina</span>'s <span class="application">C++</span> calculation
+    engine.  You can use functions that take callbacks (e.g., the
+    exhaustive retriangulation code, census generation, and subgroup
+    enumeration), and you can access low-level algorithms (e.g., the linear
+    programming code, or the double description method and
+    Hilbert basis enumeration).
+   </p><p>
+    <span class="application">Python</span> now supports iteration wherever <span class="application">C++</span> does, using
+    lightweight iterator objects where possible:
+   </p><pre class="programlisting">
+&gt;&gt;&gt; for e in Example3.lens(8,3).edges():
+...     print(e)
+...
+Edge 0, internal, degree 4: 0 (01), 0 (20), 1 (10), 0 (13)
+Edge 1, internal, degree 4: 0 (03), 1 (02), 1 (31), 0 (21)
+Edge 2, internal, degree 4: 0 (23), 1 (30), 1 (23), 1 (12)</pre><p>
+    Almost all classes now provide a more informative <span class="application">Python</span> representation:
+   </p><pre class="programlisting">
+&gt;&gt;&gt; ExampleLink.trefoil().group()
+&lt;regina.GroupPresentation: &lt; a b | a^-2 b a b &gt;&gt;</pre><p>
+    The equality comparisons (<code class="literal">==</code> and <code class="literal">!=</code>)
+    now compare their <span class="emphasis"><em>contents</em></span> by value for most classes.
+    The main exceptions are objects whose location in memory defines them
+    (e.g., faces and simplices in triangulations, or crossings in links),
+    and objects whose purpose is to manage an expensive computation
+    (e.g., progress trackers or census managers); these still compare by
+    reference.  Each class has an <code class="literal">equalityType</code>
+    constant that tells you how its objects are compared.
+   </p><pre class="programlisting">
+&gt;&gt;&gt; Example3.lens(8,3).homology() == AbelianGroup(0, [8])
+True
+&gt;&gt;&gt; AbelianGroup.equalityType
+&lt;EqualityType.BY_VALUE: 1&gt;</pre><p>
+    In line with the <span class="application">C++</span> changes described below, <span class="application">Regina</span> now throws
+    exceptions upon error in some settings instead of returning
+    <code class="literal">None</code>
+    (e.g., <code class="literal">Triangulation3.fromIsoSig()</code>);
+    see the <span class="acronym">API</span> documentation for details on which exceptions
+    each function might throw (if any).
+   </p><p>
+    Mathematical objects such as triangulations and links are no longer
+    packets (i.e., they do not live in a packet tree or belong to a
+    data file by default); this is for performance reasons.
+    If you just want to work with a triangulation or link, you can
+    use <code class="literal">Triangulation3</code> or <code class="literal">Link</code> as before;
+    however, if you want to insert one of these objects into a packet tree
+    then you will need to use the corresponding classes
+    <code class="literal">PacketOfTriangulation3</code>
+    or <code class="literal">PacketOfLink</code> (and so on for other types of object).
+    These packet classes inherit from <code class="literal">Triangulation3</code>,
+    <code class="literal">Link</code>, etc., and can be used in much the same way.
+   </p><p>
+    Finally, although there are far fewer changes to the <span class="application">Python</span> <span class="acronym">API</span>
+    than for <span class="application">C++</span>, there is one change that will likely affect most people:
+    to enumerate normal surfaces or angle structures, you no longer
+    use the old <code class="literal">enumerate()</code> functions.  Instead,
+    just create a new <code class="literal">NormalSurfaces</code> or
+    <code class="literal">AngleStructures</code> object:
+   </p><pre class="programlisting">
+&gt;&gt;&gt; t = Example3.poincare()
+&gt;&gt;&gt; s = NormalSurfaces(t, NS_STANDARD)
+&gt;&gt;&gt; print(s)
+7 embedded, vertex surfaces (Standard normal (tri-quad))</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="regina7-cpp"></a><span class="application">C++</span> embraces modern standards and value semantics</h3></div></div></div><p>
+    <span class="application">Regina</span> began in the late 1990s, before <span class="application">C++</span> was ever
+    standardised.  Since then, <span class="application">Regina</span>'s <span class="acronym">API</span> has slowly evolved as
+    the language changed, incrementally making use of new language
+    features, and removing old workarounds as they became no longer
+    necessary.
+   </p><p>
+    One of the most important changes to the <span class="application">C++</span> language was the much
+    improved <span class="emphasis"><em>value semantics</em></span> that came with <span class="application">C++11</span>.
+    When used with the new <span class="application">C++11</span> move operations, this made it both easy
+    and efficient to pass large objects around by value, not by pointer.
+    The resulting code reads more naturally, is typically less error-prone,
+    avoids the need for manual memory management, and still retains the
+    performance of the old pointer-based code.
+   </p><p>
+    In <span class="application">Regina</span> 7.0, the <span class="application">C++</span> <span class="acronym">API</span> has undergone a complete overhaul
+    from head to toe.  The <span class="acronym">API</span> now uses the <span class="application">C++17</span> standard.
+    Widespread changes include:
+    </p><div class="itemizedlist"><ul type="disc"><li><p>
+      <span class="application">Regina</span> now uses value semantics across the board.  So, for
+      example, <code class="literal">Triangulation&lt;3&gt;::fromIsoSig()</code>
+      now returns a <code class="literal">Triangulation&lt;3&gt;</code> by value.
+      Most of your objects should now be able to live on the stack;
+      in general there should no need for manual memory management via
+      <code class="literal">new</code> and <code class="literal">delete</code>.
+      The main exceptions are objects that are defined by their locations
+      in memory, such as faces and simplices in triangulations,
+      or crossings in links: these are still passed by pointer, but
+      their memory is safely managed by their enclosing triangulations or links.
+     </p></li><li><p>
+      Likewise, functions that used to return newly-allocated pointers now
+      return by value.  If they used to return <code class="literal">null</code> when
+      unexpected errors occurred, they typically now throw exceptions;
+      if they used to return <code class="literal">null</code> in ordinary scenarios
+      where there is no solution, they typically now return a
+      <code class="literal">std::optional</code>.
+     </p></li><li><p>
+      When returning polymorphic objects (such as
+      <code class="literal">Packet</code> or <code class="literal">StandardTriangulation</code>),
+      you cannot avoid returning by pointer since the exact type is not known
+      at compile time.  In such cases, <span class="application">Regina</span> now returns a smart pointer
+      (typically <code class="literal">std::shared_ptr</code> for packets and
+      <code class="literal">std::unique_ptr</code> for other types of object).
+     </p></li><li><p>
+      Functions that used to take arguments by pointer now typically
+      take them either by value or by const reference.  Many functions
+      that used to return multiple values via reference arguments
+      now return a <code class="literal">std::tuple</code> instead.
+     </p></li><li><p>
+      The class hierarchies have been simplified considerably.  Hopefully
+      one side-effect of this is that the <span class="acronym">API</span> documentation is easier to
+      navigate.
+     </p></li><li><p>
+      Functions that take callbacks (such as census generation or
+      exhaustive retriangulation) are now more flexible, and can work with
+      lambdas and arbitrary lists of properly-typed arguments.
+      They no longer take function pointers with untyped
+      <code class="literal">(void*)</code> arguments.
+     </p></li><li><p>
+      Packets are now managed <span class="emphasis"><em>exclusively</em></span> by shared
+      pointers.  You should never be holding on to to a raw pointer to a
+      packet type.  The large mathematical classes such as
+      <code class="literal">Triangulation&lt;dim&gt;</code> and <code class="literal">Link</code>
+      are no longer packet types, since this frees them from considerable
+      overhead; if you need to insert them into a packet tree then you
+      should use <code class="literal">PacketOf&lt;Triangulation&lt;3&gt;&gt;</code>,
+      <code class="literal">PacketOf&lt;Link&gt;</code>, and so on.  There is a
+      new suite of <code class="literal">make_packet()</code> functions to help you
+      with this.
+     </p></li></ul></div><p>
+   </p><p>
+    Since <span class="application">Regina</span> 7.0 is a “big release” that breaks backward
+    compatibility, this was a good time to clean up and simplify many other
+    unwieldy parts of the <span class="acronym">API</span>.  These changes range from simple renamings
+    (e.g., <code class="literal">StandardTriangulation::isStandardTriangulation</code>
+    becomes <code class="literal">StandardTriangulation::recognise</code>) through to
+    major semantic changes (e.g., each normal surface now stores an
+    <span class="emphasis"><em>encoding</em></span>, which is to some degree independent
+    of the coordinate system that was used to create it).
+   </p><p>
+    If you are writing <span class="application">C++</span> code that links against <span class="application">Regina</span>, you
+    <span class="emphasis"><em>will</em></span> need to change your code.  Generally the
+    issues should be flagged by the compiler (not discovered at runtime),
+    and the necesssary changes should be obvious.  Some old functions
+    have been kept but marked as deprecated to ease the transition; your
+    compiler should warn you also if you are still using these.
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="regina7-tons"></a>TONS removed temporarily</h3></div></div></div><p>
+    For a long time, <span class="application">Regina</span> has offered “experimental”
+    support for transversely oriented normal surfaces (TONS).
+    This always came with large caveats and promises that things would break,
+    and needed to be explicitly enabled before it could be used.
+   </p><p>
+    Now that the normal surface classes have undergone a major redesign,
+    TONS no longer fits cleanly into the normal surface model (since in
+    some fundamental sense they are not normal surfaces), and so this support
+    has been removed completely from <span class="application">Regina</span>.
+   </p><p>
+    The intention is to reimplement TONS “properly”
+    in a future release, using their own separate suite of classes
+    that more accurately reflect what they are and how they behave.
+   </p></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="featureset.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="genealogy.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">What does Regina do? </td><td width="34%" align="center" class="navCenter"><a href="about.html">Up</a></td><td width="33%" align="right" class="navRight"> Genealogy</td></tr></table></div></body></html>
