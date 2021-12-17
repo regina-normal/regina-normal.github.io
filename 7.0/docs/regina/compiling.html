@@ -1,0 +1,91 @@
+<html><head><title>Chapter 11. Compiling Regina Into Your Projects</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina 7.0 Handbook"><link rel="up" href="index.html" title="The Regina 7.0 Handbook"><link rel="prev" href="options-tools.html" title="Tools Options"><link rel="next" href="compiling-flags.html" title="Compiler and Linker Flags"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Compiling Regina Into Your Projects</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="options-tools.html">Prev</a></td><td align="center" class="navCenter" width="34%"> </td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="compiling-flags.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="compiling"></a>Chapter 11. Compiling Regina Into Your Projects</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="compiling.html#compiling-devfiles">Installing the Development Files</a></span></dt><dt><span class="sect1"><a href="compiling-flags.html">Compiler and Linker Flags</a></span></dt><dt><span class="sect1"><a href="compiling-apidocs.html"><span class="acronym">API</span> Documentation</a></span></dt></dl></div><p>
+  <span class="application">Regina</span> offers its mathematical core as a <span class="application">C++</span> shared library.
+  This means that your own <span class="application">C++</span> applications can make use of <span class="application">Regina</span>'s
+  functionality, much like they might use any other mathematical library.
+ </p><p>
+  <span class="application">Regina</span> is released under the <span class="acronym">GNU</span> General Public License, which restricts
+  how you may use it in other software.  These restrictions are to benefit
+  and encourage mathematical software that is free to use, modify and
+  redistribute.  For further information, please read the
+  <a href="license.html" title="License Details">license details</a> or
+  write to the authors if you have any specific questions.
+ </p><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="compiling-devfiles"></a>Installing the Development Files</h2></div></div></div><p>
+   To build <span class="application">Regina</span> into your own projects, you must install
+   <span class="application">Regina</span>'s <em class="firstterm">development files</em>;
+   that is, the <span class="application">C++</span> headers and development libraries.
+  </p><div class="itemizedlist"><ul type="disc"><li><p>
+    If you downloaded an <span class="acronym">RPM</span>-based <span class="application"><span class="acronym">GNU</span>/Linux</span> package (e.g., for
+    <span class="application">Fedora</span>, <span class="application">Mandriva</span> or <span class="application">SUSE</span>), you should already have the
+    development files installed.
+    Check that the headers are present in
+    <code class="filename">/usr/include/regina/</code>.
+   </p></li><li><p>
+    If you downloaded a <span class="application">Debian</span>-based <span class="application"><span class="acronym">GNU</span>/Linux</span> package (e.g., for
+    <span class="application">Debian</span> or <span class="application">Ubuntu</span>), you will need to install the separate package
+    <code class="literal">regina-normal-dev</code>.
+    Check that the headers are present in
+    <code class="filename">/usr/include/regina-normal/</code>.
+   </p></li><li><p>
+    If you built <span class="application">Regina</span> yourself, you should already have the <span class="application">C++</span> headers
+    and development libraries installed.
+    Check that the headers are present in
+    <code class="filename">/usr/local/include/regina/</code> (or wherever you chose to
+    install <span class="application">Regina</span>).
+   </p></li><li><p>
+    If you use <span class="application">Windows</span> or if you downloaded the
+    drag-and-drop app bundle on <span class="application">macOS</span>, the development files are not
+    available.
+    This is because it is too difficult at present to ensure that your
+    development environment is compatible.
+   </p></li></ul></div><p>
+   <span class="application">Regina</span> uses some other libraries in turn, and you will need the
+   development files for these libraries also.  You should install these
+   through ready-made packages if at all possible: they are available
+   in every major <span class="application"><span class="acronym">GNU</span>/Linux</span> distribution.  The extra libraries you will
+   need are:
+   </p><div class="variablelist"><dl><dt><span class="term"><span class="acronym">GNOME</span> <span class="acronym">XML</span> library
+      (<em class="firstterm">libxml2</em>)</span></dt><dd><p>
+      Look for a package named
+      <code class="literal">libxml2-dev</code>,
+      <code class="literal">lib64xml2-devel</code> or
+      <code class="literal">libxml2-devel</code>.
+     </p></dd><dt><span class="term"><span class="acronym">GNU</span> multiprecision arithmetic libraries for <span class="application">C</span>/<span class="application">C++</span>
+      (<em class="firstterm">libgmp</em> and <em class="firstterm">libgmpxx</em>)</span></dt><dd><p>
+      Look for a package named
+      <code class="literal">libgmp-dev</code>,
+      <code class="literal">lib64gmp-devel</code>,
+      <code class="literal">libgmp-devel</code> or
+      <code class="literal">gmp-devel</code>.
+      Some distributions (such as <span class="application">Mandriva</span>)
+      ship the <span class="application">C++</span> library separately in a package named
+      <code class="literal">gmpxx-devel</code>.
+     </p></dd></dl></div><p>
+  </p><p>
+   On some platforms you might also need development files for the
+   zlib compression library (<em class="firstterm">libz</em>), the
+   Jansson <span class="acronym">JSON</span> library (<em class="firstterm">libjansson</em>), and
+   a lightweight database library (which will be one of
+   Tokyo Cabinet (<em class="firstterm">libtokyocabinet</em>),
+   QDBM (<em class="firstterm">libqdbm</em>) or the
+   Lightning Memory-Mapped Database (<em class="firstterm">liblmdb</em>)).
+   Which of these you need will depend on how your linker works and how
+   <span class="application">Regina</span> was built.
+   If you do need any of these, look for a package named
+   <code class="literal">zlib1g-dev</code>,
+   <code class="literal">zlib1-devel</code> or
+   <code class="literal">zlib-devel</code>,
+   a package named
+   <code class="literal">libjansson-dev</code>,
+   <code class="literal">libjansson-devel</code> or
+   <code class="literal">jansson-devel</code>,
+   and an appropriate option from
+   <code class="literal">libtokyocabinet-dev</code>,
+   <code class="literal">libtokyocabinet-devel</code>,
+   <code class="literal">tokyocabinet-devel</code>,
+   <code class="literal">libqdbm-dev</code>,
+   <code class="literal">qdbm-devel</code>,
+   <code class="literal">liblmdb-dev</code>,
+   <code class="literal">liblmdb-devel</code> or
+   <code class="literal">lmdb-devel</code>.
+  </p></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="options-tools.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="compiling-flags.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">Tools Options </td><td width="34%" align="center" class="navCenter"><a href="index.html">Up</a></td><td width="33%" align="right" class="navRight"> Compiler and Linker Flags</td></tr></table></div></body></html>
