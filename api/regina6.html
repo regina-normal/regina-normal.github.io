@@ -6,40 +6,25 @@
 <body bgcolor="#FFFFFF" text="#000000"
     link="#0000EE" vlink="#551A8B" alink="#FF0000" class="deprecation">
 
-<h1><a name="contents">Regina - Preparing for Regina 6.x</a></h1>
+<h1><a name="contents">Regina - Moving from 5.x to 6.x</a></h1>
 
 <div class="announce"><p>
 This page relates only to <b>C++ and Python programmers</b>.
 </p></div>
 
 <p>
-Regina has undergone major changes to its C++ and Python interfaces.
-These changes happened in two stages:
-<ol>
-<li>Over many years, Regina's classes and routines were simplified
-and improved in many ways, and much of its old code became unnecessary.
-Nevertheless, the old classes and routines were kept around until
-Regina&nbsp;5.0 so that old scripts would still work.
-<b>All of this old code was removed in Regina&nbsp;5.1</b>.</li>
-<li>A second (much simpler) round of changes then took place, mostly
-to simplify class names and C++ header locations.
-These changes were implemented in Regina&nbsp;5.1. Again the old class
-names and headers were kept for backward compatibility.
-<b>All of this old code was removed in Regina&nbsp;6.1</b>.</li>
-</ol>
-<p><h4><span class="question">How do I fix my code?</span></h4></p>
+Over time, Regina makes changes and improvements to its C++ and Python
+interfaces.  This page explains how you will need to update your C++
+code and/or Python scripts to work with Regina&nbsp;6.0.
 <p>
-<ul>
-<li><b>You must incorporate the first-round changes now</b> if you wish your
-code to work with Regina&nbsp;5.1 and above.
-See the separate page on
-<a href="regina5.html">moving from Regina&nbsp;4.x to 5.x</a>
-for details.</li>
-<li><b>You must incorporate the second-round changes now</b> if you wish
-your code to work with Regina&nbsp;6.1 and above.
-Details of these changes are described below.</li>
-</ul>
-<p><h4><span class="question">Second-round changes (Regina&nbsp;5.x to 6.x)</span></h4></p>
+Now that Regina&nbsp;7.0 is available, you should also read the separate
+page on
+<a href="regina7.html">moving from Regina&nbsp;6.x to 7.x</a>.
+<p>
+If you have <i>very</i> old code, you can also read the separate page on
+<a href="regina5.html">moving from Regina&nbsp;4.x to 5.x</a>.
+<p>
+<p><h4><span class="question">Changes from Regina&nbsp;5.x to 6.x</span></h4></p>
 <p>
 There are some general rules that cover most of the changes:
 <ul>
@@ -178,20 +163,17 @@ from the latest release.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>NNormalHypersurfaceVectorMirrored</tt><br>
-        Removed in Regina&nbsp;5.1</td>
+    <td class="first"><tt>NNormalHypersurfaceVectorMirrored</tt></td>
     <td>&mdash;</tt>
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>NSurfaceSubset</tt><br>
-        Removed in Regina&nbsp;5.1</td>
+    <td class="first"><tt>NSurfaceSubset</tt></td>
     <td>&mdash;</tt>
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>NPropertyBase</tt><br>
-        Removed in Regina&nbsp;5.1</td>
+    <td class="first"><tt>NPropertyBase</tt></td>
     <td>&mdash;</tt>
     <td>&nbsp;</td>
 </tr>
@@ -218,8 +200,7 @@ from the latest release.
     need for the type-specific <tt>multiplyAs()</tt>.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>NSVectorMirrored copy constructor</tt><br>
-        Removed in Regina&nbsp;5.1</td>
+    <td class="first"><tt>NSVectorMirrored copy constructor</tt></td>
     <td>&mdash;</td>
     <td>&nbsp;</td>
 </tr>
@@ -312,8 +293,7 @@ from the latest release.
 </tr>
 <tr><td class="deptype" colspan=4>Command-Line Utilities</td></tr>
 <tr>
-    <td class="removed">All MPI utilities (e.g., <tt>tricensus-mpi</tt>)<br>
-        Removed in Regina&nbsp;5.96</td>
+    <td class="first">All MPI utilities (e.g., <tt>tricensus-mpi</tt>)</td>
     <td>&mdash;</td>
     <td>These have been phased out in favour of other approaches to
     large-scale parallelisation.  See the <tt>tricensus-mpi</tt> manual
