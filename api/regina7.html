@@ -28,126 +28,109 @@ If you have <i>very</i> old code, you can also read the separate pages on
 <p>
 <p><h4><span class="question">Changes from Regina&nbsp;6.x to 7.x</span></h4></p>
 <p>
-First, you should read the summary of the major behavioural changes,
+First, you should <b>read the summary of the major behavioural changes</b>,
 <a href="https://regina-normal.github.io/7.0/docs/regina/regina7.html">available here online</a>.
-<p>
-There are some general rules that cover many of the changes:
+This discusses some sweeping changes across the entire API, such as:
 <ul>
-<li>TODO.</li>
-<li>TODO: returning by value instead of by pointer</li>
-<li>TODO: passing by const reference (or occasionally reference)
-instead of pointer</li>
-<li>TODO: Using std::shared_ptr exclusively for packets</li>
-<li>TODO: returning tuples instead of using reference arguments</li>
-<!--li>Classes of the form <tt>NFoo</tt> have been renamed to <tt>Foo</tt>
-(e.g., <tt>NAbelianGroup</tt> is now <tt>AbelianGroup</tt>).</li>
-<li>Classes of the form <tt>NFooList</tt> have been renamed to <tt>Foos</tt>
-(e.g., <tt>NAngleStructureList</tt> is now <tt>AngleStructures</tt>).</li>
-<li>For classes related to triangulations
-(i.e., triangulations, vertices/edges/triangles/etc., simplices,
-components, boundary components, and isomorphisms):
-<ul>
-<li>3-D classes <tt>NFoo</tt> have been renamed to <tt>Foo&lt;3&gt;</tt>
-(e.g., <tt>NTriangulation</tt> is now <tt>Triangulation&lt;3&gt;</tt> in
-C++, or <tt>Triangulation3</tt> in Python).
-<li>2-D and 4-D classes <tt>Dim2Foo</tt> and <tt>Dim4Foo</tt> have been
-renamed to <tt>Foo&lt;2&gt;</tt> and <tt>Foo&lt;4&gt;</tt>
-(e.g., <tt>Dim2Edge</tt> is now <tt>Edge&lt;2&gt;</tt> in C++, or
-<tt>Edge2</tt> in Python).</li>
-<li>All of these classes are now included by a single "unified" C++ header
-for each dimension:
-<tt>triangulation/dim2.h</tt>,
-<tt>triangulation/dim3.h</tt>,
-<tt>triangulation/dim4.h</tt>, or
-<tt>triangulation/generic.h</tt> for dimensions &ge;&nbsp;5.</li>
+<li>adopting the <b>C++17</b> standard;</li>
+<li><b>returning objects by value</b> instead of by newly-allocated pointer,
+and likewise passing objects by reference or value instead of by pointer;</li>
+<li><b>returning multiple values using tuples</b> instead of passing extra
+"output arguments";</li>
+<li>allowing mathematical objects such as triangulations or normal surface
+lists to <b>live outside the packet tree</b>;</li>
+<li>managing packets exclusively by <b>shared pointers</b>.</li>
 </ul>
-<li>Classes of the form <tt>NNormalSurfaceVectorFoo</tt> and
-<tt>NNormalHypersurfaceVectorFoo</tt> have been renamed to
-<tt>NSVectorFoo</tt> and <tt>HSVectorFoo</tt> respectively.</li>
-<li>All C++ headers have been renamed in the same way as their classes,
-unless otherwise specified
-(e.g., <tt>nabeliangroup.h</tt> is now <tt>abeliangroup.h</tt>).</li-->
-<li>Many functions now handle errors and/or unsolved scenarios differently.
-Instead of returning <tt>null</tt> or <tt>0</tt> or some other
-&ldquo;trivial&rdquo; value, these functions either return a
-<tt>std::optional</tt> or throw exceptions. TODO: discuss more.</li>
-<li>Talk about throwing exceptions when preconditions break, where these
-preconditions were not previously being checked at all.</li>
-<li>Talk about throwing exceptions instead of taking extra error output
-arguments (e.g., Rational::doubleApprox(), Integer(string)).</li>
-<li>Talk about callbacks, including replacing void-pointer arguments
-(e.g., ModelLinkGraph::generateMinimalLinks(),
-FacetPairing::findAllPairings()),
-and more flexible interfaces such as Link::rewrite().
-Sometimes output iterators are replaced with callbacks also, e.g.,
-findAllIsomorphisms().
-Final (null) calls are removed.</li>
-<li>Sometimes routines that took optional output arguments now have
-separate versions, e.g., isoSig() vs isoSigDetail(), or volume() vs
-volumeWithPrecision().
-<li>Routines that take progress trackers no longer run in the background.</li>
-<li>Routines <tt>Class::clone()</tt> are now replace by copy
-constructors.</li>
-<li>For <tt>StandardTriangulation</tt> and its subclasses, the
-<tt>isXXX()</tt> routines are now all called <tt>recognise()</tt>, and
-the <tt>clone()</tt> routines are replaced with copy constructors.
-For example,
+<p>
+If you have not read that summary, you should
+<b><a href="https://regina-normal.github.io/7.0/docs/regina/regina7.html">stop
+and read it now</a></b> before continuing here.
+
+<p>
+Beyond this, there are a few general rules that have been applied across
+the API:
+<ul>
+<li>Functions that take <b>callbacks</b> (e.g.,
+<tt>Triangulation&lt;3&gt;::retriangulate()</tt> or
+<tt>FacetPairing&lt;dim&gt;::findAllPairings()</tt>)
+have been redesigned in a way that is safer and more flexible.
+They now support lambdas, and no longer take function pointers involving
+untyped <tt>(void*)</tt> arguments.
+"Sentinel" callbacks (i.e., a final callback with a null argument once
+some algorithm has finished) have also been removed.
+You should read the API documentation to see exactly how these new
+interfaces work.</li>
+<li>Most routines that used to take <b>output iterators</b>
+(e.g., <tt>Triangulation&lt;dim&gt;::findAllIsomorphisms()</tt>)
+have been redesigned to use these more flexible callbacks also.</li>
+<li>Some routines that used to take <b>optional output arguments</b>
+(e.g., <tt>Triangulation&lt;dim&gt;::isoSig()</tt>)
+now have separate versions (e.g., <tt>isoSig()</tt> vs <tt>isoSigDetail()</tt>).
+<li><b>Cloning routines</b> of the form <tt>Class::clone()</tt> have
+generally been replace by copy constructors.</li>
+<li>Routines that take <b>progress trackers</b> no longer run in the
+background; instead the user is responsible for creating, joining and/or
+detaching threads.</li>
+<li>In the <b>subcomplex code</b> (i.e., <tt>StandardTriangulation</tt>
+and its subclasses), the <tt>isXXX()</tt> routines are now all called
+<tt>recognise()</tt>.  For example,
 <tt>StandardTriangulation::isStandardTriangulation()</tt> is now
 <tt>StandardTriangulation::recognise()</tt>, and
 <tt>AugTriSolidTorus::isAugTriSolidTorus()</tt> is now
 <tt>AugTriSolidTorus::recognise()</tt>.</li>
-<li>For C++ functions that take an output stream as argument, their
-Python bindings used to assume this stream to be standard output.
-Now these bindings have been removed entirely; in all cases there is an
-alternative available that returns a string instead.  So, for example,
-instead of calling <tt>Link.writePACE()</tt>, Python users would now
-call <tt>print(Link.pace())</tt>.
+<li>For C++ functions that take an <b>output stream</b> (e.g.,
+<tt>Link::writePACE()</tt>), the Python bindings have been removed
+(since these bindings always assumed standard output).
+In all such cases there is a new function that returns a string instead
+(e.g., <tt>Link::pace()</tt>).</li>
 </ul>
 
-<p>
-Functions that now throw exceptions on error instead of returning
-<tt>null</tt> are:
+Errors and "unsolved scenarios" used to be handled using
+null/zero/empty return values, or sometimes using optional "error arguments"
+(e.g., a <tt>bool</tt> pointer argument that would return success or failure).
+Now Regina handles such scenarios using
+<b><tt>std::optional</tt> and exceptions</b>:
 <ul>
-<li>Global functions <tt>makeMatchingEquations()</tt>,
-static member functions
-<tt>FacetPairing&lt;dim&gt;::fromTextRep()</tt>,
-<tt>GluingPermSearcher&lt;dim&gt;::readTaggedData()</tt>,
-</li>
-<li>Input stream constructors for <tt>GluingPerms&lt;dim&gt;</tt>,
-<tt>GluingPermsSearcher&lt;dim&gt;</tt> and subclasses,
-the string constructors for <tt>GroupExpression</tt>,
-<tt>GroupPresentation</tt>;
-</li>
-<li>All functions in <tt>HomMarkedAbelianGroup</tt> that used to return
-empty vectors on error;</li>
-<li>Reconstruction reroutines: rehydrate(), insertRehydration(), fromSnapPea(),
-fromIsoSig(), fromPlantri(), magic string constructors, string
-constructors for GroupPresentation and GroupExpression,
-FacetPairing::fromTextRep()
-</li>
-<li>Triangulation3::dehydrate(), snapPea(), recogniser(), recognizer()
-if not supported; likewise for Link::gauss(), orientedGauss(), dt() and
-knotSig().</li>
-<li>SatRegion::createSFS()</li>
-<li>HomMarkedAbelianGroup::...() that used to return empty vectors</li>
-<li>ModelLinkGraph::flype()</li>
-<li>Manifold::construct() and homology()</li>
-<li>NormalSurface::boundaryIntersections()</li>
-<li>Some member functions of SnapPeaTriangulation that used to return
-trivial output for null triangulations</li>
+<li>Regina typically uses <tt>std::optional</tt> for <b>ordinary
+scenarios where there is no solution</b> (e.g.,
+<tt>Triangulation&lt;dim&gt;::isIsomorphicTo()</tt>, or
+<tt>Triangulation&lt;3&gt;::nonTrivialSphereOrDisc()</tt>).</li>
+<li>Regina typically uses exceptions for <b>rare or unexpected failures,
+or genuine errors</b>; for example:
+<ul>
+<li>when preconditions are not met (though in most cases Regina does not
+test preconditions, since this is considered the user's responsibility);</li>
+<li>when some argument is allowed but explicitly unsupported
+(e.g., calling <tt>Triangulation&lt;3&gt;::dehydrate()</tt> on a
+triangulation with boundary faces);
+<li>out-of-range errors (e.g., <tt>Rational::doubleApprox()</tt>);</li>
+<li>parsing errors (e.g., the string-based <tt>Integer</tt> constructor,
+or the input stream constructor for <tt>GluingPerms&lt;dim&gt;</tt>);</li>
+<li>object reconstruction errors (e.g., <tt>Link::fromKnotSig()</tt>);
+<li>specific cases of a more general function that are not yet
+implemented (e.g., some cases of <tt>Manifold::construct()</tt>);
+<li>algorithms that talk with the SnapPea kernel, where SnapPea could
+theoretically fail (e.g., <tt>NormalSurface::boundaryIntersections()</tt>);
+<li>member functions of <tt>SnapPeaTriangulation</tt>, in cases where you
+have a null SnapPea triangulation.</li>
+</ul></li>
+<li>Whenever a function <i>might</i> throw an exception, the type of
+exception and the circumstances in which it is thrown will be
+<b>clearly marked in Regina's API documentation</b>.</li>
 </ul>
 
 <p>
-Beyond these general rules, there are some additional
-changes and/or special cases.  These are listed in the table below,
-along with suggested replacements that you can use instead.
+These notes above cover most of the widespread API changes.
+However, there are many additional changes to specific headers, classes,
+functions and and constants.  These are listed in the table below,
+along with suggestions for how you should change your code.
 Any changes in the <i>behaviour</i> of these routines or classes
 are noted in the comments column.
 </p>
 <p>
 The blue cells indicate code that is still present in Regina,
-and the red cells indicate code that has <b>already been removed</b>
-from the latest release.
+but is now <b>deprecated</b> (i.e., marked for removal in a future release).
+The red cells indicate code that has <b>already been removed</b> from Regina.
 </p>
 <p>
 <table cellspacing=0 border=0 class="data"><tbody>
