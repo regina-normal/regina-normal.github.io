@@ -72,12 +72,12 @@ generally been replace by copy constructors.</li>
 background; instead the user is responsible for creating, joining and/or
 detaching threads.</li>
 <li>In the <b>subcomplex code</b> (i.e., <tt>StandardTriangulation</tt>
-and its subclasses), the <tt>isXXX()</tt> routines are now all called
-<tt>recognise()</tt>.  For example,
+and its subclasses), the <tt>isXXX()</tt> and <tt>formsXXX()</tt> routines
+are now all called <tt>recognise()</tt>.  For example,
 <tt>StandardTriangulation::isStandardTriangulation()</tt> is now
 <tt>StandardTriangulation::recognise()</tt>, and
-<tt>AugTriSolidTorus::isAugTriSolidTorus()</tt> is now
-<tt>AugTriSolidTorus::recognise()</tt>.</li>
+<tt>TriSolidTorus::formsTriSolidTorus()</tt> is now
+<tt>TriSolidTorus::recognise()</tt>.</li>
 <li>For C++ functions that take an <b>output stream</b> (e.g.,
 <tt>Link::writePACE()</tt>), the Python bindings have been removed
 (since these bindings always assumed standard output).
@@ -721,6 +721,31 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>&nbsp;</td>
 </tr>
 <tr>
+    <td class="first"><tt>MarkedAbelianGroup::equalTo()</tt></td>
+    <td>Equality operators (<tt>==</tt>, <tt>!=</tt>)</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>MarkedAbelianGroup::M()</tt>,
+    <tt>MarkedAbelianGroup::N()</tt>,
+    <tt>MarkedAbelianGroup::boundaryMap()</tt>,
+    <tt>MarkedAbelianGroup::writeAsBoundary()</tt></td>
+    <td><tt>MarkedAbelianGroup::m()</tt>,
+    <tt>MarkedAbelianGroup::n()</tt>,
+    <tt>MarkedAbelianGroup::boundaryOf()</tt>,
+    <tt>MarkedAbelianGroup::asBoundary()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>MarkedAbelianGroup::rankCC()</tt>,
+    <tt>MarkedAbelianGroup::minNumberOfGenerators()</tt>,
+    <tt>MarkedAbelianGroup::minNumberCycleGens()</tt></td>
+    <td><tt>MarkedAbelianGroup::ccRank()</tt>,
+    <tt>MarkedAbelianGroup::snfRank()</tt>,
+    <tt>MarkedAbelianGroup::cycleRank()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
     <td class="first"><tt>Matrix&lt;T&gt;::initialise()</tt></td>
     <td>Constructor that takes a list of entries</td>
     <td>The <tt>initialise()</tt> function was only ever available through
@@ -980,6 +1005,13 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     will expand it automatically.</td>
 </tr>
 <tr>
+    <td class="first"><tt>SatRegion::numberOfBlocks()</tt>,
+    <tt>SatRegion::numberOfBoundaryAnnuli()</tt></td>
+    <td><tt>SatRegion::countBlocks()</tt>,
+    <tt>SatRegion::countBoundaryAnnuli()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
     <td class="removed"><tt>SigCensus::run()</tt><br>
     Removed in Regina&nbsp;7.0</td>
     <td><tt>SigCensus::formCensus()</tt></td>
@@ -994,11 +1026,10 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     specialised.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>Signature::parse()</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>Signature::parse()</tt></td>
     <td>The string-based <tt>Signature</tt> constructor</td>
-    <td>The constructor throws an exception on error, whereas
-    <tt>parse()</tt> returned <tt>null</tt>.</td>
+    <td>Now throws an exception on error, instead of
+    returning <tt>null</tt>.</td>
 </tr>
 <tr>
     <td class="removed"><tt>SnapPeaTriangulation::filledTriangulation()</tt><br>
@@ -1174,6 +1205,12 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <tt>Face&lt;dim,&nbsp;subdim&gt;::allowsNonOrientableLinks</tt>,
     <tt>Face&lt;dim,&nbsp;subdim&gt;::allowsInvalidFaces</tt></td>
     <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>basicTokenise(output_iterator, string)</tt></td>
+    <td><tt>basicTokenise(string)</tt></td>
+    <td>The tokens are now returned by value as a
+    <tt>std::vector</tt> of strings.</td>
 </tr>
 <tr>
     <td class="removed"><tt>clonePtr()</tt><br>
