@@ -157,7 +157,8 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     which also use the singular (not the plural).</td>
 </tr>
 <tr>
-    <td class="first"><tt>triangulation/homologicaldata.h</tt></td>
+    <td class="removed"><tt>triangulation/homologicaldata.h</tt><br>
+    Removed in Regina&nbsp;7.0</td></td>
     <td><tt>triangulation/dim3/homologicaldata.h</tt></td>
     <td>&nbsp;</td>
 </tr>
@@ -449,8 +450,9 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="first"><tt>Triangulation&lt;dim&gt;::SimplexIterator</tt>,<br>
-    <tt>Triangulation&lt;dim&gt;::VertexIterator</tt>, etc.</td>
+    <td class="removed"><tt>Triangulation&lt;dim&gt;::SimplexIterator</tt>,<br>
+    <tt>Triangulation&lt;dim&gt;::VertexIterator</tt>, etc.<br>
+    Removed in Regina&nbsp;7.0</td>
     <td><tt>auto</tt> or <tt>decltype(...)</tt></td>
     <td>&nbsp;</td>
 </tr>
@@ -1061,6 +1063,13 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     is an alias for <tt>homology&lt;1&gt;()</tt>.</td>
 </tr>
 <tr>
+    <td class="first"><tt>Triangulation&lt;dim&gt;::insertConstruction()</tt></td>
+    <td><tt>Triangulation&lt;dim&gt;::fromGluings()</tt></td>
+    <td>The interface for <tt>fromGluings()</tt> is very different from
+    <tt>insertConstruction()</tt>, but both have the same aim of
+    allowing users to hard-code entire triangulations in code.</td>
+</tr>
+<tr>
     <td class="first"><tt>Triangulation&lt;dim&gt;::isIdenticalTo()</tt></td>
     <td><tt>a == b</tt></td>
     <td>&nbsp;</td>
@@ -1106,13 +1115,6 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="first"><tt>Triangulation&lt;3&gt;::insertConstruction()</tt></td>
-    <td><tt>Triangulation&lt;3&gt;::fromGluings()</tt></td>
-    <td>The interface for <tt>fromGluings()</tt> is very different from
-    <tt>insertConstruction()</tt>, but both have the same aim of
-    allowing users to hard-code entire triangulations in code.</td>
-</tr>
-<tr>
     <td class="first"><tt>Triangulation&lt;3&gt;::insertLayeredLoop()</tt>,<br>
     <tt>Triangulation&lt;3&gt;::insertLayeredLensSpace()</tt>,<br>
     <tt>Triangulation&lt;3&gt;::insertAugTriSolidTorus()</tt>,<br>
@@ -1123,6 +1125,12 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <tt>Example&lt;3&gt;::sfsOverSphere()</tt></td>
     <td>Combine with <tt>Triangulation&lt;3&gt;::insertTriangulation()</tt>
     if you need to insert one of these into an existing triangulation.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Triangulation&lt;3&gt;::insertRehydration()</tt></td>
+    <td><tt>Triangulation&lt;3&gt;::rehydrate()</tt></td>
+    <td>Combine with <tt>Triangulation&lt;3&gt;::insertTriangulation()</tt>
+    if you need to insert a rehydration into an existing triangulation.</td>
 </tr>
 <tr>
     <td class="first"><tt>Triangulation&lt;3&gt;::isThreeSphere()</tt>,<br>
