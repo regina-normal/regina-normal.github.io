@@ -15,11 +15,9 @@ if [ ! -d "$resources/examples" ]; then
   exit 2
 fi
 
-rm -rf census docs engine-docs
+rm -rf census
 
 cp -pr "$resources/examples" census
 cp -pf "$large"/*.rga census
-cp -pr "$resources/docs/en/regina" docs
-cp -pr "$resources/engine-docs" .
 
 echo "Done."

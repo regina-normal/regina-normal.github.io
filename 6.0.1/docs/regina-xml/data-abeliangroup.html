@@ -1,0 +1,31 @@
+<html><head><title>abeliangroup</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Regina, XML, Data files"><link rel="start" href="index.html" title="Regina XML File Format Reference"><link rel="up" href="dataformat.html" title="Data File Format"><link rel="prev" href="dataformat.html" title="Data File Format"><link rel="next" href="data-allowstrict.html" title="allowstrict"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>abeliangroup</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="dataformat.html">Prev</a></td><td align="center" class="navCenter" width="34%">Data File Format</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="data-allowstrict.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="data-abeliangroup"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>abeliangroup — An abelian group</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="informaltable"><table border="1"><colgroup><col><col></colgroup><tbody><tr><td colspan="2">
+      <span class="bold"><strong>Content Model</strong></span>
+     </td></tr><tr><td colspan="2">
+<pre class="synopsis">
+abeliangroup ::= (#PCDATA)</pre>
+     </td></tr><tr><td colspan="2">
+      <span class="bold"><strong>Attributes</strong></span>
+     </td></tr><tr><td><span class="bold"><strong>Name</strong></span></td><td><span class="bold"><strong>Type</strong></span></td></tr><tr><td><code class="sgmltag-element">rank</code></td><td><span class="type">NUMBER</span> (required)</td></tr></tbody></table></div></div><div class="refsect1" lang="en"><a name="idm4091725480"></a><h2>Description</h2><p>
+   An <a href="data-abeliangroup.html" title="abeliangroup"><code class="sgmltag-element">abeliangroup</code></a> element stores a single abelian group.
+  </p><p>
+   The rank of the abelian group is specified by the
+   <code class="sgmltag-element">rank</code> attribute.
+  </p><p>
+   The torsion elements of the abelian group are stored in the character
+   data of this <span class="acronym">XML</span> element as a whitespace-separated list of integers.
+   Each integer <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>k</code></em></span> corresponds to a
+   Z_<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>k</code></em></span> torsion element of the group.
+  </p><div class="refsect2" lang="en"><a name="idm4091720632"></a><h3>Parents</h3><p>
+    The following elements contain <code class="sgmltag-element">abeliangroup</code>:
+    <span class="simplelist"><a href="data-H1.html" title="H1"><code class="sgmltag-element">H1</code></a>, <a href="data-H1Bdry.html" title="H1Bdry"><code class="sgmltag-element">H1Bdry</code></a>, <a href="data-H1Rel.html" title="H1Rel"><code class="sgmltag-element">H1Rel</code></a>, <a href="data-H2.html" title="H2"><code class="sgmltag-element">H2</code></a></span>.
+   </p></div><div class="refsect2" lang="en"><a name="idm4091717624"></a><h3>Children</h3><p>
+    Element <code class="sgmltag-element">abeliangroup</code> has no children.
+   </p></div></div><div class="refsect1" lang="en"><a name="idm4091710808"></a><h2>Attributes</h2><div class="variablelist"><dl><dt><span class="term"><code class="sgmltag-element">rank</code></span></dt><dd><p>
+      The rank of this abelian group; this should be a non-negative integer.
+     </p></dd></dl></div></div><div class="refsect1" lang="en"><a name="idm4091707896"></a><h2>Example</h2><p>
+   The following <span class="acronym">XML</span> snippet represents the group
+   <code class="literal">2 Z + Z_3 + Z_9</code>.
+  </p><pre class="programlisting">
+&lt;abeliangroup rank="2"&gt; 3 9 &lt;/abeliangroup&gt;
+  </pre></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="dataformat.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="data-allowstrict.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">Data File Format </td><td width="34%" align="center" class="navCenter"><a href="dataformat.html">Up</a></td><td width="33%" align="right" class="navRight"> allowstrict</td></tr></table></div></body></html>

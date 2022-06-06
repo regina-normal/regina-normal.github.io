@@ -1,0 +1,8 @@
+X-Repolib-Name: Regina
+Types: deb deb-src
+URIs: https://people.debian.org/~bab/regina
+Suites: groovy
+Components: main
+Signed-By:
+  /usr/share/keyrings/debian-keyring.gpg
+  519A0009FB50255DDB4E889270A6BEDF542D38D9

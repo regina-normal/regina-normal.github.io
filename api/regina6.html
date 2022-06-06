@@ -1,0 +1,306 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../regina.css">
+    <title>Regina - Moving from 5.x to 6.x</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000"
+    link="#0000EE" vlink="#551A8B" alink="#FF0000" class="deprecation">
+
+<h1><a name="contents">Regina - Moving from 5.x to 6.x</a></h1>
+
+<div class="announce"><p>
+This page relates only to <b>C++ and Python programmers</b>.
+</p></div>
+
+<p>
+Over time, Regina makes changes and improvements to its C++ and Python
+interfaces.  This page explains how you will need to update your C++
+code and/or Python scripts to work with Regina&nbsp;6.0.
+<p>
+Now that Regina&nbsp;7.0 is available, you should also read the separate
+page on
+<a href="regina7.html">moving from Regina&nbsp;6.x to 7.x</a>.
+<p>
+If you have <i>very</i> old code, you can also read the separate page on
+<a href="regina5.html">moving from Regina&nbsp;4.x to 5.x</a>.
+<p>
+<p><h4><span class="question">Changes from Regina&nbsp;5.x to 6.x</span></h4></p>
+<p>
+There are some general rules that cover most of the changes:
+<ul>
+<li>Classes of the form <tt>NFoo</tt> have been renamed to <tt>Foo</tt>
+(e.g., <tt>NAbelianGroup</tt> is now <tt>AbelianGroup</tt>).</li>
+<li>Classes of the form <tt>NFooList</tt> have been renamed to <tt>Foos</tt>
+(e.g., <tt>NAngleStructureList</tt> is now <tt>AngleStructures</tt>).</li>
+<li>For classes related to triangulations
+(i.e., triangulations, vertices/edges/triangles/etc., simplices,
+components, boundary components, and isomorphisms):
+<ul>
+<li>3-D classes <tt>NFoo</tt> have been renamed to <tt>Foo&lt;3&gt;</tt>
+(e.g., <tt>NTriangulation</tt> is now <tt>Triangulation&lt;3&gt;</tt> in
+C++, or <tt>Triangulation3</tt> in Python).
+<li>2-D and 4-D classes <tt>Dim2Foo</tt> and <tt>Dim4Foo</tt> have been
+renamed to <tt>Foo&lt;2&gt;</tt> and <tt>Foo&lt;4&gt;</tt>
+(e.g., <tt>Dim2Edge</tt> is now <tt>Edge&lt;2&gt;</tt> in C++, or
+<tt>Edge2</tt> in Python).</li>
+<li>All of these classes are now included by a single "unified" C++ header
+for each dimension:
+<tt>triangulation/dim2.h</tt>,
+<tt>triangulation/dim3.h</tt>,
+<tt>triangulation/dim4.h</tt>, or
+<tt>triangulation/generic.h</tt> for dimensions &ge;&nbsp;5.</li>
+</ul>
+<li>Classes of the form <tt>NNormalSurfaceVectorFoo</tt> and
+<tt>NNormalHypersurfaceVectorFoo</tt> have been renamed to
+<tt>NSVectorFoo</tt> and <tt>HSVectorFoo</tt> respectively.</li>
+<li>All C++ headers have been renamed in the same way as their classes,
+unless otherwise specified
+(e.g., <tt>nabeliangroup.h</tt> is now <tt>abeliangroup.h</tt>).</li>
+</ul>
+<p>
+Beyond these general rules, there are some additional
+changes and/or special cases.  These are listed in the table below,
+along with suggested replacements that you can use instead.
+Any changes in the <i>behaviour</i> of these routines or classes
+are noted in the comments column.
+</p>
+<p>
+<table cellspacing=0 border=0 class="data"><tbody>
+<tr>
+    <th class="first">Deprecated code</th>
+    <th>Replacement</th>
+    <th>Comments</th>
+</tr>
+<tr><td class="deptype" colspan=4>Headers</td></tr>
+<tr>
+    <td class="first"><tt>approx.h</tt></td>
+    <td>&mdash;</td>
+    <td>These functions for managing round-off error are very coarse,
+        and will be removed because they should not be used.</td>
+</tr>
+<tr>
+    <td class="first"><tt>engine.h</tt>,<br><tt>output.h</tt></td>
+    <td><tt>core/engine.h</tt>,<br><tt>core/output.h</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>nbooleans.h</tt></td>
+    <td><tt>boolset.h</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>nlayeredsurfacebundle.h</tt></td>
+    <td><tt>layeredtorusbundle.h</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>nmatrixint.h</tt></td>
+    <td><tt>matrix.h</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>nperm2.h</tt>,
+    <tt>nperm3.h</tt>,
+    <tt>nperm4.h</tt>,
+    <tt>nperm5.h</tt></td>
+    <td><tt>perm.h</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>packetlistener.h</tt></td>
+    <td><tt>packet.h</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>sfcombination.h</tt>,
+        <tt>sfproperties.h</tt></td>
+    <td><tt>surfacefilter.h</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr><td class="deptype" colspan=4>Classes</td></tr>
+<tr>
+    <td class="first"><tt>Dim2EdgePairing</tt>,<br>
+        <tt>NFacePairing</tt>,<br>
+        <tt>Dim4FacetPairing</tt></td>
+    <td><tt>FacetPairing&lt;2&gt;</tt>,<br>
+        <tt>FacetPairing&lt;3&gt;</tt>,<br>
+        <tt>FacetPairing&lt;4&gt;</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Dim2ExampleTriangulation</tt>,<br>
+        <tt>NExampleTriangulation</tt>,<br>
+        <tt>Dim4ExampleTriangulation</tt></td>
+    <td><tt>Example&lt;2&gt;</tt>,<br>
+        <tt>Example&lt;3&gt;</tt>,<br>
+        <tt>Example&lt;4&gt;</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Dim2TriangleEdge</tt>,<br>
+        <tt>NTetFace</tt>,<br>
+        <tt>Dim4PentFacet</tt></td>
+    <td><tt>FacetSpec&lt;2&gt;</tt>,<br>
+        <tt>FacetSpec&lt;3&gt;</tt>,<br>
+        <tt>FacetSpec&lt;4&gt;</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>MatrixIntDomain</tt>, <tt>MatrixRing</tt></td>
+    <td><tt>Matrix</tt></td>
+    <td>These have been merged into the main <tt>Matrix</tt> class,
+    and the extra functionality that they provided is now handled
+    using template arguments.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NExampleSnapPeaTriangulation</tt></td>
+    <td><tt>ExampleSnapPea</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NNormalHypersurfaceVectorMirrored</tt></td>
+    <td>&mdash;</tt>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NSurfaceSubset</tt></td>
+    <td>&mdash;</tt>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NPropertyBase</tt></td>
+    <td>&mdash;</tt>
+    <td>&nbsp;</td>
+</tr>
+<tr><td class="deptype" colspan=4>Types</td></tr>
+<tr>
+    <td class="first"><tt>TuraevViroAlg</tt></td>
+    <td><tt>Algorithm</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>UseDim2GluingPerms</tt>,<br>
+        <tt>UseGluingPerms</tt>,<br>
+        <tt>UseDim4GluingPerms</tt></td>
+    <td><tt>GluingPermSearcher&lt;2&gt;::Use</tt>,<br>
+        <tt>GluingPermSearcher&lt;3&gt;::Use</tt>,<br>
+        <tt>GluingPermSearcher&lt;4&gt;::Use</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr><td class="deptype" colspan=4>Member Routines</td></tr>
+<tr>
+    <td class="first"><tt>Matrix::multiplyAs()</tt></td>
+    <td><tt>operator *=</tt></td>
+    <td>Now that the <tt>Matrix</tt> class is unified, there is no
+    need for the type-specific <tt>multiplyAs()</tt>.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NSVectorMirrored copy constructor</tt></td>
+    <td>&mdash;</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Triangulation<2>::oneThreeMove()</tt>,<br>
+    <tt>Triangulation<2>::twoTwoMove()</tt>,<br>
+    <tt>Triangulation<2>::threeOneMove()</tt>
+    </td>
+    <td><tt>Triangulation<2>::pachner()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Triangulation<3>::drillEdge()</tt></td>
+    <td><tt>Triangulation<3>::pinchEdge()</tt></td>
+    <td>In all cases that matter, this performs the same topological
+    operation with vastly fewer tetrahedra.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Triangulation<3>::knowsSplittingSurface()</tt></td>
+    <td>&mdash;</td>
+    <td>The routine <tt>hasSplittingSurface()</tt> is now fast, and so
+    there is no need to pre-query whether the result is already known.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Triangulation<3>::oneFourMove()</tt>,<br>
+    <tt>Triangulation<3>::twoThreeMove()</tt>,<br>
+    <tt>Triangulation<3>::threeTwoMove()</tt>,<br>
+    <tt>Triangulation<3>::fourOneMove()</tt>
+    </td>
+    <td><tt>Triangulation<3>::pachner()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Triangulation<4>::oneFiveMove()</tt>,<br>
+    <tt>Triangulation<4>::twoFourMove()</tt>,<br>
+    <tt>Triangulation<4>::threeThreeMove()</tt>,<br>
+    <tt>Triangulation<4>::fourTwoMove()</tt>,<br>
+    <tt>Triangulation<4>::fiveOneMove()</tt>
+    </td>
+    <td><tt>Triangulation<4>::pachner()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr><td class="deptype" colspan=4>Global Routines</td></tr>
+<tr>
+    <td class="first"><tt>isZero()</tt>,
+        <tt>isNonZero()</tt>,
+        <tt>isPositive()</tt>,
+        <tt>isNegative()</tt>,
+        <tt>isNonPositive()</tt>,
+        <tt>isNonNegative()</tt></td>
+    <td>&mdash;</td>
+    <td>These methods for managing round-off error are very coarse,
+        and will be removed because they should not be used.</td>
+</tr>
+<tr><td class="deptype" colspan=4>Constants</td></tr>
+<tr>
+    <td class="first"><tt>Matrix::zero</tt>, <tt>Matrix::one</tt></td>
+    <td><tt>0</tt>, <tt>1</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>PACKET_DIM2TRIANGULATION</tt>,<br>
+        <tt>PACKET_TRIANGULATION</tt>,<br>
+        <tt>PACKET_DIM4TRIANGULATION</tt></td>
+    <td><tt>PACKET_TRIANGULATION2</tt>,<br>
+        <tt>PACKET_TRIANGULATION3</tt>,<br>
+        <tt>PACKET_TRIANGULATION4</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>PACKET_NORMALSURFACELIST</tt>,<br>
+        <tt>PACKET_NORMALHYPERSURFACELIST</tt>,<br>
+        <tt>PACKET_ANGLESTRUCTURELIST</tt></td>
+    <td><tt>PACKET_NORMALSURFACES</tt>,<br>
+        <tt>PACKET_NORMALHYPERSURFACES</tt>,<br>
+        <tt>PACKET_ANGLESTRUCTURES</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>TV_DEFAULT</tt>,<br>
+        <tt>TV_BACKTRACK</tt>,<br>
+        <tt>TV_TREEWIDTH</tt>,<br>
+        <tt>TV_NAIVE</tt></td>
+    <td><tt>ALG_DEFAULT</tt>,<br>
+        <tt>ALG_BACKTRACK</tt>,<br>
+        <tt>ALG_TREEWIDTH</tt>,<br>
+        <tt>ALG_NAIVE</tt></td>
+    <td>The corresponding enum type has changed from
+    <tt>TuraevViroAlg</tt> to the more general <tt>Algorithm</tt>.</td>
+</tr>
+<tr><td class="deptype" colspan=4>Command-Line Utilities</td></tr>
+<tr>
+    <td class="first">All MPI utilities (e.g., <tt>tricensus-mpi</tt>)</td>
+    <td>&mdash;</td>
+    <td>These have been phased out in favour of other approaches to
+    large-scale parallelisation.  See the <tt>tricensus-mpi</tt> manual
+    page for suggestions.</td>
+</tr>
+</tbody></table>
+
+<p class="return">
+<a href="../index.html"><img src="../regina.svg" alt="Back to main page ..."
+    border="0" width="32" height="32" align="middle"></a>
+<a href="../index.html">Back to main page ...</a></p>
+
+</body>
+</html>
+

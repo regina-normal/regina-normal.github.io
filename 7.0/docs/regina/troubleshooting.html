@@ -1,0 +1,291 @@
+<html><head><title>Chapter 12. Troubleshooting and FAQ</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina 7.0 Handbook"><link rel="up" href="index.html" title="The Regina 7.0 Handbook"><link rel="prev" href="compiling-apidocs.html" title="API Documentation"><link rel="next" href="services.html" title="Chapter 13. Bug Tracking and Feature Requests"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Troubleshooting and <span class="acronym">FAQ</span></h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="compiling-apidocs.html">Prev</a></td><td align="center" class="navCenter" width="34%"> </td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="services.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="troubleshooting"></a>Chapter 12. Troubleshooting and <span class="acronym">FAQ</span></h2></div></div></div><div class="qandaset"><dl><dt>12.1.  <a href="troubleshooting.html#trouble-running">Running <span class="application">Regina</span></a></dt><dd><dl><dt>12.1.1. <a href="troubleshooting.html#trouble-start">
+     How do I start Regina?
+    </a></dt><dt>12.1.2. <a href="troubleshooting.html#trouble-regina-python">
+     How can I run regina-python or the other
+     command-line tools?
+    </a></dt><dt>12.1.3. <a href="troubleshooting.html#idp105545333880080">
+     On macOS, do I need Fink any more?
+    </a></dt></dl></dd><dt>12.2.  <a href="troubleshooting.html#trouble-python"><span class="application">Python</span> Scripting</a></dt><dd><dl><dt>12.2.1. <a href="troubleshooting.html#trouble-python-disabled">
+     Regina tells me that Python scripting has been disabled.
+    </a></dt><dt>12.2.2. <a href="troubleshooting.html#trouble-python-snappy">
+     SnapPy has stopped working in the graphical user interface.
+     When I import SnapPy and try to create a manifold, I receive a
+     TypeError with the message
+     “isinstance() arg 2 must be a class, type, or tuple
+     of classes and types”.
+    </a></dt></dl></dd><dt>12.3.  <a href="troubleshooting.html#trouble-misc">Miscellaneous</a></dt><dd><dl><dt>12.3.1. <a href="troubleshooting.html#trouble-compile">
+     I am having trouble compiling Regina.
+    </a></dt><dt>12.3.2. <a href="troubleshooting.html#trouble-testsuite">
+     What is the test suite, and how do I run it?
+    </a></dt><dt>12.3.3. <a href="troubleshooting.html#idp105545333931920">
+     Something else not described in this list has gone wrong.
+    </a></dt></dl></dd></dl><table border="0" summary="Q and A Set"><col align="left" width="1%"><tbody><tr class="qandadiv"><td align="left" valign="top" colspan="2"><a name="trouble-running"></a><h3 class="title"><a name="trouble-running"></a>12.1. Running <span class="application">Regina</span></h3></td></tr><tr class="toc" colspan="2"><td align="left" valign="top" colspan="2"><dl><dt>12.1.1. <a href="troubleshooting.html#trouble-start">
+     How do I start Regina?
+    </a></dt><dt>12.1.2. <a href="troubleshooting.html#trouble-regina-python">
+     How can I run regina-python or the other
+     command-line tools?
+    </a></dt><dt>12.1.3. <a href="troubleshooting.html#idp105545333880080">
+     On macOS, do I need Fink any more?
+    </a></dt></dl></td></tr><tr class="question"><td align="left" valign="top"><a name="trouble-start"></a><a name="idp105545333844496"></a><b>12.1.1.</b></td><td align="left" valign="top"><p>
+     How do I start <span class="application">Regina</span>?
+    </p></td></tr><tr class="answer"><td align="left" valign="top"><b></b></td><td align="left" valign="top"><p>
+      If you use <span class="application"><span class="acronym">GNU</span>/Linux</span>, look for <span class="application">Regina</span> in your applications menu
+      (for instance, the main <span class="application"><span class="acronym">GNOME</span></span> or <span class="acronym">KDE</span> menu).  It might be classified
+      under <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Science</span></span> or <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Education</span></span>.
+      If all else fails, you can always start <span class="application">Regina</span> from the command line
+      by running <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-gui</strong></span></span>.
+     </p><p>
+      <span class="inlinemediaobject"><img src="run-fedora-menu.png"></span>
+     </p><p>
+      If you use <span class="application">macOS</span>, you should have downloaded a drag-and-drop
+      app bundle.  You can start <span class="application">Regina</span> simply by opening this app
+      from wherever you dragged it to (typically the
+      <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Applications</span></span> folder).
+     </p><p>
+      <span class="inlinemediaobject"><img src="run-mac-white.png"></span>
+     </p><p>
+      If you use <span class="application">Windows</span>, you can find <span class="application">Regina</span> in the
+      <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Start</span></span> menu.  Look for
+      <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">All Programs</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guisubmenu">Regina 7.0</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem"><span class="application">Regina</span></span></span>.
+     </p><p>
+      <span class="inlinemediaobject"><img src="run-windows.png"></span>
+     </p></td></tr><tr class="question"><td align="left" valign="top"><a name="trouble-regina-python"></a><a name="idp105545333895568"></a><b>12.1.2.</b></td><td align="left" valign="top"><p>
+     How can I run <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-python</strong></span></span> or the other
+     command-line tools?
+    </p></td></tr><tr class="answer"><td align="left" valign="top"><b></b></td><td align="left" valign="top"><p>
+      If you downloaded a <span class="application"><span class="acronym">GNU</span>/Linux</span> package, these tools should all be in
+      <code class="filename">/usr/bin/</code>.  You can run them directly from
+      the command line:
+     </p><pre class="screen">
+    <code class="prompt">example$</code> <strong class="userinput"><code>regina-python</code></strong>
+    Regina 4.95
+    Software for 3-manifold topology and normal surface theory
+    Copyright (c) 1999-2013, The Regina development team
+    &gt;&gt;&gt;
+</pre><p>
+      If you downloaded a drag-and-drop app bundle for <span class="application">macOS</span>,
+      these tools are all shipped inside it.
+      If you dragged <span class="application">Regina</span> to the main
+      <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Applications</span></span> folder, you can find them in
+      <code class="filename">/Applications/Regina.app/Contents/MacOS/</code>.
+     </p><pre class="screen">
+    <code class="prompt">example$</code> <strong class="userinput"><code>/Applications/Regina.app/Contents/MacOS/regina-python</code></strong>
+    Regina 4.95
+    Software for 3-manifold topology and normal surface theory
+    Copyright (c) 1999-2013, The Regina development team
+    &gt;&gt;&gt;
+</pre><p>
+      If you use <span class="application">Windows</span>, the tool
+      <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-python</strong></span></span> is not available.
+      <span class="application">Windows</span>.  However, you can still use <span class="application">Python</span> scripting in <span class="application">Regina</span>'s
+      graphical user interface, by opening a graphical <span class="application">Python</span> console or
+      using script packets.
+     </p><p>
+      The other command-line tools (such as <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regfiledump</strong></span></span>,
+      <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">tricensus</strong></span></span> and so on) are installed under
+      <span class="application">Windows</span> beneath the
+      <code class="filename">Program Files</code> directory; on some
+      machines this directory is called
+      <code class="filename">Program Files (x86)</code>.
+      Specifically, the command-line tools are stored in the subdirectory
+      <code class="filename">c:\Program Files\Regina\Regina 7.0\bin\</code>.
+
+</p><pre class="screen">
+    <code class="prompt">example$</code> <strong class="userinput"><code>"c:\Program Files\Regina\Regina 7.0\bin\tricensus.exe" -t2 output.rga</code></strong>
+    Starting census generation...
+    0:1 0:0 1:0 1:1 | 0:2 0:3 1:3 1:2
+    0:1 0:0 1:0 1:1 | 0:2 0:3 bdry bdry
+    ...
+</pre><p>
+     </p></td></tr><tr class="question"><td align="left" valign="top"><a name="idp105545333880080"></a><a name="idp105545333880336"></a><b>12.1.3.</b></td><td align="left" valign="top"><p>
+     On <span class="application">macOS</span>, do I need <span class="application">Fink</span> any more?
+    </p></td></tr><tr class="answer"><td align="left" valign="top"><b></b></td><td align="left" valign="top"><p>
+      No!  As of version 4.92, <span class="application">Regina</span> ships as a standalone app
+      bundle that you can drag and drop straight into your Applications
+      folder.  If you installed <span class="application">Fink</span> for an earlier version of
+      <span class="application">Regina</span> and you do not use it for anything else, you can remove
+      it: simply delete <code class="filename">/sw</code> and everything beneath it.
+     </p></td></tr><tr class="qandadiv"><td align="left" valign="top" colspan="2"><a name="trouble-python"></a><h3 class="title"><a name="trouble-python"></a>12.2. <span class="application">Python</span> Scripting</h3></td></tr><tr class="toc" colspan="2"><td align="left" valign="top" colspan="2"><dl><dt>12.2.1. <a href="troubleshooting.html#trouble-python-disabled">
+     Regina tells me that Python scripting has been disabled.
+    </a></dt><dt>12.2.2. <a href="troubleshooting.html#trouble-python-snappy">
+     SnapPy has stopped working in the graphical user interface.
+     When I import SnapPy and try to create a manifold, I receive a
+     TypeError with the message
+     “isinstance() arg 2 must be a class, type, or tuple
+     of classes and types”.
+    </a></dt></dl></td></tr><tr class="question"><td align="left" valign="top"><a name="trouble-python-disabled"></a><a name="idp105545333919376"></a><b>12.2.1.</b></td><td align="left" valign="top"><p>
+     <span class="application">Regina</span> tells me that <span class="application">Python</span> scripting has been disabled.
+    </p></td></tr><tr class="answer"><td align="left" valign="top"><b></b></td><td align="left" valign="top"><p>
+      This means that whoever built your version of <span class="application">Regina</span> did
+      not include <span class="application">Python</span> support in the build.
+     </p><p>
+      The best solution is to download a ready-made package from the
+      <a href="http://regina-normal.github.io/#download" target="_top"><span class="application">Regina</span>
+      website</a>.  All of the ready-made packages should have
+      <span class="application">Python</span> support built in.
+     </p><p>
+      If you need to build <span class="application">Regina</span> yourself from source, make sure you have the
+      <a href="http://regina-normal.github.io/source.html#sysreq" target="_top"><span class="application">Python</span>
+      development files</a> installed.
+      If not, <span class="application">Regina</span> will warn you about this when you run
+      <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">cmake</strong></span></span>:
+     </p><pre class="screen">
+<code class="prompt">example:~/source/regina/build&gt;</code> <strong class="userinput"><code>cmake ..</code></strong>
+-- The C compiler identification is GNU
+-- The CXX compiler identification is GNU
+...
+... (lots of output)
+...
+-----------------------------------------------------------------------------
+-- The following OPTIONAL packages could NOT be located on your system.
+-- Consider installing them to enable more features from this software.
+-----------------------------------------------------------------------------
+   * Python development  &lt;http://www.python.org/&gt;
+     Build Python bindings for Regina
+
+-----------------------------------------------------------------------------
+
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/bab/source/regina/build
+<code class="prompt">example:~/source/regina/build&gt;</code>
+</pre><p>
+      If you are stuck, please mail <a href="credits.html#acknowledgements" title="Acknowledgements">the authors</a> for assistance,
+      including your <code class="filename">CMakeCache.txt</code>
+      if possible to help diagnose the problem.
+     </p></td></tr><tr class="question"><td align="left" valign="top"><a name="trouble-python-snappy"></a><a name="idp105545333899152"></a><b>12.2.2.</b></td><td align="left" valign="top"><p>
+     <span class="application">SnapPy</span> has stopped working in the graphical user interface.
+     When I import <span class="application">SnapPy</span> and try to create a manifold, I receive a
+     <code class="exceptionname">TypeError</code> with the message
+     “isinstance() arg 2 must be a class, type, or tuple
+     of classes and types”.
+    </p></td></tr><tr class="answer"><td align="left" valign="top"><b></b></td><td align="left" valign="top"><p>
+      At the time of writing, <span class="application">SnapPy</span> is not
+      compatible with multiple interpreters.  If you run the graphical
+      user interface and import the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="parameter"><em class="parameter"><code>snappy</code></em></span> module
+      in more than one <span class="application">Python</span> console, <span class="application">SnapPy</span> will stop working.
+     </p><p>
+      A workaround is to open one console, import
+      <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="parameter"><em class="parameter"><code>snappy</code></em></span> within it, and then <span class="emphasis"><em>leave that
+      console open</em></span>.  You can then use <span class="application">SnapPy</span> in as many
+      different consoles as you like: <span class="application">SnapPy</span> will only break after you
+      close that first console.
+     </p><p>
+      If you are not working directly with a data file, another option
+      is to use the
+      <a href="man-regina-python.html" title="regina-python"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-python</strong></span></span></a>
+      command-line tool.  This only runs one instance of <span class="application">Python</span>, and
+      so avoids the problem.
+     </p><p>
+      The problem appears to be rooted in <span class="application">Cython</span>, which <span class="application">SnapPy</span> uses
+      for its <span class="application">Python</span> bindings.
+      The <span class="application">SnapPy</span> and <span class="application">Regina</span> authors are currently working to find a
+      suitable workaround.
+     </p></td></tr><tr class="qandadiv"><td align="left" valign="top" colspan="2"><a name="trouble-misc"></a><h3 class="title"><a name="trouble-misc"></a>12.3. Miscellaneous</h3></td></tr><tr class="toc" colspan="2"><td align="left" valign="top" colspan="2"><dl><dt>12.3.1. <a href="troubleshooting.html#trouble-compile">
+     I am having trouble compiling Regina.
+    </a></dt><dt>12.3.2. <a href="troubleshooting.html#trouble-testsuite">
+     What is the test suite, and how do I run it?
+    </a></dt><dt>12.3.3. <a href="troubleshooting.html#idp105545333931920">
+     Something else not described in this list has gone wrong.
+    </a></dt></dl></td></tr><tr class="question"><td align="left" valign="top"><a name="trouble-compile"></a><a name="idp105545333912848"></a><b>12.3.1.</b></td><td align="left" valign="top"><p>
+     I am having trouble compiling <span class="application">Regina</span>.
+    </p></td></tr><tr class="answer"><td align="left" valign="top"><b></b></td><td align="left" valign="top"><p>
+      If you can, it is best to install <span class="application">Regina</span> from a ready-made
+      package.  See the
+      <a href="http://regina-normal.github.io/#download" target="_top"><span class="application">Regina</span>
+      website</a> for a list of <span class="application"><span class="acronym">GNU</span>/Linux</span> distributions
+      that have packages available.
+     </p><p>
+      If you do need to build <span class="application">Regina</span> yourself, the website offers
+      help on
+      <a href="http://regina-normal.github.io/source.html" target="_top">building
+      <span class="application">Regina</span> from source</a>.  There is also a page on
+      <a href="http://regina-normal.github.io/buildtips.html" target="_top">building
+      <span class="application">Regina</span> on different distributions</a>, which suggests specific
+      <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">cmake</strong></span></span> options tailored to your particular
+      type of machine.
+     </p></td></tr><tr class="question"><td align="left" valign="top"><a name="trouble-testsuite"></a><a name="idp105545333953040"></a><b>12.3.2.</b></td><td align="left" valign="top"><p>
+     What is the test suite, and how do I run it?
+    </p></td></tr><tr class="answer"><td align="left" valign="top"><b></b></td><td align="left" valign="top"><p>
+      Sometimes building an application on different
+      hardware or against different versions of libraries can produce
+      unforseen bugs that do not appear on the developer's machine(s).
+      To help guard against such problems, <span class="application">Regina</span> ships with a rich test
+      suite.  The test suite asks <span class="application">Regina</span> to perform
+      different calculations that isolate different portions of its
+      mathematical code, and it verifies that <span class="application">Regina</span> gets all
+      the answers correct.
+     </p><p>
+      You can only run the test suite if you are
+      <a href="http://regina-normal.github.io/source.html" target="_top">building
+      <span class="application">Regina</span> from source</a> yourself.
+      If you download a ready-made package, the person who built the
+      package should have already verified that <span class="application">Regina</span> passes the
+      test suite (as all of the packages on the <span class="application">Regina</span> website do).
+     </p><p>
+      You will also need
+      <a href="http://regina-normal.github.io/source.html#sysreq" target="_top"><span class="application">CppUnit</span> installed</a>.
+      Otherwise the test suite will run but only with the simpler <span class="application">Python</span>
+      and command-line utilities tests, not the rich and detailed <span class="application">C++</span>
+      calculation engine tests.
+     </p><p>
+      To run the test suite, move into your main build
+      directory and type <strong class="userinput"><code>make test ARGS=-V</code></strong>.
+      You should see the individual tests being run, as illustrated below.
+     </p><pre class="screen">
+<code class="prompt">example:~/source/regina/build&gt;</code> <strong class="userinput"><code>make test ARGS=-V</code></strong>
+Running tests...
+...
+... (some initial output)
+...
+1: ----------------------------------------------
+1: Test suite for Regina's command-line utilities
+1: ----------------------------------------------
+1:
+1: Running censuslookup.test ... ok
+1: Running regconcat.test (with filter) ... ok
+...
+... (more output)
+...
+2: ---------------------------------------
+2: Test suite for Regina's python bindings
+2: ---------------------------------------
+2:
+2: Running alltypes.test ... ok
+2: Running angles.test ... ok
+...
+... (even more output)
+...
+3: Regina calculation engine test suite
+3:
+3: AbelianGroupTest::incrementalBuild... ok.
+3: AngleStructuresTest::empty... ok.
+3: AngleStructuresTest::oneTet... ok.
+...
+... (lots and lots of output)
+...
+100% tests passed, 0 tests failed out of 3
+
+Total Test time (real) =  171.41 sec
+<code class="prompt">example:~/source/regina/build&gt;</code>
+</pre><p>
+      We see from the output above that <span class="application">Regina</span> passed all of its tests
+      (and hopefully this is what you will see too).
+     </p></td></tr><tr class="question"><td align="left" valign="top"><a name="idp105545333931920"></a><a name="idp105545333932176"></a><b>12.3.3.</b></td><td align="left" valign="top"><p>
+     Something else not described in this list has gone wrong.
+    </p></td></tr><tr class="answer"><td align="left" valign="top"><b></b></td><td align="left" valign="top"><p>
+      Perhaps something crashed.  Maybe the program gave the wrong
+      answer.  Or it could be just a little too slow?
+     </p><p>
+      Please! - mail the authors and let us know.  You are welcome to
+      write to us directly (our <a href="credits.html#acknowledgements" title="Acknowledgements">email
+      addresses are here</a>).  Or even better,
+      use the <a href="services.html" title="Chapter 13. Bug Tracking and Feature Requests"><span class="application">GitHub</span> issue tracking system</a>
+      so that the problem you report is publicly archived.
+     </p><p>
+      This program is permanently in development.  There is a very
+      long TODO list, and chances are your problem is on it.  And
+      then again chances are it's not.  So please, let us know what you
+      think can be fixed or improved.
+     </p></td></tr></tbody></table></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="compiling-apidocs.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="services.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft"><span class="acronym">API</span> Documentation </td><td width="34%" align="center" class="navCenter"><a href="index.html">Up</a></td><td width="33%" align="right" class="navRight"> Bug Tracking and Feature Requests</td></tr></table></div></body></html>

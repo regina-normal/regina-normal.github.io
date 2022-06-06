@@ -1,0 +1,94 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../regina.css">
+    <title>Regina for Fedora</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000"
+    link="#0000EE" vlink="#551A8B" alink="#FF0000">
+
+<h1><a name="contents">Regina for Fedora</a></h1>
+
+<p>
+Regina now offers Fedora packages through online package repositories.
+This helps Fedora to find and install dependencies automatically.
+It also helps with security, since the repository is cryptographically signed.
+</p>
+<p>
+To install Regina and keep up-to-date with the newest version,
+follow these instructions.
+</p>
+<p>
+<b>You only need to follow these steps the first time you install Regina.</b>
+After this, Fedora's package manager will handle upgrades for you,
+just like for any other Fedora package.
+</p>
+<ol>
+<li><p>
+Open a terminal.
+</p></li>
+<li><p>
+Add Regina to your list of package repositories.
+To do this, type the line below, replacing
+<span class="placeholder"><tt>VERSION</tt></span> with your Fedora version
+(e.g., 35 or 36):
+</p>
+<div class="example"><p>
+<tt>sudo dnf config-manager --add-repo https://people.debian.org/~bab/rpm/regina/fedora/<span class="placeholder">VERSION</span>/regina.repo</tt>
+</p></div>
+<p>For example, if you are running Fedora&nbsp;36, you would type:</p>
+<div class="specific"><p>
+<tt>sudo dnf config-manager --add-repo https://people.debian.org/~bab/rpm/regina/fedora/36/regina.repo</tt>
+</p></div>
+<p>
+If <tt>dnf</tt> does not understand the <tt>config-manager</tt> command,
+you will need to install the <tt>dnf-plugins-core</tt> package.
+</p>
+</li>
+<li><p>
+Update the list of available packages.  To do this, type:
+</p>
+<div class="example"><p>
+<tt>sudo dnf update</tt>
+</p></div>
+</li>
+<li><p>
+Install Regina.  To do this, type:
+</p>
+<div class="example"><p>
+<tt>sudo dnf install regina-normal</tt>
+</p></div>
+<p>
+Fedora should ask you at this point to import Regina's cryptographic
+signing key.
+<b>Check that the fingerprint is correct</b> (the correct fingerprint is shown
+at the bottom of this page), before accepting the key.
+</p></li>
+</ol>
+<p>
+That's all!  You can now keep Regina up to date in the same way that you
+manage your other Fedora packages.
+</p>
+<p>
+The fingerprint for Regina's cryptographic signing key is shown below
+(see the line in bold).
+If you wish to examine the key more carefully, including its links into
+the web of trust, you can
+<a href="https://people.debian.org/~bab/regina-key.txt">download it here</a>.
+</p>
+<pre class="example">
+Importing GPG key 0x542D38D9:
+ Userid     : "Benjamin Burton &lt;bab@debian.org&gt;"
+ <b>Fingerprint: 519A 0009 FB50 255D DB4E 8892 70A6 BEDF 542D 38D9</b>
+ From       : https://people.debian.org/~bab/regina-key.txt
+Is this ok [y/N]: y
+</pre>
+
+<p class="return">
+<a href="../index.html#linux"><img src="../regina.svg"
+    alt="Back to main page ..."
+    border="0" width="32" height="32" align="middle"></a>
+<a href="../index.html#linux">Back to main page ...</a></p>
+
+</body>
+</html>
+

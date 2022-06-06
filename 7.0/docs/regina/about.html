@@ -1,0 +1,42 @@
+<html><head><title>Chapter 1. Introduction</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina 7.0 Handbook"><link rel="up" href="index.html" title="The Regina 7.0 Handbook"><link rel="prev" href="index.html" title="The Regina 7.0 Handbook"><link rel="next" href="featureset.html" title="What does Regina do?"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Introduction</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="index.html">Prev</a></td><td align="center" class="navCenter" width="34%"> </td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="featureset.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="about"></a>Chapter 1. Introduction</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="about.html#tutorial">Getting Started</a></span></dt><dt><span class="sect1"><a href="featureset.html">What does Regina do?</a></span></dt><dd><dl><dt><span class="sect2"><a href="featureset.html#features-tri">3-Manifold Triangulations</a></span></dt><dt><span class="sect2"><a href="featureset.html#features-dim4">4-Manifold Triangulations</a></span></dt><dt><span class="sect2"><a href="featureset.html#features-highdim">Higher Dimensions</a></span></dt><dt><span class="sect2"><a href="featureset.html#features-links">Knots and Links</a></span></dt><dt><span class="sect2"><a href="featureset.html#features-census">Census Creation and Lookup</a></span></dt><dt><span class="sect2"><a href="featureset.html#features-surfaces">Normal Surfaces and Hypersurfaces</a></span></dt><dt><span class="sect2"><a href="featureset.html#features-angles">Angle Structures</a></span></dt><dt><span class="sect2"><a href="featureset.html#features-splitting">Splitting Surfaces</a></span></dt><dt><span class="sect2"><a href="featureset.html#features-scripting">Scripting</a></span></dt><dt><span class="sect2"><a href="featureset.html#features-interfaces">Interfaces</a></span></dt><dt><span class="sect2"><a href="featureset.html#features-docs">Documentation</a></span></dt><dt><span class="sect2"><a href="featureset.html#features-datafiles">Data Files</a></span></dt></dl></dd><dt><span class="sect1"><a href="regina7.html">Important Changes in <span class="application">Regina</span> 7.0</a></span></dt><dd><dl><dt><span class="sect2"><a href="regina7.html#regina7-fileformat">A new, more flexible file format</a></span></dt><dt><span class="sect2"><a href="regina7.html#regina7-highdim">Dimensions 9–15 removed by default</a></span></dt><dt><span class="sect2"><a href="regina7.html#regina7-python"><span class="application">Python</span> is a first-class citizen</a></span></dt><dt><span class="sect2"><a href="regina7.html#regina7-cpp"><span class="application">C++</span> embraces modern standards and value semantics</a></span></dt><dt><span class="sect2"><a href="regina7.html#regina7-tons">TONS removed temporarily</a></span></dt></dl></dd><dt><span class="sect1"><a href="genealogy.html">Genealogy</a></span></dt><dt><span class="sect1"><a href="citing.html">Citing Regina</a></span></dt><dt><span class="sect1"><a href="who.html">Who is Regina?</a></span></dt></dl></div><p>
+  <span class="application">Regina</span> is a software package for low-dimensional topologists.
+  Historically, its main strengths lie in 3-manifold topology: it has a
+  highly optimised toolkit with a focus on normal surface theory,
+  angle structures, and the combinatorial structures of triangulations,
+  and it now performs many high-level topological algorithms for 3-manifolds.
+  <span class="application">Regina</span> also offers rich toolkits for knots and links and
+  triangulated 4-manifolds, and offers more basic combinatorial support
+  for manifolds of dimension 5–8 (and, if you make your own
+  <a href="https://regina-normal.github.io/buildtips.html#highdim" target="_top">custom
+  build</a>, 9–15).
+  For more on these and its many other features, see the
+  <a href="featureset.html" title="What does Regina do?">full feature set</a>
+  later in this introduction.
+ </p><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="tutorial"></a>Getting Started</h2></div></div></div><p>
+   Not sure how to start <span class="application">Regina</span>?  You can find it in your main
+   applications or programs menu;
+   <a href="troubleshooting.html#trouble-start"><span class="acronym">follow this link</span></a>
+   for details and screenshots.
+  </p><p>
+   The best way to become familiar with <span class="application">Regina</span> is simply to play
+   around with it.  <span class="application">Regina</span> ships with several example files, including
+   a number of censuses of 3-manifold triangulations.  Most of these examples
+   can be accessed through the
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">File</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Open Example</span></span>
+   menu when running <span class="application">Regina</span>.
+  </p><p>
+   For an excellent starting point, try
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">File</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guisubmenu">Open Example</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Introductory Examples</span></span>,
+   which illustrates most of the structures that <span class="application">Regina</span> can work with.
+   The users' handbook (which you are reading now) also includes a number of
+   <a href="sessions.html" title="Sample Python Sessions">sample <span class="application">Python</span> sessions</a>
+   that illustrate how <span class="application">Regina</span>'s in-built <span class="application">Python</span> scripting can be used.
+  </p><p>
+   The graphical user interface offers extensive assistance
+   through tooltips and "What's This?" texts.
+   If you ever want to know what element of the user interface means
+   (such a button or a text field), just press
+   <span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">F1</strong></span>
+   and click on the thing you would like to know more about.
+  </p></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="index.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="featureset.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">The <span class="application">Regina</span> 7.0 Handbook </td><td width="34%" align="center" class="navCenter"><a href="index.html">Up</a></td><td width="33%" align="right" class="navRight"> What does Regina do?</td></tr></table></div></body></html>

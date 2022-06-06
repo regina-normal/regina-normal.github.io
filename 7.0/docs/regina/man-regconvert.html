@@ -1,0 +1,58 @@
+<html><head><title>regconvert</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina 7.0 Handbook"><link rel="up" href="utils.html" title="Appendix B. Command Line: Specialised Utilities"><link rel="prev" href="man-regconcat.html" title="regconcat"><link rel="next" href="man-regfiledump.html" title="regfiledump"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>regconvert</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="man-regconcat.html">Prev</a></td><td align="center" class="navCenter" width="34%">Command Line: Specialised Utilities</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="man-regfiledump.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="man-regconvert"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>regconvert — Convert between different <span class="application">Regina</span> file formats</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regconvert</strong></span></span> [[<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-2</code></span>] |  [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-3</code></span>]] [[<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-x</code></span>] |  [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-u</code></span>]] {<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>old-file</code></em></span>} [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>new-file</code></em></span>]</p></div></div><div class="refsect1" lang="en"><a name="idp105545334436112"></a><h2>Description</h2><p>
+    This utility converts back and forth between different <span class="application">Regina</span>
+    file formats.
+   </p><p>
+    <span class="application">Regina</span>'s file formats include:
+    </p><div class="glosslist"><dl><dt>Third-generation <span class="acronym">XML</span></dt><dd><p>
+       This is the modern <span class="acronym">XML</span> format introduced in <span class="application">Regina</span> 7.0.
+       Older versions of <span class="application">Regina</span> (6.0.1 and below) cannot read it at all.
+      </p></dd><dt>Second-generation <span class="acronym">XML</span></dt><dd><p>
+       This is the original <span class="acronym">XML</span> format that was used in
+       <span class="application">Regina</span> 3.0–6.0.1 (from 2002–2021).
+       Current versions of <span class="application">Regina</span> can still read and write this format
+       if required.
+      </p></dd><dt>First-generation binary format</dt><dd><p>
+       This is the ancient binary format that was used in <span class="application">Regina</span> 2.x
+       (from 2000–2002).
+       Support for this format was dropped completely in September 2013,
+       and modern versions of <span class="application">Regina</span> cannot read or write it.
+      </p><p>
+       If you still have ancient files that use this format, you will need to
+       find a copy of <span class="application">Regina</span> 3.0–4.93 (from 2002–2012),
+       which can convert these old binary files to the second-generation
+       <span class="acronym">XML</span> format.
+      </p></dd></dl></div><p>
+   </p><p>
+    The argument <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>old-file</code></em></span> should be the file to
+    read and convert; the argument <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>new-file</code></em></span> should
+    be the name of the new converted file to write.  These two filenames
+    may be the same, in which case the old file will be replaced with the new.
+   </p><p>
+    If the argument <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>new-file</code></em></span> is missing then the
+    new file will be written to standard output, which forces the output to be
+    uncompressed <span class="acronym">XML</span> (see option <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-u</code></span>).
+   </p></div><div class="refsect1" lang="en"><a name="idp105545334484112"></a><h2>Options</h2><div class="variablelist"><dl><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-2</code></span></span></dt><dd><p>Convert to the older second-generation <span class="acronym">XML</span> format,
+       as used in <span class="application">Regina</span> 3.0–6.0.1.</p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-3</code></span> (default)</span></dt><dd><p>Convert to the modern third-generation <span class="acronym">XML</span> format,
+       introduced in <span class="application">Regina</span> 7.0.</p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-x</code></span> (default)</span></dt><dd><p>Write the output as compressed <span class="acronym">XML</span>.</p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-u</code></span></span></dt><dd><p>Write the output as uncompressed (plain text) <span class="acronym">XML</span>.</p></dd></dl></div></div><div class="refsect1" lang="en"><a name="idp105545334461968"></a><h2><span class="application">macOS</span> Users</h2><p>
+    If you downloaded a drag-and-drop app bundle, this utility is
+    shipped inside it.  If you dragged <span class="application">Regina</span> to the main
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Applications</span></span> folder, you can run it as
+    <code class="literal">/Applications/Regina.app/Contents/MacOS/regconvert</code>.
+   </p></div><div class="refsect1" lang="en"><a name="idp105545334465040"></a><h2><span class="application">Windows</span> Users</h2><p>
+    The command-line utilities are installed beneath the
+    <code class="filename">Program Files</code> directory; on some
+    machines this directory is called
+    <code class="filename">Program Files (x86)</code>.
+    You can start this utility by running
+    <code class="literal">c:\Program Files\Regina\Regina 7.0\bin\regconvert.exe</code>.
+   </p></div><div class="refsect1" lang="en"><a name="idp105545334468240"></a><h2>See Also</h2><p>
+    <a href="man-regfiletype.html" title="regfiletype">regfiletype</a>,
+    <a href="man-regina-gui.html" title="regina-gui">regina-gui</a>.
+   </p></div><div class="refsect1" lang="en"><a name="idp105545334478864"></a><h2>Author</h2><p>
+    This utility was written by Benjamin Burton
+    <code class="email">&lt;<a href="mailto:bab@maths.uq.edu.au">bab@maths.uq.edu.au</a>&gt;</code>.
+    Many people have been involved in the development
+   of <span class="application">Regina</span>; see the <a href="credits.html#acknowledgements" title="Acknowledgements">acknowledgements
+   page</a> for a full list of credits.
+   </p></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="man-regconcat.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="man-regfiledump.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">regconcat </td><td width="34%" align="center" class="navCenter"><a href="utils.html">Up</a></td><td width="33%" align="right" class="navRight"> regfiledump</td></tr></table></div></body></html>

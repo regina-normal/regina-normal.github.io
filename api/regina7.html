@@ -1,0 +1,1351 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../regina.css">
+    <title>Regina - Moving from 6.x to 7.x</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000"
+    link="#0000EE" vlink="#551A8B" alink="#FF0000" class="deprecation">
+
+<h1><a name="contents">Regina - Moving from 6.x to 7.x</a></h1>
+
+<div class="announce"><p>
+This page relates only to <b>C++ and Python programmers</b>.
+</p></div>
+
+<p>
+Over time, Regina makes changes and improvements to its C++ and Python
+interfaces.  This page explains how you will need to update your C++
+code and/or Python scripts to work with Regina&nbsp;7.0.
+<p>
+Many of the old classes and routines have been kept around
+but marked as <i>deprecated</i>, so that your old code will still work.
+<p>
+<b>All of this deprecated code will be removed in Regina&nbsp;7.1</b>.</li>
+<p>
+If you have <i>very</i> old code, you can also read the separate pages on
+<a href="regina5.html">moving from Regina&nbsp;4.x to 5.x</a> and
+<a href="regina6.html">moving from Regina&nbsp;5.x to 6.x</a>.
+<p>
+<p><h4><span class="question">Changes from Regina&nbsp;6.x to 7.x</span></h4></p>
+<p>
+First, you should <b>read the summary of the major behavioural changes</b>,
+<a href="https://regina-normal.github.io/7.0/docs/regina/regina7.html">available here online</a>.
+This discusses some sweeping changes across the entire API, such as:
+<ul>
+<li>adopting the <b>C++17</b> standard;</li>
+<li><b>returning objects by value</b> instead of by newly-allocated pointer,
+and likewise passing objects by reference or value instead of by pointer;</li>
+<li><b>returning multiple values using tuples</b> instead of passing extra
+"output arguments";</li>
+<li>allowing mathematical objects such as triangulations or normal surface
+lists to <b>live outside the packet tree</b>;</li>
+<li>managing packets exclusively by <b>shared pointers</b>.</li>
+</ul>
+<p>
+If you have not read that summary, you should
+<b><a href="https://regina-normal.github.io/7.0/docs/regina/regina7.html">stop
+and read it now</a></b> before continuing here.
+
+<p>
+Beyond this, there are a few general rules that have been applied across
+the API:
+<ul>
+<li>Functions that take <b>callbacks</b> (e.g.,
+<tt>Triangulation&lt;3&gt;::retriangulate()</tt> or
+<tt>FacetPairing&lt;dim&gt;::findAllPairings()</tt>)
+have been redesigned in a way that is safer and more flexible.
+They now support lambdas, and no longer take function pointers involving
+untyped <tt>(void*)</tt> arguments.
+"Sentinel" callbacks (i.e., a final callback with a null argument once
+some algorithm has finished) have also been removed.
+You should read the API documentation to see exactly how these new
+interfaces work.</li>
+<li>Most routines that used to take <b>output iterators</b>
+(e.g., <tt>Triangulation&lt;dim&gt;::findAllIsomorphisms()</tt>)
+have been redesigned to use these more flexible callbacks also.</li>
+<li>Some routines that used to take <b>optional output arguments</b>
+(e.g., <tt>Triangulation&lt;dim&gt;::isoSig()</tt>)
+now have separate versions (e.g., <tt>isoSig()</tt> vs <tt>isoSigDetail()</tt>).
+<li><b>Cloning routines</b> of the form <tt>Class::clone()</tt> have
+generally been replace by copy constructors.</li>
+<li>Routines that take <b>progress trackers</b> no longer run in the
+background; instead the user is responsible for creating, joining and/or
+detaching threads.</li>
+<li>In the <b>subcomplex code</b> (i.e., <tt>StandardTriangulation</tt>
+and its subclasses), the <tt>isXXX()</tt> and <tt>formsXXX()</tt> routines
+are now all called <tt>recognise()</tt>.  For example,
+<tt>StandardTriangulation::isStandardTriangulation()</tt> is now
+<tt>StandardTriangulation::recognise()</tt>, and
+<tt>TriSolidTorus::formsTriSolidTorus()</tt> is now
+<tt>TriSolidTorus::recognise()</tt>.</li>
+<li>For C++ functions that take an <b>output stream</b> (e.g.,
+<tt>Link::writePACE()</tt>), the Python bindings have been removed
+(since these bindings always assumed standard output).
+In all such cases there is a new function that returns a string instead
+(e.g., <tt>Link::pace()</tt>).</li>
+</ul>
+
+Errors and "unsolved scenarios" used to be handled using
+null/zero/empty return values, or sometimes using optional "error arguments"
+(e.g., a <tt>bool</tt> pointer argument that would return success or failure).
+Now Regina handles such scenarios using
+<b><tt>std::optional</tt> and exceptions</b>:
+<ul>
+<li>Regina typically uses <tt>std::optional</tt> for <b>ordinary
+scenarios where there is no solution</b> (e.g.,
+<tt>Triangulation&lt;dim&gt;::isIsomorphicTo()</tt>, or
+<tt>Triangulation&lt;3&gt;::nonTrivialSphereOrDisc()</tt>).</li>
+<li>Regina typically uses exceptions for <b>rare or unexpected failures,
+or genuine errors</b>; for example:
+<ul>
+<li>when preconditions are not met (though in most cases Regina does not
+test preconditions, since this is considered the user's responsibility);</li>
+<li>when some argument is allowed but explicitly unsupported
+(e.g., calling <tt>Triangulation&lt;3&gt;::dehydrate()</tt> on a
+triangulation with boundary faces);
+<li>out-of-range errors (e.g., <tt>Rational::doubleApprox()</tt>);</li>
+<li>parsing errors (e.g., the string-based <tt>Integer</tt> constructor,
+or the input stream constructor for <tt>GluingPerms&lt;dim&gt;</tt>);</li>
+<li>object reconstruction errors (e.g., <tt>Link::fromKnotSig()</tt>);
+<li>specific cases of a more general function that are not yet
+implemented (e.g., some cases of <tt>Manifold::construct()</tt>);
+<li>algorithms that talk with the SnapPea kernel, where SnapPea could
+theoretically fail (e.g., <tt>NormalSurface::boundaryIntersections()</tt>);
+<li>member functions of <tt>SnapPeaTriangulation</tt>, in cases where you
+have a null SnapPea triangulation.</li>
+</ul></li>
+<li>Whenever a function <i>might</i> throw an exception, the type of
+exception and the circumstances in which it is thrown will be
+<b>clearly marked in Regina's API documentation</b>.</li>
+</ul>
+
+<p>
+These notes above cover most of the widespread API changes.
+However, there are many additional changes to specific headers, classes,
+functions and and constants.  These are listed in the table below,
+along with suggestions for how you should change your code.
+Any changes in the <i>behaviour</i> of these routines or classes
+are noted in the comments column.
+</p>
+<p>
+The blue cells indicate code that is still present in Regina,
+but is now <b>deprecated</b> (i.e., marked for removal in a future release).
+The red cells indicate code that has <b>already been removed</b> from Regina.
+</p>
+<p>
+<table cellspacing=0 border=0 class="data"><tbody>
+<tr>
+    <th class="first">Deprecated code</th>
+    <th>Replacement</th>
+    <th>Comments</th>
+</tr>
+<!------------------------------------------------------------------------->
+<tr><td class="deptype" colspan=4>Headers</td></tr>
+<tr>
+    <td class="removed"><tt>file/xml*.h</tt><br>
+    Removed in Regina&nbsp;7.0</td></td>
+    <td>&mdash;</td>
+    <td>All low-level XML parsing code is now private to Regina's engine,
+    and so these XML parsing headers are no longer installed.
+    The only public access to Regina's XML parsing code is via
+    <tt>regina::open()</tt>.</td>
+</tr>
+<tr>
+    <td class="first"><tt>surfaces/*.h</tt></td>
+    <td><tt>surface/*.h</tt></td>
+    <td>Renamed to match <tt>angle/*.h</tt> and <tt>hypersurface/*.h</tt>,
+    which also use the singular (not the plural).</td>
+</tr>
+<tr>
+    <td class="removed"><tt>triangulation/homologicaldata.h</tt><br>
+    Removed in Regina&nbsp;7.0</td></td>
+    <td><tt>triangulation/dim3/homologicaldata.h</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>hypersurface/hscoordregistry.h</tt>,<br>
+    <tt>hypersurface/hscoordregistry-impl.h</tt>,<br>
+    <tt>packet/packetregistry.h</tt>,<br>
+    <tt>packet/packetregistry-impl.h</tt>,<br>
+    <tt>surfaces/coordregistry.h</tt>,<br>
+    <tt>surfaces/coordregistry-impl.h</tt>,<br>
+    <tt>surfaces/filterregistry.h</tt>,<br>
+    <tt>surfaces/filterregistry-impl.h</tt><br>
+    Removed in Regina&nbsp;7.0</td></td>
+    <td>&mdash;</td>
+    <td>The old type registries have been removed.
+    Normal surfaces and hypersurfaces no longer have different subclasses
+    for different coordinate systems; instead each surface or hypersurface
+    stores a <tt>NormalEncoding</tt> or <tt>HyperEncoding</tt>.
+    Most of the remaining registry functionality is still available through
+    virtual functions and/or the redesigned
+    <tt>PacketInfo</tt>, <tt>NormalInfo</tt> and <tt>HyperInfo</tt>
+    classes.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>utilities/memutils.h</tt>,<br>
+    <tt>utilities/property.h</tt>,<br>
+    <tt>utilities/ptrutils.h</tt>,<br>
+    <tt>utilities/registryutils.h</tt><br>
+    Removed in Regina&nbsp;7.0</td></td>
+    <td>&mdash;</td>
+    <td>Since the move to C++17, these utilities have either become
+    unnecessary or been replaced with simpler alternatives.</td>
+</tr>
+<!------------------------------------------------------------------------->
+<tr><td class="deptype" colspan=4>Classes, Enums and Type Aliases</td></tr>
+<tr>
+    <td class="removed"><tt>AngleStructureVector</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td>&mdash;</td>
+    <td>Angle structures now hold their coordinates using a plain
+    <tt>Vector&lt;Integer&gt;</tt>.</td>
+</tr>
+<tr>
+    <td class="first"><tt>BitmaskLen<i>N</i></tt>, for all <tt><i>N</i></tt></td>
+    <td><tt>Bitmask1&lt;uint8_t&gt;,
+    Bitmask1&lt;uint16_t&gt;, etc.</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>CensusHits</tt>, <tt>CensusHitIterator</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>std::list&lt;CensusHit&gt;</tt>,
+    <tt>std::list&lt;CensusHit&gt;::const_iterator</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>DiscSetTetData&lt;T&gt;::DataPtr</tt></td>
+    <td><tt>DiscSetTetData&lt;T&gt;::Data*</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>EnumConstraints</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>ValidityConstraints</tt></td>
+    <td>This class has been completely redesigned (hence the rename);
+    you will need to read the <tt>ValidityConstraints</tt> documentation
+    before using it.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>FuncDelete</tt>,
+    <tt>FuncNew</tt>,
+    <tt>FuncNewCopyPtr</tt>,
+    <tt>FuncNewCopyRef</tt>,
+    <tt>FuncNewCopyClonePtr</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td>&mdash;</td>
+    <td>C++ provides good alternatives for these nowadays.</td>
+</tr>
+<tr>
+    <td class="first"><tt>GluingPermSearcher&lt;3&gt;::PurgeFlags</tt></td>
+    <td><tt>regina::CensusPurge</tt>, <tt>regina::CensusPurgeFlags</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>Handlebody</tt> (non-orientable case)<br>
+    Removed in Regina&nbsp;7.0</td>
+    <td>&mdash;</td>
+    <td>The <tt>Handlebody</tt> class now only represents orientable
+    handlebodies, since the non-orientable case was never fully
+    implemented.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>HasReturnType</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td>&mdash;</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>HyperInfo&lt;<i>coords</i>&gt;</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>HyperInfo</tt> (non-templated)</td>
+    <td>Most of the old templated <tt>HyperInfo</tt> functionality is now
+    accessible through <tt>HyperEncoding(<i>coords</i>)</tt>.
+    The new non-templated <tt>HyperInfo</tt> class just has some descriptive
+    name functions, accessible at both compile time and runtime.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>L31Pillow</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>TrivialTri</tt></td>
+    <td>The old <tt>L31Pillow</tt> is now one of the many ad-hoc cases handled
+    by <tt>TrivialTri</tt>.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>LessDeref</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td>&mdash;</td>
+    <td>Just use a lambda if you need to.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>LightweightSequence&lt;T&gt;::Less</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td>&mdash;</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>LightweightSequence&lt;T&gt;::SubsequenceCompareFirstPtr</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>LightweightSequence&lt;T&gt;::SubsequenceCompareFirst</tt></td>
+    <td>This inner class has been significantly redesigned, and now works with
+    containers whose keys are sequences (not pointers to sequences).</td>
+</tr>
+<tr>
+    <td class="removed"><tt>ListOnCall</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td>&mdash;</td>
+    <td>This class was not thread-safe, and did not add anything
+    non-trivial.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>LPConstraint...::Coefficients</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td>&mdash;</td>
+    <td>The interface for describing linear programming constraints has changed
+    significantly.  Typical users should not be affected, but do read the
+    API docs if you are writing constraint classes of your own.</td>
+</tr>
+<tr>
+    <td class="first"><tt>LPConstraintEuler</tt></td>
+    <td><tt>LPConstraintEulerPositive</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Matrix&lt;T&gt;::Coefficient</tt></td>
+    <td><tt>Matrix&lt;T&gt;::value_type</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>NewFunction</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td>&mdash;</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NNativeLong</tt></td>
+    <td><tt>NativeLong</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>NormalInfo&lt;<i>coords</i>&gt;</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>NormalInfo</tt> (non-templated)</td>
+    <td>Most of the old templated <tt>NormalInfo</tt> functionality is now
+    accessible through <tt>NormalEncoding(<i>coords</i>)</tt>.
+    The new non-templated <tt>NormalInfo</tt> class just has some descriptive
+    name functions, accessible at both compile time and runtime.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>NormalSurfaceVector</tt>,
+    <tt>NormalHypersurfaceVector</tt> and subclasses<br>
+    Removed in Regina&nbsp;7.0</td>
+    <td>&mdash;</td>
+    <td>Normal (hyper)surfaces now hold their coordinates using a plain
+    <tt>Vector&lt;LargeInteger&gt;</tt>, and use a <tt>NormalEncoding</tt>
+    or <tt>HyperEncoding</tt> to indicate the coordinate system and
+    other details of the vector representation.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>PacketInfo&lt;...&gt;</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>PacketInfo</tt> (non-templated)</td>
+    <td>Most of the old templated <tt>PacketInfo</tt> functionality is no longer
+    necessary. The new non-templated class has just a single <tt>name()</tt>
+    function, accessible at both compile time and runtime.</td>
+</tr>
+<tr>
+    <td class="first"><tt>PDF</tt></td>
+    <td><tt>Attachment</tt></td>
+    <td>This class now supports all kinds of file attachments
+    (not just PDF documents).</td>
+</tr>
+<tr>
+    <td class="first"><tt>Perm&lt;4..7&gt;::Code</tt></td>
+    <td><tt>Perm&lt;4..7&gt;::Code1</tt></td>
+    <td>This is an obsolete type of permutation code;
+    you should rework your code to use second-generation codes instead.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>Property&lt;T&gt;</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>std::optional&lt;T&gt;</tt> or
+    <tt>std::unique_ptr&lt;T&gt;</tt>,
+    depending on your storage policy</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>QitmaskLen<i>N</i></tt>, for all <tt><i>N</i></tt></td>
+    <td><tt>Qitmask1&lt;uint8_t&gt;,
+    Qitmask1&lt;uint16_t&gt;, etc.</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Ray</tt></td>
+    <td><tt>Vector&lt;LargeInteger&gt;</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>Returns</tt>, <tt>ReturnsTraits</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td>&mdash;</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>SafePtr</tt>, <tt>SafePointeeBase</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td>&mdash;</td>
+    <td>Now that the packet tree uses <tt>std::shared_ptr</tt>, these
+    classes are unnecessary.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>SatBlockStarter</tt>,
+    <tt>SatBlockStarterSearcher</tt>,
+    <tt>SatBlockStarterSet</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>SatRegion::find()</tt>, <tt>SatBlockModel</tt></td>
+    <td>The new routine <tt>SatRegion::find()</tt> is a simpler and more
+    flexible replacement for the old <tt>SatBlockStarterSearcher</tt>
+    infrastructure.  Individual "model blocks" for starting a search
+    now use <tt>SatBlockModel</tt> instead of <tt>SatBlockStarter</tt>.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>SFSAltSet</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>SFSAlt</tt></td>
+    <td>This class has had a significant redesign (hence the rename).
+    Instead of creating an <tt>SFSAltSet</tt>, call the static function
+    <tt>SFSAlt::altSet()</tt>.</td>
+</tr>
+<tr>
+    <td class="first"><tt>SFSpace::classType</tt></td>
+    <td><tt>SFSpace::ClassType</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>SigIsoList</tt></td>
+    <td><tt>SigCensus::IsoList</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>SnapPeaException</tt> as a base class for
+    other SnapPea-related exception types<br>
+    Removed in Regina&nbsp;7.0</td>
+    <td>&mdash;</td>
+    <td>The subclasses <tt>SnapPeaFatalError</tt> and
+    <tt>SnapPeaMemoryFull</tt> now derive from standard C++ exception types.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>SurfaceFilter</tt> as a concrete class that
+    accepts all surfaces<br>
+    Removed in Regina&nbsp;7.0</td>
+    <td>A default-constructed <tt>SurfaceFilterProperties</tt></td>
+    <td><tt>SurfaceFilter</tt> is now an abstract base class, and you
+    cannot instantiate it directly.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>SurfaceFilterInfo&lt;...&gt;</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td>The various virtual functions in <tt>SurfaceFilter</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>Triangulation&lt;dim&gt;::SimplexIterator</tt>,<br>
+    <tt>Triangulation&lt;dim&gt;::VertexIterator</tt>, etc.<br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>auto</tt> or <tt>decltype(...)</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>Tritmask<i>N</i></tt>, for all <tt><i>N</i></tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td>&nbsp;</td>
+    <td>These were not used at all, and did not support tritmasks of
+    arbitrary length.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Vector&lt;T&gt;::Element</tt></td>
+    <td><tt>Vector&lt;T&gt;::value_type</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<!------------------------------------------------------------------------->
+<tr><td class="deptype" colspan=4>Member Routines</td></tr>
+<tr>
+    <td class="first"><tt>AbelianGroup::addTorsionElement()</tt>,
+    <tt>AbelianGroup::addTorsionElements()</tt></td>
+    <td><tt>AbelianGroup::addTorsion()</tt></td>
+    <td>The new <tt>addTorsion()</tt> is much faster than these old
+    deprecated routines.</td>
+</tr>
+<tr>
+    <td class="first"><tt>AngleStructure::rawVector()</tt></td>
+    <td><tt>AngleStructure::vector()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>AngleStructures::enumerate()</tt>,
+    <tt>AngleStructures::enumerateTautDD()</tt></td>
+    <td><tt>AngleStructures</tt> class constructor</td>
+    <td>The new class constructor that performs this enumeration
+    will not insert the new list into the packet tree,
+    and will never start in a background thread.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>Ban...::init()</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td>Class constructors</td>
+    <td>The linear programming "ban constraint" classes have been
+    redesigned, and the tableaux is now passed to the class constructor
+    instead of a separate <tt>init()</tt> function.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>CensusHit::next()</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td>&mdash;</td>
+    <td>Census hits are now returned in a <tt>std::list</tt>, and so
+    the <tt>next()</tt> function is no longer relevant.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>DoubleDescription::enumerateExtremalRays()</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>DoubleDescription::enumerate()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Example&lt;3&gt;::poincareHomologySphere()</tt></td>
+    <td><tt>Example&lt;3&gt;::poincare()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>Face&lt;dim, subdim&gt;::buildLinkDetail()</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>Face&lt;dim, subdim&gt;::buildLinkInclusion()</tt></td>
+    <td>This returns only an isomorphism; you can use
+    <tt>buildLink()</tt> to fetch the corresponding triangulated link.
+    The labelling option has been removed completely.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>FaceEmbedding&lt;dim, subdim&gt;</tt>
+    constructor that takes (<i>simplex</i>, <i>face number</i>)<br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>FaceEmbedding&lt;dim, subdim&gt;</tt> constructor
+    that takes (<i>simplex</i>, <i>embedding permutation</i>)</td>
+    <td>End users would typically not use these constructors,
+    since <tt>FaceEmbedding</tt> objects are constructed for you as part
+    of the triangulation skeleton.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>FileInfo::type()</tt>,
+    <tt>FileInfo::typeDescription()</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>FileFormat::format()</tt>,
+    <tt>FileFormat::formatDescription()</tt></td>
+    <td>This change reflects the fact that Regina now supports more than
+    one generation of XML file format.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>GlobalDirs::pythonLibs()</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td>&mdash;</td>
+    <td>Nothing has been installed to this path since Regina&nbsp;5.0.</td>
+</tr>
+<tr>
+    <td class="first"><tt>GluingPerms&lt;dim&gt;::facetPairing()</tt></td>
+    <td><tt>GluingPerms&lt;dim&gt;::pairing()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>GluingPerms&lt;dim&gt;::gluingPerm()</tt></td>
+    <td><tt>GluingPerms&lt;dim&gt;::perm()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>GluingPerms&lt;dim&gt;::inputError()</tt></td>
+    <td>&mdash;</td>
+    <td>The input stream constructor now throws an exception on error.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>GluingPermSearcher&lt;dim&gt;</tt>
+    enumeration functions</br>
+    Redesigned in Regina&nbsp;7.0</td>
+    <td>&mdash;</td>
+    <td>The API for enumerating permutation sets has been significantly
+    reorganised; see <tt>GluingPermSearcher&lt;dim&gt;::runSearch()</tt>
+    for details.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>GluingPermSearcher&lt;dim&gt;</tt>
+    functions inherited from <tt>GluingPerms&lt;dim&gt;</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td>&mdash;</td>
+    <td><tt>GluingPermSearcher&lt;dim&gt;</tt> no longer derives from
+    <tt>GluingPerms&lt;dim&gt;</tt>.  Instead,
+    <tt>GluingPermSearcher&lt;dim&gt;::runSearch()</tt> will
+    pass a <tt>GluingPerms&lt;dim&gt;</tt> reference to your
+    callback function.</td>
+</tr>
+<tr>
+    <td class="first"><tt>GluingPermSearcher&lt;dim&gt;::completePermSet()</tt></td>
+    <td><tt>GluingPermSearcher&lt;dim&gt;::isComplete()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>GluingPermSearcher&lt;dim&gt;::inputError()</tt></td>
+    <td>&mdash;</td>
+    <td>The input stream constructor now throws an exception on error.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>GluingPermSearcher&lt;dim&gt;::readTaggedData()</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>GluingPermSearcher&lt;dim&gt;::fromTaggedData()</tt></td>
+    <td>This function now throws an exception on error instead of
+    returning <tt>null</tt>.</td>
+</tr>
+<tr>
+    <td class="first"><tt>GroupExpression::addStringFirst()</tt>,
+    <tt>GroupExpression::addStringLast()</tt></td>
+    <td><tt>GroupExpression::addTermFirst(string)</tt>,
+    <tt>GroupExpression::addTermLast(string)</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>GroupExpression::toTeX()</tt></td>
+    <td><tt>GroupExpression::tex()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>GroupExpression::writeText()</tt></td>
+    <td><tt>GroupExpression::writeTextShort(...)</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>GroupPresentation::intelligentSimplifyDetail()</tt>,
+    <tt>GroupPresentation::smallCancellationDetail()</tt>,
+    <tt>GroupPresentation::intelligentNielsenDetail()</tt>,
+    <tt>GroupPresentation::homologicalAlignmentDetail()</tt>,
+    <tt>GroupPresentation::prettyRewritingDetail()</tt></td>
+    <td><tt>GroupPresentation::intelligentSimplify()</tt>,
+    <tt>GroupPresentation::smallCancellation()</tt>,
+    <tt>GroupPresentation::intelligentNielsen()</tt>,
+    <tt>GroupPresentation::homologicalAlignment()</tt>,
+    <tt>GroupPresentation::prettyRewriting()</tt></td>
+    <td>The "non-detail" versions of these functions now return a
+    <tt>std::optional&lt;HomGroupPresentation&gt;</tt> instead of a
+    <tt>bool</tt>.</td>
+</tr>
+<tr>
+    <td class="first"><tt>GroupPresentation::toTeX()</tt></td>
+    <td><tt>GroupPresentation::tex()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Handlebody::handles()</tt></td>
+    <td><tt>Handlebody::genus()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Handlebody::isOrientable()</tt></td>
+    <td>&mdash;</td>
+    <td>The <tt>Handlebody</tt> class now only represents orientable
+    handlebodies, and so this routine always returns <tt>true</tt>.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>HilbertCD::enumerateHilbertBasis()</tt>,
+    <tt>HilbertDual::enumerateHilbertBasis()</tt>,
+    <tt>HilbertPrimal::enumerateHilbertBasis()</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>HilbertCD::enumerate()</tt>,
+    <tt>HilbertDual::enumerate()</tt>,
+    <tt>HilbertPrimal::enumerate()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>HomGroupPresentation::composeWith()</tt></td>
+    <td>Multiplication operator (<tt>g * h</tt>)</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>HomGroupPresentation::range()</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>HomGroupPresentation::codomain()</tt></td>
+    <td>The function has not changed; it has simply been renamed to more
+    accurately reflect what it returns.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>HomMarkedAbelianGroup::range()</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>HomMarkedAbelianGroup::codomain()</tt></td>
+    <td>The function has not changed; it has simply been renamed to more
+    accurately reflect what it returns.</td>
+</tr>
+<tr>
+    <td class="first"><tt>HomMarkedAbelianGroup::writeReducedMatrix()</tt></td>
+    <td><tt>HomMarkedAbelianGroup::detail()</tt>,
+    <tt>HomMarkedAbelianGroup::writeTextLong()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>LayeredSolidTorus::formsLayeredSolidTorusBase()</tt>,
+    <tt>LayeredSolidTorus::formsLayeredSolidTorusTop()</tt></td>
+    <td><tt>LayeredSolidTorus::recogniseFromBase()</tt>,
+    <tt>LayeredSolidTorus::recogniseFromTop()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Link::swapContents()</tt></td>
+    <td><tt>Link::swap()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>LPData&lt;...&gt;::dump()</tt>,
+    <tt>LPMatrix&lt;...&gt;::dump()</tt></td>
+    <td>The usual <tt>Output</tt> routines: <tt>str()</tt>,
+    <tt>detail()</tt>, etc.</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>LPInitialTableaux&lt;...&gt;::constraintsBroken()</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td>&mdash;</td>
+    <td>The <tt>LPInitialTableaux</tt> class constructor now throws an
+    exception on such an error.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Manifold::homologyH1()</tt></td>
+    <td><tt>Manifold::homology()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Manifold::TeXName()</tt></td>
+    <td><tt>Manifold::texName()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>MarkedAbelianGroup::equalTo()</tt></td>
+    <td>Equality operators (<tt>==</tt>, <tt>!=</tt>)</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>MarkedAbelianGroup::M()</tt>,
+    <tt>MarkedAbelianGroup::N()</tt>,
+    <tt>MarkedAbelianGroup::boundaryMap()</tt>,
+    <tt>MarkedAbelianGroup::writeAsBoundary()</tt></td>
+    <td><tt>MarkedAbelianGroup::m()</tt>,
+    <tt>MarkedAbelianGroup::n()</tt>,
+    <tt>MarkedAbelianGroup::boundaryOf()</tt>,
+    <tt>MarkedAbelianGroup::asBoundary()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>MarkedAbelianGroup::rankCC()</tt>,
+    <tt>MarkedAbelianGroup::minNumberOfGenerators()</tt>,
+    <tt>MarkedAbelianGroup::minNumberCycleGens()</tt></td>
+    <td><tt>MarkedAbelianGroup::ccRank()</tt>,
+    <tt>MarkedAbelianGroup::snfRank()</tt>,
+    <tt>MarkedAbelianGroup::cycleRank()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Matrix&lt;T&gt;::initialise()</tt></td>
+    <td>Constructor that takes a list of entries</td>
+    <td>The <tt>initialise()</tt> function was only ever available through
+    Python, not C++.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Matrix&lt;T&gt;::swapColumns()</tt></td>
+    <td><tt>Matrix&lt;T&gt;::swapCols()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Matrix&lt;T&gt;::writeMatrix()</tt></td>
+    <td><tt>Matrix&lt;T&gt;::writeTextLong()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Matrix2::Matrix2(const long[2][2])</tt></td>
+    <td><tt>Matrix2::Matrix2(long, long, long, long)</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Matrix2::operator&nbsp;=(const long[2][2])</tt></td>
+    <td><tt>matrix = Matrix2(a, b, c, d)</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>ModelLinkGraph::swapContents()</tt></td>
+    <td><tt>ModelLinkGraph::swap()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>NormalSurface::countCoords()</tt>,
+    <tt>NormalHypersurface::countCoords()</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>surface.vector().size()</tt>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>NormalSurface::orientedTriangles()</tt>,
+    <tt>NormalSurface::orientedQuads()</tt>,
+    <tt>NormalSurface::systemAllowsOriented()</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td>&mdash;</td>
+    <td>Regina&nbsp;7.0 no longer supports transversely oriented normal
+    surfaces; these will be reimplemented in a future release using a
+    completely different suite of classes.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NormalSurface::sameSurface()</tt>,
+    <tt>NormalHypersurface::sameSurface()</tt></td>
+    <td>Equality operators (<tt>==</tt>, <tt>!=</tt>)</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>NormalSurface::systemAllowsAlmostNormal()</tt>,
+    <tt>NormalSurface::systemAllowsSpun()</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>NormalSurface::couldBeAlmostNormal()</tt>,
+    <tt>NormalSurface::couldBeNonCompact()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NormalSurface::rawVector()</tt>,
+    <tt>NormalSurface::writeRawVector()</tt>,
+    <tt>NormalHypersurface::rawVector()</tt>,
+    <tt>NormalHypersurface::writeRawVector()</tt></td>
+    <td><tt>NormalSurface::vector()</tt>,
+    <tt>NormalHypersurface::vector()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>NormalSurfaces::allowsOriented()</tt></td>
+    <td>&mdash;</td>
+    <td>Regina&nbsp;7.0 no longer supports transversely oriented normal
+    surfaces; these will be reimplemented in a future release using a
+    completely different suite of classes.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NormalSurfaces::allowsSpun()</tt></td>
+    <td><tt>NormalSurfaces::allowsNonCompact()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NormalSurfaces::enumerate()</tt>,
+    <tt>NormalHypersurfaces::enumerate()</tt></td>
+    <td><tt>NormalSurfaces</tt> and <tt>NormalHypersurfaces</tt>
+    class constructors</td>
+    <td>The class constructors throw exceptions on error instead of
+    returning <tt>null</tt>, will not insert new lists into the
+    packet tree, and will never start in a background thread.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NormalSurfaces::quadToStandard()</tt>,
+    <tt>NormalSurfaces::quadOctToStandardAN()</tt>,
+    <tt>NormalSurfaces::standardToQuad()</tt>,
+    <tt>NormalSurfaces::standardANToQuadOct()</tt>,
+    <tt>NormalSurfaces::filterForDisjointPairs()</tt>,
+    <tt>NormalSurfaces::filterForLocallyCompatiblePairs()</tt>,
+    <tt>NormalSurfaces::filterForPotentiallyIncompressible()</tt></td>
+    <td><tt>NormalSurfaces</tt> class constructor that takes a
+    <tt>NormalTransform</tt> argument</td>
+    <td>The new class constructor will throw an exception on error instead of
+    returning <tt>null</tt>, and will not insert the new list into the
+    packet tree.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NormalSurfaces::writeAllSurfaces()</tt></td>
+    <td><tt>NormalSurfaces::writeTextLong()</tt> or
+    <tt>NormalSurfaces::detail()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>Packet::clone()</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>Packet::cloneAsSibling()</tt></td>
+    <td>Renamed to emphasise that this function is not a plain
+    copy operation, and might not succeed.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Packet::dependsOnParent()</tt>,
+    <tt>Packet::isPacketEditable()</tt></td>
+    <td>&mdash;</td>
+    <td>There are no longer any packet types that depend on their parents,
+    and so these routines always return <tt>false</tt> and <tt>true</tt>
+    respectively.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>Packet::firstTreePacket(const std::string&amp;)</tt>,
+    <tt>Packet::nextTreePacket(const std::string&amp;)</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>Packet::firstTreePacket(PacketType)</tt>,
+    <tt>Packet::nextTreePacket(PacketType)</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Packet::isGrandparentOf()</td>
+    <td><tt>Packet::isAncestorOf()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>Packet::safeDelete()</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td>&mdash;</td>
+    <td>This is no longer required, since packets are managed exclusively
+    by <tt>std::shared_ptr</tt>.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>PacketListener::packetToBeDestroyed()</tt><br>
+    Marked <tt>final</tt> in Regina&nbsp;7.0 to ensure it cannot be
+    reimplemented</td>
+    <td><tt>PacketListener::packetBeingDestroyed()</tt></td>
+    <td>The rename emphasises the fact that this is called when the
+    destructor is already in progress.</td>
+</tr>
+<tr>
+    <td class="first"><tt>PacketListener::unregisterFromAllPackets()</tt></td>
+    <td><tt>PacketListener::unlisten()</tt></td>
+    <td>&mdash;</td>
+</tr>
+<tr>
+    <td class="first"><tt>PDF::savePDF()</tt></td>
+    <td><tt>Attachment::save()</tt></td>
+    <td>&mdash;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Perm&lt;<i>n</i>&gt;</tt> constructor that
+    takes one or two C-style arrays</td>
+    <td><tt>Perm&lt;<i>n</i>&gt;</tt> constructor that
+    takes a <tt>std::array</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Perm&lt;<i>n</i>&gt;::index()</tt>,
+    <tt>Perm&lt;<i>n</i>&gt;::atIndex()</tt></td>
+    <td><tt>Perm&lt;<i>n</i>&gt;::orderedSnIndex()</tt>,
+    <tt>Perm&lt;<i>n</i>&gt;::orderedSn[]</tt></td>
+    <td>&mdash;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Perm&lt;4..7&gt;::permCode()</tt>,
+    <tt>Perm&lt;4..7&gt;::setPermCode()</tt>,
+    <tt>Perm&lt;4..7&gt;::fromPermCode()</tt>,
+    <tt>Perm&lt;4..7&gt;::isPermCode()</tt></td>
+    <td><tt>Perm&lt;4..7&gt;::permCode1()</tt>,
+    <tt>Perm&lt;4..7&gt;::setPermCode1()</tt>,
+    <tt>Perm&lt;4..7&gt;::fromPermCode1()</tt>,
+    <tt>Perm&lt;4..7&gt;::isPermCode1()</tt></td>
+    <td>These functions use an obsolete type of permutation code;
+    you should rework your code to use second-generation codes instead.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Perm&lt;<i>n</i>&gt;::preImageOf()</tt></td>
+    <td><tt>Perm&lt;<i>n</i>&gt;::pre()</tt></td>
+    <td>&mdash;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Rational::doubleApproxCheck()</tt></td>
+    <td><tt>Rational::doubleApprox()</tt></td>
+    <td>The <tt>doubleApprox()</tt> function now throws an exception
+    if the rational is out of range.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Rational::TeX()</tt></td>
+    <td><tt>Rational::tex()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>SatAnnulus::attachLST()</tt> member function<br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>SatAnnulus::attachLST()</tt> static function</td>
+    <td><tt>SatAnnulus</tt> now only allows const access to the triangulation,
+    and so this has become a static function that takes additional
+    non-const tetrahedron and permutation arguments.</td>
+</tr>
+<tr>
+    <td class="first"><tt>SatBlock::nAnnuli()</tt></td>
+    <td><tt>SatBlock::countAnnuli()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>SatBlock::isBlock...()</tt>,
+    <tt>SatBlock::clone()</tt> and copy constructors,
+    from <tt>SatBlock</tt> as well as its subclasses<br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>SatRegion::beginsRegion()</tt></td>
+    <td><tt>SatBlock</tt> and its subclasses can only be created through
+    larger recognition routines such as <tt>SatRegion::beginsRegion()</tt>.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>...::insertBlock()</tt>,
+    from subclasses of <tt>SatBlock</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>...::model()</tt></td>
+    <td>The relevant subclasses of <tt>SatBlock</tt> now have a new
+    <tt>model()</tt> routine, which returns a <tt>SatBlockModel</tt>
+    by value.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>SatBlock::setAdjacent()</tt>,
+    <tt>SatBlock::transform()</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td>&mdash;</td>
+    <td><tt>SatBlock</tt> and its subclasses are now read-only.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>SatBlockSpec</tt> constructors<br>
+    Removed in Regina&nbsp;7.0</td>
+    <td>&mdash;</td>
+    <td><tt>SatBlockSpec</tt> now only supports move and swap operations,
+    due to its new ownership semantics.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>SatRegion::expand()</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td>&mdash;</td>
+    <td>All publicly accessible functions that create a <tt>SatRegion</tt>
+    will expand it automatically.</td>
+</tr>
+<tr>
+    <td class="first"><tt>SatRegion::numberOfBlocks()</tt>,
+    <tt>SatRegion::numberOfBoundaryAnnuli()</tt></td>
+    <td><tt>SatRegion::countBlocks()</tt>,
+    <tt>SatRegion::countBoundaryAnnuli()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>SigCensus::run()</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>SigCensus::formCensus()</tt></td>
+    <td>You can no longer create a <tt>SigCensus</tt> manually;
+    instead you must use the static <tt>formCensus()</tt> routine.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>Signature::cycleCmp()</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td>&mdash;</td>
+    <td>This is now a private member function, since it was very
+    specialised.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Signature::parse()</tt></td>
+    <td>The string-based <tt>Signature</tt> constructor</td>
+    <td>Now throws an exception on error, instead of
+    returning <tt>null</tt>.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>SnapPeaTriangulation::filledTriangulation()</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>SnapPeaTriangulation::filledPartial()</tt> or
+    <tt>SnapPeaTriangulation::filledAll()</tt></td>
+    <td>Instead of a polymorphic return type, these routines now have return
+    types that are known precisely at compile time.</td>
+</tr>
+<tr>
+    <td class="first"><tt>StandardTriangulation::homologyH1()</tt></td>
+    <td><tt>StandardTriangulation::homology()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>StandardTriangulation::TeXName()</tt></td>
+    <td><tt>StandardTriangulation::texName()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Tangle::swapContents()</tt></td>
+    <td><tt>Tangle::swap()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>TreeDecomposition<tt> constructor that takes a
+    C-style array of adjacencies<br>
+    Removed in Regina&nbsp;7.0</td>
+    <td>Constructor that takes a <tt>Matrix&lt;bool&gt;</tt> or a
+    <tt>std::vector</tt> of rows</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>TreeTraversal::constraintsBroken()</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td>The class constructor now throws an exception in this scenario.</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>TreeTraversal::nVisited()</tt>,<br>
+    <tt>TreeEnumeration::nSolns()</tt>,<br>
+    <tt>TautEnumeration::nSolns()</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>TreeTraversal::visited()</tt>,<br>
+    <tt>TreeEnumeration::solutions()</tt>,<br>
+    <tt>TautEnumeration::solutions()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>TreeTraversal::verify()</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td>&mdash;</td>
+    <td>Each variant of <tt>verify()</tt> just tested a single
+   wmatrix multiplication, which you can perform yourself if necessary.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Triangulation&lt;dim&gt;::homologyH1()</tt>,<br>
+    <tt>Triangulation&lt;dim&gt;::homologyH2()</tt></td>
+    <td><tt>Triangulation&lt;dim&gt;::homology&lt;1&gt;()</tt>,<br>
+    <tt>Triangulation&lt;dim&gt;::homology&lt;2&gt;()</tt></td>
+    <td>In Python, <tt>homology&lt;k&gt;()</tt> becomes
+    <tt>homology(k)</tt>.  In both C++ and Python, <tt>homology()</tt>
+    is an alias for <tt>homology&lt;1&gt;()</tt>.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Triangulation&lt;dim&gt;::insertConstruction()</tt></td>
+    <td><tt>Triangulation&lt;dim&gt;::fromGluings()</tt></td>
+    <td>The interface for <tt>fromGluings()</tt> is very different from
+    <tt>insertConstruction()</tt>, but both have the same aim of
+    allowing users to hard-code entire triangulations in code.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Triangulation&lt;dim&gt;::isIdenticalTo()</tt></td>
+    <td><tt>a == b</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>Triangulation&lt;dim&gt;::splitIntoComponents()</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>Triangulation&lt;dim&gt;::triangulateComponents()</tt></td>
+    <td>The new <tt>triangulateComponents()</tt> routine does not create
+    packets or interact with the packet tree at all.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Triangulation&lt;dim&gt;::swapContents()</tt></td>
+    <td><tt>Triangulation&lt;dim&gt;::swap()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>Triangulation&lt;3&gt;::connectedSumDecomposition()</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>Triangulation&lt;3&gt;::summands()</tt></td>
+    <td>The new <tt>summands()</tt> routine does not create packets or interact
+    with the packet tree at all, and throws an exception on error.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Triangulation&lt;3&gt;::enterTextTriangulation()</tt></td>
+    <td>&mdash;</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Triangulation&lt;3&gt;::findStrictAngleStructure()</tt></td>
+    <td><tt>Triangulation&lt;3&gt;::hasStrictAngleStructure()</tt>,<br>
+    <tt>Triangulation&lt;3&gt;::strictAngleStructure()</tt></td>
+    <td>Call <tt>strictAngleStructure()</tt> only when you already know
+    a solution exist, since it will throw an exception otherwise.
+    If you do not know whether a solution exists, call
+    <tt>hasStrictAngleStructure()</tt> first.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Triangulation&lt;3&gt;::hasNonTrivialSphereOrDisc()</tt>,<br>
+    <tt>Triangulation&lt;3&gt;::hasOctagonalAlmostNormalSphere()</tt></td>
+    <td><tt>Triangulation&lt;3&gt;::nonTrivialSphereOrDisc</tt>,<br>
+    <tt>Triangulation&lt;3&gt;::octagonalAlmostNormalSphere</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Triangulation&lt;3&gt;::insertLayeredLoop()</tt>,<br>
+    <tt>Triangulation&lt;3&gt;::insertLayeredLensSpace()</tt>,<br>
+    <tt>Triangulation&lt;3&gt;::insertAugTriSolidTorus()</tt>,<br>
+    <tt>Triangulation&lt;3&gt;::insertSFSOverSphere()</tt></td>
+    <td><tt>Example&lt;3&gt;::layeredLoop()</tt>,<br>
+    <tt>Example&lt;3&gt;::layeredLensSpace()</tt>,<br>
+    <tt>Example&lt;3&gt;::augTriSolidTorus()</tt>,<br>
+    <tt>Example&lt;3&gt;::sfsOverSphere()</tt></td>
+    <td>Combine with <tt>Triangulation&lt;3&gt;::insertTriangulation()</tt>
+    if you need to insert one of these into an existing triangulation.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Triangulation&lt;3&gt;::insertRehydration()</tt></td>
+    <td><tt>Triangulation&lt;3&gt;::rehydrate()</tt></td>
+    <td>Combine with <tt>Triangulation&lt;3&gt;::insertTriangulation()</tt>
+    if you need to insert a rehydration into an existing triangulation.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Triangulation&lt;3&gt;::isThreeSphere()</tt>,<br>
+    <tt>Triangulation&lt;3&gt;::knowsThreeSphere()</tt></td>
+    <td><tt>Triangulation&lt;3&gt;::isSphere()</tt>,<br>
+    <tt>Triangulation&lt;3&gt;::knowsSphere()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>Triangulation&lt;3&gt;::makeZeroEfficient()</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>Triangulation&lt;3&gt;w::summands()</tt></td>
+    <td>The new <tt>summands()</tt> routine (which computes connected sum
+    decompositions) now comes with formal guarantees of zero-efficiency.</td>
+</tr>
+<tr>
+    <td class="first"><tt>TxICore::TeXName()</tt></td>
+    <td><tt>TxICore::texName</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Vector&lt;T&gt;::setElement()</tt></td>
+    <td><tt>vector[i]&nbsp;=&nbsp;value</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>Vertex&lt;3&gt;::link()</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>Vertex&lt;3&gt;::linkType()</tt></td>
+    <td>This was removed because <tt>link()</tt> will be used for
+    a different purpose in a future release.</td>
+</tr>
+<!------------------------------------------------------------------------->
+<tr><td class="deptype" colspan=4>Global Routines</td></tr>
+<tr>
+    <td class="removed"><tt>allowsNonOrientableLinks()</tt>,<br>
+    <tt>allowsInvalidFaces()</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td>Class constants
+    <tt>Face&lt;dim,&nbsp;subdim&gt;::allowsNonOrientableLinks</tt>,
+    <tt>Face&lt;dim,&nbsp;subdim&gt;::allowsInvalidFaces</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>basicTokenise(output_iterator, string)</tt></td>
+    <td><tt>basicTokenise(string)</tt></td>
+    <td>The tokens are now returned by value as a
+    <tt>std::vector</tt> of strings.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>clonePtr()</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td>Class copy constructors</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>duplicate()</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>::strdup()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>forCoords()</tt>, <tt>forFilter()</tt>,
+    <tt>forPacket()</tt>,<br>
+    Removed in Regina&nbsp;7.0</td>
+    <td>&mdash;</td>
+    <td>The old type registries have been removed.
+    Normal surfaces and hypersurfaces no longer have different subclasses
+    for different coordinate systems; instead each surface or hypersurface
+    stores a <tt>NormalEncoding</tt> or <tt>HyperEncoding</tt>.
+    Most of the remaining registry functionality is still available through
+    virtual functions and/or the redesigned
+    <tt>PacketInfo</tt>, <tt>NormalInfo</tt> and <tt>HyperInfo</tt>
+    classes.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>formSigCensus()</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>SigCensus::formCensus</tt></td>
+    <td>The new function uses a typesafe template-based mechanism
+    instead of function pointers and <tt>void*</tt> arguments.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>makeZeroVector()</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td>Class constructor <tt>Vector&lt;T&gt;(len)</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>readIsoSigList()</tt></td>
+    <td><tt>readSigList&lt;ObjectType&gt;()</tt></td>
+    <td>Instead of passing a dimension at runtime, you should set the
+    <tt>ObjectType</tt> template parameter to be
+    <tt>Triangulation&lt;dim&gt;</tt> or <tt>Link</tt>.</td>
+</tr>
+<tr>
+    <td class="first"><tt>valueOf(str,&nbsp;Integer&amp;)</tt>,<br>
+        <tt>valueOf(str,&nbsp;LargeInteger&amp;)</tt>,<br>
+        where <tt>str</tt> is a string</td>
+    <td><tt>integer = str</tt></td>
+    <td>Errors are detected via exceptions, instead of using a boolean
+    return value.</td>
+</tr>
+<!------------------------------------------------------------------------->
+<tr><td class="deptype" colspan=4>Class Constants</td></tr>
+<tr>
+    <td class="first"><tt>BoolSet::sNone</tt>,
+    <tt>BoolSet::sTrue</tt>,
+    <tt>BoolSet::sFalse</tt>,
+    <tt>BoolSet::sBoth</tt></td>
+    <td><tt>BoolSet()</tt>,
+    <tt>true</tt>,
+    <tt>false</tt>,
+    <tt>BoolSet(true, true)</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>DiscType::NONE</tt></td>
+    <td><tt>DiscType()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>FileInfo::TYPE_XML</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>REGINA_XML_GEN_1</tt> or <tt>REGINA_XML_GEN_2</tt>,
+    from the new <tt>FileFormat</tt> enum type</td>
+    <td>This change reflects the fact that Regina now supports more than
+    one generation of XML file format.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>GluingPermSearcher&lt;dim&gt;::dataTag_</tt>
+    (also in subclasses)<br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>...::dataTag</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>Perm&lt;<i>n</i>&gt;::invS<i>k</i></tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>Perm&lt;<i>k</i>&gt;::inverse()</tt></td>
+    <td>For those <i>k</i> that had inverse lookup tables,
+    the <tt>inverse()</tt> functions are just as fast.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Vector&lt;T&gt;::zero</tt>,<br>
+    <tt>Vector&lt;T&gt;::one</tt>,<br>
+    <tt>Vector&lt;T&gt;::minusOne</tt></td>
+    <td><tt>0</tt>, <tt>1</tt>, <tt>-1</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<!------------------------------------------------------------------------->
+<tr><td class="deptype" colspan=4>Global Constants</td></tr>
+<tr>
+    <td class="removed"><tt>NS_FILTER_DEFAULT</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>NS_FILTER_LEGACY_DEFAULT</tt></td>
+    <td>The corresponding class <tt>SurfaceFilter</tt> is now an
+    abstract base class, and can no longer be instantiated directly.</td>
+</tr>
+<tr>
+    <td class="first"><tt>PACKET_PDF</tt></td>
+    <td><tt>PACKET_ATTACHMENT</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="removed"><tt>triDiscArcs(i,j)</tt>,<br>
+    <tt>quadDiscArcs(i,j)</tt>,<br>
+    <tt>octDiscArcs(i,j)</tt><br>
+    Old syntax removed in Regina&nbsp;7.0</td>
+    <td><tt>triDiscArcs[i][j]</tt>,<br>
+    <tt>quadDiscArcs[i][j]</tt>,<br>
+    <tt>octDiscArcs[i][j]</tt></td>
+    <td>These are now arrays, not macros, and so the syntax has changed.<br>
+    Only affects C++, not Python.</td>
+</tr>
+</tbody></table>
+
+
+<p class="return">
+<a href="../index.html"><img src="../regina.svg" alt="Back to main page ..."
+    border="0" width="32" height="32" align="middle"></a>
+<a href="../index.html">Back to main page ...</a></p>
+
+</body>
+</html>
+

@@ -1,0 +1,60 @@
+<html><head><title>packet (link)</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Regina, XML, Data files"><link rel="start" href="index.html" title="Regina 7.0 File Format Reference"><link rel="up" href="removed.html" title="Deprecated and Removed Elements"><link rel="prev" href="data-packet-container.html" title="packet (container)"><link rel="next" href="data-packet-normalhypersurfacelist.html" title="packet (normal hypersurface list)"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>packet (link)</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="data-packet-container.html">Prev</a></td><td align="center" class="navCenter" width="34%">Deprecated and Removed Elements</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="data-packet-normalhypersurfacelist.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="data-packet-link"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>packet (link) — Replaced by <a href="data-link.html" title="link"><code class="sgmltag-element">link</code></a></p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="informaltable"><table border="1"><colgroup><col><col></colgroup><tbody><tr><td colspan="2">
+      <span class="bold"><strong>Content Model</strong></span>
+     </td></tr><tr><td colspan="2">
+<pre class="synopsis">
+packet ::= (<a href="data-crossings.html" title="crossings"><code class="sgmltag-element">crossings</code></a>, <a href="data-connections.html" title="connections"><code class="sgmltag-element">connections</code></a>, <a href="data-components.html" title="components"><code class="sgmltag-element">components</code></a>,
+            <a href="data-tag.html" title="tag"><code class="sgmltag-element">tag</code></a>*, <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a>*)</pre>
+     </td></tr><tr><td colspan="2">
+      <span class="bold"><strong>Attributes</strong></span>
+     </td></tr><tr><td colspan="2">
+      See the general <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a> element documentation.
+     </td></tr></tbody></table></div><p>Deprecated since <span class="application">Regina</span> 7.0</p></div><div class="refsect1" lang="en"><a name="idp105545335684112"></a><h2>Description</h2><p>
+   In <span class="application">Regina</span> 6.0.1 and earlier, the <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a> element was used
+   to store every packet in the entire packet tree that makes up a
+   <span class="application">Regina</span> data file.
+   This page describes how the <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a> element was structured when
+   storing a knot/link packet.
+   Since <span class="application">Regina</span> 7.0, each packet type has its own <span class="acronym">XML</span> element;
+   in particular, knot/link packets are now stored using the
+   <a href="data-link.html" title="link"><code class="sgmltag-element">link</code></a> element.
+  </p><p>
+   A <span class="emphasis"><em>knot/link</em></span>
+   packet stores the diagram of an oriented link in 3-dimensional space.
+  </p><p>
+   The number of crossings in the diagram and the signs of these
+   crossings are stored in the child <a href="data-crossings.html" title="crossings"><code class="sgmltag-element">crossings</code></a> element,
+   and the connections between these crossings are stored in the child
+   <a href="data-connections.html" title="connections"><code class="sgmltag-element">connections</code></a> element.
+   The child <a href="data-components.html" title="components"><code class="sgmltag-element">components</code></a> element stores a starting point for each
+   component of the link.
+  </p><p>
+   The roles played by the child <a href="data-tag.html" title="tag"><code class="sgmltag-element">tag</code></a> and <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a> elements are
+   described in the general <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a> element documentation.
+  </p><div class="refsect2" lang="en"><a name="idp105545335694352"></a><h3>Parents</h3><p>
+    The following elements contain <code class="sgmltag-element">packet</code> for
+    a knot/link packet:
+    <span class="simplelist"><a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a>, <a href="data-reginadata.html" title="reginadata"><code class="sgmltag-element">reginadata</code></a></span>.
+   </p></div><div class="refsect2" lang="en"><a name="idp105545335697936"></a><h3>Children</h3><p>
+    The following elements occur in <code class="sgmltag-element">packet</code> for
+    a knot/link packet:
+    <span class="simplelist"><a href="data-components.html" title="components"><code class="sgmltag-element">components</code></a>, <a href="data-connections.html" title="connections"><code class="sgmltag-element">connections</code></a>, <a href="data-crossings.html" title="crossings"><code class="sgmltag-element">crossings</code></a>, <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a>, <a href="data-tag.html" title="tag"><code class="sgmltag-element">tag</code></a></span>.
+   </p></div></div><div class="refsect1" lang="en"><a name="idp105545335572880"></a><h2>Example</h2><p>
+   The following <span class="acronym">XML</span> snippet represents the Whitehead link.
+  </p><pre class="programlisting">
+&lt;packet label="Whitehead link" type="Link" typeid="17" parent=""&gt;
+&lt;crossings size="5"&gt;
+- - + + -
+&lt;/crossings&gt;
+&lt;connections&gt;
+_1 ^1
+_2 ^4
+_4 ^3
+_0 ^2
+_3 ^0
+&lt;/connections&gt;
+&lt;components size="2"&gt;
+^0 _0
+&lt;/components&gt;
+&lt;/packet&gt;
+  </pre></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="data-packet-container.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="data-packet-normalhypersurfacelist.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">packet (container) </td><td width="34%" align="center" class="navCenter"><a href="removed.html">Up</a></td><td width="33%" align="right" class="navRight"> packet (normal hypersurface list)</td></tr></table></div></body></html>

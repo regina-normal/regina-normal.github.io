@@ -1,0 +1,233 @@
+<html><head><title>retriangulate</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina 7.0 Handbook"><link rel="up" href="utils.html" title="Appendix B. Command Line: Specialised Utilities"><link rel="prev" href="man-regfiletype.html" title="regfiletype"><link rel="next" href="man-sigcensus.html" title="sigcensus"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>retriangulate</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="man-regfiletype.html">Prev</a></td><td align="center" class="navCenter" width="34%">Command Line: Specialised Utilities</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="man-sigcensus.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="man-retriangulate"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>retriangulate — Exhaustively search through triangulations or knot diagrams using local moves</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">retriangulate</strong></span></span> [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-h, --height=</code></span><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>height</code></em></span>] [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-t, --threads=</code></span><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>threads</code></em></span>] [[<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-3, --dim3</code></span>] |  [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-4, --dim4</code></span>] |  [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-k, --knot</code></span>]] [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-a, --anysig</code></span>] [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--</code></span>] {<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>signature</code></em></span>}</p></div><div class="cmdsynopsis"><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">retriangulate</strong></span></span> {<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--help</code></span>}</p></div></div><div class="refsect1" lang="en"><a name="idp105545334558096"></a><h2>Description</h2><p>
+    Given a 3-manifold triangulation, 4-manifold triangulation or knot diagram,
+    this utility uses local moves to exhaustively search for other
+    triangulations/diagrams of the same manifold/knot that are the
+    same size or smaller.
+    Here “local moves” means Pachner moves for
+    triangulations, or Reidemeister moves for knots.
+   </p><p>
+    Specifically, suppose the input triangulation or knot diagram contains
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span> tetrahedra/pentachora/crossings
+    (for a 3-manifold, 4-manifold or knot respectively).
+    Then this utility will
+    exhaustively modify the triangulation or knot diagram using local moves,
+    without ever exceeding
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span> + <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>height</code></em></span>
+    tetrahedra/pentachora/crossings in total.
+    Moreover, all such triangulations/diagrams are guaranteed to be found, each
+    once and only once (up to an appropriate notion of
+    combinatorial isomorphism).
+   </p><p>
+    For 3-manifold triangulations, this utility will only attempt 2-3
+    and 2-3 Pachner moves, never 1-4 or 4-1 moves.
+    For 4-manifold triangulations or knot diagrams, it will use all types of
+    Pachner moves or Reidemeister moves respectively.
+   </p><p>
+    The input is assumed to represent a 3-manifold
+    triangulation unless one of the options <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--dim4</code></span> or
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--knot</code></span> is passed.
+   </p><p>
+    The program will output each triangulation or knot diagram that it finds
+    of the same size <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span> (including the original input
+    triangulation/diagram).  If it ever finds a
+    <span class="emphasis"><em>smaller</em></span> triangulation or diagram (thereby proving the
+    original to be non-minimal), it will output that smaller
+    triangulation/diagram and then stop immediately.  Otherwise it will continue
+    outputting triangulations or diagrams of size <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span>
+    until no more can be found.  Although the program also finds larger
+    triangulations/diagrams as part of its exhaustive search using local moves,
+    these larger triangulations/diagrams (of which there are typically many)
+    will not be output at all.
+   </p><p>
+    All triangulations or knot diagrams, both input and output, are described
+    using <em class="firstterm">isomorphism signatures</em> and
+    <em class="firstterm">knot signatures</em> respectively.  These are short text
+    strings that identify a triangulation or knot diagram uniquely up to
+    combinatorial isomorphism (which includes relabellings of
+    tetrahedra/pentachora/crossings, relabellings of the vertices of
+    tetrahedra/pentachora vertices, and reflection/reversal of knot diagrams).
+   </p><p>
+    To view the isomorphism signature of a triangulation:
+    in <span class="application">Regina</span>'s graphical user interface you can find this in the
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Composition</span></span> tab in the triangulation viewer,
+    and in <span class="application">Python</span> you can call <strong class="userinput"><code>t.isoSig()</code></strong>
+    for a triangulation <strong class="userinput"><code>t</code></strong>.
+    To view a knot signature:
+    in <span class="application">Regina</span>'s graphical user interface this is available through the
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Codes</span></span> tab in the knot/link viewer,
+    and in <span class="application">Python</span> you can call <strong class="userinput"><code>k.knotSig()</code></strong>
+    for a knot <strong class="userinput"><code>k</code></strong>.
+   </p><p>
+    For a full and precise specification of isomorphism signatures for
+    3-manifolds, see
+    <span class="emphasis"><em>Simplification paths in the Pachner graphs of closed
+    orientable 3-manifold triangulations</em></span>, Burton, 2011,
+    arXiv:1110.6080.
+   </p><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>
+     Very large triangulations or knots have signatures that begin with a dash
+     (<code class="literal">-</code>).  Such a signature could be mistaken for an option
+     when passing it on the command line.  To avoid this, you can pass the
+     special option <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--</code></span> immediately before it: this indicates
+     that all command-line options have finished, and whatever comes next should
+     be treated as the input signature.
+    </p><pre class="screen">
+    <code class="prompt">example$</code> <strong class="userinput"><code>retriangulate -h1 -- -b-LLvALwvM...</code></strong>
+</pre></div></div><div class="refsect1" lang="en"><a name="idp105545334607504"></a><h2>Options</h2><div class="variablelist"><dl><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-h,
+      --height=</code></span><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>height</code></em></span></span></dt><dd><p>
+       Specifies the number of additional tetrahedra, pentachora or
+       crossings (for a 3-manifold, 4-manifold or knot respectively)
+       that we allow during intermediate stages of retriangulation.
+       That is, if the input triangulation or knot diagram
+       has <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span> tetrahedra/pentachora/crossings, then
+       this utility will exhaustively search through all triangulations
+       or knot diagrams that it can reach via local moves that do not exceed
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span> + <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>height</code></em></span>
+       tetrahedra/pentachora/crossings in total.
+      </p><p>
+       Note that these larger intermediate triangulations or diagrams will not
+       be written to output; however, a larger height may allow the program
+       to access additional <span class="emphasis"><em>smaller</em></span> triangulations
+       or diagrams that were otherwise inaccessible.
+      </p><p>
+       The given height must be a non-negative integer.
+       In addition, for 3-manifolds it must be strictly positive, and
+       for 4-manifolds it must be even.
+      </p><p>
+       If not specified, this option defaults to 1 when working with
+       3-manifolds or knot diagrams, and it defaults to 2 when working
+       with 4-manifolds.
+      </p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>
+        In general, the running time can grow
+        <span class="emphasis"><em>superexponentially</em></span> with
+        <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>height</code></em></span>.  It is strongly suggested
+        that you begin with <code class="literal">--height=1</code> (or 2 for
+        4-manifolds) and increase it one step at a time until the
+        performance becomes unacceptable.
+       </p></div></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-t,
+      --threads=</code></span><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>threads</code></em></span></span></dt><dd><p>
+       Specifies the degree to which this utility uses parallel processing.
+       Specifically, this program will use
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>threads</code></em></span> simultaneous threads of execution
+       as it works its way through the different retriangulations or diagrams
+       of the input manifold or knot.
+      </p><p>
+       This program is typically able to use parallelism effectively,
+       and so running with <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>k</code></em></span> threads should
+       approximately divide the running time by <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>k</code></em></span>.
+      </p><p>
+       If not specified, this option defaults to 1
+       (i.e., single-threaded processing, with no parallelism).
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-3, --dim3</code></span> (default)</span></dt><dd><p>
+       Indicates that the given signature is the isomorphism signature of a
+       3-manifold triangulation.  The local moves used will be 2-3 and 3-2
+       Pachner moves.
+      </p><p>
+       This is the default if none of the
+       arguments <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--dim3</code></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--dim4</code></span> or
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--knot</code></span> is passed.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-4, --dim4</code></span></span></dt><dd><p>
+       Indicates that the given signature is the isomorphism signature of a
+       4-manifold triangulation.  The local moves used will be 1-5, 2-4, 3-3,
+       4-2 and 5-1 Pachner moves.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-k, --knot</code></span></span></dt><dd><p>
+       Indicates that the given signature is a knot signature.
+       The local moves used will be the Reidemeister moves.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-a, --anysig</code></span></span></dt><dd><p>
+       Indicates that the output is not required to be
+       classic isomorphism signatures.
+      </p><p>
+       <span class="application">Regina</span> 7.0 introduced alternate <span class="emphasis"><em>types</em></span>
+       of isomorphism signatures.  Like the original isomorphism signatures
+       that were introduced many years earlier, each type of signature
+       uniquely identifies a triangulation up to combinatorial isomorphism.
+       Moreover, <span class="application">Regina</span> can reconstruct a triangulation or link from a
+       signature of any type.
+      </p><p>
+       Internally, this utility uses one of the newer, alternate types
+       of signature that is faster to compute.  However, it still outputs
+       <span class="emphasis"><em>classic signatures</em></span>; that is, the same isomorphism
+       signatures that were originally introduced back in 2011.  This
+       conversion from alternate to classic signatures adds extra overhead
+       to the running time.
+      </p><p>
+       If you pass the option <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--anysig</code></span>, <span class="application">Regina</span> will
+       not convert its output back to classic signatures; instead it will
+       output whatever alternate signature type it uses internally.
+       This will be faster, and you can still use these alternate
+       signatures to reconstruct triangulations; the only reason
+       <span class="emphasis"><em>not</em></span> to do this is if you neeed to ensure
+       compatibility with the original classical signatures (e.g., for
+       matching against a list of signatures that was generated elsewhere).
+      </p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>
+       The internal signature type is subject to change in future versions
+       of <span class="application">Regina</span>.  That is, if you do use <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--anysig</code></span>,
+       then you may get different output depending upon which version of
+       <span class="application">Regina</span> you are using.
+      </p></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
+       Currently <span class="application">Regina</span> only uses alternate signature types with
+       triangulations.  For knot signatures, it still uses
+       classic signatures, though again this is subject to change in
+       future version of <span class="application">Regina</span>.
+      </p></div></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--</code></span></span></dt><dd><p>
+       Indicates that all other options have finished, and whatever comes
+       next on the command line should be treated as the input signature.
+      </p><p>
+       This is useful when your signature begins with a dash, to avoid
+       confusing your input signature with a regular command line option.
+      </p></dd></dl></div></div><div class="refsect1" lang="en"><a name="idp105545334637584"></a><h2>Examples</h2><p>
+    The following 3-manifold triangulation is non-minimal, but it requires a bit
+    of work to see this:
+   </p><pre class="screen">
+    <code class="prompt">example$</code> <strong class="userinput"><code>retriangulate -h2 hLLAAkbdceefggdonxdjxn</code></strong>
+    hLLAAkbdceefggdonxdjxn
+    hLALPkbcbefgfghxwnxark
+    Found 2 triangulation(s).
+    <code class="prompt">example$</code> <strong class="userinput"><code>retriangulate -h3 hLLAAkbdceefggdonxdjxn</code></strong>
+    hLLAAkbdceefggdonxdjxn
+    hLALPkbcbefgfghxwnxark
+    hLLMMkbcdfefgglcghtchj
+    gLLPQcdcefffqsjpunw
+    Triangulation is non-minimal!
+    Smaller triangulation: gLLPQcdcefffqsjpunw
+    <code class="prompt">example$</code>
+</pre><p>
+    Although the program stopped as soon as it found a smaller
+    triangulation, this can be simplified even further:
+   </p><pre class="screen">
+    <code class="prompt">example$</code> <strong class="userinput"><code>retriangulate gLLPQcdcefffqsjpunw</code></strong>
+    gLLPQcdcefffqsjpunw
+    fLAMcbbcdeedhwhxn
+    Triangulation is non-minimal!
+    Smaller triangulation: fLAMcbbcdeedhwhxn
+    <code class="prompt">example$</code>
+</pre><p>
+    A little more probing shows this to be the cusped hyperbolic
+    manifold <code class="literal">m112</code>:
+   </p><pre class="screen">
+    <code class="prompt">example$</code> <strong class="userinput"><code>censuslookup fLAMcbbcdeedhwhxn</code></strong>
+    fLAMcbbcdeedhwhxn: 1 hit
+        m112 : #2 -- Cusped hyperbolic census (orientable)
+    
+    <code class="prompt">example$</code>
+</pre></div><div class="refsect1" lang="en"><a name="idp105545334647312"></a><h2><span class="application">macOS</span> Users</h2><p>
+    If you downloaded a drag-and-drop app bundle, this utility is
+    shipped inside it.  If you dragged <span class="application">Regina</span> to the main
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Applications</span></span> folder, you can run it as
+    <code class="literal">/Applications/Regina.app/Contents/MacOS/retriangulate</code>.
+   </p></div><div class="refsect1" lang="en"><a name="idp105545334650384"></a><h2><span class="application">Windows</span> Users</h2><p>
+    The command-line utilities are installed beneath the
+    <code class="filename">Program Files</code> directory; on some
+    machines this directory is called
+    <code class="filename">Program Files (x86)</code>.
+    You can start this utility by running
+    <code class="literal">c:\Program Files\Regina\Regina 7.0\bin\retriangulate.exe</code>.
+   </p></div><div class="refsect1" lang="en"><a name="idp105545334620944"></a><h2>See Also</h2><p>
+    <a href="man-regina-gui.html" title="regina-gui">regina-gui</a>.
+   </p></div><div class="refsect1" lang="en"><a name="idp105545334622608"></a><h2>Author</h2><p>
+    This utility was written by Benjamin Burton
+    <code class="email">&lt;<a href="mailto:bab@maths.uq.edu.au">bab@maths.uq.edu.au</a>&gt;</code>.
+    Many people have been involved in the development
+   of <span class="application">Regina</span>; see the <a href="credits.html#acknowledgements" title="Acknowledgements">acknowledgements
+   page</a> for a full list of credits.
+   </p></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="man-regfiletype.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="man-sigcensus.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">regfiletype </td><td width="34%" align="center" class="navCenter"><a href="utils.html">Up</a></td><td width="33%" align="right" class="navRight"> sigcensus</td></tr></table></div></body></html>

@@ -1,0 +1,1089 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../regina.css">
+    <title>Regina - Moving from 4.x to 5.x</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000"
+    link="#0000EE" vlink="#551A8B" alink="#FF0000" class="deprecation">
+
+<h1><a name="contents">Regina - Moving from 4.x to 5.x</a></h1>
+
+<div class="announce"><p>
+This page relates only to <b>C++ and Python programmers</b>.
+</p></div>
+
+<p>
+Over time, Regina makes changes and improvements to its C++ and Python
+interfaces.  This page explains how you will need to update your C++
+code and/or Python scripts to work with Regina&nbsp;5.0.
+<p>
+Now that Regina&nbsp;7.0 is available, you should also read the separate
+pages on
+<a href="regina6.html">moving from Regina&nbsp;5.x to 6.x</a> and
+<a href="regina7.html">moving from Regina&nbsp;6.x to 7.x</a>.
+<p>
+<p><h4><span class="question">Changes from Regina&nbsp;4.x to 5.x</span></h4></p>
+<p>
+There are some general rules that cover many of the changes:
+<ul>
+<li>String output routines of the form <tt>x.toString()</tt> and
+<tt>x.toStringLong()</tt> have been renamed to <tt>x.str()</tt> and
+<tt>x.detail()</tt>.  Moreover, in Python you can just
+<tt>print&nbsp;x</tt>.</li>
+<li>Query routines of the form <tt>x.getFoo()</tt> have been renamed to
+<tt>x.foo()</tt>.</li>
+<li>Size routines of the form <tt>x.getNumberOfFoo()</tt> have almost
+all been renamed to <tt>x.countFoo()</tt>.  The exception is that some
+have been renamed to <tt>x.size()</tt> where this makes sense;
+all such exceptions are listed in the table below.</li>
+<li>Template implementation headers of the form <tt>foo.tcc</tt>
+have been renamed to <tt>foo-impl.h</tt>.
+</ul>
+<p>
+Beyond these general rules, many other routines and classes have been
+removed.  These are listed in the table below,
+along with suggested replacements that you can use instead.
+Any changes in the <i>behaviour</i> of these routines or classes
+are noted in the comments column.
+</p>
+<p>
+<table cellspacing=0 border=0 class="data"><tbody>
+<tr>
+    <th class="first">Deprecated code</th>
+    <th>Replacement</th>
+    <th>Comments</th>
+</tr>
+<tr><td class="deptype" colspan=4>Namespaces</td></tr>
+<tr>
+    <td class="first"><tt>stdhash</tt></td>
+    <td>&mdash;</td>
+    <td>To improve portability, all references to the non-standard
+        STL classes <tt>hash_set</tt> and <tt>hash_map</tt> will be
+        removed from Regina.</td>
+</tr>
+<tr><td class="deptype" colspan=4>Headers</td></tr>
+<tr>
+    <td class="first"><tt>census/dim2edgepairing.h</tt></td>
+    <td><tt>dim2/dim2edgepairing.h</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>census/nfacepairing.h</tt></td>
+    <td><tt>triangulation/nfacepairing.h</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>census/ngenericfacetpairing.h</tt> and
+    <tt>-impl.h</tt></td>
+    <td><tt>generic/facetpairing.h</tt> and <tt>-impl.h</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>foreign/csvsurfacelist.h</tt></td>
+    <td><tt>surfaces/nnormalsurfacelist.h</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>generic/dimtraits.h</tt></td>
+    <td>&mdash;</td>
+    <td>With the new templated triangulation code, <tt>dimtraits</tt>
+    now serves no purpose.</td>
+</tr>
+<tr>
+    <td class="first"><tt>generic/nfacetspec.h</tt></td>
+    <td><tt>generic/facetspec.h</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>maths/nlargeinteger.h</tt></td>
+    <td><tt>maths/ninteger.h</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>surfaces/flavourregistry.h</tt></td>
+    <td><tt>surfaces/coordregistry.h</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>triangulation/dimtraits.h</tt>,
+    <tt>triangulation/nfacetspec.h</tt>,
+    <tt>triangulation/ngenericisomorphism.h</tt></td>
+    <td>&mdash;,
+    <tt>generic/facetspec.h</tt>,
+    <tt>generic/ngenericisomorphism.h</tt></td>
+    <td>The header <tt>dimtraits.h</tt> is now empty.</td>
+</tr>
+<tr>
+    <td class="first"><tt>triangulation/nperm.h</tt></td>
+    <td><tt>maths/nperm4.h</tt></td>
+    <td>This header provided the class <tt>NPerm</tt>, which has likewise been
+        renamed to <tt>NPerm4</tt>.</td>
+</tr>
+<tr>
+    <td class="first"><tt>utilities/hashmap.h</tt>,
+    <tt>utilities/hashset.h</tt>,
+    <tt>utilities/hashutils.h</tt></td>
+    <td>&mdash;</td>
+    <td>See the comments above for the <tt>stdhash</tt> namespace.</td>
+</tr>
+<tr>
+    <td class="first"><tt>utilities/nmatrix2.h</tt></td>
+    <td><tt>maths/nmatrix2.h</tt></td>
+    <td>The header has simply been moved.  The classes that it provides
+        remain the same.</td>
+</tr>
+<tr>
+    <td class="first"><tt>utilities/nmpi.h</tt></td>
+    <td><tt>maths/ninteger.h</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>utilities/nrational.h</tt></td>
+    <td><tt>maths/nrational.h</tt></td>
+    <td>The header has simply been moved.  The classes that it provides
+        remain the same.</td>
+</tr>
+<tr><td class="deptype" colspan=4>Typedefs</td></tr>
+<tr>
+    <td class="first"><tt>AcceptTriangulation</tt>,
+    <tt>Dim2Census::AcceptTriangulation</tt>,
+    <tt>NCensus::AcceptTriangulation</tt></td>
+    <td>&mdash;</td>
+    <td>See the comments below for
+    <tt>Dim2Census::formCensus()</tt> and
+    <tt>NCensus::formCensus()</tt>.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NFacePairingIsoList</tt></td>
+    <td><tt>NFacePairing::IsoList</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NTriangulation::FaceIterator</tt></td>
+    <td><tt>NTriangulation::TriangleIterator</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>UseFacePairing</tt></td>
+    <td><tt>NFacePairing::Use</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr><td class="deptype" colspan=4>Constants</td></tr>
+<tr>
+    <td class="first"><tt>NCensus::PURGE_...</tt></td>
+    <td><tt>NGluingPermSearcher::PURGE_...</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NFileInfo::TYPE_BINARY</tt></td>
+    <td>&mdash;</td>
+    <td>See the comments below for the <tt>NFile</tt> class.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NNormalSurfaceList::STANDARD</tt>,
+    <tt>NNormalSurfaceList::QUAD</tt>, etc.</td>
+    <td><tt>NS_STANDARD</tt>, <tt>NS_QUAD</tt>, etc.</td>
+    <td>These are now members of a global enum type, defined in
+    <tt>surfaces/normalcoords.h</tt>.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NNormalSurfaceVector::coordType</tt></td>
+    <td><tt>NNormalSurfaceVector::coordsID</tt></td>
+    <td>Applies to every subclass of <tt>NNormalSurfaceVector</tt>.
+    This is now a constant of type <tt>NormalCoords</tt>.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NPacket::packetType</tt></td>
+    <td><tt>NPacket::typeID</tt></td>
+    <td>Applies to every subclass of <tt>NPacket</tt>.
+    This is now a constant of type <tt>PacketType</tt>.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NS_FACE_ARCS</tt></td>
+    <td><tt>NS_TRIANGLE_ARCS</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NSurfaceFilter::filterID</tt>,
+    <tt>NSurfaceFilter::filterType</tt></td>
+    <td><tt>NSurfaceFilter::filterTypeID</tt></td>
+    <td>This change also applies to every subclass of
+    <tt>NSurfaceFilter</tt>.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NVertex::NON_STANDARD_BDRY</tt></td>
+    <td><tt>NVertex::INVALID</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr><td class="deptype" colspan=4>Classes</td></tr>
+<tr>
+    <td class="first"><tt>HashPointer</tt>,
+        <tt>HashString</tt></td>
+    <td>&mdash;</td>
+    <td>See the comments above for the <tt>stdhash</tt> namespace.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NDoubleDescription::LexComp</tt></td>
+    <td><tt>NPosOrder</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NDoubleDescriptor</tt></td>
+    <td><tt>NDoubleDescription</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NewFunction1</tt></td>
+    <td><tt>NewFunction</tt></td>
+    <td>The second template argument to <tt>NewFunction1</tt> is no longer
+    required&mdash;<tt>NewFunction</tt> will automatically infer it.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NewNormalSurfaceVector</tt></td>
+    <td><tt>NewFunction&lt;NNormalSurfaceVector&gt;</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NFace</tt></td>
+    <td><tt>NTriangle</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NFaceEmbedding</tt></td>
+    <td><tt>NTriangleEmbedding</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NFacetSpec</tt></td>
+    <td><tt>FacetSpec</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NFastRay</tt></td>
+    <td><tt>NRay</tt></td>
+    <td>The class <tt>NRay</tt> and <tt>NFastRay</tt> have been merged;
+    see the API docs for details.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NFastVector</tt></td>
+    <td><tt>NVector</tt></td>
+    <td>The class <tt>NVector</tt> and <tt>NFastVector</tt> have been merged;
+    see the API docs for details.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NFile</tt></td>
+    <td>&mdash;</td>
+    <td>The <tt>NFile</tt> class exists purely to support the old binary file
+    format that was phased out back in 2002.  Regina&nbsp;5.0 will drop
+    support for this old binary file format entirely.</td>
+</tr>
+<tr>
+    <td><tt>NFilePropertyReader</tt></td>
+    <td>&mdash;</td>
+    <td>See the comments above for the <tt>NFile</tt> class.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NIndexedArray</tt></td>
+    <td>&mdash;</td>
+    <td><tt>NMarkedVector</tt> does a similar job (and is smaller and faster),
+        though it requires changes to the data types in your array.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NIsomorphismDirect</tt></td>
+    <td><tt>NIsomorphism</tt></td>
+    <td><tt>NIsomorphism</tt> now contains all the functionality of
+    the old <tt>NIsomorphismDirect</tt> class.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NIsomorphismIndexed</tt></td>
+    <td>&mdash;</td>
+    <td>Instead, use <tt>NIsomorphism</tt> in conjunction with the
+        <tt>NPerm4::S4</tt> array.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NMutex</tt></td>
+    <td><tt>std::mutex</tt> and related classes</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NPacket::ChangeEventBlock</tt></td>
+    <td><tt>NPacket::ChangeEventSpan</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NPerm</tt></td>
+    <td><tt>NPerm4</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NPermItS4</tt></td>
+    <td>&mdash;</td>
+    <td>Instead, just loop through the elements
+        of <tt>NPerm4::S4</tt> directly.</td>
+</tr>
+<tr>
+    <td><tt>NPrismSetSurface</tt></td>
+    <td>&mdash;</td>
+    <td>Removed from Python, but just deprecated in C++.
+    This class never had any function.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NProgress, NProgressFinished,
+    NProgressManager, NProgressMessage, NProgressNumber,
+    NProgressStateNumeric</tt></td>
+    <td><tt>NProgressTracker</tt></td>
+    <td><tt>NProgressTracker</tt> offers a unified and more streamlined
+    interface for progress tracking.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NRandomAccessResource</tt>,
+        <tt>NLocalFileResource</tt></td>
+    <td>&mdash;</td>
+    <td>See the comments above for the <tt>NFile</tt> class.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NSurfaceSet</tt></td>
+    <td>&mdash;</td>
+    <td>Just use <tt>NNormalSurfaceList</tt> and/or
+        <tt>NSurfaceSubset</tt> directly.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NThread</tt></td>
+    <td><tt>std::thread</tt> and related classes</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NTriBool</tt></td>
+    <td>&mdash;</td>
+    <td>Please change your code to use native <tt>bool</tt> instead.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NVectorDense</tt></td>
+    <td><tt>NVector</tt></td>
+    <td>The new <tt>NVector</tt> uses dense storage, just like the old
+    <tt>NVectorDense</tt>.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NVectorMatrix</tt></td>
+    <td><tt>NVector</tt></td>
+    <td>Only dense storage is offered now, as in the old class
+    <tt>NVectorDense</tt>.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NVectorUnit</tt></td>
+    <td><tt>NVector</tt></td>
+    <td>Only dense storage is offered now, as in the old class
+    <tt>NVectorDense</tt>.</td>
+</tr>
+<tr><td class="deptype" colspan=4>Member Routines</td></tr>
+<tr>
+    <td class="first"><tt>...::readFromFile(NFile&amp;, ...)</tt></td>
+    <td>&mdash;</td>
+    <td>See the comments above for the <tt>NFile</tt> class.</td>
+</tr>
+<tr>
+    <td class="first"><tt>...::writeToFile(NFile&amp;)</tt></td>
+    <td>&mdash;</td>
+    <td>See the comments above for the <tt>NFile</tt> class.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Dim2Census::formCensus()</tt>,
+    <tt>Dim2Census::formPartialCensus()</tt></td>
+    <td>&mdash;</td>
+    <td>You should now call <tt>Dim2EdgePairing::findAllPairings()</tt>
+    and <tt>Dim2GluingPermSearcher::findAllPerms()</tt> directly.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Dim2Component::getNumberOfSimplices()</tt></td>
+    <td><tt>Dim2Component::size()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Dim2Isomorphism::getSourceSimplices()</tt></td>
+    <td><tt>Dim2Isomorphism::size()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Dim2Triangle::joinTo()</tt></td>
+    <td><tt>Dim2Triangle::join()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Dim2Triangulation::getNumberOfSimplices()</tt></td>
+    <td><tt>Dim2Triangulation::size()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Dim2Triangulation::vertexIndex()</tt>,
+    <tt>Dim2Triangulation::edgeIndex()</tt>, etc.</td>
+    <td><tt>Dim2Vertex::index()</tt>,
+    <tt>Dim2Edge::index()</tt>, etc.</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NAngleStructureList::allowsStrict()</tt></td>
+    <td><tt>NAngleStructureList::spansStrict()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NAngleStructureList::allowsTaut()</tt></td>
+    <td><tt>NAngleStructureList::spansTaut()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NAngleStructureList::getNumberOfStructures()</tt></td>
+    <td><tt>NAngleStructureList::size()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NAngleStructureVector::clone()</tt></td>
+    <td><tt>NAngleStructureVector copy constructor</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NBoundaryComponent::getEulerCharacteristic()</tt></td>
+    <td><tt>NBoundaryComponent::eulerChar()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NBoundaryComponent::getFace()</tt>,
+    <tt>NBoundaryComponent::getNumberOfFaces()</tt></td>
+    <td><tt>NBoundaryComponent::triangle()</tt>,
+    <tt>NBoundaryComponent::countTriangles()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NCensus::formCensus()</tt>,
+    <tt>NCensus::formPartialCensus()</tt></td>
+    <td>&mdash;</td>
+    <td>You should now call <tt>NFacePairing::findAllPairings()</tt>
+    and <tt>NGluingPermSearcher::findAllPerms()</tt> directly.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NCensus::formCensus(..., NProgressManager*)</tt></td>
+    <td>&mdash; (see above)</td>
+    <td>The final NProgressManager argument has been removed.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NCensus::mightBeMinimal()</tt></td>
+    <td>NTriangulation::simplifyToLocalMinimal(false)</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NComponent::getFace()</tt>,
+    <tt>NComponent::getNumberOfFaces()</tt>,
+    <tt>NComponent::hasBoundaryFaces()</tt></td>
+    <td><tt>NComponent::triangle()</tt>,
+    <tt>NComponent::countTriangles()</tt>,
+    <tt>NComponent::hasBoundaryTriangles()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NComponent::getNumberOfSimplices()</tt></td>
+    <td><tt>NComponent::size()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NDoubleDescription::enumerateExtremalRays()</tt></td>
+    <td>Same function but different arguments</td>
+    <td>The <tt>base</tt> argument is gone, and a new template argument
+    has taken its place.  See the API docs for details.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NExampleTriangulation::lens8_3()</tt>,
+    <tt>NExampleTriangulation::lst3_4_7()</tt></td>
+    <td><tt>NExampleTriangulation::lens(8,3)</tt>,
+    <tt>NExampleTriangulation::lst(3,4)</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NExampleTriangulation::figureEightKnotComplement()</tt>,
+    <tt>NExampleTriangulation::seifertWeber()</tt>,
+    <tt>NExampleTriangulation::trefoilKnotComplement()</tt>,
+    <tt>NExampleTriangulation::whiteheadLinkComplement()</tt></td>
+    <td><tt>NExampleTriangulation::figureEight()</tt>,
+    <tt>NExampleTriangulation::weberSeifert()</tt>,
+    <tt>NExampleTriangulation::trefoil()</tt>,
+    <tt>NExampleTriangulation::whiteheadLink()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NFaceEmbedding::getFace()</tt></td>
+    <td><tt>NTriangleEmbedding::triangle()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NFacePairing::getNumberOfTetrahedra()</tt></td>
+    <td><tt>NFacePairing::size()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NGroupPresentation::toStringCompact()</tt></td>
+    <td><tt>NGroupPresentation::compact()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NHilbertCD::enumerateHilbertBasis(..., NProgressMessage*)</tt></td>
+    <td><tt>NHilbertCD::enumerateHilbertBasis(...)</tt></td>
+    <td>The final progress tracking argument has been removed.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NHomMarkedAbelianGroup::...</tt></td>
+    <td>&nbsp;</td>
+    <td>Several routines have been deprecated, and several others added
+    in their place.  See the API docs for details.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NIsomorphism::getSourceSimplices()</tt></td>
+    <td><tt>NIsomorphism::size()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NLayeredLoop::getIndex()</tt></td>
+    <td><tt>NLayeredLoop::length()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NLayeredSolidTorus::getNumberOfTetrahedra()</tt></td>
+    <td><tt>NLayeredSolidTorus::size()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NManifold::getHomologyH1()</tt></td>
+    <td><tt>NManifold::homology()</tt></td>
+    <td>Applies to all subclasses of <tt>NManifold</tt>.
+    <tt>homology()</tt> also has an alias <tt>homologyH1()</tt>.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NMarkedAbelianGroup::...</tt></td>
+    <td>&nbsp;</td>
+    <td>Several routines have been deprecated, and several others added
+    in their place.  See the API docs for details.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NNormalSurface::boundarySlopes()</tt></td>
+    <td><tt>NNormalSurface::boundaryIntersections()</tt></td>
+    <td>This change is to clarify that the routine returns
+    algebraic intersection numbers, not (<i>m</i>,<i>l</i>) pairs.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NNormalSurface::findNonTrivialSphere()</tt></td>
+    <td><tt>NTriangulation::hasNonTrivialSphereOrDisc()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NNormalSurface::findVtxOctAlmostNormalSphere()</tt></td>
+    <td><tt>NTriangulation::hasOctagonalAlmostNormalSphere()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NNormalSurface::getEulerCharacteristic()</tt></td>
+    <td><tt>NNormalSurface::eulerChar()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NNormalSurface::getFaceArcs()</tt>,
+    <td><tt>NNormalSurface::arcs()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NNormalSurface::getTriangleCoord()</tt>,
+    <tt>NNormalSurface::getQuadCoord()</tt>,
+    <tt>NNormalSurface::getOctCoord()</tt>,
+    <tt>NNormalSurface::getTriangleArcs()</tt>, etc.</td>
+    <td><tt>NNormalSurface::triangles()</tt>,
+    <tt>NNormalSurface::quads()</tt>,
+    <tt>NNormalSurface::octs()</tt>,
+    <tt>NNormalSurface::arcs()</tt>, etc.</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NNormalSurfaceList::enumerate()</tt>,
+    <tt>NNormalSurfaceList::enumerateStandardDirect()</tt>,
+    <tt>NNormalSurfaceList::enumerateStandardANDirect()</tt>,
+    <tt>NNormalSurfaceList::enumerateFundPrimal()</tt>,
+    <tt>NNormalSurfaceList::enumerateFundDual()</tt>,
+    <tt>NNormalSurfaceList::enumerateFundCD()</tt>,
+    <tt>NNormalSurfaceList::enumerateFundFullCone()</tt></td>
+    <td><tt>NNormalSurfaceList::enumerate(NTriangulation*, NormalCoords,
+    NormalList, NormalAlg, NProgressTracker*)</td>
+    <td>All of the old enumeration routines have been amalgamated into a
+    single &ldquo;universal&rdquo; enumeration routine.  The arguments
+    let you specify which surfaces you wish to enumerate and/or which
+    algorithm you wish to use.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NNormalSurfaceList::flavour()</tt>,
+    <tt>NNormalSurfaceList::getFlavour()</tt></td>
+    <td><tt>NNormalSurfaceList::coords()</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NNormalSurfaceList::getShareableObject()</tt></td>
+    <td>&mdash;</td>
+    <td>Since this class no longer inherits from <tt>NSurfaceSet</tt>,
+    this function is no longer necessary.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NNormalSurfaceList::getNumberOfSurfaces()</tt></td>
+    <td><tt>NNormalSurfaceList::size()</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NNormalSurfaceSubset::getFlavour()</tt></td>
+    <td><tt>NNormalSurfaceSubset::coords()</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NNormalSurfaceSubset::getNumberOfSurfaces()</tt></td>
+    <td><tt>NNormalSurfaceSubset::size()</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NNormalSurfaceVector::getFaceArcs()</tt></td>
+    <td><tt>NNormalSurfaceVector::arcs()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NNormalSurfaceVector::getTriangleCoord()</tt>,
+    <tt>NNormalSurfaceVector::getQuadCoord()</tt>,
+    <tt>NNormalSurfaceVector::getOctCoord()</tt>,
+    <tt>NNormalSurfaceVector::getTriangleArcs()</tt>, etc.</td>
+    <td><tt>NNormalSurfaceVector::triangles()</tt>,
+    <tt>NNormalSurfaceVector::quads()</tt>,
+    <tt>NNormalSurfaceVector::octs()</tt>,
+    <tt>NNormalSurfaceVector::arcs()</tt>, etc.</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NPacket::getPacketLabel()</tt>,
+    <tt>NPacket::setPacketLabel()</tt>,
+    <tt>NPacket::getPacketType()</tt>,
+    <tt>NPacket::getPacketTypeName()</tt></td>
+    <td><tt>NPacket::label()</tt>,
+    <tt>NPacket::setLabel()</tt>,
+    <tt>NPacket::type()</tt>,
+    <tt>NPacket::typeName()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NPacket::getTreeParent()</tt>,
+    <tt>NPacket::getFirstTreeChild()</tt>,
+    <tt>NPacket::getLastTreeChild()</tt>,
+    <tt>NPacket::getNextTreeSibling()</tt>,
+    <tt>NPacket::getPrevTreeSibling()</tt>,
+    <tt>NPacket::getMatriarch()</tt></td>
+    <td><tt>NPacket::parent()</tt>,
+    <tt>NPacket::firstChild()</tt>,
+    <tt>NPacket::lastChild()</tt>,
+    <tt>NPacket::nextSibling()</tt>,
+    <tt>NPacket::prevSibling()</tt>,
+    <tt>NPacket::root()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NPacket::getXMLReader()</tt></td>
+    <td><tt>NPacket::xmlReader()</tt></td>
+    <td>Applies to every subclass of <tt>NPacket</tt>.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NPacket::readPacket()</tt></td>
+    <td>&mdash;</td>
+    <td>See the comments above for the <tt>NFile</tt> class.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NPacket::writePacket()</tt></td>
+    <td>&mdash;</td>
+    <td>See the comments above for the <tt>NFile</tt> class.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NPerm&lt;n&gt;::setPerm()</tt></td>
+    <td>&mdash;</td>
+    <td>Instead, just use the assignment operator, as in
+        <tt>p = NPerm4(1,2)</tt>.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NPerm&lt;n&gt;::toString()</tt></td>
+    <td><tt>NPerm&lt;n&gt;::str()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NPillowTwoSphere::getFace()</tt>,
+    <tt>NPillowTwoSphere::getFaceMapping()</tt></td>
+    <td><tt>NPillowTwoSphere::triangle()</tt>,
+    <tt>NPillowTwoSphere::triangleMapping()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NScript::getLine()</tt>,
+    <tt>NScript::getNumberOfLines()</tt>,
+    <tt>NScript::addFirst()</tt>,
+    <tt>NScript::addLast()</tt>,
+    <tt>NScript::insertAtPosition()</tt>,
+    <tt>NScript::replaceAtPosition()</tt>,
+    <tt>NScript::removeLineAt()</tt>,
+    <tt>NScript::removeAllLines()</tt></td>
+    <td><tt>NScript::text()</tt>,
+    <tt>NScript::setText()</tt>,
+    <tt>NScript::append()</tt></td>
+    <td>The <tt>NScript</tt> access methods now work with the text as a
+    whole, not one line at a time.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NSatRegion::createSFS(long, bool)</tt></td>
+    <td><tt>NSatRegion::createSFS(bool)</tt></td>
+    <td>The first argument (the number of boundary components)
+    is now automatically deduced.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NSnapPeaTriangulation::NSnapPeaTriangulation(const NTriangulation&amp;, bool)</tt></td>
+    <td><tt>NSnapPeaTriangulation::NSnapPeaTriangulation(const NTriangulation&amp;)</tt></td>
+    <td>The second argument (whether to allow closed trianglations)
+    is ignored, since closed triangulations are now supported always.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NSnapPeaTriangulation::saveAsSnapPea()</tt></td>
+    <td><tt>NSnapPeaTriangulation::saveSnapPea()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NSnapPeaTriangulation::dump()</tt></td>
+    <td><tt>std::cout &lt;&lt; NSnapPeaTriangulation::snapPea()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NSnapPeaTriangulation::toRegina()</tt>,
+    <tt>NSnapPeaTriangulation::verifyTriangulation()</tt></td>
+    <td>&mdash;</td>
+    <td>These are no longer needed, since <tt>NSnapPeaTriangulation</tt>
+    is now a hybrid packet that combines SnapPea and Regina functionality,
+    and that inherits directly from <tt>NTriangulation</tt>.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NSpiralSolidTorus::getNumberOfTetrahedra()</tt></td>
+    <td><tt>NSpiralSolidTorus::size()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NStandardTriangulation::getHomologyH1()</tt></td>
+    <td><tt>NStandardTriangulation::homology()</tt></td>
+    <td>Applies to all subclasses of <tt>NStandardTriangulation</tt>.
+    <tt>homology()</tt> also has an alias <tt>homologyH1()</tt>.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NSurfaceFilter::getFilterID()</tt>,
+    <tt>NSurfaceFilter::getFilterName()</tt></td>
+    <td><tt>NSurfaceFilter::filterType()</tt>,
+    <tt>NSurfaceFilter::filterTypeName()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NSurfaceFilter::readFilter()</tt></td>
+    <td>&mdash;</td>
+    <td>See the comments above for the <tt>NFile</tt> class.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NSurfaceFilter::writeFilter()</tt></td>
+    <td>&mdash;</td>
+    <td>See the comments above for the <tt>NFile</tt> class.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NSurfaceFilter::writeProperties()</tt></td>
+    <td>&mdash;</td>
+    <td>See the comments above for the <tt>NFile</tt> class.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NSurfaceFilterProperties::addEC()</tt>,
+    <tt>NSurfaceFilterProperties::removeEC()</tt>,
+    <tt>NSurfaceFilterProperties::removeAllECs()</tt></td>
+    <td><tt>NSurfaceFilterProperties::addEulerChar()</tt>,
+    <tt>NSurfaceFilterProperties::removeEulerChar()</tt>,
+    <tt>NSurfaceFilterProperties::removeAllEulerChars()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NSurfaceFilterProperties::getEC()</tt>,
+    <tt>NSurfaceFilterProperties::getECs()</tt>,
+    <tt>NSurfaceFilterProperties::getNumberOfECs()</tt></td>
+    <td><tt>NSurfaceFilterProperties::eulerChar()</tt>,
+    <tt>NSurfaceFilterProperties::eulerChars()</tt>,
+    <tt>NSurfaceFilterProperties::countEulerChars()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NSurfaceSet::getShareableObject()</tt></td>
+    <td>&mdash;</td>
+    <td>Since this class no longer inherits from <tt>NSurfaceSet</tt>,
+    this function is no longer necessary.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NTetrahedron constructors</tt></td>
+    <td><tt>NTriangulation::newTetrahedron()</tt></td>
+    <td>Tetrahedra must always belong to a triangulation.  You should no
+    longer create tetrahedra independently.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NTetrahedron::getAdjacentTetrahedron()</tt>,
+    <tt>NTetrahedron::getAdjacentTetrahedronGluing()</tt>,
+    <tt>NTetrahedron::getAdjacentFace()</tt></td>
+    <td><tt>NTetrahedron::adjacentTetrahedron()</tt>,
+    <tt>NTetrahedron::adjacentGluing()</tt>,
+    <tt>NTetrahedron::adjacentFace()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NTetrahedron::getFace()</tt>,
+    <tt>NTetrahedron::getFaceMapping()</tt></td>
+    <td><tt>NTetrahedron::triangle()</tt>,
+    <tt>NTetrahedron::triangleMapping()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NTetrahedron::joinTo()</tt></td>
+    <td><tt>NTetrahedron::join()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NTriangulation::addTetrahedron()</tt></td>
+    <td><tt>NTriangulation::newTetrahedron()</tt></td>
+    <td>Tetrahedra must always belong to a triangulation.  You should no
+    longer create tetrahedra independently.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NTriangulation::faceIndex()</tt>,
+    <tt>NTriangulation::getFace()</tt>,
+    <tt>NTriangulation::getFaceIndex()</tt>,
+    <tt>NTriangulation::getFaces()</tt>,
+    <tt>NTriangulation::getNumberOfFaces()</tt>,
+    <tt>NTriangulation::hasBoundaryFaces()</tt></td>
+    <td><tt>NTriangle::index()</tt>,
+    <tt>NTriangulation::triangle()</tt>,
+    <tt>NTriangle::index()</tt>,
+    <tt>NTriangulation::triangles()</tt>,
+    <tt>NTriangulation::countTriangles()</tt>,
+    <tt>NTriangulation::hasBoundaryTriangles()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NTriangulation::getEulerCharacteristic()</tt></td>
+    <td><tt>NTriangulation::eulerCharTri()</tt> or
+        <tt>NTriangulation::eulerCharManifold()</tt></td>
+    <td>Note that the two replacement routines give different results
+        for ideal triangulations.  The old <tt>getEulerCharacteristic()</tt>
+        was equivalent to the new <tt>eulerCharTri()</tt>.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NTriangulation::getHomologyH1()</tt>,
+    <tt>NTriangulation::getHomologyH1Rel()</tt>,
+    <tt>NTriangulation::getHomologyH1Bdry()</tt></td>
+    <td><tt>NTriangulation::homology()</tt>,
+    <tt>NTriangulation::homologyRel()</tt>,
+    <tt>NTriangulation::homologyBdry()</tt></td>
+    <td><tt>homology()</tt> also has the alias <tt>homologyH1()</tt>.</td>
+</tr>
+<tr>
+<tr>
+    <td class="first"><tt>NTriangulation::getNumberOfSimplices()</tt></td>
+    <td><tt>NTriangulation::size()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NTriangulation::getVertexIndex()</tt>,
+    <tt>NTriangulation::getEdgeIndex()</tt>, etc.</td>
+    <td><tt>NVertex::index()</tt>,
+    <tt>NEdge::index</tt>, etc.</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NTriangulation::gluingsHaveChanged()</tt></td>
+    <td>&mdash;</td>
+    <td>This is now handled automatically.</td>
+</tr>
+<tr>
+    <td class="first"><tt>NTriangulation::vertexIndex()</tt>,
+    <tt>NTriangulation::edgeIndex()</tt>, etc.</td>
+    <td><tt>NVertex::index()</tt>,
+    <tt>NEdge::index()</tt>, etc.</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NVertex::getLinkEulerCharacteristic()</tt></td>
+    <td><tt>NVertex::linkEulerChar()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr><td class="deptype" colspan=4>Global Routines</td></tr>
+<tr>
+    <td class="first"><tt>edgeDescription()</tt>,
+    <tt>edgeOrdering()</tt></td>
+    <td><tt>NPerm4::trunc2()</tt>,
+    <tt>NEdge::ordering()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>faceDescription()</tt>,
+    <tt>faceOrdering()</tt></td>
+    <td><tt>NPerm4::trunc3()</tt>,
+    <tt>NTriangle::ordering()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>factorise()</tt></td>
+    <td><tt>NPrimes::primeDecomp()</tt>,
+        <tt>NPrimes::primePowerDecomp()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>forFlavour()</tt></td>
+    <td><tt>forCoords()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>perm3to4()</tt>,
+    <tt>perm4to5()</tt>,
+    <tt>perm3to5()</tt></td>
+    <td><tt>NPerm&lt;n&gt;::extend()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>perm4to3()</tt>,
+    <tt>perm5to3()</tt>,
+    <tt>perm5to4()</tt></td>
+    <td><tt>NPerm&lt;n&gt;::contract()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>primesUpTo()</tt></td>
+    <td><tt>NPrimes::prime()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>readFileMagic()</tt></td>
+    <td><tt>open()</tt></td>
+    <td>The new <tt>open()</tt> routine is declared in
+    <tt>packet/npacket.h</tt>, not <tt>file/nxmlfile.h</tt>.</td>
+</tr>
+<tr>
+    <td class="first"><tt>readFromFile()</tt></td>
+    <td>&mdash;</td>
+    <td>See the comments above for the <tt>NFile</tt> class.</td>
+</tr>
+<tr>
+    <td class="first"><tt>readPDF()</tt></td>
+    <td><tt>NPDF::NPDF()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>readSnapPea()</tt></td>
+    <td><tt>NSnapPeaTriangulation::NSnapPeaTriangulation()</tt></td>
+    <td>The new <tt>NSnapPeaTriangulation</tt> constructor also
+    preserves SnapPea-specific data (such as fillings and peripheral
+    curves), which the old routine does not.</td>
+</tr>
+<tr>
+    <td class="first"><tt>readXMLFile()</tt></td>
+    <td><tt>open()</tt></td>
+    <td>The new <tt>open()</tt> routine is declared in
+    <tt>packet/npacket.h</tt>, not <tt>file/nxmlfile.h</tt>.</td>
+</tr>
+<tr>
+    <td class="first"><tt>writeCSVStandard()</tt>,
+    <tt>writeCSVEdgeWeight()</tt></td>
+    <td><tt>NNormalSurfaceList::saveCSVStandard()</tt>,
+    <tt>NNormalSurfaceList::saveCSVEdgeWeight()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>writePDF()</tt></td>
+    <td><tt>NPDF::savePDF()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>writeRecogniser()</tt>,
+    <tt>writeRecognizer()</tt></td>
+    <td><tt>NTriangulation::saveRecogniser()</tt>,
+    <tt>NTriangulation::saveRecognizer()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>writeSnapPea()</tt></td>
+    <td><tt>NTriangulation::saveSnapPea()</tt> (for file output),
+    <tt>NTriangulation::snapPea()</tt> (for stream output)</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>writeToFile()</tt></td>
+    <td>&mdash;</td>
+    <td>See the comments above for the <tt>NFile</tt> class.</td>
+</tr>
+<tr>
+    <td class="first"><tt>writeXMLFile()</tt></td>
+    <td><tt>NPacket::save()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr><td class="deptype" colspan=4>Global Arrays</td></tr>
+<tr>
+    <td class="first"><tt>edgeNumber[]</tt>,
+        <tt>edgeStart[]</tt>, <tt>edgeEnd[]</tt></td>
+    <td><tt>NEdge::edgeNumber[]</tt>, <tt>NEdge::edgeVertex[]</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>allPermsS2[]</tt></td>
+    <td><tt>NPerm4::S2[]</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>allPermsS3[]</tt>, <tt>orderedPermsS3[]</tt></td>
+    <td><tt>NPerm4::S3[]</tt>, <tt>NPerm4::orderedS3[]</tt><br>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>allPermsS4[]</tt>,
+        <tt>allPermsS4Inv[]</tt>, <tt>orderedPermsS4[]</tt></td>
+    <td><tt>NPerm4::S4[]</tt>, <tt>NPerm4::invS4[]</tt>,
+        <tt>NPerm4::orderedS4[]</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NPerm4::invS3[]</tt>,
+        <tt>allPermsS3Inv[]</tt></td>
+    <td><tt>NPerm3::invS3[]</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NPerm4::invS2[]</tt>,
+        <tt>allPermsS2Inv[]</tt></td>
+    <td>&mdash;</td>
+    <td>This array is unnecessary, since inverses in S2 are trivial.</td>
+</tr>
+<tr>
+    <td class="first"><tt>vertexSplit[][]</tt>,
+    <tt>vertexSplitDefn[][]</tt>,
+    <tt>vertexSplitMeeting[][][]</tt>,
+    <tt>vertexSplitPartner[][]</tt>,
+    <tt>vertexSplitString[]</tt></td>
+    <td><tt>quadSeparating[][]</tt>,
+    <tt>quadDefn[][]</tt>,
+    <tt>quadMeeting[][][]</tt>,
+    <tt>quadPartner[][]</tt>,
+    <tt>quadString[]</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr><td class="deptype" colspan=4>Macros</td></tr>
+<tr>
+    <td class="first"><tt>REGISTER_FILTER</tt>,
+    <tt>REGISTER_FLAVOUR</tt>, <tt>REGISTER_PACKET</tt></td>
+    <td><tt>forFilter()</tt>, <tt>forCoords()</tt>, <tt>forPacket()</tt></td>
+    <td>The messy <tt>REGISTER_...</tt> macros have been replaced
+    with a more robust template-based mechanism.</td>
+</tr>
+</tbody></table>
+
+<p class="return">
+<a href="../index.html"><img src="../regina.svg" alt="Back to main page ..."
+    border="0" width="32" height="32" align="middle"></a>
+<a href="../index.html">Back to main page ...</a></p>
+
+</body>
+</html>
+

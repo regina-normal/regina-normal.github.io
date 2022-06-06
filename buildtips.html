@@ -17,6 +17,7 @@
     <tr><td><a href="#macosx">Mac</a></td></tr>
     <tr><td><a href="#windows">Windows</a></td></tr>
     <tr><td><a href="#cluster">Cluster environments</a></td></tr>
+    <tr><td><a href="#highdim">Supporting dimensions 9&ndash;15</a></td></tr>
     <tr><td><a href="#linking">Compiling Regina into your software</a></td></tr>
     <tr><td><a href="index.html">Back to main page ...</a></td></tr>
     </tbody></table>
@@ -49,7 +50,7 @@ update the build scripts (and this page) to reflect systems like yours.
 <h2><a name="linux">GNU/Linux</a></h2>
 
 <p>
-Since version&nbsp;4.92, Regina can be installed anywhere (it does not
+Regina can be installed anywhere (it does not
 need to live directly beneath <tt>/usr</tt> as in the past).
 The default is to install in <tt>/usr/local</tt>, though you can change this
 if you like by passing the argument <tt>CMAKE_INSTALL_PREFIX</tt> to cmake:
@@ -200,7 +201,33 @@ It is best if this is not the directory in which
 you unpacked Regina's sources, since otherwise you may find it hard to
 untangle sources from binaries later on.
 </p>
+
+<h2><a name="highdim">Supporting dimensions 9&ndash;15</a></h2>
+
+<p>
+Regina's <i>source code</i> supports triangulations of all dimensions
+&leq;&nbsp;15.
+However, supporting higher dimensions come with some overhead
+(particularly for Python users), and so Regina's ready-made packages
+and default builds only support dimensions 2&ndash;8.
+</p>
+<p>
+If you need support for dimensions 9&ndash;15, you can build Regina
+yourself with the <tt>HIGHDIM</tt> flag set to <tt>1</tt>.  You should
+see the effect in the CMake output:
+</p>
+<div class="example"><p>
+<tt>example$ cmake -DHIGHDIM=1 ..<br>
+-- The C compiler identification is AppleClang 13.0.0.13000029<br>
+...<br>
+-- Detecting CXX compile features - done<br>
+-- <b>Dimensions 9-15: enabled</b><br>
+-- Regina install type: XDG<br>
+...</tt>
+</p></div>
+
 <h2><a name="linking">Compiling Regina into your software</h2>
+
 <p>
 Once Regina is built and installed, you may wish to compile it
 into your own C++ programs.  The helper script <tt>regina-engine-config</tt>
