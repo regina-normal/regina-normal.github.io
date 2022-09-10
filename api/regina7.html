@@ -1,12 +1,12 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="../regina.css">
-    <title>Regina - Moving from 6.x to 7.x</title>
+    <title>Regina - Moving from 6.x to 7.0</title>
 </head>
 <body bgcolor="#FFFFFF" text="#000000"
     link="#0000EE" vlink="#551A8B" alink="#FF0000" class="deprecation">
 
-<h1><a name="contents">Regina - Moving from 6.x to 7.x</a></h1>
+<h1><a name="contents">Regina - Moving from 6.x to 7.0</a></h1>
 
 <div class="announce"><p>
 This page relates only to <b>C++ and Python programmers</b>.
@@ -15,18 +15,25 @@ This page relates only to <b>C++ and Python programmers</b>.
 <p>
 Over time, Regina makes changes and improvements to its C++ and Python
 interfaces.  This page explains how you will need to update your C++
-code and/or Python scripts to work with Regina&nbsp;7.0.
+code and/or Python scripts to work with Regina&nbsp;7.0 and later.
 <p>
-Many of the old classes and routines have been kept around
-but marked as <i>deprecated</i>, so that your old code will still work.
+Now that Regina&nbsp;7.0 is available, you should also read the separate
+page:
+<ul>
+<li><a href="recent.html">recent changes since Regina&nbsp;7.0</a>.</li>
+</ul>
+</p>
 <p>
-<b>All of this deprecated code will be removed in Regina&nbsp;7.1</b>.</li>
-<p>
-If you have <i>very</i> old code, you can also read the separate pages on
-<a href="regina5.html">moving from Regina&nbsp;4.x to 5.x</a> and
-<a href="regina6.html">moving from Regina&nbsp;5.x to 6.x</a>.
-<p>
-<p><h4><span class="question">Changes from Regina&nbsp;6.x to 7.x</span></h4></p>
+If you have older code (from 2020 or earlier), you can also read the separate
+pages on:
+<ul>
+<li><a href="regina6.html">moving from Regina&nbsp;5.x to 6.0</a>
+(January 2021);</li>
+<li><a href="regina5.html">moving from Regina&nbsp;4.x to 5.0</a>
+(September 2016).</li>
+</ul>
+</p>
+<p><h4><span class="question">Changes from Regina&nbsp;6.x to 7.0</span></h4></p>
 <p>
 First, you should <b>read the summary of the major behavioural changes</b>,
 <a href="https://regina-normal.github.io/7.0/docs/regina/regina7.html">available here online</a>.
@@ -122,15 +129,10 @@ exception and the circumstances in which it is thrown will be
 <p>
 These notes above cover most of the widespread API changes.
 However, there are many additional changes to specific headers, classes,
-functions and and constants.  These are listed in the table below,
+functions and constants.  These are listed in the table below,
 along with suggestions for how you should change your code.
 Any changes in the <i>behaviour</i> of these routines or classes
 are noted in the comments column.
-</p>
-<p>
-The blue cells indicate code that is still present in Regina,
-but is now <b>deprecated</b> (i.e., marked for removal in a future release).
-The red cells indicate code that has <b>already been removed</b> from Regina.
 </p>
 <p>
 <table cellspacing=0 border=0 class="data"><tbody>
@@ -142,8 +144,7 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
 <!------------------------------------------------------------------------->
 <tr><td class="deptype" colspan=4>Headers</td></tr>
 <tr>
-    <td class="removed"><tt>file/xml*.h</tt><br>
-    Removed in Regina&nbsp;7.0</td></td>
+    <td class="first"><tt>file/xml*.h</tt></td>
     <td>&mdash;</td>
     <td>All low-level XML parsing code is now private to Regina's engine,
     and so these XML parsing headers are no longer installed.
@@ -157,21 +158,19 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     which also use the singular (not the plural).</td>
 </tr>
 <tr>
-    <td class="removed"><tt>triangulation/homologicaldata.h</tt><br>
-    Removed in Regina&nbsp;7.0</td></td>
+    <td class="first"><tt>triangulation/homologicaldata.h</tt></td>
     <td><tt>triangulation/dim3/homologicaldata.h</tt></td>
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>hypersurface/hscoordregistry.h</tt>,<br>
+    <td class="first"><tt>hypersurface/hscoordregistry.h</tt>,<br>
     <tt>hypersurface/hscoordregistry-impl.h</tt>,<br>
     <tt>packet/packetregistry.h</tt>,<br>
     <tt>packet/packetregistry-impl.h</tt>,<br>
     <tt>surfaces/coordregistry.h</tt>,<br>
     <tt>surfaces/coordregistry-impl.h</tt>,<br>
     <tt>surfaces/filterregistry.h</tt>,<br>
-    <tt>surfaces/filterregistry-impl.h</tt><br>
-    Removed in Regina&nbsp;7.0</td></td>
+    <tt>surfaces/filterregistry-impl.h</tt></td>
     <td>&mdash;</td>
     <td>The old type registries have been removed.
     Normal surfaces and hypersurfaces no longer have different subclasses
@@ -183,11 +182,10 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     classes.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>utilities/memutils.h</tt>,<br>
+    <td class="first"><tt>utilities/memutils.h</tt>,<br>
     <tt>utilities/property.h</tt>,<br>
     <tt>utilities/ptrutils.h</tt>,<br>
-    <tt>utilities/registryutils.h</tt><br>
-    Removed in Regina&nbsp;7.0</td></td>
+    <tt>utilities/registryutils.h</tt></td>
     <td>&mdash;</td>
     <td>Since the move to C++17, these utilities have either become
     unnecessary or been replaced with simpler alternatives.</td>
@@ -195,8 +193,7 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
 <!------------------------------------------------------------------------->
 <tr><td class="deptype" colspan=4>Classes, Enums and Type Aliases</td></tr>
 <tr>
-    <td class="removed"><tt>AngleStructureVector</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>AngleStructureVector</tt></td>
     <td>&mdash;</td>
     <td>Angle structures now hold their coordinates using a plain
     <tt>Vector&lt;Integer&gt;</tt>.</td>
@@ -208,8 +205,7 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>CensusHits</tt>, <tt>CensusHitIterator</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>CensusHits</tt>, <tt>CensusHitIterator</tt></td>
     <td><tt>std::list&lt;CensusHit&gt;</tt>,
     <tt>std::list&lt;CensusHit&gt;::const_iterator</tt></td>
     <td>&nbsp;</td>
@@ -220,20 +216,18 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>EnumConstraints</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>EnumConstraints</tt></td>
     <td><tt>ValidityConstraints</tt></td>
     <td>This class has been completely redesigned (hence the rename);
     you will need to read the <tt>ValidityConstraints</tt> documentation
     before using it.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>FuncDelete</tt>,
+    <td class="first"><tt>FuncDelete</tt>,
     <tt>FuncNew</tt>,
     <tt>FuncNewCopyPtr</tt>,
     <tt>FuncNewCopyRef</tt>,
-    <tt>FuncNewCopyClonePtr</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <tt>FuncNewCopyClonePtr</tt></td>
     <td>&mdash;</td>
     <td>C++ provides good alternatives for these nowadays.</td>
 </tr>
@@ -243,22 +237,19 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>Handlebody</tt> (non-orientable case)<br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>Handlebody</tt> (non-orientable case)</td>
     <td>&mdash;</td>
     <td>The <tt>Handlebody</tt> class now only represents orientable
     handlebodies, since the non-orientable case was never fully
     implemented.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>HasReturnType</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>HasReturnType</tt></td>
     <td>&mdash;</td>
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>HyperInfo&lt;<i>coords</i>&gt;</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>HyperInfo&lt;<i>coords</i>&gt;</tt></td>
     <td><tt>HyperInfo</tt> (non-templated)</td>
     <td>Most of the old templated <tt>HyperInfo</tt> functionality is now
     accessible through <tt>HyperEncoding(<i>coords</i>)</tt>.
@@ -266,41 +257,35 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     name functions, accessible at both compile time and runtime.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>L31Pillow</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>L31Pillow</tt></t>
     <td><tt>TrivialTri</tt></td>
     <td>The old <tt>L31Pillow</tt> is now one of the many ad-hoc cases handled
     by <tt>TrivialTri</tt>.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>LessDeref</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>LessDeref</tt></td>
     <td>&mdash;</td>
     <td>Just use a lambda if you need to.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>LightweightSequence&lt;T&gt;::Less</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>LightweightSequence&lt;T&gt;::Less</tt></td>
     <td>&mdash;</td>
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>LightweightSequence&lt;T&gt;::SubsequenceCompareFirstPtr</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>LightweightSequence&lt;T&gt;::SubsequenceCompareFirstPtr</tt></td>
     <td><tt>LightweightSequence&lt;T&gt;::SubsequenceCompareFirst</tt></td>
     <td>This inner class has been significantly redesigned, and now works with
     containers whose keys are sequences (not pointers to sequences).</td>
 </tr>
 <tr>
-    <td class="removed"><tt>ListOnCall</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>ListOnCall</tt></td>
     <td>&mdash;</td>
     <td>This class was not thread-safe, and did not add anything
     non-trivial.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>LPConstraint...::Coefficients</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>LPConstraint...::Coefficients</tt></td>
     <td>&mdash;</td>
     <td>The interface for describing linear programming constraints has changed
     significantly.  Typical users should not be affected, but do read the
@@ -317,8 +302,7 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>NewFunction</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>NewFunction</tt></td>
     <td>&mdash;</td>
     <td>&nbsp;</td>
 </tr>
@@ -328,8 +312,7 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>NormalInfo&lt;<i>coords</i>&gt;</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>NormalInfo&lt;<i>coords</i>&gt;</tt></td>
     <td><tt>NormalInfo</tt> (non-templated)</td>
     <td>Most of the old templated <tt>NormalInfo</tt> functionality is now
     accessible through <tt>NormalEncoding(<i>coords</i>)</tt>.
@@ -337,9 +320,8 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     name functions, accessible at both compile time and runtime.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>NormalSurfaceVector</tt>,
-    <tt>NormalHypersurfaceVector</tt> and subclasses<br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>NormalSurfaceVector</tt>,
+    <tt>NormalHypersurfaceVector</tt> and subclasses</td>
     <td>&mdash;</td>
     <td>Normal (hyper)surfaces now hold their coordinates using a plain
     <tt>Vector&lt;LargeInteger&gt;</tt>, and use a <tt>NormalEncoding</tt>
@@ -347,8 +329,7 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     other details of the vector representation.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>PacketInfo&lt;...&gt;</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>PacketInfo&lt;...&gt;</tt></td>
     <td><tt>PacketInfo</tt> (non-templated)</td>
     <td>Most of the old templated <tt>PacketInfo</tt> functionality is no longer
     necessary. The new non-templated class has just a single <tt>name()</tt>
@@ -367,8 +348,7 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     you should rework your code to use second-generation codes instead.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>Property&lt;T&gt;</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>Property&lt;T&gt;</tt></td>
     <td><tt>std::optional&lt;T&gt;</tt> or
     <tt>std::unique_ptr&lt;T&gt;</tt>,
     depending on your storage policy</td>
@@ -386,23 +366,20 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>Returns</tt>, <tt>ReturnsTraits</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>Returns</tt>, <tt>ReturnsTraits</tt></td>
     <td>&mdash;</td>
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>SafePtr</tt>, <tt>SafePointeeBase</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>SafePtr</tt>, <tt>SafePointeeBase</tt></td>
     <td>&mdash;</td>
     <td>Now that the packet tree uses <tt>std::shared_ptr</tt>, these
     classes are unnecessary.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>SatBlockStarter</tt>,
+    <td class="first"><tt>SatBlockStarter</tt>,
     <tt>SatBlockStarterSearcher</tt>,
-    <tt>SatBlockStarterSet</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <tt>SatBlockStarterSet</tt></td>
     <td><tt>SatRegion::find()</tt>, <tt>SatBlockModel</tt></td>
     <td>The new routine <tt>SatRegion::find()</tt> is a simpler and more
     flexible replacement for the old <tt>SatBlockStarterSearcher</tt>
@@ -410,8 +387,7 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     now use <tt>SatBlockModel</tt> instead of <tt>SatBlockStarter</tt>.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>SFSAltSet</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>SFSAltSet</tt></td>
     <td><tt>SFSAlt</tt></td>
     <td>This class has had a significant redesign (hence the rename).
     Instead of creating an <tt>SFSAltSet</tt>, call the static function
@@ -428,37 +404,32 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>SnapPeaException</tt> as a base class for
-    other SnapPea-related exception types<br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>SnapPeaException</tt> as a base class for
+    other SnapPea-related exception types</td>
     <td>&mdash;</td>
     <td>The subclasses <tt>SnapPeaFatalError</tt> and
     <tt>SnapPeaMemoryFull</tt> now derive from standard C++ exception types.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>SurfaceFilter</tt> as a concrete class that
-    accepts all surfaces<br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>SurfaceFilter</tt> as a concrete class that
+    accepts all surfaces</td>
     <td>A default-constructed <tt>SurfaceFilterProperties</tt></td>
     <td><tt>SurfaceFilter</tt> is now an abstract base class, and you
     cannot instantiate it directly.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>SurfaceFilterInfo&lt;...&gt;</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>SurfaceFilterInfo&lt;...&gt;</tt></td>
     <td>The various virtual functions in <tt>SurfaceFilter</tt></td>
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>Triangulation&lt;dim&gt;::SimplexIterator</tt>,<br>
-    <tt>Triangulation&lt;dim&gt;::VertexIterator</tt>, etc.<br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>Triangulation&lt;dim&gt;::SimplexIterator</tt>,<br>
+    <tt>Triangulation&lt;dim&gt;::VertexIterator</tt>, etc.</td>
     <td><tt>auto</tt> or <tt>decltype(...)</tt></td>
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>Tritmask<i>N</i></tt>, for all <tt><i>N</i></tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>Tritmask<i>N</i></tt>, for all <tt><i>N</i></tt></td>
     <td>&nbsp;</td>
     <td>These were not used at all, and did not support tritmasks of
     arbitrary length.</td>
@@ -491,23 +462,20 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     and will never start in a background thread.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>Ban...::init()</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>Ban...::init()</tt></td>
     <td>Class constructors</td>
     <td>The linear programming "ban constraint" classes have been
     redesigned, and the tableaux is now passed to the class constructor
     instead of a separate <tt>init()</tt> function.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>CensusHit::next()</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>CensusHit::next()</tt></td>
     <td>&mdash;</td>
     <td>Census hits are now returned in a <tt>std::list</tt>, and so
     the <tt>next()</tt> function is no longer relevant.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>DoubleDescription::enumerateExtremalRays()</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>DoubleDescription::enumerateExtremalRays()</tt></td>
     <td><tt>DoubleDescription::enumerate()</tt></td>
     <td>&nbsp;</td>
 </tr>
@@ -517,17 +485,15 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>Face&lt;dim, subdim&gt;::buildLinkDetail()</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>Face&lt;dim, subdim&gt;::buildLinkDetail()</tt></td>
     <td><tt>Face&lt;dim, subdim&gt;::buildLinkInclusion()</tt></td>
     <td>This returns only an isomorphism; you can use
     <tt>buildLink()</tt> to fetch the corresponding triangulated link.
     The labelling option has been removed completely.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>FaceEmbedding&lt;dim, subdim&gt;</tt>
-    constructor that takes (<i>simplex</i>, <i>face number</i>)<br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>FaceEmbedding&lt;dim, subdim&gt;</tt>
+    constructor that takes (<i>simplex</i>, <i>face number</i>)</td>
     <td><tt>FaceEmbedding&lt;dim, subdim&gt;</tt> constructor
     that takes (<i>simplex</i>, <i>embedding permutation</i>)</td>
     <td>End users would typically not use these constructors,
@@ -535,17 +501,15 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     of the triangulation skeleton.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>FileInfo::type()</tt>,
-    <tt>FileInfo::typeDescription()</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>FileInfo::type()</tt>,
+    <tt>FileInfo::typeDescription()</tt></td>
     <td><tt>FileFormat::format()</tt>,
     <tt>FileFormat::formatDescription()</tt></td>
     <td>This change reflects the fact that Regina now supports more than
     one generation of XML file format.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>GlobalDirs::pythonLibs()</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>GlobalDirs::pythonLibs()</tt></td>
     <td>&mdash;</td>
     <td>Nothing has been installed to this path since Regina&nbsp;5.0.</td>
 </tr>
@@ -560,23 +524,21 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>GluingPerms&lt;dim&gt;::inputError()</tt></td>
+    <td class="first"><tt>GluingPerms&lt;dim&gt;::inputError()</tt></td>
     <td>&mdash;</td>
     <td>The input stream constructor now throws an exception on error.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>GluingPermSearcher&lt;dim&gt;</tt>
-    enumeration functions</br>
-    Redesigned in Regina&nbsp;7.0</td>
+    <td class="first"><tt>GluingPermSearcher&lt;dim&gt;</tt>
+    enumeration functions</td>
     <td>&mdash;</td>
     <td>The API for enumerating permutation sets has been significantly
     reorganised; see <tt>GluingPermSearcher&lt;dim&gt;::runSearch()</tt>
     for details.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>GluingPermSearcher&lt;dim&gt;</tt>
-    functions inherited from <tt>GluingPerms&lt;dim&gt;</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>GluingPermSearcher&lt;dim&gt;</tt>
+    functions inherited from <tt>GluingPerms&lt;dim&gt;</tt></td>
     <td>&mdash;</td>
     <td><tt>GluingPermSearcher&lt;dim&gt;</tt> no longer derives from
     <tt>GluingPerms&lt;dim&gt;</tt>.  Instead,
@@ -590,13 +552,12 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>GluingPermSearcher&lt;dim&gt;::inputError()</tt></td>
+    <td class="first"><tt>GluingPermSearcher&lt;dim&gt;::inputError()</tt></td>
     <td>&mdash;</td>
     <td>The input stream constructor now throws an exception on error.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>GluingPermSearcher&lt;dim&gt;::readTaggedData()</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>GluingPermSearcher&lt;dim&gt;::readTaggedData()</tt></td>
     <td><tt>GluingPermSearcher&lt;dim&gt;::fromTaggedData()</tt></td>
     <td>This function now throws an exception on error instead of
     returning <tt>null</tt>.</td>
@@ -650,10 +611,9 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     handlebodies, and so this routine always returns <tt>true</tt>.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>HilbertCD::enumerateHilbertBasis()</tt>,
+    <td class="first"><tt>HilbertCD::enumerateHilbertBasis()</tt>,
     <tt>HilbertDual::enumerateHilbertBasis()</tt>,
-    <tt>HilbertPrimal::enumerateHilbertBasis()</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <tt>HilbertPrimal::enumerateHilbertBasis()</tt></td>
     <td><tt>HilbertCD::enumerate()</tt>,
     <tt>HilbertDual::enumerate()</tt>,
     <tt>HilbertPrimal::enumerate()</tt></td>
@@ -665,15 +625,13 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>HomGroupPresentation::range()</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>HomGroupPresentation::range()</tt></td>
     <td><tt>HomGroupPresentation::codomain()</tt></td>
     <td>The function has not changed; it has simply been renamed to more
     accurately reflect what it returns.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>HomMarkedAbelianGroup::range()</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>HomMarkedAbelianGroup::range()</tt></td>
     <td><tt>HomMarkedAbelianGroup::codomain()</tt></td>
     <td>The function has not changed; it has simply been renamed to more
     accurately reflect what it returns.</td>
@@ -704,8 +662,7 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>LPInitialTableaux&lt;...&gt;::constraintsBroken()</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>LPInitialTableaux&lt;...&gt;::constraintsBroken()</tt></td>
     <td>&mdash;</td>
     <td>The <tt>LPInitialTableaux</tt> class constructor now throws an
     exception on such an error.</td>
@@ -777,17 +734,15 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>NormalSurface::countCoords()</tt>,
-    <tt>NormalHypersurface::countCoords()</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>NormalSurface::countCoords()</tt>,
+    <tt>NormalHypersurface::countCoords()</tt></td>
     <td><tt>surface.vector().size()</tt>
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>NormalSurface::orientedTriangles()</tt>,
+    <td class="first"><tt>NormalSurface::orientedTriangles()</tt>,
     <tt>NormalSurface::orientedQuads()</tt>,
-    <tt>NormalSurface::systemAllowsOriented()</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <tt>NormalSurface::systemAllowsOriented()</tt></td>
     <td>&mdash;</td>
     <td>Regina&nbsp;7.0 no longer supports transversely oriented normal
     surfaces; these will be reimplemented in a future release using a
@@ -800,9 +755,8 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>NormalSurface::systemAllowsAlmostNormal()</tt>,
-    <tt>NormalSurface::systemAllowsSpun()</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>NormalSurface::systemAllowsAlmostNormal()</tt>,
+    <tt>NormalSurface::systemAllowsSpun()</tt></td>
     <td><tt>NormalSurface::couldBeAlmostNormal()</tt>,
     <tt>NormalSurface::couldBeNonCompact()</tt></td>
     <td>&nbsp;</td>
@@ -817,7 +771,7 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>NormalSurfaces::allowsOriented()</tt></td>
+    <td class="first"><tt>NormalSurfaces::allowsOriented()</tt></td>
     <td>&mdash;</td>
     <td>Regina&nbsp;7.0 no longer supports transversely oriented normal
     surfaces; these will be reimplemented in a future release using a
@@ -858,8 +812,7 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>Packet::clone()</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>Packet::clone()</tt></td>
     <td><tt>Packet::cloneAsSibling()</tt></td>
     <td>Renamed to emphasise that this function is not a plain
     copy operation, and might not succeed.</td>
@@ -873,9 +826,8 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     respectively.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>Packet::firstTreePacket(const std::string&amp;)</tt>,
-    <tt>Packet::nextTreePacket(const std::string&amp;)</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>Packet::firstTreePacket(const std::string&amp;)</tt>,
+    <tt>Packet::nextTreePacket(const std::string&amp;)</tt></td>
     <td><tt>Packet::firstTreePacket(PacketType)</tt>,
     <tt>Packet::nextTreePacket(PacketType)</tt></td>
     <td>&nbsp;</td>
@@ -886,14 +838,13 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>Packet::safeDelete()</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>Packet::safeDelete()</tt></td>
     <td>&mdash;</td>
     <td>This is no longer required, since packets are managed exclusively
     by <tt>std::shared_ptr</tt>.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>PacketListener::packetToBeDestroyed()</tt><br>
+    <td class="first"><tt>PacketListener::packetToBeDestroyed()</tt><br>
     Marked <tt>final</tt> in Regina&nbsp;7.0 to ensure it cannot be
     reimplemented</td>
     <td><tt>PacketListener::packetBeingDestroyed()</tt></td>
@@ -953,8 +904,7 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>SatAnnulus::attachLST()</tt> member function<br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>SatAnnulus::attachLST()</tt> member function</td>
     <td><tt>SatAnnulus::attachLST()</tt> static function</td>
     <td><tt>SatAnnulus</tt> now only allows const access to the triangulation,
     and so this has become a static function that takes additional
@@ -966,40 +916,35 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>SatBlock::isBlock...()</tt>,
+    <td class="first"><tt>SatBlock::isBlock...()</tt>,
     <tt>SatBlock::clone()</tt> and copy constructors,
-    from <tt>SatBlock</tt> as well as its subclasses<br>
-    Removed in Regina&nbsp;7.0</td>
+    from <tt>SatBlock</tt> as well as its subclasses</td>
     <td><tt>SatRegion::beginsRegion()</tt></td>
     <td><tt>SatBlock</tt> and its subclasses can only be created through
     larger recognition routines such as <tt>SatRegion::beginsRegion()</tt>.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>...::insertBlock()</tt>,
-    from subclasses of <tt>SatBlock</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>...::insertBlock()</tt>,
+    from subclasses of <tt>SatBlock</tt></td>
     <td><tt>...::model()</tt></td>
     <td>The relevant subclasses of <tt>SatBlock</tt> now have a new
     <tt>model()</tt> routine, which returns a <tt>SatBlockModel</tt>
     by value.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>SatBlock::setAdjacent()</tt>,
-    <tt>SatBlock::transform()</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>SatBlock::setAdjacent()</tt>,
+    <tt>SatBlock::transform()</tt></td>
     <td>&mdash;</td>
     <td><tt>SatBlock</tt> and its subclasses are now read-only.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>SatBlockSpec</tt> constructors<br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>SatBlockSpec</tt> constructors</td>
     <td>&mdash;</td>
     <td><tt>SatBlockSpec</tt> now only supports move and swap operations,
     due to its new ownership semantics.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>SatRegion::expand()</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>SatRegion::expand()</tt></td>
     <td>&mdash;</td>
     <td>All publicly accessible functions that create a <tt>SatRegion</tt>
     will expand it automatically.</td>
@@ -1012,15 +957,13 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>SigCensus::run()</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>SigCensus::run()</tt></td>
     <td><tt>SigCensus::formCensus()</tt></td>
     <td>You can no longer create a <tt>SigCensus</tt> manually;
     instead you must use the static <tt>formCensus()</tt> routine.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>Signature::cycleCmp()</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>Signature::cycleCmp()</tt></td>
     <td>&mdash;</td>
     <td>This is now a private member function, since it was very
     specialised.</td>
@@ -1032,8 +975,7 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     returning <tt>null</tt>.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>SnapPeaTriangulation::filledTriangulation()</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>SnapPeaTriangulation::filledTriangulation()</tt></td>
     <td><tt>SnapPeaTriangulation::filledPartial()</tt> or
     <tt>SnapPeaTriangulation::filledAll()</tt></td>
     <td>Instead of a polymorphic return type, these routines now have return
@@ -1055,32 +997,28 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>TreeDecomposition<tt> constructor that takes a
-    C-style array of adjacencies<br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>TreeDecomposition<tt> constructor that takes a
+    C-style array of adjacencies</td>
     <td>Constructor that takes a <tt>Matrix&lt;bool&gt;</tt> or a
     <tt>std::vector</tt> of rows</td>
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>TreeTraversal::constraintsBroken()</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>TreeTraversal::constraintsBroken()</tt></td>
     <td>The class constructor now throws an exception in this scenario.</td>
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>TreeTraversal::nVisited()</tt>,<br>
+    <td class="first"><tt>TreeTraversal::nVisited()</tt>,<br>
     <tt>TreeEnumeration::nSolns()</tt>,<br>
-    <tt>TautEnumeration::nSolns()</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <tt>TautEnumeration::nSolns()</tt></td>
     <td><tt>TreeTraversal::visited()</tt>,<br>
     <tt>TreeEnumeration::solutions()</tt>,<br>
     <tt>TautEnumeration::solutions()</tt></td>
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>TreeTraversal::verify()</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>TreeTraversal::verify()</tt></td>
     <td>&mdash;</td>
     <td>Each variant of <tt>verify()</tt> just tested a single
    wmatrix multiplication, which you can perform yourself if necessary.</td>
@@ -1107,8 +1045,7 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>Triangulation&lt;dim&gt;::splitIntoComponents()</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>Triangulation&lt;dim&gt;::splitIntoComponents()</tt></td>
     <td><tt>Triangulation&lt;dim&gt;::triangulateComponents()</tt></td>
     <td>The new <tt>triangulateComponents()</tt> routine does not create
     packets or interact with the packet tree at all.</td>
@@ -1119,8 +1056,7 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>Triangulation&lt;3&gt;::connectedSumDecomposition()</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>Triangulation&lt;3&gt;::connectedSumDecomposition()</tt></td>
     <td><tt>Triangulation&lt;3&gt;::summands()</tt></td>
     <td>The new <tt>summands()</tt> routine does not create packets or interact
     with the packet tree at all, and throws an exception on error.</td>
@@ -1172,8 +1108,7 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>Triangulation&lt;3&gt;::makeZeroEfficient()</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>Triangulation&lt;3&gt;::makeZeroEfficient()</tt></td>
     <td><tt>Triangulation&lt;3&gt;w::summands()</tt></td>
     <td>The new <tt>summands()</tt> routine (which computes connected sum
     decompositions) now comes with formal guarantees of zero-efficiency.</td>
@@ -1189,8 +1124,7 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>Vertex&lt;3&gt;::link()</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>Vertex&lt;3&gt;::link()</tt></td>
     <td><tt>Vertex&lt;3&gt;::linkType()</tt></td>
     <td>This was removed because <tt>link()</tt> will be used for
     a different purpose in a future release.</td>
@@ -1198,9 +1132,8 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
 <!------------------------------------------------------------------------->
 <tr><td class="deptype" colspan=4>Global Routines</td></tr>
 <tr>
-    <td class="removed"><tt>allowsNonOrientableLinks()</tt>,<br>
-    <tt>allowsInvalidFaces()</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>allowsNonOrientableLinks()</tt>,<br>
+    <tt>allowsInvalidFaces()</tt></td>
     <td>Class constants
     <tt>Face&lt;dim,&nbsp;subdim&gt;::allowsNonOrientableLinks</tt>,
     <tt>Face&lt;dim,&nbsp;subdim&gt;::allowsInvalidFaces</tt></td>
@@ -1213,21 +1146,18 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <tt>std::vector</tt> of strings.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>clonePtr()</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>clonePtr()</tt></td>
     <td>Class copy constructors</td>
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>duplicate()</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>duplicate()</tt></td>
     <td><tt>::strdup()</tt></td>
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>forCoords()</tt>, <tt>forFilter()</tt>,
-    <tt>forPacket()</tt>,<br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>forCoords()</tt>, <tt>forFilter()</tt>,
+    <tt>forPacket()</tt></td>
     <td>&mdash;</td>
     <td>The old type registries have been removed.
     Normal surfaces and hypersurfaces no longer have different subclasses
@@ -1239,15 +1169,13 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     classes.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>formSigCensus()</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>formSigCensus()</tt></td>
     <td><tt>SigCensus::formCensus</tt></td>
     <td>The new function uses a typesafe template-based mechanism
     instead of function pointers and <tt>void*</tt> arguments.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>makeZeroVector()</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>makeZeroVector()</tt></td>
     <td>Class constructor <tt>Vector&lt;T&gt;(len)</tt></td>
     <td>&nbsp;</td>
 </tr>
@@ -1285,23 +1213,20 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>FileInfo::TYPE_XML</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>FileInfo::TYPE_XML</tt></td>
     <td><tt>REGINA_XML_GEN_1</tt> or <tt>REGINA_XML_GEN_2</tt>,
     from the new <tt>FileFormat</tt> enum type</td>
     <td>This change reflects the fact that Regina now supports more than
     one generation of XML file format.</td>
 </tr>
 <tr>
-    <td class="removed"><tt>GluingPermSearcher&lt;dim&gt;::dataTag_</tt>
-    (also in subclasses)<br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>GluingPermSearcher&lt;dim&gt;::dataTag_</tt>
+    (also in subclasses)</td>
     <td><tt>...::dataTag</tt></td>
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>Perm&lt;<i>n</i>&gt;::invS<i>k</i></tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>Perm&lt;<i>n</i>&gt;::invS<i>k</i></tt></td>
     <td><tt>Perm&lt;<i>k</i>&gt;::inverse()</tt></td>
     <td>For those <i>k</i> that had inverse lookup tables,
     the <tt>inverse()</tt> functions are just as fast.</td>
@@ -1316,8 +1241,7 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
 <!------------------------------------------------------------------------->
 <tr><td class="deptype" colspan=4>Global Constants</td></tr>
 <tr>
-    <td class="removed"><tt>NS_FILTER_DEFAULT</tt><br>
-    Removed in Regina&nbsp;7.0</td>
+    <td class="first"><tt>NS_FILTER_DEFAULT</tt></td>
     <td><tt>NS_FILTER_LEGACY_DEFAULT</tt></td>
     <td>The corresponding class <tt>SurfaceFilter</tt> is now an
     abstract base class, and can no longer be instantiated directly.</td>
@@ -1328,10 +1252,9 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="removed"><tt>triDiscArcs(i,j)</tt>,<br>
+    <td class="first"><tt>triDiscArcs(i,j)</tt>,<br>
     <tt>quadDiscArcs(i,j)</tt>,<br>
-    <tt>octDiscArcs(i,j)</tt><br>
-    Old syntax removed in Regina&nbsp;7.0</td>
+    <tt>octDiscArcs(i,j)</tt></td>
     <td><tt>triDiscArcs[i][j]</tt>,<br>
     <tt>quadDiscArcs[i][j]</tt>,<br>
     <tt>octDiscArcs[i][j]</tt></td>

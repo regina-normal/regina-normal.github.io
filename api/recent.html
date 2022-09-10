@@ -1,0 +1,163 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../regina.css">
+    <title>Regina - Changes since Regina 7.0</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000"
+    link="#0000EE" vlink="#551A8B" alink="#FF0000" class="deprecation">
+
+<h1><a name="contents">Regina - Changes since Regina 7.0</a></h1>
+
+<div class="announce"><p>
+This page relates only to <b>C++ and Python programmers</b>.
+</p></div>
+
+<p>
+Over time, Regina makes changes and improvements to its C++ and Python
+interfaces.  This page explains how you will need to update your C++
+code and/or Python scripts to work with the latest version of Regina.
+<p>
+Where possible, the old classes and routines that you should no longer use
+have been kept but marked as <i>deprecated</i>.  These old deprecated
+classes and routines will be kept until the next major version
+(Regina&nbsp;8.0), so that there is a comfortable transition period where
+your old code will still work.
+<b>All of this deprecated code will be removed in Regina&nbsp;8.0</b>,
+whenever that may be.
+<p>
+If you have older code (from 2021 or earlier), you can also read the
+separate pages on:
+<ul>
+<li><a href="regina7.html">moving from Regina&nbsp;6.x to 7.x</a>
+(December 2021) &ndash; this was an enormous update that made sweeping
+changes throughout the API;</li>
+<li><a href="regina6.html">moving from Regina&nbsp;5.x to 6.x</a>
+(January 2021);</li>
+<li><a href="regina5.html">moving from Regina&nbsp;4.x to 5.x</a>
+(September 2016).</li>
+</ul>
+</p>
+<p><h4><span class="question">Changes since Regina&nbsp;7.0</span></h4></p>
+<p>
+Some general rules have been applied throughout the API:
+<ul>
+<li>Several functions now verify some of their easy-to-test preconditions,
+and throw exceptions if these preconditions fail.  Technically this is not
+a &ldquo;real&rdquo; API change, since users are expected to adhere to
+preconditions anyway; however, it <i>is</i> a practical change in behaviour.
+These changes are not individually outlined here on this page, but you
+can always consult the
+<a href="../engine-docs/index.html">API documentation</a>&mdash;each
+of Regina's functions that might throw an exception will declare this
+as part of its documentation.</li>
+</ul>
+
+<p>
+In addition to the general changes outlined above,
+there are also specific changes to individual headers, classes,
+functions and/or constants.  These are listed in the table below,
+along with suggestions for how you should change your code.
+Any changes in the <i>behaviour</i> of these routines or classes
+are noted in the comments column.
+</p>
+<p>
+The blue cells indicate code that is still present in Regina,
+but is now <b>deprecated</b> (i.e., marked for removal in a future release).
+The red cells indicate code that has <b>already been removed</b> from Regina.
+</p>
+<p>
+<table cellspacing=0 border=0 class="data"><tbody>
+<tr>
+    <th class="first">Deprecated code</th>
+    <th>Replacement</th>
+    <th>Comments</th>
+</tr>
+<!------------------------------------------------------------------------->
+<!--tr><td class="deptype" colspan=4>Headers</td></tr>
+<tr>
+    <td class="removed"><tt>triangulation/homologicaldata.h</tt><br>
+    Removed in Regina&nbsp;7.0</td></td>
+    <td><tt>triangulation/dim3/homologicaldata.h</tt></td>
+    <td>&nbsp;</td>
+</tr-->
+<!------------------------------------------------------------------------->
+<!--tr><td class="deptype" colspan=4>Classes, Enums and Type Aliases</td></tr>
+<tr>
+    <td class="removed"><tt>AngleStructureVector</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td>&mdash;</td>
+    <td>Angle structures now hold their coordinates using a plain
+    <tt>Vector&lt;Integer&gt;</tt>.</td>
+</tr-->
+<!------------------------------------------------------------------------->
+<tr><td class="deptype" colspan=4>Member Routines</td></tr>
+<tr>
+    <td class="first"><tt>FacetPairing&lt;dim&gt;::toTextRep()</tt></td>
+    <td><tt>FacetPairing&lt;dim&gt;::textRep()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>FacetPairing&lt;3&gt;::followChain(size_t&amp;,
+	...)</tt></td>
+    <td><tt>FacetPairing&lt;3&gt;::followChain(ssize_t&amp;, ...)</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Isomorphism&lt;dim&gt;::apply()</tt>,
+    <tt>Isomorphism&lt;dim&gt;::applyInPlace()</tt></td>
+    <td><tt>iso(tri)</tt>, <tt>tri&nbsp;=&nbsp;iso(tri)</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NormalHypersurface::doubleHypersurface()</tt></td>
+    <td><tt>surface&nbsp;*&nbsp;2</tt> or <tt>surface&nbsp;*=&nbsp;2</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>NormalSurface::doubleSurface()</tt></td>
+    <td><tt>surface&nbsp;*&nbsp;2</tt> or <tt>surface&nbsp;*=&nbsp;2</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Packet::insertChildFirst()</tt>,
+    <tt>Packet::insertChildLast()</tt>,
+    <tt>Packet::insertChildAfter()</tt></td>
+    <td><tt>Packet::prepend()</tt>,
+    <tt>Packet::append()</tt>,
+    <tt>Packet::insert()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<!------------------------------------------------------------------------->
+<tr><td class="deptype" colspan=4>Global Routines</td></tr>
+<tr>
+    <td class="first"><tt>regina::gcd()</tt>, <tt>regina::lcm()</tt></td>
+    <td><tt>std::gcd()</tt>, <tt>std::lcm()</tt></td>
+    <td>GCD and LCM are now offered as part of the C++17 standard.</td>
+</tr>
+<!------------------------------------------------------------------------->
+<!--tr><td class="deptype" colspan=4>Class Constants</td></tr>
+<tr>
+    <td class="first"><tt>DiscType::NONE</tt></td>
+    <td><tt>DiscType()</tt></td>
+    <td>&nbsp;</td>
+</tr-->
+<!------------------------------------------------------------------------->
+<!--tr><td class="deptype" colspan=4>Global Constants</td></tr>
+<tr>
+    <td class="removed"><tt>NS_FILTER_DEFAULT</tt><br>
+    Removed in Regina&nbsp;7.0</td>
+    <td><tt>NS_FILTER_LEGACY_DEFAULT</tt></td>
+    <td>The corresponding class <tt>SurfaceFilter</tt> is now an
+    abstract base class, and can no longer be instantiated directly.</td>
+</tr-->
+</tbody></table>
+
+
+<p class="return">
+<a href="../index.html"><img src="../regina.svg" alt="Back to main page ..."
+    border="0" width="32" height="32" align="middle"></a>
+<a href="../index.html">Back to main page ...</a></p>
+
+</body>
+</html>
+
