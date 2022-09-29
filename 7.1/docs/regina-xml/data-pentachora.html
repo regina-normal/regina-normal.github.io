@@ -1,0 +1,45 @@
+<html><head><title>pentachora</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Regina, XML, Data files"><link rel="start" href="index.html" title="Regina 7.1 File Format Reference"><link rel="up" href="removed.html" title="Deprecated and Removed Elements"><link rel="prev" href="data-pent.html" title="pent"><link rel="next" href="data-pdf.html" title="pdf"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>pentachora</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="data-pent.html">Prev</a></td><td align="center" class="navCenter" width="34%">Deprecated and Removed Elements</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="data-pdf.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="data-pentachora"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>pentachora — Replaced by <a href="data-tri.html" title="tri"><code class="sgmltag-element">tri</code></a></p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="informaltable"><table border="1"><colgroup><col><col></colgroup><tbody><tr><td colspan="2">
+      <span class="bold"><strong>Content Model</strong></span>
+     </td></tr><tr><td colspan="2">
+<pre class="synopsis">
+pentachora ::= (<a href="data-pent.html" title="pent"><code class="sgmltag-element">pent</code></a>*)</pre>
+     </td></tr><tr><td colspan="2">
+      <span class="bold"><strong>Attributes</strong></span>
+     </td></tr><tr><td><span class="bold"><strong>Name</strong></span></td><td><span class="bold"><strong>Type</strong></span></td></tr><tr><td><code class="sgmltag-element">npent</code></td><td><span class="type">NUMBER</span> (required)</td></tr></tbody></table></div><p>Deprecated since <span class="application">Regina</span> 7.0</p></div><div class="refsect1" lang="en"><a name="idp105544734562192"></a><h2>Description</h2><p>
+   This element was used in the past to store all pentachora
+   in a 4-dimensional triangulation.
+   Since <span class="application">Regina</span> 7.0, these pentachora are now stored directly
+   within the <a href="data-tri.html" title="tri"><code class="sgmltag-element">tri</code></a> element (which replaces the old
+   <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a> element for triangulation packets), and each pentachoron
+   is encoded in a <a href="data-simplex.html" title="simplex"><code class="sgmltag-element">simplex</code></a> element (as opposed to the <a href="data-pent.html" title="pent"><code class="sgmltag-element">pent</code></a>
+   elements described here).
+  </p><p>
+   A <a href="data-pentachora.html" title="pentachora"><code class="sgmltag-element">pentachora</code></a> element stores the entire set of pentachora that
+   form a 4-dimensional triangulation.
+  </p><p>
+   The total number of pentachora must be specified by the
+   <code class="sgmltag-element">npent</code> attribute.  The individual pentachora are
+   numbered 0, 1, 2, etc., and their facet gluings are described by the
+   corresponding child <a href="data-pent.html" title="pent"><code class="sgmltag-element">pent</code></a> elements.  There must be precisely
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>npent</code></em></span> child <a href="data-pent.html" title="pent"><code class="sgmltag-element">pent</code></a> elements in total.
+  </p><div class="refsect2" lang="en"><a name="idp105544734569744"></a><h3>Parents</h3><p>
+    The following elements contain <code class="sgmltag-element">pentachora</code>:
+    <span class="simplelist"><a href="data-packet-dim4triangulation.html" title="packet (4-dimensional triangulation)"><code class="sgmltag-element">packet</code> (4-dimensional triangulation)</a></span>.
+   </p></div><div class="refsect2" lang="en"><a name="idp105544734572688"></a><h3>Children</h3><p>
+    The following elements occur in <code class="sgmltag-element">pentachora</code>:
+    <span class="simplelist"><a href="data-pent.html" title="pent"><code class="sgmltag-element">pent</code></a></span>.
+   </p></div></div><div class="refsect1" lang="en"><a name="idp105544734575632"></a><h2>Attributes</h2><div class="variablelist"><dl><dt><span class="term"><code class="sgmltag-element">npent</code></span></dt><dd><p>
+      The total number of pentachora in this set.  Note that there must
+      be precisely this many child <a href="data-pent.html" title="pent"><code class="sgmltag-element">pent</code></a> elements.
+     </p></dd></dl></div></div><div class="refsect1" lang="en"><a name="idp105544734579088"></a><h2>Example</h2><p>
+   The following <span class="acronym">XML</span> snippet represents a triangulation
+   of the product
+   B<sup>3</sup>×S<sup>1</sup>,
+   formed from two pentachora.
+  </p><pre class="programlisting">
+&lt;pentachora npent="2"&gt;
+  &lt;pent&gt; 1 13380 -1 -1 -1 -1 -1 -1 1 2257 &lt;/pent&gt;
+  &lt;pent&gt; 0 13380 -1 -1 -1 -1 -1 -1 0 2257 &lt;/pent&gt;
+&lt;/pentachora&gt;
+  </pre></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="data-pent.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="data-pdf.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">pent </td><td width="34%" align="center" class="navCenter"><a href="removed.html">Up</a></td><td width="33%" align="right" class="navRight"> pdf</td></tr></table></div></body></html>

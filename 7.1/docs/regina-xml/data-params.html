@@ -1,0 +1,89 @@
+<html><head><title>params</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Regina, XML, Data files"><link rel="start" href="index.html" title="Regina 7.1 File Format Reference"><link rel="up" href="removed.html" title="Deprecated and Removed Elements"><link rel="prev" href="data-packet-text.html" title="packet (text)"><link rel="next" href="data-pent.html" title="pent"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>params</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="data-packet-text.html">Prev</a></td><td align="center" class="navCenter" width="34%">Deprecated and Removed Elements</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="data-pent.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="data-params"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>params — Replaced by attributes of <a href="data-surfaces.html" title="surfaces"><code class="sgmltag-element">surfaces</code></a> and
+   <a href="data-hypersurfaces.html" title="hypersurfaces"><code class="sgmltag-element">hypersurfaces</code></a></p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="informaltable"><table border="1"><colgroup><col><col><col></colgroup><tbody><tr><td colspan="3">
+      <span class="bold"><strong>Content Model</strong></span>
+     </td></tr><tr><td colspan="3">
+<pre class="synopsis">
+params ::=</pre>
+     </td></tr><tr><td colspan="3">
+      <span class="bold"><strong>Attributes</strong></span>
+     </td></tr><tr><td><span class="bold"><strong>Name</strong></span></td><td><span class="bold"><strong>Type</strong></span></td><td><span class="bold"><strong>Version</strong></span></td></tr><tr><td><code class="sgmltag-element">algorithm</code></td><td><span class="type">CDATA</span> (required)</td><td>Added in <span class="application">Regina</span> 4.94</td></tr><tr><td><code class="sgmltag-element">embedded</code></td><td><span class="type">CDATA</span> (deprecated)</td><td>Deprecated since <span class="application">Regina</span> 4.94</td></tr><tr><td><code class="sgmltag-element">flavour</code></td><td><span class="type">CDATA</span></td><td> </td></tr><tr><td><code class="sgmltag-element">flavourid</code></td><td><span class="type">NUMBER</span> (required)</td><td> </td></tr><tr><td><code class="sgmltag-element">type</code></td><td><span class="type">NUMBER</span> (required)</td><td>Added in <span class="application">Regina</span> 4.94</td></tr></tbody></table></div><p>Deprecated since <span class="application">Regina</span> 7.0</p></div><div class="refsect1" lang="en"><a name="idp105544734250128"></a><h2>Description</h2><p>
+   This element was used in the past to store the parameters for an
+   enumeration of vertex normal surfaces or hypersurfaces.
+   These are typically the parameters supplied by the user when
+   creating a new normal surface/hypersurface list.
+   Since <span class="application">Regina</span> 7.0, these enumeration parameters are now stored
+   in the attributes of the corresponding <a href="data-surfaces.html" title="surfaces"><code class="sgmltag-element">surfaces</code></a> and
+   <a href="data-hypersurfaces.html" title="hypersurfaces"><code class="sgmltag-element">hypersurfaces</code></a> elements instead.
+  </p><div class="refsect2" lang="en"><a name="idp105544734252944"></a><h3>Parents</h3><p>
+    The following elements contain <code class="sgmltag-element">params</code>:
+    <span class="simplelist"><a href="data-packet-normalhypersurfacelist.html" title="packet (normal hypersurface list)"><code class="sgmltag-element">packet</code> (normal hypersurface list)</a>, <a href="data-packet-normalsurfacelist.html" title="packet (normal surface list)"><code class="sgmltag-element">packet</code> (normal surface list)</a></span>.
+   </p></div><div class="refsect2" lang="en"><a name="idp105544734256784"></a><h3>Children</h3><p>
+    Element <code class="sgmltag-element">params</code> has no children.
+   </p></div></div><div class="refsect1" lang="en"><a name="idp105544734258448"></a><h2>Attributes</h2><div class="variablelist"><dl><dt><span class="term"><code class="sgmltag-element">algorithm</code></span></dt><dd><p>
+      Specifies the algorithm that was used to enumerate these normal
+      surfaces/hypersurfaces.
+     </p><p>
+      This must be an integer, formed as a bitwise OR combination of
+      constants from <span class="application">Regina</span>'s calculation engine.
+      For normal surfaces in a 3-manifold triangulation, these constants
+      are taken from the <code class="classname">NormalAlgFlags</code> enumeration;
+      for normal hypersurfaces in a 4-manifold triangulation, they
+      are taken from the <code class="classname">HyperAlgFlags</code> enumeration.
+     </p><p>
+      An example of such an integer might be 17, which combines the
+      3-dimensional <code class="classname">NormalAlgFlags</code> constants
+      <code class="literal">NS_VERTEX_VIA_REDUCED</code> (1) and
+      <code class="literal">NS_TREE</code> (16).
+     </p></dd><dt><span class="term"><code class="sgmltag-element">embedded</code></span></dt><dd><p>
+      Deprecated.  This should be <code class="literal">T</code> if only
+      embedded normal surfaces were enumerated to form this list,
+      or <code class="literal">F</code> if all (embedded, immersed
+      and singular) normal surfaces were enumerated.
+     </p><p>
+      You should write this tag if you want your file to be read by
+      <span class="application">Regina</span> 4.93 or earlier.  Later versions of <span class="application">Regina</span> can
+      also read it; however, they prefer the new
+      <code class="sgmltag-element">type</code> and <code class="sgmltag-element">algorithm</code> tags,
+      which contain richer information.
+      If both <code class="sgmltag-element">type</code> and <code class="sgmltag-element">algorithm</code>
+      are present then this <code class="sgmltag-element">embedded</code> tag will be ignored.
+     </p></dd><dt><span class="term"><code class="sgmltag-element">flavour</code></span></dt><dd><p>
+      The flavour of coordinate system used in the normal surface/hypersurface
+      enumeration, expressed as a human-readable string.  Example
+      flavours are <code class="literal">Quad normal</code> and
+      <code class="literal">Standard almost normal (tri-quad-oct)</code>.
+     </p></dd><dt><span class="term"><code class="sgmltag-element">flavourid</code></span></dt><dd><p>
+      The flavour of coordinate system used in the normal surface/hypersurface
+      enumeration, expressed as an internal identification code.  This
+      must be a non-negative integer that matches one of the
+      coordinate system constants in <span class="application">Regina</span>'s calculation engine.
+      For normal surfaces in a 3-manifold triangulation, this constant
+      is taken from the <code class="classname">NormalCoords</code> enumeration;
+      for normal hypersurfaces in a 4-manifold triangulation, it
+      is taken from the <code class="classname">HyperCoords</code> enumeration.
+     </p><p>
+      An example of such an integer might be 102, which is the
+      3-dimensional constant <code class="literal">NS_AN_QUAD_OCT</code>
+      that represents standard coordinates for octagonal almost normal
+      surfaces.
+     </p></dd><dt><span class="term"><code class="sgmltag-element">type</code></span></dt><dd><p>
+      Specifies exactly which normal surfaces/hypersurfaces this list contains.
+      In particular, this flag indicates whether the list contains all
+      vertex surfaces, all fundamental surfaces, or some other
+      customised list.  It also indicates whether the list is
+      restricted to properly embedded surfaces (thereby replacing the
+      obsolete <code class="sgmltag-element">embedded</code> tag described above).
+     </p><p>
+      This must be an integer, formed as a bitwise OR combination of
+      constants from <span class="application">Regina</span>'s calculation engine.
+      For normal surfaces in a 3-manifold triangulation, these constants
+      are taken from the <code class="classname">NormalListFlags</code> enumeration;
+      for normal hypersurfaces in a 4-manifold triangulation, they
+      are taken from the <code class="classname">HyperListFlags</code> enumeration.
+     </p><p>
+      An example of such an integer might be 5, which combines the
+      3-dimensional <code class="classname">NormalListFlags</code> constants
+      <code class="literal">NS_EMBEDDED_ONLY</code> (1) and
+      <code class="literal">NS_VERTEX</code> (4).
+     </p></dd></dl></div></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="data-packet-text.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="data-pent.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">packet (text) </td><td width="34%" align="center" class="navCenter"><a href="removed.html">Up</a></td><td width="33%" align="right" class="navRight"> pent</td></tr></table></div></body></html>

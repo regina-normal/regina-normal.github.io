@@ -1,0 +1,151 @@
+<html><head><title>regina-python</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina 7.1 Handbook"><link rel="up" href="manpages.html" title="Appendix A. Command Line: Main Applications"><link rel="prev" href="man-regina-gui.html" title="regina-gui"><link rel="next" href="utils.html" title="Appendix B. Command Line: Specialised Utilities"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>regina-python</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="man-regina-gui.html">Prev</a></td><td align="center" class="navCenter" width="34%">Command Line: Main Applications</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="utils.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="man-regina-python"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>regina-python — <span class="application">Regina</span>'s command-line <span class="application">Python</span> interface</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-python</strong></span></span> [[<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-q, --quiet</code></span>] |  [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-v, --verbose</code></span>]] [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-n, --nolibs</code></span>] [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-a, --noautoimport</code></span>]</p></div><div class="cmdsynopsis"><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-python</strong></span></span> [[<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-q, --quiet</code></span>] |  [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-v, --verbose</code></span>]] [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-n, --nolibs</code></span>] [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-a, --noautoimport</code></span>] [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-i, --interactive</code></span>] {<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>script</code></em></span>} [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>script-args</code></em></span>]</p></div></div><div class="refsect1" lang="en"><a name="idp105544766294800"></a><h2>Description</h2><p>
+     <span class="application">Regina</span> is a software package for 3-manifold and 4-manifold topologists,
+     with a focus on triangulations, knots and links,
+     normal surfaces, and angle structures.
+     For 3-manifolds, it includes high-level tasks such as 3-sphere
+     and unknot recognition, connected sum decomposition and Hakenness testing,
+     comes with a rich database of census manifolds, and incorporates
+     the <span class="application">SnapPea</span> kernel for working with hyperbolic manifolds.
+     For 4-manifolds, it offers a range of combinatorial and algebraic tools,
+     plus support for normal hypersurfaces.
+     For knots and links, Regina can perform combinatorial manipulation,
+     compute knot polynomials, and work with several import/export formats.
+     <span class="application">Regina</span> comes with a full graphical user interface, as well as
+     <span class="application">Python</span> bindings and a low-level <span class="application">C++</span> programming interface.
+    </p><p>
+    This command starts an interactive <span class="application">Python</span> session for
+    <span class="application">Regina</span>.  This will be a command-line <span class="application">Python</span> session, with direct
+    text input/output and no graphical user interface.
+    All of the objects, clases and methods from <span class="application">Regina</span>'s mathematical
+    engine will be made available through the module
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="parameter"><em class="parameter"><code>regina</code></em></span>, which will be imported on startup
+    (effectively running <code class="literal">import regina</code>).
+    Moreover, unless the option <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--noautoimport</code></span> is
+    passed, all of <span class="application">Regina</span>'s objects, classes and methods will be
+    imported directly into the current namespace
+    (effectively running
+    <code class="literal">from regina import *</code>).
+   </p><p>
+    Instead of starting an interactive <span class="application">Python</span> session, you can pass a
+    <span class="application">Python</span> script (with arguments if desired).  In this case <span class="application">Regina</span>
+    will run the script (after first importing the
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="parameter"><em class="parameter"><code>regina</code></em></span> module).
+    If you pass <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--interactive</code></span>, <span class="application">Regina</span> will leave you
+    at a <span class="application">Python</span> prompt once the script finishes;
+    otherwise it will exit <span class="application">Python</span> and return you to the command line.
+   </p></div><div class="refsect1" lang="en"><a name="idp105544766308112"></a><h2>Options</h2><div class="variablelist"><dl><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-q</code></span>, </span><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--quiet</code></span></span></dt><dd><p>
+       Start in quiet mode.  No output will be produced except
+       for serious errors.  In particular, warnings will be suppressed.
+      </p><p>
+       This is equivalent to setting the environment variable
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="parameter"><em class="parameter"><code>REGINA_VERBOSITY</code></em></span>=<code class="literal">0</code>.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-v</code></span>, </span><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--verbose</code></span></span></dt><dd><p>
+       Start in verbose mode.  Additional diagnostic
+       information will be output.
+      </p><p>
+       This is equivalent to setting the environment variable
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="parameter"><em class="parameter"><code>REGINA_VERBOSITY</code></em></span>=<code class="literal">2</code>.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-a</code></span>, </span><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--noautoimport</code></span></span></dt><dd><p>
+       Still import the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="parameter"><em class="parameter"><code>regina</code></em></span> module,
+       but do not automatically import all of <span class="application">Regina</span>'s objects,
+       classes and methods into the current namespace
+       (that is, do not run
+       <code class="literal">from regina import *</code>).
+       This means that (for example) the main 3-manifold triangulation class
+       must be accessed as <code class="literal">regina.Triangulation3</code>, not
+       just <code class="literal">Triangulation3</code>.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-i</code></span>, </span><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--interactive</code></span></span></dt><dd><p>
+       Run the script in interactive mode.  After executing the
+       given script, <span class="application">Regina</span> will leave you in the <span class="application">Python</span> interpreter
+       to run your own additional commands.
+      </p><p>
+       This option is only available when a script is passed.
+       If no script is passed, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-python</strong></span></span> will
+       always start in interactive mode.
+      </p></dd></dl></div></div><div class="refsect1" lang="en"><a name="idp105544766259728"></a><h2>Environment Variables</h2><p>
+    The following environment variables influence the behaviour of
+    this program.  Most variables can also be set in the local
+    configuration file <code class="filename">~/.regina-python</code> using a line
+    of the form
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>option</code></em></span>=<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>value</code></em></span>;
+    exceptions are noted below.
+    Environment variables take precedence over values in
+    the configuration file.
+   </p><div class="variablelist"><dl><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="parameter"><em class="parameter"><code>REGINA_VERBOSITY</code></em></span></span></dt><dd><p>
+       Specifies how much output should be generated.
+       Recognised values are:
+       </p><div class="variablelist"><dl><dt><span class="term"><code class="literal">0</code></span></dt><dd><p>
+          Display errors only; this is equivalent to passing the option
+          <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--quiet</code></span>.
+         </p></dd><dt><span class="term"><code class="literal">1</code></span></dt><dd><p>
+          Display errors and warnings; this is the default.
+         </p></dd><dt><span class="term"><code class="literal">2</code></span></dt><dd><p>
+          Display errors, warnings and diagnostic output; this is
+          equivalent to passing the option <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--verbose</code></span>.
+         </p></dd></dl></div><p>
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="parameter"><em class="parameter"><code>REGINA_PYTHON</code></em></span></span></dt><dd><p>
+       The command used to start the <span class="application">Python</span> interpreter.
+      </p><p>
+       In general you should use the same version of <span class="application">Python</span> that <span class="application">Regina</span>
+       was built against; otherwise <span class="application">Python</span> might not be able to load the
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="parameter"><em class="parameter"><code>regina</code></em></span> module.
+      </p><p>
+       Normally you should not need to set this option yourself.
+       By default, <span class="application">Regina</span> will use the same <span class="application">Python</span> installation
+       that it was built against.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="parameter"><em class="parameter"><code>REGINA_PYLIBDIR</code></em></span></span></dt><dd><p>
+       The directory containing the <span class="application">Python</span> module
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="parameter"><em class="parameter"><code>regina</code></em></span>.
+      </p><p>
+       If you have installed <span class="application">Regina</span>'s <span class="application">Python</span> module in a standard
+       <span class="application">Python</span> location (i.e., <span class="application">Python</span> can import it directly without
+       extending <code class="literal">sys.path</code>), then
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="parameter"><em class="parameter"><code>REGINA_PYLIBDIR</code></em></span> should be left empty or undefined.
+      </p><p>
+       Normally you should not need to set this option yourself.
+       This program should know how to find <span class="application">Regina</span>'s <span class="application">Python</span> module
+       in standard situations, which include
+       fixed filesystem installations (e.g., <span class="application"><span class="acronym">GNU</span>/Linux</span> and <span class="application">Windows</span>),
+       relocatable app bundles (e.g., <span class="application">macOS</span>),
+       and running directly from the source tree.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="parameter"><em class="parameter"><code>REGINA_HOME</code></em></span></span></dt><dd><p>
+       The directory beneath which <span class="application">Regina</span>'s data files are installed.
+       In particular, <span class="application">Regina</span>'s census lookup routines will look for the
+       census databases in the subdirectory
+       <code class="filename"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="parameter"><em class="parameter"><code>$REGINA_HOME</code></em></span>/data/census/</code>.
+      </p><p>
+       This option can only be set from the environment: it cannot be set in
+       the configuration file <code class="filename">~/.regina-python</code>.
+      </p><p>
+       Normally you should not need to set this option yourself.
+       This program should know how to find its data files in standard
+       situations, which include
+       fixed filesystem installations (e.g., <span class="application"><span class="acronym">GNU</span>/Linux</span> and <span class="application">Windows</span>),
+       relocatable app bundles (e.g., <span class="application">macOS</span>),
+       and running directly from the source tree.
+      </p></dd></dl></div></div><div class="refsect1" lang="en"><a name="idp105544766226960"></a><h2><span class="application">macOS</span> Users</h2><p>
+    If you downloaded a drag-and-drop app bundle, this utility is
+    shipped inside it.  If you dragged <span class="application">Regina</span> to the main
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Applications</span></span> folder, you can run it as
+    <code class="literal">/Applications/Regina.app/Contents/MacOS/regina-python</code>.
+   </p></div><div class="refsect1" lang="en"><a name="idp105544766230032"></a><h2><span class="application">Windows</span> Users</h2><p>
+    The command <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-python</strong></span></span> is not available under
+    <span class="application">Windows</span>.  However, you can still use <span class="application">Python</span> scripting in <span class="application">Regina</span>'s
+    graphical user interface, by opening a graphical <span class="application">Python</span> console or
+    using script packets.
+   </p></div><div class="refsect1" lang="en"><a name="idp105544766234128"></a><h2>See Also</h2><p>
+    <a href="man-regina-gui.html" title="regina-gui">regina-gui</a>.
+   </p><p>
+    <span class="application">Regina</span> comes with thorough <span class="acronym">API</span> documentation,
+    which describes in detail all of the objects, classes and methods that
+    <span class="application">Regina</span> makes available to <span class="application">Python</span>.
+    You can access this documentation via
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Help</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem"><span class="application">Python</span>
+   <span class="acronym">API</span> Reference</span></span> in the graphical user interface, or read it online
+    at <a href="http://regina-normal.github.io/7.1/engine-docs/" target="_top">regina-normal.github.io</a>.
+   </p></div><div class="refsect1" lang="en"><a name="idp105544766242704"></a><h2>Author</h2><p>
+    Many people have been involved in the development
+   of <span class="application">Regina</span>; see the <a href="credits.html#acknowledgements" title="Acknowledgements">acknowledgements
+   page</a> for a full list of credits.
+   </p></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="man-regina-gui.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="utils.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">regina-gui </td><td width="34%" align="center" class="navCenter"><a href="manpages.html">Up</a></td><td width="33%" align="right" class="navRight"> Command Line: Specialised Utilities</td></tr></table></div></body></html>

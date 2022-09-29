@@ -1,0 +1,466 @@
+<html><head><title>tricensus</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina 7.1 Handbook"><link rel="up" href="utils.html" title="Appendix B. Command Line: Specialised Utilities"><link rel="prev" href="man-sigcensus.html" title="sigcensus"><link rel="next" href="man-trisetcmp.html" title="trisetcmp"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>tricensus</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="man-sigcensus.html">Prev</a></td><td align="center" class="navCenter" width="34%">Command Line: Specialised Utilities</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="man-trisetcmp.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="man-tricensus"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>tricensus — Form a census of triangulations</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">tricensus</strong></span></span> [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-t, --tetrahedra=</code></span><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>tetrahedra</code></em></span>] [[<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-2, --dim2</code></span>] |  [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-4, --dim4</code></span>]] [[<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-b, --boundary</code></span>] |  [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-i, --internal</code></span>] |  [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-B, --bdryfaces=</code></span><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>triangles</code></em></span>]] [[<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-o, --orientable</code></span>] |  [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-n, --nonorientable</code></span>]] [[<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-f, --finite</code></span>] |  [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-d, --ideal</code></span>]] [[<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-m, --minimal</code></span>] |  [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-M, --minprime</code></span>] |  [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-N, --minprimep2</code></span>] |  [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-h, --minhyp</code></span>]] [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--allowinvalid</code></span>] [[<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-s, --sigs</code></span>] |  [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-S, --canonical</code></span>] |  [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-e, --encodings</code></span>] |  [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-c, --subcontainers</code></span>]] [[<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-p, --genpairs</code></span>] |  [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-P, --usepairs</code></span>]] [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--threads=</code></span><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>num_threads</code></em></span>] {<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>output-file</code></em></span>}</p></div><div class="cmdsynopsis"><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">tricensus</strong></span></span> {<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--help</code></span>}</p></div></div><div class="refsect1" lang="en"><a name="idp105544766743056"></a><h2>Description</h2><p>
+    Forms a census of all 2-, 3- or 4-manifold triangulations that satisfy
+    some set of conditions.
+   </p><p>
+    These conditions are specified using various command-line arguments.
+    The only condition that you <span class="emphasis"><em>must</em></span> provide is
+    the number of top-dimensional simplices (e.g., the number of tetrahedra
+    for 3-manifolds), but there are many other options available.
+   </p><p>
+    The default behaviour is to enumerate 3-manifold triangulations.
+    If you wish to enumerate 2-manifold or 4-manifold triangulations instead,
+    you must pass <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--dim2</code></span> or <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--dim4</code></span>
+    respectively.
+   </p><p>
+    Each triangulation will be output precisely once up to combinatorial
+    isomorphism.  Invalid triangulations
+    (for 3-manifolds, this means triangulations with edges
+    identified to themselves in reverse, or vertices whose links
+    have boundary but are not discs) will not be output at all.
+   </p><p>
+    As the census progresses, the state of progress will be written (slowly)
+    to standard output.  Once the census is complete, the full census will
+    be saved to the given output file.
+   </p><p>
+    You can use the options <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--genpairs</code></span> and
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--usepairs</code></span> to split a census into smaller pieces.
+   </p><div class="caution" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Caution</h3><p>
+     A census with even a small number of top-dimensional simplices can
+     take an incredibly long time to run, and can chew up massive amounts of
+     memory.  It is recommended that you try very small censuses to begin
+     with (such as 3 or 4 simplices), and work upwards to establish the
+     limits of your machine.
+    </p><p>
+     For very large census runs, it is <span class="emphasis"><em>highly recommended</em></span>
+     that you use the either the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--sigs</code></span> or
+     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--encodings</code></span> option, which will keep
+     the output file small and significantly reduce the memory footprint.
+    </p></div></div><div class="refsect1" lang="en"><a name="idp105544766750352"></a><h2>Options</h2><div class="variablelist"><dl><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-t,
+      --tetrahedra=</code></span><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>tetrahedra</code></em></span></span></dt><dd><p>
+       Specifies the number of top-dimensional simplices used to build the
+       triangulations.
+       For 2-manifolds, 3-manifolds and 4-manifolds, this specifies the
+       number of triangles, tetrahedra or pentachora respectively.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-2, --dim2</code></span></span></dt><dd><p>
+       Build a census of 2-manifold triangulations, not 3-manifold
+       triangulations.
+      </p><p>
+       This is incompatible with several options; for other options it
+       simply translates the relevant constraint into two dimensions.
+       See each individual option for details on how it interacts with
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--dim2</code></span>.
+      </p><p>
+       This option cannot be used with <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--dim4</code></span>.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-4, --dim4</code></span></span></dt><dd><p>
+       Build a census of 4-manifold triangulations, not 3-manifold
+       triangulations.
+      </p><p>
+       This is incompatible with several options; for other options it
+       simply translates the relevant constraint into four dimensions.
+       See each individual option for details on how it interacts with
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--dim4</code></span>.
+      </p><p>
+       This option cannot be used with <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--dim2</code></span>.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-b, --boundary</code></span></span></dt><dd><p>
+       Only produce triangulations with at least one boundary triangle.
+      </p><p>
+       For 2-manifolds or 4-manifolds, this option ensures at least one
+       boundary edge or boundary tetrahedron respectively.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-i, --internal</code></span></span></dt><dd><p>
+       Only produce triangulations with all triangles internal (i.e., with no
+       boundary triangles).
+      </p><p>
+       For 2-manifolds or 4-manifolds, this option ensures that all
+       edges or tetrahedra respectively are internal.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-B,
+      --bdryfaces=</code></span><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>triangles</code></em></span></span></dt><dd><p>
+       Only produce triangulations with the precise number of boundary
+       triangles specified.
+      </p><p>
+       For 2-manifolds or 4-manifolds, this specifies the number of
+       boundary edges or boundary tetrahedra respectively.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-o, --orientable</code></span></span></dt><dd><p>
+       Only produce orientable triangulations.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-n, --nonorientable</code></span></span></dt><dd><p>
+       Only produce non-orientable triangulations.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-f, --finite</code></span></span></dt><dd><p>
+       Only produce finite triangulations (triangulations with no
+       ideal vertices).
+      </p><p>
+       This option cannot be used with <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--dim2</code></span>.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-d, --ideal</code></span></span></dt><dd><p>
+       Only produce triangulations with at least one ideal vertex.
+       There might or might not be internal vertices (whose links are
+       spheres) as well.
+      </p><p>
+       This option cannot be used with <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--dim2</code></span>.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-m, --minimal</code></span></span></dt><dd><p>
+       Do not include triangulations that are obviously non-minimal.
+      </p><p>
+       This option uses a series of fast tests that try to eliminate
+       non-minimal triangulations, but that are not always conclusive.
+       If <span class="application">Regina</span> cannot quickly tell whether a triangulation is
+       non-minimal, it will place the triangulation in the census regardless.
+      </p><p>
+       This option cannot be used with <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--dim4</code></span>.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-M, --minprime</code></span></span></dt><dd><p>
+       Do not include triangulations that are obviously non-minimal,
+       non-prime and/or disc-reducible.
+      </p><p>
+       This can significantly speed up the census and vastly
+       reduce the final number of triangulations produced.
+      </p><p>
+       As above, this option uses a series of fast tests that are not
+       always conclusive.
+       If <span class="application">Regina</span> cannot quickly tell whether a triangulation is
+       non-minimal, non-prime or disc-reducible, it will place the
+       triangulation in the census regardless.
+      </p><p>
+       This option cannot be used with <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--dim2</code></span>
+       or <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--dim4</code></span>.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-N, --minprimep2</code></span></span></dt><dd><p>
+       Do not include triangulations that are obviously non-minimal,
+       non-prime, P2-reducible and/or disc-reducible.
+      </p><p>
+       This can significantly speed up the census and vastly
+       reduce the final number of triangulations produced,
+       even more so than <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--minprime</code></span>.
+      </p><p>
+       As above, this option uses a series of fast tests that are not
+       always conclusive.
+       If <span class="application">Regina</span> cannot quickly tell whether a triangulation is
+       non-minimal, non-prime, P2-reducible or disc-reducible, it will place
+       the triangulation in the census regardless.
+      </p><p>
+       This option cannot be used with <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--dim2</code></span>
+       or <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--dim4</code></span>.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-h, --minhyp</code></span></span></dt><dd><p>
+       Do not include triangulations that are obviously not
+       minimal ideal triangulations of cusped finite-volume hyperbolic
+       3-manifolds.
+      </p><p>
+       This can significantly speed up the census and vastly
+       reduce the final number of triangulations produced.
+      </p><p>
+       As above, this option uses a series of fast tests that are not
+       always conclusive.
+       If <span class="application">Regina</span> cannot quickly tell whether a triangulation is a
+       minimal ideal triangulation of a cusped finite-volume hyperbolic
+       3-manifold,
+       it will place the triangulation in the census regardless.
+      </p><p>
+       This option is designed for use with ideal triangulations only
+       (so, for instance, combining it with
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--finite</code></span> or <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--boundary</code></span>
+       will produce an error message).
+       This option also cannot be used with <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--dim2</code></span>
+       or <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--dim4</code></span>.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--allowinvalid</code></span></span></dt><dd><p>
+       Normally, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">tricensus</strong></span></span> will test each triangulation that
+       is constructed for validity before including it in the final output.
+       If you pass <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--allowinvalid</code></span> however, then these
+       validity tests will not be performed.
+      </p><p>
+       As a result, the output may include some invalid triangulations.
+       However, it will not include <span class="emphasis"><em>all</em></span> invalid
+       triangulations of the given size, since some invalid constructions
+       are pruned at earlier levels of the search tree by the census algorithm
+       (as opposed to being detected by the validity test when each full
+       triangulation has been constructed).  For example, edges that are
+       identified with themselves in reverse are detected and pruned earlier
+       in this way, and so will never appear in the census output, even with
+       the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--allowinvalid</code></span> option.
+      </p><p>
+       The one guarantee that you <span class="emphasis"><em>do</em></span> get from this option
+       is that the census will include all invalid triangulations that could
+       appear as a <span class="emphasis"><em>subcomplex</em></span> of some valid triangulation.
+       For example, if a 3-dimensional triangulation is invalid only because
+       it has vertices whose links are spheres with multiple punctures,
+       then it will be included in the output.
+      </p><p>
+       This option cannot be used with finite/ideal options or minimality
+       options.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-s, --sigs</code></span></span></dt><dd><p>
+       Instead of writing a full <span class="application">Regina</span> data file, just output a list
+       of isomorphism signatures.
+      </p><p>
+       The output file will be a plain text file.  Each line will be a
+       short string of letters, digits and/or punctuation that uniquely
+       encodes a triangulation up to combinatorial isomorphism.
+       You can import this text file from within <span class="application">Regina</span> by selecting
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">File</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guisubmenu">Import</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Isomorphism Signature List</span></span> from the menu.
+      </p><p>
+       This option is highly recommended for large census enumerations.
+       First, the output file will be considerably smaller.
+       More importantly, the memory footprint of
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">tricensus</strong></span></span> will also be much smaller:
+       triangulations can be written to the output file and forgotten
+       immediately, instead of being kept in memory to construct a final
+       <span class="application">Regina</span> data file.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-S, --canonical</code></span></span></dt><dd><p>
+       A variant of <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--sigs</code></span> that outputs a list of
+       isomorphism signatures along with matching isomorphisms.
+      </p><p>
+       The output file will be a plain text file.  Each line will
+       contain two short strings, separated by a single space.
+       The first string will be the same isomorphism signature that is
+       output by <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--sigs</code></span>.  The second string encodes an
+       isomorphism <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>F</code></em></span> with the property that,
+       if we reconstruct a triangulation from the isomorphism signature
+       and apply the isomorphism <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>F</code></em></span>, then
+       the resulting triangulation will have a canonical facet pairing.
+      </p><p>
+       Here <em class="firstterm">canonical</em> has the same meaning as
+       described below under the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--usepairs</code></span> option:
+       a facet pairing is in canonical form if it is a minimal representative
+       of its isomorphism class.
+      </p><p>
+       The isomorphisms themselves will be encoded using
+       <em class="firstterm">tight encodings</em>, which (like isomorphisms
+       signatures) are short strings of letters, digits and/or punctuation.
+       Currently you will need to use either <span class="application">C++</span> or <span class="application">Python</span> to decode
+       these; for example, in dimension 3 you would call
+       <code class="literal">Isomorphism&lt;3&gt;::tightDecoding()</code>.
+      </p><p>
+       If you do not need these isomorphisms, then you should use the
+       simpler (and slightly faster) option <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--sigs</code></span>
+       instead.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-e, --encodings</code></span></span></dt><dd><p>
+       Instead of writing a full <span class="application">Regina</span> data file, just output a list
+       of tight encodings.
+      </p><p>
+       The output file will be a plain text file.  Each line will be a
+       short string of letters, digits and/or punctuation that uniquely
+       encodes a labelled triangulation as a
+       <em class="firstterm">tight encoding</em>.
+      </p><p>
+       Tight encodings differ from isomorphism signatures (as output by
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--sigs</code></span>) in the following ways:
+       </p><div class="itemizedlist"><ul type="disc"><li><p>
+         The main reason for using tight encodings is that they preserve the
+         labelling of simplices and their vertices (unlike isomorphism
+         signatures, which only encode a triangulation up to combinatorial
+         isomorphism).
+        </p></li><li><p>
+         In general, tight encodings use slightly more characters and
+         are slightly faster to compute than isomorphism signatures.
+        </p></li><li><p>
+         Tight encodings are more difficult to work with.  They use a
+         wider variety of punctuation symbols (which makes them
+         inappropriate for filenames, and awkward to use as hard-coded
+         strings in source code).  Moreover, at present you need to use
+         either <span class="application">C++</span> or <span class="application">Python</span> to reconstruct triangulations from them;
+         for example, in dimension 3 you would call
+         <code class="literal">Triangulation&lt;3&gt;::tightDecoding()</code>.
+        </p></li></ul></div><p>
+       If you are not sure whether to use isomorphism signatures or
+       tight encodings, it is recommended that you choose isomorphism
+       signatures (<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--sigs</code></span>).
+      </p><p>
+       Like <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--sigs</code></span>, this option performs much better in
+       large census enumerations than saving a full <span class="application">Regina</span> data file:
+       the output file will be considerably smaller, and the memory footprint
+       of <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">tricensus</strong></span></span> will also be much smaller.
+       See the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--sigs</code></span> option for further details.
+      </p><p>
+       You can also use <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--encodings</code></span> with
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--genpairs</code></span>, in which case the facet pairings
+       will be written using tight encodings instead of human-readable
+       text representations.  Tight encodings of facet pairings cannot
+       be used as input with <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--usepairs</code></span>, and again you
+       will need to use <span class="application">C++</span> or <span class="application">Python</span> to reconstruct facet pairings
+       from them.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-c, --subcontainers</code></span></span></dt><dd><p>
+       For each facet pairing, a new container will be created, and
+       resultant triangulations will be placed into these containers.
+       These containers will be created even if the facet pairing results
+       in no triangulations.
+      </p><p>
+       See <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--genpairs</code></span> below for further information on
+       facet pairings.
+      </p><p>
+       This option cannot be used with <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--sigs</code></span>,
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--canonical</code></span> or <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--encodings</code></span>.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-p, --genpairs</code></span></span></dt><dd><p>
+       Only generate facet pairings, not triangulations.
+       A facet pairing stores which facets of top-dimension simplices
+       are glued to which others, but it does not store the precise
+       rotations and/or reflections that are used for each gluing.
+       For 3-manifolds a facet pairing represents a pairing of tetrahedron
+       faces, for 2-manifolds it represents a pairing of triangle edges, and
+       for 4-manifolds it represents a pairing of pentachoron facets.
+      </p><p>
+       The outermost layer of the census code involves pairing off the
+       facets of individual top-dimensional simplices without determining
+       the corresponding gluing permutations.  For each such facet pairing
+       that is produced, <span class="application">Regina</span> will try many different sets of gluing
+       permutations and generated the corresponding triangulations.
+      </p><p>
+       Facet pairing generation consumes a very small fraction of the
+       total census runtime, and effectively divides the census into
+       multiple pieces.  This option allows you to quickly generate
+       a complete list of possible facet pairings, so that you can feed subsets
+       of this list to different machines to work on simultaneously.
+      </p><p>
+       The list of all facet pairings will be written to the given output
+       file in a plain text format (though you may omit the output file from
+       the command line, in which case the facet pairings will be written to
+       standard output).
+       By default, the output format will be a space-separated
+       numerical format, suitable for use with
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--usepairs</code></span> (see below).  However, if you pass
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--encodings</code></span> then the output format will use
+       tight encodings (which are shorter, contain no spaces, and are
+       much harder for humans to read).  See <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--encodings</code></span>
+       for further details on tight encodings.
+      </p><p>
+       If you are coordinating your sub-censuses manually, you can
+       use the option <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--usepairs</code></span> to generate triangulations
+       from a subset of these facet pairings.  In this case, the facet
+       pairings will need to be presented using the default
+       space-separated numerical format (not tight encodings).
+      </p><p>
+       Options for orientability, finiteness or minimality cannot be
+       used with <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--genpairs</code></span>; instead you should use them
+       later with <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--usepairs</code></span>.
+      </p><p>
+       This option does not come with progress reporting, though
+       typically it runs fast enough that this does not matter.
+       You can always track the state of progress by counting lines in
+       the output file.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-P, --usepairs</code></span></span></dt><dd><p>
+       Use only the given subset of facet pairings to build the triangulations.
+      </p><p>
+       Each facet pairing that is processed must be
+       in canonical form, i.e., must be a minimal representative of its
+       isomorphism class.  All facet pairings generated using
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--genpairs</code></span> are guaranteed to satisfy this condition.
+      </p><p>
+       Facet pairings should be supplied on standard input, one per line.
+       They should be presented using the space-separated numerical format
+       produced by the option <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--genpairs</code></span>.
+      </p><p>
+       This option effectively lets you run a subset of a larger census.
+       See <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--genpairs</code></span> for further details on how to split
+       a census into subsets that can run simultaneously on different machines.
+      </p><p>
+       Options for the number of top-dimensional simplices
+       (i.e., <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--tetrahedra</code></span>) or boundary facets
+       (i.e., <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--boundary</code></span> or <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--bdryfaces</code></span>)
+       cannot be used with <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--usepairs</code></span>.
+       Instead you should pass these options earlier
+       along with <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--genpairs</code></span> when you split the original
+       census into pieces.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--threads=</code></span><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>num_threads</code></em></span></span></dt><dd><p>
+       Run the census in parallel using the given number of threads.
+       This parallelisation is typically very effective (particularly
+       for larger censuses), in that the speed-up factor is usually close to
+       the theoretical maximum <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>num_threads</code></em></span>.
+      </p><p>
+       The way the parallelisation currently works is as follows.
+       For each individual facet pairing, the corresponding search tree
+       is broken into a many smaller subtrees (i.e., subsearches), each
+       of which can be processed independently by different threads.
+      </p><p>
+       This has two consequences:
+       </p><div class="itemizedlist"><ul type="disc"><li><p>
+         The <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--threads</code></span> option cannot be used with
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--genpairs</code></span>, since the facet pairings are still
+         enumerated in serial.
+        </p></li><li><p>
+         The output that writes each facet pairing to the console will appear
+         deceptively fast.  This is because each facet pairing will be
+         written as soon as it is constructed by the main thread, and its many
+         subsearches will be placed in a queue for other threads to process
+         while the main thread moves on to the next facet pairing.
+         Once all of the pairings have been output, you may still face a
+         long wait while the threads together work their way through the
+         queue of subsearches that has accumulated.
+        </p></li></ul></div><p>
+      </p></dd></dl></div></div><div class="refsect1" lang="en"><a name="idp105544766913040"></a><h2>Examples</h2><p>
+    The following command forms a census of all 3-tetrahedron closed
+    non-orientable 3-manifold triangulations, and puts the results in the file
+    <code class="filename">results.rga</code>.  To ensure that triangulations are
+    closed we use the options <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-i</code></span> (no boundary triangles)
+    and <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-f</code></span> (no ideal vertices).
+   </p><pre class="screen">
+    <code class="prompt">example$</code> <strong class="userinput"><code>tricensus -t 3 -nif results.rga</code></strong>
+    Starting census generation...
+    0:1 0:0 1:0 1:1 | 0:2 0:3 2:0 2:1 | 1:2 1:3 2:3 2:2
+    0:1 0:0 1:0 2:0 | 0:2 1:2 1:1 2:1 | 0:3 1:3 2:3 2:2
+    0:1 0:0 1:0 2:0 | 0:2 2:1 2:2 2:3 | 0:3 1:1 1:2 1:3
+    1:0 1:1 2:0 2:1 | 0:0 0:1 2:2 2:3 | 0:2 0:3 1:2 1:3
+    Finished.
+    Total triangulations: 5
+    <code class="prompt">example$</code>
+</pre><p>
+    The following command forms a census of 4-tetrahedron closed
+    orientable 3-manifold triangulations, where the census creation is optimised
+    for prime minimal triangulations.  Although all prime minimal
+    triangulations will be included, there may be some non-prime or
+    non-minimal triangulations in the census also.
+   </p><pre class="screen">
+    <code class="prompt">example$</code> <strong class="userinput"><code>tricensus -t 4 -oifM results.rga</code></strong>
+    Starting census generation...
+    0:1 0:0 1:0 1:1 | 0:2 0:3 2:0 2:1 | 1:2 1:3 3:0 3:1 | 2:2 ...
+    0:1 0:0 1:0 1:1 | 0:2 0:3 2:0 3:0 | 1:2 2:2 2:1 3:1 | 1:3 ...
+    ...
+    1:0 1:1 2:0 3:0 | 0:0 0:1 2:1 3:1 | 0:2 1:2 3:2 3:3 | 0:3 ...
+    Finished.
+    Total triangulations: 17
+    <code class="prompt">example$</code>
+</pre><p>
+    The following command generates all face pairings for a
+    5-tetrahedron census of 3-manifold triangulation in which all
+    triangulations have precisely two
+    boundary triangles.  The face pairings will be written to
+    <code class="filename">pairings.txt</code>, whereupon they can be broken up
+    and distributed for processing at a later date.
+   </p><pre class="screen">
+    <code class="prompt">example$</code> <strong class="userinput"><code>tricensus --genpairs -t 5 -B 2 pairings.txt</code></strong>
+    Total face pairings: 118
+    <code class="prompt">example$</code>
+</pre><p>
+    The face pairings generated in the previous example can then be fleshed
+    out into a full census of all 3-manifold triangulations with five
+    tetrahedra, precisely two boundary triangles and no ideal vertices as
+    follows.  The number of tetrahedra and boundary triangles were
+    already specified in the previous command, and cannot be
+    supplied here.  The face pairings will be read from
+    <code class="filename">pairings.txt</code>, and the final census will be
+    written to <code class="filename">results.rga</code>.
+   </p><pre class="screen">
+    <code class="prompt">example$</code> <strong class="userinput"><code>tricensus --usepairs -f results.rga &lt; pairings.txt</code></strong>
+    Trying face pairings...
+    0:1 0:0 1:0 1:1 | 0:2 0:3 2:0 2:1 | 1:2 1:3 3:0 3:1 | 2:2 ...
+    0:1 0:0 1:0 1:1 | 0:2 0:3 2:0 2:1 | 1:2 1:3 3:0 3:1 | 2:2 ...
+    ...
+    ... (running through all 118 face pairings)
+    ...
+    1:0 2:0 3:0 4:0 | 0:0 2:1 3:1 4:1 | 0:1 1:1 3:2 4:2 | 0:2 ...
+    Total triangulations: 5817
+    <code class="prompt">example$</code>
+</pre></div><div class="refsect1" lang="en"><a name="idp105544766926352"></a><h2><span class="application">macOS</span> Users</h2><p>
+    If you downloaded a drag-and-drop app bundle, this utility is
+    shipped inside it.  If you dragged <span class="application">Regina</span> to the main
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Applications</span></span> folder, you can run it as
+    <code class="literal">/Applications/Regina.app/Contents/MacOS/tricensus</code>.
+   </p></div><div class="refsect1" lang="en"><a name="idp105544766929424"></a><h2><span class="application">Windows</span> Users</h2><p>
+    The command-line utilities are installed beneath the
+    <code class="filename">Program Files</code> directory; on some
+    machines this directory is called
+    <code class="filename">Program Files (x86)</code>.
+    You can start this utility by running
+    <code class="literal">c:\Program Files\Regina\Regina 7.1\bin\tricensus.exe</code>.
+   </p></div><div class="refsect1" lang="en"><a name="idp105544766932752"></a><h2>See Also</h2><p>
+    <a href="man-censuslookup.html" title="censuslookup">censuslookup</a>,
+    <a href="man-sigcensus.html" title="sigcensus">sigcensus</a>,
+    <a href="man-regina-gui.html" title="regina-gui">regina-gui</a>.
+   </p></div><div class="refsect1" lang="en"><a name="idp105544766869648"></a><h2>Author</h2><p>
+    This utility was written by Benjamin Burton
+    <code class="email">&lt;<a href="mailto:bab@maths.uq.edu.au">bab@maths.uq.edu.au</a>&gt;</code>.
+    Many people have been involved in the development
+   of <span class="application">Regina</span>; see the <a href="credits.html#acknowledgements" title="Acknowledgements">acknowledgements
+   page</a> for a full list of credits.
+   </p></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="man-sigcensus.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="man-trisetcmp.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">sigcensus </td><td width="34%" align="center" class="navCenter"><a href="utils.html">Up</a></td><td width="33%" align="right" class="navRight"> trisetcmp</td></tr></table></div></body></html>

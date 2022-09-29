@@ -1,0 +1,29 @@
+<html><head><title>flags</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Regina, XML, Data files"><link rel="start" href="index.html" title="Regina 7.1 File Format Reference"><link rel="up" href="removed.html" title="Deprecated and Removed Elements"><link rel="prev" href="data-filter-properties.html" title="filter (properties)"><link rel="next" href="data-line.html" title="line"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>flags</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="data-filter-properties.html">Prev</a></td><td align="center" class="navCenter" width="34%">Deprecated and Removed Elements</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="data-line.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="data-flags"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>flags — No longer stored</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="informaltable"><table border="1"><colgroup><col><col></colgroup><tbody><tr><td colspan="2">
+      <span class="bold"><strong>Content Model</strong></span>
+     </td></tr><tr><td colspan="2">
+<pre class="synopsis">
+flags ::=</pre>
+     </td></tr><tr><td colspan="2">
+      <span class="bold"><strong>Attributes</strong></span>
+     </td></tr><tr><td><span class="bold"><strong>Name</strong></span></td><td><span class="bold"><strong>Type</strong></span></td></tr><tr><td><code class="sgmltag-element">value</code></td><td><span class="type">NUMBER</span> (required)</td></tr></tbody></table></div><p>Removed in <span class="application">Regina</span> 4.93</p></div><div class="refsect1" lang="en"><a name="idp105544735182224"></a><h2>Description</h2><p>This element has been removed. It will not
+   be written to new data files, and it will be ignored when reading
+   older data files.</p><p>
+   A <a href="data-flags.html" title="flags"><code class="sgmltag-element">flags</code></a> element stores multiple boolean properties of an
+   individual angle structure, combined into a single integer.
+  </p><p>
+   This integer is a bitwise combination of the following values:
+  </p><div class="informaltable"><table border="1"><colgroup><col><col></colgroup><tbody><tr><td><span class="bold"><strong>Value</strong></span></td><td><span class="bold"><strong>Meaning</strong></span></td></tr><tr><td>1</td><td>The angle structure is strict (all angles are strictly
+       between 0 and π).  This flag is only meaningful if the angle
+       structure type has been calculated; see below.</td></tr><tr><td>2</td><td>The angle structure is taut (all angles are either 0 or
+       π).  This flag is only meaningful if the angle structure type
+       has been calculated; see below.</td></tr><tr><td>4</td><td>The angle structure type (strict/taut) has been
+       calculated.</td></tr></tbody></table></div><div class="refsect2" lang="en"><a name="idp105544735193232"></a><h3>Parents</h3><p>
+    The following elements contain <code class="sgmltag-element">flags</code>:
+    <span class="simplelist"><a href="data-struct.html" title="struct"><code class="sgmltag-element">struct</code></a></span>.
+   </p></div><div class="refsect2" lang="en"><a name="idp105544735196048"></a><h3>Children</h3><p>
+    Element <code class="sgmltag-element">flags</code> has no children.
+   </p></div></div><div class="refsect1" lang="en"><a name="idp105544735197712"></a><h2>Attributes</h2><div class="variablelist"><dl><dt><span class="term"><code class="sgmltag-element">value</code></span></dt><dd><p>
+      A single integer containing the values of all the flags under
+      consideration.
+     </p></dd></dl></div></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="data-filter-properties.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="data-line.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">filter (properties) </td><td width="34%" align="center" class="navCenter"><a href="removed.html">Up</a></td><td width="33%" align="right" class="navRight"> line</td></tr></table></div></body></html>

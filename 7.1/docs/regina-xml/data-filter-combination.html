@@ -1,0 +1,39 @@
+<html><head><title>filter (combination)</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Regina, XML, Data files"><link rel="start" href="index.html" title="Regina 7.1 File Format Reference"><link rel="up" href="removed.html" title="Deprecated and Removed Elements"><link rel="prev" href="data-filter.html" title="filter"><link rel="next" href="data-filter-properties.html" title="filter (properties)"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>filter (combination)</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="data-filter.html">Prev</a></td><td align="center" class="navCenter" width="34%">Deprecated and Removed Elements</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="data-filter-properties.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="data-filter-combination"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>filter (combination) — Replaced by <a href="data-filtercomb.html" title="filtercomb"><code class="sgmltag-element">filtercomb</code></a></p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="informaltable"><table border="1"><colgroup><col><col></colgroup><tbody><tr><td colspan="2">
+      <span class="bold"><strong>Content Model</strong></span>
+     </td></tr><tr><td colspan="2">
+<pre class="synopsis">
+filter ::= (<a href="data-op.html" title="op"><code class="sgmltag-element">op</code></a>)</pre>
+     </td></tr><tr><td colspan="2">
+      <span class="bold"><strong>Attributes</strong></span>
+     </td></tr><tr><td colspan="2">
+      See the general <a href="data-filter.html" title="filter"><code class="sgmltag-element">filter</code></a> element documentation.
+     </td></tr></tbody></table></div><p>Deprecated since <span class="application">Regina</span> 7.0</p></div><div class="refsect1" lang="en"><a name="idp105544732702352"></a><h2>Description</h2><p>
+   In <span class="application">Regina</span> 6.0.1 and earlier, the <a href="data-filter.html" title="filter"><code class="sgmltag-element">filter</code></a> element was used
+   to store different types of normal surface filters, and was held
+   within an enclosing <a href="data-packet-surfacefilter.html" title="packet (surface filter)"><code class="sgmltag-element">packet</code> (surface filter)</a> element..
+   This page describes how the <a href="data-filter.html" title="filter"><code class="sgmltag-element">filter</code></a> element was structured when
+   storing a combination filter.
+   Since <span class="application">Regina</span> 7.0, each filter type now has its own <span class="acronym">XML</span> element,
+   which also serves as the <span class="acronym">XML</span> element for the filter packet.
+   In particular, combination filters are now stored using the
+   <a href="data-filtercomb.html" title="filtercomb"><code class="sgmltag-element">filtercomb</code></a> element.
+  </p><p>
+   A <span class="emphasis"><em>combination filter</em></span> uses a
+   logical operation to combine other normal surface filters into a
+   single more complex surface filter.
+  </p><p>
+   The filters being combined must be immediate children of the packet
+   representing this combination filter.  The logical operation used to
+   combine these child filters is described by the child <a href="data-op.html" title="op"><code class="sgmltag-element">op</code></a> element.
+  </p><p>
+   More information about surface filters can be found in the general
+   <a href="data-filter.html" title="filter"><code class="sgmltag-element">filter</code></a> element documentation.
+  </p><div class="refsect2" lang="en"><a name="idp105544732710800"></a><h3>Parents</h3><p>
+    The following elements contain <code class="sgmltag-element">filter</code>:
+    <span class="simplelist"><a href="data-packet-surfacefilter.html" title="packet (surface filter)"><code class="sgmltag-element">packet</code> (surface filter)</a></span>.
+   </p></div><div class="refsect2" lang="en"><a name="idp105544732713744"></a><h3>Children</h3><p>
+    The following elements occur in <code class="sgmltag-element">filter</code> for a
+    combination filter:
+    <span class="simplelist"><a href="data-op.html" title="op"><code class="sgmltag-element">op</code></a></span>.
+   </p></div></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="data-filter.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="data-filter-properties.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">filter </td><td width="34%" align="center" class="navCenter"><a href="removed.html">Up</a></td><td width="33%" align="right" class="navRight"> filter (properties)</td></tr></table></div></body></html>
