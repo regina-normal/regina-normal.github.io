@@ -11,10 +11,9 @@
   alt="Regina: Software for low-dimensional topology">
 </center>
 <center>
-<h4>Latest version: 7.1 (June 2022)<br>
+<h4>Latest version: 7.1 (September 2022)<!--br>
 Updated packages: 22 Jun 2022<br>
 Updated documentation: 9 May 2022<br>
-<p>Version 7.1 being uploaded NOW (29 Sep 2022)<!--br>
 Updated packages: 10 December 2021<br>
 Updated data: 31 May 2018--></h4>
 <table class="contentswrapper" cellspacing=0>
@@ -56,30 +55,18 @@ Updated data: 31 May 2018--></h4>
 <h2><a name="news">News</a></h2>
 
 <p class="header">
-<b>22 Jun 2022:</b>
-Added packages for openSUSE Leap 15.4.
-Follow the <a href="#download">install links</a> for details.
-<p class="header">
-<b>11 May 2022:</b>
-Added packages for Fedora 36.
-Follow the <a href="#download">install links</a> for details.
-<p class="header">
-<b>9 May 2022:</b>
-The detailed C++/Python guide for
-converting your code to Regina&nbsp;7 is now complete.
-Better late than never!
-You can <a href="api/regina7.html">read all the details here</a>.
+<b>30 Sep 2022:</b>
+Regina 7.1 is out!
+You can <a href="#new">read all about what's new</a>,
+or just go ahead and <a href="#download">download it</a>.
 <p class="header">
 <b>10 December 2021:</b>
 Regina 7.0 is out!
 This is possibly the biggest overhaul that Regina has had in its 20+
 year history.
-You can <a href="#new">read all about what's new</a>,
-or just go ahead and <a href="#download">download it</a>.
-Either way, you should read
+You should read
 <a href="7.0/docs/regina/regina7.html">these important notes</a>
-regarding backward-incompatible changes
-in the new release.
+regarding backward-incompatible changes in the new release.
 <!--p class="header">
 <b>20 May 2021:</b>
 Added packages for Fedora 34.
@@ -202,7 +189,7 @@ Not sure which?  Start with the App Store version (but read below).
     Catalina (10.15)
     </td>
     <td><img srcset="osicons/os_macosx.png 1x, osicons/os_macosx@2x.png 2x" src="osicons/os_macosx.png" border=0 hspace=5></td>
-    <td align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-7.1/Regina-7.1_py38.dmg">Download&nbsp;here</a></td>
+    <td align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-7.1/Regina-7.1_py39.dmg">Download&nbsp;here</a></td>
     <td><a href="https://itunes.apple.com/us/app/regina-for-3-manifolds/id1160053348?mt=8"><img src="ios/Download_on_the_Mac_App_Store_Badge_US-UK_RGB_wht_092917.svg" alt="Download on the Mac App Store" border=0 hspace=10 vspace=10/></a></td>
     </tr>
     </tr>
@@ -232,38 +219,26 @@ such as those in your <tt>Applications</tt> folder.
 
 Regina on Windows uses a standard point-and-click installer.
 <p>
-Regina now offers separate 64-bit and 32-bit versions.
-Almost all modern machines are 64-bit, and this is probably the version
-you want. If you are not sure:
-<ul>
-<li>On Windows&nbsp;10, go to
-<i>Settings</i>&nbsp;&rarr;&nbsp;<i>System</i>&nbsp;&rarr;&nbsp;<i>About</i>
-and look for whether you have a 64-bit or 32-bit operating system.</li>
-<li>On Windows&nbsp;8.1, go to
-<i>PC Settings</i>&nbsp;&rarr;&nbsp;<i>PC and devices</i>&nbsp;&rarr;&nbsp;<i>PC info</i>
-and look for whether you have a 64-bit or 32-bit operating system.</li>
-</ul>
+As of version&nbsp;7.1, Regina now <b>only supports 64-bit Windows</b>,
+and only on Intel/AMD64 chipsets.
+Almost all modern Windows installations are of this type,
+and so this is almost certainly the version that you want.
+<p>
+If you still have an ancient 32-bit Windows system and you need to
+get Regina running on it, please let Ben know.
+If your machine has an ARM64 chipset (e.g., you have a Mac with
+Apple Silicon), you will need to run Regina under a different operating
+system (e.g., macOS or GNU/Linux).
 <p>
 <blockquote><table cellspacing=0 border=0 align=center class="data"><tbody>
 <tr><th class="first" colspan=2>Windows version</th>
-    <th>64-bit installer</th>
-    <th>32-bit installer</th></tr>
-<tr><td class="firstjoin">Windows&nbsp;10<br>Windows&nbsp;8.1</td>
+    <th>Installer</th></tr>
+<tr><td class="firstjoin">Windows&nbsp;11<br>Windows&nbsp;10</td>
     <td><img srcset="osicons/os_win_other.png 1x, osicons/os_win_other@2x.png 2x" src="osicons/os_win_other.png" border=0 hspace=5></td>
     <td align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-7.1/Regina-7.1-x86_64.msi">Download</a></td>
-    <td align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-7.1/Regina-7.1-i686.msi">Download</a></td>
     </tr>
 </tbody></table>
 </blockquote>
-<p>
-These packages <i>should</i> work with Windows&nbsp;11 also, but
-Ben has not yet been able to access a suitable testing environment.
-Any reports of success and/or failure are welcome.
-<p>
-At some point in the very near future,
-<b>Regina will stop shipping 32-bit Windows packages</b>.
-If you need a 32-bit installer, please mail Ben so he knows there is
-still need for it.
 <p>
 When running the installer you may see a security warning,
 such as <i>&ldquo;Microsoft Defender SmartScreen prevented an
@@ -301,15 +276,11 @@ with the <a href="http://regina-rexx.sourceforge.net/">other Regina</a>).
     <td><tt>x86_64</tt></td>
     <td align="center"><a href="install/archlinux.html">Install</a></td>
     </tr>
-<tr><td rowspan=3 class="altfirstjoin">Debian</td>
-    <td rowspan=3 class="alt"><img srcset="osicons/os_debian.png 1x, osicons/os_debian@2x.png 2x" src="osicons/os_debian.png" border=0 hspace=5></td>
+<tr><td rowspan=2 class="altfirstjoin">Debian</td>
+    <td rowspan=2 class="alt"><img srcset="osicons/os_debian.png 1x, osicons/os_debian@2x.png 2x" src="osicons/os_debian.png" border=0 hspace=5></td>
     <td class="alt">11.x (bullseye)</td>
     <td class="alt"><tt>amd64</tt><br><tt>arm64</tt><br><tt>i386</tt></td>
-    <td align="center" rowspan=3 class="alt"><a href="install/debian.html">Install</a></td>
-    </tr>
-<tr>
-    <td class="alt">10.x (buster)</td>
-    <td class="alt"><tt>amd64</tt><br><tt>i386</tt></td>
+    <td align="center" rowspan=2 class="alt"><a href="install/debian.html">Install</a></td>
     </tr>
 <tr>
     <td class="alt">unstable (sid)</td>
@@ -317,25 +288,21 @@ with the <a href="http://regina-rexx.sourceforge.net/">other Regina</a>).
     </tr>
 <tr><td rowspan=1 class="firstjoin">Fedora</td>
     <td rowspan=1><img srcset="osicons/os_fedora.png 1x, osicons/os_fedora@2x.png 2x" src="osicons/os_fedora.png" border=0 hspace=5></td>
-    <td>36<br>35<br>34<br>33</td>
+    <td>36<br>35</td>
     <td><tt>aarch64</tt><br><tt>x86_64</tt></td>
     <td align="center" rowspan=1><a href="install/fedora.html">Install</a></td>
     </tr>
 <tr><td rowspan=1 class="altfirstjoin">openSUSE</td>
     <td rowspan=1 class="alt"><img srcset="osicons/os_opensuse.png 1x, osicons/os_opensuse@2x.png 2x" src="osicons/os_opensuse.png" border=0 hspace=5></td>
-    <td class="alt">Leap&nbsp;15.4<br>Leap&nbsp;15.3<br>Leap&nbsp;15.2</td>
+    <td class="alt">Leap&nbsp;15.4<br>Leap&nbsp;15.3</td>
     <td class="alt"><tt>aarch64</tt><br><tt>x86_64</tt></td>
     <td class="alt" align="center"><a href="install/opensuse.html">Install</a></td>
     </tr>
-<tr><td rowspan=2 class="firstjoin">Ubuntu</td>
-    <td rowspan=2><img srcset="osicons/os_ubuntu.png 1x, osicons/os_ubuntu@2x.png 2x" src="osicons/os_ubuntu.png" border=0 hspace=5></td>
-    <td>21.10&nbsp;(impish)<br>21.04&nbsp;(hirsute)<br>20.04&nbsp;LTS&nbsp;(focal)</td>
+<tr><td rowspan=1 class="firstjoin">Ubuntu</td>
+    <td rowspan=1><img srcset="osicons/os_ubuntu.png 1x, osicons/os_ubuntu@2x.png 2x" src="osicons/os_ubuntu.png" border=0 hspace=5></td>
+    <td>22.04&nbsp;LTS&nbsp;(jammy)<br>20.04&nbsp;LTS&nbsp;(focal)</td>
     <td><tt>amd64</tt><br><tt>arm64</tt></td>
-    <td align="center" rowspan=4><a href="install/ubuntu.html">Install</a></td>
-    </tr>
-<tr>
-    <td>18.04 LTS (bionic)</td>
-    <td><tt>amd64</tt><br><tt>i386</tt></td>
+    <td align="center" rowspan=1><a href="install/ubuntu.html">Install</a></td>
     </tr>
 </tbody></table></blockquote>
 
@@ -473,65 +440,42 @@ You can also <a href="engine-docs/index.html">read it here online</a>.
 
 <h2><a name="new">What's new in version 7.1?</a></h2>
 <p>
-Regina has had the largest overhaul in its 20+ year history.
-Some of these changes break backward compatibility, and everyone <i>should</i>
-read <a href="https://regina-normal.github.io/docs/regina7.html">this quick
-overview of the most important changes</a>.
-<p>
-In particular: the file format has changed, the native C++ interface
-has been reworked to take advantage of modern language features, and
-for the first time, Python is now a &ldquo;first class citizen&rdquo; with full
-access to essentially all of Regina's native code.
-<p>
-Beyond all this, new features include:
+New features include:
 <ul>
-<li>Links can now self-frame (adding twists to give each component
-zero writhe), they now support planar diagram codes, and you
-can now build the link group directly.</li>
-<li>New, heavily optimised code for enumerating finite index subgroups
-given a group presentation (C++ / Python only).</li>
-<li>Triangulations of all dimensions now support a much richer suite of
-homology calculations (C++ / Python only).</li>
-<li>You can now locate a generalised angle structure on an ideal
-triangulation (C++ / Python only)</li>
-<li>Each normal surface/hypersurface/angle structure list now keeps its
-own snapshot of its triangulation.  You can edit, move or even delete
-the original triangulation without causing problems.</li>
-<li>New elementary moves on 4-manifold triangulations (thanks to Alex He).</li>
-<li>New command-line tool DGT to triangulate manifolds from framed links
-(thanks to Rhuaidi Burke).</li>
-<li>You can now build a SnapPea triangulation directly from a Regina
-link, and the meridian and longitude will be respected.</li>
-<li>The retriangulate tool can now search Reidemeister graphs for
-knots.</li>
-<li>Changed the old &ldquo;PDF attachments&rdquo; in the user interface to
-support file attachments of any type.</li>
-</ul>
-<p>
-Some features have been removed:
-<ul>
-<li>Transversely oriented normal surfaces (which were always experimental)
-are now gone.  They will return in a future release in a way that
-does not attempt to shoehorn them into the normal surface machinery.</li>
-<li>Dimensions 9-15 are no longer included in the default builds.
-If you need them, you can
-<a href="buildtips.html#highdim">build from source
-with <tt>-DHIGHDIM=1</tt></a>.</li>
+<li>Computes intersection forms of closed orientable 4-manifolds.</li>
+<li>Computes and recognises links of faces of all dimensions as normal
+(hyper)surfaces; this includes both thin links and normalised links.</li>
+<li>Expanded 3-ball and solid torus recognition to more general
+handlebody recognition (thanks to Alex He).</li>
+<li>The tricensus utility now supports multithreaded operation, and
+has a new output option that preserves simplex/vertex labelling.</li>
+<li>Includes the standard K3 surface as a ready-made example 4-manifold
+(thanks to Rhuaidi Burke for the small triangulation).</li>
+<li>Greater support for &ldquo;tight encodings&rdquo;
+for several types of objects;
+these use short text tokens, with no loss of information and no
+simplex/vertex/crossing relabelling.  These need Python or C++ to use.</li>
+<li>More graph operations are now available for facet pairings.</li>
+<li>Several other smaller features and optimisations.</li>
 </ul>
 <p>
 For Python and C++ programmers:
 <ul>
-<li>Regina now uses the C++17 standard, and no longer uses boost at all.</li>
-<li>As noted above, there have been major sweeping changes to the C++ API.
-<a href="api/regina7.html">See here for details</a>.
-Python users should require far fewer changes to their existing code.</li>
-<li>Python now has full access to essentially all of Regina's C++ code,
-wherever this makes sense.  It also has more natural iteration,
-string representation, equality testing by value, and better
-compatibility with Sage.</li>
-<li>All of the code that was previously deprecated in version 6.0 has now been
-removed entirely.  <a href="api/regina6.html">See the
-6.x guide</a> for instructions on how to update your scripts.</li>
+<li>Regina now supports Python 3 only (not Python 2 or 3).</li>
+<li>Everything that was deprecated in version 7.0 has now been removed
+entirely.
+<a href="api/regina7.html">See the 7.x guide</a>
+for instructions on how to update your scripts.</li>
+<li>Some routines now verify some of their easy-to-test preconditions,
+and throw exceptions if they fail.  Expanding this type of testing
+will be an ongoing project across future releases, and it will never
+cover <i>all</i> preconditions (since some are too expensive to test
+automatically).  The initial focus will be on routines that are
+common sources of user errors (e.g., <tt>Simplex::join()</tt>).</li>
+<li>Python now wraps all C++ <tt>bool()</tt> cast operators.</li>
+<li>Fixed a deadlock that occured in GUI python consoles (not in
+command-line python or regina-python) when working with callbacks
+(e.g., when passing a pure python function to <tt>retriangulate()</tt>).</li>
 </ul>
 <p>
 <i><a href="#contents">(Back to contents...)</a></i>
@@ -568,7 +512,7 @@ you would any other paper that you use.  A suggested form of reference is:
 <blockquote>
   Benjamin A. Burton, Ryan Budney, William Pettersson, et al.,<br>
   <i>Regina: Software for low-dimensional topology</i>,<br>
-  http://regina-normal.github.io/, 1999&ndash;2021.
+  http://regina-normal.github.io/, 1999&ndash;2022.
 </blockquote>
 
 Or, in BibTeX:
@@ -578,12 +522,12 @@ Or, in BibTeX:
     author = {Benjamin A. Burton and Ryan Budney and William Pettersson and others},
     title = {Regina: Software for low-dimensional topology},
     howpublished = {{\tt http://\allowbreak regina-normal.\allowbreak github.\allowbreak io/}},
-    year = {1999--2021}}
+    year = {1999--2022}}
 </blockquote></pre>
 
 <h4>Copying &amp; modification</h4>
 
-Regina is copyright &copy; 1999&ndash;2021, The Regina development team.
+Regina is copyright &copy; 1999&ndash;2022, The Regina development team.
 <p>
 This program is free software; you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the

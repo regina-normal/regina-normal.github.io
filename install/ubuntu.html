@@ -11,8 +11,8 @@
 <p>
 Ubuntu comes with Regina &ldquo;out of the box&rdquo; as part of its
 standard <i>universe</i> software collection.  However, the version of
-Regina that ships with each Ubuntu release is fixed (e.g., Ubuntu&nbsp;18.04
-ships with Regina&nbsp;5.1, and Ubuntu&nbsp;21.04 ships with Regina&nbsp;6.0.1).
+Regina that ships with each Ubuntu release is fixed (e.g., Ubuntu&nbsp;20.04
+ships with Regina&nbsp;5.1, and Ubuntu&nbsp;22.04 ships with Regina&nbsp;7.0).
 </p>
 <p>
 If you wish to keep up-to-date with the <b>newest version</b> of Regina,
@@ -53,14 +53,10 @@ Download Regina's repository description, according to your version of
 Ubuntu:
 </p>
 <ul>
-<li><p>Ubuntu 21.10 (impish):
-<a href="../repos/regina-impish.sources"><tt>regina-impish.sources</tt></a></p></li>
-<li><p>Ubuntu 21.04 (hirsute):
-<a href="../repos/regina-hirsute.sources"><tt>regina-hirsute.sources</tt></a></p></li>
+<li><p>Ubuntu 22.04 LTS (jammy):
+<a href="../repos/regina-jammy.sources"><tt>regina-jammy.sources</tt></a></p></li>
 <li><p>Ubuntu 20.04 LTS (focal):
 <a href="../repos/regina-focal.sources"><tt>regina-focal.sources</tt></a></p></li>
-<li><p>Ubuntu 18.04 LTS (bionic):
-<a href="../repos/regina-bionic.sources"><tt>regina-bionic.sources</tt></a></p></li>
 </ul>
 </li>
 <li><p>
@@ -118,9 +114,6 @@ Download Regina's cryptographic signing key:
 </p></li>
 <li><p>
 Open the <i>Software&nbsp;&amp;&nbsp;Updates</i> application.
-If you are running the older Ubuntu&nbsp;18.04&nbsp;LTS (bionic),
-you should open <i>Ubuntu&nbsp;Software</i> instead and select
-<i>Software&nbsp;&amp;&nbsp;Updates</i> from the main menu.
 </p></li>
 <li><p>
 Under <i>Authentication</i>, import Regina's key (which you just downloaded).
@@ -130,12 +123,6 @@ Under <i>Authentication</i>, import Regina's key (which you just downloaded).
 You should see new keys appear in the list of trusted software providers,
 as pictured below.
 You can now delete <tt>regina-key.txt</tt> if you like.
-</p>
-<p>
-<i>Note: Ubuntu 20.10 seems to have a bug where the list of keys appears
-empty even after the import.  Just continue, because this seems to be a
-visual problem only&mdash;despite what you see, the keys are still
-being imported.</i>
 </p></li>
 <li><p>
 <b>Carefully check the new key&nbsp;IDs.</b>
@@ -160,14 +147,12 @@ Under <i>Other Software</i>, click the <i>Add...</i> button.  When Ubuntu
 asks you for an APT line, type whichever line from the list below
 matches your version of Ubuntu:</p>
 <div class="example"><p>
-<tt>deb https://people.debian.org/~bab/regina hirsute/</tt><br>
-<tt>deb https://people.debian.org/~bab/regina groovy/</tt><br>
-<tt>deb https://people.debian.org/~bab/regina focal/</tt><br>
-<tt>deb https://people.debian.org/~bab/regina bionic/</tt>
+<tt>deb https://people.debian.org/~bab/regina jammy/</tt><br>
+<tt>deb https://people.debian.org/~bab/regina focal/</tt>
 </p></div>
 <p>
-In case you forget, the supported Ubuntu versions (e.g., 20.04&nbsp;LTS)
-and their corresponding codenames (e.g., <i>focal</i>) are listed on
+In case you forget, the supported Ubuntu versions (e.g., 22.04&nbsp;LTS)
+and their corresponding codenames (e.g., <i>jammy</i>) are listed on
 Regina's <a href="../index.html#linux">main download page</a>.
 </p>
 <p>
