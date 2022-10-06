@@ -12,6 +12,8 @@
 <tbody>
 <tr><td valign="top">
     <table class="contents" cellspacing=0><tbody>
+    <tr><td><a href="#bitmaskswap">Python swap() broken for fixed-width
+    bitmasks (Oct 2022)</a></td></tr>
     <tr><td><a href="#defaultalg">Normal surface enumeration ignores
     arguments (Sept 2016)</a></td></tr>
     <tr><td><a href="#mod">Mod and gcd broken for extremely large integers
@@ -27,6 +29,82 @@ of Regina, which might have affected your computations.
 <p>
 Please write to the developers if you need further information or
 assistance.
+
+<h2><a name="bitmaskswap">Python swap() broken for fixed-width bitmasks
+(Oct 2022)</a></h2>
+<h3>Summary</h3>
+<table cellspacing=0 border=0 class="data"><tbody>
+<tr>
+    <td class="topsubheading">Affected versions</td>
+    <td class="top">7.0&ndash;7.1</td>
+    <td class="top">Will be fixed in version 7.2
+    (release expected October/November 2022).</td>
+</tr>
+<tr>
+    <td class="subheading">Main symptom</td>
+    <td>&nbsp;</td>
+    <td>In Python, calling <tt>regina.swap()</tt> with
+    fixed-width bitmasks (types <tt>Bitmask8</tt>, <tt>Bitmask16</tt>, ...,
+    <tt>Bitmask256</tt>) led to undefined behaviour.</td>
+</tr>
+<tr>
+    <td class="subheading">Affected users</td>
+    <td>Python programmers only</td>
+    <td>This only affected those rare Python programmers
+    who called one of the specialised swap functions above.</td>
+</tr>
+<tr>
+    <td class="subheading">Was I affected?</td>
+    <td>Unlikely</td>
+    <td>Just examine your Python code, and see if you are explicitly
+    creating objects of type <tt>Bitmask8</tt>, ..., or <tt>Bitmask256</tt>,
+    <em>and</em> explicitly swapping them via <tt>regina.swap()</tt>.</td>
+</table>
+
+<p>
+<h3>Details</h3>
+<p>
+Only Python programmers were affected by this issue.
+Moreover, to trigger the bug, you had to be doing the following
+in your own code:
+<ul>
+    <li>creating fixed-width bitmasks of one of the types
+    <tt>Bitmask8</tt>, ..., <tt>Bitmask256</tt> (the main
+    <tt>Bitmask</tt> class was unaffected);</li>
+    <li>swapping two of these bitmasks via the global
+    <tt>regina.swap()</tt> function.</li>
+</ul>
+<p>
+It seems highly unlikely that anybody was actually affected by this issue:
+<ul>
+    <li>The fixed-width bitmasks are specialised classes,
+    mainly used for optimisation in the C++ calculation engine.
+    They were only made accessible to Python with Regina&nbsp;7.0.
+    Moreover, they are not returned by other Regina functions: you would
+    have had to explicitly create these bitmasks yourself.</li>
+    <li>The heavily overloaded <tt>regina::swap()</tt> function is mainly
+    for C++ users (as part of the shift in Regina&nbsp;7.0 to value semantics).
+    Python users do not need such a function, since Python uses reference
+    semantics (not value semantics), and assignment operations are cheap.</li>
+    <li>The API documentation does not actually describe an overload of
+    <tt>regina::swap()</tt> for fixed-width bitmasks, since no such function
+    exists in Regina's C++ calculation engine.  You would have had to
+    guess that this overload existed and tried to use it.</li>
+</ul>
+<p>
+The cause of the problem was that, as noted above, Regina's C++ calculation
+engine does not overload <tt>regina::swap()</tt> for fixed-width bitmasks
+(since they are so small that a specialised swap function is unnecessary).
+The Python bindings incorrectly declared a <tt>regina.swap()</tt>
+overload for fixed-width bitmasks, but forwarded this to the C++ function
+that takes the more general <tt>Bitmask</tt> type instead.
+<p>
+In Regina&nbsp;7.2, the Python bindings for heavily overloaded functions
+such as <tt>regina::swap()</tt> have been rewritten to use typesafe
+C++-casts instead of the old C-style casts to resolve the overloads,
+thus preventing such an issue from occuring again.
+<p>
+<i><a href="#contents">(Back to top...)</a></i>
 
 <h2><a name="defaultalg">Normal surface enumeration ignores arguments
 (Sept 2016)</a></h2>
