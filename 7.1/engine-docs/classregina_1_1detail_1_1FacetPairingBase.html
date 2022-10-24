@@ -922,7 +922,7 @@ template&lt;typename Action , typename... Args&gt; </div>
 </ul>
 <p >Because this class cannot represent an empty facet pairing, if the argument <em>nSimplices</em> is zero then no facet pairings will be generated at all.</p>
 <dl class="section warning"><dt>Warning</dt><dd>If you are allowing a large number of boundary facets, then the automorphisms groups could be enormous. In this case it is highly recommended that your action does <em>not</em> take the list of all automorphisms as its second argument, since this will avoid the enormous memory cost of storing and passing such a list.</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000034">Todo:</a></b></dt><dd><p class="startdd"><em>Optimise (long-term):</em> When generating facet pairings, do some checking to eliminate cases in which simplex (<em>k</em> &gt; 0) can be swapped with simplex 0 to produce a smaller representation of the same pairing. </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000032">Todo:</a></b></dt><dd><p class="startdd"><em>Optimise (long-term):</em> When generating facet pairings, do some checking to eliminate cases in which simplex (<em>k</em> &gt; 0) can be swapped with simplex 0 to produce a smaller representation of the same pairing. </p>
 <p class="enddd"><em>Feature:</em> Allow cancellation of facet pairing generation.</p>
 </dd></dl>
 <dl class="section user"><dt>Python</dt><dd>This function is available, and <em>action</em> may be a pure Python function. However, its form is more restricted: <em>action</em> must take both a facet pairing and its automorphisms (i.e., the automorphisms argument is not optional); moreover, it cannot take any additional arguments beyond these. As a consequence, the additional <em>args</em> list is omitted also.</dd></dl>
@@ -1828,7 +1828,7 @@ template&lt;int dim&gt; </div>
 </div><div class="memdoc">
 
 <p>Deprecated routine that returns a text-based representation that can be used to reconstruct this facet pairing. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000009">Deprecated:</a></b></dt><dd>This routine has been renamed to <a class="el" href="classregina_1_1detail_1_1FacetPairingBase.html#aa6d594a8fdd5b94c5edd90743fe35ca7" title="Returns a text-based representation that can be used to reconstruct this facet pairing.">textRep()</a>. See the <a class="el" href="classregina_1_1detail_1_1FacetPairingBase.html#aa6d594a8fdd5b94c5edd90743fe35ca7" title="Returns a text-based representation that can be used to reconstruct this facet pairing.">textRep()</a> documentation for further details.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000008">Deprecated:</a></b></dt><dd>This routine has been renamed to <a class="el" href="classregina_1_1detail_1_1FacetPairingBase.html#aa6d594a8fdd5b94c5edd90743fe35ca7" title="Returns a text-based representation that can be used to reconstruct this facet pairing.">textRep()</a>. See the <a class="el" href="classregina_1_1detail_1_1FacetPairingBase.html#aa6d594a8fdd5b94c5edd90743fe35ca7" title="Returns a text-based representation that can be used to reconstruct this facet pairing.">textRep()</a> documentation for further details.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a text-based representation of this facet pairing. </dd></dl>
 
 </div>

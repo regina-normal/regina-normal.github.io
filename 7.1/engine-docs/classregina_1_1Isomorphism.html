@@ -386,7 +386,7 @@ template&lt;int dim&gt; </div>
 </div><div class="memdoc">
 
 <p>Deprecated routine that applies this isomorphism to the given triangulation, and returns the result as a new triangulation. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000011">Deprecated:</a></b></dt><dd>If this isomorphism is <em>iso</em>, then this routine is equivalent to calling <code>iso(tri)</code>. See the bracket operator for further details.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000010">Deprecated:</a></b></dt><dd>If this isomorphism is <em>iso</em>, then this routine is equivalent to calling <code>iso(tri)</code>. See the bracket operator for further details.</dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>The simplex images are precisely 0,1,...,<a class="el" href="classregina_1_1Isomorphism.html#a77d931b107736175dd59b4463be7beb4" title="Returns the number of simplices in the source triangulation associated with this isomorphism.">size()</a>-1 in some order (i.e., this isomorphism does not represent a mapping from a smaller triangulation into a larger triangulation).</dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
@@ -431,7 +431,7 @@ template&lt;int dim&gt; </div>
 </div><div class="memdoc">
 
 <p>Deprecated routine that applies this isomorphism to the given triangulation, modifying the given triangulation directly. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000012">Deprecated:</a></b></dt><dd>If this isomorphism is <em>iso</em>, then this routine is equivalent to calling <code>tri = iso(tri)</code>. See the bracket operator for further details.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000011">Deprecated:</a></b></dt><dd>If this isomorphism is <em>iso</em>, then this routine is equivalent to calling <code>tri = iso(tri)</code>. See the bracket operator for further details.</dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>The simplex images are precisely 0,1,...,<a class="el" href="classregina_1_1Isomorphism.html#a77d931b107736175dd59b4463be7beb4" title="Returns the number of simplices in the source triangulation associated with this isomorphism.">size()</a>-1 in some order (i.e., this isomorphism does not represent a mapping from a smaller triangulation into a larger triangulation).</dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
@@ -777,7 +777,7 @@ template&lt;int dim&gt; </div>
 <p >An isomorphism represents a combinatorial map from a triangulation <em>T</em> to a triangulation <em>U</em>. This routine treats the given triangulation as the domain <em>T</em>, and returns the corresponding range <em>U</em>. The given triangulation <em>T</em> is not modified in any way.</p>
 <p >In more detail: A new triangulation <em>U</em> is returned, so that this isomorphism represents a one-to-one, onto and boundary complete isomorphism from <em>T</em> to <em>U</em>. That is, <em>T</em> and <em>U</em> will be combinatorially isomorphic triangulations, and this isomorphism describes the mapping from the simplices of <em>T</em> and their facets to the simplices of <em>U</em> and their facets.</p>
 <dl class="section pre"><dt>Precondition</dt><dd>The simplex images are precisely 0,1,...,<a class="el" href="classregina_1_1Isomorphism.html#a77d931b107736175dd59b4463be7beb4" title="Returns the number of simplices in the source triangulation associated with this isomorphism.">size()</a>-1 in some order (i.e., this isomorphism does not represent a mapping from a smaller triangulation into a larger triangulation).</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000040">Todo:</a></b></dt><dd>Lock the topological properties of the underlying manifold, to avoid recomputing them after the isomorphism is applied.</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000038">Todo:</a></b></dt><dd>Lock the topological properties of the underlying manifold, to avoid recomputing them after the isomorphism is applied.</dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classregina_1_1InvalidArgument.html" title="An exception thrown when invalid or unsupported arguments are passed into a function.">InvalidArgument</a></td><td>the number of top-dimensional simplices in the given triangulation is not equal to <a class="el" href="classregina_1_1Isomorphism.html#a77d931b107736175dd59b4463be7beb4" title="Returns the number of simplices in the source triangulation associated with this isomorphism.">size()</a> for this isomorphism.</td></tr>

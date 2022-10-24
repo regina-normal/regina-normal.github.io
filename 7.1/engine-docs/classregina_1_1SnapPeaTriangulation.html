@@ -1583,7 +1583,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Triangulation&lt; 3 
 <p >If simplex <em>s</em> has index <em>i</em> in the original triangulation, then its sub-simplex corresponding to permutation <em>p</em> will have index <code>((dim + 1)! * i + p.orderedSnIndex())</code> in the resulting triangulation. In other words: sub-simplices are ordered first according to the original simplex that contains them, and then according to the lexicographical ordering of the corresponding permutations <em>p</em>.</p>
 <dl class="section pre"><dt>Precondition</dt><dd><em>dim</em> is one of Regina's standard dimensions. This precondition is a safety net, since in higher dimensions the triangulation would explode too quickly in size (and for the highest dimensions, possibly beyond the limits of <code>size_t</code>).</dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>In dimensions 3 and 4, both the labelling and ordering of sub-simplices in the subdivided triangulation has changed as of Regina 5.1. (Earlier versions of Regina made no guarantee about the labelling and ordering; these guarantees are also new to Regina 5.1).</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000035">Todo:</a></b></dt><dd>Lock the topological properties of the underlying manifold, to avoid recomputing them after the subdivision. However, only do this for <em>valid</em> triangulations (since we can have scenarios where invalid triangulations becoming valid and ideal after subdivision, which may change properties such as Triangulation&lt;4&gt;::knownSimpleLinks). </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000033">Todo:</a></b></dt><dd>Lock the topological properties of the underlying manifold, to avoid recomputing them after the subdivision. However, only do this for <em>valid</em> triangulations (since we can have scenarios where invalid triangulations becoming valid and ideal after subdivision, which may change properties such as Triangulation&lt;4&gt;::knownSimpleLinks). </dd></dl>
 
 </div>
 </div>
@@ -5106,7 +5106,7 @@ dodecahedral space is non-Haken", Benjamin A. Burton, J. Hyam Rubinstein and Ste
 <dl class="section warning"><dt>Warning</dt><dd>Currently, this routine subdivides all tetrahedra as if <em>all</em> vertices (not just some) were ideal. This may lead to more tetrahedra than are necessary.</dd>
 <dd>
 Currently, the presence of an invalid edge will force the triangulation to be subdivided regardless of the value of parameter <em>forceDivision</em>. The final triangulation will still have the projective plane cusp caused by the invalid edge.</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000039">Todo:</a></b></dt><dd><em>Optimise (long-term):</em> Have this routine only use as many tetrahedra as are necessary, leaving finite vertices alone.</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000037">Todo:</a></b></dt><dd><em>Optimise (long-term):</em> Have this routine only use as many tetrahedra as are necessary, leaving finite vertices alone.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if and only if the triangulation was changed. </dd></dl>
 <dl class="section author"><dt>Author</dt><dd>David Letscher </dd></dl>
 
@@ -5291,7 +5291,7 @@ gcd(<em>cuts0</em>, <em>cuts1</em>) = 1.</dd></dl>
 <p >Although <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#ad63140ff3ab1dd53acd661a6c8cde47e" title="Attempts to simplify the triangulation using fast and greedy heuristics.">intelligentSimplify()</a> works very well most of the time, it can occasionally get stuck; in such cases you may wish to try the more powerful but (much) slower <a class="el" href="classregina_1_1Triangulation_3_013_01_4.html#af4ba73293308b8bfba1947ba4716457b" title="Attempts to simplify this triangulation using a slow but exhaustive search through the Pachner graph.">simplifyExhaustive()</a> instead.</p>
 <p >If this triangulation is currently oriented, then this operation will preserve the orientation.</p>
 <dl class="section warning"><dt>Warning</dt><dd>Running this routine multiple times upon the same triangulation may return different results, since the implementation makes random decisions. More broadly, the implementation of this routine (and therefore its results) may change between different releases of Regina.</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000038">Todo:</a></b></dt><dd><em>Optimise:</em> Include random 2-3 moves to get out of wells.</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000036">Todo:</a></b></dt><dd><em>Optimise:</em> Include random 2-3 moves to get out of wells.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if and only if the triangulation was successfully simplified. Otherwise this triangulation will not be changed. </dd></dl>
 
 </div>
@@ -5603,7 +5603,7 @@ gcd(<em>cuts0</em>, <em>cuts1</em>) = 1.</dd></dl>
 <p >There may be many such isomorphisms between the two triangulations. If you need to find <em>all</em> such isomorphisms, you may call <a class="el" href="classregina_1_1detail_1_1TriangulationBase.html#a0481813042dab2c6140fc8d6fbbd189d" title="Finds all ways in which this triangulation is combinatorially isomorphic to the given triangulation.">findAllIsomorphisms()</a> instead.</p>
 <p >If you need to ensure that top-dimensional simplices are labelled the same in both triangulations (i.e., that the triangulations are related by the <em>identity</em> isomorphism), you should call the stricter test isIdenticalTo() instead.</p>
 <dl class="section warning"><dt>Warning</dt><dd>For large dimensions, this routine can become extremely slow: its running time includes a factor of (<em>dim</em>+1)!.</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000036">Todo:</a></b></dt><dd><em>Optimise:</em> Improve the complexity by choosing a simplex mapping from each component and following gluings to determine the others.</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000034">Todo:</a></b></dt><dd><em>Optimise:</em> Improve the complexity by choosing a simplex mapping from each component and following gluings to determine the others.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">other</td><td>the triangulation to compare with this one. </td></tr>
