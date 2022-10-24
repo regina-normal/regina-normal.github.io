@@ -106,9 +106,9 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="first"><tt>Isomorphism&lt;dim&gt;::apply()</tt>,
+    <td class="first"><tt>Isomorphism&lt;dim&gt;::apply()</tt><br>
     <tt>Isomorphism&lt;dim&gt;::applyInPlace()</tt></td>
-    <td><tt>iso(tri)</tt>, <tt>tri&nbsp;=&nbsp;iso(tri)</tt></td>
+    <td><tt>iso(tri)</tt><br><tt>tri&nbsp;=&nbsp;iso(tri)</tt></td>
     <td>&nbsp;</td>
 </tr>
 <tr>
@@ -122,11 +122,11 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>&nbsp;</td>
 </tr>
 <tr>
-    <td class="first"><tt>Packet::insertChildFirst()</tt>,
-    <tt>Packet::insertChildLast()</tt>,
+    <td class="first"><tt>Packet::insertChildFirst()</tt><br>
+    <tt>Packet::insertChildLast()</tt><br>
     <tt>Packet::insertChildAfter()</tt></td>
-    <td><tt>Packet::prepend()</tt>,
-    <tt>Packet::append()</tt>,
+    <td><tt>Packet::prepend()</tt><br>
+    <tt>Packet::append()</tt><br>
     <tt>Packet::insert()</tt></td>
     <td>&nbsp;</td>
 </tr>
@@ -137,11 +137,18 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>This returns an integer genus, not a boolean, and so the
     name has been changed to avoid any misinterpretation.</td>
 </tr>
+<tr>
+    <td class="first"><tt>Triangulation&lt;3&gt;::minimizeBoundary()</tt><br>
+    <tt>Triangulation&lt;3&gt;::minimizeVertices()</tt></td>
+    <td><tt>Triangulation&lt;3&gt;::minimiseBoundary()</tt><br>
+    <tt>Triangulation&lt;3&gt;::minimiseVertices()</tt></td>
+    <td>Regina uses British English consistently throughout its API.</td>
+</tr>
 <!------------------------------------------------------------------------->
 <tr><td class="deptype" colspan=4>Global Routines</td></tr>
 <tr>
-    <td class="first"><tt>regina::gcd()</tt>, <tt>regina::lcm()</tt></td>
-    <td><tt>std::gcd()</tt>, <tt>std::lcm()</tt></td>
+    <td class="first"><tt>regina::gcd()</tt><br><tt>regina::lcm()</tt></td>
+    <td><tt>std::gcd()</tt><br><tt>std::lcm()</tt></td>
     <td>GCD and LCM are now offered as part of the C++17 standard.</td>
 </tr>
 <!------------------------------------------------------------------------->
