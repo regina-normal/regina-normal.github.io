@@ -82,8 +82,8 @@ directory names for 64-bit systems, and you should
 <p>
 The macOS build has evolved to remove the need for
 software environments such as
-<a href="http://finkproject.org/">Fink</a> or
-<a href="http://www.macports.org/">MacPorts</a>
+<a href="http://www.macports.org/">MacPorts</a> or
+<a href="http://finkproject.org/">Fink</a>
 (and indeed,
 the macOS binaries here on the Regina website were built on a system
 without any such environment installed at all).
@@ -103,19 +103,19 @@ out-of-the-box; read on for details.
 <p>
 For a full unix-like installation, assuming you already have
 an environment like
-<a href="http://finkproject.org/">Fink</a> or
-<a href="http://www.macports.org/">MacPorts</a> installed,
+<a href="http://www.macports.org/">MacPorts</a> or
+<a href="http://finkproject.org/">Fink</a> installed,
 you may need to pass additional arguments to cmake:
 <ul>
 <li>If you wish to use the system python installation (or some other
-python installation) instead of Fink's or MacPorts', set
+python installation) instead of MacPorts' or Fink's, set
 <tt>Python_EXECUTABLE</tt> to the python interpreter
 (e.g., <tt>/usr/bin/python</tt>).</li>
 <li>If you want to change the installation prefix from the
 default <tt>/usr/local</tt>, set <tt>CMAKE_INSTALL_PREFIX</tt>.
 This controls where the application bundle will appear when you run
 <tt>make&nbsp;install</tt>.</li>
-<li>If you have downloaded Qt separately (not via Fink/MacPorts), you
+<li>If you have downloaded Qt separately (not via MacPorts/Fink), you
 need to tell Regina where to find it. Set <tt>CMAKE_PREFIX_PATH</tt> to the
 relevant Qt directory containing <tt>include/</tt>, <tt>lib/</tt> and so on.
 For a typical Qt installation, this looks something like
@@ -125,7 +125,18 @@ since this is now the default (and indeed the only valid option) on macOS.</li>
 </ul>
 </p>
 <p>
-A complete example of a cmake line using Fink:
+A complete example of a cmake line that uses the Qt and Python from MacPorts,
+and installs Regina in the default location <tt>/usr/local/</tt>:
+</p>
+<div class="example">
+<p>
+<tt>example$ cmake -DPython_EXECUTABLE=/opt/local/bin/python3.9 ..</tt>
+</p>
+</div>
+<p>
+A complete example that uses the system Python and a
+prebuilt Qt from the Qt website,
+and installs Regina in a custom location beneath the user's home directory:
 </p>
 <div class="example">
 <p>
@@ -133,15 +144,6 @@ A complete example of a cmake line using Fink:
 -DCMAKE_INSTALL_PREFIX=/Users/bab/software
 -DCMAKE_PREFIX_PATH=/Users/bab/Qt/6.3.2/macos
 ..</tt>
-</p>
-</div>
-<p>
-A complete example using MacPorts that uses the Qt and Python from MacPorts,
-and installs Regina in the default location <tt>/usr/local/</tt>:
-</p>
-<div class="example">
-<p>
-<tt>example$ cmake -DPython_EXECUTABLE=/opt/local/bin/python3.9 ..</tt>
 </p>
 </div>
 
