@@ -12,8 +12,7 @@
 <tbody>
 <tr><td valign="top">
     <table class="contents" cellspacing=0><tbody>
-    <tr><td><a href="#bitmaskswap">Python swap() broken for fixed-width
-    bitmasks (Oct 2022)</a></td></tr>
+    <tr><td><a href="#bindings">Two Python binding errors (Oct 2022)</a></td></tr>
     <tr><td><a href="#defaultalg">Normal surface enumeration ignores
     arguments (Sept 2016)</a></td></tr>
     <tr><td><a href="#mod">Mod and gcd broken for extremely large integers
@@ -30,15 +29,13 @@ of Regina, which might have affected your computations.
 Please write to the developers if you need further information or
 assistance.
 
-<h2><a name="bitmaskswap">Python swap() broken for fixed-width bitmasks
-(Oct 2022)</a></h2>
-<h3>Summary</h3>
+<h2><a name="bindings">Two Python binding errors (Oct 2022)</a></h2>
+<h3>Summary #1: Incorrectly-bound <tt>swap()</tt> for fixed-width bitmasks</h3>
 <table cellspacing=0 border=0 class="data"><tbody>
 <tr>
     <td class="topsubheading">Affected versions</td>
     <td class="top">7.0&ndash;7.1</td>
-    <td class="top">Will be fixed in version 7.2
-    (release expected October/November 2022).</td>
+    <td class="top">Fixed in version 7.2</td>
 </tr>
 <tr>
     <td class="subheading">Main symptom</td>
@@ -61,21 +58,63 @@ assistance.
     <em>and</em> explicitly swapping them via <tt>regina.swap()</tt>.</td>
 </table>
 
+<h3>Summary #2: Incorrectly-bound <tt>Cyclotomic.negate()</tt></h3>
+<table cellspacing=0 border=0 class="data"><tbody>
+<tr>
+    <td class="topsubheading">Affected versions</td>
+    <td class="top">TODO&ndash;7.1</td>
+    <td class="top">Fixed in version 7.2</td>
+</tr>
+<tr>
+    <td class="subheading">Main symptom</td>
+    <td>&nbsp;</td>
+    <td>In Python, calling <tt>Cyclotomic.negate()</tt> would in fact
+    perform a multiplicative inversion instead.</td>
+</tr>
+<tr>
+    <td class="subheading">Affected users</td>
+    <td>Python programmers only</td>
+    <td>This only affected Python programmers who did their own arithmetic
+    on cyclotomic field elements and called <tt>x.negate()</tt> instead
+    of the more natural <tt>-x</tt>.</td>
+</tr>
+<tr>
+    <td class="subheading">Was I affected?</td>
+    <td>Unlikely</td>
+    <td>Just examine your Python code, and see if you are
+    explicitly creating <tt>Cyclotomic</tt> objects and/or retrieving
+    them as Turaev-Viro invariants, <i>and</i>
+    explicitly calling <tt>negate()</tt> on these objects.</td>
+</table>
+
 <p>
 <h3>Details</h3>
 <p>
-Only Python programmers were affected by this issue.
-Moreover, to trigger the bug, you had to be doing the following
-in your own code:
+Only Python programmers were affected by these issues:
+any C++ code that worked with bitmasks and/or cyclotomic field elements
+(including Regina's Turaev-Viro computations) was unaffected.
+Moreover, to trigger these bugs, you had to do the following in
+<i<>your own code</i>.
+<p>
+To trigger the <tt>swap()</tt> bug:
 <ul>
-    <li>creating fixed-width bitmasks of one of the types
+    <li>create fixed-width bitmasks of one of the types
     <tt>Bitmask8</tt>, ..., <tt>Bitmask256</tt> (the main
     <tt>Bitmask</tt> class was unaffected);</li>
-    <li>swapping two of these bitmasks via the global
+    <li>swap two of these bitmasks in Python via the global
     <tt>regina.swap()</tt> function.</li>
 </ul>
+To trigger the <tt>Cyclotomic.negate()</tt> bug:
+<ul>
+    <li>hold a <tt>Cyclotomic</tt> object <tt>x</tt>,
+    either by creating it yourself
+    or by fetching it from <tt>Triangulation3.turaevViro()</tt> and/or
+    <tt>Triangulation3.allCalculatedTuraevViro()</tt>;</li>
+    <li>explicitly negate <tt>x</tt> in Python by calling
+    <tt>x.negate()</tt> (the operator <tt>-x</tt> was unaffected).</li>
+</ul>
 <p>
-It seems highly unlikely that anybody was actually affected by this issue:
+It seems unlikely that anybody would have been affected by these issues:
 <ul>
     <li>The fixed-width bitmasks are specialised classes,
     mainly used for optimisation in the C++ calculation engine.
@@ -90,19 +129,29 @@ It seems highly unlikely that anybody was actually affected by this issue:
     <tt>regina::swap()</tt> for fixed-width bitmasks, since no such function
     exists in Regina's C++ calculation engine.  You would have had to
     guess that this overload existed and tried to use it.</li>
+    <li>Cyclotomic field elements are only returned from Regina's
+    calculation engine when computing Turaev-Viro invariants.
+    As invariants, Python users might want to compute these, compare them
+    and/or hash them for fast lookup, but it seems unlikely that
+    typical users would need to manipulate them arithmetically.</li>
 </ul>
 <p>
-The cause of the problem was that, as noted above, Regina's C++ calculation
-engine does not overload <tt>regina::swap()</tt> for fixed-width bitmasks
-(since they are so small that a specialised swap function is unnecessary).
+The cause of the <tt>swap()</tt> problem was that, as noted above,
+Regina's C++ calculation engine does not overload <tt>regina::swap()</tt>
+for fixed-width bitmasks (since they are so small that a specialised
+swap function is unnecessary).
 The Python bindings incorrectly declared a <tt>regina.swap()</tt>
 overload for fixed-width bitmasks, but forwarded this to the C++ function
 that takes the more general <tt>Bitmask</tt> type instead.
-<p>
 In Regina&nbsp;7.2, the Python bindings for heavily overloaded functions
 such as <tt>regina::swap()</tt> have been rewritten to use typesafe
 C++-casts instead of the old C-style casts to resolve the overloads,
 thus preventing such an issue from occuring again.
+<p>
+The cause of the <tt>Cyclotomic.negate()</tt> function was much simpler:
+the python name <tt>Cyclotomic.negate</tt> was accidentally bound to the
+C++ method <tt>Cyclotomic::inverse()</tt> in the code that connects the
+two languages.
 <p>
 <i><a href="#contents">(Back to top...)</a></i>
 
