@@ -1,0 +1,664 @@
+<html><head><title>Analysis</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina 7.2 Handbook"><link rel="up" href="surfaces.html" title="Chapter 5. Normal Surfaces and Hypersurfaces"><link rel="prev" href="surfaces.html" title="Chapter 5. Normal Surfaces and Hypersurfaces"><link rel="next" href="surfaces-filtering.html" title="Filtering Surfaces (3-D)"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Analysis</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="surfaces.html">Prev</a></td><td align="center" class="navCenter" width="34%">Normal Surfaces and Hypersurfaces</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="surfaces-filtering.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="surfaces-analysis"></a>Analysis</h2></div></div></div><p>
+   Once you have <a href="surfaces.html#surfaces-creation" title="Enumerating Normal Surfaces and Hypersurfaces">built
+   a list of surfaces or hypersurfaces</a>, you can study them
+   using the various tabs in the normal (hyper)surface list viewer.
+  </p><p>
+   Above all of these tabs is a header displaying the total number of
+   (hyper)surfaces, the original enumeration parameters, and a link to the
+   underlying triangulation.  The enumeration parameters include:
+  </p><div class="itemizedlist"><ul type="disc"><li><p>whether you asked for
+    <a href="surfaces.html#surfaces-selectenum">vertex or fundamental</a>
+    (hyper)surfaces;</p></li><li><p>whether you asked for
+    <a href="surfaces.html#surfaces-embeddedonly">embedded (hyper)surfaces only</a>,
+    or for immersed and/or branched (hyper)surfaces also;</p></li><li><p>the normal or almost normal
+    <a href="surfaces.html#surfaces-selectcoords">coordinate system</a>
+    in which you performed the enumeration.</p></li></ul></div><p>
+   <span class="inlinemediaobject"><img src="surfaces-header.png" srcset="surfaces-header@2x.png 2x, surfaces-header.png"></span>
+  </p><p>
+   There are some unusual comments that you might see in this header if
+   you are using old data files and/or customised software:
+   </p><div class="glosslist"><dl><dt><a name="surfaces-header-legacy"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Legacy surfaces</span></span></dt><dd><p>
+      You might see this instead of vertex or fundamental surfaces.
+      This means that the list of surfaces was created using
+      <span class="application">Regina</span> 4.93 or earlier (which did not save information on whether
+      the surfaces you enumerated were vertex or fundamental).
+     </p></dd><dt><a name="surfaces-header-custom"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Custom (hyper)surfaces</span></span></dt><dd><p>
+      You might see this instead of vertex or fundamental (hyper)surfaces.
+      This means that the list was created using
+      some specialised or user-designed algorithm, and <span class="application">Regina</span> cannot
+      give you any more specific information about
+      <span class="emphasis"><em>which</em></span> surfaces or hypersurfaces these are.
+     </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Legacy almost normal
+      coordinates</span></span></dt><dd><p>
+      This indicates that the list was created using
+      <span class="application">Regina</span> 4.5.1 or earlier, and that surfaces with more than
+      one octagon were deleted.
+      See the discussion on <a href="surfaces-analysis.html#surfaces-deflegacyan">legacy
+      coordinates</a> for details.
+     </p></dd></dl></div><p>
+  </p><p>
+   As of version 4.94, <span class="application">Regina</span> also remembers details of the specific
+   enumeration algorithm that was used.  This information is not shown
+   in the user interface, but can be extracted using
+   <a href="python.html" title="Chapter 9. Python Scripting"><span class="application">Python</span> scripting</a>.
+  </p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="surfaces-viewtri"></a>Viewing the Triangulation</h3></div></div></div><p>
+    As of <span class="application">Regina</span> 7.0, normal surfaces and hypersurfaces are no
+    longer linked to their source triangulations in the packet tree.
+    You can move a surface list and/or its triangulation around independently
+    in the tree, or you can modify or even delete the original
+    triangulation.  All of these operations are now allowed and safe.
+   </p><p>
+    Whatever happens, it is always possible to come back and view the original
+    triangulation from which a surface or hypersurface list was created.
+    You do this by following the link in the header:
+   </p><p>
+    <span class="inlinemediaobject"><img src="surfaces-tri-public.png" srcset="surfaces-tri-public@2x.png 2x, surfaces-tri-public.png"></span>
+   </p><p>
+    If the original triangulation still exists in an unmodified form in
+    your packet tree, this link will open it directly.  If the original
+    has been modified or deleted, then this link will be marked as
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">private copy</span></span>, which indicates that the
+    (hyper)surface list took its own copy of the original triangulation
+    for safekeeping.
+    These private copies are saved in <span class="application">Regina</span> data files,
+    so you do not need to worry about losing the original triangulation
+    if you close <span class="application">Regina</span> and reopen it later.
+   </p><p>
+    <span class="inlinemediaobject"><img src="surfaces-tri-private.png" srcset="surfaces-tri-private@2x.png 2x, surfaces-tri-private.png"></span>
+   </p><p>
+    If you try to open this private copy, <span class="application">Regina</span> will instead
+    offer to insert a fresh copy of the original triangulation in your
+    packet tree, for you to view and/or edit as you like.
+   </p><p>
+    <span class="inlinemediaobject"><img src="surfaces-tri-restore.png" srcset="surfaces-tri-restore@2x.png 2x, surfaces-tri-restore.png"></span>
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="surfaces-summary"></a>Summary of (Hyper)surfaces</h3></div></div></div><p>
+    The <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Summary</span></span> tab breaks down the
+    total number of (hyper)surfaces
+    into sub-counts for different types of (hyper)surfaces,
+    as illustrated below.  At a broad level, the total is divided into:
+    </p><div class="itemizedlist"><ul type="disc"><li><p>
+      <span class="emphasis"><em>closed</em></span> (hyper)surfaces, which do not meet the
+      boundary of the triangulation and contain only finitely many
+      normal pieces;
+     </p></li><li><p>
+      <span class="emphasis"><em>bounded</em></span> (hyper)surfaces, which do meet the
+      boundary of the triangulation and again only have finitely many
+      normal pieces;
+     </p></li><li><p>
+      <span class="emphasis"><em>spun-normal surfaces</em></span> in 3-manifold triangulations,
+      which have infinitely many triangles;
+     </p></li><li><p>
+      <span class="emphasis"><em>non-compact hypersurfaces</em></span> in
+      4-manifold triangulations, which have infinitely many tetrahedra.
+     </p></li></ul></div><p>
+   </p><p>
+    For each category that contains one or more (hyper)surfaces, a table is
+    shown to break this down further according to various simple
+    properties.  These include orientability, 1-or-2-sidedness,
+    Euler characteristic (within 3-manifolds only),
+    and homology (within 4-manifolds only).
+   </p><p>
+    <span class="inlinemediaobject"><img src="surfaces-summary.png" srcset="surfaces-summary@2x.png 2x, surfaces-summary.png"></span>
+   </p><p>
+    <span class="inlinemediaobject"><img src="hypersurfaces-summary.png" srcset="hypersurfaces-summary@2x.png 2x, hypersurfaces-summary.png"></span>
+   </p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
+    Spun-normal surfaces and non-compact hypersurfaces will only be
+    explicitly mentioned in the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Summary</span></span> tab if your
+    enumeration coordinate system supports them.  In particular, for
+    normal hypersurfaces in 4-manifold triangulations, non-compact surfaces
+    should never be mentioned at all, unless you have used a specialised
+    hand-coded enumeration algorithm.
+   </p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="surfaces-coords"></a>Details of Individual (Hyper)surfaces</h3></div></div></div><p>
+    You can view details of the individual surfaces in the
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Surface Coordinates</span></span> or
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Hypersurface Coordinates</span></span> tab.  This brings up a
+    large table in which each row represents a single normal (or almost
+    normal) surface or hypersurface.
+   </p><p>
+    <span class="inlinemediaobject"><img src="surfaces-coords.png" srcset="surfaces-coords@2x.png 2x, surfaces-coords.png"></span>
+   </p><p>
+    <span class="inlinemediaobject"><img src="hypersurfaces-coords.png" srcset="hypersurfaces-coords@2x.png 2x, hypersurfaces-coords.png"></span>
+   </p><p>
+    Above the table are some drop-down boxes that let you view the
+    list in different coordinate systems, and—for 3-manifolds
+    only—with different filters applied.
+    These options are discussed further in the notes on
+    <a href="surfaces-analysis.html#surfaces-coords-coords" title="Coordinates and Coordinate Systems">coordinate systems</a>
+    and
+    <a href="surfaces-filtering.html" title="Filtering Surfaces (3-D)">filtering surfaces</a>
+    respectively.
+   </p><p>
+    In the first column, (hyper)surfaces are numbered 0,1,2,…
+    in no particular order, so that you can make note of them for later on.
+    You can also assign arbitrary names to (hyper)surfaces by typing
+    directly into the second column; these names will be saved with your
+    data file.
+   </p><p>
+    <span class="inlinemediaobject"><img src="hypersurfaces-rename.png" srcset="hypersurfaces-rename@2x.png 2x, hypersurfaces-rename.png"></span>
+   </p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="surfaces-coords-props"></a>Properties of (hyper)surfaces</h4></div></div></div><p>
+     The next few columns describe various properties of each (hyper)surface.
+     Some of these columns might be empty or absent in your
+     viewer (for instance, <span class="application">Regina</span> does not compute Euler
+     characteristic for spun-normal surfaces, and it hides several
+     columns if your enumeration allowed for immersed or singular surfaces).
+    </p><p>
+     The columns and their meanings are:
+     </p><div class="glosslist"><dl><dt><a name="surfaces-propeuler"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Euler</span></span> (for 3-manifolds only)</dt><dd><p>
+        Shows the Euler characteristic of the surface.
+       </p></dd><dt><a name="hypersurfaces-prophomology"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Homology</span></span> (for 4-manifolds only)</dt><dd><p>
+        Shows the first homology group of the hypersurface.
+       </p></dd><dt><a name="surfaces-proporient"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Orient</span></span></dt><dd><p>
+        Contains a tick (✓) if the (hyper)surface is
+        orientable, or the text <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Non-or.</span></span> if it is not.
+       </p></dd><dt><a name="surfaces-propsides"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Sides</span></span></dt><dd><p>
+        Shows whether the (hyper)surface is one-sided or two-sided.
+       </p></dd><dt><a name="surfaces-boundary"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Bdry</span></span></dt><dd><p>
+        Indicates what type of boundary the (hyper)surface has.
+        This will be one of:
+        </p><div class="glosslist"><dl><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">—</span></span></dt><dd><p>
+           Indicates a closed, compact (hyper)surface; that is,
+           with no boundary at all and finitely many normal pieces.
+          </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Real</span></span></dt><dd><p>
+            Indicates a compact (hyper)surface with boundary; that is,
+            with finitely many normal pieces, some of which meet the
+            boundary of the triangulation.
+           </p><p>
+            The word <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Real</span></span> (as opposed to a precise
+            number) indicates that <span class="application">Regina</span> does not know the exact number
+            of boundary components.  Currently <span class="application">Regina</span> does not count
+            boundary components for normal hypersurfaces in 4-manifolds,
+            or when enumerating immersed/singular normal surfaces in
+            3-manifolds.
+           </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">1, 2, 3, …</span></span></dt><dd><p>
+            As with <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Real</span></span>, this indicates a compact
+            (hyper)surface with boundary, but moreover it indicates the
+            precise number of boundary components.
+           </p><p>
+            Currently <span class="application">Regina</span> will only count boundary components if
+            you enumerate embedded normal surfaces in 3-manifold
+            triangulations, and only for those resulting surfaces that
+            are compact.
+           </p></dd><dt><a name="surfaces-spun"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Spun</span></span> (3-manifolds only)</dt><dd><p>
+            Indicates a spun-normal surface; that is, a non-compact surface
+            with infinitely many triangles.
+            These only appear when the enumeration is done in
+            quadrilateral or quadrilateral-octagon coordinates.
+           </p><p>
+            <span class="application">Regina</span> can compute boundary slopes for spun-normal surfaces,
+            but only for quadrilateral coordinates (not
+            quadrilateral-octagon coordinates), only for orientable
+            3-manifolds, and only for
+            <a href="packet-types.html#packet-snappea" title="SnapPea Triangulations"><span class="application">SnapPea</span> triangulation
+            packets</a> (because <span class="application">Regina</span>'s native
+            <a href="packet-types.html#packet-triangulation3" title="3-Manifold Triangulations">triangulation packets</a>
+            do not provide a meridian and longitude on each cusp).
+           </p><p>
+            If you have a native <span class="application">Regina</span> triangulation and you wish to view
+            boundary slopes for spun-normal surfaces, you must first
+            <a href="snappea.html#snappea-fromregina" title="Converting from a Regina Triangulation">convert it</a>
+            to a <span class="application">SnapPea</span> triangulation, which will install a default
+            (shortest, second shortest) basis on each cusp.  After this
+            you can enumerate vertex or fundamental surfaces relative to
+            the new <span class="application">SnapPea</span> triangulation, and <span class="application">Regina</span> will show you
+            the boundary slopes.
+            If you already began with a <span class="application">SnapPea</span> triangulation
+            (for instance, one that you
+            <a href="foreign.html#import-snappea" title="SnapPea Triangulations">imported from <span class="application">SnapPy</span></a>),
+            then <span class="application">Regina</span> will work with whatever basis <span class="application">SnapPea</span> was already
+            using for that triangulation.
+           </p><p>
+            Each boundary slope is presented as a pair
+            (<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>p</code></em></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>q</code></em></span>)
+            for each cusp, indicating that the boundary curve passes
+            <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>p</code></em></span> times around the meridian and
+            <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>q</code></em></span> times around the longitude.
+            If there are multiple cusps, these pairs
+            will be ordered by
+            <a href="snappea-analysis.html#snappea-shapes-cusps" title="Cusps, Fillings and Tetrahedron Shapes">cusp number</a>.
+           </p><p>
+            <span class="inlinemediaobject"><img src="surfaces-slopes.png" srcset="surfaces-slopes@2x.png 2x, surfaces-slopes.png"></span>
+           </p></dd><dt><a name="hypersurfaces-spun"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Non-compact</span></span> (4-manifolds only)</dt><dd><p>
+            Indicates a non-compact hypersurface with infinitely many
+            tetrahedra.
+            As noted earlier, you should never see this unless you have
+            used your own specialised enumeration algorithms—this is
+            because <span class="application">Regina</span> currently only enumerates hypersurfaces
+            in standard coordinates, which produces compact hypersurfaces only.
+           </p></dd></dl></div><p>
+       </p></dd><dt><a name="surfaces-proplink"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Link</span></span></dt><dd><p>
+         Indicates if a (hyper)surface is the link of some face of
+         the underlying triangulation.
+         In general, the <em class="firstterm">link</em> of a face is created
+         by forming the boundary <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>b</code></em></span> of a small
+         regular neighbourhood of the face.  We call this link
+         <em class="firstterm">thin</em> if the (hyper)surface
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>b</code></em></span>
+         is already normal; otherwise we refer to the
+         <em class="firstterm">normalised</em> link as the result of
+         applying the standard normalisation process to
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>b</code></em></span> (which could change the topology,
+         and in some extreme scenarios could even reduce
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>b</code></em></span> to the empty surface).
+        </p><p>
+         If this (hyper)surface is the link of a face then the relevant faces
+         will be listed here, using the vertex, edge, triangle and/or
+         tetrahedron numbers that appear in the first
+         column of the <a href="tri-analysis.html#tri-faces" title="Viewing Faces">skeletal face viewers</a>.
+         Note that it is possible for a (hyper)surface to be the link of
+         several faces at the same time, possibly even of different dimensions,
+         in which case they will all be reported here.
+        </p><p>
+         Any thin links will be reported first (indicated by
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Thin:</span></span>), followed by any normalised links
+         (indicated by <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Normal:</span></span>).
+         Vertices, edges, triangles and tetrahedra will be indicated by the
+         abbreviations <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">vtx</span></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">edge</span></span>,
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">tri</span></span> and <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">tet</span></span>.
+         In 3-manifold triangulations, <span class="application">Regina</span> will only detect
+         vertex, edge and triangle links; in 4-manifold triangulations,
+         <span class="application">Regina</span> will detect vertex, edge, triangle and tetrahedron links.
+        </p><p>
+         Some examples of things you might see in this column:
+         </p><div class="glosslist"><dl><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Thin: vtx 3</span></span></dt><dd><p>
+            Indicates a (hyper)surface that is the thin link of
+            vertex 3 (note that vertex links are always thin).
+           </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Thin: tri 4; Normal: edge 1</span></span></dt><dd><p>
+            Indicates a (hyper)surface that is simultaneously the thin
+            link of triangle 4, and also the normalised link of
+            edge 1.
+           </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Thin: edge 0,2</span></span></dt><dd><p>
+            Indicates a (hyper)surface that is simultaneously the thin
+            link of edges 0 and 2 (note that a surface or
+            hypersurface can never be the thin link of more than two faces).
+           </p></dd></dl></div><p>
+        </p><p>
+         A one-sided (hyper)surface whose <span class="emphasis"><em>double</em></span> is
+         the link of a face will also be reported as such in this table
+         (though this can never happen with vertex links).
+        </p><p>
+         If the (hyper)surface is not the link of a face as
+         described above, then this cell will be left empty.
+        </p></dd><dt><a name="surfaces-proptype"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Type</span></span> (3-manifolds only)</dt><dd><p>
+         Indicates if this is one of a few special types of normal surface that
+         <span class="application">Regina</span> identifies.  Possible values are:
+         </p><div class="glosslist"><dl><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Central</span></span></dt><dd><p>
+            There is at most one normal or almost normal disc
+            per tetrahedron (which may be a triangle, quadrilateral or octagon).
+            The cell will also list the total number of normal discs
+            (i.e., the total number of tetrahedra that this surface meets).
+           </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Splitting</span></span></dt><dd><p>
+            There is precisely one quadrilateral per tetrahedron
+            and no other normal (or almost normal) discs.
+            Although splitting surfaces are also central, only the word
+            <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Splitting</span></span> will be displayed.
+           </p></dd></dl></div><p>
+         If the surface is not one of these types,
+         this cell will be left empty.
+        </p></dd><dt><a name="surfaces-propoctagon"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Octagon</span></span> (3-manifolds only)</dt><dd><p>
+         Indicates which coordinate position contains the octagonal
+         discs (if any), and how many octagonal discs there are.
+         (Recall that the enumeration procedure insists that at most one
+         coordinate <span class="emphasis"><em>position</em></span> can have octagonal discs,
+         but allows any number of octagons of that type.)
+        </p><p>
+         This column only appears if you enumerated using an
+         almost normal coordinate system.
+        </p><p>
+         <span class="inlinemediaobject"><img src="surfaces-octagons.png" srcset="surfaces-octagons@2x.png 2x, surfaces-octagons.png"></span>
+        </p><p>
+         If this cell is empty, it means
+         the surface does not contain any octagons at all
+         (i.e., you have a normal surface, not an almost normal surface).
+         Otherwise it will state which coordinate position
+         contains the octagons and how many octagons there are
+         (for example, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">K2: 03/12 (3 octs)</span></span>).
+        </p></dd></dl></div><p>
+    </p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="surfaces-coords-coords"></a>Coordinates and Coordinate Systems</h4></div></div></div><p>
+     The remaining columns give the precise normal coordinates of the
+     surface or hypersurface.
+    </p><p>
+     You can view (hyper)surfaces in several different coordinate systems,
+     not just the system you <a href="surfaces.html#surfaces-selectcoords">used for
+     enumeration</a>.  To change the coordinate system, simply
+     select a new system from the drop-down box above the table.
+    </p><p>
+     <span class="inlinemediaobject"><img src="hypersurfaces-coordbox.png" srcset="hypersurfaces-coordbox@2x.png 2x, hypersurfaces-coordbox.png"></span>
+    </p><p>
+     This will <span class="emphasis"><em>not re-enumerate</em></span>
+     surfaces in the new coordinate system; it will simply re-display
+     the surfaces you already have.  For example, if you enumerated
+     normal surfaces in
+     quadrilateral coordinates then your list will not contain any
+     vertex links, and these will not suddenly appear when you view in
+     standard coorinates.  If your list contains spun-normal surfaces
+     and you view them in standard coordinates, they will not
+     disappear (instead you will see triangular coordinates of ∞).
+    </p><p>
+     For normal surfaces in 3-manifold triangulations,
+     the available coordinate systems are as follows.
+     Some options might not be available for your surface list
+     (for instance, if you enumerated in standard normal coordinates
+     then the almost normal systems will not appear).
+     </p><div class="glosslist"><dl><dt><a name="surfaces-defstandard"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Standard normal (tri-quad)</span></span></dt><dd><p>
+         This is the standard 7<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span>-dimensional
+         coordinate system that typically appears in papers and textbooks
+         (where <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span> is the number of tetrahedra).
+         Each tetrahedron contributes four triangle and three
+         quadrilateral coordinates.
+        </p><p>
+         Triangle coordinates are labelled
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">0:0</span></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">0:1</span></span>,
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">0:2</span></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">0:3</span></span>,
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">1:0</span></span>, etc., where coordinate
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>t</code></em></span>:<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>v</code></em></span>
+         counts the number of triangles in tetrahedron
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>t</code></em></span> that separate vertex
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>v</code></em></span> of that tetrahedron from the others.
+         Here 0 ≤ <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>t</code></em></span> &lt; <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span>
+         and <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>v</code></em></span> ∊ {0,1,2,3}.
+        </p><p>
+         Quadrilateral coordinates are labelled
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">0:01/23</span></span>,
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">0:02/13</span></span>,
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">0:03/12</span></span>,
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">1:01/23</span></span>,
+         etc., where coordinate
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>t</code></em></span>:<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>ab</code></em></span>/<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>cd</code></em></span>
+         counts the number of quadrilaterals in tetrahedron
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>t</code></em></span> that separate vertices
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>a</code></em></span> and <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>b</code></em></span>
+         of that tetrahedron from vertices
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>c</code></em></span> and <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span>.
+         Here 0 ≤ <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>t</code></em></span> &lt; <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span>,
+         and <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>a</code></em></span>,<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>b</code></em></span>,<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>c</code></em></span>,<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span>
+         are some permutation of 0,1,2,3.
+        </p></dd><dt><a name="surfaces-defquad"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Quad normal</span></span></dt><dd><p>
+         These are the 3<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span>-dimensional
+         <em class="firstterm">quadrilateral coordinates</em>,
+         obtained from standard normal (tri-quad) coordinates by ignoring
+         all triangles and considering only the quadrilaterals.
+         See [<a href="bibliography.html#bib-quadspace" title="[Tol98]"><span class="abbrev">Tol98</span></a>] or
+         [<a href="bibliography.html#bib-burton-convert" title="[Bur09a]"><span class="abbrev">Bur09a</span></a>] for details.
+        </p></dd><dt><a name="surfaces-defstandardan"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Standard almost normal
+        (tri-quad-oct)</span></span></dt><dd><p>
+         This is a 10<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span>-dimensional system
+         for almost normal surfaces,
+         obtained from standard normal (tri-quad) coordinates by adding three
+         octagon coordinates per tetrahedron.
+        </p><p>
+         Octagon coordinates are again labelled
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">0:01/23</span></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">0:02/13</span></span>,
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">0:03/12</span></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">1:01/23</span></span>,
+         etc., where coordinate
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>t</code></em></span>:<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>ab</code></em></span>/<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>cd</code></em></span>
+         counts the number of octagons in tetrahedron
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>t</code></em></span> that separate vertices
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>a</code></em></span> and <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>b</code></em></span> from
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>c</code></em></span> and <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span>.
+        </p><p>
+         To avoid ambiguity, all triangle, quadrilateral and octagon
+         coordinate labels are prefixed
+         with <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">T</span></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Q</span></span> and
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">K</span></span> respectively.  The full
+         coordinates are therefore
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">T0:0</span></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">T0:1</span></span>,
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">T0:2</span></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">T0:3</span></span>,
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Q0:01/23</span></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Q0:02/13</span></span>,
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Q0:03/12</span></span>,
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">K0:01/23</span></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">K0:02/13</span></span>,
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">K0:03/12</span></span>,
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">T1:0</span></span>, etc.
+        </p></dd><dt><a name="surfaces-defquadoct"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Quad-oct almost normal</span></span></dt><dd><p>
+         These are the 6<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span>-dimensional
+         <em class="firstterm">quadrilateral-octagon coordinates</em>,
+         obtained from standard almost normal (tri-quad-oct) coordinates by
+         ignoring all triangles and considering only the quadrilaterals
+         and octagons.  See [<a href="bibliography.html#bib-burton-quadoct" title="[Bur10b]"><span class="abbrev">Bur10b</span></a>] for details.
+        </p></dd><dt><a name="surfaces-deflegacyan"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Legacy almost normal
+        (pruned tri-quad-oct)</span></span></dt><dd><p>
+         Legacy coordinates are to support data files created in
+         <span class="application">Regina</span> 4.5.1 or earlier.
+         These are like standard almost normal (tri-quad-oct)
+         coordinates, except that surfaces with
+         <span class="emphasis"><em>more than one octagon</em></span>
+         are deleted entirely.
+        </p><p>
+         If you created your surfaces in
+         <span class="application">Regina</span> 4.5.1 or earlier, there is no way to recover
+         those surfaces with multiple octagons—they would have been
+         deleted when you originally enumerated them.  Instead you will
+         need to <a href="surfaces.html#surfaces-creation" title="Enumerating Normal Surfaces and Hypersurfaces">enumerate them
+         again</a>.
+         Your list will always be displayed
+         with the label <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">legacy almost normal coordinates</span></span>
+         to remind you of this.
+        </p><p>
+         From <span class="application">Regina</span> 4.6 onwards, the enumeration process now
+         keeps almost surfaces with multiple octagons (though they must
+         be in the same coordinate position).  This is important if you
+         wish to generate new almost normal surfaces by taking convex
+         combinations of old surfaces.
+         If you are only interested in surfaces with one octagon,
+         the <a href="surfaces-analysis.html#surfaces-propoctagon">Octagon column</a>
+         makes them easy to spot.
+        </p></dd><dt><a name="surfaces-defedgewt"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Edge weight</span></span></dt><dd><p>
+         This system has one coordinate for each edge of the
+         triangulation.
+         The coordinates are labelled <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">0</span></span>,
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">1</span></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">2</span></span>, etc., where
+         coordinate <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>e</code></em></span> counts the number of times the
+         surface crosses edge number <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>e</code></em></span>.
+        </p><p>
+         Edge numbers and the tetrahedron edges to which they
+         correspond can be found in the
+         <a href="tri-analysis.html#tri-faces" title="Viewing Faces">edge viewer</a>,
+         under the triangulation's <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Skeleton</span></span> tab.
+        </p><p>
+         Edge weight coordinates are offered for viewing only.
+         You cannot enumerate surfaces in edge weight coordinates.
+        </p></dd><dt><a name="surfaces-deftrianglearc"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Triangle arc</span></span></dt><dd><p>
+         This system has three coordinates for each triangle (2-face) of the
+         triangulation.
+         The coordinates are labelled
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">0:0</span></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">0:1</span></span>,
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">0:2</span></span>,
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">1:0</span></span>, etc., where coordinate
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>t</code></em></span>:<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>v</code></em></span>
+         represents the number of times the surface slices through triangle
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>t</code></em></span> of the triangulation in an arc
+         that truncates vertex <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>v</code></em></span> of that triangle.
+         Here <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>v</code></em></span> ∊ {0,1,2}.
+        </p><p>
+         Triangle numbers and the tetrahedron faces to which they
+         correspond can be found in the
+         <a href="tri-analysis.html#tri-faces" title="Viewing Faces">triangle viewer</a>,
+         under the triangulation's <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Skeleton</span></span> tab.
+         The three vertices 0,1,2 of each triangle correspond to the
+         ordering of tetrahedron vertices that you see in the rightmost
+         column of the triangle viewer.
+        </p><p>
+         Triangle arc coordinates are likewise offered for viewing only.
+         You cannot enumerate surfaces in triangle arc coordinates.
+        </p></dd></dl></div><p>
+    </p><p>
+     For normal hypersurfaces in 4-manifold triangulations,
+     the available coordinate systems are:
+     </p><div class="glosslist"><dl><dt><a name="hypersurfaces-defstandard"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Standard normal (tet-prism)</span></span></dt><dd><p>
+         This is the 15<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span>-dimensional
+         coordinate system that counts all tetrahedra and prisms of all types
+         (where <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span> is the number of pentachora
+         in the underlying triangulation).
+         Each pentachoron contributes five triangle and ten prism coordinates.
+        </p><p>
+         Tetrahedron coordinates are labelled
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">0:0</span></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">0:1</span></span>,
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">0:2</span></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">0:3</span></span>,
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">0:4</span></span>,
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">1:0</span></span>, etc., where coordinate
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>p</code></em></span>:<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>v</code></em></span>
+         counts the number of tetrahedra in pentachoron
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>p</code></em></span> that truncate vertex
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>v</code></em></span> of that pentachoron.
+         Here 0 ≤ <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>p</code></em></span> &lt; <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span>
+         and <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>v</code></em></span> ∊ {0,1,2,3,4}.
+        </p><p>
+         Prism coordinates are labelled
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">0:01</span></span>,
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">0:02</span></span>,
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">0:03</span></span>,
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">0:04</span></span>,
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">0:12</span></span>, …,
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">0:34</span></span>,
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">1:01</span></span>,
+         etc., where coordinate
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>p</code></em></span>:<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>ab</code></em></span>
+         counts the number of prisms in pentachoron
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>t</code></em></span> that truncate the edge joining
+         vertices <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>a</code></em></span> and <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>b</code></em></span>
+         of that pentachoron.
+         Here 0 ≤ <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>p</code></em></span> &lt; <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span>,
+         and
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>a</code></em></span>,<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>b</code></em></span> ∊ {0,1,2,3,4}
+         with <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>a</code></em></span> &lt; <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>b</code></em></span>.
+        </p></dd><dt><a name="hypersurfaces-defprism"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Prism normal</span></span></dt><dd><p>
+         These are the 10<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span>-dimensional
+         <em class="firstterm">prism coordinates</em>,
+         obtained from standard normal (tet-prism) coordinates by ignoring
+         all tetrahedra and considering only the prisms.
+        </p></dd><dt><a name="hypersurfaces-defedgewt"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Edge weight</span></span></dt><dd><p>
+         This system has one coordinate for each edge of the
+         triangulation.
+         The coordinates are labelled <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">0</span></span>,
+         <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">1</span></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">2</span></span>, etc., where
+         coordinate <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>e</code></em></span> counts the number of times the
+         hypersurface crosses edge number <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>e</code></em></span>.
+        </p><p>
+         Edge numbers and the pentachoron edges to which they
+         correspond can be found in the
+         <a href="tri-analysis.html#tri-faces" title="Viewing Faces">edge viewer</a>,
+         under the triangulation's <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Skeleton</span></span> tab.
+        </p><p>
+         Edge weight coordinates are offered for viewing only.
+         You cannot enumerate hypersurfaces in edge weight coordinates.
+        </p></dd></dl></div><p>
+    </p><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>
+     If you grab and resize one of the coordinate columns, all of the
+     coordinate columns will be resized at once.  This is useful if you
+     wish to fit as many columns on the screen as possible.
+    </p></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="surfaces-viewmatching"></a>Original Matching Equations</h3></div></div></div><p>
+    The <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Matching Equations</span></span> tab
+    shows a table with the individual matching equations that
+    were used when you enumerated this list.
+   </p><p>
+    <span class="inlinemediaobject"><img src="hypersurfaces-matching.png" srcset="hypersurfaces-matching@2x.png 2x, hypersurfaces-matching.png"></span>
+   </p><p>
+    The matching equations will always use the same
+    coordinate system that you
+    <a href="surfaces.html#surfaces-selectcoords">used during enumeration</a>.
+    Remember that this coordinate system is always displayed
+    <a href="surfaces-analysis.html" title="Analysis">above all of the tabs</a>.
+   </p><p>
+    Each row of this table represents an individual matching equation.
+    Each equation is a homogeneous linear equation, and the coefficients
+    for each coordinate position are shown in the individual table cells.
+    See the
+    <a href="surfaces-analysis.html#surfaces-coords-coords" title="Coordinates and Coordinate Systems">coordinate viewer</a>
+    for details on how the coordinate columms are labelled.
+   </p><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>
+    Like the coordinate viewer,
+    if you grab and resize one of the columns then all columns
+    will be resized at once.  This is useful if you
+    wish to fit as much of the matrix on screen as possible.
+   </p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="surfaces-compat"></a>Compatibility Between (Hyper)surfaces</h3></div></div></div><p>
+    The <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Compatibility</span></span> tab
+    shows which pairs of (hyper)surfaces are
+    <span class="emphasis"><em>locally</em></span> and <span class="emphasis"><em>globally</em></span>
+    compatible with each other.  This means:
+   </p><p>
+    </p><div class="glosslist"><dl><dt><a name="surfaces-localcompat"></a>Locally compatible</dt><dd><p>
+        Two (hyper)surfaces are <span class="emphasis"><em>locally compatible</em></span> if
+        they are able to avoid intersection in any given top-dimensional
+        simplex of the triangulation (though not necessarily in all
+        such simplices simultaneously).
+       </p><p>
+        For 3-manifolds, this means that two compatible normal surfaces
+        can avoid intersecting in any given tetrahedron of the
+        triangulation.  That is, in each tetrahedron, they
+        <span class="emphasis"><em>together</em></span> use at most one quadrilateral or
+        octagonal disc type.
+       </p><p>
+        For 4-manifolds, this means that two compatible normal hypersurfaces
+        can avoid intersecting in any given pentachoron of the
+        triangulation.  That is, in each pentachoron, they
+        <span class="emphasis"><em>together</em></span> do not use two conflicting prism types.
+       </p></dd><dt><a name="surfaces-globalcompat"></a>Globally compatible (shown for 3-manifolds only)</dt><dd><p>
+        Two normal surfaces are <span class="emphasis"><em>globally compatible</em></span> if
+        they are able to avoid intersection in <span class="emphasis"><em>all</em></span>
+        tetrahedra of the 3-manifold triangulation simultaneously.
+       </p><p>
+        In other words, two surfaces are globally compatible if they can
+        be made <span class="emphasis"><em>disjoint</em></span> within the
+        underlying triangulation.
+       </p></dd></dl></div><p>
+   </p><p>
+    The <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Compatibility</span></span> tab shows this information
+    visually using coloured matrices.  It only displays one matrix at
+    a time (either the local compatibility matrix or, for 3-manifolds only,
+    the global compatibility matrix).  You can
+    switch between them using the drop-down box indicated below.
+   </p><p>
+    <span class="inlinemediaobject"><img src="surfaces-compat-local.png" srcset="surfaces-compat-local@2x.png 2x, surfaces-compat-local.png"></span>
+   </p><p>
+    Each matrix has dimensions
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>S</code></em></span> × <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>S</code></em></span>,
+    where <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>S</code></em></span> is the total number of (hyper)surfaces
+    in the list.  Rows and columns are both numbered
+    0,...,<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>S</code></em></span>-1.
+    The cell at position
+    (<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>x</code></em></span>,<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>y</code></em></span>)
+    is filled if and only if the (hyper)surfaces numbered
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>x</code></em></span> and <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>y</code></em></span> are
+    compatible.  Recall that (hyper)surfaces are numbered in the leftmost
+    column of the <a href="surfaces-analysis.html#surfaces-coords" title="Details of Individual (Hyper)surfaces">coordinate viewer</a>.
+   </p><p>
+    For some normal surfaces in 3-manifolds,
+    <span class="application">Regina</span> cannot test global compatibility.
+    These include surfaces that are empty, disconnected, or spun-normal.
+    In such cases the corresponding rows and columns will be hashed out,
+    as illustrated below.
+   </p><p>
+    <span class="inlinemediaobject"><img src="surfaces-compat-hash.png" srcset="surfaces-compat-hash@2x.png 2x, surfaces-compat-hash.png"></span>
+   </p><p>
+    If you have too many surfaces or hypersurfaces in your list,
+    <span class="application">Regina</span> will not generate the compatibility matrices automatically.
+    You can still compute them by pressing the
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Calculate</span></span> button (indicated below).
+   </p><p>
+    <span class="inlinemediaobject"><img src="surfaces-compat-compute.png" srcset="surfaces-compat-compute@2x.png 2x, surfaces-compat-compute.png"></span>
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="idp105544727230096"></a>Crushing and Cutting</h3></div></div></div><p>
+    Within a 3-manifold triangulation,
+    you can cut along a normal surface, or crush it using the techniques
+    of Jaco and Rubinstein [<a href="bibliography.html#bib-0-efficiency" title="[JR03]"><span class="abbrev">JR03</span></a>].
+    See the <a href="tri-modification.html#tri-cutcrush" title="Cutting Along and Crushing Normal Surfaces (3-D)">chapter on triangulations</a>
+    for details.
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="hypersurfaces-triangulate"></a>Triangulating Hypersurfaces</h3></div></div></div><p>
+    Within a 4-manifold triangulation,
+    if you wish to study a normal hypersurface in more detail, you can
+    triangulate it.  This will create a new 3-manifold triangulation
+    describing the topology of the hypersurface, which you can then attack with
+    <a href="triangulations.html" title="Chapter 3. Triangulations">all of the 3-manifold machinery</a>
+    that <span class="application">Regina</span> offers.
+   </p><p>
+    To triangulate a normal hypersurface,
+    select your hypersurface in the list and then choose
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Normal Hypersurfaces</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Triangulate Hypersurface</span></span>
+    from the menu.
+   </p><p>
+    <span class="inlinemediaobject"><img src="hypersurfaces-tri.png" srcset="hypersurfaces-tri@2x.png 2x, hypersurfaces-tri.png"></span>
+   </p><p>
+    <span class="application">Regina</span> will create a new 3-manifold triangulation, which will appear
+    beneath the normal hypersurface list in the packet tree.
+   </p><p>
+    <span class="inlinemediaobject"><img src="hypersurfaces-tri-results.png" srcset="hypersurfaces-tri-results@2x.png 2x, hypersurfaces-tri-results.png"></span>
+   </p></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="surfaces.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="surfaces-filtering.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">Normal Surfaces and Hypersurfaces </td><td width="34%" align="center" class="navCenter"><a href="surfaces.html">Up</a></td><td width="33%" align="right" class="navRight"> Filtering Surfaces (3-D)</td></tr></table></div></body></html>

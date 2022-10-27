@@ -1,0 +1,32 @@
+<html><head><title>pdf</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Regina, XML, Data files"><link rel="start" href="index.html" title="Regina 7.2 File Format Reference"><link rel="up" href="removed.html" title="Deprecated and Removed Elements"><link rel="prev" href="data-pentachora.html" title="pentachora"><link rel="next" href="data-realbdry-filter.html" title="realbdry (filter)"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>pdf</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="data-pentachora.html">Prev</a></td><td align="center" class="navCenter" width="34%">Deprecated and Removed Elements</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="data-realbdry-filter.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="data-pdf"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>pdf — Replaced by <a href="data-attachment.html" title="attachment"><code class="sgmltag-element">attachment</code></a></p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="informaltable"><table border="1"><colgroup><col><col></colgroup><tbody><tr><td colspan="2">
+      <span class="bold"><strong>Content Model</strong></span>
+     </td></tr><tr><td colspan="2">
+<pre class="synopsis">
+pdf ::= (#PCDATA)</pre>
+     </td></tr><tr><td colspan="2">
+      <span class="bold"><strong>Attributes</strong></span>
+     </td></tr><tr><td><span class="bold"><strong>Name</strong></span></td><td><span class="bold"><strong>Type</strong></span></td></tr><tr><td><code class="sgmltag-element">encoding</code></td><td><span class="type">CDATA</span> (required)</td></tr></tbody></table></div><p>Deprecated since <span class="application">Regina</span> 7.0</p></div><div class="refsect1" lang="en"><a name="idp105544769317008"></a><h2>Description</h2><p>
+   This element was used in the past to store the contents of a <span class="acronym">PDF</span> packet.
+   Since <span class="application">Regina</span> 7.0, <span class="acronym">PDF</span> packets now store their content
+   directly in the character data of an <a href="data-attachment.html" title="attachment"><code class="sgmltag-element">attachment</code></a> element
+   (which replaces the old <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a> element for <span class="acronym">PDF</span> packets).
+  </p><p>
+   A <a href="data-pdf.html" title="pdf"><code class="sgmltag-element">pdf</code></a> element contains a single <span class="acronym">PDF</span> document, encoded in
+   a printable format.  The precise encoding format is specified by the
+   <code class="sgmltag-element">encoding</code> attribute (see below).
+  </p><p>
+   Whitespace and line breaks within this element are not relevant and
+   can be ignored.
+  </p><div class="refsect2" lang="en"><a name="idp105544769323152"></a><h3>Parents</h3><p>
+    The following elements contain <code class="sgmltag-element">pdf</code>:
+    <span class="simplelist"><a href="data-packet-pdf.html" title="packet (PDF)"><code class="sgmltag-element">packet</code> (<span class="acronym">PDF</span>)</a></span>.
+   </p></div><div class="refsect2" lang="en"><a name="idp105544769326480"></a><h3>Children</h3><p>
+    Element <code class="sgmltag-element">pdf</code> has no children.
+   </p></div></div><div class="refsect1" lang="en"><a name="idp105544769262608"></a><h2>Attributes</h2><div class="variablelist"><dl><dt><span class="term"><code class="sgmltag-element">encoding</code></span></dt><dd><p>
+     Specifies how the binary <span class="acronym">PDF</span> document is encoded in printable
+     format.  Possible values are <code class="literal">base64</code> (indicating
+     a <span class="application">base64</span> encoding with printable character
+     set <code class="literal">A-Za-z0-9+/</code>), or <code class="literal">null</code>
+     (indicating that the <span class="acronym">PDF</span> document is empty, i.e., a zero-byte file).
+    </p></dd></dl></div></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="data-pentachora.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="data-realbdry-filter.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">pentachora </td><td width="34%" align="center" class="navCenter"><a href="removed.html">Up</a></td><td width="33%" align="right" class="navRight"> realbdry (filter)</td></tr></table></div></body></html>

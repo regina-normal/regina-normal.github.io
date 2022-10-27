@@ -1,0 +1,156 @@
+<html><head><title>Exporting</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina 7.2 Handbook"><link rel="up" href="foreign.html" title="Chapter 8. Importing and Exporting Data"><link rel="prev" href="foreign.html" title="Chapter 8. Importing and Exporting Data"><link rel="next" href="python.html" title="Chapter 9. Python Scripting"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Exporting</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="foreign.html">Prev</a></td><td align="center" class="navCenter" width="34%">Importing and Exporting Data</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="python.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="foreign-export"></a>Exporting</h2></div></div></div><p>
+   An <em class="firstterm">export</em> involves writing data from your
+   working packet tree into some foreign file format.
+   For most formats you can only export small pieces of your packet tree
+   at a time (such as individual triangulations).
+   All exports are done through the
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">File</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guisubmenu">Export</span></span>
+   menu.
+  </p><p>
+   <span class="inlinemediaobject"><img src="menu-export.png" srcset="menu-export@2x.png 2x, menu-export.png"></span>
+  </p><p>
+   When you select an action from the
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">File</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guisubmenu">Export</span></span>
+   menu, <span class="application">Regina</span> will ask you which packet to export.
+   For most export formats <span class="application">Regina</span> will only export the selected packet,
+   but for some formats (such as
+   <a href="foreign-export.html#export-rga" title="Regina Data Files"><span class="application">Regina</span>'s own data format</a>)
+   it will export an entire packet subtree.
+  </p><p>
+   <span class="inlinemediaobject"><img src="export-snappea.png" srcset="export-snappea@2x.png 2x, export-snappea.png"></span>
+  </p><p>
+   After selecting a packet, you will
+   be asked to choose a filename for your export.
+   <span class="application">Regina</span> will then save the exported data to that file.
+  </p><p>
+   <span class="application">Regina</span> can export data to the following file formats:
+  </p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="export-rga"></a><span class="application">Regina</span> Data Files</h3></div></div></div><p>
+    This is <span class="application">Regina</span>'s native file format, which saves data as
+    compressed <span class="acronym">XML</span>.
+    <span class="application">Regina</span> can export an entire packet subtree to this format:
+    just choose the root of of the subtree as the packet to export.
+    <span class="application">Regina</span> will export not just the packet you select, but all of the
+    packets beneath it in the tree.
+   </p><p>
+    This is a convenient way of extracting a small portion from
+    a larger data file.
+   </p><p>
+    The packet that you select for export will become the top-level
+    packet in the new tree (i.e., <span class="application">Regina</span> will not add a new
+    <a href="packet-types.html#packet-container" title="Container Packets">container</a>
+    to the top of the export data file).
+   </p><p>
+    There are three menu items for exporting to a <span class="application">Regina</span> data
+    file:
+    </p><div class="itemizedlist"><ul type="disc"><li><p>
+      <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">File</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guisubmenu">Export</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem"><span class="application">Regina</span> Data File</span></span>
+      will export the data as compressed <span class="acronym">XML</span> using the
+      <a href="regina7.html#regina7-fileformat" title="A new, more flexible file format">new file format</a>
+      introduced with <span class="application">Regina</span> 7.0.  This is the default file
+      format that is used when you select
+      <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">File</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Save</span></span>.
+     </p></li><li><p>
+      <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">File</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guisubmenu">Export</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem"><span class="application">Regina</span> Data File (Uncompressed)</span></span>
+      will export the data as plain <span class="acronym">XML</span> (which means you
+      can view the <span class="acronym">XML</span> in your favourite text editor),
+      again using the new file format introduced with <span class="application">Regina</span> 7.0.
+      Note that <span class="application">Regina</span> can happily read data files in either compressed or
+      uncompressed format.
+     </p></li><li><p>
+      <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">File</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guisubmenu">Export</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Legacy <span class="application">Regina</span> Data File (≤ 6.0.1)</span></span>
+      will export the data as compressed <span class="acronym">XML</span> using the old file format
+      from <span class="application">Regina</span> 3.0–6.0.1.
+     </p></li></ul></div><p>
+   </p><p>
+    If you simply want to view the raw <span class="acronym">XML</span> content of an existing data
+    file, you do not need to go to the trouble of exporting
+    it in uncompressed format.
+    Instead you can just pipe the data file through
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">gunzip</strong></span></span>:
+   </p><pre class="screen">
+    <code class="prompt">example$</code> <strong class="userinput"><code>cat file.rga | gunzip</code></strong>
+</pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="export-snappea"></a><span class="application">SnapPea</span> Triangulations</h3></div></div></div><p>
+    You can export a 3-manifold triangulation
+    (either one of <span class="application">Regina</span>'s <a href="packet-types.html#packet-triangulation3" title="3-Manifold Triangulations">native
+    triangulations</a> or a hybrid
+    <a href="packet-types.html#packet-snappea" title="SnapPea Triangulations"><span class="application">SnapPea</span> triangulation</a>)
+    to the file format used by <a href="http://www.math.uic.edu/t3m/SnapPy/" target="_top"><span class="application">SnapPea</span> / <span class="application">SnapPy</span></a>.  This is a plain text format,
+    and is described in more detail in the section on
+    <a href="foreign.html#import-snappea" title="SnapPea Triangulations"><span class="application">SnapPea</span> imports</a>.
+   </p><p>
+    Not every <span class="application">Regina</span> triangulation can be exported to <span class="application">SnapPea</span> format.
+    For instance, the triangulation cannot be
+    <a href="tri-analysis.html#tri-propvalid">invalid</a>,
+    and it may not have any boundary triangles.
+    <span class="application">Regina</span> will tell you if your triangulation cannot be exported.
+   </p><p>
+    If you are exporting one of <span class="application">Regina</span>'s native
+    <a href="packet-types.html#packet-triangulation3" title="3-Manifold Triangulations">triangulation packets</a>,
+    then <span class="application">Regina</span> will mark any <span class="application">SnapPea</span>-specific information
+    (such as fillings or peripheral curves) as unknown.
+    If you are exporting one of <span class="application">Regina</span>'s hybrid
+    <a href="packet-types.html#packet-snappea" title="SnapPea Triangulations"><span class="application">SnapPea</span> triangulations</a>,
+    then <span class="application">Regina</span> will include this extra <span class="application">SnapPea</span>-specific
+    information in the exported file.
+   </p><p>
+    Any international characters in the exported <span class="application">SnapPea</span> file will be
+    encoded using <span class="acronym">UTF-8</span>.
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="export-recogniser"></a><span class="application">3-Manifold Recogniser</span> Triangulations</h3></div></div></div><p>
+    You can export a 3-manifold triangulation
+    (either one of <span class="application">Regina</span>'s <a href="packet-types.html#packet-triangulation3" title="3-Manifold Triangulations">native
+    triangulations</a> or a hybrid
+    <a href="packet-types.html#packet-snappea" title="SnapPea Triangulations"><span class="application">SnapPea</span> triangulation</a>)
+    to a plain text file that can be
+    given as input to Matveev's <a href="http://www.matlas.math.csu.ru/?page=recognizer" target="_top"><span class="application">3-Manifold Recogniser</span></a>.
+   </p><p>
+    As with the <span class="application">SnapPea</span> format, not every data file can be exported to
+    the <span class="application">3-Manifold Recogniser</span>.
+    In particular, the triangulation cannot be
+    <a href="tri-analysis.html#tri-propvalid">invalid</a>,
+    and it may not have any boundary triangles.
+    <span class="application">Regina</span> will tell you if your triangulation cannot be exported.
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="export-csvsurfacelist"></a>Spreadsheet-Readable (<span class="acronym">CSV</span>) Surface Lists</h3></div></div></div><p>
+    You can export a normal surface list to a plain-text
+    <span class="acronym">CSV</span> file (comma-separated values), which you can easily
+    import into a spreadsheet or database.
+   </p><p>
+    The <span class="acronym">CSV</span> file will begin with a header row, followed
+    by one line for each normal surface in the list.  Surfaces will be
+    exported in standard coordinates
+    (that is, <a href="surfaces-analysis.html#surfaces-defstandard">tri-quad coordinates</a>
+    for normal surfaces, or
+    <a href="surfaces-analysis.html#surfaces-defstandardan">tri-quad-oct coordinates</a>
+    for almost normal surfaces).
+    The fields in the <span class="acronym">CSV</span> file will mirror the columns that you see
+    in the <a href="surfaces-analysis.html#surfaces-coords" title="Details of Individual (Hyper)surfaces">normal surface
+    coordinate viewer</a>, and will include properties such as
+    Euler characteristic and orientability as well as the
+    surface coordinates themselves.
+   </p><p>
+    If any of the surfaces have names that include
+    international characters, these names will be exported in <span class="acronym">UTF-8</span>.
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="export-pyscript"></a><span class="application">Python</span> Scripts</h3></div></div></div><p>
+    You can export a <a href="python.html#python-script" title="Script Packets">script packet</a>
+    as a regular <span class="application">Python</span> file.
+    <span class="application">Regina</span> will add a special comment block to the top of the file,
+    describing the packet label and the script variables.
+    This special comment block allows you to import the script
+    seamlessly back into <span class="application">Regina</span>; see
+    <a href="foreign.html#import-pyscript" title="Python Scripts"><span class="application">Python</span> imports</a> for details.
+   </p><p>
+    During the export, <span class="application">Regina</span> will tell you how it will write any
+    international characters in the script (that is, letters or symbols
+    not found on a typical English keyboard).  Such characters are
+    stored using a <em class="firstterm">text encoding</em>, such as
+    <span class="acronym">UTF-8</span> (a popular modern standard and the default in <span class="application">Regina</span>),
+    or <span class="acronym">LATIN1</span> (which has a long history of use with many Western European
+    languages).
+    If you wish to use a different encoding, you will need to set this
+    in <a href="options.html#options-encoding"><span class="application">Regina</span>'s options</a>.
+    If you are not sure, the default of <span class="acronym">UTF-8</span> is typically a good choice.
+    If you only ever use letters or symbols found on a typical English keyboard,
+    you do not need to worry about text encodings at all.
+   </p><p>
+    <span class="inlinemediaobject"><img src="i18n-export.png" srcset="i18n-export@2x.png 2x, i18n-export.png"></span>
+   </p></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="foreign.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="python.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">Importing and Exporting Data </td><td width="34%" align="center" class="navCenter"><a href="foreign.html">Up</a></td><td width="33%" align="right" class="navRight"> <span class="application">Python</span> Scripting</td></tr></table></div></body></html>

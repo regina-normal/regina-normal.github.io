@@ -1,0 +1,120 @@
+<html><head><title>Chapter 9. Python Scripting</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina 7.2 Handbook"><link rel="up" href="index.html" title="The Regina 7.2 Handbook"><link rel="prev" href="foreign-export.html" title="Exporting"><link rel="next" href="python-access.html" title="Accessing Regina from Python"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1><span class="application">Python</span> Scripting</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="foreign-export.html">Prev</a></td><td align="center" class="navCenter" width="34%"> </td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="python-access.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="python"></a>Chapter 9. <span class="application">Python</span> Scripting</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="python.html#python-starting">Starting a <span class="application">Python</span> Session</a></span></dt><dd><dl><dt><span class="sect2"><a href="python.html#python-gui">Graphical <span class="application">Python</span> Consoles</a></span></dt><dt><span class="sect2"><a href="python.html#python-cmdline">Command-Line Sessions</a></span></dt><dt><span class="sect2"><a href="python.html#python-script">Script Packets</a></span></dt></dl></dd><dt><span class="sect1"><a href="python-access.html">Accessing <span class="application">Regina</span> from <span class="application">Python</span></a></span></dt><dd><dl><dt><span class="sect2"><a href="python-access.html#python-autoimport">Automatic Imports</a></span></dt></dl></dd><dt><span class="sect1"><a href="python-docs.html"><span class="acronym">API</span> Documentation</a></span></dt><dd><dl><dt><span class="sect2"><a href="python-docs.html#python-docstrings">Inline Documentation</a></span></dt></dl></dd><dt><span class="sect1"><a href="python-snappy.html">Talking with <span class="application">SnapPy</span></a></span></dt><dt><span class="sect1"><a href="sessions.html">Sample <span class="application">Python</span> Sessions</a></span></dt><dd><dl><dt><span class="sect2"><a href="sessions.html#sessiontriangulation">Working with a triangulation</a></span></dt><dt><span class="sect2"><a href="sessions.html#sessiontree">Working with a packet tree</a></span></dt><dt><span class="sect2"><a href="sessions.html#sessionprogress">Reporting progress of long operations</a></span></dt></dl></dd></dl></div><p>
+  <span class="application">Regina</span> contains inbuilt scripting, which offers you fine control
+  over <span class="application">Regina</span>'s mathematical engine and enables you to automate
+  large amounts of processing.
+  You can write and run scripts from
+  directly within <span class="application">Regina</span>, or you can use the separate command-line tool
+  <a href="man-regina-python.html" title="regina-python"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-python</strong></span></span></a>.
+ </p><p>
+  The user interface will stay in sync with any changes that you
+  make through a script, which means you can happily modify a
+  data file via scripts while you have it open.
+ </p><p>
+  All scripts in <span class="application">Regina</span> use the <span class="application">Python</span> programming language
+  (<a href="http://www.python.org/" target="_top">http://www.python.org/</a>).
+  The specific <span class="application">Python</span> version must be chosen at build time.
+  If you download a ready-made package then the packager has already chosen
+  the <span class="application">Python</span> version for you; the ready-made packages on the
+  <span class="application">Regina</span> website will always use the default version of <span class="application">Python</span>
+  on each system where possible.
+ </p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>
+   <span class="application">Regina</span>'s <span class="application">Python</span> interface typically assumes you know what you are
+   doing, and so the onus is on you to follow the rules.
+   All constraints, preconditions and so on are thoroughly documented in the
+   <a href="python-docs.html" title="API Documentation"><span class="acronym">API</span> documentation</a>.
+   Probably the easiest way to crash <span class="application">Regina</span> is to bring up a <span class="application">Python</span>
+   console and do something “illegal” (like gluing together
+   two tetrahedra that belong to different triangulations).
+  </p></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="python-starting"></a>Starting a <span class="application">Python</span> Session</h2></div></div></div><p>
+   There are several ways of starting a <span class="application">Python</span> session to work with
+   <span class="application">Regina</span>:
+  </p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="python-gui"></a>Graphical <span class="application">Python</span> Consoles</h3></div></div></div><p>
+    You can open a graphical <span class="application">Python</span> console by selecting
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Tools</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Python Console</span></span>
+    from the menu (or by pressing the corresponding toolbar button).
+   </p><p>
+    <span class="inlinemediaobject"><img src="menu-python.png" srcset="menu-python@2x.png 2x, menu-python.png"></span>
+   </p><p>
+    A new console window will open as illustrated below,
+    with an input area down the bottom (see the red arrow) and a
+    full history of the session in the main part of the window.
+    You can save this history by selecting
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Console</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Save Session</span></span>.
+   </p><p>
+    <span class="inlinemediaobject"><img src="python-console.png" srcset="python-console@2x.png 2x, python-console.png"></span>
+   </p><p>
+    When you start the <span class="application">Python</span> session, <span class="application">Regina</span> will set some special
+    variables for you:
+    </p><div class="glosslist"><dl><dt><code class="varname">item</code></dt><dd><p>
+        If you have a packet selected in the tree when you start the
+        <span class="application">Python</span> session,
+        the variable <code class="varname">item</code> will refer to this packet
+        (see the figure above for an example of this).
+       </p><p>
+        Note that, if you later change your selection in the packet tree,
+        the <code class="varname">item</code> variable will not change as a result.
+       </p></dd><dt><code class="varname">root</code></dt><dd><p>
+       The variable <code class="varname">root</code> will refer to the hidden
+       root at the top of your packet tree (this root is not visible in the
+       user interface, but its top-level children are).
+      </p></dd></dl></div><p>
+   </p><p>
+    You are welcome to use these variables to change
+    packets in your data file (or even add, remove or rename packets):
+    the graphical user interface will always stay in sync with any changes
+    that you make via <span class="application">Python</span>.
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="python-cmdline"></a>Command-Line Sessions</h3></div></div></div><p>
+    You can run the command-line program
+    <a href="man-regina-python.html" title="regina-python"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-python</strong></span></span></a>
+    without a graphical user interface at all.
+    This will use the standard <span class="application">Python</span> interpreter.
+    Since this is a text-based interface, you can also redirect
+    input and output in the usual way (using &lt; and &gt; in your
+    command shell).
+   </p><p>
+    <span class="inlinemediaobject"><img src="regina-python.png" srcset="regina-python@2x.png 2x, regina-python.png"></span>
+   </p><p>
+    <span class="application">macOS</span> users will find <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-python</strong></span></span>
+    inside <span class="application">Regina</span>'s application bundle.  See the
+    <a href="troubleshooting.html#trouble-regina-python"><span class="acronym">FAQ</span> entry</a>
+    for details.
+   </p><p>
+    <span class="application">Windows</span> users do not have the command-line
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-python</strong></span></span> at all, though they can still use
+    <a href="python.html#python-gui" title="Graphical Python Consoles">graphical <span class="application">Python</span> consoles</a> and
+    <a href="python.html#python-script" title="Script Packets">script packets</a>.
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="python-script"></a>Script Packets</h3></div></div></div><p>
+    You can create a new <a href="packet-types.html#packet-script" title="Script Packets">script
+    packet</a> in your data file.  Script packets allow you to save
+    <span class="application">Python</span> scripts along with your data, and they give your scripts
+    easy access to the packets inside your file.
+   </p><p>
+    <span class="inlinemediaobject"><img src="menu-newscript.png" srcset="menu-newscript@2x.png 2x, menu-newscript.png"></span>
+   </p><p>
+    When you open a script packet, you will see your <span class="application">Python</span> code in the lower
+    part of the script editor, and a table of variables up the top.
+   </p><p>
+    <span class="inlinemediaobject"><img src="script-edit.png" srcset="script-edit@2x.png 2x, script-edit.png"></span>
+   </p><p>
+    You can add your own variables to this table, and set them to arbitrary
+    packets within your data file.  <span class="application">Regina</span> will always set these variables
+    to the corresponding packets before running your script.
+   </p><p>
+    <span class="inlinemediaobject"><img src="script-var.png" srcset="script-var@2x.png 2x, script-var.png"></span>
+   </p><p>
+    At the top of the script editor you will find buttons to compile
+    and run your script.
+    Compiling is optional: it merely gives you a chance to spot
+    syntax errors as you go.
+    When you press <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guibutton">Run</span></span>, <span class="application">Regina</span> will run your
+    script in a new graphical <span class="application">Python</span> console.
+    The console will be left open in case you wish to experiment further.
+   </p><p>
+    <span class="inlinemediaobject"><img src="script-run.png" srcset="script-run@2x.png 2x, script-run.png"></span>
+   </p><p>
+    Again, you are welcome to change packets in your data file via
+    scripts (or even add, remove or rename packets):
+    the graphical user interface will always stay in sync with any changes
+    that your scripts make.
+   </p></div></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="foreign-export.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="python-access.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">Exporting </td><td width="34%" align="center" class="navCenter"><a href="index.html">Up</a></td><td width="33%" align="right" class="navRight"> Accessing <span class="application">Regina</span> from <span class="application">Python</span></td></tr></table></div></body></html>

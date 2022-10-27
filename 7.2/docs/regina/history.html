@@ -1,0 +1,850 @@
+<html><head><title>Appendix C. Version History</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina 7.2 Handbook"><link rel="up" href="index.html" title="The Regina 7.2 Handbook"><link rel="prev" href="man-trisetcmp.html" title="trisetcmp"><link rel="next" href="credits.html" title="Appendix D. Authors and License"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Version History</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="man-trisetcmp.html">Prev</a></td><td align="center" class="navCenter" width="34%"> </td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="credits.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="appendix" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="history"></a>Appendix C. Version History</h2></div></div></div><pre class="programlisting">
+Regina - A Normal Surface Theory Calculator
+
+    This file describes key highlights of the changes between releases.
+
+    For a full list of changes, including all changes to the C++/Python API,
+    see the file CHANGES.txt.
+
+Version 7.2  [ 28 October, 2022 ]
+
+    Overview:
+        - The main focus of this release is Python.  See the detailed
+          changelog for other minor enhancements across Regina's codebase.
+    Python:
+        - Regina now provides docstrings throughout its Python module, which
+          means you can get comprehensive help directly from within Python.
+          See https://regina-normal.github.io/docs/python-docs.html for
+          some important caveats regarding this inline documentation.
+        - Regina now supports the newly-released Python 3.11, but no longer
+          supports Python 3.4 or 3.5.
+        - Undertook a full audit of Python bindings for the entire calculation
+          engine: a few bindings were missing, and these have now been added.
+        - Added __len__() functions to classes where this is meaningful.
+        - Fixed two errors in the Python bindings (Cyclotomic::negate() and
+          swap(BitmaskN, BitmaskN)).  These are unlikely to have affected users:
+          see https://regina-normal.github.io/bugs.html for details.
+
+Version 7.1  [ 30 September, 2022 ]
+
+    Overview:
+        - Regina now supports Python 3 only (not Python 2 or 3).
+    Features:
+        - Computes intersection forms of closed orientable 4-manifolds.
+        - Computes and recognises links of faces of all dimensions as normal
+          (hyper)surfaces; this includes both thin links and normalised links.
+        - Expanded 3-ball and solid torus recognition to more general
+          handlebody recognition (thanks to Alex He).
+        - The tricensus utility now supports multithreaded operation, and
+          has a new output option that preserves simplex/vertex labelling.
+        - Includes the standard K3 surface as a ready-made example 4-manifold
+          (thanks to Rhuaidi Burke for the small triangulation).
+        - Greater support for "tight encodings" for several types of objects;
+          these use short text tokens, with no loss of information and no
+          simplex/vertex/crossing relabelling.  These need Python or C++ to use.
+        - More graph operations are now available for facet pairings.
+        - Several other smaller features and optimisations.
+    Python / C++:
+        - Everything that was deprecated in version 7.0 has now been removed
+          entirely.  See https://regina-normal.github.io/api/regina7.html
+          for instructions on how to update your scripts.
+        - Some routines now verify some of their easy-to-test preconditions,
+          and throw exceptions if they fail.  Expanding this type of testing
+          will be an ongoing project across future releases, and it will never
+          cover *all* preconditions (since some are too expensive to test
+          automatically).  The initial focus will be on routines that are
+          common sources of user errors (e.g., Simplex::join()).
+        - Python now wraps all C++ bool() cast operators.
+        - Fixed a deadlock that occured in GUI python consoles (not in
+          command-line python or regina-python) when working with callbacks
+          (e.g., when passing a pure python function to retriangulate()).
+
+Version 7.0  [ 19 December, 2021 ]
+
+    Overview:
+        - Regina has had the largest overhaul in its 20+ year history.
+          Some of these changes break backward compatibility, and everyone
+          *should* read https://regina-normal.github.io/docs/regina7.html for
+          a quick overview of the most important changes.
+        - In particular: the file format has changed, the native C++ interface
+          has been reworked to take advantage of modern language features, and
+          for the first time, Python is now a "first class citizen" with full
+          access to essentially all of Regina's native code.
+    Features:
+        - Links can now self-frame (adding twists to give each component
+          zero writhe), they now support planar diagram codes, and you
+          can now build the link group directly.
+        - New, heavily optimised code for enumerating finite index subgroups
+          given a group presentation (C++ / Python only).
+        - Triangulations of all dimensions now support a much richer suite of
+          homology calculations (C++ / Python only).
+        - You can now locate a generalised angle structure on an ideal
+          triangulation (C++ / Python only)
+        - Each normal surface/hypersurface/angle structure list now keeps its
+          own snapshot of its triangulation.  You can edit, move or even delete
+          the original triangulation without causing problems.
+        - New elementary moves on 4-manifold triangulations (thanks to Alex He).
+        - New command-line tool DGT to triangulate manifolds from framed links
+          (thanks to Rhuaidi Burke).
+        - You can now build a SnapPea triangulation directly from a Regina
+          link, and the meridian and longitude will be respected.
+        - The retriangulate tool can now search Reidemeister graphs for knots.
+        - Changed the old "PDF attachments" in the user interface to support
+          file attachments of any type.
+    Removed:
+        - Transversely oriented normal surfaces (which were always experimental)
+          are now gone.  They will return in a future release in a way that
+          does not attempt to shoehorn them into the normal surface machinery.
+        - Dimensions 9-15 are no longer included in the default builds.
+          If you need them, you can build from source with -DHIGHDIM=1.
+    Python / C++:
+        - Regina now uses the C++17 standard, and no longer uses boost at all.
+        - As noted above, there have been major sweeping changes to the C++ API.
+          See https://regina-normal.github.io/api/regina7.html for details.
+          Python users should require far fewer changes to their existing code.
+        - Python now has full access to essentially all of Regina's C++ code,
+          wherever this makes sense.  It also has more natural iteration,
+          string representation, equality testing by value, and better
+          compatibility with Sage.
+        - All of the code that was deprecated in version 6.0 has now been
+          removed entirely.  See http://regina-normal.github.io/regina5to6.html
+          for instructions on how to update your scripts.
+
+Version 6.0.1  [ 12 February, 2021 ]
+
+    - Fixes an issue for Python users, where the Triangulation3 constructor
+      could become unusable in the graphical user interface.
+
+Version 6.0  [ 11 January, 2021 ]
+
+    - Lots more polish and cleaning up of unfinished business from 5.96, which
+      was just a prerelease for this version 6.0.  See the 5.96 highlights
+      if you missed those!
+    - The user handbook has now been brought up to date.
+    - The example files now include a census of prime knots.
+    - Added TxI recognition using Haraway's algorithm.
+    - Plus a handful of smaller features and fixes since last month; see the
+      full changelog for details.
+
+Version 5.96  [ 24 December, 2020 ]
+
+    Overview:
+        - This is the first prerelease for Regina 6.0.  The main material
+          still to be added is user documentation (i.e., the handbook),
+          which needs to be updated to talk through the many new features.
+        - Regina now uses the C++14 standard, and no longer links against
+          the boost libraries (it just uses the boost headers).
+        - At least something good has come from the year 2020.
+    Features:
+        - Regina now offers native support for knots and links!
+          Take a look around the introductory examples file.
+        - New quad closed coordinates for normal surfaces.
+        - New command-line utility to retriangulate a given manifold.
+        - Many, many other additions: see the full changelog for details.
+    Python and C++:
+        - Now supports Python 3 as well as Python 2.  Regina's ready-made
+          packages will be built against the default python on your system.
+        - The Python bindings have been completely overhauled.
+        - Large mathematical objects (e.g., polynomials) now support C++11 move
+          assignment and move constructors, which allow for more natural syntax
+          in arithmetical expressions without the unwanted cost of deep copies.
+        - Several collection objects (e.g., packets and surface lists)
+          now allow iteration over members using C++11 range-based for loops.
+
+Version 5.1  [ 19 December, 2016 ]
+
+    Features:
+        - This release is a major overhaul for Python and C++ users.  There
+          are also enhancements to the mathematics and the user interface,
+          but these are relatively minor (and are not listed here).
+    Python and C++:
+        - All of the code that was deprecated in version 5.0 has now been
+          removed entirely.  See http://regina-normal.github.io/regina4to5.html
+          for instructions on how to update your scripts.
+        - Many class and header names have changed, but most of these changes
+          follow a standard pattern (classes of the form NFoo become Foo, and
+          headers of the form nfoo.h become foo.h).  The old class and header
+          names have been kept, and will not be removed until Regina 6.0.
+          See http://regina-normal.github.io/regina5to6.html for details.
+        - More of Regina's triangulation code is now generic, which means
+          you can do more with higher-dimensional triangulations (e.g.,
+          triangulate boundary components, or compute homology).
+        - The old "python libraries" facility has been removed, since Python
+          itself offers better and more standardised ways of importing code.
+
+Version 5.0  [ 26 September, 2016 ]
+
+    Features:
+        - Regina now works with 4-manifolds!  It also offers a more basic
+          framework for triangulations in higher dimensions (up to 15).
+        - You can now enumerate, study and triangulate normal hypersurfaces in
+          4-manifold triangulations.
+        - Regina now builds and manipulates tree decompositions of graphs,
+          including dual graphs of triangulations.  This is particularly
+          useful for fixed-parameter tractable algorithms.
+        - Turaev-Viro invariants are now computed using exact arithmetic.
+        - When fast-and-greedy simplification fails, you can now try
+          "exhaustive simplification", which searches through the Pachner graph.
+    Python and C++:
+        - The API (functions, classes, etc.) has had an enormous overhaul.
+          Many things are now simpler, shorter, and more consistent.
+          Most of the old classes and functions have been kept for backward
+          compatibility, but WILL BE REMOVED in the next release.
+        - Regina is now based on the newer C++11 standard.
+        - Python now interacts with Regina more naturally, and error messages
+          are likely to be both fewer and more helpful.  Thanks to
+          Matthias Goerner for his help with this.
+        - Regina no longer clobbers Python's own builtin open() function!
+          For Regina's verison of open(), you can still call regina.open().
+    Optimisations:
+        - Many widespread structural changes under the hood.
+        - Several new optimisations, most notably including treewidth-based
+          algorithms for Turaev-Viro invariants (arXiv:1503.04099).
+
+Version 4.96  [ 29 August, 2014 ]
+
+    Features:
+        - Regina can now certify hyperbolicity rigorously and quickly, using
+          angle structures and linear programming.  See the Recognition tab
+          in the triangulation viewer.
+        - SnapPea triangulations are now a separate type of packet.  They
+          use both Regina's and SnapPea's internal data structures, so all of
+          SnapPea's internal information (e.g., fillings and peripheral curves)
+          will be preserved when you import from SnapPea/SnapPy.  SnapPea's
+          filling routines are also made available directly through Regina.
+        - Census lookup is now automatic (see the Recognition tab), extremely
+          fast, and draws on a much larger database of 296,862 triangulations.
+        - You can now puncture manifolds, build connected sums, make 1-4 moves,
+          and decompose non-orientable manifolds into prime pieces.
+        - The API has many more conveniences for Python and C++ users, plus
+          some structural changes under the hood in preparation for the
+          coming 4-manifolds release.
+    Other optimisations:
+        - Simplification and recognition of fundamental groups is now much
+          stronger, thanks to Nielsen moves and new recognition heuristics.
+        - Enumeration of taut angle structures is now much faster, thanks to
+          new tree traversal / linear programming machinery.
+        - The commit / refresh buttons are gone from the user interface
+          (all changes now take effect immediately).
+
+Version 4.95  [ 12 November, 2013 ]
+
+    Features:
+        - Hakenness and irreducibility tests for triangulations.
+        - On many GNU/Linux and MacOS systems, Regina and SnapPy can now talk
+          directly via python.  Try running 'import snappy' from one of
+          Regina's python environments, or see the python chapter in the
+          user handbook for examples.
+        - Many example triangulations are now oriented by default.
+        - You are no longer required to give each packet a unique label.
+    Optimisations:
+        - More widespread use of the new and faster branch-and-bound machinery.
+        - Large-scale cleanups and improvements to the API for both C++
+          and python, plus additional niceities for the python bindings.
+    Bug Fixes:
+        - Fixed two numerical bugs in the arbitrary precision arithmetic code
+          that were (i) only present in the last release (4.94, September 2013);
+          (ii) quite difficult to trigger; and (iii) had relatively benign
+          impacts, unless you were working with experimental code direct from
+          the repository.  We have audited the entire codebase to analyse what
+          could have been affected, so please contact the authors if you need
+          more information.
+
+Version 4.94  [ 24 September, 2013 ]
+
+    Features:
+        - Regina now works with 2-manifold triangulations as well.
+          You can (for example) use these to study vertex links.
+        - You can now drill out the neighbourhood of an edge.
+    Optimisations:
+        - Normal surface enumeration is now completely different under the
+          hood, and uses new linear programming techniques (arXiv:1010.6200,
+          arXiv:1211.1079).  This may be slower for small problems, but is
+          significantly faster for larger problems.
+        - In particular, 0-efficiency testing, solid torus recognition,
+          connected sum decomposition and 3-sphere recognition are now
+          *much* faster.  Try it: Regina can prove the Weber-Seifert
+          dodecahedral space to be 0-efficient in around 10 seconds.
+        - Simplification of fundamental groups is much more powerful,
+          thanks to small cancellation theory.
+        - Census enumeration is faster again, with new pruning techniques.
+    Bug Fixes:
+        - Fixed 0-efficiency testing, which was reporting incorrect
+          results for ideal triangulations.  The automated test suite is
+          now greatly enhanced to avoid a similar problem appearing again.
+    Backward Compatibility:
+        - Old-style binary files are no longer supported.  These have
+          not been in use for over a decade now.
+        - For programmers: some old deprecated routines have now been removed.
+          If there is something you are missing, check the deprecation page
+          (regina.sourceforge.net/deprecation.html) to see what replaces it.
+
+Version 4.93  [ 30 May, 2012 ]
+
+    Features:
+        - Implements solid torus recognition, and by corollary unknot
+          recognition.  The necessary tools were already there, but this
+          rolls them into a single "one-click" procedure.
+        - Identifies which taut angles structures are veering structures.
+        - Adds the Weeks manifold to the list of example triangulations
+          that you can construct.
+        - Exports triangulations in a text format that can be passed to
+          Matveev's 3-manifold recogniser software.
+    User Interface:
+        - Restored File -&gt; Save and Save As to the menu.  These were missing
+          in version 4.92.
+        - The old Surfaces tab in the triangulation viewer is now the
+          Recognition tab, and combines exact high-level algorithms
+          with "opportunistic" combinatorial recognition.
+    Python:
+        - Python consoles now set the variable "item" to the currently selected
+          packet in the tree, not "selected".  This is easier to type, and
+          avoids the misconception that changing the selection afterwards will
+          change the variable (it doesn't).  If nothing is selected, Regina
+          will now explicitly set item=None.
+        - All use of NTriBool is gone from the classes NTriangulation and
+          NNormalSurface.  Tests such as NNormalSurface::isOrientable() and
+          NTriangulation::hasCompressingDisc() now return an ordinary boolean
+          that you can test in the natural way in Python.
+
+Version 4.92  [ 12 April, 2012 ] - The "hello Windows!" release.
+
+    Installation
+        - MacOS users now have a simple drag-and-drop install.
+          If you want, you can now get rid of fink.
+        - Windows users can install Regina!  This is also a simple
+          point-and-click install.
+        - Linux users have far fewer dependencies than before: Regina is
+          now based on Qt only, and does not use anything from KDE.
+    User Interface:
+        - The user interface has continued its overhaul, with many more
+          usability improvements.
+        - Regina now uses many small windows instead of one monolithic window.
+          You can return to the "old way" via Regina's settings if you prefer.
+    Features:
+        - You can now enumerate all fundamental normal surfaces, as well as
+          all vertex normal surfaces.  See arXiv:1111.7055 for the algorithms.
+        - Face pairing graphs now have labels for tetrahedron numbers.
+        - You can now see boundary slopes for spun normal surfaces;
+          thanks to William Pettersson and Stephan Tillmann.
+        - There is now experimental support for transversely oriented
+          normal surfaces.  Again, thanks to Will and Stephan.
+    Python:
+        - All python sessions now execute "from regina import *" by default.
+          For regina-python, you can disable this by passing --noautoimport.
+
+Version 4.91: Internal development version.
+
+Version 4.90  [ 12 September, 2011 ] - First prerelease for version 5.0.
+
+    Installation:
+        - Regina has been ported to KDE4, which means you can finally
+          install it on a modern GNU/Linux distribution.
+        - The experience on MacOSX is much cleaner and more natural
+          than it ever was before.  You no longer need X11; instead
+          Regina acts almost like a native Mac app (though you still
+          need Fink; we're a long way yet from a drag-and-drop install).
+    User Interface:
+        - The user interface has had a complete overhaul, and there have
+          been many small-but-important improvements to usability.
+        - The Regina Handbook has also had a complete overhaul.  It is
+          more readable and streamlined, and full of screenshots to walk
+          you through what Regina can do.
+    Features:
+        - Regina now supports isomorphism signatures, which are short
+          sequences of letters, digits and punctuation that identify a
+          triangulation uniquely up to combinatorial isomorphism.
+        - You can enumerate all taut angle structures, which is much
+          faster than enumerating all vertex angle structures.
+        - You can test normal surfaces for incompressibility (through
+          C++/Python only).  See arXiv:0909.4625 for the algorithms.
+        - In an orientable triangulation, you can now relabel vertices to make
+          all gluing maps orientation-reversing.  Just press the big Orient
+          button in the triangulation viewer.  Thanks to Matthias Goerner.
+    Optimisations:
+        - A lot has changed under the hood for this release: the code is
+          generally cleaner and more streamlined throughout.
+        - Normal surface enumeration is significantly faster again,
+          due to the use of a new trie-like data structure.
+    C++ / Python Changes:
+        - Yet more code is deprecated in preparation for Regina 5.0.
+          See http://regina.sourceforge.net/deprecation.html
+          for a guide to updating your scripts and programs.
+        - You no longer need to call NTriangulation::gluingsHaveChanged().
+        - When building triangulations, you should now add tetrahedra using
+          NTriangulation::newTetrahedron(), not create tetrahedra yourself.
+
+Version 4.6  [ 16 May, 2009 ]
+
+    Features:
+        - Some important changes regarding almost normal surfaces:
+            + Regina no longer strips out surfaces with more than one octagon
+              (though it still enforces at most one octagon *type*).  This is
+              important if you plan to use the vertex surfaces as a basis.
+            + You can now enumerate vertex almost normal surfaces in
+              quadrilateral-octagon coordinates (arXiv:0904.3041).
+            + The normal surface viewer now tells you where the octagon is,
+              so you don't have to scroll through 10n coordinates to find it.
+        - The normal surface viewer now has two new tabs:
+            + The Summary tab gives a quick overview of what kinds of
+              surfaces were found, to save scrolling through the entire list.
+            + The Compatibility tab gives a visual overview of which pairs of
+              surfaces are locally compatible (no conflicting quadrilaterals
+              or octagons), and globally compatible (can be made disjoint).
+        - You can now cut along a normal surface (which retriangulates the
+          resulting pieces).  Unlike crushing, no topology is lost.
+        - Simplification is now much more effective for triangulations with
+          boundary and/or multiple vertices.
+        - Added 3-ball recognition to the Surfaces tab for triangulations.
+        - Elementary moves now include "close book" and "collapse edge".
+        - You can now copy dehydration strings (and any other information
+          in the triangulation composition tab) by right-clicking.
+        - Normal surfaces are now automatically numbered in the viewer,
+          to help keep track of which is which.
+    Optimisations:
+        - Enumeration of normal (or almost normal) surfaces in standard
+          coordinates is now orders of magnitude faster again, thanks to the
+          quadrilateral-to-standard conversion algorithm (arXiv:0901.2629).
+        - Likewise, 3-sphere recognition is now orders of magnitude faster.
+        - Ported several recent census optimisations to the more
+          general setting of enumerating non-minimal triangulations.
+    Bug Fixes:
+        - Fixed simplification bugs for bounded and invalid triangulations:
+            + Fixed some crashes involving bounded triangulations.
+            + Fixed some nasty bugs in the boundary shelling move, which in
+              some cases could simplify bounded triangulations incorrectly.
+            + Fixed bugs whereby invalid triangulations could have the
+              offending points truncated or pushed into cusps.
+    C++ / Python Changes:
+        - A fair amount of code is now deprecated in preparation for
+          Regina 5.0.  See http://regina.sourceforge.net/deprecation.html
+          for a guide to updating your scripts and programs accordingly.
+
+Version 4.5.1  [ 28 October, 2008 ]
+
+    Features:
+        - PDF documents can now be embedded within data files as PDF packets.
+          This allows you to document your data in detail with equations
+          and diagrams.  See File -&gt; Open Example -&gt; Introductory Examples
+          for an illustration.
+    Optimisations:
+        - Normal surface enumeration is now orders of magnitude faster,
+          and consumes significantly less memory.  See arXiv:0808.4050
+          for a full list of improvements.
+    Census Improvements:
+        - Replaced the old plain-text Notation packets in the closed
+          orientable / non-orientable censuses with detailed PDF packets.
+          These new PDFs explain the precise meanings and conventions used
+          in all the manifold names, and include supporting diagrams.
+        - Renamed a few census manifolds to replace the old (a)/(b) suffixes
+          with something more meaningful.  See CHANGES.txt for details.
+    Bug Fixes:
+        - Fixed a bug in the routine NGraphTriple::writeTeXName().  This does
+          not affect any census data that has been published or shipped with
+          earlier versions of Regina, but it might affect users who have
+          called writeTeXName() in their own Python scripts.  Please send an
+          email if you would like further information.
+
+Version 4.5  [ 17 May, 2008 ]
+
+    Features and Improvements:
+        - Full support for international characters (finally!):
+            + Users should be able to use international characters in data
+              files without problems, and they should display, save and load
+              correctly.  Regina's own data files are stored using UTF-8,
+              and users can choose an encoding where relevant for imports
+              and exports.
+            + Programmers who plan to use international characters with the
+              python interface or in their own C++ code should read the new
+              page "Encodings for international strings", listed under
+              "Related Pages" in Regina's python reference.
+        - Normal surface lists can now be exported as plain-text CSV files
+          (comma-separated values), which can then be imported into
+          spreadsheets or databases.
+        - Added the Seifert-Weber dodecahedral space as one of the ready-made
+          examples offered when creating a new triangulation.
+        - Added the new python library loadCensus.py, which gives easy access
+          to the prepackaged census data files.  To make use of this library,
+          add it through Regina's python settings.
+    Optimisations:
+        - Regina is now somewhat less memory-hungry; in particular, memory
+          usage for triangulations has been cut by about 1/3.  This should
+          help when opening very large data files, such as census data.
+    Bug Fixes:
+        - Fixed some crashes that occured when packets were deleted from the
+          tree while they were still being used elsewhere.
+    Build Infrastructure:
+        - Supports building out-of-tree (e.g., making separate builds in
+          debug/ and release/ subdirectories).
+
+Version 4.4  [ 25 November, 2007 ] - The "hug a Mac today" release.
+
+    Features and Improvements:
+        - New Algebra -&gt; Cellular Info tab containing a variety of new
+          homological data for triangulations; thanks to Ryan Budney for this!
+        - Expanded both the closed orientable and non-orientable censuses
+          to 11 tetrahedra (the 11-tetrahedron section of the orientable
+          census is very large and must be downloaded separately).
+        - Can construct any Seifert fibred space over the 2-sphere (previously
+          at most three exceptional fibres could be supplied).
+        - Shows Callahan-Hildebrand-Weeks dehydration strings in the
+          triangulation composition tab.
+        - Matrices are significantly easier to work with in Python scripts,
+          with several new functions and operators now available.
+        - More consistent choice of monodromy matrices when identifying
+          torus bundles.
+        - The regina-python tool can now run scripts in interactive mode (-i).
+        - Builds and runs on MacOS!  This requires Fink to be installed.
+    Optimisations:
+        - Census generation made significantly faster yet again, using
+          tests for high-genus vertex links and other optimisations.
+        - Streamlined some core parts of the triangulation code for
+          faster processing.
+    Bug Fixes:
+        - Face pairing graphs now look better when the old Graphviz 1.x is
+          installed (previously they were designed for Graphviz 2.x only).
+        - Fixed a matrix reduction bug when dealing with non-orientable
+          torus bundles (sometimes the transpose matrix was given instead).
+        - Updated the trisetcmp program to output more appropriate messages
+          when testing for subcomplexes.
+
+Version 4.3.1  [ 5 May, 2006 ]
+
+    Features and Improvements:
+        - Now imports Orb / Casson triangulations; thanks to Ryan Budney
+          for contributing this import filter.
+        - Displays the face pairing graphs of triangulations (see the
+          Skeleton tab in the triangulation viewer).  Graphviz is used
+          to render the graphs.
+    Optimisations:
+        - Census generation made faster again, this time using the new
+          face pairing graph results of math.GT/0604584.
+    Bug Fixes:
+        - No longer crashes when the user tries to clone the root of
+          the packet tree.
+        - Added a workaround for the buggy icon themes supplied by some
+          GNU/Linux distributions; there should no longer be unknown
+          icons appearing in the packet tree.
+        - Fixed memory leak in the census generation code.
+
+Version 4.3  [ 27 March, 2006 ]
+
+    Features and Improvements:
+        - Expanded both the closed orientable and closed non-orientable
+          censuses to ten tetrahedra.  The closed orientable census is
+          now split into two files (large and small).
+        - Recognises a much greater variety of Seifert fibred spaces and
+          graph manifolds by examining their combinatorial structures (to
+          the point where 1359 / 1390 of the closed non-orientable census
+          triangulations are recognised immediately).
+        - The MPI census utility tricensus-mpi supports more fine-grained
+          slave tasks (see --depth), amongst other improvements.  A new tool
+          tricensus-mpi-status is also available for summarising the logs.
+        - The utility trisetcmp supports subcomplex testing as well as
+          isomorphism testing.
+        - The embedded SnapPea engine can be configured to examine closed
+          triangulations as well as ideal triangulations (see the Regina
+          configuration panel).
+    Optimisations:
+        - Census generation in the closed minimal P2-irreducible case
+          is *much* faster (as in orders of magnitude faster).
+        - The triangulation composition tab is no longer extremly slow to
+          update when working with very large data files.
+    Bug Fixes:
+        - Fixed occasional crashes that occurred when deleting a
+          triangulation that was currently in use.
+
+Version 4.2.1  [ 18 September, 2005 ]
+
+    Features:
+        - New utility trisetcmp for comparing sets of triangulations.
+    Improvements:
+        - Documented imports and exports in the reference manual.
+        - Expanded the closed non-orientable census to eight tetrahedra.
+        - Added additional isomorphism routines to the calculation engine.
+    Bug Fixes:
+        - Fixed "regina-engine-config --cflags", which wrote includes
+          for Regina's dependencies but not for Regina itself (sigh).
+        - Refuse to export a triangulation to SnapPea format if it has
+          boundary faces.
+
+Version 4.2  [ 7 July, 2005 ]
+
+    Features:
+        - Includes portions of the SnapPea kernel!  Thanks again to
+          Jeff Weeks for his support.  SnapPea calculations appear in
+          the "SnapPea" tab in the triangulation viewer.
+        - Real boundary components can be coned to form ideal vertices.
+        - Several ready-made example triangulations added to the "New
+          Triangulation" dialog.
+        - Triangulations can be exported to C++ source code.
+        - New MPI-enabled census generation tool for use on clusters
+          (tricensus-mpi).
+        - New regina-engine-config script makes it easier to build
+          Regina's mathematical core into your own applications.
+    Improvements:
+        - Build scripts improved to work out-of-the-box in more diverse
+          environments.
+        - Recognition of more small ad-hoc triangulations in the "Composition"
+          tab, including some very small SnapPea census triangulations.
+        - Uneditable packets now show a padlock in the visual packet tree.
+        - Renamed "Ideal to Finite" to "Truncate Ideal Vertices".
+    Bug Fixes:
+        - Fixed bug in which output from newer versions of GAP could not be
+          understood (i.e., "Simplify using GAP" is once again available).
+        - Fixed a couple of crashes (keypresses in large tables of
+          coordinates; 2-0 edge moves involving boundary faces).
+        - Fixed bug in which triangulations containing invalid edges
+          gave incorrect vertex link calculations.
+
+Version 4.1.3  [ 25 July, 2004 ]
+
+    Features:
+        - New "Open Example" menu item for easy access to sample files
+          and census data.
+        - Includes the closed hyperbolic census of Hodgson and Weeks.
+        - Allows the choice of text editor component to be configured.
+        - Improved handling of keyboard focus.
+    Scripting:
+        - Operator == behaves more intuitively for mathematical objects.
+          A single mathematical object in the calculation engine may
+          have several Python wrapper objects.  The usual Python == tests
+          whether two wrappers are in fact the same wrapper object; this
+          has now been changed to test whether two wrappers wrap the same
+          underlying mathematical object.
+        - Fixed scripting in the GUI, which was broken under Python 2.3
+          (indented blocks were treated as complete after just one line).
+          Note that the command-line tool regina-python was never affected.
+        - Added a sample Python session illustrating progress reporting.
+    Optimisations:
+        - Fixed the massive resource drain when editing script
+          variables in a very large data file.
+    Bug Fixes:
+        - Fixed broken scripting in the GUI (see above).
+        - Several fixes and workarounds to make Regina work properly
+          with the Vim editor component.
+        - Tighter handling of read-only mode for packet viewers.
+
+Version 4.1.2  [ 14 June, 2004 ]
+
+    Features:
+        - Allows fundamental groups to be further simplified using GAP
+          (Groups, Algorithms and Programming).
+    Documentation:
+        - Expansion of the troubleshooting section, especially with
+          regard to building Regina from source.
+        - Overhauled the website and README.txt for greater clarity.
+        - Included a suggested form for citing Regina.
+    Bug Fixes:
+        - Better support out of the box for more platforms, specifically
+          including Red Hat and Fedora Core (many thanks to Craig
+          Macintyre for his patience and assistance with this).
+        - Fixed compile error when building against an STL-enabled Qt.
+        - More KDE 3.2 compatibility updates.
+
+Version 4.1.1  [ 24 April, 2004 ]
+
+    Usability:
+        - Added "What's This?" buttons to main/packet window borders.
+    Bug Fixes:
+        - Fixed compile error when building against Python 2.3.
+
+Version 4.1  [ 7 March, 2004 ]
+
+    Features:
+        - 3-sphere recognition.
+        - Full connected sum decomposition for closed orientable
+          triangulations.
+        - Conversion to 0-efficient triangulations for closed orientable
+          3-manifolds.
+        - Automated construction of orientable Seifert fibred spaces over
+          the sphere with up to three exceptional fibres.
+        - Better recognition of small multiple-vertex triangulations.
+    Usability:
+        - Each packet type now offers its own menu of possible actions,
+          e.g., "Triangulation" menu, "Script" menu, etc.
+        - Thorough use of "What's This?" help and tooltips across the
+          entire user interface.
+        - New tip-of-the-day support.
+        - Added an index of common tasks to the reference manual.
+        - Various other enhancements for improved feedback and ease of use.
+    Bug Fixes:
+        - Fixed bug in "tricensus --genpairs" that caused empty output files.
+        - Updates for compatibility with KDE 3.2.
+
+Version 4.0.1  [ 26 January, 2004 ]
+
+    Features:
+        - Better compile-time magic to select the correct --prefix
+          automatically and to detect whether the Qt version is sufficient.
+        - No longer requires docbook-utils and its complicated
+          dependencies (instead Regina ships with pregenerated manpages).
+        - Expanded troubleshooting section of the reference manual.
+
+Version 4.0  [ 20 December, 2003 ]
+
+    Features:
+        - Normal surface and angle structure enumeration now display
+          progress dialogs and can be cancelled partway through.
+        - A Python reference (i.e., the documentation for the underlying
+          calculation engine) is now available through the Help menu.
+        - Improved simplification of group presentations.
+        - More clean-ups in the underlying mathematical code.
+        - Python users should note that some normal surface properties
+          now return an NTriBool instead of 1/-1/0 for true/false/unknown.
+
+Version 3.97  [ 24 November, 2003 ] - Final prerelease for version 4.0.
+
+    Features:
+        - Python scripting is once more incorporated into the graphical
+          user interface, as it was in the old days of Java.  It can be
+          accessed through the Tools menu or through script packets.
+          Note that synchronisation between python and the GUI is much
+          better than it was in versions 3.2 and below.
+        - Implemented census lookup for triangulations, using the
+          censuses shipped with Regina as the default set.
+        - Added recognition for trivial non-orientable triangulations.
+        - Added recognition for central normal surfaces.
+        - Can flatten a layered solid torus to a Mobius band (currently
+          available only through the Python interface).
+        - Many more configuration options are available.
+        - Added a Python caveats section to the reference manual.
+    Optimisations:
+        - More optimisations for non-orientable census creation using
+          new face pairing graph results (see math.GT/0307382:v2).
+    Bug Fixes:
+        - Fixed some problems with word wrapping and line endings in the
+          embedded text editor.
+        - Fixed a bug in the updating of tetrahedron labels when a tetrahedron
+          is removed from a triangulation.
+        - Fixed some of the compile-time ./configure tests which were broken
+          on some systems (in particular some redhat-based systems).
+
+Version 3.96  [ 31 October, 2003 ] - Second prerelease for version 4.0.
+
+    Features:
+        - Incorporated Turaev-Viro invariants and isomorphism testing
+          into the user interface (previously these were available only
+          through python scripting).
+        - Wrote the final missing pieces of the reference manual.
+        - Various clean-ups in the underlying mathematical code.
+    Bug Fixes:
+        - Fixed a crash when refreshing the triangulation composition tab.
+        - Fixed the annoying splitter auto-resize in the main window.
+
+Version 3.95  [ 12 October, 2003 ] - Prerelease for version 4.0.
+
+    User Interface Rewrites:
+        - The graphical user interface has been completely rewritten in C++
+          using the KDE libraries.  It is much faster and cleaner, and no
+          longer relies on Java support.  The user interface can be started
+          by running "regina-kde".
+        - Python scripting now uses standard Python, not Jython.  The API
+          is much closer to that of the C++ calculation engine and
+          everything has been moved into the single module "regina".
+          A python session can be started by running "regina-python".
+    Features:
+        - Better and more consistent support for recognising standard
+          triangulations and their underlying 3-manifolds.
+        - Calculates Turaev-Viro invariants of triangulations.
+        - Finds isomorphic copies of bounded triangulations within
+          larger triangulations.
+        - External objects can now be automatically notified of changes
+          to packets and packet trees.
+
+Version 3.2  [ 22 June, 2003 ] - The post-thesis release!
+
+    Features:
+        - Layered loops can be automatically constructed.
+        - Much better recognition of common names for Seifert fibred spaces.
+        - New utility regconcat for merging data files.
+    Optimisations:
+        - Significant performance increase for census generation, especially
+          in the non-orientable case, due to the use of results regarding
+          face pairing graphs.
+        - Significant performance increase for 0-efficiency calculation,
+          obtained by using quad space where possible.
+    Miscellaneous:
+        - Added closed orientable census, closed non-orientable census
+          and splitting surface signature census to example files.
+        - File format is fully documented in the reference manual.
+        - Calculation engine test suite much enhanced.
+        - PhD thesis submitted on 30 May, 2003!
+
+Version 3.1  [ 18 October, 2002 ]
+
+    - Massive optimisation of census code.
+    - Strong optimisation of normal surface enumeration code.
+    - Census calculations can be split into independent pieces (e.g., for
+      running on different machines).
+    - Triangulation simplification improved, including random 4-4 moves.
+    - Offers more common names for recognised Seifert fibred spaces.
+    - Supports multiple vertex enumeration engines (though no new
+      engines are added yet).
+    - Jython consoles start with variable [selected] set to the currently
+      selected packet.
+    - Fixed ideal-to-finite bug that was introduced in Regina 3.0.
+    - New calculation engine test suite (currently fairly small).
+    - New autoconf/automake/libtool build system.
+
+Version 3.0  [ 28 June, 2002 ] - The "XML, about bloody time" release.
+
+    - Moved from old impenetrable binary data files to new compressed
+      XML data files.
+    - Works with splitting surface signatures.
+    - Yet more subcomplex recognition.
+    - Recognises thin edge links.
+    - Supports arbitrary packet tags.
+    - Optimisations for skeletal calculations in triangulations.
+    - Introduced various command-line utility programs.
+    - Reference manual much enhanced.
+    - The Great STL Port: calculation engine completely reworked to use
+      and play well with the C++ Standard Template Library.  Also made
+      more standards-compliant (i.e., compiles under gcc3) and put in
+      its own namespace (regina).
+    - Removed CORBA engine/interface (see CHANGES.txt for why).
+    - Happy birthday to me!
+
+Version 2.4  [ 4 April, 2002 ]
+
+    - Calculates vertex angle structures.
+    - Rehydrates dehydrated triangulation strings.
+    - Calculates double covers.
+    - Exports SnapPea files.
+    - Creates layered lens spaces with fewest possible tetrahedra.
+    - Individual normal surfaces may be named.
+    - Filenames may be specified on the command-line.
+    - Text consoles have readline/editline support.
+    - More keyboard accelerators.
+    - Added SnapPea census and knot/link census to examples.
+    - Added directory of prepackaged Jython libraries.
+    - Option REGINA_OPTIONS_GLOBAL is guessed more intelligently.
+    - Much enhanced documentation.
+
+Version 2.3  [ 12 December, 2001 ] - The "Farewell Stillwater" release.
+
+    - Recognises more families of subcomplexes in a triangulation
+      (layered chain, layered loop, lens space, Seifert fibred space,
+      triangular / spiralled / augmented triangular solid torus).
+    - Recognises specific face types in a triangulation.
+    - Crushes normal surfaces to a point.
+    - More triangulation properties (0-efficient, has splitting surface).
+    - More normal surface properties (connectedness, vertex link,
+      splitting surface, 2-sided).
+    - 4-4 moves can be performed on a triangulation.
+    - Imports and exports Regina files and scripts.
+    - Jython scripting behaves more naturally.
+    - Loading/saving files works even through a remote CORBA engine.
+    - Builds calculation engine as a shared library to link into other
+      programs.
+    - Various bug fixes.
+
+Version 2.2  [ 7 October, 2001 ]
+
+    (See CHANGES.txt for details beyond this point.)
+
+Ben Burton (bab@maths.uq.edu.au)
+http://regina-normal.github.io/
+
+</pre></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="man-trisetcmp.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="credits.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">trisetcmp </td><td width="34%" align="center" class="navCenter"><a href="index.html">Up</a></td><td width="33%" align="right" class="navRight"> Authors and License</td></tr></table></div></body></html>
