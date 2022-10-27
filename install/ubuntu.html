@@ -16,10 +16,28 @@ ships with Regina&nbsp;5.1, and Ubuntu&nbsp;22.04 ships with Regina&nbsp;7.0).
 </p>
 <p>
 If you wish to keep up-to-date with the <b>newest version</b> of Regina,
-follow these instructions.
+follow the instructions below.
 </p>
+<div class="warning"><p>
+<b>Note:</b> On Ubuntu 22.04 LTS (jammy) and later, if you try to view
+documentation through the <i>Help</i> menu, you may see a &ldquo;File
+not found&rdquo; error.  This is because Ubuntu now ships Firefox as a
+snap (not a regular package), which <b>cannot read locally installed
+HTML files</b>.
+<br><br>
+Regina simply asks the desktop environment (e.g., GNOME or KDE) for your
+preferred HTML viewer.  Therefore, if you wish to fix this, the best suggestion
+for now is to change the file associations in your desktop settings
+so that HTML files are opened by a different browser (one that actually has
+permissions to read locally installed documentation).
+<br><br>
+Alternatively, you can always
+<a href="../docs/">read the handbook online here</a> and
+<a href="../engine-docs/">read the API documentation online here</a>.
+</p></div>
 <p>
-<b>You only need to follow these steps the first time you install Regina.</b>
+<b>You only need to follow these installation steps
+the first time you install Regina.</b>
 After this, Ubuntu's package manager will handle upgrades for you,
 just like for any other Ubuntu package.
 </p>
