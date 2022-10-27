@@ -11,8 +11,8 @@
   alt="Regina: Software for low-dimensional topology">
 </center>
 <center>
-<h4>Version 7.2 currently being uploaded<br>(27&ndash;28 October 2022)</h4>
-<!--h4>Latest version: 7.1 (September 2022)<br>
+<!--h4>Version 7.2 currently being uploaded<br>(27&ndash;28 October 2022)</h4-->
+<h4>Latest version: 7.2 (October 2022)<!--br>
 Updated packages: 22 Jun 2022<br>
 Updated documentation: 9 May 2022<br>
 Updated packages: 10 December 2021<br>
@@ -27,7 +27,7 @@ Updated data: 31 May 2018--></h4>
     <tr><td><a href="#screenshots">Screenshots</a></td></tr>
     <tr><td><a href="#download">Download</a></td></tr>
     <tr><td><a href="#docs">Documentation</a></td></tr>
-    <tr><td><a href="#new">What's new in version 7.1?</a></td></tr>
+    <tr><td><a href="#new">What's new in version 7.2?</a></td></tr>
     <tr><td><a href="#announce">Announcement mailing list</a></td></tr>
     <tr><td><a href="#license">License and citation</a></td></tr>
     <tr><td><a href="#contact">Contact</a></td></tr>
@@ -56,19 +56,16 @@ Updated data: 31 May 2018--></h4>
 <h2><a name="news">News</a></h2>
 
 <p class="header">
-<b>6 Oct 2022:</b>
-A bug has been found in Regina's Python bindings.
-It is unlikely that anybody is affected (it involves a specialised swap
-function with fixed-width bitmasks, only in Python); however, you can
-<a href="bugs.html">read the details here</a>.
-Since this is minor and unlikely to affect any actual users,
-it will be fixed as part of the Regina&nbsp;7.2 release
-(due in roughly a month).
-<p class="header">
-<b>30 Sep 2022:</b>
-Regina 7.1 is out!
+<b>28 Oct 2022:</b>
+Regina 7.2 is out!
 You can <a href="#new">read all about what's new</a>,
 or just go ahead and <a href="#download">download it</a>.
+<p class="header">
+<b>Two bugs were found</b> in the Python bindings, as part of a comprehensive
+audit in this release.
+It is likely that nobody was affected (the relevant code was designed
+for internal use via C++, which was unaffected).
+If you wish to check, you can <a href="bugs.html">read the details here</a>.
 <p class="header">
 <b>10 December 2021:</b>
 Regina 7.0 is out!
@@ -170,9 +167,9 @@ The following downloads are available:
 </table>
 <p>
 All direct downloads come with
-<a href="https://github.com/regina-normal/regina/releases/download/regina-7.1/SHA1SUMS-signed.txt">SHA-1 checksums</a>
+<a href="https://github.com/regina-normal/regina/releases/download/regina-7.2/SHA1SUMS-signed.txt">SHA-1 checksums</a>
 and
-<a href="https://github.com/regina-normal/regina/releases/download/regina-7.1/SHA256SUMS-signed.txt">SHA-256 checksums</a>,
+<a href="https://github.com/regina-normal/regina/releases/download/regina-7.2/SHA256SUMS-signed.txt">SHA-256 checksums</a>,
 signed with <a href="https://people.debian.org/~bab/regina-key.txt">Ben Burton's GPG key</a>.
 <p>
 If you encounter any problems when you run Regina, you can check the
@@ -194,12 +191,13 @@ Not sure which?  Start with the App Store version (but read below).
 <tr><th class="first" colspan=2>macOS version</th>
     <th>Website download</th>
     <th>App store</th></tr>
-<tr><td class="firstjoin">Monterey (12)<br>
+<tr><td class="firstjoin">Ventura (13)<br>
+    Monterey (12)<br>
     Big Sur (11)<br>
     Catalina (10.15)
     </td>
     <td><img srcset="osicons/os_macosx.png 1x, osicons/os_macosx@2x.png 2x" src="osicons/os_macosx.png" border=0 hspace=5></td>
-    <td align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-7.1/Regina-7.1_py39.dmg">Download&nbsp;here</a></td>
+    <td align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-7.2/Regina-7.2_py39.dmg">Download&nbsp;here</a></td>
     <td><a href="https://itunes.apple.com/us/app/regina-for-3-manifolds/id1160053348?mt=8"><img src="ios/Download_on_the_Mac_App_Store_Badge_US-UK_RGB_wht_092917.svg" alt="Download on the Mac App Store" border=0 hspace=10 vspace=10/></a></td>
     </tr>
     </tr>
@@ -229,7 +227,7 @@ such as those in your <tt>Applications</tt> folder.
 
 Regina on Windows uses a standard point-and-click installer.
 <p>
-As of version&nbsp;7.1, Regina now <b>only supports 64-bit Windows</b>,
+Since version&nbsp;7.1, Regina now <b>only supports 64-bit Windows</b>,
 and only on Intel/AMD64 chipsets.
 Almost all modern Windows installations are of this type,
 and so this is almost certainly the version that you want.
@@ -245,7 +243,7 @@ system (e.g., macOS or GNU/Linux).
     <th>Installer</th></tr>
 <tr><td class="firstjoin">Windows&nbsp;11<br>Windows&nbsp;10</td>
     <td><img srcset="osicons/os_win_other.png 1x, osicons/os_win_other@2x.png 2x" src="osicons/os_win_other.png" border=0 hspace=5></td>
-    <td align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-7.1/Regina-7.1-x86_64.msi">Download</a></td>
+    <td align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-7.2/Regina-7.2-x86_64.msi">Download</a></td>
     </tr>
 </tbody></table>
 </blockquote>
@@ -310,7 +308,7 @@ with the <a href="http://regina-rexx.sourceforge.net/">other Regina</a>).
     </tr>
 <tr><td rowspan=1 class="firstjoin">Ubuntu</td>
     <td rowspan=1><img srcset="osicons/os_ubuntu.png 1x, osicons/os_ubuntu@2x.png 2x" src="osicons/os_ubuntu.png" border=0 hspace=5></td>
-    <td>22.04&nbsp;LTS&nbsp;(jammy)<br>20.04&nbsp;LTS&nbsp;(focal)</td>
+    <td>22.10&nbsp;(kinetic)<br>22.04&nbsp;LTS&nbsp;(jammy)<br>20.04&nbsp;LTS&nbsp;(focal)</td>
     <td><tt>amd64</tt><br><tt>arm64</tt></td>
     <td align="center" rowspan=1><a href="install/ubuntu.html">Install</a></td>
     </tr>
@@ -412,7 +410,7 @@ desktop versions listed above.
 For other systems not listed above, you will need to build Regina
 from its source code.
 <p>
-You can <a href="https://github.com/regina-normal/regina/releases/download/regina-7.1/regina-7.1.tar.gz">download the source code here</a>.
+You can <a href="https://github.com/regina-normal/regina/releases/download/regina-7.2/regina-7.2.tar.gz">download the source code here</a>.
 <p>
 Please see the <a href="source.html">separate page on building Regina</a>
 for instructions on how to build Regina and
@@ -446,30 +444,48 @@ You can read the API documentation by selecting
 from the menu.
 You can also <a href="engine-docs/index.html">read it here online</a>.
 <p>
+Since Regina&nbsp;7.2, Python users can also access detailed API documentation
+inline via Python docstrings.
+Please <a href="docs/python-docs.html">see the handbook</a> for details
+of what these docstrings can and cannot provide.
+<p>
 <i><a href="#contents">(Back to contents...)</a></i>
 
-<h2><a name="new">What's new in version 7.1?</a></h2>
+<h2><a name="new">What's new in version 7.2?</a></h2>
 <p>
-New features include:
+The main focus of version&nbsp;7.2 is Python:
 <ul>
-<li>Computes intersection forms of closed orientable 4-manifolds.</li>
-<li>Computes and recognises links of faces of all dimensions as normal
-(hyper)surfaces; this includes both thin links and normalised links.</li>
-<li>Expanded 3-ball and solid torus recognition to more general
-handlebody recognition (thanks to Alex He).</li>
-<li>The tricensus utility now supports multithreaded operation, and
-has a new output option that preserves simplex/vertex labelling.</li>
-<li>Includes the standard K3 surface as a ready-made example 4-manifold
-(thanks to Rhuaidi Burke for the small triangulation).</li>
-<li>Greater support for &ldquo;tight encodings&rdquo;
-for several types of objects;
-these use short text tokens, with no loss of information and no
-simplex/vertex/crossing relabelling.  These need Python or C++ to use.</li>
-<li>More graph operations are now available for facet pairings.</li>
-<li>Several other smaller features and optimisations.</li>
+<li>Regina now provides docstrings throughout its Python module, which
+means you can get comprehensive help directly from within Python.
+<a href="docs/python-docs.html">see the handboook</a> for some important
+caveats regarding this inline documentation.</li>
+<li>Regina now supports the newly-released Python 3.11, but no longer
+supports Python 3.4 or 3.5.</li>
+<li>Undertook a full audit of Python bindings for the entire calculation
+engine: a few bindings were missing, and these have now been added.</li>
+<li>Added <tt>__len__()</tt> functions to classes where this is meaningful.</li>
+<li>Fixed two errors in the Python bindings (<tt>Cyclotomic.negate()</tt> and
+<tt>swap(BitmaskN, BitmaskN)</tt>).  These are unlikely to have affected users:
+<a href="bugs.html">see here for details</a>.</li>
 </ul>
 <p>
-For Python and C++ programmers:
+This builds on last month's release of version&nbsp;7.1, which includes:
+<ul>
+<li>intersection forms of closed orientable 4-manifolds;</li>
+<li>building and recognising thin and normalised links of faces of all
+dimensions as normal (hyper)surfaces;</li>
+<li>handlebody recognition (thanks to Alex He);</li>
+<li>a multithreaded <tt>tricensus</tt>, also with options to preserve
+labelling;</li>
+<li>a small triangulation of the standard K3 surface as a ready-made
+example 4-manifold (thanks to Rhuaidi Burke);</li>
+<li>greater support for &ldquo;tight encodings&rdquo;
+(short text tokens with no loss of information and no relabellings);</li>
+<li>more graph operations for facet pairings;</li>
+<li>several other smaller features and optimisations.</li>
+</ul>
+<p>
+In addition, for Python and C++ programmers:
 <ul>
 <li>Regina now supports Python 3 only (not Python 2 or 3).</li>
 <li>Everything that was deprecated in version 7.0 has now been removed
