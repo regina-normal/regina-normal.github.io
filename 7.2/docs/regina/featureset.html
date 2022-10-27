@@ -1,0 +1,388 @@
+<html><head><title>What does Regina do?</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina 7.2 Handbook"><link rel="up" href="about.html" title="Chapter 1. Introduction"><link rel="prev" href="about.html" title="Chapter 1. Introduction"><link rel="next" href="regina7.html" title="Important Changes in Regina 7.0"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>What does Regina do?</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="about.html">Prev</a></td><td align="center" class="navCenter" width="34%">Introduction</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="regina7.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="featureset"></a>What does Regina do?</h2></div></div></div><p>
+  Some of <span class="application">Regina</span>'s more noteworthy features are listed below.
+ </p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="features-tri"></a>3-Manifold Triangulations</h3></div></div></div><p>
+   <span class="application">Regina</span>'s greatest strengths are in 3-manifold topology.
+   Here, the primary objects that a user works with are
+   3-manifold triangulations.  A large part of <span class="application">Regina</span> is
+   devoted to the creation, analysis and manipulation of these triangulations.
+  </p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="features-tricreation"></a>Creation</h4></div></div></div><p>
+    You can create 3-manifold triangulations in the following ways:
+    </p><div class="itemizedlist"><ul type="disc"><li><p>
+      manual construction by entering
+      individual tetrahedron face gluings by hand;
+     </p></li><li><p>
+      automatic generation of several standard families of triangulations,
+      such as layered solid tori and layered lens spaces
+      [<a href="bibliography.html#bib-0-efficiency" title="[JR03]"><span class="abbrev">JR03</span></a>],
+      [<a href="bibliography.html#bib-layeredlensspaces" title="[JR06]"><span class="abbrev">JR06</span></a>],
+      and standard constructions of Seifert fibred spaces over the sphere;
+     </p></li><li><p>
+      reconstruction from
+      text-based isomorphism signatures
+      [<a href="bibliography.html#bib-burton-pachner-orprime" title="[Bur11c]"><span class="abbrev">Bur11c</span></a>]
+      and Callahan-Hildebrand-Weeks
+      dehydration strings [<a href="bibliography.html#bib-cuspedcensus" title="[CHW99]"><span class="abbrev">CHW99</span></a>];
+     </p></li><li><p>
+      building triangulations from framed links, using the command-line
+      <a href="man-dgt.html" title="dgt"><span class="application"><span class="acronym">DGT</span></span></a> tool;
+     </p></li><li><p>
+      importing triangulations from <a href="http://www.math.uic.edu/t3m/SnapPy/" target="_top"><span class="application">SnapPea</span> / <span class="application">SnapPy</span></a> (which now preserves
+      fillings and peripheral curves), and also from <a href="http://www.ms.unimelb.edu.au/~snap/orb.html" target="_top"><span class="application">Orb</span></a>;
+     </p></li><li><p>
+      automatic construction of several ready-made example triangulations.
+     </p></li></ul></div><p>
+    </p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="features-trianalysis"></a>Analysis</h4></div></div></div><p>
+    You can compute the following properties of a 3-manifold triangulation:
+    </p><div class="itemizedlist"><ul type="disc"><li><p>
+      detailed combinatorial information about the skeleton and
+      boundary components, including triangulations of the vertex links
+      and the shapes formed by the various triangles (2-faces)
+      within the triangulation;
+     </p></li><li><p>
+      a variety of homology and homotopy groups;
+     </p></li><li><p>
+      the quantum invariants of Turaev and Viro
+      [<a href="bibliography.html#bib-turaevviro" title="[TV92]"><span class="abbrev">TV92</span></a>];
+     </p></li><li><p>
+      the Kawauchi-Kojima invariants of the torsion linking form
+      [<a href="bibliography.html#bib-kktorsionlinkingform" title="[KK80]"><span class="abbrev">KK80</span></a>], and comments on
+      where the triangulation might be embeddable;
+     </p></li><li><p>
+      3-sphere, 3-ball, handlebody and unknot recognition,
+      as well as connected sum decomposition,
+      irreducibility testing and Hakenness testing;
+     </p></li><li><p>
+      triangulation attributes relating to the existence of particular
+      types of normal surface, such as 0-efficiency [<a href="bibliography.html#bib-0-efficiency" title="[JR03]"><span class="abbrev">JR03</span></a>]
+      and the existence of splitting surfaces
+      (described <a href="featureset.html#features-splitting" title="Splitting Surfaces">below</a>);
+     </p></li><li><p>
+      fast and rigorous certification of hyperbolicity (using strict
+      angle structures and linear programming);
+     </p></li><li><p>
+      a richer but non-rigorous collection of hyperbolic invariants computed
+      by the <span class="application">SnapPea</span> kernel;
+     </p></li><li><p>
+      a visual representation of the face pairing graph
+      [<a href="bibliography.html#bib-burton-facegraphs" title="[Bur04]"><span class="abbrev">Bur04</span></a>], with the help
+      of <span class="application">Graphviz</span>;
+     </p></li><li><p>
+      a tree decomposition of the face pairing graph, for use with
+      fixed-parameter tractable algorithms
+      [<a href="bibliography.html#bib-turaevviro-fpt" title="[BMS15]"><span class="abbrev">BMS15</span></a>];
+     </p></li><li><p>
+      text-based isomorphism signatures
+      [<a href="bibliography.html#bib-burton-pachner-orprime" title="[Bur11c]"><span class="abbrev">Bur11c</span></a>],
+      which identify a triangulation uniquely up to combinatorial isomorphism;
+     </p></li><li><p>
+      Callahan-Hildebrand-Weeks dehydration strings
+      [<a href="bibliography.html#bib-cuspedcensus" title="[CHW99]"><span class="abbrev">CHW99</span></a>],
+      for those triangulations that can support them.
+     </p></li></ul></div><p>
+   </p><p>
+    Pairs of triangulations can be tested for direct isomorphism, or for
+    whether one triangulation is isomorphic to a subcomplex of another.  In
+    addition the software can recognise and identify a large variety of
+    well-formed structures within a
+    triangulation.  These include common building blocks (such as the
+    layered solid tori mentioned above) as well as infinite families
+    of complete triangulations such as those described by
+    Burton [<a href="bibliography.html#bib-burton-phd" title="[Bur03]"><span class="abbrev">Bur03</span></a>], [<a href="bibliography.html#bib-burton-nor7" title="[Bur07c]"><span class="abbrev">Bur07c</span></a>],
+    [<a href="bibliography.html#bib-burton-satblocks" title="[Bur08a]"><span class="abbrev">Bur08a</span></a>],
+    Martelli and Petronio [<a href="bibliography.html#bib-italian9" title="[MP01]"><span class="abbrev">MP01</span></a>] and
+    Matveev [<a href="bibliography.html#bib-matveev6" title="[Mat98]"><span class="abbrev">Mat98</span></a>].  As a
+    result, <span class="application">Regina</span> can frequently recognise the underlying 3-manifolds for
+    well-structured triangulations that it has not previously encountered.
+   </p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="features-trimanipulation"></a>Manipulation</h4></div></div></div><p>
+    You can manipulate a 3-manifold triangulation using the following tools:
+    </p><div class="itemizedlist"><ul type="disc"><li><p>
+      elementary moves (transformations local to a small
+      number of tetrahedra), such as Pachner moves and other
+      transformations described in [<a href="bibliography.html#bib-burton-nor7" title="[Bur07c]"><span class="abbrev">Bur07c</span></a>];
+     </p></li><li><p>
+      “greedy” simplification, which uses a fast combination
+      of these elementary moves to reduce the number of
+      tetrahedra as far as possible;
+     </p></li><li><p>
+      “exhaustive” simplification, which involves a
+      comprehensive search through the Pachner graph to find
+      simplification moves that the greedy method could not;
+     </p></li><li><p>
+      conversion to a 0-efficient triangulation where possible
+      for closed orientable 3-manifolds [<a href="bibliography.html#bib-0-efficiency" title="[JR03]"><span class="abbrev">JR03</span></a>];
+     </p></li><li><p>
+      barycentric subdivision, truncating ideal vertices
+      (whose links are neither 2-spheres nor discs) to give real
+      boundary components, and conversely coning real
+      boundary components to give ideal vertices;
+     </p></li><li><p>
+      conversion of a non-orientable triangulation to an orientable
+      double cover;
+     </p></li><li><p>
+      cutting along normal surfaces within a triangulation
+      or crushing them to a point, as
+      described <a href="featureset.html#features-surfaces" title="Normal Surfaces and Hypersurfaces">below</a>;
+     </p></li><li><p>
+      puncturing manifolds,
+      drilling out neighbourhoods of edges, and building connected sums;
+     </p></li><li><p>
+      Dehn fillings for <span class="application">SnapPea</span> triangulations (via the <span class="application">SnapPea</span> kernel).
+     </p></li></ul></div><p>
+   </p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="features-dim4"></a>4-Manifold Triangulations</h3></div></div></div><p>
+   <span class="application">Regina</span> also offers rich support for triangulated 4-manifolds.
+  </p><p>
+   You can create 4-manifold triangulations using similar methods to
+   3-manifolds, including manual gluings of pentachora,
+   automatic generation of standard families, reconstruction from
+   isomorphism signatures, building from framed links,
+   and constructing ready-made examples.
+  </p><p>
+   To analyse 4-manifold triangulations, <span class="application">Regina</span> offers a similar
+   suite of algebraic and combinatorial tools, including
+   detailed information about the skeleton and edge/vertex links,
+   various homology and homotopy groups, intersection forms,
+   analysis and tree decompositions of the facet pairing graph,
+   isomorphism testing, and isomorphism signatures.
+  </p><p>
+   To manipulate 4-manifold triangulations, <span class="application">Regina</span> offers a
+   similar combinatorial toolbox to that for 3-manifolds, including
+   elementary moves, automated simplification, barycentric subdivision,
+   double covers, and converting between ideal and real boundary components.
+  </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="features-highdim"></a>Higher Dimensions</h3></div></div></div><p>
+   Beyond 4-manifolds, <span class="application">Regina</span> offers very basic support support for
+   triangulations of dimensions 5–8 (and, if you make your own
+   <a href="https://regina-normal.github.io/buildtips.html#highdim" target="_top">custom
+   build</a>, 9–15).
+   This support is <span class="emphasis"><em>not</em></span> available through the <span class="acronym">GUI</span>:
+   for this you will need to use either
+   <a href="python.html" title="Chapter 9. Python Scripting"><span class="application">Python</span></a> or
+   <a href="compiling.html" title="Chapter 11. Compiling Regina Into a C++ Project"><span class="application">C++</span></a>.
+  </p><p>
+   Currently this support is limited to basic combinatorial tools,
+   such analysis of the skeleton and face structure of the triangulation,
+   double covers, creating ideal vertices, isomorphism testing,
+   and isomorphism signatures.
+  </p><p>
+   The level of support for higher-dimensional triangulations is
+   expected to grow in future releases.
+  </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="features-links"></a>Knots and Links</h3></div></div></div><p>
+   Since version 5.96,
+   <span class="application">Regina</span> now offers native support for knots and links.
+  </p><p>
+   You can create knots and links from Gauss, Dowker-Thistlethwaite
+   or planar diagram codes, knot signatures,
+   parameterised families of knots and links,
+   or construction of ready-made examples.
+  </p><p>
+   <span class="application">Regina</span> computes several link invariants including the
+   Jones and HOMFLY-PT polynomials and the link group,
+   allows you to build and study the
+   underlying 4-valent graph and its tree decompositions, offers tools
+   for isomorphism testing and isomorphism signatures, and allows you to
+   build the knot/link complement as a 3-manifold triangulation.
+  </p><p>
+   To manipulate knots and links, you can edit individual crossings,
+   perform Reidemeister moves, take cablings, or run
+   sophisticated simplification tools.
+  </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="features-census"></a>Census Creation and Lookup</h3></div></div></div><p>
+   <span class="application">Regina</span> can be used to form censuses of all triangulations
+   that satisfy various constraints, through the command-line tool
+   <a href="man-tricensus.html" title="tricensus"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">tricensus</strong></span></span></a>.
+   Census enumeration is currently available for triangulations
+   in dimensions 2, 3 and 4.
+  </p><p>
+   The census algorithms are heavily optimised; see
+   [<a href="bibliography.html#bib-burton-facegraphs" title="[Bur04]"><span class="abbrev">Bur04</span></a>],
+   [<a href="bibliography.html#bib-burton-nor10" title="[Bur07a]"><span class="abbrev">Bur07a</span></a>] and
+   [<a href="bibliography.html#bib-burton-genus" title="[Bur11a]"><span class="abbrev">Bur11a</span></a>] for details.
+  </p><p>
+   <span class="application">Regina</span> ships with several
+   census databases, including closed 3-manifold triangulations
+   [<a href="bibliography.html#bib-burton-nor8" title="[Bur07b]"><span class="abbrev">Bur07b</span></a>], [<a href="bibliography.html#bib-burton-nor10" title="[Bur07a]"><span class="abbrev">Bur07a</span></a>],
+   [<a href="bibliography.html#bib-burton-genus" title="[Bur11a]"><span class="abbrev">Bur11a</span></a>], hyperbolic 3-manifolds
+   [<a href="bibliography.html#bib-burton-complete" title="[Bur14c]"><span class="abbrev">Bur14c</span></a>],
+   [<a href="bibliography.html#bib-cuspedcensus" title="[CHW99]"><span class="abbrev">CHW99</span></a>], [<a href="bibliography.html#bib-closedhypcensus" title="[HW94]"><span class="abbrev">HW94</span></a>],
+   and knots and links [<a href="bibliography.html#bib-burton-knots" title="[Bur20]"><span class="abbrev">Bur20</span></a>].
+  </p><p>
+   <span class="application">Regina</span> can also search for a given triangulation across these databases
+   (and indeed across much larger extensions of these databases),
+   using isomorphism signatures [<a href="bibliography.html#bib-burton-pachner-orprime" title="[Bur11c]"><span class="abbrev">Bur11c</span></a>],
+   and fast hashing techniques.
+  </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="features-surfaces"></a>Normal Surfaces and Hypersurfaces</h3></div></div></div><p>
+   <span class="application">Regina</span> is capable of enumerating all vertex or fundamental
+   normal surfaces within a 3-manifold triangulation, or all
+   vertex or fundamental normal hypersurfaces within a 4-manifold
+   triangulation.  For 3-manifolds, almost normal
+   surfaces<sup>[<a name="idp105544659006736" href="#ftn.idp105544659006736">1</a>]</sup>
+   are supported also.
+  </p><p>
+   These operations—enumerating vertex and fundamental normal
+   surfaces—are required by many high-level topological algorithms
+   for 3-manifolds.  The underlying enumeration algorithms
+   are highly optimised, and are described in detail in
+   [<a href="bibliography.html#bib-burton-dd" title="[Bur10a]"><span class="abbrev">Bur10a</span></a>],
+   [<a href="bibliography.html#bib-burton-convert" title="[Bur09a]"><span class="abbrev">Bur09a</span></a>],
+   [<a href="bibliography.html#bib-burton-quadoct" title="[Bur10b]"><span class="abbrev">Bur10b</span></a>],
+   [<a href="bibliography.html#bib-burton-fund" title="[Bur14a]"><span class="abbrev">Bur14a</span></a>], and
+   [<a href="bibliography.html#bib-bo-tree" title="[BO13]"><span class="abbrev">BO13</span></a>].
+  </p><p>
+   For 3-manifolds, this enumeration can be performed in a variety of coordinate
+   systems.  For an <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span>-tetrahedron triangulation
+   this includes the 7<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span>
+   standard triangle and quadrilateral coordinates, as well
+   as the smaller set of 3<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span> quadrilateral-only
+   coordinates [<a href="bibliography.html#bib-quadspace" title="[Tol98]"><span class="abbrev">Tol98</span></a>].
+   Likewise, for almost normal surfaces
+   this includes the 10<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span> standard coordinates
+   as well as the 6<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span> quadrilateral-octagon
+   coordinates [<a href="bibliography.html#bib-burton-quadoct" title="[Bur10b]"><span class="abbrev">Bur10b</span></a>].
+  </p><p>
+   The enumeration
+   can be restricted to embedded normal surfaces/hypersurfaces,
+   or can be expanded to
+   include immersed and singular surfaces/hypersurfaces.
+   <span class="application">Regina</span> also supports
+   spun-normal surfaces [<a href="bibliography.html#bib-tillus-spun" title="[Til08]"><span class="abbrev">Til08</span></a>],
+   which are non-compact surfaces with infinitely many
+   discs found in ideal 3-manifold triangulations.
+  </p><p>
+   To analyse normal surfaces within a 3-manifold triangulation, you can:
+   </p><div class="itemizedlist"><ul type="disc"><li><p>
+     view normal surfaces in a variety of coordinate systems,
+     including the standard and quadrilateral-only coordinates
+     discussed above as well as the edge weight coordinates introduced by
+     Casson;
+    </p></li><li><p>
+     calculate basic properties of normal surfaces such as
+     Euler characteristic, orientability and one-sidedness;
+    </p></li><li><p>
+     test surfaces for incompressibility, using both exact techniques
+     [<a href="bibliography.html#bib-jaco-oertel" title="[JO84]"><span class="abbrev">JO84</span></a>] and
+     fast heuristics [<a href="bibliography.html#bib-weber-seifert" title="[BRT12]"><span class="abbrev">BRT12</span></a>];
+    </p></li><li><p>
+     cut along a normal surface and retriangulate, or crush the surface
+     using the techniques of Jaco and Rubinstein
+     [<a href="bibliography.html#bib-0-efficiency" title="[JR03]"><span class="abbrev">JR03</span></a>];
+    </p></li><li><p>
+     recognise standard surfaces within a triangulation such
+     as splitting surfaces (described
+     <a href="featureset.html#features-splitting" title="Splitting Surfaces">below</a>)
+     and thin or normalised vertex, edge and triangle links;
+    </p></li><li><p>
+     test pairs of surfaces for local compatibility (compatible
+     quadrilaterals and/or octagons) and global compatibility (being
+     able to make the surfaces disjoint);
+    </p></li><li><p>
+     filter large lists of normal surfaces by various properties
+     such as Euler characteristic, orientability and boundary.
+    </p></li></ul></div><p>
+  </p><p>
+   For normal hypersurfaces in a 4-manifold triangulation, some
+   analogous operations are available.  In particular, you can view
+   hypersurfaces in different coordinate systems, calculate basic
+   properties, and test for local (but not yet global) compatibility.
+  </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="features-angles"></a>Angle Structures</h3></div></div></div><p>
+   Angle structures, studied originally by Casson and then developed by
+   Lackenby [<a href="bibliography.html#bib-lackenby-taut" title="[Lac00a]"><span class="abbrev">Lac00a</span></a>],
+   [<a href="bibliography.html#bib-lackenby-anglestruct" title="[Lac00b]"><span class="abbrev">Lac00b</span></a>] and
+   Rivin [<a href="bibliography.html#bib-rivin-structures" title="[Riv94]"><span class="abbrev">Riv94</span></a>],
+   [<a href="bibliography.html#bib-rivin-combopt" title="[Riv03]"><span class="abbrev">Riv03</span></a>],
+   represent a purely
+   algebraic generalisation of hyperbolic structures.  An angle structure
+   on an ideal 3-manifold triangulation is formed by assigning an interior
+   dihedral angle to each edge of every tetrahedron in such a way that
+   a variety of linear equations and inequalities are satisfied.
+  </p><p>
+   Using similar techniques to normal surface enumeration,
+   <span class="application">Regina</span> can enumerate all vertex angle structures in a triangulation,
+   or all taut structures (for which each dihedral angle is precisely 0
+   or π).
+   <span class="application">Regina</span> can also identify veering structures, which are taut
+   structures that induce a specific type of combinatorial structure on
+   the underlying triangulation
+   [<a href="bibliography.html#bib-agol-ideal" title="[Ago11]"><span class="abbrev">Ago11</span></a>], [<a href="bibliography.html#bib-hodgson-veering" title="[HRST11]"><span class="abbrev">HRST11</span></a>].
+  </p><p>
+   For <em class="firstterm">strict</em> angle structures (in which all angles
+   are strictly positive) or <em class="firstterm">generalised</em> angle
+   structures (where negative angles are allowed),
+   <span class="application">Regina</span> can test for existence very quickly and find an explicit example
+   if one exists, using techniques from linear programming and linear algebra.
+  </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="features-splitting"></a>Splitting Surfaces</h3></div></div></div><p>
+   A splitting surface within a 3-manifold triangulation
+   contains precisely one quadrilateral disc within
+   each tetrahedron and no other normal or almost normal discs.
+   These surfaces have some interesting combinatorial and topological
+   properties, described in detail in [<a href="bibliography.html#bib-burton-phd" title="[Bur03]"><span class="abbrev">Bur03</span></a>].
+  </p><p>
+   <span class="application">Regina</span> can detect whether splitting surfaces
+   occur within a triangulation.  It also provides support for
+   splitting surface signatures, which are compact text-based representations
+   from which splitting surfaces and their enclosing 3-manifold
+   triangulations can be reconstructed.  In addition, <span class="application">Regina</span> can generate a
+   census of all possible splitting surface signatures of a given size.
+  </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="features-scripting"></a>Scripting</h3></div></div></div><p>
+   Users can interact with <span class="application">Regina</span> at a lower level by writing and
+   running scripts in <a href="http://www.python.org/" target="_top"><span class="application">Python</span></a>.
+   These scripts are essentially high-level programs with immediate access
+   to the mathematical core of <span class="application">Regina</span>, and are ideal for
+   performing repetitive tasks over large sets of data.  Such tasks might
+   include performing a sequence of tests upon all triangulations in a
+   census, or testing a prototype for a new algorithm.
+   Scripts can be embedded in <span class="application">Regina</span> data files or run from the
+   command line, and custom libraries of
+   routines can be written to share code between files.
+  </p><p>
+   On many systems, default installations of <span class="application">Regina</span> and <span class="application">SnapPy</span> can
+   communicate with each other inside the same <span class="application">Python</span> session.
+   See the <a href="python-snappy.html" title="Talking with SnapPy"><span class="application">Python</span> chapter</a>
+   for details.
+  </p><p>
+   If you build <span class="application">Regina</span> from source, you have the option of
+   working with either <span class="application">Python</span> 2 or <span class="application">Python</span> 3.
+   (If you download a ready-made package, then the package maintainer
+   will have made this choice for you.)
+  </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="features-interfaces"></a>Interfaces</h3></div></div></div><p>
+   The usual method of running <span class="application">Regina</span> is through a full
+   point-and-click graphical user interface.
+   Alternatively, for those requiring immediate access to the
+   mathematical core of the software, an interactive command-line interface
+   is available for users to control the program using
+   <span class="application">Python</span> scripting as described above.
+   Various other specialised command-line utility programs are also available.
+  </p><p>
+   The mathematical core of <span class="application">Regina</span> is provided as a <span class="application">C++</span> library,
+   which means that programmers are able to access its low-level mathematical
+   routines directly from within their own code.
+  </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="features-docs"></a>Documentation</h3></div></div></div><p>
+   Significant effort has been spent on documentation for this software.
+   A full users' handbook is available for <span class="application">Regina</span> (which you are reading now).
+   In addition, the graphical user interface offers extensive assistance
+   through tooltips and "What's This?" texts.  Just hit
+   <span><strong class="keycap">Shift</strong></span>+<span><strong class="keycap">F1</strong></span>
+   and click on any element of the user interface for immediate assistance.
+  </p><p>
+   For users writing <span class="application">Python</span> scripts or for <span class="application">C++</span> programmers seeking to
+   modify or extend the software, the full <span class="acronym">API</span> for <span class="application">Regina</span>'s
+   mathematical engine is also extensively documented.
+   You can access the <span class="acronym">API</span> documentation by selecting
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Help</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Python API Reference</span></span>.
+  </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="features-datafiles"></a>Data Files</h3></div></div></div><p>
+   <span class="application">Regina</span> stores data in a well-organised hierarchical structure,
+   allowing a single data file to contain
+   multiple triangulations, normal surface lists and other topological
+   structures, along with supporting data such as text notes,
+   <span class="application">Python</span> scripts and <span class="acronym">PDF</span> documents.
+   The file format is based on
+   compressed <span class="acronym">XML</span>, an open and widely-supported text-based data
+   format.  International characters are fully supported.
+  </p><p><a name="dataformat"></a>
+   Again, this <span class="acronym">XML</span> file format is extensively documented.
+   For details, select
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Help</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">File Format Reference</span></span>.
+  </p></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p><sup>[<a name="ftn.idp105544659006736" href="#idp105544659006736">1</a>] </sup>Almost normal surfaces are closely related
+     to normal surfaces and are used by Rubinstein in his 3-sphere recognition
+     algorithm [<a href="bibliography.html#bib-rubin-3sphere1" title="[Rub95]"><span class="abbrev">Rub95</span></a>],
+     [<a href="bibliography.html#bib-rubin-3sphere2" title="[Rub97]"><span class="abbrev">Rub97</span></a>].  <span class="application">Regina</span> only considers octagonal
+     almost normal discs, and does not consider annular
+     pieces.</p></div></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="about.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="regina7.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">Introduction </td><td width="34%" align="center" class="navCenter"><a href="about.html">Up</a></td><td width="33%" align="right" class="navRight"> Important Changes in <span class="application">Regina</span> 7.0</td></tr></table></div></body></html>

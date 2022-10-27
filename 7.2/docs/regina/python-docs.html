@@ -1,0 +1,134 @@
+<html><head><title>API Documentation</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina 7.2 Handbook"><link rel="up" href="python.html" title="Chapter 9. Python Scripting"><link rel="prev" href="python-access.html" title="Accessing Regina from Python"><link rel="next" href="python-snappy.html" title="Talking with SnapPy"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1><span class="acronym">API</span> Documentation</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="python-access.html">Prev</a></td><td align="center" class="navCenter" width="34%"><span class="application">Python</span> Scripting</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="python-snappy.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="python-docs"></a><span class="acronym">API</span> Documentation</h2></div></div></div><p>
+   <span class="application">Regina</span> includes a complete <span class="acronym">API</span> reference for its calculation engine,
+   which describes in detail the objects, classes and methods that are
+   available through <span class="application">Python</span>.
+   To read this documentation, you can:
+   </p><div class="itemizedlist"><ul type="disc"><li>read the locally installed documentation by selecting
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Help</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Python <span class="acronym">API</span> Reference</span></span>;</li><li>read it online through the
+     <a href="https://regina-normal.github.io/engine-docs/" target="_top"><span class="application">Regina</span>
+     website</a>;</li><li>read it inline from
+    <a href="python-docs.html#python-docstrings" title="Inline Documentation">within <span class="application">Python</span></a>
+     (see below).</li></ul></div><p>
+   Be aware that this <span class="acronym">API</span> documentation is primarily written for <span class="application">C++</span>
+   (the main language that <span class="application">Regina</span> is written in).  This means:
+   </p><div class="itemizedlist"><ul type="disc"><li>
+     The documentation uses <span class="application">C++</span> notation and <span class="application">C++</span> types,
+     though these are all translated in the natural way to <span class="application">Python</span>
+     (e.g., <code class="literal">std::string</code> becomes a <span class="application">Python</span> string,
+     and <code class="literal">std::vector</code> becomes a <span class="application">Python</span> list).
+    </li><li>
+     Some functions differ in how they are called from <span class="application">C++</span>
+     versus <span class="application">Python</span>.  In such cases you will see the <span class="application">C++</span> description,
+     but there will also be a “<span class="application">Python</span>” paragraph explaining
+     how things differ in <span class="application">Python</span>.
+    </li></ul></div><p>
+   There are more issues that <span class="application">Python</span> users should be aware of;
+   please do read the
+   <a href="https://regina-normal.github.io/engine-docs/pythonapi.html" target="_top">summary page in the <span class="acronym">API</span> documentation</a>
+   that outlines the main differences.
+  </p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="python-docstrings"></a>Inline Documentation</h3></div></div></div><p>
+    As of version; 7.2, <span class="application">Regina</span> now provides <span class="application">Python</span> docstrings
+    for all of its classes and functions.  This means that you can get help
+    directly from the <span class="application">Python</span> prompt, as illustrated below.
+   </p><p>
+    Be aware, however, that this documentation is extracted automatically
+    from the hand-written <span class="application">C++</span> <span class="acronym">API</span> documentation discussed above.
+    Although great attention has been paid to making this extraction
+    as useful and natural as possible, it is still automated.
+    Therefore you will find:
+    </p><div class="itemizedlist"><ul type="disc"><li>The documentation still uses some <span class="application">C++</span> terminology
+      (e.g., <code class="literal">std::string</code>, pointers and references,
+      move semantics, etc.).</li><li>Function arguments are often not named in the synopsis
+      at the beginning of the docstring (you will see them called
+      <code class="literal">arg0</code>, <code class="literal">arg1</code>, etc.).
+      However, they <span class="emphasis"><em>are</em></span> named in the detailed
+      descriptions of the arguments that follow.</li><li>Some functions differ in how they are called from <span class="application">C++</span>
+      versus <span class="application">Python</span> (e.g., <code class="literal">Tetrahedron3.face()</code>, or
+      <code class="literal">Link.rewrite()</code>).
+      In these cases, the detailed hand-written argument descriptions will
+      follow the <span class="application">C++</span> variant, but the initial synopsis will be written for
+      <span class="application">Python</span>.  For clarity, here the arguments in the <span class="application">Python</span> synopsis
+      <span class="emphasis"><em>will</em></span> be named.
+      Look also for a “<span class="application">Python</span>” paragraph that explains
+      exactly how the <span class="application">C++</span> and <span class="application">Python</span> versions differ.</li><li>Some parts of the documentation are not accessible at all
+      through <span class="application">Python</span>, since they do not correspond to entities that
+      hold docstrings (e.g., class constants such as
+      <code class="literal">Perm4::nPerms</code>, or standalone pages such as the
+      discussion on Seifert fibred space notation).</li></ul></div><p>
+    Ultimately, <span class="emphasis"><em>it is the <span class="application">C++</span> documentation that is
+    authoritative</em></span>, not the inline <span class="application">Python</span> documentation.
+    Again, remember that you can always
+    <a href="https://regina-normal.github.io/engine-docs/" target="_top">read
+    the <span class="application">C++</span> documentation online</a>.
+   </p><p>
+    An example of docstrings for member functions:
+    </p><pre class="programlisting">&gt;&gt;&gt; help(NormalSurface.components)
+Help on instancemethod in module regina.engine:
+
+components(...)
+    components(self: regina.NormalSurface) -&gt; List[regina.NormalSurface]
+    
+    Splits this surface into connected components.
+    
+    A list of connected components will be returned. These components will
+    always be encoded using standard (tri-quad or tri-quad-oct)
+    coordinates, regardless of the internal vector encoding that is used
+    by this surface.
+    
+    Precondition:
+        This normal surface is embedded (not singular or immersed).
+    
+    Precondition:
+        This normal surface is compact (has finitely many discs).
+    
+    .. warning::
+        This routine explicitly builds the normal discs, and so may run
+        out of memory if the normal coordinates are extremely large.
+    
+    Returns:
+        the list of connected components.
+
+</pre><p>
+   </p><p>
+    An example of docstrings for classes:
+    </p><pre class="programlisting">&gt;&gt;&gt; help(Crossing)
+Help on class Crossing in module regina.engine:
+
+class Crossing(pybind11_builtins.pybind11_object)
+ |  Represents a single crossing in a link diagram. The two strands of the
+ |  link that run over and under the crossing respectively can be accessed
+ |  through routines such as over(), under(), upper(), lower(), and
+ |  strand().
+ |  
+ |  Each crossing has a sign, which is either positive (denoted by +1) or
+ |  negative (denoted by -1):
+ |  
+ |  * In a positive crossing, the upper strand passes over the lower
+ |    strand from left to right:
+ |  
+ |  ```
+ |    -----\ /-----&gt;
+ |          \
+ |    -----/ \-----&gt;
+ |  ```
+ |  
+ |  * In a negative crossing, the upper strand passes over the lower
+ |    strand from right to left:
+ |  
+ |  ```
+ |    -----\ /-----&gt;
+ |          /
+ |    -----/ \-----&gt;
+ |  ```
+ |  
+ |  If a link has *n* crossings, then these are numbered 0,...,*n*-1. The
+ |  number assigned to this crossing can be accessed by calling index().
+ |  Note that crossings in a link may be reindexed when other crossings
+ |  are added or removed - if you wish to track a particular crossing
+ |  through such operations then you should use a pointer to the relevant
+ |  Crossing object instead.
+ |  
+ |  ... (documentation continues) ...
+</pre><p>
+   </p></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="python-access.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="python-snappy.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">Accessing <span class="application">Regina</span> from <span class="application">Python</span> </td><td width="34%" align="center" class="navCenter"><a href="python.html">Up</a></td><td width="33%" align="right" class="navRight"> Talking with <span class="application">SnapPy</span></td></tr></table></div></body></html>

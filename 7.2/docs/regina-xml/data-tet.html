@@ -1,0 +1,72 @@
+<html><head><title>tet</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Regina, XML, Data files"><link rel="start" href="index.html" title="Regina 7.2 File Format Reference"><link rel="up" href="removed.html" title="Deprecated and Removed Elements"><link rel="prev" href="data-solidtorus.html" title="solidtorus"><link rel="next" href="data-tetrahedra.html" title="tetrahedra"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>tet</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="data-solidtorus.html">Prev</a></td><td align="center" class="navCenter" width="34%">Deprecated and Removed Elements</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="data-tetrahedra.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="data-tet"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>tet — Replaced by <a href="data-simplex.html" title="simplex"><code class="sgmltag-element">simplex</code></a></p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="informaltable"><table border="1"><colgroup><col><col></colgroup><tbody><tr><td colspan="2">
+      <span class="bold"><strong>Content Model</strong></span>
+     </td></tr><tr><td colspan="2">
+<pre class="synopsis">
+tet ::= (#PCDATA)</pre>
+     </td></tr><tr><td colspan="2">
+      <span class="bold"><strong>Attributes</strong></span>
+     </td></tr><tr><td><span class="bold"><strong>Name</strong></span></td><td><span class="bold"><strong>Type</strong></span></td></tr><tr><td><code class="sgmltag-element">desc</code></td><td><span class="type">CDATA</span></td></tr></tbody></table></div><p>Deprecated since <span class="application">Regina</span> 7.0</p></div><div class="refsect1" lang="en"><a name="idp105544832664464"></a><h2>Description</h2><p>
+   This element was used in the past to store a single tetrahedron in a
+   3-dimensional triangulation.  Since <span class="application">Regina</span> 7.0, all
+   top-dimensional simplices for triangulations in all dimensions
+   are now stored using the <a href="data-simplex.html" title="simplex"><code class="sgmltag-element">simplex</code></a> element.
+   Moreover, <span class="application">Regina</span> now supports multiple ways of encoding the gluing
+   permutations between these top-dimensional simplices.
+   See <a href="data-simplex.html" title="simplex"><code class="sgmltag-element">simplex</code></a> for details.
+  </p><p>
+   A <a href="data-tet.html" title="tet"><code class="sgmltag-element">tet</code></a> element stores a single tetrahedron in a 3-dimensional
+   triangulation, along with its associated face gluings.
+  </p><p>
+   The character data of this <span class="acronym">XML</span> element should be a
+   whitespace-separated list of four integer pairs, representing the
+   gluings of faces 0, 1, 2 and 3 of this tetrahedron.  Note that
+   face <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>i</code></em></span> is always opposite vertex
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>i</code></em></span> in a tetrahedron.
+  </p><p>
+   For each pair, the first integer represents the tetrahedron to which
+   the face is glued (note that tetrahedra in a triangulation are
+   numbered 0, 1, 2, etc.).  The second integer represents the
+   permutation of vertices from this tetrahedron to the other tetrahedron
+   describing precisely how this gluing takes place.  This permutation
+   will take the current face number of this tetrahedron to the corresponding
+   face number of the adjacent tetrahedron, and the other three vertex numbers
+   of this tetrahedron to the corresponding three vertex numbers on the
+   adjacent tetrahedron to which they are identified by this gluing.
+  </p><p>
+   A permutation is represented as a one-byte integer as follows.
+   If the permutation maps 0, 1, 2 and 3 to
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>a</code></em></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>b</code></em></span>,
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>c</code></em></span> and <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span>
+   respectively (where
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>a</code></em></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>b</code></em></span>,
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>c</code></em></span> and <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span> are
+   0, 1, 2 and 3 in some order), the corresponding one-byte integer
+   is
+   (<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>a</code></em></span> + 4<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>b</code></em></span> +
+   16<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>c</code></em></span> + 64<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span>).
+   For example, the identity permutation which maps (0, 1, 2, 3) to
+   (0, 1, 2, 3) is represented by the one-byte integer
+   (0 + 4 + 32 + 192), which is 228 (or -28 if the byte is signed).
+  </p><p>
+   If a face is a boundary face (i.e., it is not glued to anything), the
+   two corresponding integers stored in the <span class="acronym">XML</span> character data should
+   be -1 and -1.
+  </p><div class="refsect2" lang="en"><a name="idp105544832612112"></a><h3>Parents</h3><p>
+    The following elements contain <code class="sgmltag-element">tet</code>:
+    <span class="simplelist"><a href="data-tetrahedra.html" title="tetrahedra"><code class="sgmltag-element">tetrahedra</code></a></span>.
+   </p></div><div class="refsect2" lang="en"><a name="idp105544832614928"></a><h3>Children</h3><p>
+    Element <code class="sgmltag-element">tet</code> has no children.
+   </p></div></div><div class="refsect1" lang="en"><a name="idp105544832616592"></a><h2>Attributes</h2><div class="variablelist"><dl><dt><span class="term"><code class="sgmltag-element">desc</code></span></dt><dd><p>
+      A human-readable description of the role that this tetrahedron plays
+      in the overall triangulation.
+     </p></dd></dl></div></div><div class="refsect1" lang="en"><a name="idp105544832619536"></a><h2>Example</h2><p>
+   The following <span class="acronym">XML</span> snippet represents tetrahedron 0 in a
+   triangulation.  Its faces 0 and 1 are both glued to tetrahedron 1
+   with a gluing permutation that maps (0, 1, 2, 3) to (2, 3, 0, 1);
+   in particular, its face 0 is glued to face 2 of tetrahedron 1 and
+   its face 1 is glued to face 3 of tetrahedron 1.
+   Its faces 2 and 3 are each boundary faces.
+  </p><pre class="programlisting">
+&lt;tet&gt; 1 78 1 78 -1 -1 -1 -1 &lt;/tet&gt;
+  </pre></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="data-solidtorus.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="data-tetrahedra.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">solidtorus </td><td width="34%" align="center" class="navCenter"><a href="removed.html">Up</a></td><td width="33%" align="right" class="navRight"> tetrahedra</td></tr></table></div></body></html>

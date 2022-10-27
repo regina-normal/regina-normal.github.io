@@ -1,0 +1,36 @@
+<html><head><title>var</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Regina, XML, Data files"><link rel="start" href="index.html" title="Regina 7.2 File Format Reference"><link rel="up" href="dataformat.html" title="Current Data File Format"><link rel="prev" href="data-txi.html" title="txi"><link rel="next" href="data-zeroeff.html" title="zeroeff"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>var</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="data-txi.html">Prev</a></td><td align="center" class="navCenter" width="34%">Current Data File Format</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="data-zeroeff.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="data-var"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>var — A single script variable</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="informaltable"><table border="1"><colgroup><col><col><col></colgroup><tbody><tr><td colspan="3">
+      <span class="bold"><strong>Content Model</strong></span>
+     </td></tr><tr><td colspan="3">
+<pre class="synopsis">
+var ::=</pre>
+     </td></tr><tr><td colspan="3">
+      <span class="bold"><strong>Attributes</strong></span>
+     </td></tr><tr><td><span class="bold"><strong>Name</strong></span></td><td><span class="bold"><strong>Type</strong></span></td><td><span class="bold"><strong>Version</strong></span></td></tr><tr><td><code class="sgmltag-element">name</code></td><td><span class="type">CDATA</span> (required)</td><td> </td></tr><tr><td><code class="sgmltag-element">valueid</code></td><td><span class="type">CDATA</span> (required)</td><td>Added in <span class="application">Regina</span> 4.95</td></tr><tr><td><code class="sgmltag-element">value</code></td><td><span class="type">CDATA</span> (deprecated)</td><td>Deprecated since <span class="application">Regina</span> 4.95</td></tr></tbody></table></div></div><div class="refsect1" lang="en"><a name="idp105544767130512"></a><h2>Description</h2><p>
+   A <a href="data-var.html" title="var"><code class="sgmltag-element">var</code></a> element stores a single script variable.
+  </p><p>
+   Script packets may contain variables
+   representing other packets in the same packet tree, allowing easy
+   access to these other packets from within a script.
+  </p><div class="refsect2" lang="en"><a name="idp105544767067024"></a><h3>Parents</h3><p>
+    The following elements contain <code class="sgmltag-element">var</code>:
+    <span class="simplelist"><a href="data-script.html" title="script"><code class="sgmltag-element">script</code></a></span>.
+   </p></div><div class="refsect2" lang="en"><a name="idp105544767069840"></a><h3>Children</h3><p>
+    Element <code class="sgmltag-element">var</code> has no children.
+   </p></div></div><div class="refsect1" lang="en"><a name="idp105544767071504"></a><h2>Attributes</h2><div class="variablelist"><dl><dt><span class="term"><code class="sgmltag-element">name</code></span></dt><dd><p>
+      The variable name.  Variable names are case sensitive.
+     </p></dd><dt><span class="term"><code class="sgmltag-element">valueid</code></span></dt><dd><p>
+      The value of this variable.  This should a packet identifier;
+      specifically, it must match the <code class="sgmltag-element">id</code> attribute
+      that is stored in the value's <code class="sgmltag-element">packet</code> tag.
+      If the variable has a null value, then this should be the empty string.
+     </p></dd><dt><span class="term"><code class="sgmltag-element">value</code></span></dt><dd><p>
+      Deprecated.  This stores the value of this variable as a packet
+      label; specifically, it must match the <code class="sgmltag-element">label</code>
+      attribute that is stored in the value's <code class="sgmltag-element">packet</code> tag.
+     </p><p>
+      You should write this tag if you want your file to be read by
+      <span class="application">Regina</span> 4.94 or earlier.  Later versions of <span class="application">Regina</span> can
+      also read it; however, they prefer the new <code class="sgmltag-element">valueid</code>
+      since (unlike packet labels) packet IDs are guaranteed to be unique.
+     </p></dd></dl></div></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="data-txi.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="data-zeroeff.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">txi </td><td width="34%" align="center" class="navCenter"><a href="dataformat.html">Up</a></td><td width="33%" align="right" class="navRight"> zeroeff</td></tr></table></div></body></html>
