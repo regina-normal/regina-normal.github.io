@@ -30,12 +30,15 @@ Please write to the developers if you need further information or
 assistance.
 
 <h2><a name="bindings">Two Python binding errors (Oct 2022)</a></h2>
-<h3>Summary #1: Incorrectly-bound <tt>swap()</tt> for fixed-width bitmasks</h3>
-<table cellspacing=0 border=0 class="data"><tbody>
+<h3>Summary</h3>
+<table cellspacing=0 border=0 class="data">
+<tbody>
+<tr><th colspan=3 class="first">Incorrectly-bound <tt>swap()</tt> for
+fixed-width bitmasks</th></tr>
 <tr>
-    <td class="topsubheading">Affected versions</td>
-    <td class="top">7.0&ndash;7.1</td>
-    <td class="top">Fixed in version 7.2</td>
+    <td class="subheading">Affected versions</td>
+    <td>7.0&ndash;7.1</td>
+    <td>Fixed in version 7.2</td>
 </tr>
 <tr>
     <td class="subheading">Main symptom</td>
@@ -56,14 +59,13 @@ assistance.
     <td>Just examine your Python code, and see if you are explicitly
     creating objects of type <tt>Bitmask8</tt>, ..., or <tt>Bitmask256</tt>,
     <em>and</em> explicitly swapping them via <tt>regina.swap()</tt>.</td>
-</table>
-
-<h3>Summary #2: Incorrectly-bound <tt>Cyclotomic.negate()</tt></h3>
-<table cellspacing=0 border=0 class="data"><tbody>
+</tr>
+<tr><th colspan=3 class="inner">Incorrectly-bound
+<tt>Cyclotomic.negate()</tt></th></tr>
 <tr>
-    <td class="topsubheading">Affected versions</td>
-    <td class="top">TODO&ndash;7.1</td>
-    <td class="top">Fixed in version 7.2</td>
+    <td class="subheading">Affected versions</td>
+    <td>5.0&ndash;7.1</td>
+    <td>Fixed in version 7.2</td>
 </tr>
 <tr>
     <td class="subheading">Main symptom</td>
@@ -85,6 +87,7 @@ assistance.
     explicitly creating <tt>Cyclotomic</tt> objects and/or retrieving
     them as Turaev-Viro invariants, <i>and</i>
     explicitly calling <tt>negate()</tt> on these objects.</td>
+</tr>
 </table>
 
 <p>

@@ -107,6 +107,10 @@ table.data th.first, table.data td.topfirst, table.data td.topsubheading {
   border-width: 2px 2px 2px 2px;
 }
 
+table.data th.inner {
+  border-width: 0px 2px 2px 2px;
+}
+
 table.data td.top {
   border-width: 2px 2px 2px 0px;
 }

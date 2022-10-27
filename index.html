@@ -62,9 +62,10 @@ You can <a href="#new">read all about what's new</a>,
 or just go ahead and <a href="#download">download it</a>.
 <p class="header">
 <b>Two bugs were found</b> in the Python bindings, as part of a comprehensive
-audit in this release.
-It is likely that nobody was affected (the relevant code was designed
-for internal use via C++, which was unaffected).
+audit with this release.
+It is unlikely anyone was affected (the relevant code was mostly for
+Regina's internal use, not end users, and Regina's internal C++ engine
+was unaffected).
 If you wish to check, you can <a href="bugs.html">read the details here</a>.
 <p class="header">
 <b>10 December 2021:</b>
@@ -199,7 +200,6 @@ Not sure which?  Start with the App Store version (but read below).
     <td><img srcset="osicons/os_macosx.png 1x, osicons/os_macosx@2x.png 2x" src="osicons/os_macosx.png" border=0 hspace=5></td>
     <td align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-7.2/Regina-7.2_py39.dmg">Download&nbsp;here</a></td>
     <td><a href="https://itunes.apple.com/us/app/regina-for-3-manifolds/id1160053348?mt=8"><img src="ios/Download_on_the_Mac_App_Store_Badge_US-UK_RGB_wht_092917.svg" alt="Download on the Mac App Store" border=0 hspace=10 vspace=10/></a></td>
-    </tr>
     </tr>
 </tbody></table>
 </blockquote>
@@ -439,15 +439,15 @@ there is extensive API documentation for Regina's mathematical
 engine.  This describes the various objects, classes and functions that
 Regina makes available to you.
 <p>
-You can read the API documentation by selecting
-<i>Help</i>&nbsp;&rarr;&nbsp;<i>Python API Reference</i>
-from the menu.
-You can also <a href="engine-docs/index.html">read it here online</a>.
-<p>
-Since Regina&nbsp;7.2, Python users can also access detailed API documentation
-inline via Python docstrings.
-Please <a href="docs/python-docs.html">see the handbook</a> for details
-of what these docstrings can and cannot provide.
+You can read the API documentation by:
+<ul>
+<li>selecting <i>Help</i>&nbsp;&rarr;&nbsp;<i>Python API Reference</i>
+from the menu;</li>
+<li>reading it <a href="engine-docs/index.html">here online</a>;</li>
+<li>getting inline help directly within Python via docstrings
+(but please <a href="docs/python-docs.html">see the handbook</a> for the
+limits of what these docstrings can and cannot provide).</li>
+</ul>
 <p>
 <i><a href="#contents">(Back to contents...)</a></i>
 
@@ -457,35 +457,38 @@ The main focus of version&nbsp;7.2 is Python:
 <ul>
 <li>Regina now provides docstrings throughout its Python module, which
 means you can get comprehensive help directly from within Python.
-<a href="docs/python-docs.html">see the handboook</a> for some important
+<a href="docs/python-docs.html">See the handboook</a> for some important
 caveats regarding this inline documentation.</li>
 <li>Regina now supports the newly-released Python 3.11, but no longer
 supports Python 3.4 or 3.5.</li>
 <li>Undertook a full audit of Python bindings for the entire calculation
-engine: a few bindings were missing, and these have now been added.</li>
+engine: a few bindings were missing and <a href="bugs.html">two errors
+were spotted</a>; these have all been fixed.</li>
 <li>Added <tt>__len__()</tt> functions to classes where this is meaningful.</li>
-<li>Fixed two errors in the Python bindings (<tt>Cyclotomic.negate()</tt> and
-<tt>swap(BitmaskN, BitmaskN)</tt>).  These are unlikely to have affected users:
-<a href="bugs.html">see here for details</a>.</li>
 </ul>
 <p>
-This builds on last month's release of version&nbsp;7.1, which includes:
+This builds on last month's release of version&nbsp;7.1,
+which was more mathematical in nature:
 <ul>
-<li>intersection forms of closed orientable 4-manifolds;</li>
-<li>building and recognising thin and normalised links of faces of all
-dimensions as normal (hyper)surfaces;</li>
-<li>handlebody recognition (thanks to Alex He);</li>
-<li>a multithreaded <tt>tricensus</tt>, also with options to preserve
-labelling;</li>
-<li>a small triangulation of the standard K3 surface as a ready-made
-example 4-manifold (thanks to Rhuaidi Burke);</li>
-<li>greater support for &ldquo;tight encodings&rdquo;
-(short text tokens with no loss of information and no relabellings);</li>
-<li>more graph operations for facet pairings;</li>
-<li>several other smaller features and optimisations.</li>
+<li>Computes intersection forms of closed orientable 4-manifolds.</li>
+<li>Computes and recognises links of faces of all dimensions as normal
+(hyper)surfaces; this includes both thin links and normalised links.</li>
+<li>Expanded 3-ball and solid torus recognition to more general
+handlebody recognition (thanks to Alex He).</li>
+<li>The tricensus utility now supports multithreaded operation, and
+has a new output option that preserves simplex/vertex labelling.</li>
+<li>Includes the standard K3 surface as a ready-made example 4-manifold
+(thanks to Rhuaidi Burke for the small triangulation).</li>
+<li>Greater support for &ldquo;tight encodings&rdquo;
+for several types of objects;
+these use short text tokens, with no loss of information and no
+simplex/vertex/crossing relabelling.</li>
+<li>More graph operations are now available for facet pairings.</li>
+<li>Several other smaller features and optimisations.</li>
 </ul>
 <p>
-In addition, for Python and C++ programmers:
+For Python and C++ programmers,
+version&nbsp;7.1 brought further changes:
 <ul>
 <li>Regina now supports Python 3 only (not Python 2 or 3).</li>
 <li>Everything that was deprecated in version 7.0 has now been removed
