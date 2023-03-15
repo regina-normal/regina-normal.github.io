@@ -11,9 +11,9 @@
   alt="Regina: Software for low-dimensional topology">
 </center>
 <center>
-<!--h4>Version 7.2 currently being uploaded<br>(27&ndash;28 October 2022)</h4-->
-<h4>Latest version: 7.2 (October 2022)<br>
-Updated packages: 19 Nov 2022<!--br>
+<!--h4>Version 7.3 currently being uploaded<br>(27&ndash;28 October 2022)</h4-->
+<h4>Latest version: 7.3 (March 2023)<!--br>
+Updated packages: 19 Nov 2022<br>
 Updated documentation: 9 May 2022<br>
 Updated packages: 10 December 2021<br>
 Updated data: 31 May 2018--></h4>
@@ -27,7 +27,7 @@ Updated data: 31 May 2018--></h4>
     <tr><td><a href="#screenshots">Screenshots</a></td></tr>
     <tr><td><a href="#download">Download</a></td></tr>
     <tr><td><a href="#docs">Documentation</a></td></tr>
-    <tr><td><a href="#new">What's new in version 7.2?</a></td></tr>
+    <tr><td><a href="#new">What's new in version 7.3?</a></td></tr>
     <tr><td><a href="#announce">Announcement mailing list</a></td></tr>
     <tr><td><a href="#license">License and citation</a></td></tr>
     <tr><td><a href="#contact">Contact</a></td></tr>
@@ -56,17 +56,13 @@ Updated data: 31 May 2018--></h4>
 <h2><a name="news">News</a></h2>
 
 <p class="header">
-<b>19 Nov 2022:</b>
-Added packages for Fedora 37.
-Follow the <a href="#download">install links</a> for details.
-<p class="header">
-<b>28 Oct 2022:</b>
-Regina 7.2 is out!
+<b>18 Mar 2023:</b>
+Regina 7.3 is out!
 You can <a href="#new">read all about what's new</a>,
 or just go ahead and <a href="#download">download it</a>.
 <p class="header">
 <b>Two bugs were found</b> in the Python bindings, as part of a comprehensive
-audit with this release.
+audit with Regina&nbsp;7.2.
 It is unlikely anyone was affected (the relevant code was mostly for
 Regina's internal use, not end users, and Regina's internal C++ engine
 was unaffected).
@@ -172,9 +168,9 @@ The following downloads are available:
 </table>
 <p>
 All direct downloads come with
-<a href="https://github.com/regina-normal/regina/releases/download/regina-7.2/SHA1SUMS-signed.txt">SHA-1 checksums</a>
+<a href="https://github.com/regina-normal/regina/releases/download/regina-7.3/SHA1SUMS-signed.txt">SHA-1 checksums</a>
 and
-<a href="https://github.com/regina-normal/regina/releases/download/regina-7.2/SHA256SUMS-signed.txt">SHA-256 checksums</a>,
+<a href="https://github.com/regina-normal/regina/releases/download/regina-7.3/SHA256SUMS-signed.txt">SHA-256 checksums</a>,
 signed with <a href="https://people.debian.org/~bab/regina-key.txt">Ben Burton's GPG key</a>.
 <p>
 If you encounter any problems when you run Regina, you can check the
@@ -202,7 +198,7 @@ Not sure which?  Start with the App Store version (but read below).
     Catalina (10.15)
     </td>
     <td><img srcset="osicons/os_macosx.png 1x, osicons/os_macosx@2x.png 2x" src="osicons/os_macosx.png" border=0 hspace=5></td>
-    <td align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-7.2/Regina-7.2_py39.dmg">Download&nbsp;here</a></td>
+    <td align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-7.3/Regina-7.3_py39.dmg">Download&nbsp;here</a></td>
     <td><a href="https://itunes.apple.com/us/app/regina-for-3-manifolds/id1160053348?mt=8"><img src="ios/Download_on_the_Mac_App_Store_Badge_US-UK_RGB_wht_092917.svg" alt="Download on the Mac App Store" border=0 hspace=10 vspace=10/></a></td>
     </tr>
 </tbody></table>
@@ -247,7 +243,7 @@ system (e.g., macOS or GNU/Linux).
     <th>Installer</th></tr>
 <tr><td class="firstjoin">Windows&nbsp;11<br>Windows&nbsp;10</td>
     <td><img srcset="osicons/os_win_other.png 1x, osicons/os_win_other@2x.png 2x" src="osicons/os_win_other.png" border=0 hspace=5></td>
-    <td align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-7.2/Regina-7.2-x86_64.msi">Download</a></td>
+    <td align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-7.3/Regina-7.3-x86_64.msi">Download</a></td>
     </tr>
 </tbody></table>
 </blockquote>
@@ -389,7 +385,7 @@ and/or operating system).  Follow the instructions link above for details.
 
 The iPad app is currently in hiatus.  It has not been updated since before the
 pandemic began, and there is a lot of rewriting to do.
-Hopefully Ben will have time to do this some time during 2022.
+Hopefully Ben will have time to do this some time during 2023.
 <!--
 The iPad app offers most of Regina's functionality (<b>now including
 Python scripting!</b>), but not all.  For
@@ -414,7 +410,7 @@ desktop versions listed above.
 For other systems not listed above, you will need to build Regina
 from its source code.
 <p>
-You can <a href="https://github.com/regina-normal/regina/releases/download/regina-7.2/regina-7.2.tar.gz">download the source code here</a>.
+You can <a href="https://github.com/regina-normal/regina/releases/download/regina-7.3/regina-7.3.tar.gz">download the source code here</a>.
 <p>
 Please see the <a href="source.html">separate page on building Regina</a>
 for instructions on how to build Regina and
@@ -455,9 +451,9 @@ limits of what these docstrings can and cannot provide).</li>
 <p>
 <i><a href="#contents">(Back to contents...)</a></i>
 
-<h2><a name="new">What's new in version 7.2?</a></h2>
+<h2><a name="new">What's new in version 7.3?</a></h2>
 <p>
-The main focus of version&nbsp;7.2 is Python:
+The main focus of version&nbsp;7.3 is Python:
 <ul>
 <li>Regina now provides docstrings throughout its Python module, which
 means you can get comprehensive help directly from within Python.
@@ -545,7 +541,7 @@ you would any other paper that you use.  A suggested form of reference is:
 <blockquote>
   Benjamin A. Burton, Ryan Budney, William Pettersson, et al.,<br>
   <i>Regina: Software for low-dimensional topology</i>,<br>
-  http://regina-normal.github.io/, 1999&ndash;2022.
+  http://regina-normal.github.io/, 1999&ndash;2023.
 </blockquote>
 
 Or, in BibTeX:
@@ -555,12 +551,12 @@ Or, in BibTeX:
     author = {Benjamin A. Burton and Ryan Budney and William Pettersson and others},
     title = {Regina: Software for low-dimensional topology},
     howpublished = {{\tt http://\allowbreak regina-normal.\allowbreak github.\allowbreak io/}},
-    year = {1999--2022}}
+    year = {1999--2023}}
 </blockquote></pre>
 
 <h4>Copying &amp; modification</h4>
 
-Regina is copyright &copy; 1999&ndash;2022, The Regina development team.
+Regina is copyright &copy; 1999&ndash;2023, The Regina development team.
 <p>
 This program is free software; you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the
