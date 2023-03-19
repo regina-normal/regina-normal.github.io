@@ -61,12 +61,11 @@ Regina 7.3 is out!
 You can <a href="#new">read all about what's new</a>,
 or just go ahead and <a href="#download">download it</a>.
 <p class="header">
-<b>Two bugs were found</b> in the Python bindings, as part of a comprehensive
-audit with Regina&nbsp;7.2.
-It is unlikely anyone was affected (the relevant code was mostly for
-Regina's internal use, not end users, and Regina's internal C++ engine
-was unaffected).
-If you wish to check, you can <a href="bugs.html">read the details here</a>.
+<b>A bug was found in the group identification code</b> &ndash;
+the main issue was that extensions over <i>Z</i> could have been described
+using the wrong monodromy.
+If you think this might have affected you,
+then you can <a href="bugs.html">read the details here</a>.
 <p class="header">
 <b>10 December 2021:</b>
 Regina 7.0 is out!
@@ -227,7 +226,7 @@ such as those in your <tt>Applications</tt> folder.
 
 Regina on Windows uses a standard point-and-click installer.
 <p>
-Since version&nbsp;7.1, Regina now <b>only supports 64-bit Windows</b>,
+Regina now <b>only supports 64-bit Windows</b>,
 and only on Intel/AMD64 chipsets.
 Almost all modern Windows installations are of this type,
 and so this is almost certainly the version that you want.
@@ -453,58 +452,29 @@ limits of what these docstrings can and cannot provide).</li>
 
 <h2><a name="new">What's new in version 7.3?</a></h2>
 <p>
-The main focus of version&nbsp;7.3 is Python:
+Regina&nbsp;7.3 is primarily a maintenance release.
+<p>
+Bugs fixed:
 <ul>
-<li>Regina now provides docstrings throughout its Python module, which
-means you can get comprehensive help directly from within Python.
-<a href="docs/python-docs.html">See the handboook</a> for some important
-caveats regarding this inline documentation.</li>
-<li>Regina now supports the newly-released Python 3.11, but no longer
-supports Python 3.4 or 3.5.</li>
-<li>Undertook a full audit of Python bindings for the entire calculation
-engine: a few bindings were missing and <a href="bugs.html">two errors
-were spotted</a>; these have all been fixed.</li>
-<li>Added <tt>__len__()</tt> functions to classes where this is meaningful.</li>
+<li>Fixed an algebraic issue where homomorphisms between groups could
+have been simplified incorrectly, and as a result, group extensions
+over <i>Z</i> could have been described using incorrect monodromies.
+<a href="bugs.html">See here for the full details</a>.</li>
+<li>Fixed a potential buffer overflow in the SnapPea kernel.</li>
+<li>Fixed a C++/Python issue where invalid/ideal boundary components of
+4-manifold triangulations were accessible via the triangulation
+objects, but not via the individual component objects.</li>
+<li>The graphical user interface now compiles under Python&nbsp;3.11.</li>
 </ul>
 <p>
-This builds on last month's release of version&nbsp;7.1,
-which was more mathematical in nature:
+Other improvements:
 <ul>
-<li>Computes intersection forms of closed orientable 4-manifolds.</li>
-<li>Computes and recognises links of faces of all dimensions as normal
-(hyper)surfaces; this includes both thin links and normalised links.</li>
-<li>Expanded 3-ball and solid torus recognition to more general
-handlebody recognition (thanks to Alex He).</li>
-<li>The tricensus utility now supports multithreaded operation, and
-has a new output option that preserves simplex/vertex labelling.</li>
-<li>Includes the standard K3 surface as a ready-made example 4-manifold
-(thanks to Rhuaidi Burke for the small triangulation).</li>
-<li>Greater support for &ldquo;tight encodings&rdquo;
-for several types of objects;
-these use short text tokens, with no loss of information and no
-simplex/vertex/crossing relabelling.</li>
-<li>More graph operations are now available for facet pairings.</li>
-<li>Several other smaller features and optimisations.</li>
-</ul>
-<p>
-For Python and C++ programmers,
-version&nbsp;7.1 brought further changes:
-<ul>
-<li>Regina now supports Python 3 only (not Python 2 or 3).</li>
-<li>Everything that was deprecated in version 7.0 has now been removed
-entirely.
-<a href="api/regina7.html">See the 7.x guide</a>
-for instructions on how to update your scripts.</li>
-<li>Some routines now verify some of their easy-to-test preconditions,
-and throw exceptions if they fail.  Expanding this type of testing
-will be an ongoing project across future releases, and it will never
-cover <i>all</i> preconditions (since some are too expensive to test
-automatically).  The initial focus will be on routines that are
-common sources of user errors (e.g., <tt>Simplex::join()</tt>).</li>
-<li>Python now wraps all C++ <tt>bool()</tt> cast operators.</li>
-<li>Fixed a deadlock that occured in GUI python consoles (not in
-command-line python or regina-python) when working with callbacks
-(e.g., when passing a pure python function to <tt>retriangulate()</tt>).</li>
+<li>Cloned triangulations now also clone the exact numbering/labelling of
+lower-dimensional faces also (previously these were recomputed).
+This matters for triangulated boundary components and vertex links,
+where the numbering/labelling of faces is non-standard.</li>
+<li>Other minor mathematical additions and improvements to the
+C++/Python API; see the full changelog for details.</li>
 </ul>
 <p>
 <i><a href="#contents">(Back to contents...)</a></i>

@@ -12,9 +12,11 @@
 <tbody>
 <tr><td valign="top">
     <table class="contents" cellspacing=0><tbody>
+    <tr><td><a href="#homgroup">Incorrect simplification of group
+    homomorphisms (Mar 2023)</a></td></tr>
     <tr><td><a href="#bindings">Two Python binding errors (Oct 2022)</a></td></tr>
     <tr><td><a href="#defaultalg">Normal surface enumeration ignores
-    arguments (Sept 2016)</a></td></tr>
+    arguments (Sep 2016)</a></td></tr>
     <tr><td><a href="#mod">Mod and gcd broken for extremely large integers
     (Nov 2013)</a></td></tr>
     <tr><td><a href="index.html">Back to main page ...</a></td></tr>
@@ -28,6 +30,123 @@ of Regina, which might have affected your computations.
 <p>
 Please write to the developers if you need further information or
 assistance.
+
+<h2><a name="homgroup">Incorrect simplification of group
+homomorphisms (Mar 2023)</a></h2>
+<p>
+There are two issues here: the first issue was the bug itself, and the
+second issue was the only other place where the affected code was being used
+within Regina.
+</p>
+<h3>Summary</h3>
+<table cellspacing=0 border=0 class="data">
+<tbody>
+<tr><th colspan=3 class="first">Incorrect
+<tt>HomGroupPresentation</tt> simplification routines</th></tr>
+<tr>
+    <td class="subheading">Affected versions</td>
+    <td>4.96&ndash;7.2</td>
+    <td>Fixed in version 7.3</td>
+</tr>
+<tr>
+    <td class="subheading">Main symptom</td>
+    <td>&nbsp;</td>
+    <td>In C++ or Python, calling any of the three high-level
+    <tt>HomGroupPresentation</tt>
+    simplification routines could give incorrect results.</td>
+</tr>
+<tr>
+    <td class="subheading">Affected users</td>
+    <td>C++/Python programmers only</td>
+    <td>This affected programmers who called
+    <tt>intelligentSimplify()</tt>, <tt>intelligentNielsen()</tt> or
+    <tt>smallCancellation()</tt> on a <tt>HomGroupPresentation</tt>
+    object.</td>
+</tr>
+<tr>
+    <td class="subheading">Was I affected?</td>
+    <td>Easy to test</td>
+    <td>Check your C++/Python code to see if you are explicitly
+    working with group <i>homomorphisms</i> (i.e.,
+    <tt>HomGroupPresentation</tt> objects),
+    <i>and</i> calling one of the
+    simplification functions listed above.</td>
+</tr>
+<tr><th colspan=3 class="inner">Incorrect <tt>GroupPresentation</tt>
+recognition for extensions over <i>Z</i></th></tr>
+<tr>
+    <td class="subheading">Affected versions</td>
+    <td>4.96&ndash;7.2</td>
+    <td>Fixed in version 7.3</td>
+</tr>
+<tr>
+    <td class="subheading">Main symptom</td>
+    <td>&nbsp;</td>
+    <td>If a finitely presented group was an extension over <i>Z</i>, then
+    <tt>GroupPresentation::recogniseGroup()</tt> (which generates the plain
+    text &ldquo;name&rdquo; of a fundamental group / knot group in the
+    graphical user interface) might have described this extension
+    using the wrong monodromy.</td>
+</tr>
+<tr>
+    <td class="subheading">Affected users</td>
+    <td>All users</td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="subheading">Was I affected?</td>
+    <td>Easy to test</td>
+    <td>Only if you relied on the human-readable group names in the
+    user interface or the string-based routine
+    <tt>GroupPresentation::recogniseGroup()</tt>, <i>and</i> you were
+    using the specific monodromies that were reported for extensions
+    over <i>Z</i>.</td>
+</tr>
+</table>
+
+<p>
+<h3>Details</h3>
+<p>
+The two issues above are related:
+<ul>
+    <li>The issue with <tt>HomGroupPresentation</tt> simplification
+    was the root of the problem.</li>
+    <li>The issue with <tt>GroupPresentation::recogniseGroup()</tt> was
+    a consequence of this, and indeed the <i>only</i> consequence&mdash;this
+    was the only place where Regina was actually using the problematic
+    <tt>HomGroupPresentation</tt> simplification code.</li>
+</ul>
+Specifically, if <tt>GroupPresentation::recogniseGroup()</tt> identifies
+a group as an extension over <i>Z</i>, it calls
+<tt>HomGroupPresentation::intelligentSimplify()</tt> to help identify the
+precise monodromy.
+<p>
+Although this was an old bug that affected all users, it is nevertheless
+easily to isolate the scope of the bug.
+<p>
+In particular, you were <i>not</i> affected if:
+<ul>
+    <li>you were just simplifying group presentations
+    (not homomorphisms); and/or</li>
+    <li>you were working with the group generators and relations directly
+    (not using the text-based <tt>recogniseGroup()</tt>,
+    i.e., the group &ldquo;name&rdquo;); and/or</li>
+    <li>you were using group names to identify other types of groups (e.g.,
+    the trivial group, or cyclic groups), not extensions over <i>Z</i>.</li>
+</ul>
+The root cause came from <tt>GroupPresentation::simplifyWord()</tt>,
+which would not only simplify a word in a group, but potentially rotate
+(i.e., conjugate) the word also.
+The bug then appeared because the high-level <tt>HomGroupPresentation</tt>
+simplification routines would use <tt>simplifyWord()</tt> to simplify images
+and preimages of generators under a homomorphism.
+<p>
+To avoid simliar problems in the future,
+<tt>GroupPresentation::simplifyWord()</tt>
+has now been renamed to <tt>GroupPresentation::simplifyAndConjugate()</tt>,
+in order to make its behaviour clearer.
+<p>
+<i><a href="#contents">(Back to top...)</a></i>
 
 <h2><a name="bindings">Two Python binding errors (Oct 2022)</a></h2>
 <h3>Summary</h3>
@@ -159,7 +278,7 @@ two languages.
 <i><a href="#contents">(Back to top...)</a></i>
 
 <h2><a name="defaultalg">Normal surface enumeration ignores arguments
-(Sept 2016)</a></h2>
+(Sep 2016)</a></h2>
 <h3>Summary</h3>
 <table cellspacing=0 border=0 class="data"><tbody>
 <tr>

@@ -106,6 +106,14 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>&nbsp;</td>
 </tr>
 <tr>
+    <td class="removed"><tt>GroupPresentation::simplifyWord()</tt><br>
+    Removed in Regina&nbsp;7.3</td>
+    <td><tt>GroupPresentation::simplifyAndConjugate()</tt></td>
+    <td>This routine was renamed to make it clear that it might conjugate
+    the given word.  The behaviour has not changed (i.e., conjugation
+    was always a possibility, even before the renaming).</td>
+</tr>
+<tr>
     <td class="first"><tt>Isomorphism&lt;dim&gt;::apply()</tt><br>
     <tt>Isomorphism&lt;dim&gt;::applyInPlace()</tt></td>
     <td><tt>iso(tri)</tt><br><tt>tri&nbsp;=&nbsp;iso(tri)</tt></td>
@@ -129,6 +137,15 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <tt>Packet::append()</tt><br>
     <tt>Packet::insert()</tt></td>
     <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Perm&lt;n&gt;::cachedComp() with
+    two arguments</tt></td>
+    <td><tt>Perm&lt;n&gt;::cachedConjugate()</tt>, or two uses of
+    the one-argument <tt>Perm&lt;n&gt;::cachedComp()</tt></td>
+    <td>The two-argument <tt>cachedComp()</tt> (i.e., a three-way product)
+    was only ever used internally for conjugation, and there is now
+    a new <tt>cachedConjugate()</tt> routine for this instead.</td>
 </tr>
 <tr>
     <td class="removed"><tt>Triangulation&lt;3&gt;::isHandlebody()</tt><br>
