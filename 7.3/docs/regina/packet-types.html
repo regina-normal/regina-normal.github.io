@@ -1,0 +1,257 @@
+<html><head><title>Different Packet Types</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina 7.3 Handbook"><link rel="up" href="packet.html" title="Chapter 2. Working with Packets"><link rel="prev" href="packet.html" title="Chapter 2. Working with Packets"><link rel="next" href="packet-operations.html" title="General Operations on Packets"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Different Packet Types</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="packet.html">Prev</a></td><td align="center" class="navCenter" width="34%">Working with Packets</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="packet-operations.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="packet-types"></a>Different Packet Types</h2></div></div></div><p>
+   There are many different types of packet that you can create in
+   <span class="application">Regina</span>.  Here we give a brief overview of each.
+  </p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="packet-container"></a>Container Packets</h3></div></div></div><p>
+    A <em class="firstterm">container</em> packet helps keep your packet
+    tree organised: it can contain other “child” packets,
+    but otherwise it does nothing.
+   </p><p>
+    Containers are marked by the following icon:
+    <span class="inlinemediaobject"><img src="icon-container.png" srcset="icon-container@2x.png 2x, icon-container.png"></span>
+   </p><p>
+    To see how containers can be used to organise a tree, take
+    a look at one of the census files: try
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">File</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guisubmenu">Open Example</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Closed Non-Orientable Census</span></span>.
+    Part of the packet tree for this census is shown below (the
+    container labelled <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">6 tetrahedra</span></span> has been
+    opened for viewing).
+   </p><p>
+    Note that <span class="emphasis"><em>any</em></span> packet (not just a container)
+    can contain other child packets.
+   </p><p>
+    <span class="inlinemediaobject"><img src="container.png" srcset="container@2x.png 2x, container.png"></span>
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="packet-triangulation2"></a>2-Manifold Triangulations</h3></div></div></div><p>
+    A <em class="firstterm">2-manifold triangulation</em> packet describes a
+    triangulated 2-manifold, formed by gluing edges of triangles
+    together in pairs.
+   </p><p>
+    2-manifold triangulations are marked by the following icon:
+    <span class="inlinemediaobject"><img src="icon-triangulation2.png" srcset="icon-triangulation2@2x.png 2x, icon-triangulation2.png"></span>
+   </p><p>
+    <span class="inlinemediaobject"><img src="triangulation2.png" srcset="triangulation2@2x.png 2x, triangulation2.png"></span>
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="packet-triangulation3"></a>3-Manifold Triangulations</h3></div></div></div><p>
+    A <em class="firstterm">3-manifold triangulation</em> packet describes a
+    triangulated 3-manifold, formed by gluing faces of tetrahedra
+    together in pairs.
+    3-manifold triangulations are central to <span class="application">Regina</span>,
+    and you can learn more about using them by reading the
+    <a href="triangulations.html" title="Chapter 3. Triangulations">triangulations chapter</a> in
+    this handbook.
+   </p><p>
+    3-manifold triangulations are marked by the following icon:
+    <span class="inlinemediaobject"><img src="icon-triangulation3.png" srcset="icon-triangulation3@2x.png 2x, icon-triangulation3.png"></span>
+   </p><p>
+    <span class="inlinemediaobject"><img src="triangulation3.png" srcset="triangulation3@2x.png 2x, triangulation3.png"></span>
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="packet-snappea"></a><span class="application">SnapPea</span> Triangulations</h3></div></div></div><p>
+    A <em class="firstterm"><span class="application">SnapPea</span> triangulation</em> packet stores a
+    3-manifold using <span class="application">SnapPea</span>'s internal data structures
+    (in contrast, the usual <a href="packet-types.html#packet-triangulation3" title="3-Manifold Triangulations">3-manifold
+    triangulation packet</a> uses <span class="application">Regina</span>'s own structures, which are
+    independent of <span class="application">SnapPea</span>).
+    You can learn more about using <span class="application">SnapPea</span> triangulations in the
+    <a href="snappea.html" title="Chapter 4. SnapPea Triangulations">corresponding chapter</a> later in this handbook.
+   </p><p>
+    The advantages of using a <span class="application">SnapPea</span> triangulation is that it stores
+    additional information that <span class="application">Regina</span> does not (such as fillings and
+    peripheral curves), and it offers more direct access to the <span class="application">SnapPea</span>
+    kernel.  The main disadvantage is that you do not have the
+    fine-grained control over the triangulation that <span class="application">Regina</span> offers you
+    (in particular, you cannot manipulate the triangulation as freely).
+    Of course <span class="application">Regina</span> offers you facilities to convert one into the other.
+   </p><p>
+    <span class="application">SnapPea</span> triangulations are marked by the following icon:
+    <span class="inlinemediaobject"><img src="icon-snappea.png" srcset="icon-snappea@2x.png 2x, icon-snappea.png"></span>
+   </p><p>
+    <span class="inlinemediaobject"><img src="snappea.png" srcset="snappea@2x.png 2x, snappea.png"></span>
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="packet-triangulation4"></a>4-Manifold Triangulations</h3></div></div></div><p>
+    A <em class="firstterm">4-manifold triangulation</em> packet describes a
+    triangulated 4-manifold, formed by gluing faces of pentachora
+    (i.e., 4-simplices) together in pairs.
+    You can learn more about 4-manifold triangulations by reading the
+    <a href="triangulations.html" title="Chapter 3. Triangulations">triangulations chapter</a> in
+    this handbook.
+   </p><p>
+    4-manifold triangulations are marked by the following icon:
+    <span class="inlinemediaobject"><img src="icon-triangulation4.png" srcset="icon-triangulation4@2x.png 2x, icon-triangulation4.png"></span>
+   </p><p>
+    <span class="inlinemediaobject"><img src="triangulation4.png" srcset="triangulation4@2x.png 2x, triangulation4.png"></span>
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="packet-higherdim"></a>Higher-Dimensional Triangulations</h3></div></div></div><p>
+    <span class="application">Regina</span> currently offers very basic support for triangulations of
+    dimensions 5–8 (and, with your own
+    <a href="https://regina-normal.github.io/buildtips.html#highdim" target="_top">custom
+    build</a>, 9–15).  At present you cannot work with these
+    higher-dimensional triangulations in the <span class="acronym">GUI</span>—instead you will
+    need to use either <a href="python.html" title="Chapter 9. Python Scripting"><span class="application">Python</span> scripting</a>
+    or <a href="compiling.html" title="Chapter 11. Compiling Regina Into a C++ Project"><span class="application">C++</span> programming</a>.
+   </p><p>
+    Triangulations of these higher dimensions are marked by an icon similar
+    to the following, with the dimension marked inside the
+    simplex-shaped outline:
+    <span class="inlinemediaobject"><img src="icon-triangulation8.png" srcset="icon-triangulation8@2x.png 2x, icon-triangulation8.png"></span>
+   </p><p>
+    The packet viewer offers very little information, but it does include a
+    button to open a <a href="python.html#python-gui" title="Graphical Python Consoles"><span class="application">Python</span> console</a>,
+    where you can analyse and/or modify the triangulation further.
+   </p><p>
+    <span class="inlinemediaobject"><img src="triangulation5.png" srcset="triangulation5@2x.png 2x, triangulation5.png"></span>
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="packet-link"></a>Knots and Links</h3></div></div></div><p>
+    A <em class="firstterm">link</em> packet describes a
+    knot or link diagram, formed from a collection of crossings and
+    strands that connect them.
+    You can learn more about working with links by reading the
+    <a href="links.html" title="Chapter 7. Knots and Links">knots and links chapter</a> in
+    this handbook.
+   </p><p>
+    Knots and links are marked by the following icon:
+    <span class="inlinemediaobject"><img src="icon-link.png" srcset="icon-link@2x.png 2x, icon-link.png"></span>
+   </p><p>
+    <span class="inlinemediaobject"><img src="link.png" srcset="link@2x.png 2x, link.png"></span>
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="packet-surfacelist"></a>Normal Surface Lists</h3></div></div></div><p>
+    A <em class="firstterm">normal surface list</em> represents a set
+    of normal surfaces within a 3-manifold triangulation.
+    Typically this will be the set of all vertex or fundamental surfaces
+    in some normal (or almost normal) coordinate system.
+    Like triangulations, normal surfaces are central to <span class="application">Regina</span>,
+    and you can learn more about using them in the
+    <a href="surfaces.html" title="Chapter 5. Normal Surfaces and Hypersurfaces">chapter on normal surfaces and
+    hypersurfaces</a>.
+   </p><p>
+    Normal surface lists are marked by the following icon:
+    <span class="inlinemediaobject"><img src="icon-surfaces.png" srcset="icon-surfaces@2x.png 2x, icon-surfaces.png"></span>
+   </p><p>
+    Normal surface lists can be created using different sets of matching
+    equations, and can then be viewed in a variety of coordinate systems.
+    As of <span class="application">Regina</span> 7.0, a normal surface list can appear anywhere
+    in the packet tree (it no longer needs to be linked to its source
+    3-manifold triangulation).
+   </p><p>
+    <span class="inlinemediaobject"><img src="surfacelist.png" srcset="surfacelist@2x.png 2x, surfacelist.png"></span>
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="packet-hypersurfacelist"></a>Normal Hypersurface Lists</h3></div></div></div><p>
+    A <em class="firstterm">normal hypersurface list</em> represents a set
+    of normal hypersurfaces within a 4-manifold triangulation.
+    As with normal surface lists,
+    this will typically be the set of all vertex or fundamental hypersurfaces
+    in some normal coordinate system.
+    You can learn more about them in the
+    <a href="surfaces.html" title="Chapter 5. Normal Surfaces and Hypersurfaces">chapter on normal surfaces and
+    hypersurfaces</a>.
+   </p><p>
+    Normal hypersurface lists are marked by the following icon:
+    <span class="inlinemediaobject"><img src="icon-hypersurfaces.png" srcset="icon-hypersurfaces@2x.png 2x, icon-hypersurfaces.png"></span>
+   </p><p>
+    Normal hypersurface lists can be also created using different sets of
+    matching equations, and can be viewed in different coordinate systems.
+    Like normal surfaces, a normal hypersurface list can appear anywhere
+    in the packet tree (it no longer needs to be linked to its source
+    4-manifold triangulation).
+   </p><p>
+    <span class="inlinemediaobject"><img src="hypersurfacelist.png" srcset="hypersurfacelist@2x.png 2x, hypersurfacelist.png"></span>
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="packet-anglestructures"></a>Angle Structure Lists</h3></div></div></div><p>
+    An <em class="firstterm">angle structure list</em> represents a set
+    of angle structures on a 3-manifold triangulation.
+    Typically this will be the
+    set of all vertex angle structures under the standard equations.
+    You can learn more about working with angle structure lists
+    in the <a href="angles.html" title="Chapter 6. Angle Structures">chapter on angle structures</a>
+    in this handbook.
+   </p><p>
+    Angle structure lists are marked by the following icon:
+    <span class="inlinemediaobject"><img src="icon-angles.png" srcset="icon-angles@2x.png 2x, icon-angles.png"></span>
+   </p><p>
+    Like normal surfaces, an angle structure list can appear anywhere
+    in the packet tree (it no longer needs to be linked to its source
+    3-manifold triangulation).
+   </p><p>
+    <span class="inlinemediaobject"><img src="angles.png" srcset="angles@2x.png 2x, angles.png"></span>
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="packet-filter"></a>Surface Filters</h3></div></div></div><p>
+    A <em class="firstterm">surface filter</em> can be applied to
+    a long list of normal surfaces to extract only some
+    smaller set of surfaces that you might be interested in.
+    You can learn more about surface filters in the
+    <a href="surfaces-filtering.html" title="Filtering Surfaces (3-D)">chapter on normal surfaces</a>.
+    <span class="application">Regina</span> offers two types of surface filter:
+   </p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="packet-filterprop"></a>Property Filters</h4></div></div></div><p>
+     A <em class="firstterm">property filter</em> selects only those normal
+     surfaces with a given orientability, compactness, boundary,
+     and/or Euler characteristic.
+    </p><p>
+     Property filters are marked by the following icon:
+     <span class="inlinemediaobject"><img src="icon-filterprop.png" srcset="icon-filterprop@2x.png 2x, icon-filterprop.png"></span>
+    </p><p>
+     <span class="inlinemediaobject"><img src="filterprop.png" srcset="filterprop@2x.png 2x, filterprop.png"></span>
+    </p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="packet-filtercomb"></a>Combination Filters</h4></div></div></div><p>
+     A <em class="firstterm">combination filter</em> uses boolean
+     <code class="function">AND</code> or <code class="function">OR</code>
+     to combine several other surface filters.
+     This allows you to combine property filters together in
+     complex boolean expressions.
+    </p><p>
+     Combination filters are marked by the following icon:
+     <span class="inlinemediaobject"><img src="icon-filtercomb.png" srcset="icon-filtercomb@2x.png 2x, icon-filtercomb.png"></span>
+    </p><p>
+     A combination filter will combine its immediate children in the
+     packet tree.  For example, the combination filter illustrated
+     below will select any surface that passes
+     <span class="emphasis"><em>either</em></span> the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Tori and Annuli</span></span>
+     filter <span class="emphasis"><em>or</em></span> the
+     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Discs</span></span> filter.
+    </p><p>
+     <span class="inlinemediaobject"><img src="filtercomb.png" srcset="filtercomb@2x.png 2x, filtercomb.png"></span>
+    </p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="packet-text"></a>Text Packets</h3></div></div></div><p>
+    A <em class="firstterm">text</em> packet contains an arbitrary amount of
+    plain text, with no formatting.
+    It can be used to add descriptions, observations or
+    other miscellaneous comments into your data file.
+   </p><p>
+    Text packets are marked by the following icon:
+    <span class="inlinemediaobject"><img src="icon-text.png" srcset="icon-text@2x.png 2x, icon-text.png"></span>
+   </p><p>
+    <span class="inlinemediaobject"><img src="text.png" srcset="text@2x.png 2x, text.png"></span>
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="packet-script"></a>Script Packets</h3></div></div></div><p>
+    A <em class="firstterm">script</em> packet contains a <span class="application">Python</span> script
+    that offers direct access to <span class="application">Regina</span>'s calculation engine.
+    You can edit the script from within <span class="application">Regina</span>,
+    and your script can set variables that represent
+    other packets in your data file.
+    See the <a href="python.html" title="Chapter 9. Python Scripting">chapter on <span class="application">Python</span></a>
+    for more information on scripting within <span class="application">Regina</span>.
+   </p><p>
+    Script packets are marked by the following icon:
+    <span class="inlinemediaobject"><img src="icon-script.png" srcset="icon-script@2x.png 2x, icon-script.png"></span>
+   </p><p>
+   </p><p>
+    <span class="inlinemediaobject"><img src="script.png" srcset="script@2x.png 2x, script.png"></span>
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="packet-attachment"></a>Attachments</h3></div></div></div><p>
+    An <em class="firstterm">attachment</em> packet allows you embed any
+    external file into your <span class="application">Regina</span> data file.  The external file will be
+    copied and saved as part of your <span class="application">Regina</span> data file (which means that
+    if you send a <span class="application">Regina</span> data file to someone, all attachments will be
+    automatically included).
+   </p><p>
+    <span class="acronym">PDF</span> packets are marked by the following icon:
+    <span class="inlinemediaobject"><img src="icon-attachment.png" srcset="icon-attachment@2x.png 2x, icon-attachment.png"></span>
+   </p><p>
+    One potential use of attachments is to help you document your work.
+    As seen in the example below, an attachment could be a <span class="acronym">PDF</span> document
+    containing rich content such as diagrams and formulae.
+   </p><p>
+    When you open an attachment for viewing, you will be told the filename
+    and file size, and given the opportunity to either view it (using your
+    computer's default viewer for that type of file), or to save it.
+   </p><p>
+    <span class="inlinemediaobject"><img src="attachment-choice.png" srcset="attachment-choice@2x.png 2x, attachment-choice.png"></span>
+   </p><p>
+    To insert a new attachment into your <span class="application">Regina</span> data file, select
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Packet Tree</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">New Attachment</span></span>.
+    Once your attachment has been inserted, you can edit, move or even
+    delete the original file from your computer, since your <span class="application">Regina</span>
+    data file will keep its own internal copy.
+   </p><p>
+    In <span class="application">Regina</span> 6.0.1 and earlier, this type of packet was called a
+    <em class="firstterm"><span class="acronym">PDF</span> packet</em>, and was used exclusively for
+    <span class="acronym">PDF</span> documents.  As of <span class="application">Regina</span> 7.0, you can now attach any
+    type of file.
+   </p><p>
+    <span class="inlinemediaobject"><img src="attachment.png" srcset="attachment@2x.png 2x, attachment.png"></span>
+   </p></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="packet.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="packet-operations.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">Working with Packets </td><td width="34%" align="center" class="navCenter"><a href="packet.html">Up</a></td><td width="33%" align="right" class="navRight"> General Operations on Packets</td></tr></table></div></body></html>

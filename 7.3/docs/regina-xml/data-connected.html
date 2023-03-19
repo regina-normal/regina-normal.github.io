@@ -1,0 +1,28 @@
+<html><head><title>connected</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Regina, XML, Data files"><link rel="start" href="index.html" title="Regina 7.3 File Format Reference"><link rel="up" href="dataformat.html" title="Current Data File Format"><link rel="prev" href="data-compressingdisc.html" title="compressingdisc"><link rel="next" href="data-connections.html" title="connections"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>connected</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="data-compressingdisc.html">Prev</a></td><td align="center" class="navCenter" width="34%">Current Data File Format</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="data-connections.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="data-connected"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>connected — Is a normal surface connected?</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="informaltable"><table border="1"><colgroup><col><col></colgroup><tbody><tr><td colspan="2">
+      <span class="bold"><strong>Content Model</strong></span>
+     </td></tr><tr><td colspan="2">
+<pre class="synopsis">
+connected ::=</pre>
+     </td></tr><tr><td colspan="2">
+      <span class="bold"><strong>Attributes</strong></span>
+     </td></tr><tr><td><span class="bold"><strong>Name</strong></span></td><td><span class="bold"><strong>Type</strong></span></td></tr><tr><td><code class="sgmltag-element">value</code></td><td><span class="type">CDATA</span> (required)</td></tr></tbody></table></div></div><div class="refsect1" lang="en"><a name="idp105544446000968"></a><h2>Description</h2><p>
+   A <a href="data-connected.html" title="connected"><code class="sgmltag-element">connected</code></a> element stores whether or not a normal surface is
+   connected.
+  </p><div class="refsect2" lang="en"><a name="idp105544446003144"></a><h3>Parents</h3><p>
+    The following elements contain <code class="sgmltag-element">connected</code>:
+    <span class="simplelist"><a href="data-surface.html" title="surface"><code class="sgmltag-element">surface</code></a></span>.
+   </p></div><div class="refsect2" lang="en"><a name="idp105544446005960"></a><h3>Children</h3><p>
+    Element <code class="sgmltag-element">connected</code> has no children.
+   </p></div></div><div class="refsect1" lang="en"><a name="idp105544446007624"></a><h2>Attributes</h2><div class="variablelist"><dl><dt><span class="term"><code class="sgmltag-element">value</code></span></dt><dd><p>
+      Either <code class="literal">T</code> or <code class="literal">F</code>, according to
+      whether the parent surface is connected or disconnected respectively.
+     </p><p>
+      Past versions of <span class="application">Regina</span> (versions 4.92 and earlier) used
+      <code class="literal">true</code> or <code class="literal">1</code> instead of
+      <code class="literal">T</code>, used
+      <code class="literal">false</code> or <code class="literal">-1</code> instead of
+      <code class="literal">F</code>, and also used
+      <code class="literal">unknown</code> or <code class="literal">0</code> to indicate
+      that this property was unknown.
+     </p></dd></dl></div></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="data-compressingdisc.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="data-connections.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">compressingdisc </td><td width="34%" align="center" class="navCenter"><a href="dataformat.html">Up</a></td><td width="33%" align="right" class="navRight"> connections</td></tr></table></div></body></html>

@@ -1,0 +1,41 @@
+<html><head><title>reginadata</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Regina, XML, Data files"><link rel="start" href="index.html" title="Regina 7.3 File Format Reference"><link rel="up" href="removed.html" title="Deprecated and Removed Elements"><link rel="prev" href="data-realbdry-filter.html" title="realbdry (filter)"><link rel="next" href="data-simplices.html" title="simplices"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>reginadata</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="data-realbdry-filter.html">Prev</a></td><td align="center" class="navCenter" width="34%">Deprecated and Removed Elements</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="data-simplices.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="data-reginadata"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>reginadata — Replaced by <a href="data-regina.html" title="regina"><code class="sgmltag-element">regina</code></a></p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="informaltable"><table border="1"><colgroup><col><col></colgroup><tbody><tr><td colspan="2">
+      <span class="bold"><strong>Content Model</strong></span>
+     </td></tr><tr><td colspan="2">
+<pre class="synopsis">
+reginadata ::= (<a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a>)</pre>
+     </td></tr><tr><td colspan="2">
+      <span class="bold"><strong>Attributes</strong></span>
+     </td></tr><tr><td><span class="bold"><strong>Name</strong></span></td><td><span class="bold"><strong>Type</strong></span></td></tr><tr><td><code class="sgmltag-element">engine</code></td><td><span class="type">CDATA</span> (required)</td></tr></tbody></table></div><p>Deprecated since <span class="application">Regina</span> 7.0</p></div><div class="refsect1" lang="en"><a name="idp105544512427976"></a><h2>Description</h2><p>
+   This element was renamed to <a href="data-regina.html" title="regina"><code class="sgmltag-element">regina</code></a> when <span class="application">Regina</span> switched to
+   its third-generation file format in <span class="application">Regina</span> 7.0.
+   If <span class="application">Regina</span> sees a data file whose root element is <a href="data-reginadata.html" title="reginadata"><code class="sgmltag-element">reginadata</code></a>
+   (not <a href="data-regina.html" title="regina"><code class="sgmltag-element">regina</code></a>), it will understand this to be a older second-generation
+   data file, and it will still be able to read it.  New data
+   files should use <a href="data-regina.html" title="regina"><code class="sgmltag-element">regina</code></a> as their root elements instead.
+  </p><p>
+   A <a href="data-reginadata.html" title="reginadata"><code class="sgmltag-element">reginadata</code></a> element is the top-level element for a
+   second-generation <span class="application">Regina</span> data file.
+   Whereas the newer <a href="data-regina.html" title="regina"><code class="sgmltag-element">regina</code></a> stores different types of packets
+   using their own element types (<a href="data-container.html" title="container"><code class="sgmltag-element">container</code></a>, <a href="data-tri.html" title="tri"><code class="sgmltag-element">tri</code></a>, etc.),
+   the older <a href="data-reginadata.html" title="reginadata"><code class="sgmltag-element">reginadata</code></a> stores every packet using a <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a> element.
+   The single child <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a> of a <a href="data-reginadata.html" title="reginadata"><code class="sgmltag-element">reginadata</code></a> element represents
+   the root of the packet tree stored in this data file.
+  </p><div class="refsect2" lang="en"><a name="idp105544512406344"></a><h3>Parents</h3><p>
+    Being the top-level element of a data file,
+    <code class="sgmltag-element">reginadata</code> has no parents.
+   </p></div><div class="refsect2" lang="en"><a name="idp105544512407880"></a><h3>Children</h3><p>
+    The following elements occur in <code class="sgmltag-element">reginadata</code>:
+    <span class="simplelist"><a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a></span>.
+   </p></div></div><div class="refsect1" lang="en"><a name="idp105544512410824"></a><h2>Attributes</h2><div class="variablelist"><dl><dt><span class="term"><code class="sgmltag-element">engine</code></span></dt><dd><p>
+      The full version of the <span class="application">Regina</span> calculation engine that wrote
+      this data file.
+     </p><p>
+      If a newer version of <span class="application">Regina</span> exports to an older <span class="application">Regina</span> file format,
+      then the <code class="sgmltag-element">engine</code> attribute will reflect the
+      newer version of <span class="application">Regina</span> that actually wrote the file.
+     </p><p>
+      If this file was created by hand or by an external program, the
+      <code class="sgmltag-element">engine</code> attribute should reflect this (it might
+      contain the name and version of the external program, for instance).
+     </p></dd></dl></div></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="data-realbdry-filter.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="data-simplices.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">realbdry (filter) </td><td width="34%" align="center" class="navCenter"><a href="removed.html">Up</a></td><td width="33%" align="right" class="navRight"> simplices</td></tr></table></div></body></html>

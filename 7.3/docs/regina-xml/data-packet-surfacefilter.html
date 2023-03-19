@@ -1,0 +1,38 @@
+<html><head><title>packet (surface filter)</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Regina, XML, Data files"><link rel="start" href="index.html" title="Regina 7.3 File Format Reference"><link rel="up" href="removed.html" title="Deprecated and Removed Elements"><link rel="prev" href="data-packet-snappea.html" title="packet (SnapPea triangulation)"><link rel="next" href="data-packet-text.html" title="packet (text)"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>packet (surface filter)</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="data-packet-snappea.html">Prev</a></td><td align="center" class="navCenter" width="34%">Deprecated and Removed Elements</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="data-packet-text.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="data-packet-surfacefilter"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>packet (surface filter) — Replaced by <a href="data-filtercomb.html" title="filtercomb"><code class="sgmltag-element">filtercomb</code></a>, <a href="data-filterprop.html" title="filterprop"><code class="sgmltag-element">filterprop</code></a> and
+   <a href="data-filtertrivial.html" title="filtertrivial"><code class="sgmltag-element">filtertrivial</code></a></p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="informaltable"><table border="1"><colgroup><col><col></colgroup><tbody><tr><td colspan="2">
+      <span class="bold"><strong>Content Model</strong></span>
+     </td></tr><tr><td colspan="2">
+<pre class="synopsis">
+packet ::= (<a href="data-filter.html" title="filter"><code class="sgmltag-element">filter</code></a>,
+            <a href="data-tag.html" title="tag"><code class="sgmltag-element">tag</code></a>*, <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a>*)</pre>
+     </td></tr><tr><td colspan="2">
+      <span class="bold"><strong>Attributes</strong></span>
+     </td></tr><tr><td colspan="2">
+      See the general <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a> element documentation.
+     </td></tr></tbody></table></div><p>Deprecated since <span class="application">Regina</span> 7.0</p></div><div class="refsect1" lang="en"><a name="idp105544511886664"></a><h2>Description</h2><p>
+   In <span class="application">Regina</span> 6.0.1 and earlier, the <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a> element was used
+   to store every packet in the entire packet tree that makes up a
+   <span class="application">Regina</span> data file.
+   This page describes how the <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a> element was structured when
+   storing a surface filter.
+   Since <span class="application">Regina</span> 7.0, each packet type has its own <span class="acronym">XML</span> element;
+   in particular, surface filter packets are now stored using the
+   <a href="data-filtercomb.html" title="filtercomb"><code class="sgmltag-element">filtercomb</code></a>, <a href="data-filterprop.html" title="filterprop"><code class="sgmltag-element">filterprop</code></a> and <a href="data-filtertrivial.html" title="filtertrivial"><code class="sgmltag-element">filtertrivial</code></a> elements.
+  </p><p>
+   A <span class="emphasis"><em>surface filter</em></span> packet can be
+   used to filter normal surfaces from a large collection (such as a
+   normal surface list).
+  </p><p>
+   The details of the filter are stored in the child <a href="data-filter.html" title="filter"><code class="sgmltag-element">filter</code></a> element.
+  </p><p>
+   The roles played by the child <a href="data-tag.html" title="tag"><code class="sgmltag-element">tag</code></a> and <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a> elements are
+   described in the general <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a> element documentation.
+  </p><div class="refsect2" lang="en"><a name="idp105544511798600"></a><h3>Parents</h3><p>
+    The following elements contain <code class="sgmltag-element">packet</code>:
+    <span class="simplelist"><a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a>, <a href="data-reginadata.html" title="reginadata"><code class="sgmltag-element">reginadata</code></a></span>.
+   </p></div><div class="refsect2" lang="en"><a name="idp105544511802184"></a><h3>Children</h3><p>
+    The following elements occur in <code class="sgmltag-element">packet</code> for
+    a surface filter packet:
+    <span class="simplelist"><a href="data-filter.html" title="filter"><code class="sgmltag-element">filter</code></a>, <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a>, <a href="data-tag.html" title="tag"><code class="sgmltag-element">tag</code></a></span>.
+   </p></div></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="data-packet-snappea.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="data-packet-text.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">packet (<span class="application">SnapPea</span> triangulation) </td><td width="34%" align="center" class="navCenter"><a href="removed.html">Up</a></td><td width="33%" align="right" class="navRight"> packet (text)</td></tr></table></div></body></html>

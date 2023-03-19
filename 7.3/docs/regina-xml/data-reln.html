@@ -1,0 +1,34 @@
+<html><head><title>reln</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Regina, XML, Data files"><link rel="start" href="index.html" title="Regina 7.3 File Format Reference"><link rel="up" href="dataformat.html" title="Current Data File Format"><link rel="prev" href="data-regina.html" title="regina"><link rel="next" href="data-script.html" title="script"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>reln</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="data-regina.html">Prev</a></td><td align="center" class="navCenter" width="34%">Current Data File Format</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="data-script.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="data-reln"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>reln — A relation in a group presentation</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="informaltable"><table border="1"><colgroup><col><col></colgroup><tbody><tr><td colspan="2">
+      <span class="bold"><strong>Content Model</strong></span>
+     </td></tr><tr><td colspan="2">
+<pre class="synopsis">
+reln ::= (#PCDATA)</pre>
+     </td></tr></tbody></table></div></div><div class="refsect1" lang="en"><a name="idp105544514765768"></a><h2>Description</h2><p>
+   A <a href="data-reln.html" title="reln"><code class="sgmltag-element">reln</code></a> element stores a single relation in a group presentation.
+  </p><p>
+   The character data of this <span class="acronym">XML</span> element should be a
+   whitespace-separated sequence of terms.  Each term should be of the form
+   <code class="literal"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>g</code></em></span>^<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>p</code></em></span></code>,
+   where <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>g</code></em></span> is an integer representing one of
+   the group generators and <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>p</code></em></span> is an integer
+   representing the power to which that generator is raised.
+  </p><p>
+   The relation itself then states that the product of these terms from left
+   to right is equal to the identity.
+  </p><p>
+   Recall from the <a href="data-group.html" title="group"><code class="sgmltag-element">group</code></a> specification that group generators are
+   numbered 0, 1, 2, etc.
+  </p><div class="refsect2" lang="en"><a name="idp105544514771528"></a><h3>Parents</h3><p>
+    The following elements contain <code class="sgmltag-element">reln</code>:
+    <span class="simplelist"><a href="data-group.html" title="group"><code class="sgmltag-element">group</code></a></span>.
+   </p></div><div class="refsect2" lang="en"><a name="idp105544514774344"></a><h3>Children</h3><p>
+    Element <code class="sgmltag-element">reln</code> has no children.
+   </p></div></div><div class="refsect1" lang="en"><a name="idp105544514677704"></a><h2>Example</h2><p>
+   The following <span class="acronym">XML</span> snippet represents the relation
+   <code class="literal">(a b^2 c^-1 = 1)</code>, where <code class="literal">a</code>,
+   <code class="literal">b</code> and <code class="literal">c</code> are generators numbers
+   0, 1 and 2 respectively.
+  </p><pre class="programlisting">
+&lt;reln&gt; 0^1 1^2 2^-1 &lt;/reln&gt;
+  </pre></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="data-regina.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="data-script.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">regina </td><td width="34%" align="center" class="navCenter"><a href="dataformat.html">Up</a></td><td width="33%" align="right" class="navRight"> script</td></tr></table></div></body></html>

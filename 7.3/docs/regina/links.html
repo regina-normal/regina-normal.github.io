@@ -1,0 +1,210 @@
+<html><head><title>Chapter 7. Knots and Links</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina 7.3 Handbook"><link rel="up" href="index.html" title="The Regina 7.3 Handbook"><link rel="prev" href="angles-analysis.html" title="Analysis"><link rel="next" href="link-analysis.html" title="Analysis"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Knots and Links</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="angles-analysis.html">Prev</a></td><td align="center" class="navCenter" width="34%"> </td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="link-analysis.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="links"></a>Chapter 7. Knots and Links</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="links.html#link-creation">Creation</a></span></dt><dd><dl><dt><span class="sect2"><a href="links.html#link-new-code">Text Codes</a></span></dt><dt><span class="sect2"><a href="links.html#link-new-torus">Torus Links</a></span></dt><dt><span class="sect2"><a href="links.html#link-new-example">Example Knots and Links</a></span></dt></dl></dd><dt><span class="sect1"><a href="link-analysis.html">Analysis</a></span></dt><dd><dl><dt><span class="sect2"><a href="link-analysis.html#link-crossings">Crossings and Components</a></span></dt><dt><span class="sect2"><a href="link-analysis.html#link-polynomials">Polynomial Invariants</a></span></dt><dt><span class="sect2"><a href="link-analysis.html#link-algebra">Algebraic Invariants</a></span></dt><dt><span class="sect2"><a href="link-analysis.html#link-codes">Text Codes</a></span></dt><dt><span class="sect2"><a href="link-analysis.html#link-graphs">Associated Graphs</a></span></dt><dt><span class="sect2"><a href="link-analysis.html#link-complement">Link Complements</a></span></dt></dl></dd><dt><span class="sect1"><a href="link-modification.html">Modification</a></span></dt><dd><dl><dt><span class="sect2"><a href="link-modification.html#link-edit-crossings">Editing Crossings</a></span></dt><dt><span class="sect2"><a href="link-modification.html#link-simplify">Automatic Simplification</a></span></dt><dt><span class="sect2"><a href="link-modification.html#link-reidemeister">Reidemeister Moves</a></span></dt><dt><span class="sect2"><a href="link-modification.html#link-flip">Reflection, Rotation and Reversal</a></span></dt><dt><span class="sect2"><a href="link-modification.html#link-cables">Parallel Cables</a></span></dt><dt><span class="sect2"><a href="link-modification.html#link-selfframe">Self Framing</a></span></dt><dt><span class="sect2"><a href="link-modification.html#link-composewith">Building Composite Links</a></span></dt></dl></dd></dl></div><p>
+  <span class="application">Regina</span> offers native support for knots and links.
+  <span class="application">Regina</span> collectively refers to all such objects as
+  <em class="firstterm">links</em>:
+  a link may have multiple components, or just one component
+  (i.e., a knot), or zero components (i.e., the empty link).
+ </p><p>
+  A link is stored using a <em class="firstterm">link diagram</em>,
+  which consists of <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span> crossings and
+  2<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span> strands that connect them, possibly
+  with some additional unknot components that have no crossings at all.
+ </p><p>
+  Link diagrams are embedded in the sphere. This means that <span class="application">Regina</span>
+  does keep track of left versus right, but it does not keep track of
+  which cell is the “outer” cell of the diagram.
+ </p><p>
+  Links in <span class="application">Regina</span> are <em class="firstterm">oriented</em>.
+  This means that <span class="application">Regina</span> keeps track of a “direction of
+  travel” around each component of the link.
+ </p><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="link-creation"></a>Creation</h2></div></div></div><p>
+   To create a new link, use the
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Packet Tree</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">New Knot or Link</span></span>
+   menu item (or the corresponding toolbar button).
+  </p><p>
+   <span class="inlinemediaobject"><img src="menu-newlink.png" srcset="menu-newlink@2x.png 2x, menu-newlink.png"></span>
+  </p><p>
+   You will be asked what <span class="emphasis"><em>type</em></span> of link
+   to create (see the drop-down box below).
+   Here we walk through the various options.
+  </p><p>
+   <span class="inlinemediaobject"><img src="newlink.png" srcset="newlink@2x.png 2x, newlink.png"></span>
+  </p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="link-new-code"></a>Text Codes</h3></div></div></div><p>
+    This will reconstruct a link from one of several common text codes.
+    At present, <span class="application">Regina</span> can only reconstruct single-component knots
+    from most types of codes;
+    the exception is <a href="links.html#link-new-pd">planar diagram codes</a>,
+    which support links with multiple components.
+   </p><p>
+    <span class="inlinemediaobject"><img src="newlink-code.png" srcset="newlink-code@2x.png 2x, newlink-code.png"></span>
+   </p><p>
+    The codes that <span class="application">Regina</span> understands include:
+    </p><div class="itemizedlist"><ul type="disc"><li><p><a name="link-new-knotsig"></a><span class="application">Regina</span>'s own <em class="firstterm">knot signatures</em>,
+       which are compact sequences of letters, digits and/or punctuation
+       that uniquely identify a knot up to combinatorial isomorphism.
+       Here <em class="firstterm">combinatorial isomorphism</em>
+       includes relabelling the crossings,
+       reflecting or rotating the entire diagram,
+       and/or reversing the orientation of the knot (i.e., the direction
+       of travel).
+      </p><p>
+       An example is <code class="literal">dabcabcv-</code>, which represents
+       the trefoil.
+      </p><p>
+       Knot signatures played a significant role in the 19-crossing
+       knot tabulation [<a href="bibliography.html#bib-burton-knots" title="[Bur20]"><span class="abbrev">Bur20</span></a>].
+      </p></li><li><p><a name="link-new-classical-gauss"></a>
+       <em class="firstterm">Classical Gauss codes</em>,
+       which are sequences of integers that encode the crossings that you
+       pass through as you traverse the knot from an arbitrary starting point.
+       Crossings are numbered consecutively from 1 to
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span> (but in any order),
+       and each crossing is written as a positive or negative integer
+       according to whether you pass over or under it.
+      </p><p>
+       An example of a Gauss code is
+       <code class="literal">1 -2 3 -1 2 -3</code>,
+       which represents the trefoil.
+      </p><p>
+       Classical Gauss codes are commonly used in the literature.
+       Be aware that they do not specify the orientation of the diagram, and
+       (more importantly) for composite knots they may not even uniquely
+       define the topology of the knot.
+       If this is a problem, consider using either
+       <span class="emphasis"><em>oriented</em></span> Gauss codes or knot signatures
+       instead.
+      </p></li><li><p><a name="link-new-oriented-gauss"></a>
+       <em class="firstterm">Oriented Gauss codes</em>,
+       which likewise encode the crossings that you pass through as you
+       traverse the knot, but this time with more precise information.
+       Again the crossings are numbered consecutively from 1 to
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span> (but in any order);
+       each crossing is then written with a sign (plus or minus),
+       an arrow (either less-than or greater-than), and an integer.
+       The sign indicates whether you pass over (<code class="literal">+</code>)
+       or under (<code class="literal">-</code>) the crossing, and
+       the arrow indicates whether the other strand of the crossing
+       passes from right-to-left (<code class="literal">&lt;</code>) or
+       left-to-right (<code class="literal">&gt;</code>).
+      </p><p>
+       An example is
+       <code class="literal">+&gt;1 -&lt;2 +&gt;3 -&lt;1 +&gt;2 -&lt;3</code>,
+       which represents the left-hand trefoil.
+      </p><p>
+       Oriented Gauss codes were introduced by Andreeva et al., and
+       are described as part of their
+       <a href="http://www.javaview.de/services/knots/doc/description.html#gc" target="_top">Book Knot Simplifier</a>.
+       Unlike classical Gauss codes, they preserve the orientation of the
+       diagram, and they correctly identify the topology of composite knots.
+      </p></li><li><p><a name="link-new-dt"></a>
+       <em class="firstterm">Dowker-Thistlethwaite notation</em>,
+       which is essentially a more streamlined variant of
+       classical Gauss codes.  They have played an important historical
+       role in knot tabulation; see Adams [<a href="bibliography.html#bib-adams-knotbook" title="[Ada94]"><span class="abbrev">Ada94</span></a>]
+       for some history and also a precise description of the format.
+      </p><p>
+       <span class="application">Regina</span> understands both the numerical and alphabetical variants
+       of Dowker-Thistlethwaite notation.  The numerical variant
+       involves a sequence of <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span> even signed
+       integers.
+       The alphabetical variant transforms this into a compact text string by
+       replacing the positive integers
+       <code class="literal">2</code>,<code class="literal">4</code>,<code class="literal">6</code>,…
+       with lower-case letters
+       <code class="literal">a</code>,<code class="literal">b</code>,<code class="literal">c</code>,…,
+       and replacing the negative integers
+       <code class="literal">-2</code>,<code class="literal">-4</code>,<code class="literal">-6</code>,…
+       with upper-case letters
+       <code class="literal">A</code>,<code class="literal">B</code>,<code class="literal">C</code>,….
+       The alphabetical variant can only be used to describe knots with
+       26 crossings or fewer.
+      </p><p>
+       Examples are <code class="literal">4 6 2</code> or <code class="literal">bca</code>,
+       both of which represent the trefoil.
+      </p><p>
+       Like classical Gauss codes, Dowker-Thistlethwaite notation
+       does not specify the orientation of the diagram, and
+       (more importantly) for composite knots may not uniquely
+       define the topology of the knot.
+       If this is a problem, consider using either oriented Gauss codes
+       or knot signatures instead.
+      </p></li><li><p><a name="link-new-pd"></a>
+       <em class="firstterm">Planar diagram codes</em>,
+       which are sequences of 4-tuples that encode the local connections
+       around each crossing.  Unlike the other code types described
+       here, planar diagram codes can encode multiple-component links.
+      </p><p>
+       In a planar diagram code for a link with
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span> crossings, the strands are numbered
+       1,…,2<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span>.  Each 4-tuple
+       represents a single crossing, and lists the four strands that
+       meet at that crossing in counter-clockwise order, beginning with
+       the incoming lower strand.  <span class="application">Regina</span> will number the crossings
+       0,…,(<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span>-1) in the same order as
+       the tuples are presented.
+      </p><p>
+       An example of a planar diagram code is
+       <code class="literal">[[1,4,2,5], [3,6,4,1], [5,2,6,3]]</code>,
+       which represents the left-hand trefoil.
+      </p><p>
+       You may separate the integers with any combination of whitespace,
+       commas, round/square/curly brackets, and/or the special symbols
+       <code class="literal">PD</code>, <code class="literal">X</code>, <code class="literal">Xp</code>,
+       <code class="literal">Xm</code> or <code class="literal">P</code> (these symbols
+       appear in other sources, but have no special meaning for <span class="application">Regina</span>).
+       So, for example, the left-hand trefoil above could instead be
+       presented as <code class="literal">PD[X[1,5,2,4], X[3,1,4,6], X[5,3,6,2]]</code>,
+       or just <code class="literal">1 5 2 4 3 1 4 6 5 3 6 2</code>.
+      </p><p>
+       Planar diagram codes are used in the
+       <a href="http://katlas.org/wiki/Planar_Diagrams" target="_top">Knot Atlas</a>
+       (for example).
+       They have two limitations:
+       they cannot represent zero-crossing unknot components; also, if
+       the link has a component that consists entirely of over-crossings
+       (i.e., an unknot placed “on top” of the diagram) then
+       the orientation of that component is not uniquely determined.
+      </p></li></ul></div><p>
+   </p><p>
+    If you already have a knot or link and you wish to view these different
+    text codes, you can do this through the
+    <a href="link-analysis.html#link-codes" title="Text Codes">codes tab</a>.
+   </p><div class="caution" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Caution</h3><p>
+    Knot signatures and Dowker-Thistlethwaite notation are
+    both <span class="emphasis"><em>case sensitive</em></span>!
+    Be sure that you are entering upper-case and lower-case correctly
+    (or better, copy and paste the text using the clipboard if you can).
+   </p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="link-new-torus"></a>Torus Links</h3></div></div></div><p>
+    <span class="application">Regina</span> can create a new torus link with the given parameters
+    (<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>p</code></em></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>q</code></em></span>).
+    This essentially involves drawing a
+    (<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>p</code></em></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>q</code></em></span>)
+    curve on an unknotted torus in 3-space and then removing the torus.
+   </p><p>
+    <span class="inlinemediaobject"><img src="newlink-torus.png" srcset="newlink-torus@2x.png 2x, newlink-torus.png"></span>
+   </p><p>
+    The parameters
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>p</code></em></span> and <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>q</code></em></span>
+    must be non-negative integers.  They do not need to be coprime:
+    if their greatest common divisor is
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span> &gt; 1 then the result will
+    be a link with <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span> components.
+   </p><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>
+    You do not need to separate the lens space parameters with commas;
+    any punctuation, or even just spaces, will suffice.
+   </p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="link-new-example"></a>Example Knots and Links</h3></div></div></div><p>
+    Like triangulations,
+    <span class="application">Regina</span> offers a selection of ready-made sample knots and links
+    which you can use to experiment with <span class="application">Regina</span>.
+    Simply select an example from the list provided and <span class="application">Regina</span> will
+    build the corresponding link for you.
+   </p><p>
+    <span class="inlinemediaobject"><img src="newlink-example.png" srcset="newlink-example@2x.png 2x, newlink-example.png"></span>
+   </p><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title"><a name="link-census-examples"></a>Tip</h3><p>
+    You can see many more examples by looking through the prime knot census,
+    which is shipped as one of <span class="application">Regina</span>'s example data files.
+    Select
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">File</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guisubmenu">Open Example</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Prime Knots</span></span>
+    from the menu.
+   </p></div></div></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="angles-analysis.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="link-analysis.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">Analysis </td><td width="34%" align="center" class="navCenter"><a href="index.html">Up</a></td><td width="33%" align="right" class="navRight"> Analysis</td></tr></table></div></body></html>

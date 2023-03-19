@@ -1,0 +1,75 @@
+<html><head><title>anonref</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Regina, XML, Data files"><link rel="start" href="index.html" title="Regina 7.3 File Format Reference"><link rel="up" href="dataformat.html" title="Current Data File Format"><link rel="prev" href="data-anon.html" title="anon"><link rel="next" href="data-attachment.html" title="attachment"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>anonref</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="data-anon.html">Prev</a></td><td align="center" class="navCenter" width="34%">Current Data File Format</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="data-attachment.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="data-anonref"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>anonref — Moves an anonymous packet into the packet tree</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="informaltable"><table border="1"><colgroup><col><col></colgroup><tbody><tr><td colspan="2">
+      <span class="bold"><strong>Content Model</strong></span>
+     </td></tr><tr><td colspan="2">
+<pre class="synopsis">
+anonref ::= ((<a href="data-container.html" title="container"><code class="sgmltag-element">container</code></a>|<a href="data-textdata.html" title="textdata"><code class="sgmltag-element">textdata</code></a>|<a href="data-script.html" title="script"><code class="sgmltag-element">script</code></a>|<a href="data-attachment.html" title="attachment"><code class="sgmltag-element">attachment</code></a>|
+              <a href="data-tri.html" title="tri"><code class="sgmltag-element">tri</code></a>|<a href="data-link.html" title="link"><code class="sgmltag-element">link</code></a>|<a href="data-snappeadata.html" title="snappeadata"><code class="sgmltag-element">snappeadata</code></a>|
+              <a href="data-angles.html" title="angles"><code class="sgmltag-element">angles</code></a>|<a href="data-surfaces.html" title="surfaces"><code class="sgmltag-element">surfaces</code></a>|<a href="data-hypersurfaces.html" title="hypersurfaces"><code class="sgmltag-element">hypersurfaces</code></a>|
+              <a href="data-filtercomb.html" title="filtercomb"><code class="sgmltag-element">filtercomb</code></a>|<a href="data-filterprop.html" title="filterprop"><code class="sgmltag-element">filterprop</code></a>|<a href="data-filtertrivial.html" title="filtertrivial"><code class="sgmltag-element">filtertrivial</code></a>|
+              <a href="data-anon.html" title="anon"><code class="sgmltag-element">anon</code></a>|<a href="data-anonref.html" title="anonref"><code class="sgmltag-element">anonref</code></a>)*)</pre>
+     </td></tr><tr><td colspan="2">
+      <span class="bold"><strong>Attributes</strong></span>
+     </td></tr><tr><td><span class="bold"><strong>Name</strong></span></td><td><span class="bold"><strong>Type</strong></span></td></tr><tr><td><code class="sgmltag-element">id</code></td><td><span class="type">CDATA</span> (required)</td></tr></tbody></table></div><p>Added in <span class="application">Regina</span> 7.0</p></div><div class="refsect1" lang="en"><a name="idp105544445506760"></a><h2>Description</h2><p>
+   This element has the effect of moving an anonymous packet into the
+   packet tree, effectively “de-anonymising” it.
+  </p><p>
+   The <code class="sgmltag-element">id</code> attribute must be the ID of an anonymous packet
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>P</code></em></span>
+   that appears <span class="emphasis"><em>before this list in the packet tree</em></span>,
+   with respect to a pre-order depth-first traversal
+   (i.e.,  <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>P</code></em></span> must appear before this <a href="data-anonref.html" title="anonref"><code class="sgmltag-element">anonref</code></a>
+   in the <span class="acronym">XML</span> data file).
+   Recall that an <span class="emphasis"><em>anonymous packet</em></span> is
+   one that appears anywhere inside an <a href="data-anon.html" title="anon"><code class="sgmltag-element">anon</code></a> element within the data file.
+  </p><p>
+   The effect will be to move <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>P</code></em></span> to this location
+   in the packet tree.  Any child elements of this <a href="data-anonref.html" title="anonref"><code class="sgmltag-element">anonref</code></a> will
+   become child packets of <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>P</code></em></span>.
+   Both the ID and label of <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>P</code></em></span> will be preserved.
+   The packet <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>P</code></em></span> will no longer be anonymous:
+   the user will see it as part of their data file, just like any other
+   “ordinary” packet.
+  </p><p>
+   The reason for using an <a href="data-anonref.html" title="anonref"><code class="sgmltag-element">anonref</code></a> might be if the user has placed
+   a packet towards the end of the packet tree, but the <span class="acronym">XML</span> parser needs to
+   see its contents earlier.  An example of this is a normal surface list
+   whose triangulation appears after it in a depth-first tree traversal.
+   In this case the triangulation would need to be written before the
+   normal surface list as an anonymous packet (since the normal surface
+   list needs to see it as it is being parsed), and would then be moved
+   using an <a href="data-anonref.html" title="anonref"><code class="sgmltag-element">anonref</code></a> to its correct location in the tree later on.
+  </p><p>
+   If an <a href="data-anonref.html" title="anonref"><code class="sgmltag-element">anonref</code></a> appears anywhere inside an <a href="data-anon.html" title="anon"><code class="sgmltag-element">anon</code></a> element,
+   then the <a href="data-anonref.html" title="anonref"><code class="sgmltag-element">anonref</code></a> will have no effect.
+   If the <code class="sgmltag-element">id</code> attribute refers to a packet that is not
+   anonymous (including one that has already been de-anonymised through
+   some other <a href="data-anonref.html" title="anonref"><code class="sgmltag-element">anonref</code></a>), then this <a href="data-anonref.html" title="anonref"><code class="sgmltag-element">anonref</code></a> will be ignored.
+  </p><p>
+   Any tags associated with the packet <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>P</code></em></span>
+   should be included as child <a href="data-tag.html" title="tag"><code class="sgmltag-element">tag</code></a> elements of this <a href="data-anonref.html" title="anonref"><code class="sgmltag-element">anonref</code></a>,
+   not within the original <a href="data-anon.html" title="anon"><code class="sgmltag-element">anon</code></a> section of the data file.
+  </p><p>
+    There are several child <span class="acronym">XML</span> elements that are common to all packet types.
+    The <a href="data-tag.html" title="tag"><code class="sgmltag-element">tag</code></a> elements represent an arbitrary set of string
+    “tags” that users can attach to a packet to help organise
+    their data.
+    The remaining child elements list all of <span class="application">Regina</span>'s packet types
+    (<a href="data-container.html" title="container"><code class="sgmltag-element">container</code></a>, <a href="data-textdata.html" title="textdata"><code class="sgmltag-element">textdata</code></a>, etc.), and these represent the
+    immediate children of this packet in the packet tree.
+   </p><div class="refsect2" lang="en"><a name="idp105544445493576"></a><h3>Parents</h3><p>
+    The following elements can contain any packet element (including this):
+    <span class="simplelist"><a href="data-angles.html" title="angles"><code class="sgmltag-element">angles</code></a>, <a href="data-anon.html" title="anon"><code class="sgmltag-element">anon</code></a>, <a href="data-anonref.html" title="anonref"><code class="sgmltag-element">anonref</code></a>, <a href="data-attachment.html" title="attachment"><code class="sgmltag-element">attachment</code></a>, <a href="data-container.html" title="container"><code class="sgmltag-element">container</code></a>, <a href="data-filtercomb.html" title="filtercomb"><code class="sgmltag-element">filtercomb</code></a>, <a href="data-filterprop.html" title="filterprop"><code class="sgmltag-element">filterprop</code></a>, <a href="data-filtertrivial.html" title="filtertrivial"><code class="sgmltag-element">filtertrivial</code></a>, <a href="data-hypersurfaces.html" title="hypersurfaces"><code class="sgmltag-element">hypersurfaces</code></a>, <a href="data-link.html" title="link"><code class="sgmltag-element">link</code></a>, <a href="data-regina.html" title="regina"><code class="sgmltag-element">regina</code></a>, <a href="data-script.html" title="script"><code class="sgmltag-element">script</code></a>, <a href="data-snappeadata.html" title="snappeadata"><code class="sgmltag-element">snappeadata</code></a>, <a href="data-surfaces.html" title="surfaces"><code class="sgmltag-element">surfaces</code></a>, <a href="data-textdata.html" title="textdata"><code class="sgmltag-element">textdata</code></a>, <a href="data-tri.html" title="tri"><code class="sgmltag-element">tri</code></a></span>.
+    This list includes all packet types, as well as the top-level element
+    <a href="data-regina.html" title="regina"><code class="sgmltag-element">regina</code></a>.
+   </p></div><div class="refsect2" lang="en"><a name="idp105544445409864"></a><h3>Children</h3><p>
+    The following children can occur in all packet elements:
+    <span class="simplelist"><a href="data-angles.html" title="angles"><code class="sgmltag-element">angles</code></a>, <a href="data-anon.html" title="anon"><code class="sgmltag-element">anon</code></a>, <a href="data-anonref.html" title="anonref"><code class="sgmltag-element">anonref</code></a>, <a href="data-attachment.html" title="attachment"><code class="sgmltag-element">attachment</code></a>, <a href="data-container.html" title="container"><code class="sgmltag-element">container</code></a>, <a href="data-filtercomb.html" title="filtercomb"><code class="sgmltag-element">filtercomb</code></a>, <a href="data-filterprop.html" title="filterprop"><code class="sgmltag-element">filterprop</code></a>, <a href="data-filtertrivial.html" title="filtertrivial"><code class="sgmltag-element">filtertrivial</code></a>, <a href="data-hypersurfaces.html" title="hypersurfaces"><code class="sgmltag-element">hypersurfaces</code></a>, <a href="data-link.html" title="link"><code class="sgmltag-element">link</code></a>, <a href="data-script.html" title="script"><code class="sgmltag-element">script</code></a>, <a href="data-snappeadata.html" title="snappeadata"><code class="sgmltag-element">snappeadata</code></a>, <a href="data-surfaces.html" title="surfaces"><code class="sgmltag-element">surfaces</code></a>, <a href="data-tag.html" title="tag"><code class="sgmltag-element">tag</code></a>, <a href="data-textdata.html" title="textdata"><code class="sgmltag-element">textdata</code></a>, <a href="data-tri.html" title="tri"><code class="sgmltag-element">tri</code></a></span>.
+    This list includes all packet types, as well as the <a href="data-tag.html" title="tag"><code class="sgmltag-element">tag</code></a> element
+    for tagging individual packets.
+   </p></div></div><div class="refsect1" lang="en"><a name="idp105544445391816"></a><h2>Attributes</h2><div class="variablelist"><dl><dt><span class="term"><code class="sgmltag-element">id</code></span></dt><dd><p>
+     The ID of the anonymous packet that we are moving into the packet tree.
+     This must match the <code class="sgmltag-element">id</code> attribute of a packet
+     that appears before this <a href="data-anonref.html" title="anonref"><code class="sgmltag-element">anonref</code></a> in a pre-order
+     depth-first traversal of the full packet tree.
+    </p></dd></dl></div></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="data-anon.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="data-attachment.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">anon </td><td width="34%" align="center" class="navCenter"><a href="dataformat.html">Up</a></td><td width="33%" align="right" class="navRight"> attachment</td></tr></table></div></body></html>
