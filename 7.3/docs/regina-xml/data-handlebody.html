@@ -1,0 +1,27 @@
+<html><head><title>handlebody</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Regina, XML, Data files"><link rel="start" href="index.html" title="Regina 7.3 File Format Reference"><link rel="up" href="dataformat.html" title="Current Data File Format"><link rel="prev" href="data-haken.html" title="haken"><link rel="next" href="data-hypersurface.html" title="hypersurface"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>handlebody</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="data-haken.html">Prev</a></td><td align="center" class="navCenter" width="34%">Current Data File Format</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="data-hypersurface.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="data-handlebody"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>handlebody — Does a triangulation represent an orientable handlebody?</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="informaltable"><table border="1"><colgroup><col><col></colgroup><tbody><tr><td colspan="2">
+      <span class="bold"><strong>Content Model</strong></span>
+     </td></tr><tr><td colspan="2">
+<pre class="synopsis">
+handlebody ::=</pre>
+     </td></tr><tr><td colspan="2">
+      <span class="bold"><strong>Attributes</strong></span>
+     </td></tr><tr><td><span class="bold"><strong>Name</strong></span></td><td><span class="bold"><strong>Type</strong></span></td></tr><tr><td><code class="sgmltag-element">value</code></td><td><span class="type">NUMBER</span> (required)</td></tr></tbody></table></div><p>Added in <span class="application">Regina</span> 7.1</p></div><div class="refsect1" lang="en"><a name="idp105544444884552"></a><h2>Description</h2><p>
+   A <a href="data-handlebody.html" title="handlebody"><code class="sgmltag-element">handlebody</code></a> element stores whether or not the parent
+   triangulation is in fact a triangulation of an orientable handlebody,
+   and if so, of which genus.
+  </p><p>
+   This element both replaces and generalises the deprecated
+   <a href="data-threeball.html" title="threeball"><code class="sgmltag-element">threeball</code></a> and <a href="data-solidtorus.html" title="solidtorus"><code class="sgmltag-element">solidtorus</code></a> elements from <span class="application">Regina</span> 7.0
+   and earlier (which correspond to orientable handlebodies of
+   genus 0 and 1 respectively).
+  </p><div class="refsect2" lang="en"><a name="idp105544444889928"></a><h3>Parents</h3><p>
+    The following elements contain <code class="sgmltag-element">handlebody</code>:
+    <span class="simplelist"><a href="data-tri.html" title="tri"><code class="sgmltag-element">tri</code></a></span>.
+   </p></div><div class="refsect2" lang="en"><a name="idp105544444892744"></a><h3>Children</h3><p>
+    Element <code class="sgmltag-element">handlebody</code> has no children.
+   </p></div></div><div class="refsect1" lang="en"><a name="idp105544444894408"></a><h2>Attributes</h2><div class="variablelist"><dl><dt><span class="term"><code class="sgmltag-element">value</code></span></dt><dd><p>
+      If the parent triangulation represents an orientable handlebody,
+      then this attribute stores the genus as a non-negative integer.
+      Otherwise this attribute stores the integer -1.
+     </p></dd></dl></div></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="data-haken.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="data-hypersurface.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">haken </td><td width="34%" align="center" class="navCenter"><a href="dataformat.html">Up</a></td><td width="33%" align="right" class="navRight"> hypersurface</td></tr></table></div></body></html>

@@ -1,0 +1,189 @@
+<html><head><title>Chapter 4. SnapPea Triangulations</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina 7.3 Handbook"><link rel="up" href="index.html" title="The Regina 7.3 Handbook"><link rel="prev" href="tri-modification.html" title="Modification"><link rel="next" href="snappea-analysis.html" title="Analysis and Modification"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1><span class="application">SnapPea</span> Triangulations</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="tri-modification.html">Prev</a></td><td align="center" class="navCenter" width="34%"> </td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="snappea-analysis.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="snappea"></a>Chapter 4. <span class="application">SnapPea</span> Triangulations</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="snappea.html#snappea-creation">Creation</a></span></dt><dd><dl><dt><span class="sect2"><a href="snappea.html#snappea-fromregina">Converting from a <span class="application">Regina</span> Triangulation</a></span></dt><dt><span class="sect2"><a href="snappea.html#snappea-fromlink">Converting from a Knot or Link</a></span></dt><dt><span class="sect2"><a href="snappea.html#snappea-new">New <span class="application">SnapPea</span> Triangulations</a></span></dt><dt><span class="sect2"><a href="snappea.html#snappea-imported">Importing Triangulations</a></span></dt></dl></dd><dt><span class="sect1"><a href="snappea-analysis.html">Analysis and Modification</a></span></dt><dd><dl><dt><span class="sect2"><a href="snappea-analysis.html#snappea-basicprops">Volume, Solution Type and Other Basic Properties</a></span></dt><dt><span class="sect2"><a href="snappea-analysis.html#snappea-shapes-cusps">Cusps, Fillings and Tetrahedron Shapes</a></span></dt><dt><span class="sect2"><a href="snappea-analysis.html#snappea-algebra">Homology and Fundamental Group</a></span></dt><dt><span class="sect2"><a href="snappea-analysis.html#snappea-retriangulation">Retriangulation</a></span></dt><dt><span class="sect2"><a href="snappea-analysis.html#snappea-file">Exporting to Other Formats</a></span></dt></dl></dd></dl></div><p>
+  For 3-manifolds, <span class="application">Regina</span>'s native triangulation structure is the
+  <a href="packet-types.html#packet-triangulation3" title="3-Manifold Triangulations">triangulation packet</a>,
+  as described in the
+  <a href="triangulations.html" title="Chapter 3. Triangulations">previous chapter</a>.
+  This structure is best suited for fine-grained analysis and
+  manipulation of the triangulation, and gives you full access to
+  all of <span class="application">Regina</span>'s topological algorithms.
+ </p><p>
+  However, if you are working with hyperbolic 3-manifolds then it is
+  sometimes desirable to work with both <span class="application">Regina</span> and <a href="http://www.math.uic.edu/t3m/SnapPy/" target="_top"><span class="application">SnapPea</span> / <span class="application">SnapPy</span></a>
+  simultaneously, and to preserve data that only
+  <span class="application">SnapPea</span> knows about (such as fillings and peripheral curves)
+  as it passes through <span class="application">Regina</span>.
+ </p><p>
+  The solution is the <em class="firstterm"><span class="application">SnapPea</span> triangulation</em> packet.
+  This is a hybrid structure that maintains two synchronised copies of a
+  3-manifold triangulation, one using <span class="application">Regina</span>'s internal structures and one
+  using <span class="application">SnapPea</span>'s internal structures.
+ </p><p>
+  The advantages of using a <span class="application">SnapPea</span> triangulation are:
+  </p><div class="itemizedlist"><ul type="disc"><li><p>
+    For read-only routines, you have direct internal access to both
+    <span class="application">Regina</span>'s and <span class="application">SnapPea</span>'s mathematical engines.
+    For instance, you can enumerate normal surfaces or angle structures
+    (using <span class="application">Regina</span>'s engine), and you can search for a complete hyperbolic
+    structure using given filling coefficients (using <span class="application">SnapPea</span>'s engine).
+    All of this is available directly in <span class="application">Regina</span>'s user interface.
+   </p></li><li><p>
+    As noted above, <span class="application">SnapPea</span>-specific information (such as peripheral
+    curves or filling coefficients) will <span class="emphasis"><em>never be lost</em></span>.
+    You can <a href="foreign.html#import-snappea" title="SnapPea Triangulations">import from a <span class="application">SnapPea</span> / <span class="application">SnapPy</span>
+    data file</a>, work with it in <span class="application">Regina</span>'s user interface, and
+    then <a href="foreign-export.html#export-snappea" title="SnapPea Triangulations">export it back to <span class="application">SnapPea</span> / <span class="application">SnapPy</span></a>.
+    Throughout this process, all of <span class="application">SnapPea</span>'s own data
+    such as filling coefficients and peripheral curves will be preserved.
+   </p></li></ul></div><p>
+ </p><p>
+  The disadvantages are:
+  </p><div class="itemizedlist"><ul type="disc"><li><p>
+    For read-write routines, your access to <span class="application">Regina</span> is much more
+    restricted.  Specifically, you <span class="emphasis"><em>cannot modify the
+    triangulation</em></span> using <span class="application">Regina</span>'s mathematical engine
+    (e.g., you cannot perform a 2-0 edge move or a barycentric subdivision).
+    You can still modify the triangulation using <span class="application">SnapPea</span>'s
+    engine (so, for instance, you can permanently fill cusps,
+    or use <span class="application">SnapPea</span> to randomise the triangulation).
+   </p><p>
+    This restriction is enforced by the user interface,
+    and also at the <span class="application">Python</span> level.  In <span class="application">Python</span> you can of course still call
+    <span class="application">Regina</span>'s modification functions, but if you do so then the
+    triangulation will delete itself and become a “null
+    triangulation” instead.
+   </p></li><li><p>
+    There is extra overhead, both in memory and running time.
+    This is because each <span class="application">SnapPea</span> triangulation maintains two internal
+    copies of the triangulation using two independent pieces of
+    mathematical software.
+   </p></li></ul></div><p>
+ </p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>
+   Be aware that much of the information gained through the <span class="application">SnapPea</span> kernel
+   is inexact.  In particular, it may be subject to numerical instability
+   or floating point error.
+   If you wish to rigorously certify that a manifold is hyperbolic, see the
+   <a href="tri-analysis.html#tri-hyperbolic">recognition tab</a> (which works with
+   both <span class="application">Regina</span>'s native triangulations and also <span class="application">SnapPea</span> triangulations).
+  </p></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="snappea-creation"></a>Creation</h2></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="snappea-fromregina"></a>Converting from a <span class="application">Regina</span> Triangulation</h3></div></div></div><p>
+    It is easy to convert one of <span class="application">Regina</span>'s native
+    <a href="packet-types.html#packet-triangulation3" title="3-Manifold Triangulations">3-manifold triangulation packets</a>
+    into a <span class="application">SnapPea</span> triangulation.  To do this, open the <span class="application">Regina</span>
+    triangulation and then either:
+    </p><div class="itemizedlist"><ul type="disc"><li><p>
+       select
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">3-D Triangulation</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Convert to <span class="application">SnapPea</span></span></span> from the menu, or
+      </p><p>
+       <span class="inlinemediaobject"><img src="menutosnappea.png" srcset="menutosnappea@2x.png 2x, menutosnappea.png"></span>
+      </p></li><li><p>
+       switch to the <a href="tri-analysis.html#tri-snappea" title="SnapPea Calculations (3-D)"><span class="application">SnapPea</span> tab</a>
+       in the triangulation viewer, and press the button marked
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Convert to a <span class="application">SnapPea</span> triangulation</span></span>.
+      </p></li></ul></div><p>
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-snappea-convert.png" srcset="tri-snappea-convert@2x.png 2x, tri-snappea-convert.png"></span>
+   </p><p>
+    This will create a new <span class="application">SnapPea</span> triangulation immediately beneath
+    the original (native) triangulation in the packet tree; the original
+    will be left untouched.
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-snappea-converted.png" srcset="tri-snappea-converted@2x.png 2x, tri-snappea-converted.png"></span>
+   </p><p>
+    If your original triangulation is a closed manifold, then <span class="application">SnapPea</span>
+    will drill out a curve and present the <span class="application">SnapPea</span> triangulation as a
+    cusped manifold with a Dehn filling.
+   </p><p>
+    Regarding peripheral curves: during the conversion process,
+    <span class="application">Regina</span> will ask <span class="application">SnapPea</span> to install
+    the (shortest, second shortest) basis on each cusp.
+    Note however that this is only possible if <span class="application">SnapPea</span> finds a
+    sufficiently good solution to the gluing equations
+    (either
+    <a href="snappea-analysis.html#snappea-geometric">tetrahedra positively oriented</a>, or
+    <a href="snappea-analysis.html#snappea-nongeometric">contains negatively oriented
+    tetrahedra</a>).
+    Even then, this choice might not be
+    unique for some cusp shapes, and the resolution of such ambiguities
+    might be machine-dependent.
+    If <span class="application">SnapPea</span> cannot find a sufficiently good solution then it will
+    install a default basis (which may change across different versions
+    of the <span class="application">SnapPea</span> kernel).
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="snappea-fromlink"></a>Converting from a Knot or Link</h3></div></div></div><p>
+    You can create a <span class="application">SnapPea</span> triangulation directly from one of
+    <span class="application">Regina</span>'s <a href="links.html" title="Chapter 7. Knots and Links">knots or links</a>.
+    This will ensure that <span class="application">SnapPea</span> preserves the peripheral curves
+    (i.e., the meridian and longitude) from the link diagram.
+   </p><p>
+    To do this, open the link and then either select
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Knot / Link</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem"><span class="application">SnapPea</span></span></span>
+    from the menu, or press the corresponding toolbar button
+    (circled in the picture below).
+    As before, this will create a new <span class="application">SnapPea</span> triangulation immediately
+    beneath your link in the packet tree.
+   </p><p>
+    <span class="inlinemediaobject"><img src="snappea-link.png" srcset="snappea-link@2x.png 2x, snappea-link.png"></span>
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="snappea-new"></a>New <span class="application">SnapPea</span> Triangulations</h3></div></div></div><p>
+    Instead of using the conversion procedures described above,
+    you can instead create a new <span class="application">SnapPea</span> triangulation by selecting
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Packet Tree</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">New <span class="application">SnapPea</span> Triangulation</span></span>
+    from the menu (or the corresponding toolbar button).
+   </p><p>
+    <span class="inlinemediaobject"><img src="menu-newsnappea.png" srcset="menu-newsnappea@2x.png 2x, menu-newsnappea.png"></span>
+   </p><p>
+    You will be asked <span class="emphasis"><em>how</em></span> you wish to
+    create the <span class="application">SnapPea</span> triangulation (see the drop-down box below).
+    Here we walk through the various options.
+   </p><p>
+    <span class="inlinemediaobject"><img src="newsnappea.png" srcset="newsnappea@2x.png 2x, newsnappea.png"></span>
+   </p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="snappea-new-paste"></a>Paste a <span class="application">SnapPea</span> file</h4></div></div></div><p>
+     Here you can paste the entire contents of a <span class="application">SnapPea</span> / <span class="application">SnapPy</span> data file
+     into the given box, and <span class="application">Regina</span> will build the corresponding
+     triangulation.  You might, for instance, have obtained these file
+     contents by opening a <span class="application">SnapPea</span> data file in a text editor, or by
+     calling <code class="function">Manifold._to_string()</code> in <span class="application">SnapPy</span>.
+    </p><p>
+     <span class="inlinemediaobject"><img src="newsnappea-file.png" srcset="newsnappea-file@2x.png 2x, newsnappea-file.png"></span>
+    </p><p>
+     If you simply wish to use a <span class="application">SnapPea</span> / <span class="application">SnapPy</span> data file on your hard
+     drive, you might find it easier to
+     <a href="foreign.html#import-snappea" title="SnapPea Triangulations">import the <span class="application">SnapPea</span> file</a>
+     directly.  This will have the same effect: it will create a
+     <span class="application">SnapPea</span> triangulation, and none of <span class="application">SnapPea</span>'s own data will be lost.
+    </p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="snappea-new-convert"></a>Convert a <span class="application">Regina</span> triangulation</h4></div></div></div><p>
+     This allows you to select one of <span class="application">Regina</span>'s native 3-manifold
+     triangulations from
+     your current file and convert it into a <span class="application">SnapPea</span> triangulation.
+     This is exactly the same as opening the <span class="application">Regina</span> triangulation and
+     converting it through the <span class="application">SnapPea</span> tab,
+     as <a href="snappea.html#snappea-fromregina" title="Converting from a Regina Triangulation">discussed earlier</a>.
+    </p><p>
+     <span class="inlinemediaobject"><img src="newsnappea-convert.png" srcset="newsnappea-convert@2x.png 2x, newsnappea-convert.png"></span>
+    </p><p>
+     If you simply wish to use a <span class="application">SnapPea</span> / <span class="application">SnapPy</span> data file on your hard
+     drive, you might find it easier to
+     <a href="foreign.html#import-snappea" title="SnapPea Triangulations">import the <span class="application">SnapPea</span> file</a>
+     directly.  This will have the same effect: it will create a
+     <span class="application">SnapPea</span> triangulation, and none of <span class="application">SnapPea</span>'s own data will be lost.
+    </p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="snappea-new-link"></a>Link complement</h4></div></div></div><p>
+     This allows you to build the complement of a knot or link
+     as a <span class="application">SnapPea</span> triangulation, preserving the meridian and longitude
+     as peripheral curves within the <span class="application">SnapPea</span> kernel.
+     This is the same as opening the link and converting it via the
+     <span class="application">SnapPea</span> button, as <a href="snappea.html#snappea-fromlink" title="Converting from a Knot or Link">described
+     earlier</a>.
+    </p><p>
+     <span class="inlinemediaobject"><img src="newsnappea-link.png" srcset="newsnappea-link@2x.png 2x, newsnappea-link.png"></span>
+    </p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="snappea-new-example"></a>Example Triangulation</h4></div></div></div><p>
+     <span class="application">Regina</span> offers a small selection of ready-made sample triangulations,
+     which you can play with to see how <span class="application">SnapPea</span> triangulations work
+     within <span class="application">Regina</span>.
+     Simply select an example from the list provided and <span class="application">Regina</span> will build the
+     corresponding <span class="application">SnapPea</span> triangulation for you.
+    </p><p>
+     <span class="inlinemediaobject"><img src="newsnappea-example.png" srcset="newsnappea-example@2x.png 2x, newsnappea-example.png"></span>
+    </p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="snappea-imported"></a>Importing Triangulations</h3></div></div></div><p>
+    As already noted, you can import a <span class="application">SnapPea</span> / <span class="application">SnapPy</span> data file into <span class="application">Regina</span>;
+    this will automatically create a <span class="application">SnapPea</span> triangulation for you.
+    See the chapter on <a href="foreign.html#import-snappea" title="SnapPea Triangulations">imports and
+    exports</a> for details.
+   </p></div></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="tri-modification.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="snappea-analysis.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">Modification </td><td width="34%" align="center" class="navCenter"><a href="index.html">Up</a></td><td width="33%" align="right" class="navRight"> Analysis and Modification</td></tr></table></div></body></html>

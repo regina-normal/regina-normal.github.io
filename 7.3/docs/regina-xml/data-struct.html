@@ -1,0 +1,62 @@
+<html><head><title>struct</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Regina, XML, Data files"><link rel="start" href="index.html" title="Regina 7.3 File Format Reference"><link rel="up" href="dataformat.html" title="Current Data File Format"><link rel="prev" href="data-splitsfce.html" title="splitsfce"><link rel="next" href="data-surface.html" title="surface"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>struct</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="data-splitsfce.html">Prev</a></td><td align="center" class="navCenter" width="34%">Current Data File Format</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="data-surface.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="data-struct"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>struct — A single angle structure</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="informaltable"><table border="1"><colgroup><col><col></colgroup><tbody><tr><td colspan="2">
+      <span class="bold"><strong>Content Model</strong></span>
+     </td></tr><tr><td colspan="2">
+<pre class="synopsis">
+struct ::= (#PCDATA)</pre>
+     </td></tr><tr><td colspan="2">
+      <span class="bold"><strong>Attributes</strong></span>
+     </td></tr><tr><td><span class="bold"><strong>Name</strong></span></td><td><span class="bold"><strong>Type</strong></span></td></tr><tr><td><code class="sgmltag-element">len</code></td><td><span class="type">NUMBER</span> (required)</td></tr></tbody></table></div></div><div class="refsect1" lang="en"><a name="idp105544515141960"></a><h2>Description</h2><p>
+   A <a href="data-struct.html" title="struct"><code class="sgmltag-element">struct</code></a> element stores a single angle structure on a
+   3-manifold triangulation.
+  </p><p>
+   An angle structure on a <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>T</code></em></span>-tetrahedron
+   triangulation is represented by a vector of
+   3<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>T</code></em></span>+1 integers.  This vector is stored as
+   the character data of this <span class="acronym">XML</span> element as follows.
+  </p><p>
+   Since an angle structure vector will generally contain many zeroes,
+   only the non-zero elements are listed.  The character data should
+   thus consist of a whitespace-separated sequence of integer pairs.
+   Each integer pair represents a non-zero coordinate in the vector; the
+   first element of the pair identifies which coordinate is being
+   described (coordinates are numbered 0, 1, 2, ...) and the second element
+   of the pair is the actual value at this coordinate.
+  </p><p>
+   There are 3<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>T</code></em></span> actual angles stored in an
+   angle structure; these are
+   <code class="literal">0:01/23</code>, <code class="literal">0:02/13</code>,
+   <code class="literal">0:03/12</code>, <code class="literal">1:01/23</code>,
+   <code class="literal">1:02/13</code>, <code class="literal">1:03/12</code>,
+   <code class="literal">2:01/23</code>, etc, where
+   <code class="literal"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>t</code></em></span>:<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>ab</code></em></span>/<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>cd</code></em></span></code>
+   represents the angle assigned to the edge in tetrahedron
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>t</code></em></span> that joins tetrahedron vertices
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>a</code></em></span> and <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>b</code></em></span>, as
+   well as the (opposite) edge that joins tetrahedron vertices
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>c</code></em></span> and <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span>
+   (<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>a</code></em></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>b</code></em></span>,
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>c</code></em></span> and <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span>
+   will always be 0, 1, 2 and 3 in some order).
+  </p><p>
+   To determine the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>k</code></em></span>th of these angles, take
+   the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>k</code></em></span>th integer in the angle structure
+   vector, divide by the final element of the vector and multiply by π.
+  </p><div class="refsect2" lang="en"><a name="idp105544515123272"></a><h3>Parents</h3><p>
+    The following elements contain <code class="sgmltag-element">struct</code>:
+    <span class="simplelist"><a href="data-angles.html" title="angles"><code class="sgmltag-element">angles</code></a></span>.
+   </p></div><div class="refsect2" lang="en"><a name="idp105544515126088"></a><h3>Children</h3><p>
+    Element <code class="sgmltag-element">struct</code> has no children.
+   </p></div></div><div class="refsect1" lang="en"><a name="idp105544515127752"></a><h2>Attributes</h2><div class="variablelist"><dl><dt><span class="term"><code class="sgmltag-element">len</code></span></dt><dd><p>
+      The length of the angle structure vector.
+      This will always be 3<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>T</code></em></span>+1, where
+      <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>T</code></em></span> is the number of tetrahedra in the
+      underlying 3-manifold triangulation.
+     </p></dd></dl></div></div><div class="refsect1" lang="en"><a name="idp105544515131336"></a><h2>Example</h2><p>
+   The following <span class="acronym">XML</span> snippet represents an angle structure on a
+   2-tetrahedron triangulation.  The angle structure vector is
+   (0, 0, 2, 1, 1, 0, 2).  The corresponding six angles are
+   (0, 0, π, π/2, π/2, 0).
+  </p><pre class="programlisting">
+&lt;struct len="7"&gt; 2 2 3 1 4 1 6 2 &lt;/struct&gt;
+  </pre></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="data-splitsfce.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="data-surface.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">splitsfce </td><td width="34%" align="center" class="navCenter"><a href="dataformat.html">Up</a></td><td width="33%" align="right" class="navRight"> surface</td></tr></table></div></body></html>
