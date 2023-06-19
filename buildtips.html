@@ -59,22 +59,11 @@ if you like by passing the argument <tt>CMAKE_INSTALL_PREFIX</tt> to cmake:
 <tt>example$ cmake -DCMAKE_INSTALL_PREFIX=/home/bab/software ..</tt>
 </p></div>
 <p>
-If you run a 64-bit version of linux (the <tt>x86_64</tt> or
-<tt>amd64</tt> architectures) and you use an RPM-based distribution
-(such as Fedora, Mandriva or SuSE),
-you may wish to set <tt>LIB_SUFFIX</tt>:
-</p>
-<div class="example"><p>
-<tt>example$ cmake -DLIB_SUFFIX=64 ..</tt>
-</p></div>
-<p>
-This ensures that Regina's libraries are installed in a 64-bit directory
-such as <tt>/usr/local/lib64/</tt>.
-</p>
-<p>
-Debian-based distributions (such as Debian or Ubuntu) do not use special
-directory names for 64-bit systems, and you should
-<b>not set <tt>LIB_SUFFIX</tt></b> on such machines.
+As of Regina&nbsp;7.4, the old <tt>LIB_SUFFIX</tt> option is no longer supported
+(and is no longer necessary).  The correct library installation path
+<i>should</i> be deduced automaticaly, but if needed you can set
+<tt>CMAKE_INSTALL_LIBDIR</tt> when you run <tt>cmake</tt>
+(typical values would be <tt>lib</tt> or <tt>lib64</tt>).
 </p>
 
 <h2><a name="macosx">Mac</a></h2>
