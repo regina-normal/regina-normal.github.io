@@ -12,6 +12,8 @@
 <tbody>
 <tr><td valign="top">
     <table class="contents" cellspacing=0><tbody>
+    <tr><td><a href="#tritetlinks">Identifying normalised (but not
+    thin) triangle/tetrahedron linking surfaces (Jun 2023)</a></td></tr>
     <tr><td><a href="#homgroup">Incorrect simplification of group
     homomorphisms (Mar 2023)</a></td></tr>
     <tr><td><a href="#bindings">Two Python binding errors (Oct 2022)</a></td></tr>
@@ -30,6 +32,77 @@ of Regina, which might have affected your computations.
 <p>
 Please write to the developers if you need further information or
 assistance.
+
+<h2><a name="tritetlinks">Identifying normalised (but not thin)
+triangle/tetrahedron linking surfaces (Jun 2023)</a></h2>
+<h3>Summary</h3>
+<table cellspacing=0 border=0 class="data">
+<tbody>
+<tr>
+    <td class="topsubheading">Affected versions</td>
+    <td class="top">7.1&ndash;7.3</td>
+    <td class="top">Fixed in version 7.4 (expected late 2023)</td>
+</tr>
+<tr>
+    <td class="subheading">Main symptom</td>
+    <td>&nbsp;</td>
+    <td>In C++/Python, calling <tt>isThinTriangleLink()</tt> before
+    <tt>isNormalTriangleLink()</tt> could make the latter routine answer
+    incorrectly; likewise for tetrahedron links.</td>
+</tr>
+<tr>
+    <td class="subheading">Affected users</td>
+    <td>C++/Python programmers only</td>
+    <td>This only affected C++/Python users who called
+    <tt>isThinTriangleLink()</tt> and <i>then</i>
+    <tt>isNormalTriangleLink()</tt>, or <tt>isThinTetrahedronLink()</tt> and
+    then <tt>isNormalTetrahedronLink()</tt>, on the same
+    normal surface/hypersurface.</td>
+</tr>
+<tr>
+    <td class="subheading">Was I affected?</td>
+    <td>&nbsp;</td>
+    <td>Examine your code, and see if it tests for <i>both</i>
+    thin and normalised triangle/tetrahedron links on the same
+    surface/hypersurface, with the thin test appearing first.</td>
+</tr>
+</table>
+
+<p>
+<h3>Details</h3>
+<p>
+Only C++/Python programmers were affected by this issue: the bug did not
+appear in the graphical user interface.
+</p>
+<p>
+The bug only affected (i)&nbsp;triangle links in normal surfaces, and
+(ii)&nbsp;triangle and tetrahedron links in normal hypersurfaces.
+It did not affect vertex or edge link tests at all.
+</p>
+<p>
+The bug only affected surface/hypersurfaces <i>s</i> that are
+normalised but <i>not thin</i> triangle/tetrahedron links:
+</p>
+<ul>
+<li>The symptom was that, if the thin link test was performed on <i>s</i>
+first, before the corresponding normalised link test had been performed,
+then any subsequent call to the normalised test on <i>s</i> would return an
+empty list (i.e., it would incorrectly report that <i>s</i> is <i>not</i> a
+normalised triangle/tetrahedron link).</li>
+<li>The cause was essentially an over-aggressive caching of results:
+the thin link test would &ldquo;remember&rdquo; a boolean existence result,
+and then reuse it for both the thin and normalised link tests.
+However, a &ldquo;no&rdquo; for the thin test should not imply a
+&ldquo;no&rdquo; for the corresponding normalised test.</li>
+</ul>
+</p>
+<p>
+A workaround (if you are using Regina&nbsp;7.1&ndash;7.3) is to simply call
+the normalised link test before the thin link test.  Subsequent calls to
+<i>either</i> test on the same surface will then return the correct results.
+</p>
+<p>
+<i><a href="#contents">(Back to top...)</a></i>
 
 <h2><a name="homgroup">Incorrect simplification of group
 homomorphisms (Mar 2023)</a></h2>
