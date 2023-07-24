@@ -12,6 +12,8 @@
 <tbody>
 <tr><td valign="top">
     <table class="contents" cellspacing=0><tbody>
+    <tr><td><a href="#surfacecomp">Splitting disconnected normal surfaces into
+    connected components (Jul 2023)</a></td></tr>
     <tr><td><a href="#tritetlinks">Identifying normalised (but not
     thin) triangle/tetrahedron linking surfaces (Jun 2023)</a></td></tr>
     <tr><td><a href="#homgroup">Incorrect simplification of group
@@ -32,6 +34,70 @@ of Regina, which might have affected your computations.
 <p>
 Please write to the developers if you need further information or
 assistance.
+
+<h2><a name="surfacecomp">Splitting disconnected normal surfaces into
+connected components (Jul 2023)</a></h2>
+<h3>Summary</h3>
+<table cellspacing=0 border=0 class="data">
+<tbody>
+<tr>
+    <td class="topsubheading">Affected versions</td>
+    <td class="top">7.0&ndash;7.3</td>
+    <td class="top">Fixed in version 7.4 (expected late 2023)</td>
+</tr>
+<tr>
+    <td class="subheading">Main symptom</td>
+    <td>&nbsp;</td>
+    <td>In C++/Python, if the connectness of a normal surface <tt>s</tt> has
+    already been computed, then <tt>s.components()</tt> would return the entire
+    surface as a single component.</td>
+</tr>
+<tr>
+    <td class="subheading">Affected users</td>
+    <td>C++/Python programmers only</td>
+    <td>This only affected C++/Python users who called
+    <tt>NormalSurface::components()</tt> on a disconnected surface, <i>after</i>
+    some routine that computes connectedness for that same surface.</td>
+</tr>
+<tr>
+    <td class="subheading">Was I affected?</td>
+    <td>&nbsp;</td>
+    <td>Examine your code, and see if it calls <tt>s.components()</tt>
+    <i>after</i> any of <tt>s.isConnected()</tt>, <tt>s.isOrientable()</tt>,
+    <tt>s.isTwoSided()</tt> or <tt>s.components()</tt> for some
+    normal surface <tt>s</tt> which could be disconnected.</td>
+</tr>
+</table>
+
+<p>
+<h3>Details</h3>
+<p>
+Only C++/Python programmers were affected by this issue.
+</p>
+<p>
+The bug did <i>not</i> affect:
+<ul>
+<li>the graphical user interface;</li>
+<li>disjointness testing (which uses <tt>components()</tt> in its
+implementation, but in a way that did not trigger this bug);</li>
+<li>vertex and/or fundamental normal surfaces (which are always connected,
+and therefore did not trigger this bug).</li>
+</ul>
+</p>
+<p>
+Essentially, to trigger this bug, you would have needed to create your own
+normal surfaces in C++/Python code (e.g., by forming sums of vertex and/or
+fundamental surfaces), and then call the specific routines in the specific
+order as described above.
+</p>
+<p>
+A workaround (if you are using Regina&nbsp;7.0&ndash;7.3) is, instead of
+calling <tt>s.components()</tt>, to call <tt>(s*1).components()</tt>.
+This has the effect of creating a new surface whose connectedness is not yet
+known (which means the bug is not triggered).
+</p>
+<p>
+<i><a href="#contents">(Back to top...)</a></i>
 
 <h2><a name="tritetlinks">Identifying normalised (but not thin)
 triangle/tetrahedron linking surfaces (Jun 2023)</a></h2>
@@ -447,7 +513,7 @@ or you can call <tt>list.which()</tt> in Python or C++.</li>
 </ul>
 <i><a href="#contents">(Back to top...)</a></i>
 
-<h2><a name="defaultalg">Mod and gcd broken for extremely large integers
+<h2><a name="mod">Mod and gcd broken for extremely large integers
 (Nov 2013)</a></h2>
 <p>
 <h3>Summary</h3>
