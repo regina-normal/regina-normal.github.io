@@ -231,31 +231,42 @@ such as those in your <tt>Applications</tt> folder.
 <p>
 <a name="windows"><h4 class="divide">Windows</h4></a>
 
-Regina on Windows uses a standard point-and-click installer.
+Since TODO, Regina's is <b>shifting away from the old point-and-click
+installer</b>.  At some point in the future, the point-and-click installer
+will no longer be offered at all.
 <p>
-Regina now <b>only supports 64-bit Windows</b>,
-and only on Intel/AMD64 chipsets.
-Almost all modern Windows installations are of this type,
-and so this is almost certainly the version that you want.
-<p>
-If you still have an ancient 32-bit Windows system and you need to
-get Regina running on it, please let Ben know.
-If your machine has an ARM64 chipset (e.g., you have a Mac with
-Apple Silicon), you will need to run Regina under a different operating
-system (e.g., macOS or GNU/Linux).
+Instead, the preferred way to install Regina on Windows is using WSL (the
+Windows Subsystem for Linux), which comes with Windows 10 and above.  This
+essentially lets you to install Regina's GNU/Linux packages in a way that
+integrates smoothly with your main Windows system.  These GNU/Linux packages
+are better tested, more secure, easier for the Regina developers to build
+and maintain, and easier for you to keep up-to-date.
+<p class="header">
+<b>WSL installer (preferred):</b>
+<ul>
+<li>The WSL installation should support all modern Windows systems
+(including ARM64 chipsets, such as Apple Silicon).
+If you find that yours is not supported,
+please drop Ben an email and he can try to fix this.</li>
+</ul>
 <p>
 <blockquote><table cellspacing=0 border=0 align=center class="data"><tbody>
-<tr><th class="first" colspan=2>Windows version</th>
-    <th>Installer</th></tr>
+<tr><th class="first" colspan=2>Windows version</th><th>Architectures</th>
+    <th>WSL installer</th></tr>
 <tr><td class="firstjoin">Windows&nbsp;11<br>Windows&nbsp;10</td>
     <td><img srcset="osicons/os_win_other.png 1x, osicons/os_win_other@2x.png 2x" src="osicons/os_win_other.png" border=0 hspace=5></td>
-    <td align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-7.3/Regina-7.3-x86_64.msi">Download</a></td>
+    <td>All</td>
+    <td align="center"><a href="install/windows.html">Install</a></td>
     </tr>
 </tbody></table>
 </blockquote>
-<p>
-When running the installer you may see a security warning,
-such as <i>&ldquo;Microsoft Defender SmartScreen prevented an
+<p class="header">
+<b>Point-and-click installer (old method):</b>
+<ul>
+<li>The old point-and-click installer only supports 64-bit Windows, and only on
+Intel/AMD64 chipsets (not ARM64).</li>
+<li>If you are using the old point-and-click installer then you may see a
+security warning, such as <i>&ldquo;Microsoft Defender SmartScreen prevented an
 unrecognized app from starting ...&rdquo;</i>, or a message from
 SmartScreen Filter that
 <i>&ldquo;This program might harm your computer&rdquo;</i>.
@@ -263,6 +274,18 @@ This is because Microsoft has not added Regina to its database of
 known applications.
 Click <i>More info</i> or <i>More options</i>
 and you should be able to run the installer anyway.</li>
+</ul>
+<p>
+<blockquote><table cellspacing=0 border=0 align=center class="data"><tbody>
+<tr><th class="first" colspan=2>Windows version</th><th>Architectures</th>
+    <th>Point-and-click installer</tr>
+<tr><td class="firstjoin">Windows&nbsp;11<br>Windows&nbsp;10</td>
+    <td><img srcset="osicons/os_win_other.png 1x, osicons/os_win_other@2x.png 2x" src="osicons/os_win_other.png" border=0 hspace=5></td>
+    <td>64-bit Intel/AMD only</td>
+    <td align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-7.3/Regina-7.3-x86_64.msi">Download</a></td>
+    </tr>
+</tbody></table>
+</blockquote>
 
 <a name="linux"><h4 class="divide">GNU/Linux</h4></a>
 
