@@ -92,9 +92,9 @@ between different RPM-based distributions).
 <table cellspacing=0 border=0 class="data">
 <tr><th class="first">Component</th><th>Required For</th>
     <th>Version</th><th>Package Names</th></tr>
-<tr><td class="reqfirst">C++ compiler</td>
+<tr><td class="reqfirst">C++ compiler (e.g., GCC or Clang)</td>
     <td class="req">Build infrastructure</td>
-    <td>Must support C++17</td>
+    <td>GCC &ge; 10; <b>or</b><br>Clang &ge; 10</td>
     <td>g++ (DEB)<br>gcc-c++ (RPM)
     </td></tr>
 <tr><td class="reqfirst">CMake</td>
@@ -127,7 +127,7 @@ between different RPM-based distributions).
 <tr><td class="reqfirst">Qt libraries, including the
     <em>Widgets</em> and <em>Svg</em> modules</td>
     <td class="req">Graphical user interface</td>
-    <td>6.x or 5.x (&ge; 5.4)</td>
+    <td>Qt&nbsp;6; <b>or</b><br>Qt&nbsp;5 &ge; 5.7</td>
     <td>qt6-base-dev &amp; libqt6svg6-dev, or<br>
     qtbase5-dev &amp; libqt5svg5-dev (DEB)<br>
     qt6-qtbase-devel &amp; qt6-qtsvg-devel, or<br>
@@ -141,7 +141,7 @@ between different RPM-based distributions).
     </td></tr>
 <tr><td class="optfirst">Doxygen</td>
     <td class="opt">C++/Python API docs</td>
-    <td>&ge; 1.8.17</td>
+    <td>&ge; 1.9.2</td>
     <td>doxygen (DEB)<br>doxygen (RPM)
     </td></tr>
 <tr><td class="optfirst">Graphviz libraries</td>
