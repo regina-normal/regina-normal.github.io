@@ -12,6 +12,8 @@
 <tbody>
 <tr><td valign="top">
     <table class="contents" cellspacing=0><tbody>
+    <tr><td><a href="#resolve">Resolving crossings in links with
+    cached polynomials (Jul 2025)</a></td></tr>
     <tr><td><a href="#laurentset">Manually setting coefficients in
     Laurent polynomials (Jun 2025)</a></td></tr>
     <tr><td><a href="#surfacecomp">Splitting disconnected normal surfaces into
@@ -37,6 +39,65 @@ of Regina, which might have affected your computations.
 Please write to the developers if you need further information or
 assistance.
 
+<h2><a name="resolve">Resolving crossings in links with
+cached polynomials (Jul 2025)</a></h2>
+<h3>Summary</h3>
+<table cellspacing=0 border=0 class="data">
+<tbody>
+<tr>
+    <td class="topsubheading">Affected versions</td>
+    <td class="top">5.96&ndash;7.3</td>
+    <td class="top">Fixed in version 7.3.1 (expected July 2025)</td>
+</tr>
+<tr>
+    <td class="subheading">Main symptom</td>
+    <td>&nbsp;</td>
+    <td>If you computed polynomial invariants of a link and then manually
+    resolved crossings, the old polynomial invariants might still be
+    returned.</td>
+</tr>
+<tr>
+    <td class="subheading">Affected users</td>
+    <td>All users</td>
+    <td>This affected all users who followed the specific sequence of events
+    described below.</td>
+</tr>
+<tr>
+    <td class="subheading">Was I affected?</td>
+    <td>Possibly</td>
+    <td>This depends on your workflow&mdash;the events that triggered the
+    bug are predictable and easy to describe.  Read below for details.</td>
+</tr>
+</table>
+
+<p>
+<h3>Details</h3>
+<p>
+This bug would be triggered if you did <i>all</i> of the following steps,
+in the following order:
+</p>
+<ol>
+<li><p>computed one or more link polynomials, either by visiting the
+<i>Polynomials</i> tab in the GUI or by calling functions such as
+<tt>Link.jones()</tt> or <tt>Link.homfly()</tt> in C++ or Python;</p></li>
+<li><p>resolved one or more crossings, either by right-clicking in the GUI or
+by calling <tt>Link.resolve()</tt> in C++ or Python;</p></li>
+<li><p>did not make any other changes to the link;</p></li>
+<li><p>queried those same link polynomials again.</p></li>
+</ol>
+<p>
+The result would be that you would be given the old values of the link
+polynomials, before the crossing(s) were resolved.
+</p>
+<p>
+The cause was simple: <tt>Link</tt> caches link polynomials when it computes
+them, and any member function of <tt>Link</tt> that modifies the link is
+expected to clear out this cache.  However, <tt>Link.resolve()</tt> did not
+do this.
+</p>
+<p>
+<i><a href="#contents">(Back to top...)</a></i>
+
 <h2><a name="laurentset">Manually setting coefficients in
 Laurent polynomials (Jun 2025)</a></h2>
 <h3>Summary</h3>
@@ -45,7 +106,7 @@ Laurent polynomials (Jun 2025)</a></h2>
 <tr>
     <td class="topsubheading">Affected versions</td>
     <td class="top">5.0&ndash;7.3</td>
-    <td class="top">Fixed in version 7.4 (expected mid 2025)</td>
+    <td class="top">Fixed in version 7.3.1 (expected July 2025)</td>
 </tr>
 <tr>
     <td class="subheading">Main symptom</td>
@@ -116,7 +177,7 @@ connected components (Jul 2023)</a></h2>
 <tr>
     <td class="topsubheading">Affected versions</td>
     <td class="top">7.0&ndash;7.3</td>
-    <td class="top">Fixed in version 7.4 (expected mid 2025)</td>
+    <td class="top">Fixed in version 7.3.1 (expected July 2025)</td>
 </tr>
 <tr>
     <td class="subheading">Main symptom</td>
@@ -180,7 +241,7 @@ triangle/tetrahedron linking surfaces (Jun 2023)</a></h2>
 <tr>
     <td class="topsubheading">Affected versions</td>
     <td class="top">7.1&ndash;7.3</td>
-    <td class="top">Fixed in version 7.4 (expected mid 2025)</td>
+    <td class="top">Fixed in version 7.3.1 (expected July 2025)</td>
 </tr>
 <tr>
     <td class="subheading">Main symptom</td>
