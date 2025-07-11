@@ -30,24 +30,51 @@ Open a terminal (e.g., <i>Konsole</i> or <i>GNOME Terminal</i>).
 Add Regina to your list of package repositories.
 To do this, type the line below, replacing
 <span class="placeholder"><tt>VERSION</tt></span> with your openSUSE Leap
-version (e.g., 15.4):
+version (e.g., 15.6):
 </p>
 <div class="example"><p>
 <tt>sudo zypper addrepo https://people.debian.org/~bab/rpm/regina/opensuse/<span class="placeholder">VERSION</span>/regina.repo</tt>
 </p></div>
-<p>For example, if you are running openSUSE Leap&nbsp;15.4, you would type:</p>
+<p>For example, if you are running openSUSE Leap&nbsp;15.6, you would type:</p>
 <div class="specific"><p>
-<tt>sudo zypper addrepo https://people.debian.org/~bab/rpm/regina/opensuse/15.4/regina.repo</tt>
+<tt>sudo zypper addrepo https://people.debian.org/~bab/rpm/regina/opensuse/15.6/regina.repo</tt>
 </p></div>
 </li>
 <li><p>
-Update the list of available packages.  To do this, type:
+If you are running openSUSE Leap&nbsp;15.6, you will need to import Regina's
+signing key manually. I'm sorry, openSUSE have caused so many problems over
+the years and this time
+<a href="https://github.com/openSUSE/zypper/issues/546">they broke key imports
+for third-party repositories</a>.  Earlier versions of openSUSE worked fine,
+and the bug has been fixed so hopefully later versions will work fine also.
+On 15.6 however, you need to:
+</p>
+<ul>
+<li><p>download Regina's signing key:
+<a href="https://people.debian.org/~bab/regina-key.txt"><tt>https://people.debian.org/~bab/regina-key.txt</tt></a></p></li>
+<li><p>verify that the key you downloaded has the correct fingerprint
+(the output from the following <tt>gpg</tt> command
+should include the same 40-digit fingerprint
+<tt>519A...38D9</tt> that is shown at the bottom of this page):</p>
+<div class="example"><p>
+<tt>gpg --import-options show-only --import regina-key.txt</tt>
+</p></div>
+</li>
+<li><p>import this as an RPM signing key:</p>
+<div class="example"><p>
+<tt>sudo rpm --import regina-key.txt</tt>
+</p></div></li>
+</ul>
+</li>
+<li><p>
+Now update the list of available packages.  To do this, type:
 </p>
 <div class="example"><p>
 <tt>sudo zypper refresh</tt>
 </p></div>
 <p>
-You will be asked to import Regina's cryptographic signing key.
+Unless you already imported the key in the previous step, you will now be
+asked to import Regina's cryptographic signing key.
 <b>Check that the fingerprint is correct</b> (the correct fingerprint is shown
 at the bottom of this page), and then select <i>trust always</i>.
 </p></li>
