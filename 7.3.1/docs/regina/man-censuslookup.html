@@ -1,0 +1,70 @@
+<html><head><title>censuslookup</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina 7.3.1 Handbook"><link rel="up" href="utils.html" title="Appendix B. Command Line: Specialised Utilities"><link rel="prev" href="utils.html" title="Appendix B. Command Line: Specialised Utilities"><link rel="next" href="man-dgt.html" title="dgt"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>censuslookup</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="utils.html">Prev</a></td><td align="center" class="navCenter" width="34%">Command Line: Specialised Utilities</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="man-dgt.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="man-censuslookup"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>censuslookup — Search for triangulations in <span class="application">Regina</span>'s census databases</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">censuslookup</strong></span></span> {<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>isosig</code></em></span>...}</p></div><div class="cmdsynopsis"><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">censuslookup</strong></span></span> {{<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-v, --version</code></span>} |  {<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-?, --help</code></span>}}</p></div></div><div class="refsect1" lang="en"><a name="id6884"></a><h2>Description</h2><p>
+    This utility searches for the given 3-manifold triangulations in the various
+    census databases that are shipped with<span class="application">Regina</span>.
+   </p><p>
+    You should present the trianguations using their <em class="firstterm">isomorphism
+    signatures</em>.  These are short text strings that identify
+    the triangulation uniquely up to combinatorial isomorphism
+    (i.e., up to relabellings of the tetrahedra and/or their vertices).
+   </p><p>
+    From the graphical user interface, you can view the isomorphism signature
+    of a triangulation by switching to the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Composition</span></span>
+    tab in the triangulation viewer.  From <span class="application">Python</span> you can fetch the
+    isomorphism signature of the triangulation <strong class="userinput"><code>x</code></strong>
+    by calling <strong class="userinput"><code>x.isoSig()</code></strong>.
+    For a full and precise specification of isomorphism signatures, see
+    <span class="emphasis"><em>Simplification paths in the Pachner graphs of closed
+    orientable 3-manifold triangulations</em></span>, Burton, 2011,
+    arXiv:1110.6080.
+   </p><p>
+    All database matches (if any) will be written to standard output.
+   </p></div><div class="refsect1" lang="en"><a name="id6897"></a><h2>Options</h2><div class="variablelist"><dl><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-v, --version</code></span></span></dt><dd><p>Show which version of <span class="application">Regina</span> is being used, and exit
+      immediately.</p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-?, --help</code></span></span></dt><dd><p>Display brief usage information, and exit immediately.</p></dd></dl></div></div><div class="refsect1" lang="en"><a name="id6911"></a><h2>Environment Variables</h2><p>
+    The following environment variables influence the behaviour of
+    this program.
+   </p><div class="variablelist"><dl><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="parameter"><em class="parameter"><code>REGINA_HOME</code></em></span></span></dt><dd><p>
+       The directory beneath which <span class="application">Regina</span>'s data files are installed.
+       This utility will look for the census databases in the subdirectory
+       <code class="filename"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="parameter"><em class="parameter"><code>$REGINA_HOME</code></em></span>/data/census/</code>.
+      </p><p>
+       Normally you should not need to set this option yourself.
+       This utility should know how to find its census databases in standard
+       situations, which include
+       fixed filesystem installations (e.g., <span class="application"><span class="acronym">GNU</span>/Linux</span> and <span class="application">Windows</span>),
+       relocatable app bundles (e.g., <span class="application">macOS</span>),
+       and running directly from the source tree.
+      </p></dd></dl></div></div><div class="refsect1" lang="en"><a name="id6928"></a><h2>Example</h2><pre class="screen">
+    <code class="prompt">example$</code> <strong class="userinput"><code>censuslookup fvPQcdecedekrsnrs dLQbcccajqs cPcbbbiht</code></strong>
+    fvPQcdecedekrsnrs: 1 hit
+        SFS [S2: (2,1) (3,1) (5,-4)] : #1 -- Closed census (orientable)
+
+    dLQbcccajqs: 0 hits
+
+    cPcbbbiht: 2 hits
+        m004 : #1 -- Cusped hyperbolic census (orientable)
+        L104001 -- Hyperbolic knot and link complements
+
+    <code class="prompt">example$</code>
+</pre></div><div class="refsect1" lang="en"><a name="id6934"></a><h2><span class="application">macOS</span> Users</h2><p>
+    If you downloaded a drag-and-drop app bundle, this utility is
+    shipped inside it.  If you dragged <span class="application">Regina</span> to the main
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Applications</span></span> folder, you can run it as
+    <code class="literal">/Applications/Regina.app/Contents/MacOS/censuslookup</code>.
+   </p></div><div class="refsect1" lang="en"><a name="id6941"></a><h2><span class="application">Windows</span> Users</h2><p>
+    The command-line utilities are installed beneath the
+    <code class="filename">Program Files</code> directory; on some
+    machines this directory is called
+    <code class="filename">Program Files (x86)</code>.
+    You can start this utility by running
+    <code class="literal">c:\Program Files\Regina\Regina 7.3.1\bin\censuslookup.exe</code>.
+   </p></div><div class="refsect1" lang="en"><a name="id6948"></a><h2>See Also</h2><p>
+    <a href="man-regina-gui.html" title="regina-gui">regina-gui</a>.
+    <a href="man-trisetcmp.html" title="trisetcmp">trisetcmp</a>,
+   </p></div><div class="refsect1" lang="en"><a name="id6953"></a><h2>Author</h2><p>
+    This utility was written by Benjamin Burton
+    <code class="email">&lt;<a href="mailto:bab@maths.uq.edu.au">bab@maths.uq.edu.au</a>&gt;</code>.
+    Many people have been involved in the development
+   of <span class="application">Regina</span>; see the <a href="credits.html#acknowledgements" title="Acknowledgements">acknowledgements
+   page</a> for a full list of credits.
+   </p></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="utils.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="man-dgt.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">Command Line: Specialised Utilities </td><td width="34%" align="center" class="navCenter"><a href="utils.html">Up</a></td><td width="33%" align="right" class="navRight"> dgt</td></tr></table></div></body></html>

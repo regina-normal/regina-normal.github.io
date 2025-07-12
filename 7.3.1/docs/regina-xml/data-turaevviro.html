@@ -1,0 +1,42 @@
+<html><head><title>turaevviro</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Regina, XML, Data files"><link rel="start" href="index.html" title="Regina 7.3.1 File Format Reference"><link rel="up" href="removed.html" title="Deprecated and Removed Elements"><link rel="prev" href="data-triangles.html" title="triangles"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>turaevviro</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="data-triangles.html">Prev</a></td><td align="center" class="navCenter" width="34%">Deprecated and Removed Elements</td><td align="right" class="navRight" width="33%"> 
+		      </td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="data-turaevviro"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>turaevviro — No longer stored</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="informaltable"><table border="1"><colgroup><col><col></colgroup><tbody><tr><td colspan="2">
+      <span class="bold"><strong>Content Model</strong></span>
+     </td></tr><tr><td colspan="2">
+<pre class="synopsis">
+turaevviro ::=</pre>
+     </td></tr><tr><td colspan="2">
+      <span class="bold"><strong>Attributes</strong></span>
+     </td></tr><tr><td><span class="bold"><strong>Name</strong></span></td><td><span class="bold"><strong>Type</strong></span></td></tr><tr><td><code class="sgmltag-element">r</code></td><td><span class="type">NUMBER</span> (required)</td></tr><tr><td><code class="sgmltag-element">root</code></td><td><span class="type">NUMBER</span> (required)</td></tr><tr><td><code class="sgmltag-element">value</code></td><td><span class="type">NUMBER</span> (required)</td></tr></tbody></table></div><p>Removed in <span class="application">Regina</span> 5.0</p></div><div class="refsect1" lang="en"><a name="id10326"></a><h2>Description</h2><p>This element has been removed. It will not
+   be written to new data files, and it will be ignored when reading
+   older data files.</p><p>
+   A <a href="data-turaevviro.html" title="turaevviro"><code class="sgmltag-element">turaevviro</code></a> element stores a single calculated Turaev-Viro
+   invariant for a triangulation.
+  </p><p>
+   Each Turaev-Viro invariant corresponds to a particular set of initial
+   data, as described in the paper of Turaev and Viro in which these
+   invariants appear (Turaev &amp; Viro,
+   <span class="emphasis"><em>State sum invariants of 3-manifolds and quantum
+   6j-symbols</em></span>, Topology 31:4 (1992), pp. 865–902).
+   In particular,
+   Section 7 of this paper describes the initial data as determined
+   by an integer <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>r</code></em></span> &gt;= 3 and a root of
+   unity <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>q</code></em></span><sub>0</sub>
+   of degree 2<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>r</code></em></span>.
+  </p><p>
+   This initial data, as well as the value of the resulting invariant,
+   are stored in the attributes of the <a href="data-turaevviro.html" title="turaevviro"><code class="sgmltag-element">turaevviro</code></a> element.
+  </p><div class="refsect2" lang="en"><a name="id10341"></a><h3>Parents</h3><p>
+    The following elements contain <code class="sgmltag-element">turaevviro</code>:
+    <span class="simplelist"><a href="data-packet-dim3triangulation.html" title="packet (3-dimensional triangulation)"><code class="sgmltag-element">packet</code> (3-dimensional triangulation)</a></span>.
+   </p></div><div class="refsect2" lang="en"><a name="id10349"></a><h3>Children</h3><p>
+    Element <code class="sgmltag-element">turaevviro</code> has no children.
+   </p></div></div><div class="refsect1" lang="en"><a name="id10353"></a><h2>Attributes</h2><div class="variablelist"><dl><dt><span class="term"><code class="sgmltag-element">r</code></span></dt><dd><p>
+      The integer <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>r</code></em></span> &gt;= 3 used in
+      the initial data for this invariant.
+     </p></dd><dt><span class="term"><code class="sgmltag-element">root</code></span></dt><dd><p>
+      An integer strictly between 0 and 2<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>r</code></em></span>
+      identifying the particular root of unity used in the initial data
+      for this invariant.
+     </p></dd><dt><span class="term"><code class="sgmltag-element">value</code></span></dt><dd><p>
+      The value of this invariant expressed as a real number.
+     </p></dd></dl></div></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="data-triangles.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"></td></tr><tr><td width="33%" align="left" class="navLeft">triangles </td><td width="34%" align="center" class="navCenter"><a href="removed.html">Up</a></td><td width="33%" align="right" class="navRight"> </td></tr></table></div></body></html>

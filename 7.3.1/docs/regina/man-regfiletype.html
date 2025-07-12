@@ -1,0 +1,38 @@
+<html><head><title>regfiletype</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina 7.3.1 Handbook"><link rel="up" href="utils.html" title="Appendix B. Command Line: Specialised Utilities"><link rel="prev" href="man-regfiledump.html" title="regfiledump"><link rel="next" href="man-retriangulate.html" title="retriangulate"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>regfiletype</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="man-regfiledump.html">Prev</a></td><td align="center" class="navCenter" width="34%">Command Line: Specialised Utilities</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="man-retriangulate.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="man-regfiletype"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>regfiletype — Identify the formats of <span class="application">Regina</span> data files</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regfiletype</strong></span></span> {<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>file</code></em></span>...}</p></div><div class="cmdsynopsis"><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regfiletype</strong></span></span> {{<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-v, --version</code></span>} |  {<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-?, --help</code></span>}}</p></div></div><div class="refsect1" lang="en"><a name="id7441"></a><h2>Description</h2><p>
+    This utility determines which file format a given
+    <span class="application">Regina</span> data file is in.
+    You may pass multiple files on the command line; the format of each
+    file will be written to standard output.
+   </p><p>
+    Only <span class="application">Regina</span>'s modern <span class="acronym">XML</span>-based file formats are recognised
+    (both compressed and uncompressed).
+    In its very early years, <span class="application">Regina</span> used an impenetrable and undocumented
+    binary format; this was replaced with <span class="acronym">XML</span> in 2002 (<span class="application">Regina</span> 3.0),
+    and support for this format was removed completely in 2013
+    (<span class="application">Regina</span> 4.94).
+    If you still need to recognise and/or read files in this ancient binary
+    format, you will need to download <span class="application">Regina</span> 4.93.
+   </p></div><div class="refsect1" lang="en"><a name="id7453"></a><h2>Options</h2><div class="variablelist"><dl><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-v, --version</code></span></span></dt><dd><p>Show which version of <span class="application">Regina</span> is being used, and exit
+      immediately.</p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-?, --help</code></span></span></dt><dd><p>Display brief usage information, and exit immediately.</p></dd></dl></div></div><div class="refsect1" lang="en"><a name="id7467"></a><h2><span class="application">macOS</span> Users</h2><p>
+    If you downloaded a drag-and-drop app bundle, this utility is
+    shipped inside it.  If you dragged <span class="application">Regina</span> to the main
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Applications</span></span> folder, you can run it as
+    <code class="literal">/Applications/Regina.app/Contents/MacOS/regfiletype</code>.
+   </p></div><div class="refsect1" lang="en"><a name="id7474"></a><h2><span class="application">Windows</span> Users</h2><p>
+    The command-line utilities are installed beneath the
+    <code class="filename">Program Files</code> directory; on some
+    machines this directory is called
+    <code class="filename">Program Files (x86)</code>.
+    You can start this utility by running
+    <code class="literal">c:\Program Files\Regina\Regina 7.3.1\bin\regfiletype.exe</code>.
+   </p></div><div class="refsect1" lang="en"><a name="id7481"></a><h2>See Also</h2><p>
+    <a href="man-regconvert.html" title="regconvert">regconvert</a>,
+    <a href="man-regina-gui.html" title="regina-gui">regina-gui</a>.
+   </p></div><div class="refsect1" lang="en"><a name="id7486"></a><h2>Author</h2><p>
+    This utility was written by Benjamin Burton
+    <code class="email">&lt;<a href="mailto:bab@maths.uq.edu.au">bab@maths.uq.edu.au</a>&gt;</code>.
+    Many people have been involved in the development
+   of <span class="application">Regina</span>; see the <a href="credits.html#acknowledgements" title="Acknowledgements">acknowledgements
+   page</a> for a full list of credits.
+   </p></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="man-regfiledump.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="man-retriangulate.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">regfiledump </td><td width="34%" align="center" class="navCenter"><a href="utils.html">Up</a></td><td width="33%" align="right" class="navRight"> retriangulate</td></tr></table></div></body></html>

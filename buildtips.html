@@ -119,7 +119,7 @@ This controls where the application bundle will appear when you run
 need to tell Regina where to find it. Set <tt>CMAKE_PREFIX_PATH</tt> to the
 relevant Qt directory containing <tt>include/</tt>, <tt>lib/</tt> and so on.
 For a typical Qt installation, this looks something like
-<tt>.../Qt/6.4.0/macos</tt>.</li>
+<tt>.../Qt/6.9.1/macos</tt>.</li>
 <li>You do <b>not</b> need to set <tt>REGINA_INSTALL_TYPE</tt> to <tt>XDG</tt>,
 since this is now the default (and indeed the only valid option) on macOS.</li>
 </ul>
@@ -130,7 +130,7 @@ and installs Regina in the default location <tt>/usr/local/</tt>:
 </p>
 <div class="example">
 <p>
-<tt>example$ cmake -DPython_EXECUTABLE=/opt/local/bin/python3.11 ..</tt>
+<tt>example$ cmake -DPython_EXECUTABLE=/opt/local/bin/python3.12 ..</tt>
 </p>
 </div>
 <p>
@@ -142,7 +142,7 @@ and installs Regina in a custom location beneath the user's home directory:
 <p>
 <tt>example$ cmake -DPython_EXECUTABLE=/usr/bin/python3
 -DCMAKE_INSTALL_PREFIX=/Users/bab/software
--DCMAKE_PREFIX_PATH=/Users/bab/Qt/6.4.0/macos
+-DCMAKE_PREFIX_PATH=/Users/bab/Qt/6.9.1/macos
 ..</tt>
 </p>
 </div>

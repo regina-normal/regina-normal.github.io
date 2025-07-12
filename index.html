@@ -11,9 +11,9 @@
   alt="Regina: Software for low-dimensional topology">
 </center>
 <center>
-<h4>Version 7.3.1 currently being uploaded<br>(11 July 2025)</h4>
-<!--h4>Latest version: 7.3 (March 2023)<br>
-Updated packages: 23 June 2023<!--br>
+<!--h4>Version 7.3.1 currently being uploaded<br>(11 July 2025)</h4-->
+<h4>Latest version: 7.3.1 (July 2025)</h4>
+<!--Updated packages: 23 June 2023<br>
 Updated documentation: 9 May 2022<br>
 Updated packages: 10 December 2021<br>
 Updated data: 31 May 2018></h4-->
@@ -56,42 +56,19 @@ Updated data: 31 May 2018></h4-->
 <h2><a name="news">News</a></h2>
 
 <p class="header">
-<b>Two bugs have been found:</b> these affect only C++/Python users, and only in
-very specific scenarios.  One bug affects splitting disconnected normal surfaces
-into connected components; the other affects the identification of normalised
-triangle/tetrahedron links.
-<a href="bugs.html">See the bugs page</a> for full details, plus
-workarounds that you can use until Regina&nbsp;7.4 comes out.
-<p class="header">
+<b>18 March 2023:</b>
+Regina 7.3.1 is out!
+This is a service release that fixes
+<a href="bugs.html">some important bugs</a>, and adds support
+for Python&nbsp;3.12 and later.
+You can <a href="#new">read all about what's new</a>,
+or just go ahead and <a href="#download">download it</a>.
+<!--p class="header">
 <b>23 June 2023:</b>
 Added packages for openSUSE Leap 15.5.
 This follows from last month's packages for Debian 12 (Bookworm), Fedora 38,
 and Ubuntu 23.04 (Lunar Lobster).
-Follow the <a href="#download">install links</a> for details.
-<p class="header">
-<b>18 March 2023:</b>
-Regina 7.3 is out!
-You can <a href="#new">read all about what's new</a>,
-or just go ahead and <a href="#download">download it</a>.
-<p class="header">
-<b>10 December 2021:</b>
-Regina 7.0 is out!
-This is possibly the biggest overhaul that Regina has had in its 20+
-year history.
-You should read
-<a href="7.0/docs/regina/regina7.html">these important notes</a>
-regarding backward-incompatible changes in the new release.
-<!--p class="header">
-<b>20 May 2021:</b>
-Added packages for Fedora 34.
-Follow the <a href="#download">install links</a> for details.
-<p class="header">
-<b>31 May 2018:</b>
-The knot tables are now live!
-You can download all 352,152,252 prime non-trivial knots
-with up to 19&nbsp;crossings from
-<a href="data.html">Regina's data page</a>.
-</p-->
+Follow the <a href="#download">install links</a> for details.-->
 <p>
 <i><a href="#contents">(Back to contents...)</a></i>
 
@@ -174,9 +151,9 @@ The following downloads are available:
 </table>
 <p>
 All direct downloads come with
-<a href="https://github.com/regina-normal/regina/releases/download/regina-7.3/SHA1SUMS-signed.txt">SHA-1 checksums</a>
+<a href="https://github.com/regina-normal/regina/releases/download/regina-7.3.1/SHA1SUMS-signed.txt">SHA-1 checksums</a>
 and
-<a href="https://github.com/regina-normal/regina/releases/download/regina-7.3/SHA256SUMS-signed.txt">SHA-256 checksums</a>,
+<a href="https://github.com/regina-normal/regina/releases/download/regina-7.3.1/SHA256SUMS-signed.txt">SHA-256 checksums</a>,
 signed with <a href="https://people.debian.org/~bab/regina-key.txt">Ben Burton's GPG key</a>.
 <p>
 If you encounter any problems when you run Regina, you can check the
@@ -204,7 +181,7 @@ Not sure which?  Start with the App Store version (but read below).
     Catalina (10.15)
     </td>
     <td><img srcset="osicons/os_macosx.png 1x, osicons/os_macosx@2x.png 2x" src="osicons/os_macosx.png" border=0 hspace=5></td>
-    <td align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-7.3/Regina-7.3_py39.dmg">Download&nbsp;here</a></td>
+    <td align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-7.3.1/Regina-7.3.1_py39.dmg">Download&nbsp;here</a></td>
     <td><a href="https://itunes.apple.com/us/app/regina-for-3-manifolds/id1160053348?mt=8"><img src="ios/Download_on_the_Mac_App_Store_Badge_US-UK_RGB_wht_092917.svg" alt="Download on the Mac App Store" border=0 hspace=10 vspace=10/></a></td>
     </tr>
 </tbody></table>
@@ -249,7 +226,8 @@ system (e.g., macOS or GNU/Linux).
     <th>Installer</th></tr>
 <tr><td class="firstjoin">Windows&nbsp;11<br>Windows&nbsp;10</td>
     <td><img srcset="osicons/os_win_other.png 1x, osicons/os_win_other@2x.png 2x" src="osicons/os_win_other.png" border=0 hspace=5></td>
-    <td align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-7.3/Regina-7.3-x86_64.msi">Download</a></td>
+    <!--td align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-7.3.1/Regina-7.3.1-x86_64.msi">Download</a></td-->
+    <td align="center">Coming shortly!<br>Check here again in a couple of days.</td>
     </tr>
 </tbody></table>
 </blockquote>
@@ -288,7 +266,8 @@ with the <a href="http://regina-rexx.sourceforge.net/">other Regina</a>).
     <td rowspan=1><img srcset="osicons/os_archlinux.png 1x, osicons/os_archlinux@2x.png 2x" src="osicons/os_archlinux.png" border=0 hspace=5></td>
     <td>Rolling release</td>
     <td><tt>x86_64</tt></td>
-    <td align="center"><a href="install/archlinux.html">Install</a></td>
+    <!--td align="center"><a href="install/archlinux.html">Install</a></td-->
+    <td align="center">Coming in<br>a few days</td>
     </tr>
 <tr><td rowspan=2 class="altfirstjoin">Debian</td>
     <td rowspan=2 class="alt"><img srcset="osicons/os_debian.png 1x, osicons/os_debian@2x.png 2x" src="osicons/os_debian.png" border=0 hspace=5></td>
@@ -302,19 +281,19 @@ with the <a href="http://regina-rexx.sourceforge.net/">other Regina</a>).
     </tr>
 <tr><td rowspan=1 class="firstjoin">Fedora</td>
     <td rowspan=1><img srcset="osicons/os_fedora.png 1x, osicons/os_fedora@2x.png 2x" src="osicons/os_fedora.png" border=0 hspace=5></td>
-    <td>38<br>37<br>36</td>
+    <td>42<br>41</td>
     <td><tt>aarch64</tt><br><tt>x86_64</tt></td>
     <td align="center" rowspan=1><a href="install/fedora.html">Install</a></td>
     </tr>
 <tr><td rowspan=1 class="altfirstjoin">openSUSE</td>
     <td rowspan=1 class="alt"><img srcset="osicons/os_opensuse.png 1x, osicons/os_opensuse@2x.png 2x" src="osicons/os_opensuse.png" border=0 hspace=5></td>
-    <td class="alt">Leap&nbsp;15.5<br>Leap&nbsp;15.4</td>
+    <td class="alt">Leap&nbsp;15.6</td>
     <td class="alt"><tt>aarch64</tt><br><tt>x86_64</tt></td>
     <td class="alt" align="center"><a href="install/opensuse.html">Install</a></td>
     </tr>
 <tr><td rowspan=1 class="firstjoin">Ubuntu</td>
     <td rowspan=1><img srcset="osicons/os_ubuntu.png 1x, osicons/os_ubuntu@2x.png 2x" src="osicons/os_ubuntu.png" border=0 hspace=5></td>
-    <td>23.04&nbsp;(lunar)<br>22.10&nbsp;(kinetic)<br>22.04&nbsp;LTS&nbsp;(jammy)<br>20.04&nbsp;LTS&nbsp;(focal)</td>
+    <td>25.04&nbsp;(plucky)<br>24.10&nbsp;(oracular)<br>24.04&nbsp;LTS&nbsp;(noble)<br>22.04&nbsp;LTS&nbsp;(jammy)</td>
     <td><tt>amd64</tt><br><tt>arm64</tt></td>
     <td align="center" rowspan=1><a href="install/ubuntu.html">Install</a></td>
     </tr>
@@ -390,7 +369,7 @@ and/or operating system).  Follow the instructions link above for details.
 
 The iPad app is currently in hiatus.  It has not been updated since before the
 pandemic began, and there is a lot of rewriting to do.
-Hopefully Ben will have time to do this some time during 2023.
+Hopefully Ben will have time to do this some time during 2025.
 <!--
 The iPad app offers most of Regina's functionality (<b>now including
 Python scripting!</b>), but not all.  For
@@ -415,7 +394,7 @@ desktop versions listed above.
 For other systems not listed above, you will need to build Regina
 from its source code.
 <p>
-You can <a href="https://github.com/regina-normal/regina/releases/download/regina-7.3/regina-7.3.tar.gz">download the source code here</a>.
+You can <a href="https://github.com/regina-normal/regina/releases/download/regina-7.3.1/regina-7.3.1.tar.gz">download the source code here</a>.
 <p>
 Please see the <a href="source.html">separate page on building Regina</a>
 for instructions on how to build Regina and
@@ -456,31 +435,38 @@ limits of what these docstrings can and cannot provide).</li>
 <p>
 <i><a href="#contents">(Back to contents...)</a></i>
 
-<h2><a name="new">What's new in version 7.3?</a></h2>
+<h2><a name="new">What's new in version 7.3.1?</a></h2>
 <p>
-Regina&nbsp;7.3 is primarily a maintenance release.
+Regina&nbsp;7.3.1 is a service release to fix some important bugs,
+and to support Python&nbsp;3.12 and later.
+Python&nbsp;3.6 is no longer supported.
 <p>
 Bugs fixed:
 <ul>
-<li>Fixed an algebraic issue where homomorphisms between groups could
-have been simplified incorrectly, and as a result, group extensions
-over <i>Z</i> could have been described using incorrect monodromies.
-<a href="bugs.html">See here for the full details</a>.</li>
-<li>Fixed a potential buffer overflow in the SnapPea kernel.</li>
-<li>Fixed a C++/Python issue where invalid/ideal boundary components of
-4-manifold triangulations were accessible via the triangulation
-objects, but not via the individual component objects.</li>
-<li>The graphical user interface now compiles under Python&nbsp;3.11.</li>
+<li>Manually resolving a crossing in a link would not clear out cached
+polynomials that had already been computed for that link.
+<a href="bugs.html#resolve">See here for details.</a></li>
+<li>Manually setting a coefficient in a Laurent polynomial in C++/Python
+would, in special circumstances, have no effect.  This did not affect
+the GUI or any Jones polynomial computations.
+<a href="bugs.html#laurentset">See here for details.</a></li>
+<li>If a normal surface was a normalised triangle link but not a thin
+triangle link, then using C++/Python to call <tt>isThinTriangleLink()</tt>
+<i>before</i> <tt>isNormalTriangleLink()</tt> would make the latter return an
+empty list of results.  Likewise with tetrahedron links in
+4-dimensional triangulations.  This did not affect the GUI.
+<a href="bugs.html#tritetlinks">See here for details.</a></li>
+<li>If the connectness of a normal surface had already been computed, then
+calling <tt>NormalSurface.components()</tt> in C++/Python would return the
+entire surface as a single component.  This did not affect the GUI.
+<a href="bugs.html#surfacecomp">See here for details.</a></li>
+<li>Fixed some less important problems also: see the full changelog for details.</li>
 </ul>
 <p>
 Other improvements:
 <ul>
-<li>Cloned triangulations now also clone the exact numbering/labelling of
-lower-dimensional faces also (previously these were recomputed).
-This matters for triangulated boundary components and vertex links,
-where the numbering/labelling of faces is non-standard.</li>
-<li>Other minor mathematical additions and improvements to the
-C++/Python API; see the full changelog for details.</li>
+<li>Improved the speed of iteration in Python (specifically,
+throwing/catching <tt>StopIteration</tt> exceptions).</li>
 </ul>
 <p>
 <i><a href="#contents">(Back to contents...)</a></i>
@@ -517,7 +503,7 @@ you would any other paper that you use.  A suggested form of reference is:
 <blockquote>
   Benjamin A. Burton, Ryan Budney, William Pettersson, et al.,<br>
   <i>Regina: Software for low-dimensional topology</i>,<br>
-  http://regina-normal.github.io/, 1999&ndash;2023.
+  http://regina-normal.github.io/, 1999&ndash;2025.
 </blockquote>
 
 Or, in BibTeX:
@@ -527,12 +513,12 @@ Or, in BibTeX:
     author = {Benjamin A. Burton and Ryan Budney and William Pettersson and others},
     title = {Regina: Software for low-dimensional topology},
     howpublished = {{\tt http://\allowbreak regina-normal.\allowbreak github.\allowbreak io/}},
-    year = {1999--2023}}
+    year = {1999--2025}}
 </blockquote></pre>
 
 <h4>Copying &amp; modification</h4>
 
-Regina is copyright &copy; 1999&ndash;2023, The Regina development team.
+Regina is copyright &copy; 1999&ndash;2025, The Regina development team.
 <p>
 This program is free software; you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the
