@@ -12,7 +12,8 @@
 <tbody>
 <tr><td valign="top">
     <table class="contents" cellspacing=0><tbody>
-    <tr><td><a href="#knots">Knot tables</a></td></tr>
+    <tr><td><a href="#knots">Classical knot tables</a></td></tr>
+    <tr><td><a href="#virtual">Virtual knot tables</a></td></tr>
     <tr><td><a href="#census">3-manifold census data</a></td></tr>
     <tr><td><a href="#weber-seifert">Weber-Seifert dodecahedral space</a></td></tr>
     <tr><td><a href="index.html">Back to main page ...</a></td></tr>
@@ -21,10 +22,9 @@
 </tbody>
 </table>
 
-<h2><a name="knots">Knot tables</a></h2>
+<h2><a name="knots">Classical knot tables</a></h2>
 
-Regina now includes native
-support for knots and links.
+Regina includes native support for knots and links.
 If you wish to play with some smaller examples, you can open Regina and
 select <i>Open Example</i>&nbsp;&rarr;&nbsp;<i>Prime Knots</i> from the menu.
 <p>
@@ -59,8 +59,9 @@ is based on approximate volume computation only.
 knot signature.  An example signature (for the knot <tt>7ah_5</tt>)
 is <tt>habcadebcfgedgfvvb-Za</tt>.
 <i>Knot signatures</i> uniquely identify a diagram on
-the 2-sphere up to relabelling and/or reflection.  In Regina&nbsp;5.2 or
-later you can reconstruct a knot from a signature through the GUI, or by
+the 2-sphere up to relabelling, reflection, rotation and/or reversal.
+In Regina&nbsp;5.2 or later you can reconstruct a knot diagram
+from its signature through the GUI, or by
 calling <tt>Link.fromKnotSig()</tt> in python.
 <li><p><b>dt_code:</b> The knot diagram, expressed as an alphabetical
 Dowker-Thistlethwaite (DT) code  An example DT code (again for the knot
@@ -92,7 +93,7 @@ Schloss Dagstuhl&ndash;Leibniz-Zentrum fuer Informatik, 2020,
 pp.&nbsp;25:1&ndash;25:17.</li>
 </ul>
 <p>
-<a href="http://www.maths.uq.edu.au/~bab/knots/all_3-12.tar.bz2">Download all 3&ndash;12 crossing knots at once</a> (56&nbsp;kB)<br>
+<a href="http://www.maths.uq.edu.au/~bab/knots/all_3-12.tar.bz2">Download all 3&ndash;12 crossing knots at once</a> (56&nbsp;KB)<br>
 <a href="http://www.maths.uq.edu.au/~bab/knots/all_13-16.tar.bz2">Download all 13&ndash;16 crossing knots at once</a> (41&nbsp;MB)<br>
 Download individual tables (up to 19 crossings) below:
 <p>
@@ -264,6 +265,108 @@ Download individual tables (up to 19 crossings) below:
     <td class="knotcountsmall">&mdash;</td>
     <td class="knotcountsmall"><a href="http://www.maths.uq.edu.au/~bab/knots/19n-satellite.csv.bz2">245 knots</a></td>
     <td class="knotcount"><a href="http://www.maths.uq.edu.au/~bab/knots/19n-hyp.csv.bz2">253,510,828 knots</a></td><td class="knotsize">(8.7&nbsp;GB)</td>
+</tr>
+</table>
+<p>
+<i><a href="#contents">(Back to top...)</a></i>
+
+<h2><a name="virtual">Virtual knot tables</a></h2>
+
+Regina 7.4 introduces support for virtual knots and links.
+If you wish to play with some small examples, you can open Regina and
+select <i>Open Example</i>&nbsp;&rarr;&nbsp;<i>Virtual Knots</i> from the menu.
+<p>
+Here you can download the tables of all 92,798 non-trivial virtual knots
+with up to 6&nbsp;crossings.
+<p>
+These virtual knots were tabulated independently using Regina.
+Reflections, reversals and flips are all considered to be the same knot.
+Classical knots are included also, and all knots in this census have been
+certified as distinct.  The knots are sorted by number of crossings,
+then virtual genus, and then lexicographically by Regina's knot signature.
+<p>
+The tables are plain text CSV (comma-separated value) files which you can
+load into a spreadsheet and/or process with a text editor, and have been
+compressed with <tt>bzip2</tt>.  The fields include:
+<p>
+<ul>
+<li><p><b>name:</b> The name of the knot, using a naming scheme
+specific to these tables.
+An example name is <tt>v6_97</tt>; here <tt>6</tt> indicates the
+number of classical crossings, and <tt>97</tt> is a positive integer
+indicating the position of the knot within the tables.
+</li>
+<li><p><b>knot_sig:</b> The knot diagram, expressed as a native Regina
+knot signature.  An example signature (for the knot <tt>6_97</tt>)
+is <tt>gabacdefcdbfeRu--</tt>.
+<i>Knot signatures</i> uniquely identify a knot diagram up to
+relabelling, reflection, rotation and/or reversal.
+In Regina&nbsp;7.4 or later you can reconstruct a virtual knot diagram
+from its signature through the GUI, or by calling <tt>Link.fromSig()</tt>
+in python.
+<li><p><b>signed_gauss:</b> The knot diagram, expressed as a
+signed Gauss code.  An example signed Gauss code (again for the knot
+<tt>6_97</tt>) is <tt>O1+O2+U1+O3+U4+O5+U6+U3+O4+U2+O6+U5+</tt>.
+<li><p><b>genus:</b> The virtual genus of the knot.
+This is the smallest genus closed orientable surface in which the
+knot diagram can be embedded.  Classical knots have virtual genus zero.
+<li><p><b>green_name:</b> Identifies the knot in
+<a href="https://www.math.toronto.edu/drorbn/Students/GreenJ/">Jeremy Green's
+virtual knot tables</a>.
+<li><p><b>classical_name:</b> For classical knots only,
+this field identifies the knot in
+<a href="#knots">Regina's classical knot tables</a>.
+Note that some knots in these tables are <i>composite</i> classical knots,
+and so will have names such as <tt>3at_1#3at_1'</tt> (indicating the
+composition of the left and right trefoils).
+<li><p><b>dt_name:</b> For classical knots only,
+this field identifies the knot in other online databases such as
+<a href="http://www.indiana.edu/~knotinfo/">Knotinfo</a> and
+<!--a href="http://pzacad.pitzer.edu/~jhoste/HosteWebPages/kntscp.html">Knotscape</a-->
+<a href="http://www.math.utk.edu/~morwen/knotscape.html">Knotscape</a>.
+This field uses the Dowker-Thistlethwaite naming convention, where knots
+are numbered according to their minimal DT codes.  Again, be aware of
+composite knots.
+</ul>
+<p>
+Note that this census is smaller than Green's.  This is because Green's tables
+contain a duplicate pair (<tt>v6_421</tt> in these tables,
+<tt>6.88185&nbsp;=&nbsp;6.90058</tt> in Green's).
+<p>
+<b>Citation:</b> If you wish to cite this data, please reference:
+<ul>
+<li>Benjamin&nbsp;A.&nbsp;Burton,
+<i>Adventures in tabulating virtual knots</i>,
+in preparation.</li>
+</ul>
+<p>
+<a href="http://www.maths.uq.edu.au/~bab/knots/virtual_2-6.tar.bz2">Download all 2&ndash;6 crossing knots at once</a> (962&nbsp;KB)<br>
+Download individual tables below:
+<p>
+<table cellspacing=0 border=0 class="data"><tbody>
+<tr>
+    <th class="first">Crossings</th>
+    <th>Knots</th>
+</tr>
+<tr>
+    <td class="knotvcross">2</td>
+    <td class="knotcountsmall"><a href="http://www.maths.uq.edu.au/~bab/knots/2-virtual.csv.bz2">1 knot</a></td>
+</tr>
+<tr>
+    <td class="knotvcross">3</td>
+    <td class="knotcountsmall"><a href="http://www.maths.uq.edu.au/~bab/knots/3-virtual.csv.bz2">7 knots</a></td>
+</tr>
+<tr>
+    <td class="knotvcross">4</td>
+    <td class="knotcountsmall"><a href="http://www.maths.uq.edu.au/~bab/knots/4-virtual.csv.bz2">108 knots</a></td>
+</tr>
+<tr>
+    <td class="knotvcross">5</td>
+    <td class="knotcountsmall"><a href="http://www.maths.uq.edu.au/~bab/knots/5-virtual.csv.bz2">2,448 knots</a></td>
+</tr>
+<tr>
+    <td class="knotvcross">6</td>
+    <td class="knotcountsmall"><a href="http://www.maths.uq.edu.au/~bab/knots/6-virtual.csv.bz2">90,234 knots</a></td>
 </tr>
 </table>
 <p>
