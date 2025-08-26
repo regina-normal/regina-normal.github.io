@@ -1,0 +1,78 @@
+<html><head><title>Chapter 10. Configuration</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina 7.3.1 Handbook"><link rel="up" href="index.html" title="The Regina 7.3.1 Handbook"><link rel="prev" href="sessions.html" title="Sample Python Sessions"><link rel="next" href="options-python.html" title="Python Options"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Configuration</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="sessions.html">Prev</a></td><td align="center" class="navCenter" width="34%"> </td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="options-python.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="options"></a>Chapter 10. Configuration</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="options.html#options-general">General Options</a></span></dt><dt><span class="sect1"><a href="options-python.html"><span class="application">Python</span> Options</a></span></dt><dt><span class="sect1"><a href="options-tools.html">Tools Options</a></span></dt></dl></div><p>
+  You can configure <span class="application">Regina</span> by choosing
+  <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Settings</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guisubmenu">Configure Regina</span></span>
+  from the menu under <span class="application"><span class="acronym">GNU</span>/Linux</span> and <span class="application">Windows</span>, or
+  <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Regina</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guisubmenu">Preferences</span></span>
+  on <span class="application">macOS</span>.
+ </p><p>
+  <span class="inlinemediaobject"><img src="menu-options.png" srcset="menu-options@2x.png 2x, menu-options.png"></span>
+ </p><p>
+  There are several panels of options; each is described in its own
+  section below.
+ </p><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="options-general"></a>General Options</h2></div></div></div><p>
+   The <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">General</span></span> options panel controls the overall
+   behaviour of <span class="application">Regina</span>.
+  </p><p>
+   <span class="inlinemediaobject"><img src="options-general.png" srcset="options-general@2x.png 2x, options-general.png"></span>
+  </p><p>
+   The settings here are:
+  </p><div class="glosslist"><dl><dt><a name="options-unicode"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Use unicode for mathematical symbols</span></span></dt><dd><p>
+      Most modern computers now have a rich set of fonts that include
+      subscripts, superscripts and a range of mathematical symbols.
+      By default, <span class="application">Regina</span> will use these symbols to make its display
+      easier to read (e.g., subscripts when describing abelian groups,
+      or superscripts when describing group presentations).
+     </p><p>
+      If you cannot read these symbols on your machine (e.g., the
+      subscripts and superscripts are too hard to read, or the fonts do
+      not provide these symbols at all), then you can uncheck this option.
+      This will cause <span class="application">Regina</span> to use “plain” <span class="acronym">ASCII</span> symbols only,
+      which are supported on every machine.
+     </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Warn before generating non-embedded
+    surfaces</span></span></dt><dd><p>
+     If checked, <span class="application">Regina</span> will ask for confirmation whenever you try to
+     <a href="surfaces.html#surfaces-creation" title="Enumerating Normal Surfaces and Hypersurfaces">enumerate normal surfaces</a>
+     <span class="emphasis"><em>without</em></span> selecting
+     <a href="surfaces.html#surfaces-embeddedonly">embedded surfaces only</a>.
+     <span class="application">Regina</span> asks for confirmation because non-embedded surfaces are
+     typically much slower to generate, far more numerous, and <span class="application">Regina</span>
+     only offers very basic support for them.
+    </p></dd><dt><a name="options-fpg-labels"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Labels on face pairing graphs</span></span></dt><dd><p>
+     If checked, <span class="application">Regina</span> will label each node in the
+     <a href="tri-analysis.html#tri-graphs-dual">dual graph</a>
+     of a triangulation with the number of the corresponding
+     top-dimensional simplex.
+    </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Packet tree jump size</span></span></dt><dd><p>
+     Specifies how many steps a packet moves through the tree when
+     you select
+     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Packet Tree</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Move</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Jump Up</span></span>
+     or
+     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Packet Tree</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Move</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Jump Down</span></span>.
+     See <a href="packet-operations.html#packet-move" title="Moving Around the Tree">moving packets around</a> for
+     further details.
+    </p></dd><dt><a name="options-encoding"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Text encoding for
+     imports/exports</span></span></dt><dd><p>
+      Specifies how <span class="application">Regina</span> encodes international characters
+      when importing or exporting data.  International characters are
+      letters or symbols not found on a typical English keyboard.
+     </p><p>
+      If you are not sure what to use, the default encoding <span class="acronym">UTF-8</span> is a
+      good choice (this is a modern standard and can represent all languages).
+      If you only ever use plain English letters and symbols, you do not
+      need to worry about encodings at all.
+     </p><p>
+      For more information on text encodings, see
+      <a href="foreign.html#encodings">imports and exports</a>.
+     </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Offer help for new users on
+     startup</span></span></dt><dd><p>
+      If checked, <span class="application">Regina</span> will show a link to the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Getting
+      Started</span></span> dialog at the bottom of the main window
+      each time <span class="application">Regina</span> starts.
+     </p><p>
+      <span class="inlinemediaobject"><img src="helplink.png" srcset="helplink@2x.png 2x, helplink.png"></span>
+     </p><p>
+      You can view this information at any time by selecting
+      <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Help</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Getting Started</span></span>
+      from the menu.
+     </p></dd></dl></div></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="sessions.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="options-python.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">Sample <span class="application">Python</span> Sessions </td><td width="34%" align="center" class="navCenter"><a href="index.html">Up</a></td><td width="33%" align="right" class="navRight"> <span class="application">Python</span> Options</td></tr></table></div></body></html>

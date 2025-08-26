@@ -12,6 +12,10 @@
 <tbody>
 <tr><td valign="top">
     <table class="contents" cellspacing=0><tbody>
+    <tr><td><a href="#resolve">Resolving crossings in links with
+    cached polynomials (Jul 2025)</a></td></tr>
+    <tr><td><a href="#laurentset">Manually setting coefficients in
+    Laurent polynomials (Jun 2025)</a></td></tr>
     <tr><td><a href="#surfacecomp">Splitting disconnected normal surfaces into
     connected components (Jul 2023)</a></td></tr>
     <tr><td><a href="#tritetlinks">Identifying normalised (but not
@@ -35,6 +39,136 @@ of Regina, which might have affected your computations.
 Please write to the developers if you need further information or
 assistance.
 
+<h2><a name="resolve">Resolving crossings in links with
+cached polynomials (Jul 2025)</a></h2>
+<h3>Summary</h3>
+<table cellspacing=0 border=0 class="data">
+<tbody>
+<tr>
+    <td class="topsubheading">Affected versions</td>
+    <td class="top">5.96&ndash;7.3</td>
+    <td class="top">Fixed in version 7.3.1</td>
+</tr>
+<tr>
+    <td class="subheading">Main symptom</td>
+    <td>&nbsp;</td>
+    <td>If you computed polynomial invariants of a link and then manually
+    resolved crossings, the old polynomial invariants might still be
+    returned.</td>
+</tr>
+<tr>
+    <td class="subheading">Affected users</td>
+    <td>All users</td>
+    <td>This affected all users who followed the specific sequence of events
+    described below.</td>
+</tr>
+<tr>
+    <td class="subheading">Was I affected?</td>
+    <td>Possibly</td>
+    <td>This depends on your workflow&mdash;the events that triggered the
+    bug are predictable and easy to describe.  Read below for details.</td>
+</tr>
+</table>
+
+<p>
+<h3>Details</h3>
+<p>
+This bug would be triggered if you did <i>all</i> of the following steps,
+in the following order:
+</p>
+<ol>
+<li><p>computed one or more link polynomials, either by visiting the
+<i>Polynomials</i> tab in the GUI or by calling functions such as
+<tt>Link.jones()</tt> or <tt>Link.homfly()</tt> in C++ or Python;</p></li>
+<li><p>resolved one or more crossings, either by right-clicking in the GUI or
+by calling <tt>Link.resolve()</tt> in C++ or Python;</p></li>
+<li><p>did not make any other changes to the link;</p></li>
+<li><p>queried those same link polynomials again.</p></li>
+</ol>
+<p>
+The result would be that you would be given the old values of the link
+polynomials, before the crossing(s) were resolved.
+</p>
+<p>
+The cause was simple: <tt>Link</tt> caches link polynomials when it computes
+them, and any member function of <tt>Link</tt> that modifies the link is
+expected to clear out this cache.  However, <tt>Link.resolve()</tt> did not
+do this.
+</p>
+<p>
+<i><a href="#contents">(Back to top...)</a></i>
+
+<h2><a name="laurentset">Manually setting coefficients in
+Laurent polynomials (Jun 2025)</a></h2>
+<h3>Summary</h3>
+<table cellspacing=0 border=0 class="data">
+<tbody>
+<tr>
+    <td class="topsubheading">Affected versions</td>
+    <td class="top">5.0&ndash;7.3</td>
+    <td class="top">Fixed in version 7.3.1</td>
+</tr>
+<tr>
+    <td class="subheading">Main symptom</td>
+    <td>&nbsp;</td>
+    <td>In C++/Python, manually setting a coefficient in a Laurent polynomial
+    in special circumstances would have no effect.</td>
+</tr>
+<tr>
+    <td class="subheading">Affected users</td>
+    <td>C++/Python programmers only</td>
+    <td>This only affected C++/Python users who manually set individual
+    Laurent polynomial coefficients via code, <i>and</i> where the
+    minimum exponent had in the past been lower but that older coefficient
+    had since been zeroed out.</td>
+</tr>
+<tr>
+    <td class="subheading">Was I affected?</td>
+    <td>Unlikely</td>
+    <td>Examine your code and see if it manually sets coefficients in C++ or
+    Python, and the specific sequence of events described
+    below was theoretically possible.
+    In particular, Jones polynomials (the main use case for Laurent
+    polynomials in Regina) were <i>not</i> affected.</td>
+</tr>
+</table>
+
+<p>
+<h3>Details</h3>
+<p>
+Only C++/Python programmers were affected by this issue.
+</p>
+<p>
+The bug did <i>not</i> affect any of Regina's
+knot/link polynomial computations.
+</ul>
+</p>
+<p>
+To trigger this bug, you would have needed to be working manually with
+single-variable Laurent polynomials in C++ or Python.  Moreover,
+you would have needed a polynomial <tt>p</tt> for which:
+</p>
+<ul>
+<li><p>At some earlier point in time,
+the minimum non-zero coefficient of <tt>p</tt>
+was for some exponent <tt>a</tt>;</p></li>
+<li><p>Later on this coefficient became zeroed out, and so the minimum
+non-zero coefficient of <tt>p</tt> became
+<tt>b</tt>&nbsp;&gt;&nbsp;<tt>a</tt>;</p></li>
+<li><p>After this, you manually set an individual non-zero coefficient for
+some exponent <tt>i</tt> in C++ or Python via the syntax
+<tt>p.set(i,&nbsp;value)</tt> or <tt>p[i]&nbsp;=&nbsp;value</tt>,
+where this exponent <tt>i</tt> is in the range
+<tt>a</tt>&nbsp;&le;&nbsp;<tt>i</tt>&nbsp;&lt;&nbsp;<tt>b</tt>.</p></li>
+</ul>
+<p>
+This bug did not affect users who manipulated Laurent polynomials in
+other ways, e.g., via arithmetic operations, or by setting coefficients in
+bulk by passing a list of coefficients.
+</p>
+<p>
+<i><a href="#contents">(Back to top...)</a></i>
+
 <h2><a name="surfacecomp">Splitting disconnected normal surfaces into
 connected components (Jul 2023)</a></h2>
 <h3>Summary</h3>
@@ -43,7 +177,7 @@ connected components (Jul 2023)</a></h2>
 <tr>
     <td class="topsubheading">Affected versions</td>
     <td class="top">7.0&ndash;7.3</td>
-    <td class="top">Fixed in version 7.4 (expected late 2023)</td>
+    <td class="top">Fixed in version 7.3.1</td>
 </tr>
 <tr>
     <td class="subheading">Main symptom</td>
@@ -107,7 +241,7 @@ triangle/tetrahedron linking surfaces (Jun 2023)</a></h2>
 <tr>
     <td class="topsubheading">Affected versions</td>
     <td class="top">7.1&ndash;7.3</td>
-    <td class="top">Fixed in version 7.4 (expected late 2023)</td>
+    <td class="top">Fixed in version 7.3.1</td>
 </tr>
 <tr>
     <td class="subheading">Main symptom</td>

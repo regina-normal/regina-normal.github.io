@@ -120,6 +120,10 @@ table.data td.knotcross {
   padding: 2px 2ex 2px 1ex;
 }
 
+table.data td.knotvcross {
+  border-width: 0px 2px 2px 2px;
+}
+
 table.data td.knotcount {
   border-width: 0px 0px 2px 0px;
 }
@@ -132,11 +136,11 @@ table.data td.knotalt, table.data td.knotcountuppersmall {
   border-width: 0px 2px 0px 0px;
 }
 
-table.data td.knotcross, table.data td.knotcount, table.data td.knotcountupper, table.data td.knotcountsmall, table.data td.knotcountuppersmall, table.data td.knotsize, table.data td.knotsizeupper {
+table.data td.knotcross, table.data td.knotvcross, table.data td.knotcount, table.data td.knotcountupper, table.data td.knotcountsmall, table.data td.knotcountuppersmall, table.data td.knotsize, table.data td.knotsizeupper {
   text-align: right;
 }
 
-table.data td.knotcount, table.data td.knotcountupper, table.data td.knotcountuppersmall, table.data td.knotcountsmall {
+table.data td.knotcount, table.data td.knotvcross, table.data td.knotcountupper, table.data td.knotcountuppersmall, table.data td.knotcountsmall {
   padding: 2px 1ex 2px 1ex;
 }
 

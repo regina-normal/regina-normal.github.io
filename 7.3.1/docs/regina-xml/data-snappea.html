@@ -1,0 +1,24 @@
+<html><head><title>snappea</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Regina, XML, Data files"><link rel="start" href="index.html" title="Regina 7.3.1 File Format Reference"><link rel="up" href="removed.html" title="Deprecated and Removed Elements"><link rel="prev" href="data-simplices.html" title="simplices"><link rel="next" href="data-solidtorus.html" title="solidtorus"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>snappea</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="data-simplices.html">Prev</a></td><td align="center" class="navCenter" width="34%">Deprecated and Removed Elements</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="data-solidtorus.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="data-snappea"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>snappea — Replaced by <a href="data-snappeadata.html" title="snappeadata"><code class="sgmltag-element">snappeadata</code></a></p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="informaltable"><table border="1"><colgroup><col><col></colgroup><tbody><tr><td colspan="2">
+      <span class="bold"><strong>Content Model</strong></span>
+     </td></tr><tr><td colspan="2">
+<pre class="synopsis">
+snappea ::= (#PCDATA)</pre>
+     </td></tr></tbody></table></div><p>Deprecated since <span class="application">Regina</span> 7.0</p></div><div class="refsect1" lang="en"><a name="id9702"></a><h2>Description</h2><p>
+   This element was used in the past to store the contents of a
+   <span class="application">SnapPea</span> triangulation packet.
+   Since <span class="application">Regina</span> 7.0, <span class="application">SnapPea</span> triangulations
+   now store their content
+   directly in the character data of the <a href="data-snappeadata.html" title="snappeadata"><code class="sgmltag-element">snappeadata</code></a> element
+   (which replaces the old <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a> element for <span class="application">SnapPea</span> triangulations).
+  </p><p>
+   A <a href="data-snappea.html" title="snappea"><code class="sgmltag-element">snappea</code></a> element contains the full contents of a <span class="application">SnapPea</span>
+   data file, using <span class="application">SnapPea</span>'s own text-based file format.
+   Whitespace and line breaks are relevant and are considered
+   a part of the data file.
+  </p><div class="refsect2" lang="en"><a name="id9718"></a><h3>Parents</h3><p>
+    The following elements contain <code class="sgmltag-element">snappea</code>:
+    <span class="simplelist"><a href="data-packet-snappea.html" title="packet (SnapPea triangulation)"><code class="sgmltag-element">packet</code> (<span class="application">SnapPea</span> triangulation)</a></span>.
+   </p></div><div class="refsect2" lang="en"><a name="id9727"></a><h3>Children</h3><p>
+    Element <code class="sgmltag-element">snappea</code> has no children.
+   </p></div></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="data-simplices.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="data-solidtorus.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">simplices </td><td width="34%" align="center" class="navCenter"><a href="removed.html">Up</a></td><td width="33%" align="right" class="navRight"> solidtorus</td></tr></table></div></body></html>
