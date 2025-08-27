@@ -21,8 +21,8 @@ follow these instructions.
 </p>
 <p>
 The instructions differ according to whether you are running the
-bleeding-edge <a href="#unstable">Debian unstable</a>, or a formal
-<a href="#release">Debian stable or testing release</a>.
+bleeding-edge <a href="#unstable">Debian unstable or testing</a>, or a formal
+<a href="#release">Debian stable release</a>.
 </p>
 <p>
 These instructions only install the main packages
@@ -32,7 +32,7 @@ If you are a C++ programmer and you wish to build Regina into your own
 projects, you should also install the package <tt>regina-normal-dev</tt>.
 </p>
 
-<a name="unstable"><h2>Debian Unstable (Sid)</h2></a>
+<a name="unstable"><h2>Debian Unstable (Sid) and Testing (Forky)</h2></a>
 
 <p>
 If you run Sid (the Debian unstable release), you can install Regina from
@@ -45,12 +45,20 @@ the usual Debian servers like any other package:
 Sid always ships with the latest version of Regina (though it may take a
 day or two for new versions to appear on your Debian mirror).
 </p>
+<p>
+If you run Forky (the Debian testing release), you can install Regina the same
+way; however, be aware that it may take many days (or weeks) for the latest
+Regina to migrate from unstable to testing.  There are no plans to set up a
+custom Regina repository for Forky until Debian starts to freeze for Forky's
+release.
+</p>
 
-<a name="release"><h2>Debian Stable (Bookworm) and Testing (Trixie)</h2></a>
+<a name="release"><h2>Debian Stable (Trixie) and OldStable (Bookworm)</h2></a>
 
 <p>
-To keep up-to-date with Regina, you will need to add Regina's repository to
-your list of software sources.  These instructions will show you how.
+To keep your stable Debian release up-to-date with the latest version of Regina,
+you will need to add Regina's repository to your list of software sources.
+These instructions will show you how.
 </p>
 <p>
 <b>You only need to do this once!</b>
@@ -79,8 +87,6 @@ Debian:
 <a href="../repos/regina-trixie.sources"><tt>regina-trixie.sources</tt></a></p></li>
 <li><p>Debian 12.x (bookworm):
 <a href="../repos/regina-bookworm.sources"><tt>regina-bookworm.sources</tt></a></p></li>
-<li><p>Debian 11.x (bullseye):
-<a href="../repos/regina-bullseye.sources"><tt>regina-bullseye.sources</tt></a></p></li>
 </ul>
 </li>
 <li><p>
