@@ -27,7 +27,7 @@ Updated data: 31 May 2018></h4-->
     <tr><td><a href="#screenshots">Screenshots</a></td></tr>
     <tr><td><a href="#download">Download</a></td></tr>
     <tr><td><a href="#docs">Documentation</a></td></tr>
-    <tr><td><a href="#new">What's new in version 7.3?</a></td></tr>
+    <tr><td><a href="#new">What's new in version 7.4?</a></td></tr>
     <tr><td><a href="#announce">Announcement mailing list</a></td></tr>
     <tr><td><a href="#license">License and citation</a></td></tr>
     <tr><td><a href="#contact">Contact</a></td></tr>
@@ -56,6 +56,11 @@ Updated data: 31 May 2018></h4-->
 <h2><a name="news">News</a></h2>
 
 <p class="header">
+<b>29 August 2025:</b>
+Regina 7.4 is out!
+This is a big one.
+<a href="#new">Read all about what's new</a>,
+or just go ahead and <a href="#download">download it</a>.
 <b>17 July 2025:</b>
 Packages are now live for Windows, Debian testing (trixie), and Arch Linux
 (in addition to all the other packages that were available on release day).
@@ -66,8 +71,6 @@ Regina 7.3.1 is out!
 This is a service release that fixes
 <a href="bugs.html">some important bugs</a>, and adds support
 for Python&nbsp;3.12 and later.
-You can <a href="#new">read all about what's new</a>,
-or just go ahead and <a href="#download">download it</a>.
 <!--p class="header">
 <b>23 June 2023:</b>
 Added packages for openSUSE Leap 15.5.
@@ -156,9 +159,9 @@ The following downloads are available:
 </table>
 <p>
 All direct downloads come with
-<a href="https://github.com/regina-normal/regina/releases/download/regina-7.3.1/SHA1SUMS-signed.txt">SHA-1 checksums</a>
+<a href="https://github.com/regina-normal/regina/releases/download/regina-7.4/SHA1SUMS-signed.txt">SHA-1 checksums</a>
 and
-<a href="https://github.com/regina-normal/regina/releases/download/regina-7.3.1/SHA256SUMS-signed.txt">SHA-256 checksums</a>,
+<a href="https://github.com/regina-normal/regina/releases/download/regina-7.4/SHA256SUMS-signed.txt">SHA-256 checksums</a>,
 signed with <a href="https://people.debian.org/~bab/regina-key.txt">Ben Burton's GPG key</a>.
 <p>
 If you encounter any problems when you run Regina, you can check the
@@ -186,7 +189,7 @@ Not sure which?  Start with the App Store version (but read below).
     Catalina (10.15)
     </td>
     <td><img srcset="osicons/os_macosx.png 1x, osicons/os_macosx@2x.png 2x" src="osicons/os_macosx.png" border=0 hspace=5></td>
-    <td align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-7.3.1/Regina-7.3.1_py39.dmg">Download&nbsp;here</a></td>
+    <td align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-7.4/Regina-7.4_py39.dmg">Download&nbsp;here</a></td>
     <td><a href="https://itunes.apple.com/us/app/regina-for-3-manifolds/id1160053348?mt=8"><img src="ios/Download_on_the_Mac_App_Store_Badge_US-UK_RGB_wht_092917.svg" alt="Download on the Mac App Store" border=0 hspace=10 vspace=10/></a></td>
     </tr>
 </tbody></table>
@@ -233,7 +236,7 @@ system (e.g., macOS or GNU/Linux).
 <tr><td class="firstjoin">Windows&nbsp;11<br>Windows&nbsp;10</td>
     <td><img srcset="osicons/os_win_other.png 1x, osicons/os_win_other@2x.png 2x" src="osicons/os_win_other.png" border=0 hspace=5></td>
     <td><tt>x64</tt></td>
-    <td align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-7.3.1/Regina-7.3.1-x86_64.msi">Download</a></td>
+    <td align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-7.4/Regina-7.4-x86_64.msi">Download</a></td>
     </tr>
 </tbody></table>
 </blockquote>
@@ -399,7 +402,7 @@ desktop versions listed above.
 For other systems not listed above, you will need to build Regina
 from its source code.
 <p>
-You can <a href="https://github.com/regina-normal/regina/releases/download/regina-7.3.1/regina-7.3.1.tar.gz">download the source code here</a>.
+You can <a href="https://github.com/regina-normal/regina/releases/download/regina-7.4/regina-7.4.tar.gz">download the source code here</a>.
 <p>
 Please see the <a href="source.html">separate page on building Regina</a>
 for instructions on how to build Regina and
@@ -440,38 +443,58 @@ limits of what these docstrings can and cannot provide).</li>
 <p>
 <i><a href="#contents">(Back to contents...)</a></i>
 
-<h2><a name="new">What's new in version 7.3.1?</a></h2>
+<h2><a name="new">What's new in version 7.4?</a></h2>
 <p>
-Regina&nbsp;7.3.1 is a service release to fix some important bugs,
-and to support Python&nbsp;3.12 and later.
-Python&nbsp;3.6 is no longer supported.
+Features:
+<ul>
+<li>Now supports virtual knots and links, with new invariants such as
+odd writhe, arrow polynomials, affine index polynomials, and
+extended groups.</li>
+<li>Several new constructions, such as Whitehead doubles over links,
+doubling triangulations over their boundaries, and many new
+out-of-the-box example triangulations and links.</li>
+<li>Several new operations on triangulations and link diagrams, including
+improving treewidth, truncating individual vertices in 3-D, and more
+elementary moves in more dimensions.</li>
+<li>New invariants and properties for link diagrams, including Alexander
+polynomials, Seifert circles, and connected diagram components.</li>
+<li>Significantly better simplification for 4-D triangulations, including
+Rhuaidi Burke's &ldquo;up-side-down&rdquo; simplification heuristics.</li>
+<li>Text codes for link diagrams now include signed Gauss codes, plus an
+extension of Regina's knot signatures to multiple-component links.</li>
+<li>You can now lock top-dimensional simplices and/or their facets in a
+triangulation, to prevent these from being modified during operations
+such as simplification or elementary moves.  Locks are also encoded
+as part of the isomorphism signature.</li>
+<li>Gave the graphical user interface a general glow-up, and added
+initial support for multithreaded computations.</li>
+<li>The tool DGT is now called Katie, and can now work with 1-handles
+(thanks again to Rhuaidi Burke).</li>
+<li>New command-line tool regina-helper, which can do things like create
+Makefiles and run the test suite.</li>
+<li>Many, many other smaller features and optimisations.</li>
+</ul>
 <p>
 Bugs fixed:
 <ul>
-<li>Manually resolving a crossing in a link would not clear out cached
-polynomials that had already been computed for that link.
-<a href="bugs.html#resolve">See here for details.</a></li>
-<li>Manually setting a coefficient in a Laurent polynomial in C++/Python
-would, in special circumstances, have no effect.  This did not affect
-the GUI or any Jones polynomial computations.
-<a href="bugs.html#laurentset">See here for details.</a></li>
-<li>If a normal surface was a normalised triangle link but not a thin
-triangle link, then using C++/Python to call <tt>isThinTriangleLink()</tt>
-<i>before</i> <tt>isNormalTriangleLink()</tt> would make the latter return an
-empty list of results.  Likewise with tetrahedron links in
-4-dimensional triangulations.  This did not affect the GUI.
-<a href="bugs.html#tritetlinks">See here for details.</a></li>
-<li>If the connectness of a normal surface had already been computed, then
-calling <tt>NormalSurface.components()</tt> in C++/Python would return the
-entire surface as a single component.  This did not affect the GUI.
-<a href="bugs.html#surfacecomp">See here for details.</a></li>
-<li>Fixed some less important problems also: see the full changelog for details.</li>
+<li>Fixed an occasional problem where the &ldquo;try harder&rdquo; option for
+simplifying triangulations could make the user interface crash.</li>
 </ul>
 <p>
-Other improvements:
+Build requirements:
 <ul>
-<li>Improved the speed of iteration in Python (specifically,
-throwing/catching <tt>StopIteration</tt> exceptions).</li>
+<li>Regina now uses C++20 (not C++17), the GUI now requires Qt&nbsp;6.x, and
+the API docs now require Doxygen&nbsp;&ge;&nbsp;1.9.2.</li>
+<li>You no longer need Jansson, Popt or CppUnit to build Regina.</li>
+</ul>
+<p>
+In case you missed it, there were also some important changes in
+the recent service release (Regina&nbsp;7.3.1, July 2025):
+<ul>
+<li>Supports Python&nbsp;3.12 and later, and drops support for
+Python&nbsp;3.6.</li>
+<li>Fixes some important bugs: see the <a href="bugs.html">bugs page</a>
+for details.</li>
 </ul>
 <p>
 <i><a href="#contents">(Back to contents...)</a></i>
