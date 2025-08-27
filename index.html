@@ -11,8 +11,8 @@
   alt="Regina: Software for low-dimensional topology">
 </center>
 <center>
-<h4>Version 7.4 currently being uploaded (27 August 2025)</h4>
-<h4>Latest version: 7.3.1 (July 2025)</h4>
+<!--h4>Version 7.4 currently being uploaded (27 August 2025)</h4-->
+<h4>Latest version: 7.4 (August 2025)</h4>
 <!--Updated packages: 23 June 2023<br>
 Updated documentation: 9 May 2022<br>
 Updated packages: 10 December 2021<br>
@@ -61,6 +61,7 @@ Regina 7.4 is out!
 This is a big one.
 <a href="#new">Read all about what's new</a>,
 or just go ahead and <a href="#download">download it</a>.
+<p class="header">
 <b>17 July 2025:</b>
 Packages are now live for Windows, Debian testing (trixie), and Arch Linux
 (in addition to all the other packages that were available on release day).
@@ -82,17 +83,18 @@ Follow the <a href="#download">install links</a> for details.-->
 
 <h2><a name="whatis">What is Regina?</a></h2>
 
-Regina is a software package for 3-manifold and 4-manifold topologists,
-with a focus on triangulations, knots and links,
-normal surfaces, and angle structures.
+Regina is a software package for low-dimensional topologists, with a focus on
+3-manifold and 4-manifold triangulations, knots and links, normal surfaces,
+and angle structures.
 <p>
-For 3-manifolds, it includes high-level tasks such as 3-sphere recognition,
-connected sum decomposition and Hakenness testing, comes with a rich
-database of census manifolds, and incorporates the SnapPea kernel for
-working with hyperbolic manifolds.  For 4-manifolds, it offers a range of
-combinatorial and algebraic tools, plus support for normal hypersurfaces.
-For knots and links, Regina can perform combinatorial manipulation,
-compute knot polynomials, and work with several import/export formats.
+For 3-manifolds, it includes high-level tasks such as 3-sphere and unknot
+recognition, connected sum decomposition and Hakenness testing, comes with a
+rich database of census manifolds, and incorporates the SnapPea kernel for
+working with hyperbolic manifolds.  For 4-manifolds, it offers several
+combinatorial and algebraic tools, as well as support for normal hypersurfaces.
+For knots and links, Regina can perform combinatorial manipulation, compute
+knot polynomials, handle virtual knots and links, and work with several
+import/export formats.
 <p>
 Regina comes with a full graphical user interface, as well as Python bindings
 and a low-level C++ programming interface.
@@ -182,11 +184,11 @@ Not sure which?  Start with the App Store version (but read below).
 <blockquote><table cellspacing=0 border=0 align=center class="data"><tbody>
 <tr><th class="first" colspan=2>macOS version</th>
     <th>Website download</th>
-    <th>App store</th></tr>
-<tr><td class="firstjoin">Ventura (13)<br>
-    Monterey (12)<br>
-    Big Sur (11)<br>
-    Catalina (10.15)
+    <th>App Store</th></tr>
+<tr><td class="firstjoin">Tahoe (26)<br>
+    Sequoia (15)<br>
+    Sonoma (14)<br>
+    Ventura (13)
     </td>
     <td><img srcset="osicons/os_macosx.png 1x, osicons/os_macosx@2x.png 2x" src="osicons/os_macosx.png" border=0 hspace=5></td>
     <td align="center"><a href="https://github.com/regina-normal/regina/releases/download/regina-7.4/Regina-7.4_py39.dmg">Download&nbsp;here</a></td>
@@ -213,7 +215,18 @@ run command-line tools (<tt>regina-python</tt>, <tt>regfiledump</tt>, etc.),
 the <b>only personal files you can access are those in your
 <tt>Downloads</tt> folder</b>. You can still access world-readable files,
 such as those in your <tt>Applications</tt> folder.
-<p>
+<p class="header">
+<b>Regarding security:</b>
+<ul>
+<li>The website download is cryptographically signed with Ben Burton's Apple
+developer certificate, and macOS will verify this when you first try to run
+Regina.  You should see a message like
+<i>&ldquo;Regina is an app downloaded from the internet&hellip;
+Apple checked it for malicious software and none was detected.&rdquo;</i>.</li>
+<li>The App Store version like everything on the App Store) has a chain of
+cryptographic signatures that will be verified when you install Regina.</li>
+</ul>
+
 <a name="windows"><h4 class="divide">Windows</h4></a>
 
 Regina on Windows uses a standard point-and-click installer.
@@ -223,8 +236,6 @@ and only on Intel/AMD64 chipsets (i.e., the <tt>x64</tt> architecture).
 Most modern Windows installations are of this type,
 and this is almost certainly the version that you want.
 <p>
-If you still have an ancient 32-bit Windows system and you need to
-get Regina running on it, please let Ben know.
 If your machine has an ARM64 chipset (e.g., you have a Mac with
 Apple Silicon), you will need to run Regina under a different operating
 system (e.g., macOS or GNU/Linux).
@@ -240,16 +251,26 @@ system (e.g., macOS or GNU/Linux).
     </tr>
 </tbody></table>
 </blockquote>
-<p>
-When running the installer you may see a security warning,
+<p class="header">
+<b>Regarding security:</b>
+<ul>
+<li>When download or running the installer you may see a security warning,
 such as <i>&ldquo;Microsoft Defender SmartScreen prevented an
-unrecognized app from starting ...&rdquo;</i>, or a message from
-SmartScreen Filter that
-<i>&ldquo;This program might harm your computer&rdquo;</i>.
+unrecognized app from starting&hellip;&rdquo;</i>, or a message that
+<i>&ldquo;Microsoft Defender SmartScreen couldn't verify if this file
+is safe&hellip;&rdquo;</i>.
 This is because Microsoft has not added Regina to its database of
 known applications.
-Click <i>More info</i> or <i>More options</i>
+Click <i>More info</i> or look for a drop-down box with more options,
 and you should be able to run the installer anyway.</li>
+<li>If you wish to verify the integrity of the download, you can compare
+checksums against the expected
+<a href="https://github.com/regina-normal/regina/releases/download/regina-7.4/SHA1SUMS-signed.txt">SHA-1 checksums</a>
+and
+<a href="https://github.com/regina-normal/regina/releases/download/regina-7.4/SHA256SUMS-signed.txt">SHA-256 checksums</a>,
+which are cryptographically signed with
+<a href="https://people.debian.org/~bab/regina-key.txt">Ben Burton's GPG key</a>.</li>
+</ul>
 
 <a name="linux"><h4 class="divide">GNU/Linux</h4></a>
 
@@ -279,8 +300,9 @@ with the <a href="http://regina-rexx.sourceforge.net/">other Regina</a>).
     </tr>
 <tr><td rowspan=2 class="altfirstjoin">Debian</td>
     <td rowspan=2 class="alt"><img srcset="osicons/os_debian.png 1x, osicons/os_debian@2x.png 2x" src="osicons/os_debian.png" border=0 hspace=5></td>
-    <td class="alt">13.x (trixie)<br>12.x (bookworm)<br>11.x (bullseye)</td>
-    <td class="alt"><tt>amd64</tt><br><tt>arm64</tt><br><tt>i386</tt></td>
+    <td class="alt">13.x (trixie)<br>12.x (bookworm)</td>
+    <td class="alt"><tt>amd64</tt><br><tt>arm64</tt><br>
+    <tt>i386</tt> (bookworm only)</td>
     <td align="center" rowspan=2 class="alt"><a href="install/debian.html">Install</a></td>
     </tr>
 <tr>
@@ -301,7 +323,7 @@ with the <a href="http://regina-rexx.sourceforge.net/">other Regina</a>).
     </tr>
 <tr><td rowspan=1 class="firstjoin">Ubuntu</td>
     <td rowspan=1><img srcset="osicons/os_ubuntu.png 1x, osicons/os_ubuntu@2x.png 2x" src="osicons/os_ubuntu.png" border=0 hspace=5></td>
-    <td>25.04&nbsp;(plucky)<br>24.10&nbsp;(oracular)<br>24.04&nbsp;LTS&nbsp;(noble)<br>22.04&nbsp;LTS&nbsp;(jammy)</td>
+    <td>25.04&nbsp;(plucky)<br>24.04&nbsp;LTS&nbsp;(noble)</td>
     <td><tt>amd64</tt><br><tt>arm64</tt></td>
     <td align="center" rowspan=1><a href="install/ubuntu.html">Install</a></td>
     </tr>
@@ -321,8 +343,13 @@ For reference, <tt>amd64</tt>/<tt>x86_64</tt> refers to 64-bit Intel machines,
 Together these cover almost any typical desktop or laptop nowadays.
 </li>
 <li>
-If you have a particularly exotic chipset, try the Debian&nbsp;unstable
-packages, which are built for <i>every</i> architecture in Debian.
+If you have a more exotic chipset that is not in the table above, you can try
+downloading the <tt>regina-normal</tt> source package (which is provided for all
+of the distributions above except for Arch Linux) and use this to build a
+binary package yourself (e.g., using <tt>debuild</tt> or <tt>rpmbuild</tt>).
+Alternatively, if you really want a ready-made binary package, you could try
+the <a href="install/debian.html#unstable">Debian&nbsp;unstable packages</a>,
+which are built for <i>every</i> architecture in Debian.
 </li></ul>
 
 <p class="header">
@@ -350,6 +377,14 @@ Otherwise you can always build from source (see below).
 If you are using some other distribution (e.g., RedHat, Slackware, &hellip;),
 then you will need to <a href="#source">build Regina from source</a>.
 </li></ul>
+
+<p class="header">
+<b>Regarding security:</b>
+<ul>
+<li>All of Regina's GNU/Linux repositories use cryptographic signatures to
+verify the integrity of the packages.  Follow the <i>Install</i> link above
+for your GNU/Linux distribution to see how to make use of this.</li>
+</ul>
 
 <a name="sage"><h4 class="divide">PyPI&nbsp;/&nbsp;SageMath</h4></a>
 
