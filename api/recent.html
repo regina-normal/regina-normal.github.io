@@ -8,12 +8,6 @@
 
 <h1><a name="contents">Regina - Changes since Regina 7.0</a></h1>
 
-<div class="notready"><p>
-This page is <b>still being updated for Regina&nbsp;7.4</b>.
-Come back in a day or two and it should be ready.
-<i>(28 August, 2025)</i>
-</p></div>
-
 <div class="announce"><p>
 This page relates only to <b>C++ and Python programmers</b>.
 </p></div>
@@ -47,14 +41,34 @@ changes throughout the API;</li>
 <p>
 Some general rules have been applied throughout the API:
 <ul>
+<li>All enumerations are now C++11 scoped enumerations with more natural names.
+For example, the old global constant <tt>NS_STANDARD</tt> is now
+<tt>NormalCoords::Standard</tt>, and the old class constant
+<tt>SnapPeaTriangulation::geometric_solution</tt> is now
+<tt>SnapPeaTriangulation::Solution::Geometric</tt>.
+All of the old names are now deprecated.</li>
+<li>The corresponding &ldquo;flags classes&rdquo;
+(e.g., <tt>NormalAlgFlags</tt>) have also been renamed, but you should not
+need to refer to the new names explicitly.  Just combine flags bitwise, such
+as <tt>(NormalAlg::TODO&nbsp;|&nbsp;NormalAlg::TODO)</tt>, and let the
+compiler work out the type.</li>
+<li>Elementary moves on triangulations (e.g., Pachner moves)
+and links (e.g., Reidemeister moves) have been overhauled.  The old function
+form <tt>moveName(&hellip;, check, perform)</tt> is deprecated.  To perform a
+move, you should now call <tt>moveName(&hellip;)</tt> without the
+check/perform arguments (the check is now mandatory).
+To do a read-only check on whether the move is
+allowed, use the new function form <tt>hasMoveName(&hellip;)</tt>.  There is
+also a new function form <tt>withMoveName(&hellip;)</tt>, which returns a new
+optional triangulation or link instead of modifying the current one.</li>
 <li>Several functions now verify some of their easy-to-test preconditions,
 and throw exceptions if these preconditions fail.  Technically this is not
 a &ldquo;real&rdquo; API change, since users are expected to adhere to
 preconditions anyway; however, it <i>is</i> a practical change in behaviour.
 These changes are not individually outlined here on this page, but you
 can always consult the
-<a href="../engine-docs/index.html">API documentation</a>&mdash;each
-of Regina's functions that might throw an exception will declare this
+<a href="../engine-docs/index.html">API documentation</a>&mdash;every
+function that might throw an exception will declare this
 as part of its documentation.</li>
 </ul>
 
@@ -89,13 +103,77 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
 <!------------------------------------------------------------------------->
 <tr><td class="deptype" colspan=4>Classes, Enums and Type Aliases</td></tr>
 <tr>
+    <td class="first"><tt>Base64SigEncoding</tt></td>
+    <td><tt>Base64SigEncoder</tt> and <tt>Base64SigDecoder</tt></td>
+    <td>The new classes carry state and have better error handling; however,
+    this also means that this is not just a rename&mdash;if you were using
+    <tt>Base64SigEncoding</tt> then you will need to read through how the
+    interface has changed with the new classes.</td>
+</tr>
+<tr>
     <td class="first"><tt>DegreeLessThan, DegreeGreaterThan</tt></td>
     <td>C++ lambda</td>
     <td>These classes were trivial, and nowadays a one-line lambda can
     do the same job.</td>
 </tr>
+<tr>
+    <td class="first"><tt>Packet::ChangeEventSpan</tt><br>
+    <tt>PacketData&lt;T&gt;::ChangeEventSpan</tt></td>
+    <td><tt>Packet::PacketChangeSpan</tt><br>
+    <tt>PacketData&lt;T&gt;::PacketChangeSpan</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Triangle&lt;3&gt;::Type</tt></td>
+    <td><tt>TriangleType</tt></td>
+    <td>This is now a global type, since it is now used with triangulations
+    of all dimensions.  The enumeration values have also been
+    renamed&mdash;see the discussion above regarding general changes to
+    enumerations.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Vertex&lt;3&gt;::LinkType</tt></td>
+    <td><tt>Vertex&lt;3&gt;::Link</tt></td>
+    <td>The enumeration values have also been renamed&mdash;see the
+    discussion above regarding general changes to enumerations.</td>
+</tr>
+<!------------------------------------------------------------------------->
+<tr><td class="deptype" colspan=4>Class Constructors</td></tr>
+<tr>
+    <td class="first"><tt>Laurent&lt;T&gt;(int exponent)</tt><br>
+    <tt>Laurent2&lt;T&gt;(int xExp, int yExp)</tt></td>
+    <td><tt>Laurent&lt;T&gt;::initExp(int exponent)</tt><br>
+    <tt>Laurent2&lt;T&gt;::initExp(int xExp, int yExp)</tt></td>
+    <td>This is deprecated because it was not clear to the casual reader
+    whether (for example) <tt>Laurent&lt;T&gt;(k)</tt>
+    creates the term <tt>x^k</tt> or the constant <tt>k</tt>.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Polynomial&lt;T&gt;(int degree)</tt></td>
+    <td><tt>Polynomial&lt;T&gt;::initExp(int degree)</tt></td>
+    <td>This is deprecated because it was not clear to the casual reader
+    whether <tt>Polynomial(k)</tt> creates the term <tt>x^k</tt> or the
+    constant <tt>k</tt>.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Triangulation&lt;3&gt;(const Link&amp;)</tt></td>
+    <td><tt>Link::complement()</tt></td>
+    <td>&nbsp;</td>
+</tr>
 <!------------------------------------------------------------------------->
 <tr><td class="deptype" colspan=4>Member Routines</td></tr>
+<tr>
+    <td class="removed"><tt>BoolSet::empty()</tt><br>
+    Removed in Regina&nbsp;7.4</td>
+    <td><tt>BoolSet::clear()</tt></td>
+    <td>This rename was to avoid confusion with the more common pattern where
+    <tt>empty()</tt> is a read-only query, not a destructive action.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Example&lt;3&gt;::cuspedGenusTwoTorus()</tt></td>
+    <td><tt>Example&lt;3&gt;::idealGenusTwoHandlebody()</tt></td>
+    <td>&nbsp;</td>
+</tr>
 <tr>
     <td class="first"><tt>Example&lt;3&gt;::whiteheadLink()</tt></td>
     <td><tt>Example&lt;3&gt;::whitehead()</tt></td>
@@ -112,6 +190,11 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>&nbsp;</td>
 </tr>
 <tr>
+    <td class="first"><tt>GroupPresentation::intelligentSimplify()</tt></td>
+    <td><tt>GroupPresentation::simplify()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
     <td class="removed"><tt>GroupPresentation::simplifyWord()</tt><br>
     Removed in Regina&nbsp;7.3</td>
     <td><tt>GroupPresentation::simplifyAndConjugate()</tt></td>
@@ -120,10 +203,74 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     was always a possibility, even before the renaming).</td>
 </tr>
 <tr>
+    <td class="first"><tt>HomGroupPresentation::intelligentNielsen()</tt><br>
+    <tt>HomGroupPresentation::intelligentSimplify()</tt></td>
+    <td><tt>HomGroupPresentation::nielsen()</tt><br>
+    <tt>HomGroupPresentation::simplify()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
     <td class="first"><tt>Isomorphism&lt;dim&gt;::apply()</tt><br>
     <tt>Isomorphism&lt;dim&gt;::applyInPlace()</tt></td>
     <td><tt>iso(tri)</tt><br><tt>tri&nbsp;=&nbsp;iso(tri)</tt></td>
     <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Laurent&lt;T&gt;::init(int exponent)</tt><br>
+    <tt>Laurent2&lt;T&gt;::init(int xExp, int yExp)</tt></td>
+    <td><tt>Laurent&lt;T&gt;::initExp(int exponent)</tt><br>
+    <tt>Laurent2&lt;T&gt;::initExp(int xExp, int yExp)</tt></td>
+    <td>This rename is to make it clear that (for example)
+    <tt>Laurent&lt;T&gt;::init(k)</tt>
+    initialises to <tt>x^k</tt> and not the just constant <tt>k</tt>.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Link::bracket(Algorithm, ProgressTracker*)</tt></td>
+    <td><tt>Link::bracket(Algorithm, int, ProgressTracker*)</tt></td>
+    <td>The new integer argument specifies the number of threads to use,
+    and defaults to 1.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Link::dumpConstruction()</tt></td>
+    <td><tt>Link::source()</tt></td>
+    <td>The new function also takes an optional programming language argument.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Link::fromKnotSig()</tt></td>
+    <td><tt>Link::fromSig()</tt></td>
+    <td>The old name is <i>not</i> deprecated, but the new name is preferred
+    since signatures now support multiple-component links also.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Link::intelligentSimplify()</tt></td>
+    <td><tt>Link::simplify()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Link::jones(Algorithm, ProgressTracker*)</tt></td>
+    <td><tt>Link::jones(Algorithm, int, ProgressTracker*)</tt></td>
+    <td>The new integer argument specifies the number of threads to use,
+    and defaults to 1.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Link::knotSig()</tt></td>
+    <td><tt>Link::sig()</tt></td>
+    <td>The old name is <i>not</i> deprecated, but the new name is preferred
+    since signatures now support multiple-component links also.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Matrix&lt;T&gt;::initialise()</tt></td>
+    <td><tt>Matrix&lt;T&gt;::fill()</tt></td>
+    <td>The rename clarifies that this routine has nothing to do with
+    initialised vs uninitialised matrices.</td>
+</tr>
+<tr>
+    <td class="removed"><tt>ModelLinkGraph::isValid()</tt><br>
+    Removed in Regina&nbsp;7.4</td>
+    <td>&mdash;</td>
+    <td>All graphs where <tt>isValid()</tt> used to return <tt>false</tt>
+    are now fully supported as of Regina&nbsp;7.4.
+    There is no such thing as an invalid graph any more.</td>
 </tr>
 <tr>
     <td class="first"><tt>NormalHypersurface::doubleHypersurface()</tt></td>
@@ -154,11 +301,85 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     a new <tt>cachedConjugate()</tt> routine for this instead.</td>
 </tr>
 <tr>
+    <td class="first"><tt>Polynomial&lt;T&gt;::init(int degree)</tt></td>
+    <td><tt>Polynomial&lt;T&gt;::initExp(int degree)</tt></td>
+    <td>This rename is to make it clear that <tt>init(k)</tt>
+    initialises to <tt>x^k</tt> and not the just constant <tt>k</tt>.</td>
+</tr>
+<tr>
+    <td class="first"><tt>TreeBag::subtype()</tt></td>
+    <td><tt>TreeBag::niceIndex()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>TreeBag::type()</tt></td>
+    <td><tt>TreeBag::niceType()</tt></td>
+    <td>This function also now returns a <tt>NiceType</tt> enumeration value,
+    not an <tt>int</tt>.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Triangle&lt;3&gt;::type()</tt><br>
+    <tt>Triangle&lt;3&gt;::subtype()</tt><br>
+    <tt>Triangle&lt;3&gt;::isMobiusBand()</tt><br>
+    <tt>Triangle&lt;3&gt;::isCone()</tt></td>
+    <td><tt>Triangle&lt;3&gt;::triangleType()</tt><br>
+    <tt>Triangle&lt;3&gt;::triangleSubtype()</tt><br>
+    <tt>Triangle&lt;3&gt;::formsMobiusBand()</tt><br>
+    <tt>Triangle&lt;3&gt;::formsCone()</tt></td>
+    <td>These routines are also now available for (2-D) triangles within
+    triangulations of any dimension &ge;&nbsp;3.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Triangulation&lt;dim&gt;::barycentricSubdivision()</tt></td>
+    <td><tt>Triangulation&lt;3&gt;::subdivide()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Triangulation&lt;dim&gt;::dumpConstruction()</tt></td>
+    <td><tt>Triangulation&lt;dim&gt;::source()</tt></td>
+    <td>The new function also takes an optional programming language argument.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Triangulation&lt;dim&gt;::finiteToIdeal()</tt></td>
+    <td><tt>Triangulation&lt;dim&gt;::makeIdeal()</tt></td>
+    <td>The old name is <i>not</i> deprecated, but the new name is preferred
+    since it matches the terminology used in the graphical user interface.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Triangulation&lt;3&gt;::fourFourMove()</tt><br>
+    <tt>Triangulation&lt;4&gt;::fourFourMove()</tt></td>
+    <td><tt>Triangulation&lt;3&gt;::move44()</tt><br>
+    <tt>Triangulation&lt;4&gt;::move44()</tt></td>
+    <td>See also the general discussion above regarding the overhaul of how
+    elementary moves work in Regina.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Triangulation&lt;3&gt;::idealToFinite()</tt><br>
+    <tt>Triangulation&lt;4&gt;::idealToFinite()</tt></td>
+    <td><tt>Triangulation&lt;3&gt;::truncateIdeal()</tt><br>
+    <tt>Triangulation&lt;4&gt;::truncateIdeal()</tt></td>
+    <td>The old name is <i>not</i> deprecated, but the new name is preferred
+    since it matches the terminology used in the graphical user interface.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Triangulation&lt;3&gt;::intelligentSimplify()</tt><br>
+    <tt>Triangulation&lt;4&gt;::intelligentSimplify()</tt></td>
+    <td><tt>Triangulation&lt;3&gt;::simplify()</tt><br>
+    <tt>Triangulation&lt;4&gt;::simplify()</tt></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
     <td class="removed"><tt>Triangulation&lt;3&gt;::isHandlebody()</tt><br>
     Removed in Regina&nbsp;7.2</td>
     <td><tt>Triangulation&lt;3&gt;::recogniseHandlebody()</tt></td>
     <td>This returns an integer genus, not a boolean, and so the
     name has been changed to avoid any misinterpretation.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Triangulation&lt;dim&gt;::makeDoubleCover()</tt></td>
+    <td><tt>Triangulation&lt;dim&gt;::doubleCover()</tt></td>
+    <td>The new function also returns the double cover as a new triangulation,
+    instead of modifying the current triangulation.</td>
 </tr>
 <tr>
     <td class="first"><tt>Triangulation&lt;3&gt;::minimizeBoundary()</tt><br>
@@ -168,9 +389,39 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>Regina uses British English consistently throughout its API.</td>
 </tr>
 <tr>
-    <td class="first"><tt>Triangulation&lt;dim&gt;::barycentricSubdivision()</tt></td>
-    <td><tt>Triangulation&lt;3&gt;::subdivide()</tt></td>
+    <td class="first"><tt>Triangulation&lt;3&gt;::puncture(Tetrahedron&lt;3&gt;*)</tt></td>
+    <td><tt>Triangulation&lt;3&gt;::puncture(Triangle&lt;3&gt;*)</tt></td>
+    <td>The location argument (i.e., the triangle) is also now optional.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Triangulation&lt;3&gt;::reorderTetrahedraBFS()</tt></td>
+    <td><tt>Triangulation&lt;3&gt;::reorderBFS()</tt></td>
+    <td>This function is also now available in all dimensions.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Triangulation&lt;dim&gt;::simplifiedFundamentalGroup()</tt></td>
+    <td><tt>Triangulation&lt;dim&gt;::setGroupPresentation()</tt></td>
     <td>&nbsp;</td>
+</tr>
+<tr>
+    <td class="first"><tt>Triangulation&lt;3&gt;::twoOneMove()</tt></td>
+    <td><tt>Triangulation&lt;3&gt;::move21()</tt></td>
+    <td>See also the general discussion above regarding the overhaul of how
+    elementary moves work in Regina.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Triangulation&lt;dim&gt;::twoZeroMove()</tt></td>
+    <td><tt>Triangulation&lt;dim&gt;::move20()</tt></td>
+    <td>These moves are also now available in all dimensions,
+    not just dimensions 3 and 4.
+    See also the general discussion above regarding the overhaul of how
+    elementary moves work in Regina.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Triangulation&lt;3&gt;::zeroTwoMove()</tt></td>
+    <td><tt>Triangulation&lt;3&gt;::move02()</tt></td>
+    <td>See also the general discussion above regarding the overhaul of how
+    elementary moves work in Regina.</td>
 </tr>
 <!------------------------------------------------------------------------->
 <tr><td class="deptype" colspan=4>Global Routines</td></tr>
@@ -179,13 +430,39 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td><tt>std::gcd()</tt><br><tt>std::lcm()</tt></td>
     <td>GCD and LCM are now offered as part of the C++17 standard.</td>
 </tr>
-<!------------------------------------------------------------------------->
-<!--tr><td class="deptype" colspan=4>Class Constants</td></tr>
 <tr>
-    <td class="first"><tt>DiscType::NONE</tt></td>
-    <td><tt>DiscType()</tt></td>
-    <td>&nbsp;</td>
-</tr-->
+    <td class="first"><tt>regina::simpler()</tt></td>
+    <td><tt>regina::simplerThreeWay()</tt></td>
+    <td>These functions compare 2&times;2 matrices, or pairs of matrices.
+    This change is like replacing a strict less-than operator
+    <tt>a&nbsp;&lt;&nbsp;b</tt> with a spaceship operator
+    <tt>a&nbsp;&lt;=&gt;&nbsp;b</tt>.</td>
+</tr>
+<!------------------------------------------------------------------------->
+<tr><td class="deptype" colspan=4>Class Constants</td></tr>
+<tr>
+    <td class="first"><tt>Perm&lt;n&gt;::nPerms_1</tt></td>
+    <td><tt>Perm&lt;n-1&gt;::nPerms</tt></td>
+    <td>This deprecates old class constants such as
+    <tt>Perm&lt;4&gt;::nPerms_1</tt>.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Perm&lt;n&gt;::S<i>k</i>[i]</tt>,
+    where <i>k</i>&nbsp;&lt;&nbsp;<i>n</i><br>
+    <tt>Perm&lt;n&gt;::orderedS<i>k</i>[i]</tt>,
+    where <i>k</i>&nbsp;&lt;&nbsp;<i>n</i></td>
+    <td><tt>Perm&lt;n&gt;::extend(Perm&lt;k&gt;::Sn[i])</tt><br>
+    <tt>Perm&lt;n&gt;::extend(Perm&lt;k&gt;::orderedSn[i])</tt></td>
+    <td>This deprecates old class constants such as
+    <tt>Perm&lt;7&gt;::S5</tt> or
+    <tt>Perm&lt;4&gt;::orderedS3</tt>.</td>
+</tr>
+<tr>
+    <td class="first"><tt>Perm&lt;n&gt;::Sn_1[i]</tt></td>
+    <td><tt>Perm&lt;n&gt;::extend(Perm&lt;n-1&gt;::Sn[i])</tt></td>
+    <td>This deprecates old class constants such as
+    <tt>Perm&lt;4&gt;::Sn_1</tt>.</td>
+</tr>
 <!------------------------------------------------------------------------->
 <!--tr><td class="deptype" colspan=4>Global Constants</td></tr>
 <tr>
@@ -195,6 +472,16 @@ The red cells indicate code that has <b>already been removed</b> from Regina.
     <td>The corresponding class <tt>SurfaceFilter</tt> is now an
     abstract base class, and can no longer be instantiated directly.</td>
 </tr-->
+<!------------------------------------------------------------------------->
+<tr><td class="deptype" colspan=4>Macros</td></tr>
+<tr>
+    <td class="first"><tt>ENABLE_MEMBER_FOR_REGINA_INTEGER</tt></td>
+    <td><tt>static_assert(&hellip;)</tt></td>
+    <td>The suggested alternative (which is what Regina does now) is to use a
+    <tt>static_assert</tt> to ensure that the member function in question is
+    only instantiated for appropriate types.  See <tt>Matrix&lt;T&gt;</tt>
+    for some examples.</td>
+</tr>
 </tbody></table>
 
 
