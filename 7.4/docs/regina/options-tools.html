@@ -1,0 +1,37 @@
+<html><head><title>Tools Options</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina 7.4 Handbook"><link rel="up" href="options.html" title="Chapter 10. Configuration"><link rel="prev" href="options-python.html" title="Python Options"><link rel="next" href="compiling.html" title="Chapter 11. Compiling Regina Into a C++ Project"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Tools Options</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="options-python.html">Prev</a></td><td align="center" class="navCenter" width="34%">Configuration</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="compiling.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="options-tools"></a>Tools Options</h2></div></div></div><p>
+   The <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Tools</span></span> options panel controls how
+   <span class="application">Regina</span> works with third-party software.
+  </p><p>
+   <span class="inlinemediaobject"><img src="options-tools.png" srcset="options-tools@2x.png 2x, options-tools.png"></span>
+  </p><p>
+   The settings here are:
+  </p><div class="glosslist"><dl><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Diagnostic messages from <span class="application">SnapPea</span></span></span></dt><dd><p>
+      Specifies whether the <span class="application">SnapPea</span> kernel should write
+      diagnostic messages to the terminal.
+     </p><p>
+      When you are working with the <span class="application">SnapPea</span> kernel (for instance, if
+      you are using a <a href="snappea.html" title="Chapter 4. SnapPea Triangulations"><span class="application">SnapPea</span> triangulation</a>,
+      or visiting <span class="application">Regina</span>'s <a href="tri-analysis.html#tri-snappea" title="SnapPea Calculations (3-D)"><span class="application">SnapPea</span> tab</a>),
+      the <span class="application">SnapPea</span> kernel sometimes sends out messages indicating what
+      it is doing.  An example of such a message might be
+      “<span class="emphasis"><em>Computing hyperbolic structure
+      . . .</em></span>”.
+     </p><p>
+      If this option is checked, then all such messages will be written to
+      the terminal from which you started <span class="application">Regina</span>.
+      If this is unchecked (or if you started <span class="application">Regina</span> some other way,
+      such as from a menu or taskbar), then these messages will be suppressed.
+     </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel"><span class="application"><span class="acronym">GAP</span></span> executable</span></span></dt><dd><p>
+      Tells <span class="application">Regina</span> where to find <a href="http://www.gap-system.org/" target="_top"><span class="application"><span class="acronym">GAP</span>
+   (Groups, Algorithms and Programming)</span></a>.  <span class="application"><span class="acronym">GAP</span></span> is not
+      required by <span class="application">Regina</span>, but if it is installed then it can help
+      <a href="tri-analysis.html#tri-algebra-fund" title="Fundamental Group">simplify group presentations</a>.
+     </p><p>
+      This setting should be the name of the command that starts
+      <span class="application"><span class="acronym">GAP</span></span> (the default is simply <code class="literal">gap</code>).
+      <span class="application">Regina</span> will look for this command on the default search path.
+      If you have installed <span class="application"><span class="acronym">GAP</span></span> somewhere unusual then you will need to
+      provide the full path to the executable
+      (such as <code class="literal">/usr/local/bin/gap</code>).
+     </p></dd></dl></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="options-python.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="compiling.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft"><span class="application">Python</span> Options </td><td width="34%" align="center" class="navCenter"><a href="options.html">Up</a></td><td width="33%" align="right" class="navRight"> Compiling Regina Into a <span class="application">C++</span> Project</td></tr></table></div></body></html>

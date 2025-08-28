@@ -1,0 +1,55 @@
+<html><head><title>connections</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Regina, XML, Data files"><link rel="start" href="index.html" title="Regina 7.4 File Format Reference"><link rel="up" href="dataformat.html" title="Current Data File Format"><link rel="prev" href="data-connected.html" title="connected"><link rel="next" href="data-container.html" title="container"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>connections</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="data-connected.html">Prev</a></td><td align="center" class="navCenter" width="34%">Current Data File Format</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="data-container.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="data-connections"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>connections — The connections between crossings in a knot/link diagram</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="informaltable"><table border="1"><colgroup><col><col></colgroup><tbody><tr><td colspan="2">
+      <span class="bold"><strong>Content Model</strong></span>
+     </td></tr><tr><td colspan="2">
+<pre class="synopsis">
+connections ::= (#PCDATA)</pre>
+     </td></tr></tbody></table></div></div><div class="refsect1" lang="en"><a name="id1551"></a><h2>Description</h2><p>
+   A <a href="data-connections.html" title="connections"><code class="sgmltag-element">connections</code></a> element encodes the connections between the
+   different crossings in a knot/link diagram.
+   Recall that knot/link diagrams in <span class="application">Regina</span> are oriented, and the
+   crossings in a diagram are numbered 0, 1, 2, and so on.
+  </p><p>
+   If a link diagram has <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span> crossings, then
+   the character data of this <span class="acronym">XML</span> element should be a
+   whitespace-separated list of exactly 2<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span> tokens.
+   These represent the connections from the upper strand of
+   crossing 0, then the lower strand of crossing 0,
+   then the upper strand of crossing 1, then the lower strand of
+   crossing 1, and so on.
+   By “the connection from” some strand of some
+   crossing, we mean the <span class="emphasis"><em>next</em></span> crossing that you
+   encounter if you traverse the (oriented) link from the original
+   strand/crossing.
+  </p><p>
+   Each such token encodes either the upper or lower strand of some crossing.
+   It should be in the form
+   <code class="literal">^</code><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>k</code></em></span> to encode the
+   upper strand of crossing number <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>k</code></em></span>,
+   or the form <code class="literal">_</code><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>k</code></em></span> to encode the
+   lower strand of crossing number <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>k</code></em></span>.
+   Here the symbols <code class="literal">^</code> and <code class="literal">_</code> are
+   literal characters, whereas <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>k</code></em></span> should be
+   replaced by a crossing number.
+  </p><div class="refsect2" lang="en"><a name="id1572"></a><h3>Parents</h3><p>
+    The following elements contain <code class="sgmltag-element">connections</code>:
+    <span class="simplelist"><a href="data-link.html" title="link"><code class="sgmltag-element">link</code></a></span>.
+   </p></div><div class="refsect2" lang="en"><a name="id1580"></a><h3>Children</h3><p>
+    Element <code class="sgmltag-element">connections</code> has no children.
+   </p></div></div><div class="refsect1" lang="en"><a name="id1584"></a><h2>Example</h2><p>
+   The following <span class="acronym">XML</span> snippet represents the Whitehead link.
+  </p><pre class="programlisting">
+&lt;crossings size="5"&gt;
+- - + + -
+&lt;/crossings&gt;
+&lt;connections&gt;
+_1 ^1
+_2 ^4
+_4 ^3
+_0 ^2
+_3 ^0
+&lt;/connections&gt;
+&lt;components size="2"&gt;
+^0 _0
+&lt;/components&gt;
+  </pre></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="data-connected.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="data-container.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">connected </td><td width="34%" align="center" class="navCenter"><a href="dataformat.html">Up</a></td><td width="33%" align="right" class="navRight"> container</td></tr></table></div></body></html>

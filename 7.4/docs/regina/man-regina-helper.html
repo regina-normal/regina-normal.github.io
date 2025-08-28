@@ -1,0 +1,201 @@
+<html><head><title>regina-helper</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina 7.4 Handbook"><link rel="up" href="utils-compilation.html" title="Appendix C. Command Line: Compiling and Linking"><link rel="prev" href="man-regina-engine-config.html" title="regina-engine-config"><link rel="next" href="history.html" title="Appendix D. Version History"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>regina-helper</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="man-regina-engine-config.html">Prev</a></td><td align="center" class="navCenter" width="34%">Command Line: Compiling and Linking</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="history.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="man-regina-helper"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>regina-helper — Helper utility for working with a <span class="application">Regina</span> installation</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-helper</strong></span></span> {<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>action</code></em></span>} [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>args</code></em></span>...]</p></div><div class="cmdsynopsis"><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-helper</strong></span></span> {<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>action</code></em></span>} [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--help</code></span>]</p></div></div><div class="refsect1" lang="en"><a name="id9413"></a><h2>Description</h2><p>
+    This utility understands the layout of your <span class="application">Regina</span> installation, and it
+    can help you with a variety of tasks that require this knowledge.
+    For example, it can create Makefiles and/or sample <span class="application">C++</span> code for you,
+    or help you run <span class="application">Regina</span>'s test suite.
+   </p><p>
+    The first argument to <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-helper</strong></span></span> should be an
+    action, indicating what you want the utility to do.  The available actions
+    are described in detail below.
+    To learn more about what an action does, you can run
+    <strong class="userinput"><code>regina-helper <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>action</code></em></span> --help</code></strong>.
+   </p><p>
+    This utility is available in most but not all settings:
+    </p><div class="itemizedlist"><ul type="disc"><li><p>
+      If you are using <span class="application"><span class="acronym">GNU</span>/Linux</span> and you have <span class="application">Regina</span> installed in a system
+      location (e.g., beneath <code class="filename">/usr/</code> or
+      <code class="filename">/usr/local/</code>), then <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-helper</strong></span></span>
+      should be included with your installation, and any output it produces
+      should be relative to this system installation.
+     </p></li><li><p>
+      If you are using <span class="application">macOS</span> and you are running <span class="application">Regina</span> from an app
+      bundle (which might be under <code class="filename">/Applications/</code> or
+      might be somewhere else), then you can run
+      <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-helper</strong></span></span> from within the app bundle
+      (<code class="filename">.../Regina.app/Contents/MacOS/regina-helper</code>),
+      and any output it produces should be relative to this app bundle.
+     </p></li><li><p>
+      If you are building <span class="application">Regina</span> yourself from the source tree (on any
+      platform), then you can run <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-helper</strong></span></span>
+      from the source tree, and any output it produces should be relative
+      to this same source tree.  In particular, it will not assume that you
+      have actually installed <span class="application">Regina</span>.
+     </p></li><li><p>
+      If you are using pre-built packages for <span class="application">Regina</span> on <span class="application">Windows</span>,
+      then <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-helper</strong></span></span> will not be included in your
+      installation.
+     </p></li></ul></div><p>
+   </p></div><div class="refsect1" lang="en"><a name="id9450"></a><h2>Actions</h2><p>
+    The first argument to <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-helper</strong></span></span> should be one of
+    the following actions:
+   </p><div class="variablelist"><dl><dt><span class="term"><code class="literal">installtype</code></span></dt><dd><p>
+       Writes a single token to standard output identifying the type of
+       <span class="application">Regina</span> installation.
+      </p><pre class="screen">
+    <code class="prompt">example$</code> <strong class="userinput"><code>regina-helper installtype</code></strong>
+    XDG
+    <code class="prompt">example$</code>
+</pre><p>
+       The output will be one of the following:
+       </p><div class="glosslist"><dl><dt>XDG</dt><dd><p>
+          Indicates that you are running <span class="application">Regina</span> from an installation in a
+          fixed location that follows the freedesktop.org layout.
+          This is seen with <span class="application">Regina</span>'s <span class="application"><span class="acronym">GNU</span>/Linux</span> packages, as well as local
+          <span class="application">CMake</span> builds with no special arguments.
+         </p></dd><dt>HPC</dt><dd><p>
+          Indicates that you are running <span class="application">Regina</span> from a slimmed-down
+          installation (e.g., no <span class="acronym">GUI</span> or <span class="acronym">HTML</span> docs), which is installed
+          in a fixed but possibly non-standard location, suitable
+          for builds on high-performance computing systems.
+          This is typically seen with local <span class="application">CMake</span>
+          builds where <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="parameter"><em class="parameter"><code>REGINA_INSTALL_TYPE</code></em></span>
+          was explicitly set to <code class="literal">HPC</code>.
+         </p></dd><dt>Bundle</dt><dd><p>
+          Indicates that you are running <span class="application">Regina</span> from within a <span class="application">macOS</span>
+          app bundle.
+         </p></dd><dt>Windows</dt><dd><p>
+          Indicates that you are running <span class="application">Regina</span> from within <span class="application">Regina</span>'s
+          <span class="application">Windows</span> app.  It is unlikely that you will see this of course,
+          since <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-helper</strong></span></span> is not shipped with <span class="application">Windows</span>
+          installations.
+         </p></dd><dt>Source</dt><dd><p>
+          Indicates that you are running <span class="application">Regina</span> directly from the source
+          tree (i.e., a local build that has not necessarily been installed).
+         </p></dd></dl></div><p>
+      </p><p>
+       The <code class="literal">installtype</code> action takes no additional arguments.
+      </p></dd><dt><span class="term"><code class="literal">makefile</code></span></dt><dd><p>
+       Creates a Makefile in the current directory, suitable for compiling
+       <span class="application">C++</span> programs against <span class="application">Regina</span>.  In particular, once you have your
+       Makefile in place, you can (for example) compile a <span class="application">C++</span> program
+       <code class="filename">foo.cc</code> just by running
+       <strong class="userinput"><code>make foo</code></strong>.
+      </p><p>
+       The main reason for using this Makefile is that it includes
+       compiler and linker flags for accessing <span class="application">Regina</span>'s <span class="application">C++</span> calculation
+       engine.  (In particular, using this Makefile is a simpler alternative
+       to extracting compiler and linker flags from
+       <a href="man-regina-engine-config.html" title="regina-engine-config"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-engine-config</strong></span></span></a>.)
+      </p><p>
+       The <code class="literal">makefile</code> action accepts the optional arguments
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--force</code></span> and/or <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--rpath</code></span>;
+       these are described below.
+      </p></dd><dt><span class="term"><code class="literal">cc</code>, <code class="literal">cpp</code></span></dt><dd><p>
+       Creates a Makefile in the current directory that is suitable for
+       compiling <span class="application">C++</span> programs against <span class="application">Regina</span>, as well as a sample <span class="application">C++</span>
+       program that can be used as a starting point for your own code.
+      </p><pre class="screen">
+    <code class="prompt">example$</code> <strong class="userinput"><code>regina-helper cc</code></strong>
+    Writing sample.cc...
+    Preparing Makefile...
+    <code class="prompt">example$ ls</code>
+    Makefile  sample.cc
+    <code class="prompt">example$</code>
+</pre><p>
+       See the <code class="literal">makefile</code> action above for further discussion
+       of how you can use this Makefile.
+      </p><p>
+       The <span class="application">C++</span> source file will be called either
+       <code class="filename">sample.cc</code> or <code class="filename">sample.cpp</code>,
+       depending on whether you gave
+       <code class="literal">cc</code> or <code class="literal">cpp</code> as the action argument
+       to <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-helper</strong></span></span>.
+      </p><p>
+       The <code class="literal">cc</code> / <code class="literal">cpp</code>
+       action accepts the optional arguments
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--force</code></span> and/or <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--rpath</code></span>;
+       these are described below.
+      </p></dd><dt><span class="term"><code class="literal">test</code></span></dt><dd><p>
+       Runs <span class="application">Regina</span>'s detailed <span class="application">C++</span> calculation engine test suite.
+      </p><p>
+       <span class="application">Regina</span> has a large and thorough test suite, designed to guard against
+       system incompatibilities and/or unforseen bugs.  This test suite
+       includes several components that target the <span class="application">C++</span> calculation engine,
+       the <span class="application">Python</span> bindings, and the command-line utilities.  The bulk of the
+       tests are for the <span class="application">C++</span> calculation engine, and those are the tests
+       that will be run here.
+      </p><pre class="screen">
+    <code class="prompt">example$</code> <strong class="userinput"><code>regina-helper test</code></strong>
+    Running C++ test suite from the installation beneath /usr/local/.
+    
+    [==========] Running 522 tests from 53 test suites.
+    [----------] Global test environment set-up.
+    [----------] 2 tests from AbelianGroupTest
+    [ RUN      ] AbelianGroupTest.incrementalBuild
+    [       OK ] AbelianGroupTest.incrementalBuild (0 ms)
+    [ RUN      ] AbelianGroupTest.tightEncoding
+    [       OK ] AbelianGroupTest.tightEncoding (0 ms)
+    [----------] 2 tests from AbelianGroupTest (1 ms total)
+    
+    [----------] 6 tests from CoversTest
+    [ RUN      ] CoversTest.trivial
+    [       OK ] CoversTest.trivial (2 ms)
+    ...
+</pre><p>
+       The <span class="application">C++</span> test suite uses the <span class="application">Google Test</span>
+       framework, which supports many different arguments to customise your
+       test suite run.  Any additional arguments that you supply with the
+       <code class="literal">test</code> action will be passed directly through to
+       <span class="application">Google Test</span>.
+       You can run <strong class="userinput"><code>regina-helper test --help</code></strong> to see
+       what all of these possible arguments are.
+      </p></dd><dt><span class="term"><code class="literal">help</code></span></dt><dd><p>
+       Outputs usage information for the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-helper</strong></span></span>
+       utility.
+      </p><p>
+       This action takes no additional arguments.
+      </p></dd></dl></div></div><div class="refsect1" lang="en"><a name="id9583"></a><h2>Options</h2><div class="variablelist"><dl><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--force</code></span></span></dt><dd><p>
+       Overwrites any existing files (such as <code class="filename">Makefile</code>,
+       or <code class="filename">sample.cc</code>).  By default,
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-helper</strong></span></span> will not overwrite a file that already
+       exists.
+      </p><p>
+       This option is used with the <code class="literal">makefile</code> and
+       <code class="literal">cc</code> / <code class="literal">cpp</code> actions.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--rpath</code></span></span></dt><dd><p>
+       Always uses an rpath option in the linker flags
+       within the Makefile that is created.
+       This is useful for when your <span class="application">Regina</span> installation is not on the
+       standard library path.
+      </p><p>
+       If your program compiles and links correctly but crashes when you
+       run it because it cannot find the library
+       <code class="filename">libregina-engine.so</code>, then the
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--rpath</code></span> option might solve your problem.
+       (You will of course need to rebuild your program after updating
+       the Makefile.)
+      </p><p>
+       By default, an rpath option will only be used if you are running
+       <span class="application">Regina</span> directly out of the source tree.
+      </p><p>
+       This option is used with the <code class="literal">makefile</code> and
+       <code class="literal">cc</code> / <code class="literal">cpp</code> actions.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--help</code></span></span></dt><dd><p>
+       Outputs detailed usage information for a particular
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-helper</strong></span></span> action.
+      </p><pre class="screen">
+    <code class="prompt">example$</code> <strong class="userinput"><code>regina-helper test --help</code></strong>
+    Usage: /usr/local/bin/regina-helper test [testsuite_args...]
+    
+    Runs Regina's C++ test suite.
+    ...
+</pre></dd></dl></div></div><div class="refsect1" lang="en"><a name="id9622"></a><h2>See Also</h2><p>
+    <a href="man-regina-engine-config.html" title="regina-engine-config">regina-engine-config</a>.
+   </p></div><div class="refsect1" lang="en"><a name="id9626"></a><h2>Author</h2><p>
+    This utility was written by Benjamin Burton
+    <code class="email">&lt;<a href="mailto:bab@maths.uq.edu.au">bab@maths.uq.edu.au</a>&gt;</code>.
+    Many people have been involved in the development
+   of <span class="application">Regina</span>; see the <a href="credits.html#acknowledgements" title="Acknowledgements">acknowledgements
+   page</a> for a full list of credits.
+   </p></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="man-regina-engine-config.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="history.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">regina-engine-config </td><td width="34%" align="center" class="navCenter"><a href="utils-compilation.html">Up</a></td><td width="33%" align="right" class="navRight"> Version History</td></tr></table></div></body></html>

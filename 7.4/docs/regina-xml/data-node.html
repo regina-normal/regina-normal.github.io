@@ -1,0 +1,29 @@
+<html><head><title>node</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Regina, XML, Data files"><link rel="start" href="index.html" title="Regina 7.4 File Format Reference"><link rel="up" href="dataformat.html" title="Current Data File Format"><link rel="prev" href="data-link.html" title="link"><link rel="next" href="data-oneeff.html" title="oneeff"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>node</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="data-link.html">Prev</a></td><td align="center" class="navCenter" width="34%">Current Data File Format</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="data-oneeff.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="data-node"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>node — An individual 3-dimensional point in a spatial link</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="informaltable"><table border="1"><colgroup><col><col></colgroup><tbody><tr><td colspan="2">
+      <span class="bold"><strong>Content Model</strong></span>
+     </td></tr><tr><td colspan="2">
+<pre class="synopsis">
+node ::= (#PCDATA)</pre>
+     </td></tr></tbody></table></div></div><div class="refsect1" lang="en"><a name="id3903"></a><h2>Description</h2><p>
+   A <a href="data-node.html" title="node"><code class="sgmltag-element">node</code></a> element encodes a single 3-dimensional point in a spatial link.
+  </p><p>
+   The character data of this <span class="acronym">XML</span> element should consist of three floating
+   point numbers, representing the
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>x</code></em></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>y</code></em></span> and
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>z</code></em></span> coordinates of the point.
+  </p><p>
+   <span class="application">Regina</span> writes the individual coordinates using hexadecimal floating point
+   format to ensure no loss of precision; however, any standard
+   floating point format may be used.
+  </p><div class="refsect2" lang="en"><a name="id3915"></a><h3>Parents</h3><p>
+    The following elements contain <code class="sgmltag-element">node</code>:
+    <span class="simplelist"><a href="data-component.html" title="component"><code class="sgmltag-element">component</code></a></span>.
+   </p></div><div class="refsect2" lang="en"><a name="id3923"></a><h3>Children</h3><p>
+    Element <code class="sgmltag-element">node</code> has no children.
+   </p></div></div><div class="refsect1" lang="en"><a name="id3927"></a><h2>Example</h2><p>
+   The following <span class="acronym">XML</span> snippet represents the point
+   (-5.00478, -2.20299, 0.670091), using hexadecimal floating point
+   format to represent the individual coordinates.
+  </p><pre class="programlisting">
+&lt;node&gt; -0x1.404e48p+2 -0x1.19fb74p+1 0x1.57163p-1 &lt;/node&gt;
+  </pre></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="data-link.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="data-oneeff.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">link </td><td width="34%" align="center" class="navCenter"><a href="dataformat.html">Up</a></td><td width="33%" align="right" class="navRight"> oneeff</td></tr></table></div></body></html>
