@@ -205,7 +205,7 @@ table.data td.deptype {
   font-weight: bold;
 }
 
-div.example p, div.specific p, div.announce p, div.warning p, pre.example {
+div.example p, div.specific p, div.announce p, div.warning p, div.notready p, pre.example {
   padding: 1ex 1ex 1ex 1ex;
 }
 
@@ -243,16 +243,19 @@ div.announce b {
   color: #3D3F53;
 }
 
-div.warning p {
+div.warning p, div.notready p {
   background-color: #FFEBEB;
   border-width: 1px;
   border-color: #C98686;
   border-style: solid;
+}
+
+div.warning p {
   margin-left: 5ex;
   margin-right: 5ex;
 }
 
-div.warning b {
+div.warning b, div.notready b {
   color: #502525;
 }
 
