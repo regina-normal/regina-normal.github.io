@@ -23,12 +23,12 @@ Updated data: 31 May 2018></h4-->
 <tr><td valign="top" rowspan=3>
     <table class="contents" cellspacing=0><tbody>
     <tr><td><a href="#news">News</a></td></tr>
-    <tr><td><a href="#whatis">What does Regina do?</a></td></tr>
+    <tr><td><a href="#whatis">What is Regina?</a></td></tr>
     <tr><td><a href="#screenshots">Screenshots</a></td></tr>
     <tr><td><a href="#download">Download</a></td></tr>
     <tr><td><a href="#docs">Documentation</a></td></tr>
     <tr><td><a href="#new">What's new in version 7.4?</a></td></tr>
-    <tr><td><a href="#announce">Announcement mailing list</a></td></tr>
+    <tr><td><a href="#announce">Release announcements</a></td></tr>
     <tr><td><a href="#license">License and citation</a></td></tr>
     <tr><td><a href="#contact">Contact</a></td></tr>
     </tbody></table>
@@ -217,12 +217,15 @@ such as those in your <tt>Applications</tt> folder.
 <b>Regarding security:</b>
 <ul>
 <li>The website download is cryptographically signed with Ben Burton's Apple
-developer certificate, and macOS will verify this when you first try to run
-Regina.  You should see a message like
+developer certificate, and has been pre-screened (notarised) by Apple.
+macOS will verify all of this when you first try to run Regina.
+You should see a message like
 <i>&ldquo;Regina is an app downloaded from the internet&hellip;
 Apple checked it for malicious software and none was detected.&rdquo;</i>.</li>
-<li>The App Store version like everything on the App Store) has a chain of
-cryptographic signatures that will be verified when you install Regina.</li>
+<li>The App Store version has been screened by both machines and humans at
+Apple, and has a chain of cryptographic signatures that certify this.
+These signatures will be verified when you install Regina via the
+App Store.</li>
 </ul>
 
 <a name="windows"><h4 class="divide">Windows</h4></a>
@@ -252,7 +255,7 @@ system (e.g., macOS or GNU/Linux).
 <p class="header">
 <b>Regarding security:</b>
 <ul>
-<li>When download or running the installer you may see a security warning,
+<li>When downloading or running the installer you may see a security warning,
 such as <i>&ldquo;Microsoft Defender SmartScreen prevented an
 unrecognized app from starting&hellip;&rdquo;</i>, or a message that
 <i>&ldquo;Microsoft Defender SmartScreen couldn't verify if this file
@@ -343,7 +346,7 @@ Together these cover almost any typical desktop or laptop nowadays.
 <li>
 If you have a more exotic chipset that is not in the table above, you can try
 downloading the <tt>regina-normal</tt> source package (which is provided for all
-of the distributions above except for Arch Linux) and use this to build a
+distributions above except for Arch Linux), and use this to build a
 binary package yourself (e.g., using <tt>debuild</tt> or <tt>rpmbuild</tt>).
 Alternatively, if you really want a ready-made binary package, you could try
 the <a href="install/debian.html#unstable">Debian&nbsp;unstable packages</a>,
@@ -380,8 +383,8 @@ then you will need to <a href="#source">build Regina from source</a>.
 <b>Regarding security:</b>
 <ul>
 <li>All of Regina's GNU/Linux repositories use cryptographic signatures to
-verify the integrity of the packages.  Follow the <i>Install</i> link above
-for your GNU/Linux distribution to see how to make use of this.</li>
+verify the integrity of the packages.  Follow the appropriate <i>Install</i>
+link above for details.</li>
 </ul>
 
 <a name="sage"><h4 class="divide">PyPI&nbsp;/&nbsp;SageMath</h4></a>
@@ -532,19 +535,18 @@ for details.</li>
 <p>
 <i><a href="#contents">(Back to contents...)</a></i>
 
-<h2><a name="announce">Announcement Mailing List</a></h2>
+<h2><a name="announce">Release announcements</a></h2>
 
-You are welcome to subscribe to the announcement list
-<b>regina-announce@lists.sourceforge.net</b> (this list is still hosted
-on SourceForge, and will transition at a later date).
-This is a moderated list with extremely low traffic, and is only used for
-major announcements such as new releases of Regina.  You can
-<a href="http://lists.sourceforge.net/lists/listinfo/regina-announce">subscribe
-or unsubscribe here</a>.
+The old SourceForge mailing lists have now been decommissioned.
+<p>
+To be notified of new releases, you can instead subscribe to Regina's releases
+directly on GitHub.  See the
+<a href="https://regina-normal.github.io/docs/services.html">Regina Handbook</a>
+for details.
 <p>
 <i><a href="#contents">(Back to contents...)</a></i>
 
-<h2><a name="license">License and Citation</a></h2>
+<h2><a name="license">License and citation</a></h2>
 
 The primary developers of Regina are
 <a href="http://www.maths.uq.edu.au/~bab/">Benjamin Burton</a>,
@@ -598,8 +600,8 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
 Public License for more details.
 <p>
 You should have received a copy of the GNU General Public License along
-with this program; if not, write to the Free Software Foundation, Inc.,
-51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
+with this program; if not, see
+<a href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>.
 
 <h4>Detailed License</h4>
 
@@ -633,7 +635,7 @@ You can contact us by email: our websites are linked to our names in the
 <p>
 <i><a href="#contents">(Back to contents...)</a></i>
 
-<h2><a name="privacy">Privacy Policy</a></h2>
+<h2><a name="privacy">Privacy policy</a></h2>
 
 Regina does not collect any data.
 <p>
