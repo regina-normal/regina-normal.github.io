@@ -205,6 +205,10 @@ table.data td.deptype {
   font-weight: bold;
 }
 
+body.deprecation b {
+  color: #3D3F53;
+}
+
 div.example p, div.specific p, div.announce p, div.warning p, div.notready p, pre.example {
   padding: 1ex 1ex 1ex 1ex;
 }
@@ -266,10 +270,6 @@ span.question {
   border-width: 0px 0px 2px 0px;
   border-color: #B5BCF8;
   border-style: solid;
-}
-
-body.deprecation b {
-  color: #3D3F53;
 }
 
 span.placeholder {
