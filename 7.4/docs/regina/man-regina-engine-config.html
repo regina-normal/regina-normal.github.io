@@ -1,0 +1,63 @@
+<html><head><title>regina-engine-config</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina 7.4 Handbook"><link rel="up" href="utils-compilation.html" title="Appendix C. Command Line: Compiling and Linking"><link rel="prev" href="utils-compilation.html" title="Appendix C. Command Line: Compiling and Linking"><link rel="next" href="man-regina-helper.html" title="regina-helper"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>regina-engine-config</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="utils-compilation.html">Prev</a></td><td align="center" class="navCenter" width="34%">Command Line: Compiling and Linking</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="man-regina-helper.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="man-regina-engine-config"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>regina-engine-config — Get compiler and linker flags to build software against <span class="application">Regina</span></p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-engine-config</strong></span></span> [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--prefix</code></span>] [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--version</code></span>] [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--cflags</code></span>] [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--libs</code></span>]</p></div></div><div class="refsect1" lang="en"><a name="id9311"></a><h2>Description</h2><p>
+    This utility tells you which compiler and linker flags should be used to
+    build the mathematical engine of <span class="application">Regina</span> into your own programs.
+    <span class="application">Regina</span>'s mathematical engine is typically installed in the library
+    <code class="filename">libregina-engine.so</code>.
+   </p><p>
+    This utility is only available in some settings:
+    </p><div class="itemizedlist"><ul type="disc"><li><p>
+      If you are using <span class="application"><span class="acronym">GNU</span>/Linux</span> and you have <span class="application">Regina</span> installed in a system
+      location (e.g., beneath <code class="filename">/usr/</code> or
+      <code class="filename">/usr/local/</code>), then
+      <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-engine-config</strong></span></span> should be included with your
+      installation, and it should output compiler/linker flags relative to
+      this system installation.
+     </p></li><li><p>
+      If you are building <span class="application">Regina</span> yourself from the source tree (on any
+      platform), then you can run <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-engine-config</strong></span></span>
+      from the source tree, and it should output compiler/linker flags
+      relative to the same source tree.  In particular, you do not need to
+      install <span class="application">Regina</span> for these compiler/linker flags to work.
+     </p></li><li><p>
+      If you are using pre-built packages for <span class="application">Regina</span> on <span class="application">macOS</span> or <span class="application">Windows</span>,
+      then <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-engine-config</strong></span></span> will not be included in your
+      installation.
+     </p></li></ul></div><p>
+   </p><p>
+    Instead of using <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-engine-config</strong></span></span> as part of the
+    compilation process, you may find it easier to create a Makefile using
+    <a href="man-regina-helper.html" title="regina-helper"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-helper</strong></span></span></a>
+    and then just use <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">make</strong></span></span> instead.
+   </p></div><div class="refsect1" lang="en"><a name="id9343"></a><h2>Options</h2><div class="variablelist"><dl><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--prefix</code></span></span></dt><dd><p>
+       Prints the installation prefix where <span class="application">Regina</span> has been installed.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--version</code></span></span></dt><dd><p>
+       Prints the currently installed version of <span class="application">Regina</span>.  This will
+       include any <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="parameter"><em class="parameter"><code>BUILD_INFO</code></em></span> string that was set
+       when <span class="application">Regina</span> was built.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--cflags</code></span></span></dt><dd><p>
+       Print the compiler flags that are required to compile a program
+       that uses the <span class="application">Regina</span> calculation engine.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">--libs</code></span></span></dt><dd><p>
+       Print the linker flags that are required to link a program against
+       the <span class="application">Regina</span> calculation engine.
+      </p></dd></dl></div></div><div class="refsect1" lang="en"><a name="id9372"></a><h2>Example</h2><pre class="screen">
+    <code class="prompt">example$</code> <strong class="userinput"><code>regina-engine-config --cflags</code></strong>
+    -std=c++20
+    -I/usr/include/regina-normal -I/usr/include -I/usr/include/libxml2
+    <code class="prompt">example$</code>
+</pre></div><div class="refsect1" lang="en"><a name="id9378"></a><h2>See Also</h2><p>
+    <a href="man-regina-helper.html" title="regina-helper">regina-helper</a>.
+   </p></div><div class="refsect1" lang="en"><a name="id9382"></a><h2>Author</h2><p>
+    This utility was written by Benjamin Burton
+    <code class="email">&lt;<a href="mailto:bab@maths.uq.edu.au">bab@maths.uq.edu.au</a>&gt;</code>.
+    Many people have been involved in the development
+   of <span class="application">Regina</span>; see the <a href="credits.html#acknowledgements" title="Acknowledgements">acknowledgements
+   page</a> for a full list of credits.
+   </p><p>
+    This script was long ago based on <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">gtk-config</strong></span></span>,
+    though very little of that remains nowadays.  The original
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">gtk-config</strong></span></span> was Copyright (c) 1998
+    Owen Taylor and used an MIT-style license; see the
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-engine-config</strong></span></span> script for full details.
+   </p></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="utils-compilation.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="man-regina-helper.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">Command Line: Compiling and Linking </td><td width="34%" align="center" class="navCenter"><a href="utils-compilation.html">Up</a></td><td width="33%" align="right" class="navRight"> regina-helper</td></tr></table></div></body></html>

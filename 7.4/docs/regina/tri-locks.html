@@ -1,0 +1,189 @@
+<html><head><title>Simplex and Facet Locks</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina 7.4 Handbook"><link rel="up" href="triangulations.html" title="Chapter 3. Triangulations"><link rel="prev" href="tri-modification.html" title="Modification"><link rel="next" href="snappea.html" title="Chapter 4. SnapPea Triangulations"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Simplex and Facet Locks</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="tri-modification.html">Prev</a></td><td align="center" class="navCenter" width="34%">Triangulations</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="snappea.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="tri-locks"></a>Simplex and Facet Locks</h2></div></div></div><p>
+   As of <span class="application">Regina</span> 7.4, you now have the ability to
+   <em class="firstterm">lock</em> parts of the combinatorial structure of a
+   triangulation.  For example, you might have a 3-manifold built from
+   two different geometric pieces separated by a two-triangle torus, and you
+   might want to lock that torus so that any operations on your triangulation
+   work with the two pieces independently, without losing the clear
+   combinatorial separation between them.
+  </p><p>
+   In general, a lock will prevent <span class="application">Regina</span> from modifying some part(s) of
+   your triangulation when making modifications.  In particular, these locks
+   are enforced when <a href="tri-modification.html#tri-editgluings" title="Editing Gluings (All Dimensions)">editing gluings</a>,
+   making <a href="tri-modification.html#tri-elementarymove" title="Manual Simplification: Elementary Moves (All Dimensions)">elementary moves</a>,
+   <a href="tri-modification.html#tri-simplification" title="Automatic Simplification (3-D and 4-D)">simplifying the triangulation</a>, or
+   <a href="tri-modification.html#tri-treewidth" title="Improving Treewidth (3-D)">improving its treewidth</a>.
+  </p><p>
+   <span class="application">Regina</span> supports two kinds of locks: <em class="firstterm">simplex locks</em>
+   and <em class="firstterm">facet locks</em>.
+   </p><div class="itemizedlist"><ul type="disc"><li><p>
+      A <em class="firstterm">simplex lock</em> applies to a top-dimensional
+      simplex in your triangulation (e.g., a tetrahedron in a 3-manifold
+      triangulation, or a pentachoron in a 4-manifold triangulation).
+     </p><p>
+      A locked simplex cannot be removed completely (e.g., by manually
+      removing it from the gluings table, or via moves such as edge collapses
+      or 2-0 moves).  It cannot be subdivided (e.g., by a 1-4 Pachner
+      move in a 3-manifold triangulation, or via barycentric subdivision).
+      It also cannot be merged into other top-dimensional simplices
+      (e.g., by a 2-3 or 3-2 Pachner move in a 3-manifold triangulation).
+     </p></li><li><p>
+      A <em class="firstterm">facet lock</em> applies to a
+      (<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span>-1)-simplex in a
+      <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span>-dimensional triangulation
+      (e.g., a triangle in a 3-manifold triangulation, or a tetrahedron in
+      a 4-manifold triangulation).
+      The example above of locking a two-triangle torus in a 3-manifold
+      triangulation would require two facet locks (one for each triangle).
+     </p><p>
+      The rules for locked facets are a little more complex:
+     </p><div class="itemizedlist"><ul type="circle"><li><p>
+        A locked facet cannot be changed between boundary versus internal
+        due to gluing or ungluing.
+        That is, you cannot glue a locked boundary facet to some other
+        top-dimensional simplex (making it internal), and you cannot unglue
+        the top-dimensional simplices that meet on either side of a locked
+        internal facet (converting it into two new boundary facets).
+        However, see the notes below on flattening—an operation that
+        <span class="emphasis"><em>is</em></span> allowed, and which might convert a locked
+        internal facet into a boundary facet.
+       </p></li><li><p>
+        A locked facet cannot be removed completely (e.g., because it is
+        internal to the region where a Pachner move takes place, or internal to
+        the region that is removed completely by a 2-0 move or edge collapse,
+        or because it is a boundary facet whose top-dimensional simplex is
+        being removed by a boundary shelling operation).
+       </p></li><li><p>
+        Finally, a locked facet cannot be subdivided (e.g., via barycentric
+        subdivision).
+       </p></li></ul></div><p>
+      However, there are some important cases where operations
+      <span class="emphasis"><em>are</em></span> explicitly allowed around locked facets:
+     </p><div class="itemizedlist"><ul type="circle"><li><p>
+        We do allow moves on the triangulation that topologically
+        “flatten” a region beside a locked facet
+        <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>F</code></em></span>, as long as <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>F</code></em></span>
+        survives topologically.  For example, we allow 2-0 moves or edge
+        collapses that merge a locked facet
+        <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>F</code></em></span> with a parallel facet
+        <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>G</code></em></span>, even if this changes
+        <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>F</code></em></span> from internal to boundary
+        (because <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>F</code></em></span> was was originally internal but
+        <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>G</code></em></span> was originally boundary).
+        Likewise, we allow boundary shellings that expose an internal
+        locked facet to the boundary (because this is considered a
+        “topological flattening”, not just an arbitrary ungluing).
+        In all such cases, the lock will “move” with
+        <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>F</code></em></span> to its new (possibly merged,
+        possibly boundary) location.
+       </p></li><li><p>
+        We also allow moves that “pry open” a locked facet
+        <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>F</code></em></span> to become a pair of parallel facets
+        <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>F<sub>1</sub></code></em></span> and
+        <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>F<sub>2</sub></code></em></span> between which
+        we insert new material.  This operation is used (for example) when
+        building connected sums, or when drilling edges.
+        In such a scenario, the lock will simply move across to one of
+        <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>F<sub>1</sub></code></em></span> or
+        <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>F<sub>2</sub></code></em></span>.
+        In particular, if <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>F</code></em></span> was originally a
+        boundary facet then the lock will move to whichever of
+        <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>F<sub>1</sub></code></em></span> or
+        <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>F<sub>2</sub></code></em></span> is still boundary
+        after the operation is complete.
+       </p></li></ul></div></li></ul></div><p>
+  </p><p>
+   As noted above, locks are enforced in all operations that use local moves
+   (e.g., automated simplification or treewidth improvement).  However,
+   some operations are less easy to decompose into simple combinatorial
+   “pieces”, and so these might handle locks differently.
+   For example: <a href="tri-modification.html#tri-truncate" title="Truncating Vertices (3-D and 4-D)">truncation of vertices</a>
+   will not be allowed if a triangulation has any locks at all;
+   <a href="tri-modification.html#tri-puncture" title="Puncturing (3-D)">puncturing a triangulation</a> uses a safe
+   algorithm that will never violate a lock; and
+   <a href="tri-modification.html#tri-make0eff" title="0-Efficiency (3-D)">making a triangulation 0-efficient</a>
+   cannot work with locks at all so it ignores them entirely.
+   As a general rule, if you want to know if/how some operation handles locks,
+   find the operation here in this handbook and it should be explained for you.
+  </p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="tri-locks-edit"></a>Adding and Removing Individual Locks</h3></div></div></div><p>
+    You can edit locks directly through the
+    <a href="">gluings table</a>.
+    Open the triangulation viewer, and switch to the
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Gluings</span></span> tab.
+   </p><p>
+    To lock or unlock a top-dimensional simplex, right-click on the simplex in
+    the first column of the table.  When a simplex is locked, the
+    corresponding cell in the first column will be coloured yellow.
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-locks-simplex.png" srcset="tri-locks-simplex@2x.png 2x, tri-locks-simplex.png"></span>
+   </p><p>
+    To lock or unlock a facet, right-click on the corresponding cell in the
+    remaining columns of the table (specifically,
+    the cell that contains the gluing information for that facet).
+    For a boundary facet, this will be an empty cell.
+    For an internal facet, you can use either of the two cells that
+    describe the gluing across that facet.
+    As before, when a facet is locked, the corresponding cell
+    (for a boundary facet) or pair of cells (for an internal facet)
+    will be coloured yellow.
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-locks-facet.png" srcset="tri-locks-facet@2x.png 2x, tri-locks-facet.png"></span>
+   </p><p>
+    If your computer does not support right-click (e.g., you have a
+    one-button mouse), then you should use the normal secondary-click
+    mechanism for bringing up a pop-up context menu.
+   </p><p>
+    Finally: if your triangulation has any simplex or facet locks, you will
+    see an extra padlock button beneath the gluings table.
+    Pressing this button is a fast way to remove <span class="emphasis"><em>all</em></span>
+    simplex and facet locks from the triangulation at once.
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-locks-unlock-all.png" srcset="tri-locks-unlock-all@2x.png 2x, tri-locks-unlock-all.png"></span>
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="tri-locks-view"></a>Viewing Locks</h3></div></div></div><p>
+    You can see your locks visually in the
+    <a href="tri-analysis.html#tri-graphs-dual">dual graph</a> of your triangulation, by
+    visiting the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Skeleton</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Graphs</span></span>
+    tab in the triangulation viewer.
+   </p><p>
+    Locked simplices will appear as yellow nodes in the dual graph, and
+    locked internal facets will appear as yellow arcs.  You will not see
+    locked boundary facets, since these do not appear in the dual graph at all.
+   </p><p>
+    <span class="inlinemediaobject"><img src="tri-locks-graph.png" srcset="tri-locks-graph@2x.png 2x, tri-locks-graph.png"></span>
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="tri-locks-save"></a>Saving Locks</h3></div></div></div><p>
+    Locks will be saved alongside triangulations in <span class="application">Regina</span> data files
+    from <span class="application">Regina</span> 7.4 onwards.
+   </p><p>
+    You can still open these files in <span class="application">Regina</span> 7.3.1 or earlier, though
+    these older versions of <span class="application">Regina</span> do not understand locks (which means that
+    if you <span class="emphasis"><em>save</em></span> your file in an older version of <span class="application">Regina</span>,
+    your locks will be lost completely).
+   </p><p>
+    Locks are also encoded in a triangulation's
+    <a href="tri-analysis.html#tri-composition-isosig" title="Isomorphism Signature">isomorphism signature</a>.
+    Specifically:
+    </p><div class="itemizedlist"><ul type="disc"><li><p>
+      If a triangulation does <span class="emphasis"><em>not</em></span> have any simplex or
+      facet locks, its isomorphism signature will be the same as in
+      <span class="application">Regina</span> 7.3.1 or earlier.  For example,
+      <code class="literal">cPcbbbiht</code> is the isomorphism signature of the
+      two-tetrahedron figure eight knot complement with no locks.
+     </p></li><li><p>
+      If a triangulation <span class="emphasis"><em>does</em></span> have locks, then
+      its isomorphism signature will be the unlocked signature followed by a
+      period and some additional symbols encoding the locks.
+      For example, <code class="literal">cPcbbbiht.aq</code> encodes the
+      two-tetrahedron figure eight knot complement with one locked tetrahedron.
+     </p></li><li><p>
+      To remove locks from an isomorphism signature without opening <span class="application">Regina</span>,
+      you can just delete all symbols from the period onwards.
+     </p></li></ul></div><p>
+   </p><p>
+    Recall that in <span class="application">Regina</span> 7.3.1 and earlier, two triangulations have
+    the same isomorphism signature if and only if they are combinatorially
+    isomorphic.  Now that <span class="application">Regina</span> 7.4 and later supports locks, this
+    property is upgraded: two triangulations have the same
+    isomorphism signature if and only if there is a combinatorial isomorphism
+    between them that preserves all simplex and facet locks.
+   </p></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="tri-modification.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="snappea.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">Modification </td><td width="34%" align="center" class="navCenter"><a href="triangulations.html">Up</a></td><td width="33%" align="right" class="navRight"> <span class="application">SnapPea</span> Triangulations</td></tr></table></div></body></html>

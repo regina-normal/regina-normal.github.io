@@ -1,0 +1,57 @@
+<html><head><title>Chapter 6. Angle Structures</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina 7.4 Handbook"><link rel="up" href="index.html" title="The Regina 7.4 Handbook"><link rel="prev" href="surfaces-filtering.html" title="Filtering Surfaces (3-D)"><link rel="next" href="angles-creation.html" title="Enumerating Angle Structures"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Angle Structures</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="surfaces-filtering.html">Prev</a></td><td align="center" class="navCenter" width="34%"> </td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="angles-creation.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="angles"></a>Chapter 6. Angle Structures</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="angles.html#id4769">Strict Angle Structures</a></span></dt><dt><span class="sect1"><a href="angles-creation.html">Enumerating Angle Structures</a></span></dt><dt><span class="sect1"><a href="angles-analysis.html">Analysis</a></span></dt><dd><dl><dt><span class="sect2"><a href="angles-analysis.html#angles-viewtri">Viewing the Triangulation</a></span></dt><dt><span class="sect2"><a href="angles-analysis.html#angles-viewstructurecoords">Details of Individual Angle Structures</a></span></dt></dl></dd></dl></div><p>
+  An <em class="firstterm">angle structure</em> on a 3-manifold triangulation is a
+  simple algebraic generalisation of a hyperbolic structure.
+  It contains some but not all of the properties required to produce a
+  hyperbolic metric—in essence, it extracts the only linear parts
+  of the hyperbolic gluing equations.
+  Angle structures were introduced by
+  Rivin [<a href="bibliography.html#bib-rivin-structures" title="[Riv94]"><span class="abbrev">Riv94</span></a>]
+  [<a href="bibliography.html#bib-rivin-combopt" title="[Riv03]"><span class="abbrev">Riv03</span></a>] and Casson,
+  and further developed by
+  Lackenby [<a href="bibliography.html#bib-lackenby-taut" title="[Lac00a]"><span class="abbrev">Lac00a</span></a>]
+  [<a href="bibliography.html#bib-lackenby-anglestruct" title="[Lac00b]"><span class="abbrev">Lac00b</span></a>].
+ </p><p>
+  An angle structure assigns an angle to every edge of every tetrahedron
+  of the triangulation (so if there are <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span>
+  tetrahedra, there are 6<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span>
+  angles assigned in total).
+  This assignment must satisfy several conditions:
+  </p><div class="itemizedlist"><ul type="disc"><li><p>
+    Each angle must be between 0 and <code class="literal">2π</code> inclusive;
+   </p></li><li><p>
+    Opposite edges of a tetrahedron must be assigned equal angles;
+   </p></li><li><p>
+    The sum of all six angles in each tetrahedron is <code class="literal">2π</code>;
+   </p></li><li><p>
+    The sum of angles around each non-boundary edge of the triangulation
+    is <code class="literal">2π</code>.
+   </p></li></ul></div><p>
+ </p><p>
+  <span class="application">Regina</span> also supports <em class="firstterm">generalised angle structures</em>,
+  which allow angles that are negative and/or larger than <code class="literal">2π</code>,
+  but for these you will need to use <a href="python.html" title="Chapter 9. Python Scripting"><span class="application">Python</span></a>
+  or <a href="compiling.html" title="Chapter 11. Compiling Regina Into a C++ Project"><span class="application">C++</span></a>.
+ </p><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id4769"></a>Strict Angle Structures</h2></div></div></div><p>
+   If you can find a <em class="firstterm">strict angle
+   structure</em>—that is, one in which every angle is
+   strictly positive—then this is extremely powerful.  In
+   particular, under some simple assumptions, it is enough to certify
+   that the underlying 3-manifold is hyperbolic
+   [<a href="bibliography.html#bib-futer-angled" title="[FG11]"><span class="abbrev">FG11</span></a>].
+  </p><p>
+   If you simply wish to test whether a strict angle structure
+   <span class="emphasis"><em>exists</em></span>,
+   you should visit the <a href="tri-analysis.html#tri-hyperbolic">recognition tab</a>
+   in the triangulation viewer (this is available for both <span class="application">Regina</span>'s native
+   <a href="packet-types.html#packet-triangulation3" title="3-Manifold Triangulations">triangulation packets</a>
+   and its hybrid
+   <a href="packet-types.html#packet-snappea" title="SnapPea Triangulations"><span class="application">SnapPea</span> triangulation packets</a>).
+   For this <span class="application">Regina</span> uses fast and exact linear programming techniques.
+  </p><p>
+   <span class="inlinemediaobject"><img src="snappea-recognition.png" srcset="snappea-recognition@2x.png 2x, snappea-recognition.png"></span>
+  </p><p>
+   If you wish to enumerate the space of <span class="emphasis"><em>all</em></span>
+   angle structures, then you should build an angle structure list
+   as <a href="angles-creation.html" title="Enumerating Angle Structures">described below</a>.
+  </p></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="surfaces-filtering.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="angles-creation.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">Filtering Surfaces (3-D) </td><td width="34%" align="center" class="navCenter"><a href="index.html">Up</a></td><td width="33%" align="right" class="navRight"> Enumerating Angle Structures</td></tr></table></div></body></html>

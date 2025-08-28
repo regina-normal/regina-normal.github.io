@@ -1,0 +1,117 @@
+<html><head><title>Chapter 12. Contributing to Regina</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina 7.4 Handbook"><link rel="up" href="index.html" title="The Regina 7.4 Handbook"><link rel="prev" href="compiling-apidocs.html" title="API Documentation"><link rel="next" href="troubleshooting.html" title="Chapter 13. Troubleshooting and FAQ"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Contributing to <span class="application">Regina</span></h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="compiling-apidocs.html">Prev</a></td><td align="center" class="navCenter" width="34%"> </td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="troubleshooting.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="contributing"></a>Chapter 12. Contributing to <span class="application">Regina</span></h2></div></div></div><p>
+  This page serves as a checklist for adding new code to <span class="application">Regina</span>.
+ </p><div class="itemizedlist"><ul type="disc"><li><p>
+   <span class="application">Regina</span> is written in <span class="application">C++</span>, and so any permanent contributions to
+   <span class="application">Regina</span> will need to be written in <span class="application">C++</span> also.
+  </p></li><li><p>
+   New classes should use value semantics, unless there is a good reason not to.
+   Classes with value semantics should provide appropriate comparisions
+   (<code class="literal">==</code> and <code class="literal">!=</code>), copy constructors,
+   and copy assignment operators.
+   If they are large objects, they should also provide move constructors,
+   move assignment operators, a member <code class="function">swap()</code>
+   function, and a global <code class="function">swap()</code> function.
+  </p></li><li><p>
+   New code should ideally come with corresponding tests for <span class="application">Regina</span>'s
+   test suite:
+   </p><div class="itemizedlist"><ul type="circle"><li>For important classes, these tests should be comprehensive,
+     not just a few token cases.  See the <code class="classname">Integer</code>
+     tests in <code class="filename">testsuite/maths/integer.cpp</code> for an
+     example of <span class="emphasis"><em>very</em></span> comprehensive testing.</li><li>The tests may be either <span class="application">C++</span> (in <code class="literal">testsuite/</code>)
+     or <span class="application">Python</span> (in <code class="literal">python/testsuite/</code>), or both.
+     <span class="application">Python</span> tests are simpler to write; however, the <span class="application">C++</span> tests can be far
+     more flexible in what is tested (not just comparing text output), and
+     moreover the <span class="application">C++</span> tests will be run on more systems (including
+     those where <span class="application">Python</span> development files are not available).</li><li>Whilst they should be comprehensive, tests should not
+     be enormously slow.  Watch how fast/slow the other tests are as a guide
+     for what is acceptable (if you test using
+     “<strong class="userinput"><code>make test ARGS=-V</code></strong>” then you
+     can see each individual test as it runs).</li></ul></div><p>
+  </p></li><li><p>
+   All functions and classes should be fully documented.
+   In particular, for each function:
+   </p><div class="itemizedlist"><ul type="circle"><li>The first sentence of the documentation should be appropriate
+     to display as a brief synopsis (since this will be extracted and
+     placed into various indices).</li><li>The documentation should list all preconditions that the
+     user needs to ensure before calling the function.</li><li>Functions should not be correct only for “common”
+     scenarios, but should be as general as possible within reason.
+     Any limitations should be made clear to the user (e.g., through
+     explicit preconditions)—users should not be expected to guess
+     which scenarios the function works for.</li><li>All parameters should be described in individual
+     <code class="literal">\param</code> blocks.  Likewise, any non-type template
+     parameters (e.g., integer template parameters) must be described in
+     <code class="literal">\tparam</code> blocks.
+     Of course, type parameters may be described also if this will be helpful.
+     The return value should be described in a <code class="literal">\return</code>
+     block.</li><li>All preconditions that the user is expected to adhere to
+     should be spelled out in the documentation.  Limits on function
+     arguments (e.g., acceptable integer ranges) can be listed in each
+     <code class="literal">\param</code> block; other preconditions should be
+     listed in separate <code class="literal">\pre</code> paragraphs.</li><li>If there are differences between the <span class="application">C++</span> and <span class="application">Python</span>
+     versions of a function or class, these should be listed in a separate
+     <code class="literal">\python</code> paragraph.  In particular, if function arguments
+     differ (e.g., the <span class="application">C++</span> version takes a pair of iterators but the
+     <span class="application">Python</span> version takes a single list), then the arguments should be named
+     in the <span class="application">Python</span> bindings using <code class="literal">pybind11::arg(...)</code>.
+     If there is no <span class="application">Python</span> version at all, this should be made clear using a
+     <code class="literal">\nopython</code> tag (which can take an optional
+     explanation).</li></ul></div><p>
+  </p></li><li><p>
+   Documentation needs to be written in a format that
+   is easy for humans to read in the <span class="application">C++</span> headers,
+   will be formatted appropriately when processed by <span class="application">Doxygen</span>,
+   and will convert sensibly to a <span class="application">Python</span> docstring.
+   Best practices include:
+   </p><div class="itemizedlist"><ul type="circle"><li>Avoid <span class="acronym">HTML</span> tags such as
+     <code class="literal">&lt;i&gt;</code>,
+     <code class="literal">&lt;b&gt;</code>, and
+     <code class="literal">&lt;tt&gt;</code> where possible—instead use
+     markdown and/or <span class="application">Doxygen</span> tags.
+     In particular: for italicised English, use
+     <code class="literal">_underscores_</code>;
+     for italicised variable names use <code class="literal">\a</code>;
+     for bold English use <code class="literal">**double asterisks**</code>;
+     for <span class="application">C++</span> keywords use <code class="literal">\c</code>; and
+     for inline code fragments use <code class="literal">`backticks`</code>.
+     Note that <span class="application">Doxygen</span> does not (currently) translate underscores
+     within <code class="literal">\exception</code> blocks; here you will need to
+     italicise using <code class="literal">\e</code> (for single words) or
+     <code class="literal">&lt;i&gt;</code> (for multiple words).</li><li>Avoid <span class="acronym">XML</span> entities such as
+     <code class="literal">&amp;lt;</code>,
+     <code class="literal">&amp;amp;</code>, and
+     <code class="literal">&amp;ne;</code>.
+     For less-than, you can use <code class="literal">\&lt;</code> if there is a risk of
+     <span class="application">Doxygen</span> misinterpreting a plain <code class="literal">&lt;</code>
+     as an <span class="acronym">HTML</span> tag.
+     For mathematical symbols with “simple” unicode
+     representations (i.e., likely to be supported in fonts
+     across many platforms), just use the unicode instead.
+     Simple unicode symbols include:
+     <code class="literal">≤≥≠</code>,
+     <code class="literal">×±</code>,
+     <code class="literal">αβπ</code>, and
+     <code class="literal">¹²³</code>.</li><li>Use <span class="application">Doxygen</span>-style backslash tags such as
+    <code class="literal">\param</code>, not <span class="application">Javadoc</span>-style
+    tags such as <code class="literal">@param</code>.</li></ul></div><p>
+  </p></li><li><p>
+   All <span class="application">C++</span> functions and classes should have corresponding <span class="application">Python</span>
+   bindings, unless there is a very good reason not to.
+   The <span class="application">Python</span> bindings are typically easy to write, and Ben can help
+   with this if necessary.
+   </p><div class="itemizedlist"><ul type="circle"><li>Template classes should be wrapped in <span class="application">Python</span> using
+     suffixes that describe the template arguments.
+     See for example <code class="classname">Triangulation3</code>, or
+     <code class="classname">TreeEnumeration_NonSpun</code>.</li><li>All functions and classes wrapped in <span class="application">Python</span> should have
+     appropriate docstrings, which need to be passed to the corresponding
+     <code class="literal">pybind11::def(...)</code> statement.
+     These docstrings are extracted automatically from the hand-written
+     documentation in the <span class="application">C++</span> headers, and this extraction is done manually
+     (not as part of the build process).
+     Please ask Ben if you need this extraction to be run for you.</li><li>If for some reason you are binding a function in <span class="application">Python</span>
+     but you do not want to extract a docstring (this should be a rare
+     occurrence), use a <code class="literal">\nodocstring</code> tag in the
+     <span class="application">C++</span> class or function documentation.
+     (At the time of writing, <code class="literal">\nodocstring</code> is used
+     in only two places across <span class="application">Regina</span>'s entire <span class="acronym">API</span>.)</li></ul></div><p>
+  </p></li></ul></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="compiling-apidocs.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="troubleshooting.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft"><span class="acronym">API</span> Documentation </td><td width="34%" align="center" class="navCenter"><a href="index.html">Up</a></td><td width="33%" align="right" class="navRight"> Troubleshooting and <span class="acronym">FAQ</span></td></tr></table></div></body></html>

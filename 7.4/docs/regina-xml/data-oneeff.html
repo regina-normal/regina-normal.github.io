@@ -1,0 +1,33 @@
+<html><head><title>oneeff</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Regina, XML, Data files"><link rel="start" href="index.html" title="Regina 7.4 File Format Reference"><link rel="up" href="dataformat.html" title="Current Data File Format"><link rel="prev" href="data-node.html" title="node"><link rel="next" href="data-orbl-surface.html" title="orbl"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>oneeff</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="data-node.html">Prev</a></td><td align="center" class="navCenter" width="34%">Current Data File Format</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="data-orbl-surface.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="data-oneeff"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>oneeff — Is a triangulation 1-efficient?</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="informaltable"><table border="1"><colgroup><col><col></colgroup><tbody><tr><td colspan="2">
+      <span class="bold"><strong>Content Model</strong></span>
+     </td></tr><tr><td colspan="2">
+<pre class="synopsis">
+oneeff ::=</pre>
+     </td></tr><tr><td colspan="2">
+      <span class="bold"><strong>Attributes</strong></span>
+     </td></tr><tr><td><span class="bold"><strong>Name</strong></span></td><td><span class="bold"><strong>Type</strong></span></td></tr><tr><td><code class="sgmltag-element">value</code></td><td><span class="type">CDATA</span> (required)</td></tr></tbody></table></div><p>Added in <span class="application">Regina</span> 7.4</p></div><div class="refsect1" lang="en"><a name="id3966"></a><h2>Description</h2><p>
+   A <a href="data-oneeff.html" title="oneeff"><code class="sgmltag-element">oneeff</code></a> element stores whether or not the parent
+   triangulation is 1-efficient.
+  </p><p>
+   For now, 1-efficiency is only tested for ideal triangulations in which
+   every vertex link is a torus or Klein bottle.  In this setting, an ideal
+   triangulation <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>T</code></em></span> is
+   <em class="firstterm">1-efficient</em> if, amongst all closed embedded normal
+   surfaces in <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>T</code></em></span>, there are no surfaces at all of
+   positive Euler characteristic, and the only surfaces with zero Euler
+   characteristic are vertex linking.
+  </p><p>
+   1-efficiency testing might be expanded to a broader class of triangulations
+   in future versions of <span class="application">Regina</span>; see the calculation engine documentation for
+   details.
+  </p><div class="refsect2" lang="en"><a name="id3977"></a><h3>Parents</h3><p>
+    The following elements contain <code class="sgmltag-element">oneeff</code>:
+    <span class="simplelist"><a href="data-tri.html" title="tri"><code class="sgmltag-element">tri</code></a></span>.
+   </p></div><div class="refsect2" lang="en"><a name="id3985"></a><h3>Children</h3><p>
+    Element <code class="sgmltag-element">oneeff</code> has no children.
+   </p></div></div><div class="refsect1" lang="en"><a name="id3989"></a><h2>Attributes</h2><div class="variablelist"><dl><dt><span class="term"><code class="sgmltag-element">value</code></span></dt><dd><p>
+      Either <code class="literal">T</code> or <code class="literal">F</code>, according to
+      whether the parent triangulation is or is not 1-efficient as described
+      above.
+     </p></dd></dl></div></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="data-node.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="data-orbl-surface.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">node </td><td width="34%" align="center" class="navCenter"><a href="dataformat.html">Up</a></td><td width="33%" align="right" class="navRight"> orbl</td></tr></table></div></body></html>
