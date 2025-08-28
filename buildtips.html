@@ -221,33 +221,22 @@ see the effect in the CMake output:
 
 <p>
 Once Regina is built and installed, you may wish to compile it
-into your own C++ programs.  The helper script <tt>regina-engine-config</tt>
-gives you all of the necessary compiler and linker options for doing this.
-You can find this script with the other programs in
-<tt><i>prefix</i>/bin</tt>, where <tt><i>prefix</i></tt> is your
+into your own C++ programs.  There are two ways to do this:
+<ul>
+<li>You can use the tool <tt>regina-helper</tt> to create a Makefile,
+which makes it very easy to compile small programs that are contained
+entirely in a single source file;</li>
+<li>You can use the tool <tt>regina-engine-config</tt> to extract a full set
+of compiler and linker options that you can pass to the compiler
+yourself, however large or small your project is.</li>
+</ul>
+<p>
+Both of these tools should be installed alongside Regina's other executables
+in <tt><i>prefix</i>/bin</tt>, where <tt><i>prefix</i></tt> is your
 installation prefix.
-</p>
 <p>
-To obtain a full set of compiler options:
-</p>
-<div class="example"><p>
-<tt>example$ regina-engine-config --cflags</tt>
-</p></div>
-<p>
-To obtain a full set of linker options:
-</p>
-<div class="example"><p>
-<tt>example$ regina-engine-config --libs</tt>
-</p></div>
-<p>
-You can use this script directly on the command-line (or in your
-Makefile).  So, for instance, to compile the program <tt>myprog.cpp</tt>
-against Regina:
-</p>
-<div class="example"><p>
-<tt>example$ g++ myprog.cpp `regina-engine-config --cflags --libs`
--o myprog</tt>
-</p></div>
+See the <a href="https://regina-normal.github.io/docs/compiling-flags.html">Regina Handbook</a>
+for a more detailed discussion, including examples of both methods.
 
 <p class="return">
 <a href="index.html"><img src="regina.svg" alt="Back to main page ..."
