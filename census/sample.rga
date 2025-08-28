@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<regina engine="7.0">
+<regina engine="7.4">
 <container label="Sample Data File">
 <textdata label="Read Me">Welcome to Regina!
 
@@ -2346,11 +2346,11 @@ CS_unknown
 for t in tri.children():
 	print(t.label() + &quot;: &quot;, end='')
 
-	if t.type() == PACKET_TRIANGULATION3:
+	if t.type() == PacketType.Triangulation3:
 		print(t.homology())
-	elif t.type() == PACKET_SNAPPEATRIANGULATION:
+	elif t.type() == PacketType.SnapPea:
 		print(t.volume())
-	elif t.type() == PACKET_LINK:
+	elif t.type() == PacketType.Link:
 		print(t.homfly())
 	else:
 		print('Unknown packet type')
