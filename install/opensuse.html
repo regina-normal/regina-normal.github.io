@@ -30,14 +30,14 @@ Open a terminal (e.g., <i>Konsole</i> or <i>GNOME Terminal</i>).
 Add Regina to your list of package repositories.
 To do this, type the line below, replacing
 <span class="placeholder"><tt>VERSION</tt></span> with your openSUSE Leap
-version (e.g., 15.6):
+version (e.g., 16.0):
 </p>
 <div class="example"><p>
 <tt>sudo zypper addrepo https://people.debian.org/~bab/rpm/regina/opensuse/<span class="placeholder">VERSION</span>/regina.repo</tt>
 </p></div>
-<p>For example, if you are running openSUSE Leap&nbsp;15.6, you would type:</p>
+<p>For example, if you are running openSUSE Leap&nbsp;16.0, you would type:</p>
 <div class="specific"><p>
-<tt>sudo zypper addrepo https://people.debian.org/~bab/rpm/regina/opensuse/15.6/regina.repo</tt>
+<tt>sudo zypper addrepo https://people.debian.org/~bab/rpm/regina/opensuse/16.0/regina.repo</tt>
 </p></div>
 </li>
 <li><p>
@@ -45,9 +45,8 @@ If you are running openSUSE Leap&nbsp;15.6, you will need to import Regina's
 signing key manually. I'm sorry, openSUSE have caused so many problems over
 the years and this time
 <a href="https://github.com/openSUSE/zypper/issues/546">they broke key imports
-for third-party repositories</a>.  Earlier versions of openSUSE worked fine,
-and the bug has been fixed so hopefully later versions will work fine also.
-On 15.6 however, you need to:
+for third-party repositories</a>.  Other versions of openSUSE (both older and newer)
+work fine.  On 15.6 however, you need to:
 </p>
 <ul>
 <li><p>download Regina's signing key:
@@ -104,11 +103,9 @@ New repository or package signing key received:
   <b>Key Fingerprint:  519A 0009 FB50 255D DB4E 8892 70A6 BEDF 542D 38D9</b>
   Key Name:         Benjamin Burton &lt;bab@debian.org&gt;
   Key Algorithm:    RSA 4096
-  Key Created:      Fri 29 Aug 2014 06:28:10 AEST
-  Key Expires:      (does not expire)
   ...
 
-Do you want to reject the key, or trust always? [r/a/?] (r): a
+Do you want to reject the key, trust temporarily, or trust always? [r/t/a/?] (r): a
 </pre>
 
 <p class="return">

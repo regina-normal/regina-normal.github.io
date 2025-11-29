@@ -30,14 +30,14 @@ Open a terminal.
 Add Regina to your list of package repositories.
 To do this, type the line below, replacing
 <span class="placeholder"><tt>VERSION</tt></span> with your Fedora version
-(e.g., 41 or 42):
+(e.g., 42 or 43):
 </p>
 <div class="example"><p>
 <tt>sudo dnf config-manager addrepo --from-repofile=https://people.debian.org/~bab/rpm/regina/fedora/<span class="placeholder">VERSION</span>/regina.repo</tt>
 </p></div>
-<p>For example, if you are running Fedora&nbsp;42, you would type:</p>
+<p>For example, if you are running Fedora&nbsp;43, you would type:</p>
 <div class="specific"><p>
-<tt>sudo dnf config-manager addrepo --from-repofile=https://people.debian.org/~bab/rpm/regina/fedora/42/regina.repo</tt>
+<tt>sudo dnf config-manager addrepo --from-repofile=https://people.debian.org/~bab/rpm/regina/fedora/43/regina.repo</tt>
 </p></div>
 </li>
 <li><p>
@@ -72,9 +72,9 @@ the web of trust, you can
 <a href="https://people.debian.org/~bab/regina-key.txt">download it here</a>.
 </p>
 <pre class="example">
-Importing GPG key 0x542D38D9:
- Userid     : "Benjamin Burton &lt;bab@debian.org&gt;"
- <b>Fingerprint: 519A 0009 FB50 255D DB4E 8892 70A6 BEDF 542D 38D9</b>
+Importing OpenPGP key 0x542D38D9:
+ UserID     : "Benjamin Burton &lt;bab@debian.org&gt;"
+ <b>Fingerprint: 519A0009FB50255DDB4E889270A6BEDF542D38D9</b>
  From       : https://people.debian.org/~bab/regina-key.txt
 Is this ok [y/N]: y
 </pre>
