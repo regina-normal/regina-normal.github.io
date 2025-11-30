@@ -1,0 +1,60 @@
+<html><head><title>Compiler and Linker Flags</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina 7.4.1 Handbook"><link rel="up" href="compiling.html" title="Chapter 11. Compiling Regina Into a C++ Project"><link rel="prev" href="compiling.html" title="Chapter 11. Compiling Regina Into a C++ Project"><link rel="next" href="compiling-apidocs.html" title="API Documentation"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Compiler and Linker Flags</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="compiling.html">Prev</a></td><td align="center" class="navCenter" width="34%">Compiling Regina Into a <span class="application">C++</span> Project</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="compiling-apidocs.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="compiling-flags"></a>Compiler and Linker Flags</h2></div></div></div><p>
+   When you compile your own <span class="application">C++</span> code that uses <span class="application">Regina</span>'s calculation
+   engine, you will need to pass some extra flags to the compiler.
+   There are two ways to do this: a simple way using a Makefile, and a more
+   complex but more flexible way that extracts <span class="application">Regina</span>'s compiler and linker
+   flags and passes them through to <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">gcc</strong></span></span>.
+  </p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id7026"></a>Using a Makefile</h3></div></div></div><p>
+    You can use the
+    <a href="man-regina-helper.html" title="regina-helper"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-helper</strong></span></span></a>
+    tool to create a Makefile.
+    This Makefile is suitable for compiling small programs that are
+    entirely contained in a single <span class="application">C++</span> source file.
+   </p><pre class="screen">
+    <code class="prompt">example$</code> <strong class="userinput"><code>regina-helper makefile</code></strong>
+    Preparing Makefile...
+    <code class="prompt">example$ <strong class="userinput"><code>ls</code></strong></code>
+    Makefile
+    <code class="prompt">example$</code>
+</pre><p>
+    If you have a <span class="application">C++</span> source file named <code class="filename">mycode.cc</code>
+    (for example), you can put it in the same directory as the Makefile
+    and compile it by typing <strong class="userinput"><code>make mycode</code></strong>.
+    The Makefile will ensure that the compiler receives all of the
+    necessary flags for building your program against <span class="application">Regina</span>.
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id7043"></a>Passing Flags to <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">gcc</strong></span></span></h3></div></div></div><p>
+    <span class="application">Regina</span> also ships with a utility
+    <a href="man-regina-engine-config.html" title="regina-engine-config"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-engine-config</strong></span></span></a>,
+    which will give you the necessary flags explicitly.
+    To find the compiler and linker flags,
+    run <strong class="userinput"><code>regina-engine-config --cflags</code></strong> and
+    <strong class="userinput"><code>regina-engine-config --libs</code></strong> respectively.
+   </p><pre class="screen">
+    <code class="prompt">example$</code> <strong class="userinput"><code>regina-engine-config --cflags</code></strong>
+    -I/usr/include/regina-normal -I/usr/include -I/usr/include/libxml2
+    <code class="prompt">example$</code> <strong class="userinput"><code>regina-engine-config --libs</code></strong>
+    -L/usr/lib -lregina-engine /usr/lib/libxml2.so /usr/lib/libgmp.so /usr/lib/libgmpxx.so /usr/lib/libz.so -lpthread
+    <code class="prompt">example$</code>
+</pre><p>
+    If your code is a single <span class="application">C++</span> source file, you can compile and
+    link a final executable in a single step:
+   </p><pre class="screen">
+    <code class="prompt">example$</code> <strong class="userinput"><code>g++ mycode.cc `regina-engine-config --cflags --libs`</code></strong>
+    <code class="prompt">example$</code>
+</pre><p>
+    If your code is spread across multiple source files, you should set up your
+    build system so that it fetches the compiler and linker flags from
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-engine-config</strong></span></span>.
+   </p><p>
+    Note that compiler and linker flags will differ from system to system.
+    You should always use <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-engine-config</strong></span></span> to find out
+    what they are, and not just copy the flags that appear in
+    the examples above.
+   </p><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>
+    The compiler and linker flags that <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">regina-engine-config</strong></span></span>
+    outputs are tailored to the <span class="acronym">GNU</span> <span class="application">C++</span> compiler
+    (<span class="application">g++</span>) and <span class="application">Clang</span>.
+    If you use a different
+    compiler, you might need to adjust your flags accordingly.
+   </p></div></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="compiling.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="compiling-apidocs.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">Compiling Regina Into a <span class="application">C++</span> Project </td><td width="34%" align="center" class="navCenter"><a href="compiling.html">Up</a></td><td width="33%" align="right" class="navRight"> <span class="acronym">API</span> Documentation</td></tr></table></div></body></html>

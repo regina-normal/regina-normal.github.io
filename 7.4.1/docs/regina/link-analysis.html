@@ -1,0 +1,573 @@
+<html><head><title>Analysis</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina 7.4.1 Handbook"><link rel="up" href="links.html" title="Chapter 7. Knots and Links"><link rel="prev" href="links.html" title="Chapter 7. Knots and Links"><link rel="next" href="link-modification.html" title="Modification"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Analysis</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="links.html">Prev</a></td><td align="center" class="navCenter" width="34%">Knots and Links</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="link-modification.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="link-analysis"></a>Analysis</h2></div></div></div><p>
+   You can view a variety of information about the link diagram, as well
+   as topological invariants of the link itself, by stepping through the
+   different tabs in the link viewer.
+   Here we talk through the different kinds of information and
+   invariants on offer.
+  </p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="link-crossings"></a>Crossings and Components</h3></div></div></div><p>
+    At the top of each link viewer is a header, which includes:
+    whether the link is alternating;
+    the number of link components (or the word “knot” to indicate
+    just one); and
+    the number of crossings, including how many are positive and negative.
+   </p><p>
+    This header is circled in red below.
+   </p><p>
+    <span class="inlinemediaobject"><img src="link-header.png" srcset="link-header@2x.png 2x, link-header.png"></span>
+   </p><p>
+    If the link diagram is virtual (not classical), then the header will
+    contain a second line indicating:
+   </p><div class="itemizedlist"><ul type="disc"><li><p><a name="link-virtual-genus"></a>
+      The <em class="firstterm">virtual genus</em> of the diagram.  This is
+      the smallest genus of orientable surface in which the diagram embeds.
+      Note that this is a property of the link <span class="emphasis"><em>diagram</em></span>,
+      not an invariant of the link itself.
+     </p></li><li><p><a name="link-odd-writhe"></a>
+      The <em class="firstterm">odd writhe</em>, or <em class="firstterm">self-linking
+      number</em>.  This is an invariant of virtual knots
+      (but not links), which sums the signs of all odd crossings.
+      A crossing <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>c</code></em></span> is <em class="firstterm">odd</em> if,
+      when traversing the knot, we pass through an odd number of crossings
+      between the over-strand and the under-strand of
+      <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>c</code></em></span>.
+     </p><p>
+      The odd writhe is not shown for multiple-component links.
+      For classical knots, the odd writhe is always zero.
+     </p></li></ul></div><p>
+    <span class="inlinemediaobject"><img src="link-header-virtual.png" srcset="link-header-virtual@2x.png 2x, link-header-virtual.png"></span>
+   </p><p>
+    The <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Crossings</span></span> tab shows the details of the individual
+    crossings and components that make up the link.
+    <span class="application">Regina</span> numbers crossings 0,1,2,…, and likewise for components.
+   </p><p>
+   </p><p>
+    For each component of the link, there will be a box beneath the
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Crossings</span></span> tab showing the crossings that you
+    visit in order as you traverse the link component from an
+    arbitrary starting point.
+    There are two different ways that you can view this information
+    (with a drop-down box to switch between them):
+   </p><p>
+    </p><div class="glosslist"><dl><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Pictures</span></span></dt><dd><p>
+        Each crossing will be shown visually as a pair of arrows,
+        one crossing over the other.  One arrow will be a solid colour,
+        and will run horizontally from left to right;
+        this is the part of the link that you are traversing.
+        The other arrow will be grey, and will run vertically (either up
+        or down); this is the part of the link that you are passing over
+        or under.  The crossing number will be written in the top-right
+        corner beside the arrows.
+       </p><p>
+        <span class="inlinemediaobject"><img src="link-pictures.png" srcset="link-pictures@2x.png 2x, link-pictures.png"></span>
+       </p><p>
+        For each crossing, the arrow that you are traversing will be
+        coloured blue for a positive crossing, or yellow for a negative
+        crossing. (This is just a visual aid, and is not strictly necessary;
+        you can already tell the sign of the crossing from the arrangement
+        of the arrows.)
+       </p><p>
+        Crossings are visited in order from left to right along each row
+        of the display, one row at a time (i.e., the same way that you
+        would read English text in a book).
+       </p><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>
+         Because the arrows you traverse always run from left to right, you
+         can imagine the individual crossings as being attached together
+         in the order that they are displayed.
+         In other words, you can picture the link component as a long
+         arrow running from left to right through the individual crossings
+         (and then wrapping around to the next line each time it reaches
+         the right-hand edge of the window).
+         Of course this picture breaks down once you revisit the
+         same crossing for a second time.
+        </p></div></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Text</span></span></dt><dd><p>
+        Each crossing will be shown as a number with a plus or minus
+        sign attached.  The number indicates which crossing you are
+        passing through, and the sign indicates whether it is a positive or
+        negative crossing. The sign will appear as a superscript if you
+        are passing over the crossing, or a subscript if you are passing under.
+       </p><p>
+        <span class="inlinemediaobject"><img src="link-text.png" srcset="link-text@2x.png 2x, link-text.png"></span>
+       </p><p>
+        As before, crossings are visited in order from left to right
+        along each row, one row at a time.
+        Also as before, positive crossings will be coloured blue and
+        negative crossings will be coloured yellow (but again the colour
+        is just a visual aid, since you already have this information
+        from the plus/minus sign).
+       </p></dd></dl></div><p>
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="link-polynomials"></a>Polynomial Invariants</h3></div></div></div><p>
+    On the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Polynomials</span></span> tab, you can view
+    several polynomial invariants of the link and of the link diagram.
+    Which polynomials you see will depend upon whether your link diagram is
+    classical or virtual.
+   </p><p>
+    <span class="inlinemediaobject"><img src="link-polynomials.png" srcset="link-polynomials@2x.png 2x, link-polynomials.png"></span>
+    <span class="inlinemediaobject"><img src="link-polynomials-virtual.png" srcset="link-polynomials-virtual@2x.png 2x, link-polynomials-virtual.png"></span>
+   </p><p>
+    The polynomials that you might see include:
+    </p><div class="glosslist"><dl><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Alexander</span></span> (classical only)</dt><dd><p>
+        The Alexander polynomial is a single-variable polynomial invariant.
+        It is relatively weak, but (unlike many of the other invariants listed
+        here) it can be computed in polynomial time.
+       </p><p>
+        <span class="application">Regina</span> will only compute Alexander polynomials for knots
+        (not multiple-component links).
+       </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Jones</span></span> (classical and virtual)</dt><dd><p>
+        The Jones polynomial is a single-variable polynomial in the variable
+        <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>t</code></em></span>, whose exponents are integers for
+        classical knots, but whose exponents may be half-integers in other cases
+        (depending on the number of link components and/or whether the link is
+        virtual).
+        You may therefore see this presented either as a polynomial in
+        <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>t</code></em></span> or as a polynomial in
+        √<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>t</code></em></span>.
+       </p><p>
+        If you have opted <a href="options.html#options-unicode">not to use
+        unicode symbols</a>, then you will see this as a polynomial
+        in either <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>t</code></em></span> or
+        <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>sqrt_t</code></em></span>.
+       </p><p>
+        <span class="application">Regina</span> can compute Jones polynomials for link diagrams
+        with any number of components.
+       </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">HOMFLY-PT</span></span> (classical only)</dt><dd><p>
+        The HOMFLY-PT polynomial is a two-variable polynomial with two
+        common formulations: one in the variables
+        (<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>α</code></em></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>z</code></em></span>)
+        and one in the variables
+        (<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>l</code></em></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>m</code></em></span>).
+        These formulations give different polynomials, which are
+        related via a simple substitution.
+        <span class="application">Regina</span> offers a pair of buttons beside the HOMFLY-PT
+        polynomial for you to choose which formulation is displayed.
+       </p><p>
+        <span class="application">Regina</span> can compute HOMFLY-PT polynomials for link diagrams
+        with any number of components.
+       </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Kauffman bracket</span></span>
+       (classical and virtual)</dt><dd><p>
+        The Kauffman bracket is a property of the link diagram, not an
+        invariant of the link, and is related to the Jones polynomial
+        by a simple substitution.
+        See Adams [<a href="bibliography.html#bib-adams-knotbook" title="[Ada94]"><span class="abbrev">Ada94</span></a>] for a simple
+        combinatorial introduction to the Kauffman bracket and the
+        Jones polynomial.
+       </p><p>
+        <span class="application">Regina</span> can compute Kauffman brackets for link diagrams
+        with any number of components.
+       </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Affine index</span></span> (virtual only)</dt><dd><p>
+        The affine index polynomial is a single-variable polynomial invariant
+        that is relatively weak, but which nevertheless provides some useful
+        information for virtual knots.  Its main advantage is that it is
+        extremey fast to compute even for large knot diagrams (the computation
+        runs in very small polynomial time).
+       </p><p>
+        <span class="application">Regina</span> will only compute affine index polynomials for virtual knots
+        (not multiple-component virtual links).
+       </p><p>
+        The affine index polynomial is not shown at all for classical link
+        diagrams, since in the classical case the affine index polynomial is
+        always zero.
+       </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Arrow</span></span> (virtual only)</dt><dd><p>
+        The arrow polynomial enhances the Kauffman bracket in a way that
+        makes it more powerful for virtual links, and that makes it a
+        true link invariant.  Whereas the Kauffman bracket is a polynomial
+        in the single variable <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>A</code></em></span>,
+        the arrow polynomial is a polynomial in many variables
+        (<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>A</code></em></span>,
+        <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>K</code></em></span><sub>1</sub>,
+        <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>K</code></em></span><sub>2</sub>,
+        <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>K</code></em></span><sub>3</sub>,
+        …).
+       </p><p>
+        <span class="application">Regina</span> can compute arrow polynomials for virtual link diagrams
+        with any number of components.
+       </p><p>
+        The arrow polynomial is not shown at all for classical link diagrams,
+        since in the classical case the arrow polynomial is just the
+        Kauffman bracket with some normalisation applied.
+       </p></dd></dl></div><p>
+   </p><p>
+    For larger links, you may see a <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Calculate</span></span> button
+    instead of a polynomial. This is because many of these polynomials
+    require exponential time to compute.  In this case you will need to
+    press the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Calculate</span></span> button and be prepared
+    to wait—for most polynomials you will see the progress displayed, and
+    you can cancel the computation if you like.
+   </p><p>
+    For smaller links, all of the polynomials will be computed automatically.
+   </p><p>
+    <span class="inlinemediaobject"><img src="link-polynomials-calculate.png" srcset="link-polynomials-calculate@2x.png 2x, link-polynomials-calculate.png"></span>
+   </p><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>
+     You can copy any of these polynomials to the clipboard by
+     right-clicking and selecting either
+     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Copy</span></span> or <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Copy plain text</span></span>.
+     If you press <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Copy</span></span> then the polynomial will be
+     copied using <a href="options.html#options-unicode">unicode symbols</a>,
+     and if you press <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Copy plain text</span></span> then the
+     polynomial will be copied in plain <span class="acronym">ASCII</span> symbols using a simple
+     “pidgin <span class="application">TeX</span>”.
+    </p></div><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>
+     If you find the polynomial exponents hard to read
+     (due to the subscripts being very small),
+     you can visit <span class="application">Regina</span>'s settings and
+     <a href="options.html#options-unicode">disable unicode symbols</a>.
+     This will change the polynomial display to use a simple
+     “pidgin <span class="application">TeX</span>” instead.
+    </p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="link-algebra"></a>Algebraic Invariants</h3></div></div></div><p>
+    The <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Algebra</span></span> tab holds several smaller tabs
+    that describe different groups associated with the link.
+   </p><p>
+    <span class="inlinemediaobject"><img src="link-algebra.png" srcset="link-algebra@2x.png 2x, link-algebra.png"></span>
+    <span class="inlinemediaobject"><img src="link-algebra-virtual.png" srcset="link-algebra-virtual@2x.png 2x, link-algebra-virtual.png"></span>
+   </p><p>
+    Currently this shows the following groups:
+    </p><div class="glosslist"><dl><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Knot/Link Group</span></span></dt><dd><p>
+        This is the link group as constructed from the Wirtinger presentation
+        (though <span class="application">Regina</span> will typically simplify the presentation before
+        showing it here).
+        Each relation is some variant of the form <code class="literal">xy=yz</code>,
+        where <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>y</code></em></span> corresponds to the upper strand at
+        some crossing, and <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>x</code></em></span> and
+        <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>z</code></em></span> correspond to the two sides of the lower
+        strand at that same crossing.
+       </p><div class="itemizedlist"><ul type="disc"><li><p>
+          For classical links, this is isomorphic to the fundamental group of
+          the link complement.  However, it is constructed differently, and so
+          it may have a different presentation.
+          If you are having difficulty simplifying it, you could perhaps try
+          working with the triangulated
+          <a href="link-analysis.html#link-complement" title="Link Complements">link complement</a> instead.
+         </p></li><li><p>
+          For virtual links, the link group <span class="emphasis"><em>could</em></span> change
+          depending upon whether you view the link from above or below the
+          diagram (i.e., <a href="link-modification.html#link-flip" title="Reflection, Rotation and Reversal">rotating</a> the link
+          may change the isomorphism class).  For this reason, if the link
+          diagram is virtual then you will see <span class="emphasis"><em>two</em></span> groups:
+          one as seen from above (using the classical Wirtinger presentation),
+          and one as seen from below (obtained by switching the upper and
+          lower strands at every crossing).
+          The Goussarov-Polyak-Viro knot (which is one of <span class="application">Regina</span>'s
+          <a href="links.html#link-new-example" title="Example Knots and Links">ready-made examples</a> is a
+          nice example of where these two groups differ.
+         </p><p>
+          Note however that, for virtual links, the link group is not a
+          particularly strong invariant.  You might wish to work with the
+          extended group instead (see below).
+         </p></li></ul></div></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Extended Group</span></span></dt><dd><p>
+        This is the extended group of the link, as defined by
+        Silver and Williams [<a href="bibliography.html#bib-silver-extgrp" title="[SW06]"><span class="abbrev">SW06</span></a>].
+        This invariant is particularly useful for virtual links, where the
+        ordinary link group is a fairly weak invariant.  However, it also
+        yields more complex group presentations.
+       </p><p>
+        Like the ordinary link group, the extended group of a virtual link may
+        change depending upon whether you view the link from above or below
+        the diagram, and so for virtual link diagrams <span class="application">Regina</span> will display
+        both variants.
+       </p></dd></dl></div><p>
+   </p><p>
+    All groups will be presented in the same format as the fundamental group
+    of a triangulation, and you are given the same tools to simplify them.
+    See the section on
+    <a href="tri-analysis.html#tri-algebra-fund" title="Fundamental Group">fundamental groups</a>
+    for further discussion of this.
+   </p><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>
+     If you find the exponents in the group presentations hard to read
+     (due to the superscripts being very small),
+     you can visit <span class="application">Regina</span>'s settings and
+     <a href="options.html#options-unicode">disable unicode symbols</a>.
+     This will change the display to use a simple
+     “pidgin <span class="application">TeX</span>” instead.
+    </p></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="link-codes"></a>Text Codes</h3></div></div></div><p>
+    The <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Text Codes</span></span> tab allows you to export your
+    knot or link in several text-based formats. Simply select a format
+    from the drop-down box (indicated in the screenshot below), and the
+    corresponding text code will be shown in the box beneath.
+   </p><p>
+    <span class="inlinemediaobject"><img src="link-codes.png" srcset="link-codes@2x.png 2x, link-codes.png"></span>
+   </p><p>
+    The codes that <span class="application">Regina</span> can display include:
+    </p><div class="glosslist"><dl><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Gauss codes</span></span></dt><dd><p>
+        This displays the classical, oriented and signed Gauss codes.
+        Classical Gauss codes are common in the literature, but they
+        suffer from ambiguities related to orientation; for
+        composite knots they may not even uniquely define the topology.
+        Oriented and signed Gauss codes solve this problem by adding a little
+        more information.
+       </p><p>
+        For a more detailed description of these formats, see the
+        section on <a href="links.html#link-new-classical-gauss">creating
+        knots from Gauss codes</a>.
+       </p><p>
+        Currently <span class="application">Regina</span> only displays Gauss codes for knots (not
+        multiple component links).  If your knot diagram is virtual (not
+        classical), then <span class="application">Regina</span> will still display all three Gauss codes;
+        however, only the oriented and signed variants contain enough
+        informtion to reconstruct the diagram.
+       </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Dowker-Thistlethwaite notation</span></span></dt><dd><p>
+        Like classical Gauss codes, Dowker-Thistlethwaite notation is
+        also common in the literature, and also suffers from ambiguities
+        related to orientation and composite knots.
+        Dowker-Thistlethwaite notation comes in two
+        forms—numerical and alphabetical—and <span class="application">Regina</span>
+        displays both forms here.
+       </p><p>
+        For a more detailed discussion of Dowker-Thistlethwaite notation,
+        see the section on <a href="links.html#link-new-dt">creating
+        knots from Dowker-Thistlethwaite notation</a>.
+       </p><p>
+        Currently <span class="application">Regina</span> only displays Dowker-Thistlethwaite notation
+        for knots (not multiple component links), and only for classical
+        (not virtual) knot diagrams.
+        Be aware that alphabetical Dowker-Thistlethwaite notation is
+        case-sensitive (i.e., upper-case and lower-case matters).
+       </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Knot/link signature</span></span></dt><dd><p>
+        Knot/link signatures are <span class="application">Regina</span>s own text-based format, and were
+        designed to have a combinatorial uniqueness property:
+        two link diagrams have the same signature
+        if and only if they are combinatorially isomorphic
+        (which includes relabelling crossings and/or components,
+        reflecting the entire diagram, rotating the entire diagram,
+        and/or reversing individual link components).
+       </p><p>
+        For a more detailed discussion of knot/link signatures,
+        see the section on <a href="links.html#link-new-knotsig">creating
+        knots from knot/link signatures</a>.
+       </p><p>
+        These signatures are supported for all links with fewer than
+        64 components, and they support both classical and virtual link
+        diagrams.  Be aware that knot/link signatures are case-sensitive
+        (i.e., upper-case and lower-case matters).
+       </p></dd><dt><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Planar diagram codes</span></span></dt><dd><p>
+        This displays the planar diagram code for the link.
+        Planar diagram codes support multiple-component links,
+        as well as both classical and virtual link diagrams.
+        Their main limitations are that they cannot represent zero-crossing
+        unknot components, and they cannot fix the orientation of a link
+        component that consists entirely of over-crossings.
+       </p><p>
+        For a detailed description of planar diagram codes, see the
+        section on <a href="links.html#link-new-pd">creating
+        links from planar diagram codes</a>.
+       </p></dd><dt><a name="link-codes-jenkins"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Jenkins format</span></span></dt><dd><p>
+        This is a multiline text code described by Bob Jenkins,
+        and used in his
+        <a href="http://burtleburtle.net/bob/knot/homfly.html" target="_top">HOMFLY-PT
+        polynomial software</a>.
+        <span class="application">Regina</span> can happily display the
+        Jenkins format for multiple-component links, and for both classical
+        and virtual link diagrams.
+       </p><p>
+        In this format, a link is described by a sequence of integers
+        separated by whitespace.  We assume that there are
+        <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>n</code></em></span> crossings in the link,
+        labelled arbitrarily as 0,1,2,….
+        The sequence of integers will contain, in order:
+        </p><div class="itemizedlist"><ul type="disc"><li><p>
+           the number of components in the link;
+          </p></li><li><p>
+           for each link component:
+           </p><div class="itemizedlist"><ul type="circle"><li><p>
+              the number of times you pass a crossing when traversing the
+              component (i.e., the length of the component);
+             </p></li><li><p>
+              for each link component:
+              two integers for each crossing that you pass in such a traversal:
+              the crossing label, and then either +1 or -1 according to
+              whether you pass over or under the crossing respectively;
+             </p></li></ul></div><p>
+          </p></li><li><p>
+           for each crossing:
+           </p><div class="itemizedlist"><ul type="circle"><li><p>
+              the crossing label;
+             </p></li><li><p>
+              the sign of the crossing (either +1 or -1).
+             </p></li></ul></div><p>
+          </p></li></ul></div><p>
+       </p></dd></dl></div><p>
+   </p><p><a name="link-codes-construct"></a>
+    For all of these text codes except for Jenkins format,
+    you can convert a text code back into a link as described in
+    <a href="links.html#link-new-code" title="Text Codes">creating a new link</a>.
+    Be aware that the resulting link might not use the same
+    crossing numbers, and might even be a reflection and/or reversal
+    of the original.
+   </p><p>
+    For Jenkins format, <span class="application">Regina</span>'s graphical user interface does not offer a
+    way to convert a code back into a link; however, you can always bring up
+    a <a href="python.html#python-gui" title="Graphical Python Consoles"><span class="application">Python</span> console</a> and call the
+    function <strong class="userinput"><code>Link::fromJenkins()</code></strong> instead.
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="link-graphs"></a>Associated Graphs</h3></div></div></div><p>
+    On the <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Graphs</span></span> tab, you can view
+    different graphs associated with the link diagram.
+    These graphs are all related to the <em class="firstterm">diagram
+    graph</em>, which is a 4-valent graph with one vertex for each
+    crossing and edges that follow the strands of the link.
+   </p><p>
+    There is a drop-down box for you to choose which graph you want to see.
+    The options are:
+    </p><div class="glosslist"><dl><dt><a name="link-graphs-tree"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Tree decomposition</span></span></dt><dd><p>
+        A <em class="firstterm">tree decomposition</em> (illustrated below)
+        models the diagram graph using a rooted tree;
+        you can read more about tree decompositions in the
+        <a href="tri-analysis.html#tri-graphs-tree">triangulations chapter</a>.
+        <span class="application">Regina</span> uses these tree decompositions in its
+        fixed-parameter tractable algorithms for the Jones and HOMFLY-PT
+        polynomials [<a href="bibliography.html#bib-homfly-fpt" title="[Bur18]"><span class="abbrev">Bur18</span></a>].
+       </p><p>
+        <span class="inlinemediaobject"><img src="link-graphs-tree.png" srcset="link-graphs-tree@2x.png 2x, link-graphs-tree.png"></span>
+       </p><p>
+        <span class="application">Regina</span> will display both the width and the number of bags
+        above the tree decomposition itself.
+       </p><p>
+        As with triangulations,
+        <span class="application">Regina</span> does not guarantee to find a tree decomposition of
+        the smallest possible width (i.e., it does not compute the precise
+        <em class="firstterm">treewidth</em> of the diagram graph).
+        Instead it uses fast heuristics that are found to
+        produce low-width tree decompositions in practice.
+       </p></dd><dt><a name="link-graphs-nice"></a><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Nice tree decomposition</span></span></dt><dd><p>
+        This is a variant of the tree decomposition that is less concise,
+        but more useful in practice for algorithms since it imposes very
+        tight constraints on the relationships between parent and child bags.
+        Again, you can read more about these in the
+        <a href="tri-analysis.html#tri-graphs-nice">triangulations chapter</a>.
+       </p><p>
+        <span class="inlinemediaobject"><img src="link-graphs-nice.png" srcset="link-graphs-nice@2x.png 2x, link-graphs-nice.png"></span>
+       </p><p>
+        As with tree decompositions, <span class="application">Regina</span> will display both the
+        width of the nice tree decomposition and the number of bags
+        that it contains.  Typically the width will be the same as for the
+        (plain) tree decomposition above, but the number of bags may
+        be significantly larger (though still linear in the overall
+        number of crossings).
+       </p></dd></dl></div><p>
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="link-complement"></a>Link Complements</h3></div></div></div><p>
+    <span class="application">Regina</span> includes many tools for working with 3-manifold triangulations,
+    as well as working directly with knots and links. If you want access to
+    these 3-manifold tools, you can build a triangulation of the link
+    complement.
+   </p><p>
+    The meaning of “complement” in this setting depends upon
+    whether you are working with a classical or virtual link diagram.
+    </p><div class="itemizedlist"><ul type="disc"><li><p>
+       If you have a <span class="emphasis"><em>classical</em></span> link diagram, then <span class="application">Regina</span>
+       will build an ideal 3-manifold triangulation representing the complement
+       of your link in the 3-sphere.
+      </p><p>
+       The resulting triangulation will have exactly one ideal vertex
+       for each link component.
+      </p><p>
+       If your link diagram is
+       <a href="link-analysis.html#link-decomposition-components" title="Diagram Components">disconnected (in the
+       graph-theoretical sense)</a>,
+       then the resulting 3-manifold will be the connected sum of the
+       complements of each connected diagram component.
+       In particular, the resulting triangulation will always be connected.
+      </p><p>
+       For classical links, the complement is a topological invariant of the
+       link.
+      </p></li><li><p>
+       If you have a <span class="emphasis"><em>virtual</em></span> (non-classical) link diagram,
+       let <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>S</code></em></span> be the smallest genus closed
+       orientable surface in which the diagram embeds (this corresponds to the
+       <a href="link-analysis.html#link-virtual-genus">virtual genus</a> of the diagram).
+       Then <span class="application">Regina</span> will build the complement of your link diagram in
+       the thickened surface
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>S</code></em></span> × I.
+      </p><p>
+       The resulting triangulation will have one ideal vertex for each link
+       component, plus an additional two ideal vertices for the two copies of
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>S</code></em></span> on the boundary of
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>S</code></em></span> × I.
+      </p><p>
+       If your link diagram is
+       <a href="link-analysis.html#link-decomposition-components" title="Diagram Components">disconnected (in the
+       graph-theoretical sense)</a>, then the surface
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>S</code></em></span> that is used will be the connected sum of
+       the individual closed orientable surfaces that host each connected
+       diagram component.  In particular, as in the classical case,
+       the resulting triangulation will always be connected.
+      </p><p>
+       For virtual links, the complement (and indeed the genus of the
+       surface <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>S</code></em></span>) is not a topological invariant,
+       but instead depends upon the specific link diagram.
+      </p></li></ul></div><p>
+   </p><p>
+    There are two ways you can build a link complement:
+   </p><p>
+    <span class="inlinemediaobject"><img src="link-complement-menu.png" srcset="link-complement-menu@2x.png 2x, link-complement-menu.png" align="middle"></span>
+    <span class="inlinemediaobject"><img src="link-complement-bar.png" srcset="link-complement-bar@2x.png 2x, link-complement-bar.png" align="middle"></span>
+   </p><p>
+    </p><div class="itemizedlist"><ul type="disc"><li><p>
+       If you select
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Knot / Link</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Complement</span></span>
+       from the menu or press the corresponding toolbar button
+       (the first button circled above),
+       then <span class="application">Regina</span> will use its own implementation to create a native
+       <span class="application">Regina</span> triangulation of the complement.
+       The triangulation will have access to the full suite of
+       <a href="triangulations.html" title="Chapter 3. Triangulations"><span class="application">Regina</span>'s tools for
+       triangulations</a>, but the meridian and longitude curves from the
+       diagram will be forgotten.
+      </p><p>
+       The <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Complement</span></span> option is available for all link
+       diagrams, both classical and virtual.
+      </p></li><li><p>
+       If you select
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Knot / Link</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Complement Via <span class="application">SnapPea</span></span></span>
+       from the menu or press the corresponding toolbar button
+       (the second button circled above),
+       then <span class="application">Regina</span> will pass the link to the <span class="application">SnapPea</span> kernel to triangulate
+       instead; the result will be a hybrid <a href="snappea.html" title="Chapter 4. SnapPea Triangulations"><span class="application">SnapPea</span>
+       triangulation</a>.
+       The peripheral curves from the diagram will be preserved in
+       <span class="application">SnapPea</span>'s data structures; however, the available tools for
+       working with the triangulation combinatorially will be more limited.
+       See the introduction to the chapter on <a href="snappea.html" title="Chapter 4. SnapPea Triangulations"><span class="application">SnapPea</span>
+       triangulations</a> for more information on these limitations.
+      </p><p>
+       The <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Complement Via <span class="application">SnapPea</span></span></span> option is only available for
+       classical link diagrams, not virtual diagrams.
+      </p></li></ul></div><p>
+   </p><p>
+    Regardless of which method you use, the new triangulation will be
+    inserted immediately beneath your link in the packet tree.
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="link-decomposition"></a>Decomposition</h3></div></div></div><p>
+    At present <span class="application">Regina</span> only offers very basic algorithms for decomposing
+    links into smaller pieces.  These include the following:
+   </p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="link-decomposition-components"></a>Diagram Components</h4></div></div></div><p>
+     If you have a link diagram that is a disjoint union of several smaller
+     diagrams, you can split the diagram into its connected components.
+     Here <em class="firstterm">connected</em> means that you can travel between
+     any two parts of the diagram by following the link and/or jumping
+     between upper and lower strands at crossings.  In other words,
+     connectivity refers to the underlying 4-valent graph, where every
+     crossing becomes a 4-way intersection.
+    </p><p>
+     What this means:
+    </p><div class="itemizedlist"><ul type="disc"><li><p>
+      A disconnected link diagram must describe a splittable link.
+     </p></li><li><p>
+      A splittable link, however, <span class="emphasis"><em>could</em></span> be described by a
+      single connected diagram component.  For example, you could perform
+      trivial type II Reidemeister moves to make the different link components
+      overlap (thus making the entire link diagram connected).
+     </p></li><li><p>
+      In general, a single <span class="emphasis"><em>diagram component</em></span>
+      could contain multiple <span class="emphasis"><em>link components</em></span>.
+     </p></li></ul></div><p>
+     To split a link diagram into its connected components, select
+     <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Knot / Link</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">Extract Diagram Components</span></span>
+     from the menu.
+     You must open the link for viewing before you can do this.
+    </p><p>
+     <span class="inlinemediaobject"><img src="link-components-menu.png" srcset="link-components-menu@2x.png 2x, link-components-menu.png"></span>
+    </p><p>
+     <span class="application">Regina</span> will create several new links, one for each
+     connected component of the original diagram.
+     These will be added beneath the original in the packet tree.
+     Your original (disconnected) link diagram will remain unchanged.
+    </p><p>
+     <span class="inlinemediaobject"><img src="link-extract-components.png" srcset="link-extract-components@2x.png 2x, link-extract-components.png"></span>
+    </p></div></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="links.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="link-modification.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">Knots and Links </td><td width="34%" align="center" class="navCenter"><a href="links.html">Up</a></td><td width="33%" align="right" class="navRight"> Modification</td></tr></table></div></body></html>

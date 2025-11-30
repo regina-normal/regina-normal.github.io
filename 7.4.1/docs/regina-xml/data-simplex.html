@@ -1,0 +1,142 @@
+<html><head><title>simplex</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Regina, XML, Data files"><link rel="start" href="index.html" title="Regina 7.4.1 File Format Reference"><link rel="up" href="dataformat.html" title="Current Data File Format"><link rel="prev" href="data-script.html" title="script"><link rel="next" href="data-snappeadata.html" title="snappeadata"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>simplex</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="data-script.html">Prev</a></td><td align="center" class="navCenter" width="34%">Current Data File Format</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="data-snappeadata.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="data-simplex"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>simplex — A single top-dimensional simplex in a
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>dim</code></em></span>-dimensional triangulation</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="informaltable"><table border="1"><colgroup><col><col></colgroup><tbody><tr><td colspan="2">
+      <span class="bold"><strong>Content Model</strong></span>
+     </td></tr><tr><td colspan="2">
+<pre class="synopsis">
+simplex ::= (#PCDATA)</pre>
+     </td></tr><tr><td colspan="2">
+      <span class="bold"><strong>Attributes</strong></span>
+     </td></tr><tr><td><span class="bold"><strong>Name</strong></span></td><td><span class="bold"><strong>Type</strong></span></td></tr><tr><td><code class="sgmltag-element">desc</code></td><td><span class="type">CDATA</span></td></tr><tr><td><code class="sgmltag-element">lock</code></td><td><span class="type">NUMBER</span></td></tr></tbody></table></div></div><div class="refsect1" lang="en"><a name="id4614"></a><h2>Description</h2><p>
+   A <a href="data-simplex.html" title="simplex"><code class="sgmltag-element">simplex</code></a> element stores a single top-dimensional simplex in a
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>dim</code></em></span>-dimensional triangulation, along with its
+   associated facet gluings.
+   Since <span class="application">Regina</span> 7.0, this element is now used by all of the
+   dimensions that <span class="application">Regina</span> supports
+   (2 ≤ <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>dim</code></em></span> ≤ 15).
+  </p><p>
+   The character data of this <span class="acronym">XML</span> element should be a
+   whitespace-separated list of <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>dim</code></em></span> + 1
+   integer pairs, representing the gluings of facets
+   0, 1, …, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>dim</code></em></span> of this simplex.  Note that
+   facet  <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>i</code></em></span> is always opposite
+   vertex <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>i</code></em></span> in a top-dimensional simplex.
+  </p><p>
+   For each pair, the first integer represents the other top-dimensional
+   simplex to which the facet is glued (recall that simplices in a triangulation
+   are numbered 0, 1, 2, etc.).  The second integer represents the
+   permutation of vertices from this simplex to the other simplex
+   describing precisely how this gluing takes place.  This permutation
+   will take the current facet number of this simplex to the corresponding
+   facet number of the adjacent simplex, and the other
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>dim</code></em></span> vertex numbers of this simplex
+   to the corresponding <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>dim</code></em></span> vertex numbers on
+   the adjacent simplex to which they are identified by this gluing.
+  </p><p>
+   There are two ways in which <span class="application">Regina</span> can encode permutations as integers:
+   <span class="emphasis"><em>indices</em></span> into the symmetric group
+   S<sub><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>dim</code></em></span>+1</sub>, and
+   <span class="emphasis"><em>image packs</em></span>.  Which of these methods is used
+   is specified by the <code class="sgmltag-element">perm</code> attribute of the
+   enclosing <a href="data-tri.html" title="tri"><code class="sgmltag-element">tri</code></a> element.  If no method is specified (e.g., if
+   this is an older second-generation data file), then <span class="application">Regina</span> will
+   assume indices for dimension 2, and image packs for
+   dimensions <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>dim</code></em></span> ≥ 3
+   (following the behaviour of the second-generation file format).
+  </p><div class="itemizedlist"><ul type="disc"><li><p>
+    An <span class="emphasis"><em>index</em></span> encodes a permutation as an integer
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>i</code></em></span> in the range
+    0 ≤ <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>i</code></em></span> &lt; (<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>dim</code></em></span>+1)!.
+    This integer is the index of the permutation into the symmetric
+    group S<sub><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>dim</code></em></span>+1</sub>.
+    These indices list the permutations in “almost
+    lexicographical” order; the exception is that some pairs
+    (2<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>i</code></em></span>, 2<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>i</code></em></span>+1) are
+    swapped to ensure that even indices correspond to even permutations.
+   </p><p>
+    You can access these indices from within <span class="application">Regina</span> using the functions
+    <code class="code">Perm&lt;dim+1&gt;::SnIndex()</code> and
+    <code class="code">Perm&lt;dim+1&gt;::Sn[...]</code>.
+   </p></li><li><p>
+    An <span class="emphasis"><em>image pack</em></span> encodes a permutation as follows.
+    If the permutation maps 0, 1, …, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>dim</code></em></span> to
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>a0</code></em></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>a1</code></em></span>, …,
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>aDim</code></em></span> respectively (where
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>a0</code></em></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>a1</code></em></span>, …,
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>aDim</code></em></span> are 0, 1, …, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>dim</code></em></span>
+    in some order), then the corresponding integer is
+    (<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>a0</code></em></span> +
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>B</code></em></span> <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>a1</code></em></span> +
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>B</code></em></span><sup>2</sup> <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>a2</code></em></span> +
+    … +
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>B</code></em></span><sup><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>dim</code></em></span></sup> <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>aDim</code></em></span>).
+    Here the “base” <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>B</code></em></span> is
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>B</code></em></span> = 4 for dimension
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>dim</code></em></span> = 3,
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>B</code></em></span> = 8 for dimensions
+    4 ≤ <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>dim</code></em></span> ≤ 7, and
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>B</code></em></span> = 16 for dimensions
+    8 ≤ <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>dim</code></em></span> ≤ 15.
+    As an example, the identity permutation for dimension
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>dim</code></em></span> = 8 which maps
+    (0,1,…,8) to
+    (0,1,…,8) is represented by the integer
+    (0 + 1×16 + 2×256 + … + 8×4294967296),
+    which is 36344967696.
+   </p><p>
+    You can access these indices from within <span class="application">Regina</span> using the functions
+    <code class="code">Perm&lt;dim+1&gt;::imagePack()</code> and
+    <code class="code">Perm&lt;dim+1&gt;::fromImagePack(...)</code>.
+   </p></li></ul></div><p>
+   If a facet is a boundary facet (i.e., it is not glued to anything), the
+   two corresponding integers stored in the <span class="acronym">XML</span> character data should
+   be -1 and -1.
+  </p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>
+   For dimensions <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>dim</code></em></span> = 2..7,
+   permutations are represented by 32-bit integers.
+   In contrast, for dimensions
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>dim</code></em></span> = 8..15,
+   permutations are represented by 64-bit integers.
+   If you are writing code that reads <span class="application">Regina</span> data files, you may need
+   to use a large integer type
+   (such as <code class="literal">long long</code> in <span class="application">C++</span>) accordingly.
+  </p></div><div class="refsect2" lang="en"><a name="id4700"></a><h3>Parents</h3><p>
+    The following elements contain <code class="sgmltag-element">simplex</code>:
+    <span class="simplelist"><a href="data-tri.html" title="tri"><code class="sgmltag-element">tri</code></a></span>.
+   </p></div><div class="refsect2" lang="en"><a name="id4708"></a><h3>Children</h3><p>
+    Element <code class="sgmltag-element">simplex</code> has no children.
+   </p></div></div><div class="refsect1" lang="en"><a name="id4712"></a><h2>Attributes</h2><div class="variablelist"><dl><dt><span class="term"><code class="sgmltag-element">desc</code></span></dt><dd><p>
+      A human-readable description of the role that this top-dimensional
+      simplex plays in the overall triangulation.
+     </p></dd><dt><span class="term"><code class="sgmltag-element">lock</code></span></dt><dd><p>
+      A hexadecimal bitmask indicating whether this top-dimensional simplex
+      and/or any of its facets are locked.  Essentially, locking a simplex or
+      facet means that the simplex or facet must not change; see <span class="application">Regina</span>'s
+      <span class="acronym">API</span> documentation for full details.
+     </p><p>
+      This bitmask must contain
+      <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>dim</code></em></span> + 2 bits;
+      here we number the bits so that the 0th bit is least significant.
+      Bit <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>k</code></em></span> should be set if and only if
+      facet <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>k</code></em></span> of this simplex is locked,
+      for 0 ≤ <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>k</code></em></span> ≤ <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>dim</code></em></span>.
+      Bit <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>dim</code></em></span> + 1 should be set
+      if and only if this simplex itself is locked.
+     </p><p>
+      If two top-dimensional simplices are glued together, then the
+      corresponding facet locks must be consistent (i.e., the two facets
+      that are joined must either be both locked or both unlocked).
+     </p><p>
+      If this attribute is missing, then the bitmask will be treated as 0
+      (i.e., the simplex and all of its facets are unlocked).
+     </p></dd></dl></div></div><div class="refsect1" lang="en"><a name="id4736"></a><h2>Example</h2><p>
+   The following <span class="acronym">XML</span> snippet represents simplex number 0 in a
+   6-dimensional triangulation, using image packs to represent permutations.
+   Facet 0 of this simplex is glued to facet 6 of simplex number 1,
+   with a gluing permutation that maps (0,1,2,3,4,5,6) to (6,0,1,2,3,4,5).
+   Facet 6 of this simplex is glued to facet 0 of simplex number 1,
+   with a gluing permutation that maps (0,1,2,3,4,5,6) to (1,2,3,4,5,6,0).
+   The remaining facets 1,…,5 of this simplex are all boundary facets.
+  </p><pre class="programlisting">
+&lt;simplex&gt; 1 14038087 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 1 2054353 &lt;/simplex&gt;
+  </pre></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="data-script.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="data-snappeadata.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">script </td><td width="34%" align="center" class="navCenter"><a href="dataformat.html">Up</a></td><td width="33%" align="right" class="navRight"> snappeadata</td></tr></table></div></body></html>

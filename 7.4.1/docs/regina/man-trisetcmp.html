@@ -1,0 +1,92 @@
+<html><head><title>trisetcmp</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina 7.4.1 Handbook"><link rel="up" href="utils.html" title="Appendix B. Command Line: Specialised Utilities"><link rel="prev" href="man-tricensus.html" title="tricensus"><link rel="next" href="utils-compilation.html" title="Appendix C. Command Line: Compiling and Linking"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>trisetcmp</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="man-tricensus.html">Prev</a></td><td align="center" class="navCenter" width="34%">Command Line: Specialised Utilities</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="utils-compilation.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="man-trisetcmp"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>trisetcmp — Compare triangulations between two <span class="application">Regina</span> data files</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">trisetcmp</strong></span></span> [[<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-m</code></span>] |  [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-n</code></span>]] [<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-s</code></span>] {<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>file1</code></em></span>} {<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>file2</code></em></span>}</p></div><div class="cmdsynopsis"><p><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="command"><span><strong class="command">trisetcmp</strong></span></span> {{<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-v, --version</code></span>} |  {<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-?, --help</code></span>}}</p></div></div><div class="refsect1" lang="en"><a name="id9184"></a><h2>Description</h2><p>
+    Compares all triangulations in the first file against
+    all triangulations in the second file, looking for pairs of
+    triangulations that are combinatorially isomorphic.
+   </p><p>
+    The two given files must be <span class="application">Regina</span> data files.
+    A full list of matches (or a full list of non-matches if
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-n</code></span> is passed) is written to standard output.
+    A match occurs when some triangulation from
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>file1</code></em></span> is combinatorially isomorphic to
+    some triangulation from <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>file2</code></em></span> (i.e.,
+    identical up to a relabelling of tetrahedra and their vertices).
+   </p><p>
+    This utility can also do subcomplex testing instead of full
+    isomorphism testing.  See the option <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-s</code></span> for
+    details.
+   </p><p>
+    This utility compares both 3-manifold and 4-manifold triangulations
+    (but no other dimensions at present).
+    However, it will only compare triangulations of the same
+    dimension—it will not test whether some 3-manifold triangulation
+    appears as a subcomplex of some other 4-manifold triangulation.
+   </p></div><div class="refsect1" lang="en"><a name="id9195"></a><h2>Options</h2><div class="variablelist"><dl><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-m</code></span> (default)</span></dt><dd><p>
+       Output matches only.  All isomorphic matches between
+       triangulations in <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>file1</code></em></span>
+       and triangulations in <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>file2</code></em></span>
+       will be listed.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-n</code></span></span></dt><dd><p>
+       Output non-matches only.  All triangulations from
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>file1</code></em></span> with no isomorphic match in
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>file2</code></em></span> will be listed, and vice versa.
+      </p><p>
+       If <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-s</code></span> is passed then non-matches are
+       tested in one direction only, not both; see below for details.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-s</code></span></span></dt><dd><p>
+       Instead of testing triangulations for isomorphism, test whether
+       one triangulation is isomorphic to a subcomplex of the other.
+      </p><p>
+       In the default case of <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-m</code></span> (output matches only),
+       this program outputs all instances where a triangulation from
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>file1</code></em></span> is isomorphic to a subcomplex
+       of a triangulation from <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>file2</code></em></span>.
+      </p><p>
+       In the case of <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-n</code></span> (output non-matches only),
+       this program outputs all triangulations from
+       <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>file1</code></em></span> that are not isomorphic to a
+       subcomplex of any triangulation from <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>file2</code></em></span>.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-v, --version</code></span></span></dt><dd><p>Show which version of <span class="application">Regina</span> is being used, and exit
+      immediately.</p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="option"><code class="option">-?, --help</code></span></span></dt><dd><p>Display brief usage information, and exit immediately.</p></dd></dl></div></div><div class="refsect1" lang="en"><a name="id9238"></a><h2>Internationalisation</h2><p>
+  If any packets contain international characters,
+  <span class="application">Regina</span> will attempt to convert these to your local character
+  encoding as it writes them to the output.
+ </p><p>
+  You can tell <span class="application">Regina</span> what character encoding to use by setting
+  standard locale-related environment variables, such as
+  <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="envar"><code class="envar">LANG</code></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="envar"><code class="envar">LC_CTYPE</code></span> or
+  <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="envar"><code class="envar">LC_ALL</code></span>.
+ </p><p>
+  For example, if <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="envar"><code class="envar">LANG</code></span> is set to
+  <code class="literal">en_AU</code> then output will be written in the
+  Western European character set <code class="literal">ISO-8859-1</code>,
+  and if <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="envar"><code class="envar">LANG</code></span> is set to
+  <code class="literal">en_AU.UTF-8</code> then output will be written in the
+  universal character set <code class="literal">UTF-8</code>.
+ </p><p>
+  Typically these environment variables will already be set for you when
+  you install your <span class="application"><span class="acronym">GNU</span>/Linux</span> system, and <span class="application">Regina</span> will just use the
+  right character set out of the box.  See your <span class="application"><span class="acronym">GNU</span>/Linux</span> system reference
+  for further information on supporting different locales.
+ </p></div><div class="refsect1" lang="en"><a name="id9260"></a><h2><span class="application">macOS</span> Users</h2><p>
+    If you downloaded a drag-and-drop app bundle, this utility is
+    shipped inside it.  If you dragged <span class="application">Regina</span> to the main
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Applications</span></span> folder, you can run it as
+    <code class="literal">/Applications/Regina.app/Contents/MacOS/trisetcmp</code>.
+   </p></div><div class="refsect1" lang="en"><a name="id9267"></a><h2><span class="application">Windows</span> Users</h2><p>
+    The command-line utilities are installed beneath the
+    <code class="filename">Program Files</code> directory; on some
+    machines this directory is called
+    <code class="filename">Program Files (x86)</code>.
+    You can start this utility by running
+    <code class="literal">c:\Program Files\Regina\Regina 7.4.1\bin\trisetcmp.exe</code>.
+   </p></div><div class="refsect1" lang="en"><a name="id9274"></a><h2>See Also</h2><p>
+    <a href="man-censuslookup.html" title="censuslookup">censuslookup</a>,
+    <a href="man-regina-gui.html" title="regina-gui">regina-gui</a>.
+   </p></div><div class="refsect1" lang="en"><a name="id9279"></a><h2>Author</h2><p>
+    This utility was written by Benjamin Burton
+    <code class="email">&lt;<a href="mailto:bab@maths.uq.edu.au">bab@maths.uq.edu.au</a>&gt;</code>.
+    Many people have been involved in the development
+   of <span class="application">Regina</span>; see the <a href="credits.html#acknowledgements" title="Acknowledgements">acknowledgements
+   page</a> for a full list of credits.
+   </p></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="man-tricensus.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="utils-compilation.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">tricensus </td><td width="34%" align="center" class="navCenter"><a href="utils.html">Up</a></td><td width="33%" align="right" class="navRight"> Command Line: Compiling and Linking</td></tr></table></div></body></html>

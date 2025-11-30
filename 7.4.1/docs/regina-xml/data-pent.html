@@ -1,0 +1,75 @@
+<html><head><title>pent</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Regina, XML, Data files"><link rel="start" href="index.html" title="Regina 7.4.1 File Format Reference"><link rel="up" href="removed.html" title="Deprecated and Removed Elements"><link rel="prev" href="data-params.html" title="params"><link rel="next" href="data-pentachora.html" title="pentachora"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>pent</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="data-params.html">Prev</a></td><td align="center" class="navCenter" width="34%">Deprecated and Removed Elements</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="data-pentachora.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="data-pent"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>pent — Replaced by <a href="data-simplex.html" title="simplex"><code class="sgmltag-element">simplex</code></a></p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="informaltable"><table border="1"><colgroup><col><col></colgroup><tbody><tr><td colspan="2">
+      <span class="bold"><strong>Content Model</strong></span>
+     </td></tr><tr><td colspan="2">
+<pre class="synopsis">
+pent ::= (#PCDATA)</pre>
+     </td></tr><tr><td colspan="2">
+      <span class="bold"><strong>Attributes</strong></span>
+     </td></tr><tr><td><span class="bold"><strong>Name</strong></span></td><td><span class="bold"><strong>Type</strong></span></td></tr><tr><td><code class="sgmltag-element">desc</code></td><td><span class="type">CDATA</span></td></tr></tbody></table></div><p>Deprecated since <span class="application">Regina</span> 7.0</p></div><div class="refsect1" lang="en"><a name="id9736"></a><h2>Description</h2><p>
+   This element was used in the past to store a single pentachoron in a
+   4-dimensional triangulation.  Since <span class="application">Regina</span> 7.0, all
+   top-dimensional simplices for triangulations in all dimensions
+   are now stored using the <a href="data-simplex.html" title="simplex"><code class="sgmltag-element">simplex</code></a> element.
+   Moreover, <span class="application">Regina</span> now supports multiple ways of encoding the gluing
+   permutations between these top-dimensional simplices.
+   See <a href="data-simplex.html" title="simplex"><code class="sgmltag-element">simplex</code></a> for details.
+  </p><p>
+   A <a href="data-pent.html" title="pent"><code class="sgmltag-element">pent</code></a> element stores a single pentachoron in a 4-dimensional
+   triangulation, along with its associated facet gluings.
+  </p><p>
+   The character data of this <span class="acronym">XML</span> element should be a
+   whitespace-separated list of five integer pairs, representing the
+   gluings of facets 0, 1, 2, 3 and 4 of this pentachoron.  Note that
+   facet <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>i</code></em></span> is always opposite vertex
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>i</code></em></span> in a pentachoron.
+  </p><p>
+   For each pair, the first integer represents the pentachoron to which
+   the facet is glued (note that pentachora in a triangulation are
+   numbered 0, 1, 2, etc.).  The second integer represents the
+   permutation of vertices from this pentachoron to the other pentachoron
+   describing precisely how this gluing takes place.  This permutation
+   will take the current facet number of this pentachoron
+   to the corresponding facet number of the adjacent pentachoron,
+   and the other four vertex numbers of this pentachoron to the
+   corresponding four vertex numbers on the adjacent pentachoron to
+   which they are identified by this gluing.
+  </p><p>
+   A permutation is represented as a two-byte integer as follows.
+   If the permutation maps 0, 1, 2, 3 and 4 to
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>a</code></em></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>b</code></em></span>,
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>c</code></em></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span> and
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>e</code></em></span> respectively (where
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>a</code></em></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>b</code></em></span>,
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>c</code></em></span>, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span> and
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>e</code></em></span> are
+   0, 1, 2, 3 and 4 in some order), then the corresponding two-byte integer is
+   (<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>a</code></em></span> + 8<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>b</code></em></span> +
+   64<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>c</code></em></span> + 512<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span> +
+   4096<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>e</code></em></span>).
+   For example, the identity permutation which maps (0, 1, 2, 3) to
+   (0, 1, 2, 3) is represented by the two-byte integer
+   (0 + 8 + 128 + 1536 + 16384), which is 18056.
+  </p><p>
+   If a facet is a boundary facet (i.e., it is not glued to anything), the
+   two corresponding integers stored in the <span class="acronym">XML</span> character data should
+   be -1 and -1.
+  </p><div class="refsect2" lang="en"><a name="id9771"></a><h3>Parents</h3><p>
+    The following elements contain <code class="sgmltag-element">pent</code>:
+    <span class="simplelist"><a href="data-pentachora.html" title="pentachora"><code class="sgmltag-element">pentachora</code></a></span>.
+   </p></div><div class="refsect2" lang="en"><a name="id9779"></a><h3>Children</h3><p>
+    Element <code class="sgmltag-element">pent</code> has no children.
+   </p></div></div><div class="refsect1" lang="en"><a name="id9783"></a><h2>Attributes</h2><div class="variablelist"><dl><dt><span class="term"><code class="sgmltag-element">desc</code></span></dt><dd><p>
+      A human-readable description of the role that this pentachoron plays
+      in the overall triangulation.
+     </p></dd></dl></div></div><div class="refsect1" lang="en"><a name="id9791"></a><h2>Example</h2><p>
+   The following <span class="acronym">XML</span> snippet represents pentachoron number 0 in a
+   4-dimensional triangulation.
+   Facet 0 of this pentachoron is glued to facet 4 of pentachoron number 1,
+   with a gluing permutation that maps (0,1,2,3,4) to (4,0,1,2,3).
+   Facet 4 of this pentachoron is glued to facet 0 of pentachoron number 1,
+   with a gluing permutation that maps (0,1,2,3,4) to (1,2,3,4,0).
+   The remaining facets 1,2,3 of this pentachoron are all boundary facets.
+  </p><pre class="programlisting">
+&lt;pent&gt; 1 14038087 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 1 2054353 &lt;/pent&gt;
+  </pre></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="data-params.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="data-pentachora.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">params </td><td width="34%" align="center" class="navCenter"><a href="removed.html">Up</a></td><td width="33%" align="right" class="navRight"> pentachora</td></tr></table></div></body></html>

@@ -1,0 +1,154 @@
+<html><head><title>Talking with SnapPy</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina 7.4.1 Handbook"><link rel="up" href="python.html" title="Chapter 9. Python Scripting"><link rel="prev" href="python-docs.html" title="API Documentation"><link rel="next" href="sessions.html" title="Sample Python Sessions"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Talking with <span class="application">SnapPy</span></h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="python-docs.html">Prev</a></td><td align="center" class="navCenter" width="34%"><span class="application">Python</span> Scripting</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="sessions.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="python-snappy"></a>Talking with <span class="application">SnapPy</span></h2></div></div></div><p>
+   Since <span class="application">Regina</span> 4.95, a default installation of
+   <span class="application">Regina</span> can talk directly with a default installation of <span class="application">SnapPy</span>
+   on many platforms.
+   This includes <span class="application">macOS</span> 10.7 or greater
+   (if you installed the <span class="application">SnapPy</span> app bundle in
+   the usual <code class="filename">Applications</code> folder), and <span class="application"><span class="acronym">GNU</span>/Linux</span>
+   (if your <span class="application">SnapPy</span> uses the default system <span class="application">Python</span> installation).
+  </p><p>
+   Simply type <strong class="userinput"><code>import snappy</code></strong> from within any of
+   <span class="application">Regina</span>'s <span class="application">Python</span> environments.  To send information back and forth
+   between <span class="application">Regina</span> and <span class="application">SnapPy</span>:
+   </p><div class="itemizedlist"><ul type="disc"><li><p>
+     <span class="application">Regina</span>'s triangulation classes
+     <code class="classname">Triangulation3</code> and
+     <code class="classname">SnapPeaTriangulation</code> both have a
+     <code class="function">snapPea()</code> function, which gives a string that
+     you can pass to <span class="application">SnapPy</span>'s <code class="classname">Manifold</code> constructor.
+    </p></li><li><p>
+     <span class="application">SnapPy</span>'s <code class="classname">Manifold</code> class has a
+     <code class="function">_to_string()</code> function, which gives a string
+     that you can pass to <span class="application">Regina</span>'s
+     <code class="classname">Triangulation3</code> or
+     <code class="classname">SnapPeaTriangulation</code> constructor.
+    </p></li></ul></div><p>
+  </p><p>
+   Regarding fillings and peripheral curves:
+   <span class="application">Regina</span> does not store fillings or peripheral curves for its own native
+   <a href="packet-types.html#packet-triangulation3" title="3-Manifold Triangulations">triangulation packets</a>,
+   as represented by the <code class="classname">Triangulation3</code> class.
+   However, it does store fillings and peripheral curves for its hybrid
+   <a href="packet-types.html#packet-snappea" title="SnapPea Triangulations"><span class="application">SnapPea</span> triangulation packets</a>,
+   as represented by the <code class="classname">SnapPeaTriangulation</code> class.
+   The trade-off is that the native <code class="classname">Triangulation3</code>
+   class offers <span class="application">Regina</span>'s full fine-grained control over the triangulation,
+   whereas the hybrid <code class="classname">SnapPeaTriangulation</code> class
+   has a more limited (largely read-only) interface.
+   </p><div class="itemizedlist"><ul type="disc"><li><p>
+     When sending data from <span class="application">Regina</span> to <span class="application">SnapPy</span>,
+     if your triangulation is of the class
+     <code class="classname">Triangulation3</code>,
+     then <code class="function">Triangulation3.snapPea()</code> will
+     create a <span class="application">SnapPy</span> manifold in which all fillings and peripheral
+     curves are marked as unknown.
+     If your triangulation is of the class
+     <code class="classname">SnapPeaTriangulation</code>,
+     and if you already have fillings and peripheral curves stored on
+     each cusp, then <code class="function">SnapPeaTriangulation.snapPea()</code> will
+     create a <span class="application">SnapPy</span> manifold that preserves these.
+    </p></li><li><p>
+     Conversely, when sending data from <span class="application">SnapPy</span> to <span class="application">Regina</span>, you
+     can choose to instantiate a triangulation using either the
+     <code class="classname">Triangulation3</code> class or the
+     <code class="classname">SnapPeaTriangulation</code> class.
+     If you use the <code class="classname">Triangulation3</code> class then all
+     fillings and peripheral curves will be lost.
+     If you use the <code class="classname">SnapPeaTriangulation</code> class then
+     fillings and peripheral curves will be preserved (but your interface
+     will be more restricted).
+    </p></li></ul></div><p>
+  </p><p>
+   If you wish to send the complement of a native <span class="application">Regina</span>
+   <code class="classname">Link</code> to <span class="application">SnapPy</span>,
+   you can pass your link directly to the
+   <code class="classname">SnapPeaTriangulation</code> constructor, which will
+   preserve the peripheral curves from the link diagram; then you can
+   pass this to <span class="application">SnapPy</span> via
+   <code class="function">SnapPeaTriangulation.snapPea()</code> as above.
+  </p><p>
+   Regarding the interface:
+   the <code class="classname">SnapPeaTriangulation</code> class
+   inherits from <code class="classname">Triangulation3</code>, and so you can
+   use it anywhere that a read-only triangulation is expected (in particular,
+   you can use it for enumerating vertex normal surfaces or angle structures).
+   However, because <code class="classname">SnapPeaTriangulation</code> must
+   maintain two synchronised copies of the triangulation (<span class="application">Regina</span>'s and
+   <span class="application">SnapPea</span>'s), it is essentially read-only: any attempt to modify the
+   triangulation using <span class="application">Regina</span>'s native routines (e.g.,
+   <code class="function">pachner()</code> or
+   <code class="function">barycentricSubdivision()</code>) will cause the
+   <span class="application">SnapPea</span> triangulation to delete itself and become a
+   “null triangulation” instead.
+  </p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>
+   At present, <span class="application">SnapPy</span> (version 2.0.3) is not compatible with
+   multiple <span class="application">Python</span> interpreters.  If you import <span class="application">SnapPy</span> into more than one
+   <span class="application">Python</span>
+   console in the graphical user interface, <span class="application">SnapPy</span> may stop working.
+   See <a href="troubleshooting.html#trouble-python-snappy">this troubleshooting entry</a>
+   for details.
+  </p></div><p>
+   The following <span class="application">Python</span> session illustrates several of the concepts
+   discussed above.
+  </p><pre class="programlisting">
+bab@ember:~$ regina-python 
+Regina 7.2
+Software for low-dimensional topology
+Copyright (c) 1999-2022, The Regina development team
+&gt;&gt;&gt; import snappy
+&gt;&gt;&gt; m = snappy.Manifold('m001')
+&gt;&gt;&gt; t = SnapPeaTriangulation(m._to_string())
+&gt;&gt;&gt; print t.detail()
+Size of the skeleton:
+  Tetrahedra: 2
+  Triangles: 4
+  Edges: 2
+  Vertices: 1
+
+Tetrahedron gluing:
+  Tet  |  glued to:      (012)      (013)      (023)      (123)
+  -----+-------------------------------------------------------
+    0  |               1 (103)    1 (320)    1 (210)    1 (132)
+    1  |               0 (320)    0 (102)    0 (310)    0 (132)
+
+Vertices:
+  Tet  |  vertex:    0   1   2   3
+  -----+--------------------------
+    0  |             0   0   0   0
+    1  |             0   0   0   0
+
+Edges:
+  Tet  |  edge:   01  02  03  12  13  23
+  -----+--------------------------------
+    0  |           0   1   1   1   1   0
+    1  |           0   1   1   1   1   0
+
+Triangles:
+  Tet  |  face:  012 013 023 123
+  -----+------------------------
+    0  |           0   1   2   3
+    1  |           2   0   1   3
+
+Tetrahedron shapes:
+  0: ( -1.60812e-16, 1 )
+  1: ( -1.60812e-16, 1 )
+
+Cusps:
+  0: Vertex 0, complete
+
+&gt;&gt;&gt; print t.hasStrictAngleStructure()
+True
+&gt;&gt;&gt; print AngleStructures(t).detail()
+4 vertex angle structures (no restrictions):
+0 1 0 ; 1 0 0
+0 0 1 ; 1 0 0
+1 0 0 ; 0 1 0
+1 0 0 ; 0 0 1
+
+&gt;&gt;&gt; t2 = Example3.figureEight()
+&gt;&gt;&gt; m2 = snappy.Manifold(t2.snapPea())
+&gt;&gt;&gt; print m2.volume()
+2.02988321282
+&gt;&gt;&gt;
+  </pre></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="python-docs.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="sessions.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft"><span class="acronym">API</span> Documentation </td><td width="34%" align="center" class="navCenter"><a href="python.html">Up</a></td><td width="33%" align="right" class="navRight"> Sample <span class="application">Python</span> Sessions</td></tr></table></div></body></html>

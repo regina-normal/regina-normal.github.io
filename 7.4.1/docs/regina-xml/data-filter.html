@@ -1,0 +1,45 @@
+<html><head><title>filter</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Regina, XML, Data files"><link rel="start" href="index.html" title="Regina 7.4.1 File Format Reference"><link rel="up" href="removed.html" title="Deprecated and Removed Elements"><link rel="prev" href="data-euler-filter.html" title="euler (filter)"><link rel="next" href="data-filter-combination.html" title="filter (combination)"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>filter</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="data-euler-filter.html">Prev</a></td><td align="center" class="navCenter" width="34%">Deprecated and Removed Elements</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="data-filter-combination.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="data-filter"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>filter — Replaced by different elements for different filter
+   types</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="informaltable"><table border="1"><colgroup><col><col></colgroup><tbody><tr><td colspan="2">
+      <span class="bold"><strong>Content Model</strong></span>
+     </td></tr><tr><td colspan="2">
+<pre class="synopsis">
+filter ::= (<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>type-specific content</code></em></span>)</pre>
+      The contents of a <code class="sgmltag-element">filter</code> element
+      depend upon the particular type of filter (such as combination
+      filter or filter by basic properties).
+      The specific content model for each filter type is documented on
+      its own reference page; see below for details.
+     </td></tr><tr><td colspan="2">
+      <span class="bold"><strong>Attributes</strong></span>
+     </td></tr><tr><td><span class="bold"><strong>Name</strong></span></td><td><span class="bold"><strong>Type</strong></span></td></tr><tr><td><code class="sgmltag-element">type</code></td><td><span class="type">CDATA</span></td></tr><tr><td><code class="sgmltag-element">typeid</code></td><td><span class="type">NUMBER</span> (required)</td></tr></tbody></table></div><p>Deprecated since <span class="application">Regina</span> 7.0</p></div><div class="refsect1" lang="en"><a name="id7386"></a><h2>Description</h2><p>
+   In <span class="application">Regina</span> 6.0.1 and earlier, the <a href="data-filter.html" title="filter"><code class="sgmltag-element">filter</code></a> element was used
+   to store different types of normal surface filters, and was held
+   within an enclosing <a href="data-packet-surfacefilter.html" title="packet (surface filter)"><code class="sgmltag-element">packet</code> (surface filter)</a> element.
+   Since <span class="application">Regina</span> 7.0, each type of filter now has its own <span class="acronym">XML</span> element,
+   which also serves as the <span class="acronym">XML</span> element for the filter packet.
+   This <a href="data-filter.html" title="filter"><code class="sgmltag-element">filter</code></a> element is no longer used.
+  </p><p>
+   A <a href="data-filter.html" title="filter"><code class="sgmltag-element">filter</code></a> element represents a normal surface filter, used to
+   filter desirable surfaces from a large list.
+  </p><p>
+   Different types of filter are available, and the precise
+   <a href="data-filter.html" title="filter"><code class="sgmltag-element">filter</code></a> content model differs between filter types.
+   These type-specific content models are individually documented on
+   the following reference pages.
+   </p><div class="itemizedlist"><ul type="disc"><li><p><a href="data-filter-combination.html" title="filter (combination)"><code class="sgmltag-element">filter</code> (combination)</a></p></li><li><p><a href="data-filter-properties.html" title="filter (properties)"><code class="sgmltag-element">filter</code> (properties)</a></p></li></ul></div><p>
+  </p><div class="refsect2" lang="en"><a name="id7414"></a><h3>Parents</h3><p>
+    The following elements contain <code class="sgmltag-element">filter</code>:
+    <span class="simplelist"><a href="data-packet-surfacefilter.html" title="packet (surface filter)"><code class="sgmltag-element">packet</code> (surface filter)</a></span>.
+   </p></div><div class="refsect2" lang="en"><a name="id7422"></a><h3>Children</h3><p>
+    The elements occurring in <code class="sgmltag-element">filter</code> depend upon the
+    specific filter type; these are documented on separate reference
+    pages for each filter type (see above).
+   </p></div></div><div class="refsect1" lang="en"><a name="id7426"></a><h2>Attributes</h2><div class="variablelist"><dl><dt><span class="term"><code class="sgmltag-element">type</code></span></dt><dd><p>
+     The filter type expressed as a human-readable string.
+     Example types are <code class="literal">Combination filter</code> and
+     <code class="literal">Filter by basic properties</code>.
+    </p></dd><dt><span class="term"><code class="sgmltag-element">typeid</code></span></dt><dd><p>
+     The filter type expressed as an internal
+     identification code.  This will be a non-negative integer.
+    </p></dd></dl></div></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="data-euler-filter.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="data-filter-combination.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">euler (filter) </td><td width="34%" align="center" class="navCenter"><a href="removed.html">Up</a></td><td width="33%" align="right" class="navRight"> filter (combination)</td></tr></table></div></body></html>

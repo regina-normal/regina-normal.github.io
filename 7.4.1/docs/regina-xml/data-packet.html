@@ -1,0 +1,81 @@
+<html><head><title>packet</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Regina, XML, Data files"><link rel="start" href="index.html" title="Regina 7.4.1 File Format Reference"><link rel="up" href="removed.html" title="Deprecated and Removed Elements"><link rel="prev" href="data-orbl-filter.html" title="orbl (filter)"><link rel="next" href="data-packet-dim2triangulation.html" title="packet (2-dimensional triangulation)"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>packet</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="data-orbl-filter.html">Prev</a></td><td align="center" class="navCenter" width="34%">Deprecated and Removed Elements</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="data-packet-dim2triangulation.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="data-packet"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>packet — Replaced by different elements for different
+   packet types</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="informaltable"><table border="1"><colgroup><col><col><col></colgroup><tbody><tr><td colspan="3">
+      <span class="bold"><strong>Content Model</strong></span>
+     </td></tr><tr><td colspan="3">
+<pre class="synopsis">
+packet ::= (<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>type-specific content</code></em></span>,
+            <a href="data-tag.html" title="tag"><code class="sgmltag-element">tag</code></a>*, <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a>*)</pre>
+      The contents of a <code class="sgmltag-element">packet</code> element
+      depend upon the particular type of packet (such as container,
+      text, triangulation and so on).  The specific content model for each
+      packet type is documented on its own reference page; see below for
+      details.
+     </td></tr><tr><td colspan="3">
+      <span class="bold"><strong>Attributes</strong></span>
+     </td></tr><tr><td><span class="bold"><strong>Name</strong></span></td><td><span class="bold"><strong>Type</strong></span></td><td><span class="bold"><strong>Version</strong></span></td></tr><tr><td><code class="sgmltag-element">label</code></td><td><span class="type">CDATA</span> (required)</td><td> </td></tr><tr><td><code class="sgmltag-element">parent</code></td><td><span class="type">CDATA</span></td><td> </td></tr><tr><td><code class="sgmltag-element">type</code></td><td><span class="type">CDATA</span></td><td> </td></tr><tr><td><code class="sgmltag-element">typeid</code></td><td><span class="type">NUMBER</span> (required)</td><td> </td></tr><tr><td><code class="sgmltag-element">id</code></td><td><span class="type">CDATA</span></td><td>Added in <span class="application">Regina</span> 4.95</td></tr></tbody></table></div><p>Deprecated since <span class="application">Regina</span> 7.0</p></div><div class="refsect1" lang="en"><a name="id7936"></a><h2>Description</h2><p>
+   In <span class="application">Regina</span> 6.0.1 and earlier, the <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a> element was used
+   to store every packet in the entire packet tree that makes up a
+   <span class="application">Regina</span> data file.
+   Since <span class="application">Regina</span> 7.0, each packet type has its own <span class="acronym">XML</span> element,
+   and <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a> is no longer used.
+  </p><p>
+   A <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a> element represents a single packet in a <span class="application">Regina</span> data
+   file.  A packet is a single data object, such as a triangulation, a
+   text note or a <span class="application">Python</span> script.  A general discussion of packets and
+   their different types can be found in the users' handbook.
+  </p><p>
+   The precise <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a> content model differs between packet types.
+   These type-specific content models are individually documented on
+   the following reference pages.
+   </p><div class="itemizedlist"><ul type="disc"><li><p><a href="data-packet-dim2triangulation.html" title="packet (2-dimensional triangulation)"><code class="sgmltag-element">packet</code> (2-dimensional triangulation)</a></p></li><li><p><a href="data-packet-dim3triangulation.html" title="packet (3-dimensional triangulation)"><code class="sgmltag-element">packet</code> (3-dimensional triangulation)</a></p></li><li><p><a href="data-packet-dim4triangulation.html" title="packet (4-dimensional triangulation)"><code class="sgmltag-element">packet</code> (4-dimensional triangulation)</a></p></li><li><p><a href="data-packet-triangulation.html" title="packet (dim-dimensional triangulation)"><code class="sgmltag-element">packet</code> (<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>dim</code></em></span>-dimensional triangulation)</a></p></li><li><p><a href="data-packet-link.html" title="packet (link)"><code class="sgmltag-element">packet</code> (link)</a></p></li><li><p><a href="data-packet-anglestructurelist.html" title="packet (angle structure list)"><code class="sgmltag-element">packet</code> (angle structure list)</a></p></li><li><p><a href="data-packet-container.html" title="packet (container)"><code class="sgmltag-element">packet</code> (container)</a></p></li><li><p><a href="data-packet-normalsurfacelist.html" title="packet (normal surface list)"><code class="sgmltag-element">packet</code> (normal surface list)</a></p></li><li><p><a href="data-packet-normalhypersurfacelist.html" title="packet (normal hypersurface list)"><code class="sgmltag-element">packet</code> (normal hypersurface list)</a></p></li><li><p><a href="data-packet-pdf.html" title="packet (PDF)"><code class="sgmltag-element">packet</code> (<span class="acronym">PDF</span>)</a></p></li><li><p><a href="data-packet-script.html" title="packet (script)"><code class="sgmltag-element">packet</code> (script)</a></p></li><li><p><a href="data-packet-snappea.html" title="packet (SnapPea triangulation)"><code class="sgmltag-element">packet</code> (<span class="application">SnapPea</span> triangulation)</a></p></li><li><p><a href="data-packet-surfacefilter.html" title="packet (surface filter)"><code class="sgmltag-element">packet</code> (surface filter)</a></p></li><li><p><a href="data-packet-text.html" title="packet (text)"><code class="sgmltag-element">packet</code> (text)</a></p></li></ul></div><p>
+  </p><p>
+   Each packet may have an arbitrary set of string tags associated with
+   it; these are represented by the child <a href="data-tag.html" title="tag"><code class="sgmltag-element">tag</code></a> elements.
+  </p><p>
+   Packets in a data file are arranged in a tree structure; each packet
+   (aside from the top-level packet) has a single parent packet and zero
+   or more child packets.  The child packets of this packet are
+   represented by the child <a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a> elements of this element.
+  </p><div class="refsect2" lang="en"><a name="id8021"></a><h3>Parents</h3><p>
+    The following elements contain <code class="sgmltag-element">packet</code>:
+    <span class="simplelist"><a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a>, <a href="data-reginadata.html" title="reginadata"><code class="sgmltag-element">reginadata</code></a></span>.
+   </p></div><div class="refsect2" lang="en"><a name="id8032"></a><h3>Children</h3><p>
+    The following elements occur in <code class="sgmltag-element">packet</code> regardless
+    of packet type:
+    <span class="simplelist"><a href="data-packet.html" title="packet"><code class="sgmltag-element">packet</code></a>, <a href="data-tag.html" title="tag"><code class="sgmltag-element">tag</code></a></span>.
+   </p><p>
+    Additional elements may also occur for specific packet types; these
+    are documented on separate reference pages for each individual
+    packet type (see above).
+   </p></div></div><div class="refsect1" lang="en"><a name="id8044"></a><h2>Attributes</h2><div class="variablelist"><dl><dt><span class="term"><code class="sgmltag-element">label</code></span></dt><dd><p>
+     The label of this particular packet, i.e., the name associated
+     with this packet in the overall packet tree.
+    </p></dd><dt><span class="term"><code class="sgmltag-element">parent</code></span></dt><dd><p>
+     The label of the parent of this packet in the overall packet tree.
+     This attribute should be the empty string if this packet has no
+     parent (i.e., this packet is the root of the entire packet tree).
+    </p></dd><dt><span class="term"><code class="sgmltag-element">type</code></span></dt><dd><p>
+     The packet type expressed as a human-readable string.
+     Example types are <code class="literal">Container</code>,
+     <code class="literal">Text</code> and <code class="literal">Triangulation</code>.
+    </p></dd><dt><span class="term"><code class="sgmltag-element">typeid</code></span></dt><dd><p>
+     The packet type expressed as an internal
+     identification code.  This will be a positive integer.
+    </p></dd><dt><span class="term"><code class="sgmltag-element">id</code></span></dt><dd><p>
+      A unique identifier for this packet.  Packets are not required to
+      have IDs, but when they are present they must be distinct (i.e.,
+      no packets in the same file may share the same ID).  IDs do not need to
+      be human-readable, must not contain leading or trailing whitespace,
+      and must not be empty strings.
+      Currently, IDs are built from base 64 hashes
+      of the underlying <span class="application">C++</span> pointers.
+     </p><p>
+      The purpose of these packet IDs is to allow other packets to reference
+      this packet (for instance, so that a script packet can store
+      references to its variables).
+     </p><p>
+      IDs are not required to stay the same across subsequent loads and
+      saves of the same file.  In other words, if you load a file and
+      save it again, the packet IDs are allowed to change.
+     </p></dd></dl></div></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="data-orbl-filter.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="data-packet-dim2triangulation.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">orbl (filter) </td><td width="34%" align="center" class="navCenter"><a href="removed.html">Up</a></td><td width="33%" align="right" class="navRight"> packet (2-dimensional triangulation)</td></tr></table></div></body></html>

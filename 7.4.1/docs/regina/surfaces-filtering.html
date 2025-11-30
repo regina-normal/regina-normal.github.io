@@ -1,0 +1,130 @@
+<html><head><title>Filtering Surfaces (3-D)</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Qt, Regina, topology, 3-manifolds, 4-manifolds, knots, links, triangulations, normal surfaces, angle structures"><link rel="start" href="index.html" title="The Regina 7.4.1 Handbook"><link rel="up" href="surfaces.html" title="Chapter 5. Normal Surfaces and Hypersurfaces"><link rel="prev" href="surfaces-analysis.html" title="Analysis"><link rel="next" href="angles.html" title="Chapter 6. Angle Structures"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>Filtering Surfaces (3-D)</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="surfaces-analysis.html">Prev</a></td><td align="center" class="navCenter" width="34%">Normal Surfaces and Hypersurfaces</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="angles.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="surfaces-filtering"></a>Filtering Surfaces (3-D)</h2></div></div></div><p>
+   Large triangulations often contain a great many
+   “junk surfaces”, and it is sometimes desirable to restrict
+   a long normal surface list to just those surfaces that satisfy
+   some simple constraints.  For surfaces within 3-manifold triangulations,
+   <span class="application">Regina</span> allows you to do this using
+   <span class="emphasis"><em>surface filters</em></span>.
+  </p><p>
+   You can create filters based on
+   <a href="surfaces-filtering.html#surfaces-filterprop" title="Filtering by Surface Properties">simple tests</a>
+   (such as orientability, boundary or Euler characteristic), and you
+   can <a href="surfaces-filtering.html#surfaces-filtercomb" title="Combining Several Filters">combine filters</a>
+   into complex boolean expressions.
+   Each filter is stored as a separate packet in the packet tree.
+  </p><p>
+   To apply a filter to a normal surface list, simply choose the filter
+   from the drop-down box above the
+   <a href="surfaces-analysis.html#surfaces-coords" title="Details of Individual (Hyper)surfaces">coordinate viewer</a>.
+   The table of surfaces will immediately shrink to include only
+   those surfaces that pass the selected filter.
+   To remove the filter, select <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">None</span></span> from the
+   drop-down box.
+  </p><p>
+   <span class="inlinemediaobject"><img src="surfaces-applyfilter.png" srcset="surfaces-applyfilter@2x.png 2x, surfaces-applyfilter.png"></span>
+  </p><p>
+   Filtering a surface list only affects how you
+   <span class="emphasis"><em>view</em></span> it: the underlying list is not changed.
+   Moreover, only the
+   <a href="surfaces-analysis.html#surfaces-coords" title="Details of Individual (Hyper)surfaces">coordinate viewer</a>
+   will be filtered—other tabs (such as the
+   <a href="surfaces-analysis.html#surfaces-summary" title="Summary of (Hyper)surfaces">summary tab</a> or
+   <a href="surfaces-analysis.html#surfaces-compat" title="Compatibility Between (Hyper)surfaces">compatility matrices</a>)
+   will be unaffected.
+  </p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="surfaces-filtercreate"></a>Creating Filters</h3></div></div></div><p>
+    To create a new filter, select
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenu">Packet Tree</span></span>→<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guimenuitem">New Filter</span></span>
+    from the menu (or press the corresponding toolbar button).
+   </p><p>
+    <span class="inlinemediaobject"><img src="menu-newfilter.png" srcset="menu-newfilter@2x.png 2x, menu-newfilter.png"></span>
+   </p><p>
+    The <a href="packet-operations.html#packet-new" title="Creating New Packets">new packet window</a>
+    will ask what type of filter to create.
+    The different types of filter are described in their own sections below.
+   </p><p>
+    <span class="inlinemediaobject"><img src="newfilter.png" srcset="newfilter@2x.png 2x, newfilter.png"></span>
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="surfaces-filterprop"></a>Filtering by Surface Properties</h3></div></div></div><p>
+    To filter by simple properties
+    (such as orientability, boundary and/or Euler characteristic),
+    create a new filter and select <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Filter by properties</span></span>.
+   </p><p>
+    Now you can open your new filter and select your constraints.
+    To pass through the filter, a surface must satisfy
+    <span class="emphasis"><em>all</em></span> of the constraints that you set. 
+    In the example below, a surface will only pass if it is closed
+    (i.e., compact with no boundary) and has Euler characteristic
+    2, 1 or 0.  In other words, this filter selects spheres, projective
+    planes, tori and Klein bottles
+    (as well as other disconnected surfaces, but
+    vertex or fundamental normal surfaces will never be disconnected).
+   </p><p>
+    <span class="inlinemediaobject"><img src="filter-prop.png" srcset="filter-prop@2x.png 2x, filter-prop.png"></span>
+   </p><p>
+    The constraints you can set are:
+    </p><div class="variablelist"><dl><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Orientability</span></span></span></dt><dd><p>
+       Check this to allow only orientable surfaces,
+       or only non-orientable surfaces.
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Compactness</span></span></span></dt><dd><p>
+       Check this to allow only compact surfaces
+       (i.e., surfaces with finitely many discs), or only
+       spun-normal surfaces
+       (i.e., non-compact surfaces with infinitely many discs).
+      </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Boundary</span></span></span></dt><dd><p>
+        Check this to allow only surfaces with real boundary,
+        or only surfaces with no real boundary.  Here
+        <em class="firstterm">real boundary</em> means that some discs
+        in the surface touch the boundary of the triangulation.
+       </p><p>
+        This constraint is independent of whether the surface is spun
+        (non-compact).  Typical spun-normal surfaces do not have real
+        boundary, since they live in ideal triangulations with no
+        boundary triangles.  However, if your triangulation has both ideal
+        vertices and boundary triangles, then it is possible for
+        a spun-normal surface to have real boundary also.
+       </p></dd><dt><span class="term"><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Euler Characteristic</span></span></span></dt><dd><p>
+        Check this to allow only surfaces with particular Euler
+        characteristics.  You can allow more than one Euler
+        characteristic; simply type them all into the box provided.
+       </p><p>
+        For immersed or singular surfaces, the number(s) you type here
+        will be matched against the <span class="emphasis"><em>reported</em></span> Euler
+        characteristic, which for singular surfaces may be larger than it
+        should be.  See the <a href="surfaces-analysis.html#surfaces-propeuler">notes on Euler
+        characteristic</a> for details.
+       </p></dd></dl></div><p>
+   </p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="surfaces-filtercomb"></a>Combining Several Filters</h3></div></div></div><p>
+    To combine several other filters
+    into a boolean expression, create a new filter and select
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">Combination (AND/OR) filter</span></span>.
+   </p><p>
+    A combination filter is a high-level filter that combines all of the
+    filters <span class="emphasis"><em>immediately beneath it</em></span> in the packet
+    tree.  If you open the combination filter, you can select whether
+    a packet must pass <span class="emphasis"><em>all</em></span> of the packets beneath it
+    (<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">AND</span></span>),
+    or <span class="emphasis"><em>any</em></span> of the packets beneath it
+    (<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="guiitem"><span class="guilabel">OR</span></span>).
+    You will also see a box listing
+    which “child filters” are being combined.
+   </p><p>
+    <span class="inlinemediaobject"><img src="filtercomb.png" srcset="filtercomb@2x.png 2x, filtercomb.png"></span>
+   </p><p>
+    The child filters will often be
+    <a href="surfaces-filtering.html#surfaces-filterprop" title="Filtering by Surface Properties">property-based filters</a>,
+    although they may be other combination filters if you need to build
+    up more complex boolean expressions.
+    A combination filter will only combine its
+    <span class="emphasis"><em>immediate</em></span> children—not its
+    children's children and so on.
+    In the example below, the combination filter
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>C</code></em></span> will only combine the children
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>P</code></em></span> and <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>Q</code></em></span>.
+    In turn, <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>Q</code></em></span> will combine
+    <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>X</code></em></span> and <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>Y</code></em></span>;
+    the result (depending on how the filters are set) might look something like
+    “<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>P</code></em></span> and
+    (<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>X</code></em></span> or <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>Y</code></em></span>)”.
+   </p><p>
+    <span class="inlinemediaobject"><img src="filtercombtree.png" srcset="filtercombtree@2x.png 2x, filtercombtree.png"></span>
+   </p></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="surfaces-analysis.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="angles.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">Analysis </td><td width="34%" align="center" class="navCenter"><a href="surfaces.html">Up</a></td><td width="33%" align="right" class="navRight"> Angle Structures</td></tr></table></div></body></html>

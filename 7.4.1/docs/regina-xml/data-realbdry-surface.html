@@ -1,0 +1,24 @@
+<html><head><title>realbdry</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Regina, XML, Data files"><link rel="start" href="index.html" title="Regina 7.4.1 File Format Reference"><link rel="up" href="dataformat.html" title="Current Data File Format"><link rel="prev" href="data-orbl-surface.html" title="orbl"><link rel="next" href="data-regina.html" title="regina"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>realbdry</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="data-orbl-surface.html">Prev</a></td><td align="center" class="navCenter" width="34%">Current Data File Format</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="data-regina.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="data-realbdry-surface"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>realbdry — Does a normal surface/hypersurface have real boundary?</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="informaltable"><table border="1"><colgroup><col><col></colgroup><tbody><tr><td colspan="2">
+      <span class="bold"><strong>Content Model</strong></span>
+     </td></tr><tr><td colspan="2">
+<pre class="synopsis">
+realbdry ::=</pre>
+     </td></tr><tr><td colspan="2">
+      <span class="bold"><strong>Attributes</strong></span>
+     </td></tr><tr><td><span class="bold"><strong>Name</strong></span></td><td><span class="bold"><strong>Type</strong></span></td></tr><tr><td><code class="sgmltag-element">value</code></td><td><span class="type">CDATA</span> (required)</td></tr></tbody></table></div></div><div class="refsect1" lang="en"><a name="id4100"></a><h2>Description</h2><p>
+   A <a href="data-realbdry-surface.html" title="realbdry"><code class="sgmltag-element">realbdry</code></a> element stores whether or not a normal surface
+   or hypersurface has
+   real boundary, that is, whether it meets any boundary facets of the
+   triangulation.
+  </p><div class="refsect2" lang="en"><a name="id4105"></a><h3>Parents</h3><p>
+    The following elements contain <code class="sgmltag-element">realbdry</code> (in the
+    context of the boundary of a normal surface/hypersurface):
+    <span class="simplelist"><a href="data-hypersurface.html" title="hypersurface"><code class="sgmltag-element">hypersurface</code></a>, <a href="data-surface.html" title="surface"><code class="sgmltag-element">surface</code></a></span>.
+   </p></div><div class="refsect2" lang="en"><a name="id4116"></a><h3>Children</h3><p>
+    Element <code class="sgmltag-element">realbdry</code> (in the context of the boundary
+    of a normal surface/hypersurface) has no children.
+   </p></div></div><div class="refsect1" lang="en"><a name="id4120"></a><h2>Attributes</h2><div class="variablelist"><dl><dt><span class="term"><code class="sgmltag-element">value</code></span></dt><dd><p>
+      Either <code class="literal">T</code> or <code class="literal">F</code>, according to
+      whether the parent (hyper)surface does or does not have real boundary.
+     </p></dd></dl></div></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="data-orbl-surface.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="data-regina.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">orbl </td><td width="34%" align="center" class="navCenter"><a href="dataformat.html">Up</a></td><td width="33%" align="right" class="navRight"> regina</td></tr></table></div></body></html>

@@ -1,0 +1,128 @@
+<html><head><title>tri</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Regina, XML, Data files"><link rel="start" href="index.html" title="Regina 7.4.1 File Format Reference"><link rel="up" href="dataformat.html" title="Current Data File Format"><link rel="prev" href="data-threesphere.html" title="threesphere"><link rel="next" href="data-twosided.html" title="twosided"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>tri</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="data-threesphere.html">Prev</a></td><td align="center" class="navCenter" width="34%">Current Data File Format</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="data-twosided.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="data-tri"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>tri — A triangulation packet</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="informaltable"><table border="1"><colgroup><col><col></colgroup><tbody><tr><td colspan="2">
+      <span class="bold"><strong>Content Model</strong></span>
+     </td></tr><tr><td colspan="2">
+<pre class="synopsis">
+tri ::= (<a href="data-simplex.html" title="simplex"><code class="sgmltag-element">simplex</code></a>*,
+         <a href="data-fundgroup.html" title="fundgroup"><code class="sgmltag-element">fundgroup</code></a>?, <a href="data-H1.html" title="H1"><code class="sgmltag-element">H1</code></a>?, <a href="data-H1Bdry.html" title="H1Bdry"><code class="sgmltag-element">H1Bdry</code></a>?, <a href="data-H1Rel.html" title="H1Rel"><code class="sgmltag-element">H1Rel</code></a>?, <a href="data-H2.html" title="H2"><code class="sgmltag-element">H2</code></a>?,
+         <a href="data-splitsfce.html" title="splitsfce"><code class="sgmltag-element">splitsfce</code></a>?, <a href="data-zeroeff.html" title="zeroeff"><code class="sgmltag-element">zeroeff</code></a>?, <a href="data-oneeff.html" title="oneeff"><code class="sgmltag-element">oneeff</code></a>?,
+         <a href="data-threesphere.html" title="threesphere"><code class="sgmltag-element">threesphere</code></a>?, <a href="data-handlebody.html" title="handlebody"><code class="sgmltag-element">handlebody</code></a>?, <a href="data-txi.html" title="txi"><code class="sgmltag-element">txi</code></a>?,
+         <a href="data-irreducible.html" title="irreducible"><code class="sgmltag-element">irreducible</code></a>?, <a href="data-compressingdisc.html" title="compressingdisc"><code class="sgmltag-element">compressingdisc</code></a>?, <a href="data-haken.html" title="haken"><code class="sgmltag-element">haken</code></a>?,
+         <a href="data-tag.html" title="tag"><code class="sgmltag-element">tag</code></a>*,
+         (<a href="data-container.html" title="container"><code class="sgmltag-element">container</code></a>|<a href="data-textdata.html" title="textdata"><code class="sgmltag-element">textdata</code></a>|<a href="data-script.html" title="script"><code class="sgmltag-element">script</code></a>|<a href="data-attachment.html" title="attachment"><code class="sgmltag-element">attachment</code></a>|
+          <a href="data-tri.html" title="tri"><code class="sgmltag-element">tri</code></a>|<a href="data-link.html" title="link"><code class="sgmltag-element">link</code></a>|<a href="data-spatiallink.html" title="spatiallink"><code class="sgmltag-element">spatiallink</code></a>|<a href="data-snappeadata.html" title="snappeadata"><code class="sgmltag-element">snappeadata</code></a>|
+          <a href="data-angles.html" title="angles"><code class="sgmltag-element">angles</code></a>|<a href="data-surfaces.html" title="surfaces"><code class="sgmltag-element">surfaces</code></a>|<a href="data-hypersurfaces.html" title="hypersurfaces"><code class="sgmltag-element">hypersurfaces</code></a>|
+          <a href="data-filtercomb.html" title="filtercomb"><code class="sgmltag-element">filtercomb</code></a>|<a href="data-filterprop.html" title="filterprop"><code class="sgmltag-element">filterprop</code></a>|<a href="data-filtertrivial.html" title="filtertrivial"><code class="sgmltag-element">filtertrivial</code></a>|
+          <a href="data-anon.html" title="anon"><code class="sgmltag-element">anon</code></a>|<a href="data-anonref.html" title="anonref"><code class="sgmltag-element">anonref</code></a>)*)</pre>
+     </td></tr><tr><td colspan="2">
+      <span class="bold"><strong>Attributes</strong></span>
+     </td></tr><tr><td><span class="bold"><strong>Name</strong></span></td><td><span class="bold"><strong>Type</strong></span></td></tr><tr><td><code class="sgmltag-element">dim</code></td><td><span class="type">NUMBER</span> (required)</td></tr><tr><td><code class="sgmltag-element">perm</code></td><td><span class="type">CDATA</span> (required)</td></tr><tr><td><code class="sgmltag-element">size</code></td><td><span class="type">NUMBER</span> (required)</td></tr><tr><td><code class="sgmltag-element">id</code></td><td><span class="type">CDATA</span></td></tr><tr><td><code class="sgmltag-element">label</code></td><td><span class="type">CDATA</span></td></tr></tbody></table></div><p>Added in <span class="application">Regina</span> 7.0</p></div><div class="refsect1" lang="en"><a name="id6458"></a><h2>Description</h2><p>
+   This represents a <span class="emphasis"><em>triangulation packet</em></span>,
+   one of the many types of packet that together form the
+   <span class="emphasis"><em>packet tree</em></span> that a user sees when they open a
+   <span class="application">Regina</span> data file.
+  </p><p>
+   A triangulation packet stores a <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span>-dimensional
+   triangulation (typically of a <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span>-manifold),
+   for any dimension
+   2 ≤ <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span> ≤ 15.
+  </p><p>
+   The total number of top-dimensional simplices in the triangulation
+   (e.g., the total number of tetrahedra in the case
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>d</code></em></span> = 3) must be specified by the
+   <code class="sgmltag-element">size</code> attribute.  The individual simplices are
+   numbered 0, 1, 2, etc., and the gluings between them are described by the
+   corresponding child <a href="data-simplex.html" title="simplex"><code class="sgmltag-element">simplex</code></a> elements.  There must be precisely
+   <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>size</code></em></span> child <a href="data-simplex.html" title="simplex"><code class="sgmltag-element">simplex</code></a> elements in total.
+  </p><p>
+   There are additional optional child elements
+   (e.g., <a href="data-fundgroup.html" title="fundgroup"><code class="sgmltag-element">fundgroup</code></a>, <a href="data-H1.html" title="H1"><code class="sgmltag-element">H1</code></a>, etc.) that can be used to store
+   known properties of this triangulation.  Some of these are only used in
+   particular dimensions, as noted in the
+   <span class="emphasis"><em>Children</em></span> section below.
+  </p><p>
+    There are several child <span class="acronym">XML</span> elements that are common to all packet types.
+    The <a href="data-tag.html" title="tag"><code class="sgmltag-element">tag</code></a> elements represent an arbitrary set of string
+    “tags” that users can attach to a packet to help organise
+    their data.
+    The remaining child elements list all of <span class="application">Regina</span>'s packet types
+    (<a href="data-container.html" title="container"><code class="sgmltag-element">container</code></a>, <a href="data-textdata.html" title="textdata"><code class="sgmltag-element">textdata</code></a>, etc.), and these represent the
+    immediate children of this packet in the packet tree.
+   </p><div class="refsect2" lang="en"><a name="id6491"></a><h3>Parents</h3><p>
+    The following elements can contain any packet element (including this):
+    <span class="simplelist"><a href="data-angles.html" title="angles"><code class="sgmltag-element">angles</code></a>, <a href="data-anon.html" title="anon"><code class="sgmltag-element">anon</code></a>, <a href="data-anonref.html" title="anonref"><code class="sgmltag-element">anonref</code></a>, <a href="data-attachment.html" title="attachment"><code class="sgmltag-element">attachment</code></a>, <a href="data-container.html" title="container"><code class="sgmltag-element">container</code></a>, <a href="data-filtercomb.html" title="filtercomb"><code class="sgmltag-element">filtercomb</code></a>, <a href="data-filterprop.html" title="filterprop"><code class="sgmltag-element">filterprop</code></a>, <a href="data-filtertrivial.html" title="filtertrivial"><code class="sgmltag-element">filtertrivial</code></a>, <a href="data-hypersurfaces.html" title="hypersurfaces"><code class="sgmltag-element">hypersurfaces</code></a>, <a href="data-link.html" title="link"><code class="sgmltag-element">link</code></a>, <a href="data-regina.html" title="regina"><code class="sgmltag-element">regina</code></a>, <a href="data-script.html" title="script"><code class="sgmltag-element">script</code></a>, <a href="data-snappeadata.html" title="snappeadata"><code class="sgmltag-element">snappeadata</code></a>, <a href="data-spatiallink.html" title="spatiallink"><code class="sgmltag-element">spatiallink</code></a>, <a href="data-surfaces.html" title="surfaces"><code class="sgmltag-element">surfaces</code></a>, <a href="data-textdata.html" title="textdata"><code class="sgmltag-element">textdata</code></a>, <a href="data-tri.html" title="tri"><code class="sgmltag-element">tri</code></a></span>.
+    This list includes all packet types, as well as the top-level element
+    <a href="data-regina.html" title="regina"><code class="sgmltag-element">regina</code></a>.
+   </p></div><div class="refsect2" lang="en"><a name="id6548"></a><h3>Children</h3><p>
+    The following elements occur in <code class="sgmltag-element">tri</code>,
+    and are used for triangulations in all dimensions:
+    <span class="simplelist"><a href="data-fundgroup.html" title="fundgroup"><code class="sgmltag-element">fundgroup</code></a>, <a href="data-H1.html" title="H1"><code class="sgmltag-element">H1</code></a>, <a href="data-simplex.html" title="simplex"><code class="sgmltag-element">simplex</code></a></span>.
+   </p><p>
+    For triangulations in dimensions 3 and 4,
+    the following child element may also occur:
+    <span class="simplelist"><a href="data-H2.html" title="H2"><code class="sgmltag-element">H2</code></a></span>.
+   </p><p>
+    In addition, for triangulations in dimension 3,
+    there are many more optional child elements:
+    <span class="simplelist"><a href="data-compressingdisc.html" title="compressingdisc"><code class="sgmltag-element">compressingdisc</code></a>, <a href="data-H1Bdry.html" title="H1Bdry"><code class="sgmltag-element">H1Bdry</code></a>, <a href="data-H1Rel.html" title="H1Rel"><code class="sgmltag-element">H1Rel</code></a>, <a href="data-haken.html" title="haken"><code class="sgmltag-element">haken</code></a>, <a href="data-handlebody.html" title="handlebody"><code class="sgmltag-element">handlebody</code></a>, <a href="data-irreducible.html" title="irreducible"><code class="sgmltag-element">irreducible</code></a>, <a href="data-oneeff.html" title="oneeff"><code class="sgmltag-element">oneeff</code></a>, <a href="data-splitsfce.html" title="splitsfce"><code class="sgmltag-element">splitsfce</code></a>, <a href="data-threesphere.html" title="threesphere"><code class="sgmltag-element">threesphere</code></a>, <a href="data-txi.html" title="txi"><code class="sgmltag-element">txi</code></a>, <a href="data-zeroeff.html" title="zeroeff"><code class="sgmltag-element">zeroeff</code></a></span>.
+   </p><p>
+    The following children can occur in all packet elements:
+    <span class="simplelist"><a href="data-angles.html" title="angles"><code class="sgmltag-element">angles</code></a>, <a href="data-anon.html" title="anon"><code class="sgmltag-element">anon</code></a>, <a href="data-anonref.html" title="anonref"><code class="sgmltag-element">anonref</code></a>, <a href="data-attachment.html" title="attachment"><code class="sgmltag-element">attachment</code></a>, <a href="data-container.html" title="container"><code class="sgmltag-element">container</code></a>, <a href="data-filtercomb.html" title="filtercomb"><code class="sgmltag-element">filtercomb</code></a>, <a href="data-filterprop.html" title="filterprop"><code class="sgmltag-element">filterprop</code></a>, <a href="data-filtertrivial.html" title="filtertrivial"><code class="sgmltag-element">filtertrivial</code></a>, <a href="data-hypersurfaces.html" title="hypersurfaces"><code class="sgmltag-element">hypersurfaces</code></a>, <a href="data-link.html" title="link"><code class="sgmltag-element">link</code></a>, <a href="data-script.html" title="script"><code class="sgmltag-element">script</code></a>, <a href="data-snappeadata.html" title="snappeadata"><code class="sgmltag-element">snappeadata</code></a>, <a href="data-spatiallink.html" title="spatiallink"><code class="sgmltag-element">spatiallink</code></a>, <a href="data-surfaces.html" title="surfaces"><code class="sgmltag-element">surfaces</code></a>, <a href="data-tag.html" title="tag"><code class="sgmltag-element">tag</code></a>, <a href="data-textdata.html" title="textdata"><code class="sgmltag-element">textdata</code></a>, <a href="data-tri.html" title="tri"><code class="sgmltag-element">tri</code></a></span>.
+    This list includes all packet types, as well as the <a href="data-tag.html" title="tag"><code class="sgmltag-element">tag</code></a> element
+    for tagging individual packets.
+   </p></div></div><div class="refsect1" lang="en"><a name="id6657"></a><h2>Attributes</h2><p>
+   The following attributes are specific to triangulation packets:
+  </p><div class="variablelist"><dl><dt><span class="term"><code class="sgmltag-element">dim</code></span></dt><dd><p>
+     Indicates the dimension of the triangulation.
+     This must be an integer between 2 and 15 inclusive.
+    </p></dd><dt><span class="term"><code class="sgmltag-element">perm</code></span></dt><dd><p>
+     Indicates how gluing permutations are encoded within each
+     <a href="data-simplex.html" title="simplex"><code class="sgmltag-element">simplex</code></a> element.
+     Possible values are <code class="literal">index</code> (where permutations
+     are denoted by indices into the symmetric group
+     S<sub><span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>dim</code></em></span>+1</sub>)
+     or <code class="literal">imagepack</code> (where permutations are denoted by
+     “image packs”).  See the <a href="data-simplex.html" title="simplex"><code class="sgmltag-element">simplex</code></a> element for more
+     information on each of these encodings.
+    </p></dd><dt><span class="term"><code class="sgmltag-element">size</code></span></dt><dd><p>
+     Indicates the total number of top-dimensional simplices in the
+     triangulation (e.g., the total number of tetrahedra in the case
+     <code class="sgmltag-element">dim</code> = 3).
+     This must be a non-negative integer, and must be equal to the
+     number of child <a href="data-simplex.html" title="simplex"><code class="sgmltag-element">simplex</code></a> elements.
+    </p></dd></dl></div><p>The following attributes are common to all
+    packet types:</p><div class="variablelist"><dl><dt><span class="term"><code class="sgmltag-element">id</code></span></dt><dd><p>
+       A unique identifier for this packet.  Packets are not required to
+       have IDs, but when they are present they must be distinct (i.e.,
+       no packets in the same file may share the same ID).  IDs do not need to
+       be human-readable, must not contain leading or trailing whitespace,
+       and must not be empty strings.
+       Currently, IDs are built from base 64 hashes
+       of the underlying <span class="application">C++</span> pointers.
+      </p><p>
+       The purpose of these packet IDs is to allow other packets to reference
+       this packet (for instance, so that a script packet can store
+       references to its variables).
+      </p><p>
+       IDs are not required to stay the same across subsequent loads and
+       saves of the same file.  In other words, if you load a file and
+       save it again, the packet IDs are allowed to change.
+      </p></dd><dt><span class="term"><code class="sgmltag-element">label</code></span></dt><dd><p>
+      The name given by the user to this particular packet within the overall
+      packet tree.
+     </p></dd></dl></div></div><div class="refsect1" lang="en"><a name="id6702"></a><h2>Example</h2><p>
+   The following <span class="acronym">XML</span> snippet represents a three-tetrahedron triangulation of
+   the 3-manifold
+   RP<sup>2</sup> × S<sup>1</sup>,
+   along with some pre-computed homology groups.
+  </p><pre class="programlisting">
+&lt;tri dim="3" size="3" perm="index" label="RP² × S¹"&gt;
+  &lt;simplex&gt; 1 0 1 0 2 11 2 2 &lt;/simplex&gt;
+  &lt;simplex&gt; 0 0 0 0 2 21 2 12 &lt;/simplex&gt;
+  &lt;simplex&gt; 0 13 0 4 1 21 1 8 &lt;/simplex&gt;
+  &lt;H1&gt;&lt;abeliangroup rank="1"&gt; 2 &lt;/abeliangroup&gt;&lt;/H1&gt;
+  &lt;H1Rel&gt;&lt;abeliangroup rank="1"&gt; 2 &lt;/abeliangroup&gt;&lt;/H1Rel&gt;
+  &lt;H1Bdry&gt;&lt;abeliangroup rank="0"&gt; &lt;/abeliangroup&gt;&lt;/H1Bdry&gt;
+  &lt;H2&gt;&lt;abeliangroup rank="0"&gt; 2 &lt;/abeliangroup&gt;&lt;/H2&gt;
+&lt;/tri&gt;
+  </pre></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="data-threesphere.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="data-twosided.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">threesphere </td><td width="34%" align="center" class="navCenter"><a href="dataformat.html">Up</a></td><td width="33%" align="right" class="navRight"> twosided</td></tr></table></div></body></html>

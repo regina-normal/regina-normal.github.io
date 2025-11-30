@@ -1,0 +1,79 @@
+<html><head><title>surface</title><link rel="stylesheet" href="kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="Regina, XML, Data files"><link rel="start" href="index.html" title="Regina 7.4.1 File Format Reference"><link rel="up" href="dataformat.html" title="Current Data File Format"><link rel="prev" href="data-struct.html" title="struct"><link rel="next" href="data-surfaces.html" title="surfaces"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body><div id="content" bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr class="header"><td colspan="2"> </td></tr><tr id="logo"><td valign="top"><a href="http://regina-normal.github.io/"><img src="regina_logo.png" alt="Regina - Software for low-dimensional topology" width="246" height="79" border="0"></a></td><td valign="middle" align="center" id="location"><h1>surface</h1></td></tr></table><table width="100%" class="header"><tbody><tr><td align="left" class="navLeft" width="33%"><a accesskey="p" href="data-struct.html">Prev</a></td><td align="center" class="navCenter" width="34%">Current Data File Format</td><td align="right" class="navRight" width="33%"> 
+		      <a accesskey="n" href="data-surfaces.html">Next</a></td></tr></tbody></table><div id="contentBody"><div class="refentry" lang="en"><a name="data-surface"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>surface — A single normal surface in a 3-manifold triangulation</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="informaltable"><table border="1"><colgroup><col><col><col></colgroup><tbody><tr><td colspan="3">
+      <span class="bold"><strong>Content Model</strong></span>
+     </td></tr><tr><td colspan="3">
+<pre class="synopsis">
+surface ::= (#PCDATA,
+             <a href="data-compact-surface.html" title="compact"><code class="sgmltag-element">compact</code></a>?,
+             <a href="data-connected.html" title="connected"><code class="sgmltag-element">connected</code></a>?, <a href="data-euler-surface.html" title="euler"><code class="sgmltag-element">euler</code></a>?,
+             <a href="data-orbl-surface.html" title="orbl"><code class="sgmltag-element">orbl</code></a>?, <a href="data-realbdry-surface.html" title="realbdry"><code class="sgmltag-element">realbdry</code></a>?,
+             <a href="data-twosided.html" title="twosided"><code class="sgmltag-element">twosided</code></a>?)</pre>
+     </td></tr><tr><td colspan="3">
+      <span class="bold"><strong>Attributes</strong></span>
+     </td></tr><tr><td><span class="bold"><strong>Name</strong></span></td><td><span class="bold"><strong>Type</strong></span></td><td><span class="bold"><strong>Version</strong></span></td></tr><tr><td><code class="sgmltag-element">enc</code></td><td><span class="type">NUMBER</span> (required)</td><td>Added in <span class="application">Regina</span> 7.0</td></tr><tr><td><code class="sgmltag-element">len</code></td><td><span class="type">NUMBER</span> (required)</td><td> </td></tr><tr><td><code class="sgmltag-element">name</code></td><td><span class="type">CDATA</span></td><td> </td></tr></tbody></table></div></div><div class="refsect1" lang="en"><a name="id5576"></a><h2>Description</h2><p>
+   A <a href="data-surface.html" title="surface"><code class="sgmltag-element">surface</code></a> element stores a single normal surface in a
+   3-manifold triangulation.
+  </p><p>
+   A normal surface in a <span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>T</code></em></span>-tetrahedron
+   triangulation is traditionally represented by a vector of integers, whose
+   length depends upon the specific vector encoding being used (which in
+   turn depends upon the underlying coordinate system).  For instance,
+   a vector encoded in standard tri-quad coordinates will have length
+   7<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>T</code></em></span>, and a vector encoded in quad coordinates
+   will have length 3<span xmlns:doc="http://nwalsh.com/xsl/documentation/1.0" class="replaceable"><em class="replaceable"><code>T</code></em></span>.
+  </p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>
+    Since <span class="application">Regina</span> 7.0, the specific vector encoding being used is now
+    explicitly specified in the <code class="sgmltag-element">enc</code> attribute.
+    This might or might not be deducible from the coordinate system
+    specified in the parent <a href="data-surfaces.html" title="surfaces"><code class="sgmltag-element">surfaces</code></a>.
+    The parent list's coordinate system should only be used as a fallback if
+    the <code class="sgmltag-element">enc</code> attribute is not present.
+   </p></div><p>
+   The normal surface vector is stored as the character data of this
+   <span class="acronym">XML</span> element as follows.
+   Since a normal surface vector will generally contain many zeroes,
+   only the non-zero elements are listed.  The character data should
+   thus consist of a whitespace-separated sequence of integer pairs.
+   Each integer pair represents a non-zero coordinate in the vector; the
+   first element of the pair identifies which coordinate is being
+   described (coordinates are numbered 0, 1, 2, ...) and the second element
+   of the pair is the actual value at this coordinate.
+  </p><div class="refsect2" lang="en"><a name="id5594"></a><h3>Parents</h3><p>
+    The following elements contain <code class="sgmltag-element">surface</code>:
+    <span class="simplelist"><a href="data-surfaces.html" title="surfaces"><code class="sgmltag-element">surfaces</code></a></span>.
+   </p></div><div class="refsect2" lang="en"><a name="id5602"></a><h3>Children</h3><p>
+    The following elements occur in <code class="sgmltag-element">surface</code>:
+    <span class="simplelist"><a href="data-compact-surface.html" title="compact"><code class="sgmltag-element">compact</code></a>, <a href="data-connected.html" title="connected"><code class="sgmltag-element">connected</code></a>, <a href="data-euler-surface.html" title="euler"><code class="sgmltag-element">euler</code></a>, <a href="data-orbl-surface.html" title="orbl"><code class="sgmltag-element">orbl</code></a>, <a href="data-realbdry-surface.html" title="realbdry"><code class="sgmltag-element">realbdry</code></a>, <a href="data-twosided.html" title="twosided"><code class="sgmltag-element">twosided</code></a></span>.
+   </p></div></div><div class="refsect1" lang="en"><a name="id5625"></a><h2>Attributes</h2><div class="variablelist"><dl><dt><span class="term"><code class="sgmltag-element">enc</code></span></dt><dd><p>
+      The specific vector encoding used to represent this normal surface.
+      This will be given as an opaque integer; it is not meant to be
+      interpreted manually, but instead should be passed to Regina's
+      <code class="function">NormalEncoding::fromIntValue()</code> function.
+     </p></dd><dt><span class="term"><code class="sgmltag-element">len</code></span></dt><dd><p>
+      The length of the underlying normal surface vector.
+      This depends upon both the underlying triangulation and the
+      specific vector encoding being used.
+     </p></dd><dt><span class="term"><code class="sgmltag-element">name</code></span></dt><dd><p>
+      A human-readable name given to this surface.  Surface names need
+      not be distinct and exist merely for the convenience of the user.
+     </p></dd></dl></div></div><div class="refsect1" lang="en"><a name="id5644"></a><h2>Example</h2><p>
+   The following <span class="acronym">XML</span> snippet represents a normal surface in a
+   4-tetrahedron triangulation.  The normal surface vector is:
+   </p><pre class="programlisting">
+(0, 0, 0, 0, 0, 2, 0,
+ 0, 0, 1, 1, 1, 0, 0,
+ 1, 1, 0, 0, 1, 0, 0,
+ 0, 0, 0, 0, 0, 2, 0)</pre><p>
+  </p><p>
+   The child elements of this normal surface indicate that the
+   surface has Euler characteristic -2 and real boundary, and is
+   compact, connected, orientable and two-sided.
+  </p><pre class="programlisting">
+&lt;surface enc="279" len="28"&gt; 5 2 9 1 10 1 11 1 14 1 15 1 18 1 26 2
+    &lt;euler value="-2"/&gt;
+    &lt;realbdry value="T"/&gt;
+    &lt;compact value="T"/&gt;
+    &lt;connected value="1"/&gt;
+    &lt;orbl value="1"/&gt;
+    &lt;twosided value="1"/&gt; &lt;/surface&gt;
+  </pre></div></div></div><table width="100%" class="bottom-nav"><tr><td width="33%" align="left" valign="top" class="navLeft"><a href="data-struct.html">Prev</a></td><td width="34%" align="center" valign="top" class="navCenter"><a href="index.html">Contents</a></td><td width="33%" align="right" valign="top" class="navRight"><a href="data-surfaces.html">Next</a></td></tr><tr><td width="33%" align="left" class="navLeft">struct </td><td width="34%" align="center" class="navCenter"><a href="dataformat.html">Up</a></td><td width="33%" align="right" class="navRight"> surfaces</td></tr></table></div></body></html>
