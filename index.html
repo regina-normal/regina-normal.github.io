@@ -11,8 +11,8 @@
   alt="Regina: Software for low-dimensional topology">
 </center>
 <center>
-<h4>Version 7.4.1 currently being uploaded (30 November 2025)</h4>
-<!--h4>Latest version: 7.4 (August 2025)</h4-->
+<!--h4>Version 7.4.1 currently being uploaded (30 November 2025)</h4-->
+<h4>Latest version: 7.4.1 (November 2025)</h4>
 <!--Updated packages: 23 June 2023<br>
 Updated documentation: 9 May 2022<br>
 Updated packages: 10 December 2021<br>
@@ -27,7 +27,7 @@ Updated data: 31 May 2018></h4-->
     <tr><td><a href="#screenshots">Screenshots</a></td></tr>
     <tr><td><a href="#download">Download</a></td></tr>
     <tr><td><a href="#docs">Documentation</a></td></tr>
-    <tr><td><a href="#new">What's new in version 7.4?</a></td></tr>
+    <tr><td><a href="#new">What's new in version 7.4.1?</a></td></tr>
     <tr><td><a href="#announce">Release announcements</a></td></tr>
     <tr><td><a href="#license">License and citation</a></td></tr>
     <tr><td><a href="#contact">Contact</a></td></tr>
@@ -57,15 +57,17 @@ Updated data: 31 May 2018></h4-->
 
 <p class="header">
 <b>30 November 2025:</b>
-Regina 7.4.1 is currently being uploaded.
-Come back in 24 hours and you can read what's new, including an important
-bugfix regarding triangulated boundary components.
+Regina 7.4.1 is out!
+This is a service release, and includes an
+<a href="bugs.html#bcbuild">important bugfix</a> regarding
+triangulated boundary components.
+<a href="#new">Read about the changes</a>,
+or just go ahead and <a href="#download">download it</a>.
 <p class="header">
 <b>29 August 2025:</b>
 Regina 7.4 is out!
 This is a big one.
-<a href="#new">Read all about what's new</a>,
-or just go ahead and <a href="#download">download it</a>.
+<a href="#new">Read all about what's new</a> here.
 <!--p class="header">
 <b>17 July 2025:</b>
 Packages are now live for Windows, Debian testing (trixie), and Arch Linux
@@ -471,9 +473,29 @@ limits of what these docstrings can and cannot provide).</li>
 <p>
 <i><a href="#contents">(Back to contents...)</a></i>
 
-<h2><a name="new">What's new in version 7.4?</a></h2>
+<h2><a name="new">What's new in version 7.4.1?</a></h2>
 <p>
-<h4>Features</h4>
+<h4>Regina 7.4.1</h4>
+<p>
+This is a service release to fix some important bugs, and to support
+additional build environments.  In particular:
+</p>
+<ul>
+<li>Fixes a serious (and very old) bug that occurred when triangulating
+a real boundary component.  In short, the new triangulation of the
+original boundary component could have had inconsistencies in the
+labelling of its own lower-dimensional faces.  Ideal boundaries were
+not affected.  For a detailed discussion of how this might have
+affected you, see the <a href="bugs.html#bcbuild">bugs page</a>.</li>
+<li>Fixes a bug in Katie's quadricolour search routine, which would cause
+a segfault for certain inputs.</li>
+<li>Adds a few missing Python bindings for triangulations in higher
+dimensions.</li>
+</ul>
+<p>
+<h4>Regina 7.4</h4>
+<p>
+In case you missed it, Regina 7.4 (August 2025) added many new features:
 <ul>
 <li>Now supports virtual knots and links, with new invariants such as
 odd writhe, arrow polynomials, affine index polynomials, and
@@ -500,31 +522,15 @@ initial support for multithreaded computations.</li>
 (thanks again to Rhuaidi Burke).</li>
 <li>New command-line tool regina-helper, which can do things like create
 Makefiles and run the test suite.</li>
+<li>Fixes an occasional problem where the &ldquo;try harder&rdquo; option for
+simplifying triangulations could make the user interface crash.</li>
 <li>Many, many other smaller features and optimisations.</li>
 </ul>
 <p>
-<h4>Bugs fixed</h4>
-<ul>
-<li>Fixed an occasional problem where the &ldquo;try harder&rdquo; option for
-simplifying triangulations could make the user interface crash.</li>
-</ul>
-<p>
-<h4>Build requirements</h4>
-<ul>
-<li>Regina now uses C++20 (not C++17), the GUI now requires Qt&nbsp;6.x, and
-the API docs now require Doxygen&nbsp;&ge;&nbsp;1.9.2.</li>
-<li>You no longer need Jansson, Popt or CppUnit to build Regina.</li>
-</ul>
-<h4>Also&hellip;</h4>
-<p>
-In case you missed it, there were some important changes in
-the recent service release (Regina&nbsp;7.3.1, July 2025):
-<ul>
-<li>Supports Python&nbsp;3.12 and later, and drops support for
-Python&nbsp;3.6.</li>
-<li>Fixes some important bugs: see the <a href="bugs.html">bugs page</a>
-for details.</li>
-</ul>
+Also, the build requirements have changed: Regina now uses C++20 (not C++17),
+the GUI now requires Qt&nbsp;6.x, the API docs now require
+Doxygen&nbsp;&ge;&nbsp;1.9.2, and you no longer need
+Jansson, Popt or CppUnit.
 <p>
 <i><a href="#contents">(Back to contents...)</a></i>
 

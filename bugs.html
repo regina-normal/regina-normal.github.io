@@ -12,8 +12,8 @@
 <tbody>
 <tr><td valign="top">
     <table class="contents" cellspacing=0><tbody>
-    <tr><td><a href="#bcbuild">Faces of triangulated boundary components
-    (Nov 2025)</a></td></tr>
+    <tr><td><a href="#bcbuild">Problems with triangulated
+    boundary components (Nov 2025)</a></td></tr>
     <tr><td><a href="#resolve">Resolving crossings in links with
     cached polynomials (Jul 2025)</a></td></tr>
     <tr><td><a href="#laurentset">Manually setting coefficients in
@@ -41,7 +41,7 @@ of Regina, which might have affected your computations.
 Please write to the developers if you need further information or
 assistance.
 
-<h2><a name="resolve">Faces of triangulated boundary components
+<h2><a name="resolve">Problems with triangulated boundary components
 (Nov 2025)</a></h2>
 <h3>Summary</h3>
 <table cellspacing=0 border=0 class="data">
@@ -54,57 +54,91 @@ assistance.
 <tr>
     <td class="subheading">Main symptom</td>
     <td>&nbsp;</td>
-    <td>When triangulating a real boundary component of a 3/4-D
-    triangulation, the resulting 2/3-D triangulation may have had
-    inconsistencies in its face labellings.</td>
+    <td>When triangulating a real boundary component,
+    the result may have had inconsistent face labellings,
+    with further flow-on effects.</td>
 </tr>
-<!--tr>
+<tr>
     <td class="subheading">Affected users</td>
     <td>All users</td>
-    <td>This affected all users who followed the specific sequence of events
-    described below.</td>
+    <td>This affected all users who explicitly triangulated real (not ideal)
+    boundary components of 3-D or 4-D triangulations.</td>
 </tr>
 <tr>
     <td class="subheading">Was I affected?</td>
     <td>Possibly</td>
-    <td>This depends on your workflow&mdash;the events that triggered the
-    bug are predictable and easy to describe.  Read below for details.</td>
-</tr-->
+    <td>This depends upon what you did with these
+    boundary triangulations&mdash;read below for details.</td>
+</tr>
 </table>
 
 <p>
 <h3>Details</h3>
 <p>
-An full explanation of this bug will be posted here shortly
-(expected 1 December 2025).
-In the meantime, please upgrade to Regina 7.4.1, which has just been released
-(30 November 2025).
-<p>
-Note that ideal boundary components were <i>not</i> affected.
-</p>
-<!--p>
-This bug would be triggered if you did <i>all</i> of the following steps,
-in the following order:
-</p>
-<ol>
-<li><p>computed one or more link polynomials, either by visiting the
-<i>Polynomials</i> tab in the GUI or by calling functions such as
-<tt>Link.jones()</tt> or <tt>Link.homfly()</tt> in C++ or Python;</p></li>
-<li><p>resolved one or more crossings, either by right-clicking in the GUI or
-by calling <tt>Link.resolve()</tt> in C++ or Python;</p></li>
-<li><p>did not make any other changes to the link;</p></li>
-<li><p>queried those same link polynomials again.</p></li>
-</ol>
-<p>
-The result would be that you would be given the old values of the link
-polynomials, before the crossing(s) were resolved.
+This bug was triggered if you triangulated a <b>real</b> boundary component
+of a 3-D or 4-D triangulation <i>T</i>
+(either through the graphical user interface or
+by calling <tt>BoundaryComponent::build()</tt>),
+resulting in a new lower-dimensional triangulation <i>B</i>.
+<b>Ideal boundary components were not affected.</b>
 </p>
 <p>
-The cause was simple: <tt>Link</tt> caches link polynomials when it computes
-them, and any member function of <tt>Link</tt> that modifies the link is
-expected to clear out this cache.  However, <tt>Link.resolve()</tt> did not
-do this.
-</p-->
+The core issue was around the inherent vertex labelling of
+<i>lower-dimensional faces</i> of <i>B</i> (edges, and also triangles
+if <i>T</i> was 4-dimensional).  Regina provides two ways to access this
+inherent vertex labelling: <tt>FaceEmbedding::vertices()</tt>, and
+<tt>Simplex::faceMapping()</tt>.  The problem was that
+these two routines did not always return the same permutation.
+Moreover, the signs of these permutations did not necessarily
+fulfil Regina's strict promises around face embedding permutations.
+</p>
+<p>
+The <b>good news</b>: for many operations on the resulting triangulation
+<i>B</i>, none of this mattered.  In particular:
+</p>
+<ul>
+<li><p>this did not have any flow-on effects for Regina's own
+computations;</p></li>
+<li><p>as soon as you <i>modified</i> <i>B</i> (e.g., by simplifying it),
+the problem would go away&mdash;the entire skeleton of <i>B</i> would be
+automatically recomputed, resulting in a fresh set of lower-dimensional faces
+with consistent and correct labellings.</p></li>
+</ul>
+<p>
+The <b>bad news</b>: there would have been flow-on effects for your own
+subsequent work if you did any of the following with the <i>unmodified</i>
+triangulation <i>B</i>:
+</p>
+<ul>
+<li><p>examined the inherent vertex labelling of the lower-dimensional faces
+of <i>B</i>, either in code or through the skeleton viewer in the
+graphical user interface;</p></li>
+<li><p>in code, queried <i>subfaces</i> of lower-dimensional faces
+using <tt>Face::face()</tt> or <tt>Face::faceMapping()</tt>;</p></li>
+<li><p>in code, used <tt>boundaryMap()</tt>, <tt>dualBoundaryMap()</tt>,
+<tt>dualToPrimal()</tt>, or <tt>markedHomology()</tt>;</p></li>
+<li><p>if <i>T</i> was 4-dimensional, manually performed a 2-1 move
+on <i>B</i> (the only problem being that the 0/1 edge end argument might
+have been ignored);</p></li>
+<li><p>if <i>T</i> was 4-dimensional, manually performed an edge pinch
+move on <i>B</i> in code and expected an oriented triangulation
+(the only problem being that the new tetrahedra might have used orientations
+that did not match their neighbours);</p></li>
+<li><p>if <i>T</i> was 4-dimensional, manually performed a 0-2 move
+on <i>B</i> in code using the form that takes two triangles and two
+edge numbers;</p></li>
+<li><p>if <i>T</i> was 4-dimensional, worked with <tt>HomologicalData</tt>
+in code, or the <i>Algebra &ndash; Cellular Info</i> tab
+in the graphical user interface;</p></li>
+<li><p>if <i>T</i> was 4-dimensional, worked with normal surfaces in
+<i>B</i>.</p></li>
+</ul>
+<p>
+The cause of this bug: when triangulating a real boundary component,
+Regina does not use its normal in-built face labelling code, but instead
+tries to label faces of <i>B</i> in a way that matches the corresponding
+faces of <i>T</i>.  Unfortunately, this had not been done correctly.
+</p>
 <p>
 <i><a href="#contents">(Back to top...)</a></i>
 
