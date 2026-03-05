@@ -59,6 +59,13 @@ Updated data: 31 May 2018></h4-->
 <b>5 March 2026:</b>
 The default branches for Regina's github repositories have been renamed
 from <tt>master</tt> to <tt>main</tt>.
+You can update each of your local clones by running:
+<div class="example"><p>
+<tt>git branch -m master main<br>
+git fetch origin<br>
+git branch -u origin/main main<br>
+git remote set-head origin -a</tt>
+</p></div>
 <p class="header">
 <b>30 November 2025:</b>
 Regina 7.4.1 is out!
